@@ -79,6 +79,7 @@ Public Partial Class Form1
         CargarCombosPeriodosRegistrados()
         CargarComboEmpresas()
         gradientTab1.SelectedIndex = 0
+        'Comentario
     End Sub
     Private Sub backgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs)
         dtDatosExcel = ExcelExtensions.LoadDataTableFromExcel(sPathBook, 0)
