@@ -22,22 +22,22 @@ Partial Class FrmSolicPermHrasExt
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Permisos")
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Hr. Extras")
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes", New System.Windows.Forms.TreeNode() {TreeNode10, TreeNode11})
-        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciòn de Permisos")
-        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion Horas Extras")
-        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14})
-        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
-        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
-        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe", New System.Windows.Forms.TreeNode() {TreeNode16, TreeNode17})
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Permisos")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Hr. Extras")
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciòn de Permisos")
+        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion Horas Extras")
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8})
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TreeView1 = New System.Windows.Forms.TreeView()
@@ -262,8 +262,8 @@ Partial Class FrmSolicPermHrasExt
         Me.SplitContainer1.Panel2.Controls.Add(Me.Pnl_AutPermisos)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Lbl_Titulo)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1916, 1053)
-        Me.SplitContainer1.SplitterDistance = 201
+        Me.SplitContainer1.Size = New System.Drawing.Size(1908, 1045)
+        Me.SplitContainer1.SplitterDistance = 200
         Me.SplitContainer1.TabIndex = 0
         '
         'Panel1
@@ -279,26 +279,26 @@ Partial Class FrmSolicPermHrasExt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TreeView1.Location = New System.Drawing.Point(0, 25)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode10.Name = "Nd_SolPermisos"
-        TreeNode10.Text = "Solicitud de Permisos"
-        TreeNode11.Name = "Nd_SolHrExt"
-        TreeNode11.Text = "Solicitud de Hr. Extras"
-        TreeNode12.Name = "Nodo0"
-        TreeNode12.Text = "Solicitudes"
-        TreeNode13.Name = "Nd_AutPermisos"
-        TreeNode13.Text = "Autorizaciòn de Permisos"
-        TreeNode14.Name = "Nd_AutHrExt"
-        TreeNode14.Text = "Autorizacion Horas Extras"
-        TreeNode15.Name = "Nodo2"
-        TreeNode15.Text = "Autorizaciones"
-        TreeNode16.Name = "Nd_InformePermisos"
-        TreeNode16.Text = "Informe Permisos"
-        TreeNode17.Name = "Nd_InformeHorasExtras"
-        TreeNode17.Text = "Informe Horas Extras"
-        TreeNode18.Name = "Nodo1"
-        TreeNode18.Text = "Informe"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode15, TreeNode18})
-        Me.TreeView1.Size = New System.Drawing.Size(198, 716)
+        TreeNode1.Name = "Nd_SolPermisos"
+        TreeNode1.Text = "Solicitud de Permisos"
+        TreeNode2.Name = "Nd_SolHrExt"
+        TreeNode2.Text = "Solicitud de Hr. Extras"
+        TreeNode3.Name = "Nodo0"
+        TreeNode3.Text = "Solicitudes"
+        TreeNode4.Name = "Nd_AutPermisos"
+        TreeNode4.Text = "Autorizaciòn de Permisos"
+        TreeNode5.Name = "Nd_AutHrExt"
+        TreeNode5.Text = "Autorizacion Horas Extras"
+        TreeNode6.Name = "Nodo2"
+        TreeNode6.Text = "Autorizaciones"
+        TreeNode7.Name = "Nd_InformePermisos"
+        TreeNode7.Text = "Informe Permisos"
+        TreeNode8.Name = "Nd_InformeHorasExtras"
+        TreeNode8.Text = "Informe Horas Extras"
+        TreeNode9.Name = "Nodo1"
+        TreeNode9.Text = "Informe"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode9})
+        Me.TreeView1.Size = New System.Drawing.Size(197, 716)
         Me.TreeView1.TabIndex = 1
         '
         'btnVolver
@@ -593,9 +593,9 @@ Partial Class FrmSolicPermHrasExt
         '
         'colRutInformeHHEE
         '
-        DataGridViewCellStyle8.Format = "N2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.colRutInformeHHEE.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.Format = "N2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.colRutInformeHHEE.DefaultCellStyle = DataGridViewCellStyle1
         Me.colRutInformeHHEE.HeaderText = "R.U.T."
         Me.colRutInformeHHEE.MaxInputLength = 10
         Me.colRutInformeHHEE.Name = "colRutInformeHHEE"
@@ -960,9 +960,9 @@ Partial Class FrmSolicPermHrasExt
         '
         'rut
         '
-        DataGridViewCellStyle9.Format = "N2"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.rut.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle2.Format = "N2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.rut.DefaultCellStyle = DataGridViewCellStyle2
         Me.rut.HeaderText = "R.U.T."
         Me.rut.MaxInputLength = 10
         Me.rut.Name = "rut"
@@ -1004,13 +1004,13 @@ Partial Class FrmSolicPermHrasExt
         '
         'btnAutorizar
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle3
         Me.btnAutorizar.HeaderText = "Autorizar"
         Me.btnAutorizar.Name = "btnAutorizar"
         Me.btnAutorizar.Text = "Autorizar"
@@ -1019,10 +1019,10 @@ Partial Class FrmSolicPermHrasExt
         '
         'btnRechazar
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle4
         Me.btnRechazar.HeaderText = "Rechazar"
         Me.btnRechazar.Name = "btnRechazar"
         Me.btnRechazar.Text = "Rechazar"
@@ -1168,9 +1168,9 @@ Partial Class FrmSolicPermHrasExt
         '
         'rutSolicitarHHEE
         '
-        DataGridViewCellStyle12.Format = "N2"
-        DataGridViewCellStyle12.NullValue = Nothing
-        Me.rutSolicitarHHEE.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.rutSolicitarHHEE.DefaultCellStyle = DataGridViewCellStyle5
         Me.rutSolicitarHHEE.HeaderText = "R.U.T."
         Me.rutSolicitarHHEE.MaxInputLength = 10
         Me.rutSolicitarHHEE.Name = "rutSolicitarHHEE"
@@ -1224,13 +1224,13 @@ Partial Class FrmSolicPermHrasExt
         '
         'btnEliminar
         '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.btnEliminar.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.btnEliminar.DefaultCellStyle = DataGridViewCellStyle6
         Me.btnEliminar.HeaderText = "Eliminar Filas"
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Text = "eliminar"
@@ -1777,14 +1777,14 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvSolicitudesSalida.AllowUserToOrderColumns = True
         Me.dgvSolicitudesSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSolicitudesSalida.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numeroSolicitud, Me.trabajador, Me.fechaInforme, Me.nombreSolicitante, Me.rutTrabajador, Me.cargoAutorizarPermiso, Me.empresa, Me.fechaSalida, Me.diaCompleto, Me.horaSalida, Me.horaEntrada, Me.horasTotales, Me.tipoPermiso, Me.btnAutorizarPermiso, Me.btnRechazarPermiso, Me.btnImprimirPermiso, Me.btnVerHistorial})
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSolicitudesSalida.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSolicitudesSalida.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvSolicitudesSalida.Location = New System.Drawing.Point(3, 87)
         Me.dgvSolicitudesSalida.Name = "dgvSolicitudesSalida"
         Me.dgvSolicitudesSalida.Size = New System.Drawing.Size(981, 314)
@@ -1927,7 +1927,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Lbl_Titulo.Location = New System.Drawing.Point(2, 24)
         Me.Lbl_Titulo.Name = "Lbl_Titulo"
         Me.Lbl_Titulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Lbl_Titulo.Size = New System.Drawing.Size(1706, 25)
+        Me.Lbl_Titulo.Size = New System.Drawing.Size(1699, 25)
         Me.Lbl_Titulo.TabIndex = 5
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1938,7 +1938,7 @@ Partial Class FrmSolicPermHrasExt
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.Location = New System.Drawing.Point(2, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1709, 21)
+        Me.Panel3.Size = New System.Drawing.Size(1702, 21)
         Me.Panel3.TabIndex = 39
         '
         'FrmSolicPermHrasExt
@@ -1946,7 +1946,7 @@ Partial Class FrmSolicPermHrasExt
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.AliceBlue
-        Me.ClientSize = New System.Drawing.Size(1916, 1053)
+        Me.ClientSize = New System.Drawing.Size(1908, 1045)
         Me.Controls.Add(Me.SplitContainer1)
         Me.MaximizeBox = False
         Me.Name = "FrmSolicPermHrasExt"

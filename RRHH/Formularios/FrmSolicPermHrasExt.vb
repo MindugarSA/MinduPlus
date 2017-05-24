@@ -22,6 +22,7 @@ Public Class FrmSolicPermHrasExt
         eventFlag = False
         ' Llamada necesaria para el diseñador.
         'lala la comentando
+        'Otro comentario mas
         InitializeComponent()
         modoEntrada = modo
         eventFlag = True
