@@ -21,6 +21,7 @@ Public Class FrmSolicPermHrasExt
     Public Sub New(modo As Integer)
         eventFlag = False
         ' Llamada necesaria para el diseñador.
+        'lala la comentando
         InitializeComponent()
         modoEntrada = modo
         eventFlag = True
