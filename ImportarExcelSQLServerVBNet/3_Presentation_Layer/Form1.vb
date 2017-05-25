@@ -610,8 +610,8 @@ Public Partial Class Form1
     Private Sub CargarDatosConceptoPeriodoGrid()
         If radioButton1.Checked Then
             dtConceptos = BAsistenciaConceptos.GenerarResumenConceptos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString())
-            'DataTable dtAlmuerzos = BAsistenciaConceptos.GenerarResumenAlmuerzos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString());
-            'dtConceptos.Merge(dtAlmuerzos);
+            Dim dtAlmuerzos As DataTable = BAsistenciaConceptos.GenerarResumenAlmuerzos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString())
+            dtConceptos.Merge(dtAlmuerzos)
 
             If dtConceptos IsNot Nothing Then
                 Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtConceptos.AsEnumerable() Order By myRow(0), myRow(1), myRow(5), myRow(7) Select myRow
