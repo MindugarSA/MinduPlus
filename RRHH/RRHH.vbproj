@@ -328,6 +328,12 @@
     <Compile Include="Reportes\Frm_Reportes_Menu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\InformeHoraExtraPorDia1.vb">
+      <DependentUpon>InformeHoraExtraPorDia.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\InformeHoraExtra.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -454,6 +460,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Reportes_Menu.resx">
       <DependentUpon>Frm_Reportes_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\InformeHoraExtraPorDia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeHoraExtraPorDia1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\InformeHoraExtra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
