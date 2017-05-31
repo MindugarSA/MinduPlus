@@ -239,6 +239,7 @@ Public Partial Class Form1
     Private Sub button14_Click(sender As Object, e As EventArgs) Handles button14.Click
         If comboBox8.SelectedIndex >= 0 Then
             If comboBox7.SelectedIndex >= 0 Then
+                checkBox2.Checked = False
                 If radioButton1.Checked Then
                     button11.Enabled = True
                     button12.Enabled = True
@@ -280,7 +281,26 @@ Public Partial Class Form1
 
         End If
     End Sub
-
+    Private Sub textBox2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox2.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button3.PerformClick()
+        End If
+    End Sub
+    Private Sub textBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox4.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button8.PerformClick()
+        End If
+    End Sub
+    Private Sub textBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox3.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button7.PerformClick()
+        End If
+    End Sub
+    Private Sub textBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox5.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button13.PerformClick()
+        End If
+    End Sub
     Private Shared Sub OpenFile(ByVal sFilePath)
         Using p As New System.Diagnostics.Process
             p.StartInfo = New System.Diagnostics.ProcessStartInfo(sFilePath)
@@ -610,8 +630,8 @@ Public Partial Class Form1
     Private Sub CargarDatosConceptoPeriodoGrid()
         If radioButton1.Checked Then
             dtConceptos = BAsistenciaConceptos.GenerarResumenConceptos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString())
-            'DataTable dtAlmuerzos = BAsistenciaConceptos.GenerarResumenAlmuerzos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString());
-            'dtConceptos.Merge(dtAlmuerzos);
+            Dim dtAlmuerzos As DataTable = BAsistenciaConceptos.GenerarResumenAlmuerzos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString())
+            dtConceptos.Merge(dtAlmuerzos)
 
             If dtConceptos IsNot Nothing Then
                 Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtConceptos.AsEnumerable() Order By myRow(0), myRow(1), myRow(5), myRow(7) Select myRow
@@ -874,7 +894,10 @@ Public Partial Class Form1
 
         If bFiltroConcepto OrElse iEmpSelec > 0 Then
             If iEmpSelec > 0 Then
-                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtGestPer.AsEnumerable() Where (myRow.Field(Of Boolean)("chk")) Order By myRow(5), myRow(7) Select myRow
+                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtGestPer.AsEnumerable()
+                                                                                 Where (myRow.Field(Of Boolean)("chk"))
+                                                                                 Order By myRow(5), myRow(7)
+                                                                                 Select myRow
 
                 If results.Any() Then
                     dtGestPer = results.CopyToDataTable()
@@ -1114,9 +1137,6 @@ Public Partial Class Form1
         End Try
         Return dt.Rows(0)("Acceso")
     End Function
-
-
-
 
 
 
