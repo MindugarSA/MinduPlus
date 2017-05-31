@@ -79,7 +79,7 @@ Public Partial Class Form1
         CargarCombosPeriodosRegistrados()
         CargarComboEmpresas()
         gradientTab1.SelectedIndex = 0
-        'Comentario de prueba
+        'Comentario de prueba 
     End Sub
     Private Sub backgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs)
         dtDatosExcel = ExcelExtensions.LoadDataTableFromExcel(sPathBook, 0)
@@ -239,6 +239,7 @@ Public Partial Class Form1
     Private Sub button14_Click(sender As Object, e As EventArgs) Handles button14.Click
         If comboBox8.SelectedIndex >= 0 Then
             If comboBox7.SelectedIndex >= 0 Then
+                checkBox2.Checked = False
                 If radioButton1.Checked Then
                     button11.Enabled = True
                     button12.Enabled = True
@@ -280,7 +281,26 @@ Public Partial Class Form1
 
         End If
     End Sub
-
+    Private Sub textBox2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox2.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button3.PerformClick()
+        End If
+    End Sub
+    Private Sub textBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox4.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button8.PerformClick()
+        End If
+    End Sub
+    Private Sub textBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox3.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button7.PerformClick()
+        End If
+    End Sub
+    Private Sub textBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles textBox5.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            button13.PerformClick()
+        End If
+    End Sub
     Private Shared Sub OpenFile(ByVal sFilePath)
         Using p As New System.Diagnostics.Process
             p.StartInfo = New System.Diagnostics.ProcessStartInfo(sFilePath)
@@ -610,8 +630,8 @@ Public Partial Class Form1
     Private Sub CargarDatosConceptoPeriodoGrid()
         If radioButton1.Checked Then
             dtConceptos = BAsistenciaConceptos.GenerarResumenConceptos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString())
-            'DataTable dtAlmuerzos = BAsistenciaConceptos.GenerarResumenAlmuerzos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString());
-            'dtConceptos.Merge(dtAlmuerzos);
+            Dim dtAlmuerzos As DataTable = BAsistenciaConceptos.GenerarResumenAlmuerzos(comboBox8.SelectedValue.ToString(), comboBox7.SelectedValue.ToString())
+            dtConceptos.Merge(dtAlmuerzos)
 
             If dtConceptos IsNot Nothing Then
                 Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtConceptos.AsEnumerable() Order By myRow(0), myRow(1), myRow(5), myRow(7) Select myRow
@@ -874,7 +894,10 @@ Public Partial Class Form1
 
         If bFiltroConcepto OrElse iEmpSelec > 0 Then
             If iEmpSelec > 0 Then
-                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtGestPer.AsEnumerable() Where (myRow.Field(Of Boolean)("chk")) Order By myRow(5), myRow(7) Select myRow
+                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtGestPer.AsEnumerable()
+                                                                                 Where (myRow.Field(Of Boolean)("chk"))
+                                                                                 Order By myRow(5), myRow(7)
+                                                                                 Select myRow
 
                 If results.Any() Then
                     dtGestPer = results.CopyToDataTable()
@@ -926,116 +949,116 @@ Public Partial Class Form1
 
     End Sub
     Private Sub progressWorker_DoWork(sender As Object, e As DoWorkEventArgs)
-		'for (int i = 1; i <= 50; i++)
-		'{
-		'    if (progressWorker.CancellationPending)
-		'    {
-		'        e.Cancel = true;
-		'        break;
-		'    }
-		'    // simulate long operation
-		'    System.Threading.Thread.Sleep(10);
-		'    progressWorker.ReportProgress(i);
-		'}
-	End Sub
-	Private Sub progressWorker_ProgressChanged(sender As Object, e As ProgressChangedEventArgs)
-		'Console.WriteLine(e.ProgressPercentage);
-	End Sub
-	Private Sub progressWorker_RunCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
-		'progressWorker.Reset();
-		'progressWorker.Visible = false;
-	End Sub
-	Private Sub AgregarColumnaCheckConceptos()
-		Dim dt As DataTable = DirectCast(dataGridView4.DataSource, DataTable)
+        'for (int i = 1; i <= 50; i++)
+        '{
+        '    if (progressWorker.CancellationPending)
+        '    {
+        '        e.Cancel = true;
+        '        break;
+        '    }
+        '    // simulate long operation
+        '    System.Threading.Thread.Sleep(10);
+        '    progressWorker.ReportProgress(i);
+        '}
+    End Sub
+    Private Sub progressWorker_ProgressChanged(sender As Object, e As ProgressChangedEventArgs)
+        'Console.WriteLine(e.ProgressPercentage);
+    End Sub
+    Private Sub progressWorker_RunCompleted(sender As Object, e As RunWorkerCompletedEventArgs)
+        'progressWorker.Reset();
+        'progressWorker.Visible = false;
+    End Sub
+    Private Sub AgregarColumnaCheckConceptos()
+        Dim dt As DataTable = DirectCast(dataGridView4.DataSource, DataTable)
 
-		If Not DirectCast(dataGridView4.DataSource, DataTable).Columns.Contains("chk") Then
-			DirectCast(dataGridView4.DataSource, DataTable).Columns.Add(New DataColumn("chk", GetType(Boolean)))
-		End If
+        If Not DirectCast(dataGridView4.DataSource, DataTable).Columns.Contains("chk") Then
+            DirectCast(dataGridView4.DataSource, DataTable).Columns.Add(New DataColumn("chk", GetType(Boolean)))
+        End If
 
-		For Each row As DataRow In DirectCast(dataGridView4.DataSource, DataTable).Rows
-			row("chk") = False
-		Next
+        For Each row As DataRow In DirectCast(dataGridView4.DataSource, DataTable).Rows
+            row("chk") = False
+        Next
 
-		DirectCast(dataGridView4.DataSource, DataTable).AcceptChanges()
-		'dataGridView4.DataSource 
+        DirectCast(dataGridView4.DataSource, DataTable).AcceptChanges()
+        'dataGridView4.DataSource 
 
-		Dim chk As DataGridViewCheckBoxColumn = DirectCast(dataGridView4.Columns("chk"), DataGridViewCheckBoxColumn)
-		chk.Visible = True
-		chk.[ReadOnly] = False
-		chk.HeaderText = "Selec."
-		chk.Name = "chk"
-		chk.Width = 50
+        Dim chk As DataGridViewCheckBoxColumn = DirectCast(dataGridView4.Columns("chk"), DataGridViewCheckBoxColumn)
+        chk.Visible = True
+        chk.[ReadOnly] = False
+        chk.HeaderText = "Selec."
+        chk.Name = "chk"
+        chk.Width = 50
 
-	End Sub
-	Private Sub SeleccionarEmpleadoChk(EmpRut As String, ValorChk As Boolean)
-		For Each row As DataGridViewRow In dataGridView4.Rows
-			Dim eRut As String = row.Cells(3).Value.ToString()
-			If EmpRut = eRut Then
-				If ValorChk Then
-					row.DefaultCellStyle.BackColor = Color.LightBlue
-					DirectCast(row.Cells("chk"), DataGridViewCheckBoxCell).Value = True
-					iEmpSelec += 1
-				Else
-					row.DefaultCellStyle.BackColor = Color.White
-					DirectCast(row.Cells("chk"), DataGridViewCheckBoxCell).Value = False
-					iEmpSelec -= 1
-				End If
-			End If
-		Next
-	End Sub
-	Private Sub OcultarFilasNoSeleccionadas(Grid As DataGridView)
-		dataGridView4.CurrentCell = Nothing
-		For Each row As DataGridViewRow In dataGridView4.Rows
-			If Not Convert.ToBoolean(row.Cells("chk").Value) Then
-				row.Visible = False
-			End If
-		Next
-	End Sub
-	Private Sub MostrarFilasNoSeleccionadas(Grid As DataGridView)
-		For Each row As DataGridViewRow In dataGridView4.Rows
-			If Not Convert.ToBoolean(row.Cells("chk").Value) Then
-				row.Visible = True
-			End If
-		Next
-	End Sub
-	Private Sub FiltrarConceptosGestper(lConceptos As List(Of String))
+    End Sub
+    Private Sub SeleccionarEmpleadoChk(EmpRut As String, ValorChk As Boolean)
+        For Each row As DataGridViewRow In dataGridView4.Rows
+            Dim eRut As String = row.Cells(3).Value.ToString()
+            If EmpRut = eRut Then
+                If ValorChk Then
+                    row.DefaultCellStyle.BackColor = Color.LightBlue
+                    DirectCast(row.Cells("chk"), DataGridViewCheckBoxCell).Value = True
+                    iEmpSelec += 1
+                Else
+                    row.DefaultCellStyle.BackColor = Color.White
+                    DirectCast(row.Cells("chk"), DataGridViewCheckBoxCell).Value = False
+                    iEmpSelec -= 1
+                End If
+            End If
+        Next
+    End Sub
+    Private Sub OcultarFilasNoSeleccionadas(Grid As DataGridView)
+        dataGridView4.CurrentCell = Nothing
+        For Each row As DataGridViewRow In dataGridView4.Rows
+            If Not Convert.ToBoolean(row.Cells("chk").Value) Then
+                row.Visible = False
+            End If
+        Next
+    End Sub
+    Private Sub MostrarFilasNoSeleccionadas(Grid As DataGridView)
+        For Each row As DataGridViewRow In dataGridView4.Rows
+            If Not Convert.ToBoolean(row.Cells("chk").Value) Then
+                row.Visible = True
+            End If
+        Next
+    End Sub
+    Private Sub FiltrarConceptosGestper(lConceptos As List(Of String))
         Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtConceptos.AsEnumerable() Where (lConceptos.Contains(myRow.Field(Of String)("Concepto"))) Order By myRow(5), myRow(7) Select myRow
 
         If results.Any() Then
-			Dim dtf As DataTable = results.CopyToDataTable()
-			If dtf.Rows.Count > 0 Then
-				'dtf.DefaultView.Sort = "P_CI";
-				dataGridView4.DataSource = dtf
-			End If
-		End If
-	End Sub
+            Dim dtf As DataTable = results.CopyToDataTable()
+            If dtf.Rows.Count > 0 Then
+                'dtf.DefaultView.Sort = "P_CI";
+                dataGridView4.DataSource = dtf
+            End If
+        End If
+    End Sub
 
-	#Region "Definicion de Interface IComunication"
+#Region "Definicion de Interface IComunication"
 
-	'''Definicion de Interface
-	'''IComunication
-	Public Sub ChangeButtonEnabled(Status As Boolean, IDButton As String) Implements IComunication.ChangeButtonEnabled
-		Dim oButton As Control = ManipulateForm.GetControl(Of Button)(Me, IDButton)
-		DirectCast(oButton, Button).Enabled = Status
+    '''Definicion de Interface
+    '''IComunication
+    Public Sub ChangeButtonEnabled(Status As Boolean, IDButton As String) Implements IComunication.ChangeButtonEnabled
+        Dim oButton As Control = ManipulateForm.GetControl(Of Button)(Me, IDButton)
+        DirectCast(oButton, Button).Enabled = Status
 
-		'var cList = this.GetAllControlList().ToList();//GetSelfAndChildrenRecursive(this).ToList();
+        'var cList = this.GetAllControlList().ToList();//GetSelfAndChildrenRecursive(this).ToList();
 
-		'foreach (Control control in cList)
-		'{
-		'    if (control.GetType() == typeof(Button) && control.Name == IDButton)
-		'    {
-		'        ((Button)control).Enabled = Status;
-		'    }
-		'}
-	End Sub
-	Public Sub ChangeCheckBoxStatus(Status As Boolean, IDCheck As String) Implements IComunication.ChangeCheckBoxStatus
-		Dim oCheckBox As Control = ManipulateForm.GetControl(Of CheckBox)(Me, IDCheck)
-		DirectCast(oCheckBox, CheckBox).Checked = Status
-	End Sub
-	Public Sub ChangeTextLabel(Text As String, IDLabel As String) Implements IComunication.ChangeTextLabel
-		Dim oLabel As Control = ManipulateForm.GetControl(Of Label)(Me, IDLabel)
-		DirectCast(oLabel, Label).Text = Text
-	End Sub
+        'foreach (Control control in cList)
+        '{
+        '    if (control.GetType() == typeof(Button) && control.Name == IDButton)
+        '    {
+        '        ((Button)control).Enabled = Status;
+        '    }
+        '}
+    End Sub
+    Public Sub ChangeCheckBoxStatus(Status As Boolean, IDCheck As String) Implements IComunication.ChangeCheckBoxStatus
+        Dim oCheckBox As Control = ManipulateForm.GetControl(Of CheckBox)(Me, IDCheck)
+        DirectCast(oCheckBox, CheckBox).Checked = Status
+    End Sub
+    Public Sub ChangeTextLabel(Text As String, IDLabel As String) Implements IComunication.ChangeTextLabel
+        Dim oLabel As Control = ManipulateForm.GetControl(Of Label)(Me, IDLabel)
+        DirectCast(oLabel, Label).Text = Text
+    End Sub
     Public Sub ChangeBoolProperty(bStatus As Boolean, sPropertyName As String) Implements IComunication.ChangeBoolProperty
         ManipulateForm.ChangeBoolProperty(Me, bStatus, sPropertyName)
         'this.bAcceso = bStatus;
@@ -1061,11 +1084,11 @@ Public Partial Class Form1
     End Sub
     Public Sub ExecuteProcedure(Name As String, Parameters As List(Of Object)) Implements IComunication.ExecuteProcedure
 
-	End Sub
-	Private Shared Function InlineAssignHelper(Of T)(ByRef target As T, value As T) As T
-		target = value
-		Return value
-	End Function
+    End Sub
+    Private Shared Function InlineAssignHelper(Of T)(ByRef target As T, value As T) As T
+        target = value
+        Return value
+    End Function
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         If pnlParent IsNot Nothing Then
@@ -1114,9 +1137,6 @@ Public Partial Class Form1
         End Try
         Return dt.Rows(0)("Acceso")
     End Function
-
-
-
 
 
 
