@@ -406,7 +406,7 @@ Public Class MDIParent1
             TiempoIngreso.Enabled = False
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-            newMDIChild.WindowState = FormWindowState.Maximized
+            'newMDIChild.WindowState = FormWindowState.Maximized
             Me.Panel2.Visible = False
         End If
 

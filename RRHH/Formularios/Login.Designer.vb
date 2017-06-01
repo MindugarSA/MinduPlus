@@ -22,6 +22,7 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TxtBx_Password = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserID = New System.Windows.Forms.TextBox()
         Me.PasswordLabel = New System.Windows.Forms.Label()
@@ -45,9 +46,11 @@ Partial Class Login
         Me.TxtBx_ConfPass = New System.Windows.Forms.TextBox()
         Me.Lbl__ConfPass = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtBx_Password
@@ -377,6 +380,10 @@ Partial Class Login
         Me.Label13.TabIndex = 14
         Me.Label13.Text = "Login del Sistema"
         '
+        'MetroStyleManager1
+        '
+        Me.MetroStyleManager1.Owner = Nothing
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -400,6 +407,7 @@ Partial Class Login
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -428,4 +436,5 @@ Partial Class Login
     Friend WithEvents Label10 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Bttn_Login As MetroFramework.Controls.MetroButton
+    Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
 End Class

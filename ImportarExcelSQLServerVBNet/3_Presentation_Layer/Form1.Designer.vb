@@ -174,7 +174,7 @@ Partial Class Form1
         'btnVolver
         '
         Me.btnVolver.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnVolver.Location = New System.Drawing.Point(15, 538)
+        Me.btnVolver.Location = New System.Drawing.Point(15, 509)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(170, 46)
         Me.btnVolver.TabIndex = 10
@@ -193,7 +193,7 @@ Partial Class Form1
         Me.gradientTab1.Location = New System.Drawing.Point(12, 34)
         Me.gradientTab1.Name = "gradientTab1"
         Me.gradientTab1.SelectedIndex = 1
-        Me.gradientTab1.Size = New System.Drawing.Size(1333, 472)
+        Me.gradientTab1.Size = New System.Drawing.Size(1333, 468)
         Me.gradientTab1.TabIndex = 9
         Me.gradientTab1.UseSelectable = True
         '
@@ -205,7 +205,7 @@ Partial Class Form1
         Me.tabPage0.Location = New System.Drawing.Point(4, 38)
         Me.tabPage0.Name = "tabPage0"
         Me.tabPage0.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage0.Size = New System.Drawing.Size(1325, 558)
+        Me.tabPage0.Size = New System.Drawing.Size(1325, 430)
         Me.tabPage0.TabIndex = 0
         Me.tabPage0.Text = "Importar Excel    "
         Me.tabPage0.UseVisualStyleBackColor = True
@@ -235,7 +235,7 @@ Partial Class Form1
         Me.groupBox1.Location = New System.Drawing.Point(3, 3)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.groupBox1.Size = New System.Drawing.Size(1319, 552)
+        Me.groupBox1.Size = New System.Drawing.Size(1319, 424)
         Me.groupBox1.TabIndex = 7
         Me.groupBox1.TabStop = False
         '
@@ -275,7 +275,7 @@ Partial Class Form1
         Me.label7.AutoSize = True
         Me.label7.BackColor = System.Drawing.Color.Transparent
         Me.label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label7.Location = New System.Drawing.Point(15, 530)
+        Me.label7.Location = New System.Drawing.Point(15, 402)
         Me.label7.Name = "label7"
         Me.label7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label7.Size = New System.Drawing.Size(104, 15)
@@ -343,7 +343,7 @@ Partial Class Form1
         Me.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dataGridView1.RowHeadersVisible = False
         Me.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView1.Size = New System.Drawing.Size(1278, 450)
+        Me.dataGridView1.Size = New System.Drawing.Size(1278, 322)
         Me.dataGridView1.TabIndex = 7
         '
         'comboBox2
@@ -481,7 +481,7 @@ Partial Class Form1
         Me.tabPage1.Location = New System.Drawing.Point(4, 38)
         Me.tabPage1.Name = "tabPage1"
         Me.tabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage1.Size = New System.Drawing.Size(1325, 430)
+        Me.tabPage1.Size = New System.Drawing.Size(1325, 426)
         Me.tabPage1.TabIndex = 1
         Me.tabPage1.Text = "Consultar Asistencias    "
         Me.tabPage1.UseVisualStyleBackColor = True
@@ -505,7 +505,7 @@ Partial Class Form1
         Me.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox2.Location = New System.Drawing.Point(3, 3)
         Me.groupBox2.Name = "groupBox2"
-        Me.groupBox2.Size = New System.Drawing.Size(1319, 424)
+        Me.groupBox2.Size = New System.Drawing.Size(1319, 420)
         Me.groupBox2.TabIndex = 0
         Me.groupBox2.TabStop = False
         '
@@ -533,7 +533,7 @@ Partial Class Form1
         Me.label14.AutoSize = True
         Me.label14.BackColor = System.Drawing.Color.Transparent
         Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.Location = New System.Drawing.Point(15, 402)
+        Me.label14.Location = New System.Drawing.Point(15, 398)
         Me.label14.Name = "label14"
         Me.label14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label14.Size = New System.Drawing.Size(104, 15)
@@ -643,7 +643,7 @@ Partial Class Form1
         Me.dataGridView2.ReadOnly = True
         Me.dataGridView2.RowHeadersVisible = False
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView2.Size = New System.Drawing.Size(1278, 343)
+        Me.dataGridView2.Size = New System.Drawing.Size(1278, 339)
         Me.dataGridView2.TabIndex = 5
         '
         'button4
@@ -688,7 +688,7 @@ Partial Class Form1
         Me.tabPage2.Location = New System.Drawing.Point(4, 38)
         Me.tabPage2.Name = "tabPage2"
         Me.tabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage2.Size = New System.Drawing.Size(1325, 558)
+        Me.tabPage2.Size = New System.Drawing.Size(1325, 430)
         Me.tabPage2.TabIndex = 2
         Me.tabPage2.Text = "Consultar Resumen    "
         Me.tabPage2.UseVisualStyleBackColor = True
@@ -711,7 +711,7 @@ Partial Class Form1
         Me.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox3.Location = New System.Drawing.Point(3, 3)
         Me.groupBox3.Name = "groupBox3"
-        Me.groupBox3.Size = New System.Drawing.Size(1319, 552)
+        Me.groupBox3.Size = New System.Drawing.Size(1319, 424)
         Me.groupBox3.TabIndex = 0
         Me.groupBox3.TabStop = False
         '
@@ -721,7 +721,7 @@ Partial Class Form1
         Me.label15.AutoSize = True
         Me.label15.BackColor = System.Drawing.Color.Transparent
         Me.label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label15.Location = New System.Drawing.Point(15, 530)
+        Me.label15.Location = New System.Drawing.Point(15, 402)
         Me.label15.Name = "label15"
         Me.label15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label15.Size = New System.Drawing.Size(104, 15)
@@ -831,7 +831,7 @@ Partial Class Form1
         Me.dataGridView3.ReadOnly = True
         Me.dataGridView3.RowHeadersVisible = False
         Me.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView3.Size = New System.Drawing.Size(1278, 471)
+        Me.dataGridView3.Size = New System.Drawing.Size(1278, 343)
         Me.dataGridView3.TabIndex = 19
         '
         'button6
@@ -875,7 +875,7 @@ Partial Class Form1
         Me.tabPage3.Location = New System.Drawing.Point(4, 38)
         Me.tabPage3.Name = "tabPage3"
         Me.tabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage3.Size = New System.Drawing.Size(1325, 558)
+        Me.tabPage3.Size = New System.Drawing.Size(1325, 430)
         Me.tabPage3.TabIndex = 3
         Me.tabPage3.Text = "GESTPER    "
         Me.tabPage3.UseVisualStyleBackColor = True
@@ -899,7 +899,7 @@ Partial Class Form1
         Me.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox6.Location = New System.Drawing.Point(3, 3)
         Me.groupBox6.Name = "groupBox6"
-        Me.groupBox6.Size = New System.Drawing.Size(1319, 552)
+        Me.groupBox6.Size = New System.Drawing.Size(1319, 424)
         Me.groupBox6.TabIndex = 1
         Me.groupBox6.TabStop = False
         '
@@ -908,7 +908,7 @@ Partial Class Form1
         Me.groupBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox9.Controls.Add(Me.checkBox2)
         Me.groupBox9.Controls.Add(Me.checkBox1)
-        Me.groupBox9.Location = New System.Drawing.Point(767, 515)
+        Me.groupBox9.Location = New System.Drawing.Point(767, 387)
         Me.groupBox9.Name = "groupBox9"
         Me.groupBox9.Size = New System.Drawing.Size(527, 33)
         Me.groupBox9.TabIndex = 27
@@ -1079,7 +1079,7 @@ Partial Class Form1
         Me.label16.AutoSize = True
         Me.label16.BackColor = System.Drawing.Color.Transparent
         Me.label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label16.Location = New System.Drawing.Point(15, 524)
+        Me.label16.Location = New System.Drawing.Point(15, 396)
         Me.label16.Name = "label16"
         Me.label16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label16.Size = New System.Drawing.Size(104, 15)
@@ -1169,7 +1169,7 @@ Partial Class Form1
         Me.dataGridView4.Name = "dataGridView4"
         Me.dataGridView4.RowHeadersVisible = False
         Me.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView4.Size = New System.Drawing.Size(1278, 453)
+        Me.dataGridView4.Size = New System.Drawing.Size(1278, 325)
         Me.dataGridView4.TabIndex = 19
         '
         'Label21
@@ -1186,6 +1186,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1351, 599)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.btnVolver)

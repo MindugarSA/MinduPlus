@@ -59,7 +59,10 @@ Public Partial Class Form1
     End Property
 
     Public Sub New(prmPnlParent As Panel, parentHeight As Integer, Id As String)
+        Me.Id = Id
         InitializeComponent()
+        Me.pnlParent = prmPnlParent
+        'btnVolver.Location = New Point(20, parentHeight - btnVolver.Size.Height - 175)
 
         ' To report progress from the background worker we need to set this property
         backgroundWorker1.WorkerReportsProgress = True
@@ -67,9 +70,8 @@ Public Partial Class Form1
         AddHandler backgroundWorker1.DoWork, New DoWorkEventHandler(AddressOf backgroundWorker1_DoWork)
         ' This event will be raised when we call ReportProgress
         AddHandler backgroundWorker1.ProgressChanged, New ProgressChangedEventHandler(AddressOf backgroundWorker1_ProgressChanged)
-        Me.pnlParent = prmPnlParent
-        'btnVolver.Location = New Point(20, parentHeight - btnVolver.Size.Height - 175)
-        Me.Id = Id
+        Me.WindowState = FormWindowState.Maximized
+        Me.Size = New Size(prmPnlParent.Size.Width, prmPnlParent.Size.Height + prmPnlParent.Location.Y - Me.Location.Y - 70)
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gradientTab1.SelectedIndex = -1
@@ -81,6 +83,7 @@ Public Partial Class Form1
         gradientTab1.SelectedIndex = 0
         'Comentario de prueba 
         'Cambios de prueba para verificar
+
     End Sub
     Private Sub backgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs)
         dtDatosExcel = ExcelExtensions.LoadDataTableFromExcel(sPathBook, 0)
@@ -1136,7 +1139,9 @@ Public Partial Class Form1
         Finally
             conexion.Close()
         End Try
-        Return CType(dt.Rows(0)("Acceso"), Boolean)
+
+        Return If(dt.Rows.Count = 0, False, CType(dt.Rows(0)("Acceso"), Boolean))
+
     End Function
 
 
