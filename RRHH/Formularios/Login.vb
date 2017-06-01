@@ -4,6 +4,7 @@ Imports System.Data.SqlClient
 
 
 Public Class Login
+
     Dim conexion As New SqlConnection
     Dim dt As New DataTable
     Dim cmd As SqlCommand
@@ -358,4 +359,21 @@ Public Class Login
         End If
     End Sub
 
+    Private Sub Bttn_Login_MouseEnter(sender As Object, e As EventArgs) Handles Bttn_Login.MouseEnter
+
+        Bttn_Login.Left = Bttn_Login.Left - 3
+        Bttn_Login.Top = Bttn_Login.Top - 3
+        Bttn_Login.Height = Bttn_Login.Height + 6
+        Bttn_Login.Width = Bttn_Login.Width + 6
+
+    End Sub
+
+    Private Sub Bttn_Login_MouseLeave(sender As Object, e As EventArgs) Handles Bttn_Login.MouseLeave
+
+        Bttn_Login.Left = Bttn_Login.Left + 3
+        Bttn_Login.Top = Bttn_Login.Top + 3
+        Bttn_Login.Height = Bttn_Login.Height - 6
+        Bttn_Login.Width = Bttn_Login.Width - 6
+
+    End Sub
 End Class

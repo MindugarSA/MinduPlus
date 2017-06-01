@@ -16,8 +16,8 @@ Imports ImportarExcelSQLServer._2_Business_Layer
 Imports ImportarExcelSQLServer._3_Presentation_Layer
 
 Public Partial Class Form1
-	Inherits Form
-	Implements IComunication
+    Inherits MetroFramework.Forms.MetroForm
+    Implements IComunication
 	Private dtDatosExcel As DataTable
 	Private dtDetallePeriodo As DataTable
 	Private dtResumenPeriodo As DataTable
@@ -1136,7 +1136,7 @@ Public Partial Class Form1
         Finally
             conexion.Close()
         End Try
-        Return dt.Rows(0)("Acceso")
+        Return CType(dt.Rows(0)("Acceso"), Boolean)
     End Function
 
 

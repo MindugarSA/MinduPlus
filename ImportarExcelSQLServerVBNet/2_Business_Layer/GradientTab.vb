@@ -12,10 +12,10 @@ Imports System.Windows.Forms
 Namespace _2_Business_Layer
 
 	Class GradientTab
-		Inherits System.Windows.Forms.TabControl
+        Inherits MetroFramework.Controls.MetroTabControl 'System.Windows.Forms.TabControl
 
-		' member variables
-		Private StartColor As System.Drawing.Color
+        ' member variables
+        Private StartColor As System.Drawing.Color
 		Private EndColor As System.Drawing.Color
 
 		Public Sub New()

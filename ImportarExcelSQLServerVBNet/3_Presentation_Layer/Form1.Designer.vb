@@ -24,10 +24,10 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.backgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.backgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
@@ -37,7 +37,7 @@ Partial Class Form1
         Me.contextOcultarSelec = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.toolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnVolver = New System.Windows.Forms.Button()
-        Me.gradientTab1 = New ImportarExcelSQLServer._2_Business_Layer.GradientTab()
+        Me.gradientTab1 = New MetroFramework.Controls.MetroTabControl()
         Me.tabPage0 = New System.Windows.Forms.TabPage()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
@@ -111,6 +111,7 @@ Partial Class Form1
         Me.label17 = New System.Windows.Forms.Label()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
         Me.dataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.Label21 = New System.Windows.Forms.Label()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.contextVerSelec.SuspendLayout()
         Me.contextOcultarSelec.SuspendLayout()
@@ -173,7 +174,7 @@ Partial Class Form1
         'btnVolver
         '
         Me.btnVolver.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnVolver.Location = New System.Drawing.Point(12, 606)
+        Me.btnVolver.Location = New System.Drawing.Point(15, 538)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(170, 46)
         Me.btnVolver.TabIndex = 10
@@ -189,30 +190,29 @@ Partial Class Form1
         Me.gradientTab1.Controls.Add(Me.tabPage1)
         Me.gradientTab1.Controls.Add(Me.tabPage2)
         Me.gradientTab1.Controls.Add(Me.tabPage3)
-        Me.gradientTab1.Location = New System.Drawing.Point(12, 12)
+        Me.gradientTab1.Location = New System.Drawing.Point(12, 34)
         Me.gradientTab1.Name = "gradientTab1"
-        Me.gradientTab1.PageEndColor = System.Drawing.Color.Empty
-        Me.gradientTab1.PageStartColor = System.Drawing.Color.Empty
-        Me.gradientTab1.SelectedIndex = 0
-        Me.gradientTab1.Size = New System.Drawing.Size(1333, 588)
+        Me.gradientTab1.SelectedIndex = 1
+        Me.gradientTab1.Size = New System.Drawing.Size(1333, 472)
         Me.gradientTab1.TabIndex = 9
+        Me.gradientTab1.UseSelectable = True
         '
         'tabPage0
         '
         Me.tabPage0.BackgroundImage = CType(resources.GetObject("tabPage0.BackgroundImage"), System.Drawing.Image)
         Me.tabPage0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.tabPage0.Controls.Add(Me.groupBox1)
-        Me.tabPage0.Location = New System.Drawing.Point(4, 22)
+        Me.tabPage0.Location = New System.Drawing.Point(4, 38)
         Me.tabPage0.Name = "tabPage0"
         Me.tabPage0.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage0.Size = New System.Drawing.Size(1325, 562)
+        Me.tabPage0.Size = New System.Drawing.Size(1325, 558)
         Me.tabPage0.TabIndex = 0
-        Me.tabPage0.Text = "Importar Excel"
+        Me.tabPage0.Text = "Importar Excel    "
         Me.tabPage0.UseVisualStyleBackColor = True
         '
         'groupBox1
         '
-        Me.groupBox1.BackColor = System.Drawing.Color.AliceBlue
+        Me.groupBox1.BackColor = System.Drawing.Color.White
         Me.groupBox1.Controls.Add(Me.pictureBox1)
         Me.groupBox1.Controls.Add(Me.progressBar3)
         Me.groupBox1.Controls.Add(Me.label6)
@@ -235,7 +235,7 @@ Partial Class Form1
         Me.groupBox1.Location = New System.Drawing.Point(3, 3)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.groupBox1.Size = New System.Drawing.Size(1319, 556)
+        Me.groupBox1.Size = New System.Drawing.Size(1319, 552)
         Me.groupBox1.TabIndex = 7
         Me.groupBox1.TabStop = False
         '
@@ -275,7 +275,7 @@ Partial Class Form1
         Me.label7.AutoSize = True
         Me.label7.BackColor = System.Drawing.Color.Transparent
         Me.label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label7.Location = New System.Drawing.Point(15, 534)
+        Me.label7.Location = New System.Drawing.Point(15, 530)
         Me.label7.Name = "label7"
         Me.label7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label7.Size = New System.Drawing.Size(104, 15)
@@ -328,14 +328,14 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridView1.Location = New System.Drawing.Point(15, 77)
         Me.dataGridView1.MultiSelect = False
         Me.dataGridView1.Name = "dataGridView1"
@@ -343,7 +343,7 @@ Partial Class Form1
         Me.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dataGridView1.RowHeadersVisible = False
         Me.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView1.Size = New System.Drawing.Size(1278, 454)
+        Me.dataGridView1.Size = New System.Drawing.Size(1278, 450)
         Me.dataGridView1.TabIndex = 7
         '
         'comboBox2
@@ -478,17 +478,17 @@ Partial Class Form1
         Me.tabPage1.BackgroundImage = CType(resources.GetObject("tabPage1.BackgroundImage"), System.Drawing.Image)
         Me.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.tabPage1.Controls.Add(Me.groupBox2)
-        Me.tabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.tabPage1.Location = New System.Drawing.Point(4, 38)
         Me.tabPage1.Name = "tabPage1"
         Me.tabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage1.Size = New System.Drawing.Size(1325, 562)
+        Me.tabPage1.Size = New System.Drawing.Size(1325, 430)
         Me.tabPage1.TabIndex = 1
-        Me.tabPage1.Text = "Consultar Asistencias"
+        Me.tabPage1.Text = "Consultar Asistencias    "
         Me.tabPage1.UseVisualStyleBackColor = True
         '
         'groupBox2
         '
-        Me.groupBox2.BackColor = System.Drawing.Color.AliceBlue
+        Me.groupBox2.BackColor = System.Drawing.Color.White
         Me.groupBox2.Controls.Add(Me.Button15)
         Me.groupBox2.Controls.Add(Me.label14)
         Me.groupBox2.Controls.Add(Me.button8)
@@ -505,7 +505,7 @@ Partial Class Form1
         Me.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox2.Location = New System.Drawing.Point(3, 3)
         Me.groupBox2.Name = "groupBox2"
-        Me.groupBox2.Size = New System.Drawing.Size(1319, 556)
+        Me.groupBox2.Size = New System.Drawing.Size(1319, 424)
         Me.groupBox2.TabIndex = 0
         Me.groupBox2.TabStop = False
         '
@@ -533,7 +533,7 @@ Partial Class Form1
         Me.label14.AutoSize = True
         Me.label14.BackColor = System.Drawing.Color.Transparent
         Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.Location = New System.Drawing.Point(15, 534)
+        Me.label14.Location = New System.Drawing.Point(15, 402)
         Me.label14.Name = "label14"
         Me.label14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label14.Size = New System.Drawing.Size(104, 15)
@@ -597,6 +597,7 @@ Partial Class Form1
         'groupBox5
         '
         Me.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.groupBox5.BackColor = System.Drawing.Color.Transparent
         Me.groupBox5.Location = New System.Drawing.Point(340, 9)
         Me.groupBox5.Name = "groupBox5"
         Me.groupBox5.Size = New System.Drawing.Size(557, 42)
@@ -628,21 +629,21 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView2.Location = New System.Drawing.Point(16, 56)
         Me.dataGridView2.MultiSelect = False
         Me.dataGridView2.Name = "dataGridView2"
         Me.dataGridView2.ReadOnly = True
         Me.dataGridView2.RowHeadersVisible = False
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView2.Size = New System.Drawing.Size(1278, 475)
+        Me.dataGridView2.Size = New System.Drawing.Size(1278, 343)
         Me.dataGridView2.TabIndex = 5
         '
         'button4
@@ -684,17 +685,17 @@ Partial Class Form1
         Me.tabPage2.BackgroundImage = CType(resources.GetObject("tabPage2.BackgroundImage"), System.Drawing.Image)
         Me.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.tabPage2.Controls.Add(Me.groupBox3)
-        Me.tabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.tabPage2.Location = New System.Drawing.Point(4, 38)
         Me.tabPage2.Name = "tabPage2"
         Me.tabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage2.Size = New System.Drawing.Size(1325, 562)
+        Me.tabPage2.Size = New System.Drawing.Size(1325, 558)
         Me.tabPage2.TabIndex = 2
-        Me.tabPage2.Text = "Consultar Resumen"
+        Me.tabPage2.Text = "Consultar Resumen    "
         Me.tabPage2.UseVisualStyleBackColor = True
         '
         'groupBox3
         '
-        Me.groupBox3.BackColor = System.Drawing.Color.AliceBlue
+        Me.groupBox3.BackColor = System.Drawing.Color.White
         Me.groupBox3.Controls.Add(Me.label15)
         Me.groupBox3.Controls.Add(Me.button9)
         Me.groupBox3.Controls.Add(Me.button7)
@@ -710,7 +711,7 @@ Partial Class Form1
         Me.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox3.Location = New System.Drawing.Point(3, 3)
         Me.groupBox3.Name = "groupBox3"
-        Me.groupBox3.Size = New System.Drawing.Size(1319, 556)
+        Me.groupBox3.Size = New System.Drawing.Size(1319, 552)
         Me.groupBox3.TabIndex = 0
         Me.groupBox3.TabStop = False
         '
@@ -720,7 +721,7 @@ Partial Class Form1
         Me.label15.AutoSize = True
         Me.label15.BackColor = System.Drawing.Color.Transparent
         Me.label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label15.Location = New System.Drawing.Point(15, 534)
+        Me.label15.Location = New System.Drawing.Point(15, 530)
         Me.label15.Name = "label15"
         Me.label15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label15.Size = New System.Drawing.Size(104, 15)
@@ -816,21 +817,21 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView3.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView3.DefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridView3.Location = New System.Drawing.Point(16, 56)
         Me.dataGridView3.MultiSelect = False
         Me.dataGridView3.Name = "dataGridView3"
         Me.dataGridView3.ReadOnly = True
         Me.dataGridView3.RowHeadersVisible = False
         Me.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView3.Size = New System.Drawing.Size(1278, 475)
+        Me.dataGridView3.Size = New System.Drawing.Size(1278, 471)
         Me.dataGridView3.TabIndex = 19
         '
         'button6
@@ -871,17 +872,17 @@ Partial Class Form1
         Me.tabPage3.BackgroundImage = CType(resources.GetObject("tabPage3.BackgroundImage"), System.Drawing.Image)
         Me.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.tabPage3.Controls.Add(Me.groupBox6)
-        Me.tabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.tabPage3.Location = New System.Drawing.Point(4, 38)
         Me.tabPage3.Name = "tabPage3"
         Me.tabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage3.Size = New System.Drawing.Size(1325, 562)
+        Me.tabPage3.Size = New System.Drawing.Size(1325, 558)
         Me.tabPage3.TabIndex = 3
-        Me.tabPage3.Text = "GESTPER"
+        Me.tabPage3.Text = "GESTPER    "
         Me.tabPage3.UseVisualStyleBackColor = True
         '
         'groupBox6
         '
-        Me.groupBox6.BackColor = System.Drawing.Color.AliceBlue
+        Me.groupBox6.BackColor = System.Drawing.Color.White
         Me.groupBox6.Controls.Add(Me.groupBox9)
         Me.groupBox6.Controls.Add(Me.button10)
         Me.groupBox6.Controls.Add(Me.label20)
@@ -898,7 +899,7 @@ Partial Class Form1
         Me.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox6.Location = New System.Drawing.Point(3, 3)
         Me.groupBox6.Name = "groupBox6"
-        Me.groupBox6.Size = New System.Drawing.Size(1319, 556)
+        Me.groupBox6.Size = New System.Drawing.Size(1319, 552)
         Me.groupBox6.TabIndex = 1
         Me.groupBox6.TabStop = False
         '
@@ -907,7 +908,7 @@ Partial Class Form1
         Me.groupBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox9.Controls.Add(Me.checkBox2)
         Me.groupBox9.Controls.Add(Me.checkBox1)
-        Me.groupBox9.Location = New System.Drawing.Point(767, 519)
+        Me.groupBox9.Location = New System.Drawing.Point(767, 515)
         Me.groupBox9.Name = "groupBox9"
         Me.groupBox9.Size = New System.Drawing.Size(527, 33)
         Me.groupBox9.TabIndex = 27
@@ -1078,7 +1079,7 @@ Partial Class Form1
         Me.label16.AutoSize = True
         Me.label16.BackColor = System.Drawing.Color.Transparent
         Me.label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label16.Location = New System.Drawing.Point(15, 528)
+        Me.label16.Location = New System.Drawing.Point(15, 524)
         Me.label16.Name = "label16"
         Me.label16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label16.Size = New System.Drawing.Size(104, 15)
@@ -1155,32 +1156,41 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView4.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView4.DefaultCellStyle = DataGridViewCellStyle4
         Me.dataGridView4.Location = New System.Drawing.Point(16, 56)
         Me.dataGridView4.MultiSelect = False
         Me.dataGridView4.Name = "dataGridView4"
         Me.dataGridView4.RowHeadersVisible = False
         Me.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView4.Size = New System.Drawing.Size(1278, 457)
+        Me.dataGridView4.Size = New System.Drawing.Size(1278, 453)
         Me.dataGridView4.TabIndex = 19
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(14, 10)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(206, 21)
+        Me.Label21.TabIndex = 11
+        Me.Label21.Text = "Exportar Datos a SQL Server"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.AliceBlue
-        Me.ClientSize = New System.Drawing.Size(1351, 664)
+        Me.ClientSize = New System.Drawing.Size(1351, 599)
+        Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.gradientTab1)
         Me.Name = "Form1"
-        Me.Text = "Exportar Datos a SQL Server"
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.contextVerSelec.ResumeLayout(False)
         Me.contextOcultarSelec.ResumeLayout(False)
@@ -1207,6 +1217,7 @@ Partial Class Form1
         Me.groupBox8.PerformLayout()
         CType(Me.dataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -1255,7 +1266,7 @@ Partial Class Form1
     Friend WithEvents button6 As System.Windows.Forms.Button
     Friend WithEvents label9 As System.Windows.Forms.Label
     Friend WithEvents comboBox4 As System.Windows.Forms.ComboBox
-    Friend WithEvents gradientTab1 As _2_Business_Layer.GradientTab
+    Friend WithEvents gradientTab1 As New MetroFramework.Controls.MetroTabControl '_2_Business_Layer.GradientTab
     Friend WithEvents tabPage0 As System.Windows.Forms.TabPage
     Friend WithEvents tabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents tabPage2 As System.Windows.Forms.TabPage
@@ -1294,6 +1305,7 @@ Partial Class Form1
     Friend WithEvents toolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button15 As Windows.Forms.Button
     Friend WithEvents btnVolver As Windows.Forms.Button
+    Friend WithEvents Label21 As Windows.Forms.Label
 End Class
 
 
