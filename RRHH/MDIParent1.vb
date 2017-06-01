@@ -411,4 +411,82 @@ Public Class MDIParent1
         End If
 
     End Sub
+
+    Private Sub Exportador_Click(sender As Object, e As EventArgs) Handles Tle_Exportador.Click
+        If RevisaAcceso(91000) Then
+            TiempoIngreso.Enabled = False
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Lbl_Cod_ID.Text)
+            newMDIChild.MdiParent = Me
+            newMDIChild.Show()
+            newMDIChild.ControlBox = False
+
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            'newMDIChild.WindowState = FormWindowState.Maximized
+            Me.Panel2.Visible = False
+        End If
+    End Sub
+
+    Private Sub Tle_SolAlmuerzo_Click(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.Click
+        If RevisaAcceso(31001) Then
+            Dim NewMDIChild As New Frm_SolicitudColacion()
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            If RevisaAcceso(30001) Then
+                TiempoIngreso.Enabled = False
+            Else
+                TiempoIngreso.Enabled = True
+            End If
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            NewMDIChild.WindowState = FormWindowState.Maximized
+        Else
+            MsgBox("Lo lamento !" & vbNewLine & "Solicite autorización en Dto. RRHH", MsgBoxStyle.Exclamation, "Error!")
+        End If
+    End Sub
+
+    Private Sub Tle_Permisos_Click(sender As Object, e As EventArgs) Handles Tle_Permisos.Click
+        If RevisaAcceso(90000) Then
+            TiempoIngreso.Enabled = False
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            Dim NewMDIChild As New FrmSolicPermHrasExt(0)
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        End If
+    End Sub
+
+    Private Sub Tle_Liquidacion_Click(sender As Object, e As EventArgs) Handles Tle_Liquidacion.Click
+        If RevisaAcceso(31003) Then
+            Dim NewMDIChild As New Frm_Liquidaciones()
+
+
+
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = True
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            NewMDIChild.WindowState = FormWindowState.Maximized
+        End If
+    End Sub
 End Class

@@ -782,6 +782,9 @@
     <None Include="Resources\Btn_Colaciones1.jpg" />
     <None Include="Resources\Btn_Colaciones2.jpg" />
     <None Include="Resources\Captura0.JPG" />
+    <None Include="Resources\clockwise-rotation.png" />
+    <None Include="Resources\clockwise-rotation %281%29.png" />
+    <None Include="Resources\cutlery.png" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />
@@ -798,6 +801,8 @@
     <None Include="Resources\Menu1.jpg" />
     <Content Include="Resources\MINDUGAR8.BMP" />
     <None Include="Resources\MINDUGAR81.BMP" />
+    <None Include="Resources\money-report.png" />
+    <None Include="Resources\people-check.png" />
     <Content Include="Resources\PermisosPers.jpg" />
     <None Include="Resources\PermisosPers1.jpg" />
     <Content Include="Resources\PermisosSistema.png" />

@@ -29,7 +29,6 @@ Partial Class Login
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.Bttn_Login = New MetroFramework.Controls.MetroButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -47,10 +46,11 @@ Partial Class Login
         Me.Lbl__ConfPass = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtBx_Password
@@ -116,21 +116,10 @@ Partial Class Login
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(192, 191)
         Me.TableLayoutPanel1.TabIndex = 10
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.RRHH.My.Resources.Resources.Logo1
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(186, 185)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.TableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -147,7 +136,7 @@ Partial Class Login
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(480, 40)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(478, 40)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
@@ -166,9 +155,9 @@ Partial Class Login
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label12.Location = New System.Drawing.Point(125, 155)
+        Me.Label12.Location = New System.Drawing.Point(125, 153)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(53, 50)
+        Me.Label12.Size = New System.Drawing.Size(55, 54)
         Me.Label12.TabIndex = 24
         Me.Label12.Text = "K"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -182,9 +171,9 @@ Partial Class Login
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label11.Location = New System.Drawing.Point(65, 155)
+        Me.Label11.Location = New System.Drawing.Point(64, 153)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(52, 50)
+        Me.Label11.Size = New System.Drawing.Size(55, 54)
         Me.Label11.TabIndex = 23
         Me.Label11.Text = "0"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -198,9 +187,9 @@ Partial Class Login
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label10.Location = New System.Drawing.Point(5, 155)
+        Me.Label10.Location = New System.Drawing.Point(3, 153)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 50)
+        Me.Label10.Size = New System.Drawing.Size(55, 54)
         Me.Label10.TabIndex = 22
         Me.Label10.Text = "C"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -214,9 +203,9 @@ Partial Class Login
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label9.Location = New System.Drawing.Point(125, 104)
+        Me.Label9.Location = New System.Drawing.Point(125, 102)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(53, 49)
+        Me.Label9.Size = New System.Drawing.Size(55, 51)
         Me.Label9.TabIndex = 21
         Me.Label9.Text = "9"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -230,9 +219,9 @@ Partial Class Login
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label8.Location = New System.Drawing.Point(65, 104)
+        Me.Label8.Location = New System.Drawing.Point(64, 102)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 49)
+        Me.Label8.Size = New System.Drawing.Size(55, 51)
         Me.Label8.TabIndex = 20
         Me.Label8.Text = "8"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -246,9 +235,9 @@ Partial Class Login
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(5, 104)
+        Me.Label7.Location = New System.Drawing.Point(3, 102)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(52, 49)
+        Me.Label7.Size = New System.Drawing.Size(55, 51)
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "7"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -262,9 +251,9 @@ Partial Class Login
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label6.Location = New System.Drawing.Point(125, 53)
+        Me.Label6.Location = New System.Drawing.Point(125, 51)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 49)
+        Me.Label6.Size = New System.Drawing.Size(55, 51)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "6"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -278,9 +267,9 @@ Partial Class Login
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(65, 53)
+        Me.Label5.Location = New System.Drawing.Point(64, 51)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(52, 49)
+        Me.Label5.Size = New System.Drawing.Size(55, 51)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "5"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -294,9 +283,9 @@ Partial Class Login
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label4.Location = New System.Drawing.Point(5, 53)
+        Me.Label4.Location = New System.Drawing.Point(3, 51)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 49)
+        Me.Label4.Size = New System.Drawing.Size(55, 51)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "4"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -310,9 +299,9 @@ Partial Class Login
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label3.Location = New System.Drawing.Point(125, 2)
+        Me.Label3.Location = New System.Drawing.Point(125, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 49)
+        Me.Label3.Size = New System.Drawing.Size(55, 51)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "3"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -326,9 +315,9 @@ Partial Class Login
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label2.Location = New System.Drawing.Point(65, 2)
+        Me.Label2.Location = New System.Drawing.Point(64, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 49)
+        Me.Label2.Size = New System.Drawing.Size(55, 51)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "2"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -342,9 +331,9 @@ Partial Class Login
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label1.Location = New System.Drawing.Point(5, 2)
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 49)
+        Me.Label1.Size = New System.Drawing.Size(55, 51)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "1"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -384,6 +373,16 @@ Partial Class Login
         '
         Me.MetroStyleManager1.Owner = Nothing
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.RRHH.My.Resources.Resources.Logo1
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(186, 185)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -404,10 +403,10 @@ Partial Class Login
         Me.MinimizeBox = False
         Me.Name = "Login"
         Me.TableLayoutPanel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
