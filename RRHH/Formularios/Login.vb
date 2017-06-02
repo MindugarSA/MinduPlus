@@ -20,6 +20,8 @@ Public Class Login
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
+        MDIParent1.Lbl_Nombre.Visible = False
+        MDIParent1.Label2.Visible = False
         MDIParent1.TxtBx_Empresa.Text = ""
         MDIParent1.TxtBx_UserName.Text = ""
         MDIParent1.Lbl_RutTrab.Text = ""
@@ -55,8 +57,14 @@ Public Class Login
 
                 If dt.Rows(0)("IdEstado") >= 0 Then
                     NewSystem = True
-                    MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString
-                    MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString
+
+                    MDIParent1.Lbl_Nombre.Visible = True
+                    MDIParent1.Label2.Visible = True
+                    MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                    MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+
+                    MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                    MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
                     MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
                     MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
                 End If
@@ -122,8 +130,14 @@ Public Class Login
                     TxtBx_ConfPass.Tag = 1
                     'p_User_Pass = ""
                 End If
-                MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString
-                MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString
+
+                MDIParent1.Lbl_Nombre.Visible = True
+                MDIParent1.Label2.Visible = True
+                MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+
+                MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
                 MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
                 MDIParent1.Lbl_Cod_ID.Refresh()
                 MDIParent1.Lbl_RutTrab.Text = TxtBx_UserID.Text
@@ -317,10 +331,6 @@ Public Class Login
 
 
     End Sub
-
-
-
-
 
 
     Private Sub TxtBx_Select_Click(sender As Object, e As EventArgs) Handles TxtBx_Password.Click

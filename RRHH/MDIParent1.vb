@@ -489,4 +489,83 @@ Public Class MDIParent1
             NewMDIChild.WindowState = FormWindowState.Maximized
         End If
     End Sub
+
+    Private Sub Tle_MantencionColacione_Click(sender As Object, e As EventArgs) Handles Tle_MantencionColacione.Click
+
+        If RevisaAcceso(31002) Then
+            Dim NewMDIChild As New Frm_MantencionColaciones()
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            NewMDIChild.WindowState = FormWindowState.Maximized
+        End If
+
+    End Sub
+
+    Private Sub Tle_AlmuAdicional_Click(sender As Object, e As EventArgs) Handles Tle_AlmuAdicional.Click
+        If RevisaAcceso(30001) Then
+
+            Dim NewMDIChild As New Frm_SolicitudGerencial()
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            'TiempoIngreso.Enabled = True
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            NewMDIChild.WindowState = FormWindowState.Maximized
+        End If
+    End Sub
+
+    Private Sub Tle_InformesAlmu_Click(sender As Object, e As EventArgs) Handles Tle_InformesAlmu.Click
+        If RevisaAcceso(30003) Then
+            Dim NewMDIChild As New Frm_Informes()
+
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            'TiempoIngreso.Enabled = True
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            NewMDIChild.WindowState = FormWindowState.Maximized
+        End If
+    End Sub
+
+    Private Sub Tle_Configuracion_Click(sender As Object, e As EventArgs) Handles Tle_Configuracion.Click
+
+        If RevisaAcceso(30002) Then
+
+            Dim NewMDIChild As New Frm_Parametros2()
+            For Each ChildForm As Form In Me.MdiChildren
+                ChildForm.Close()
+            Next
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            'TiempoIngreso.Enabled = True
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            NewMDIChild.WindowState = FormWindowState.Maximized
+
+        End If
+
+    End Sub
 End Class

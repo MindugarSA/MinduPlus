@@ -27,14 +27,24 @@ Partial Class MDIParent1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIParent1))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UndoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RedoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,28 +56,17 @@ Partial Class MDIParent1
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TlStrpSttsLbl_Proceso = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TlStrpSttsLbl_SQL = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
-        Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
-        Me.Lbl_Cod_Interno = New System.Windows.Forms.Label()
-        Me.Lbl_RutEmpresa = New System.Windows.Forms.Label()
-        Me.Lbl_RutTrab = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Lbl_Cod_ID = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
+        Me.Tle_Configuracion = New MetroFramework.Controls.MetroTile()
+        Me.Tle_InformesAlmu = New MetroFramework.Controls.MetroTile()
+        Me.Tle_MantencionColacione = New MetroFramework.Controls.MetroTile()
+        Me.Tle_AlmuAdicional = New MetroFramework.Controls.MetroTile()
         Me.Tle_Permisos = New MetroFramework.Controls.MetroTile()
         Me.Tle_Liquidacion = New MetroFramework.Controls.MetroTile()
         Me.Tle_SolAlmuerzo = New MetroFramework.Controls.MetroTile()
@@ -80,28 +79,34 @@ Partial Class MDIParent1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Bttn_MantencionColacione = New System.Windows.Forms.Button()
         Me.Btt_SolAlmuerzo = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Lbl_Nombre = New System.Windows.Forms.Label()
+        Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
+        Me.Lbl_Cod_Interno = New System.Windows.Forms.Label()
+        Me.Lbl_RutEmpresa = New System.Windows.Forms.Label()
+        Me.Lbl_RutTrab = New System.Windows.Forms.Label()
+        Me.Button4 = New MetroFramework.Controls.MetroButton()
         Me.PcturBx_Image = New System.Windows.Forms.PictureBox()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Lbl_Cod_ID = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UndoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RedoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -121,10 +126,37 @@ Partial Class MDIParent1
         Me.FileMenu.Size = New System.Drawing.Size(60, 20)
         Me.FileMenu.Text = "&Archivo"
         '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.Image = CType(resources.GetObject("NewToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.NewToolStripMenuItem.Text = "&Nuevo"
+        '
+        'OpenToolStripMenuItem
+        '
+        Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.OpenToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
+        Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.OpenToolStripMenuItem.Text = "&Abrir"
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(203, 6)
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Image = CType(resources.GetObject("SaveToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.SaveToolStripMenuItem.Text = "&Guardar"
         '
         'SaveAsToolStripMenuItem
         '
@@ -136,6 +168,23 @@ Partial Class MDIParent1
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(203, 6)
+        '
+        'PrintToolStripMenuItem
+        '
+        Me.PrintToolStripMenuItem.Image = CType(resources.GetObject("PrintToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PrintToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
+        Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.PrintToolStripMenuItem.Text = "&Imprimir"
+        '
+        'PrintPreviewToolStripMenuItem
+        '
+        Me.PrintPreviewToolStripMenuItem.Image = CType(resources.GetObject("PrintPreviewToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PrintPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
+        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.PrintPreviewToolStripMenuItem.Text = "&Vista previa de impresión"
         '
         'PrintSetupToolStripMenuItem
         '
@@ -161,10 +210,55 @@ Partial Class MDIParent1
         Me.EditMenu.Size = New System.Drawing.Size(49, 20)
         Me.EditMenu.Text = "&Editar"
         '
+        'UndoToolStripMenuItem
+        '
+        Me.UndoToolStripMenuItem.Image = CType(resources.GetObject("UndoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.UndoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem"
+        Me.UndoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
+        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.UndoToolStripMenuItem.Text = "&Deshacer"
+        '
+        'RedoToolStripMenuItem
+        '
+        Me.RedoToolStripMenuItem.Image = CType(resources.GetObject("RedoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.RedoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem"
+        Me.RedoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
+        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.RedoToolStripMenuItem.Text = "&Rehacer"
+        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(201, 6)
+        '
+        'CutToolStripMenuItem
+        '
+        Me.CutToolStripMenuItem.Image = CType(resources.GetObject("CutToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
+        Me.CutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.CutToolStripMenuItem.Text = "Cor&tar"
+        '
+        'CopyToolStripMenuItem
+        '
+        Me.CopyToolStripMenuItem.Image = CType(resources.GetObject("CopyToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
+        Me.CopyToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.CopyToolStripMenuItem.Text = "&Copiar"
+        '
+        'PasteToolStripMenuItem
+        '
+        Me.PasteToolStripMenuItem.Image = CType(resources.GetObject("PasteToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
+        Me.PasteToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
+        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.PasteToolStripMenuItem.Text = "&Pegar"
         '
         'ToolStripSeparator7
         '
@@ -250,10 +344,19 @@ Partial Class MDIParent1
         Me.ToolStripButton2.Size = New System.Drawing.Size(23, 36)
         Me.ToolStripButton2.Text = "ToolStripButton2"
         '
+        'ToolStripButton3
+        '
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(36, 36)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
+        '
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpSttsLbl_Proceso, Me.TlStrpSttsLbl_SQL, Me.ToolStripStatusLabel, Me.ToolStripProgressBar1})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 469)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 696)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Size = New System.Drawing.Size(1111, 26)
         Me.StatusStrip.TabIndex = 7
@@ -298,217 +401,75 @@ Partial Class MDIParent1
         Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 20)
         Me.ToolStripProgressBar1.Value = 30
         '
-        'ImageList1
+        'Tle_Configuracion
         '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Empty
-        Me.ImageList1.Images.SetKeyName(0, "Btn_Colaciones.jpg")
+        Me.Tle_Configuracion.ActiveControl = Nothing
+        Me.Tle_Configuracion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_Configuracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Tle_Configuracion.Location = New System.Drawing.Point(984, 519)
+        Me.Tle_Configuracion.Name = "Tle_Configuracion"
+        Me.Tle_Configuracion.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_Configuracion.TabIndex = 16
+        Me.Tle_Configuracion.Text = "Configuraciones"
+        Me.Tle_Configuracion.TileImage = Global.RRHH.My.Resources.Resources.settings
+        Me.ToolTip.SetToolTip(Me.Tle_Configuracion, "Ingreso de Menu")
+        Me.Tle_Configuracion.UseCustomBackColor = True
+        Me.Tle_Configuracion.UseSelectable = True
+        Me.Tle_Configuracion.UseTileImage = True
         '
-        'Panel1
+        'Tle_InformesAlmu
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
-        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1111, 63)
-        Me.Panel1.TabIndex = 10
+        Me.Tle_InformesAlmu.ActiveControl = Nothing
+        Me.Tle_InformesAlmu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_InformesAlmu.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(984, 406)
+        Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
+        Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_InformesAlmu.TabIndex = 15
+        Me.Tle_InformesAlmu.Text = "Informes"
+        Me.Tle_InformesAlmu.TileImage = Global.RRHH.My.Resources.Resources.list_document_interface_symbol
+        Me.ToolTip.SetToolTip(Me.Tle_InformesAlmu, "Ingreso de Menu")
+        Me.Tle_InformesAlmu.UseCustomBackColor = True
+        Me.Tle_InformesAlmu.UseSelectable = True
+        Me.Tle_InformesAlmu.UseTileImage = True
         '
-        'TableLayoutPanel2
+        'Tle_MantencionColacione
         '
-        Me.TableLayoutPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.AliceBlue
-        Me.TableLayoutPanel2.ColumnCount = 6
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 159.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TxtBx_UserName, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TxtBx_Empresa, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Cod_Interno, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutEmpresa, 2, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutTrab, 3, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button4, 5, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.PcturBx_Image, 4, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(746, 4)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 2
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(358, 56)
-        Me.TableLayoutPanel2.TabIndex = 14
-        Me.TableLayoutPanel2.UseWaitCursor = True
+        Me.Tle_MantencionColacione.ActiveControl = Nothing
+        Me.Tle_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(151, Byte), Integer))
+        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(984, 180)
+        Me.Tle_MantencionColacione.Name = "Tle_MantencionColacione"
+        Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_MantencionColacione.TabIndex = 14
+        Me.Tle_MantencionColacione.Text = "Ingreso Menu"
+        Me.Tle_MantencionColacione.TileImage = Global.RRHH.My.Resources.Resources.menu1
+        Me.ToolTip.SetToolTip(Me.Tle_MantencionColacione, "Ingreso de Menu")
+        Me.Tle_MantencionColacione.UseCustomBackColor = True
+        Me.Tle_MantencionColacione.UseSelectable = True
+        Me.Tle_MantencionColacione.UseTileImage = True
         '
-        'Label2
+        'Tle_AlmuAdicional
         '
-        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 34)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 16)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Empresa"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label2.UseWaitCursor = True
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 16)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label1.UseWaitCursor = True
-        '
-        'TxtBx_UserName
-        '
-        Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_UserName.Location = New System.Drawing.Point(61, 4)
-        Me.TxtBx_UserName.Name = "TxtBx_UserName"
-        Me.TxtBx_UserName.ReadOnly = True
-        Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
-        Me.TxtBx_UserName.TabIndex = 3
-        Me.TxtBx_UserName.UseWaitCursor = True
-        '
-        'TxtBx_Empresa
-        '
-        Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(61, 32)
-        Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
-        Me.TxtBx_Empresa.ReadOnly = True
-        Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
-        Me.TxtBx_Empresa.TabIndex = 1
-        Me.TxtBx_Empresa.UseWaitCursor = True
-        '
-        'Lbl_Cod_Interno
-        '
-        Me.Lbl_Cod_Interno.AutoSize = True
-        Me.Lbl_Cod_Interno.Location = New System.Drawing.Point(220, 0)
-        Me.Lbl_Cod_Interno.Name = "Lbl_Cod_Interno"
-        Me.Lbl_Cod_Interno.Size = New System.Drawing.Size(2, 28)
-        Me.Lbl_Cod_Interno.TabIndex = 4
-        Me.Lbl_Cod_Interno.Text = "Cod_Int"
-        Me.Lbl_Cod_Interno.UseWaitCursor = True
-        '
-        'Lbl_RutEmpresa
-        '
-        Me.Lbl_RutEmpresa.AutoSize = True
-        Me.TableLayoutPanel2.SetColumnSpan(Me.Lbl_RutEmpresa, 2)
-        Me.Lbl_RutEmpresa.Location = New System.Drawing.Point(220, 28)
-        Me.Lbl_RutEmpresa.Name = "Lbl_RutEmpresa"
-        Me.Lbl_RutEmpresa.Size = New System.Drawing.Size(11, 28)
-        Me.Lbl_RutEmpresa.TabIndex = 5
-        Me.Lbl_RutEmpresa.Text = "RutEmpresa"
-        Me.Lbl_RutEmpresa.UseWaitCursor = True
-        Me.Lbl_RutEmpresa.Visible = False
-        '
-        'Lbl_RutTrab
-        '
-        Me.Lbl_RutTrab.AutoSize = True
-        Me.Lbl_RutTrab.Location = New System.Drawing.Point(228, 0)
-        Me.Lbl_RutTrab.Name = "Lbl_RutTrab"
-        Me.Lbl_RutTrab.Size = New System.Drawing.Size(3, 28)
-        Me.Lbl_RutTrab.TabIndex = 6
-        Me.Lbl_RutTrab.Text = "RutTrab"
-        Me.Lbl_RutTrab.UseWaitCursor = True
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Button4.Location = New System.Drawing.Point(298, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TableLayoutPanel2.SetRowSpan(Me.Button4, 2)
-        Me.Button4.Size = New System.Drawing.Size(50, 50)
-        Me.Button4.TabIndex = 17
-        Me.Button4.Text = "Cerrar Sesión"
-        Me.Button4.UseVisualStyleBackColor = True
-        Me.Button4.UseWaitCursor = True
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.AliceBlue
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Lbl_Cod_ID, 0, 1)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 5)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(523, 55)
-        Me.TableLayoutPanel1.TabIndex = 12
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(128, 1)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(267, 25)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Sistema de Recursos Humanos"
-        '
-        'Lbl_Cod_ID
-        '
-        Me.Lbl_Cod_ID.AutoSize = True
-        Me.Lbl_Cod_ID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 27)
-        Me.Lbl_Cod_ID.Name = "Lbl_Cod_ID"
-        Me.Lbl_Cod_ID.Size = New System.Drawing.Size(64, 13)
-        Me.Lbl_Cod_ID.TabIndex = 1
-        Me.Lbl_Cod_ID.Text = "Lbl_Cod_ID"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel2.Controls.Add(Me.Tle_Permisos)
-        Me.Panel2.Controls.Add(Me.Tle_Liquidacion)
-        Me.Panel2.Controls.Add(Me.Tle_SolAlmuerzo)
-        Me.Panel2.Controls.Add(Me.Tle_Exportador)
-        Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Controls.Add(Me.Bttn_Pendiente)
-        Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.Bttn_Parametros)
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Bttn_MantencionColacione)
-        Me.Panel2.Controls.Add(Me.Btt_SolAlmuerzo)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(0, 63)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1111, 406)
-        Me.Panel2.TabIndex = 11
-        '
-        'TiempoIngreso
-        '
-        Me.TiempoIngreso.Interval = 1000
+        Me.Tle_AlmuAdicional.ActiveControl = Nothing
+        Me.Tle_AlmuAdicional.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(71, Byte), Integer))
+        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(984, 293)
+        Me.Tle_AlmuAdicional.Name = "Tle_AlmuAdicional"
+        Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_AlmuAdicional.TabIndex = 13
+        Me.Tle_AlmuAdicional.Text = "Adicionales"
+        Me.Tle_AlmuAdicional.TileImage = Global.RRHH.My.Resources.Resources.restaurant
+        Me.ToolTip.SetToolTip(Me.Tle_AlmuAdicional, "Solicitar Almuerzos Adicionales")
+        Me.Tle_AlmuAdicional.UseCustomBackColor = True
+        Me.Tle_AlmuAdicional.UseSelectable = True
+        Me.Tle_AlmuAdicional.UseTileImage = True
         '
         'Tle_Permisos
         '
         Me.Tle_Permisos.ActiveControl = Nothing
         Me.Tle_Permisos.BackColor = System.Drawing.Color.DarkMagenta
-        Me.Tle_Permisos.Location = New System.Drawing.Point(254, 7)
+        Me.Tle_Permisos.Location = New System.Drawing.Point(254, 11)
         Me.Tle_Permisos.Name = "Tle_Permisos"
         Me.Tle_Permisos.Size = New System.Drawing.Size(118, 107)
         Me.Tle_Permisos.TabIndex = 12
@@ -523,7 +484,7 @@ Partial Class MDIParent1
         '
         Me.Tle_Liquidacion.ActiveControl = Nothing
         Me.Tle_Liquidacion.BackColor = System.Drawing.Color.Green
-        Me.Tle_Liquidacion.Location = New System.Drawing.Point(135, 7)
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(135, 11)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
         Me.Tle_Liquidacion.TabIndex = 11
@@ -538,7 +499,7 @@ Partial Class MDIParent1
         '
         Me.Tle_SolAlmuerzo.ActiveControl = Nothing
         Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(12, 7)
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(12, 11)
         Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
         Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_SolAlmuerzo.TabIndex = 10
@@ -553,7 +514,7 @@ Partial Class MDIParent1
         '
         Me.Tle_Exportador.ActiveControl = Nothing
         Me.Tle_Exportador.BackColor = System.Drawing.Color.Orange
-        Me.Tle_Exportador.Location = New System.Drawing.Point(378, 7)
+        Me.Tle_Exportador.Location = New System.Drawing.Point(378, 11)
         Me.Tle_Exportador.Name = "Tle_Exportador"
         Me.Tle_Exportador.Size = New System.Drawing.Size(110, 107)
         Me.Tle_Exportador.TabIndex = 9
@@ -571,7 +532,7 @@ Partial Class MDIParent1
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button6.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button6.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button6.Location = New System.Drawing.Point(244, 120)
+        Me.Button6.Location = New System.Drawing.Point(12, 531)
         Me.Button6.Name = "Button6"
         Me.Button6.Padding = New System.Windows.Forms.Padding(5)
         Me.Button6.Size = New System.Drawing.Size(110, 90)
@@ -591,7 +552,7 @@ Partial Class MDIParent1
         Me.Bttn_Pendiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bttn_Pendiente.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Bttn_Pendiente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Bttn_Pendiente.Location = New System.Drawing.Point(360, 121)
+        Me.Bttn_Pendiente.Location = New System.Drawing.Point(128, 531)
         Me.Bttn_Pendiente.Name = "Bttn_Pendiente"
         Me.Bttn_Pendiente.Padding = New System.Windows.Forms.Padding(5)
         Me.Bttn_Pendiente.Size = New System.Drawing.Size(98, 89)
@@ -611,7 +572,7 @@ Partial Class MDIParent1
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button5.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button5.Location = New System.Drawing.Point(993, 112)
+        Me.Button5.Location = New System.Drawing.Point(390, 434)
         Me.Button5.Name = "Button5"
         Me.Button5.Padding = New System.Windows.Forms.Padding(5)
         Me.Button5.Size = New System.Drawing.Size(110, 90)
@@ -620,6 +581,7 @@ Partial Class MDIParent1
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ToolTip.SetToolTip(Me.Button5, "Solicitar almuerzo Adicionales")
         Me.Button5.UseVisualStyleBackColor = False
+        Me.Button5.Visible = False
         '
         'Bttn_Parametros
         '
@@ -629,7 +591,7 @@ Partial Class MDIParent1
         Me.Bttn_Parametros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Bttn_Parametros.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Bttn_Parametros.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_Parametros.Location = New System.Drawing.Point(993, 304)
+        Me.Bttn_Parametros.Location = New System.Drawing.Point(390, 530)
         Me.Bttn_Parametros.Name = "Bttn_Parametros"
         Me.Bttn_Parametros.Padding = New System.Windows.Forms.Padding(5)
         Me.Bttn_Parametros.Size = New System.Drawing.Size(110, 90)
@@ -638,6 +600,7 @@ Partial Class MDIParent1
         Me.Bttn_Parametros.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ToolTip.SetToolTip(Me.Bttn_Parametros, "Control de Permisos")
         Me.Bttn_Parametros.UseVisualStyleBackColor = False
+        Me.Bttn_Parametros.Visible = False
         '
         'Button3
         '
@@ -646,7 +609,7 @@ Partial Class MDIParent1
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button3.Location = New System.Drawing.Point(128, 120)
+        Me.Button3.Location = New System.Drawing.Point(128, 435)
         Me.Button3.Name = "Button3"
         Me.Button3.Padding = New System.Windows.Forms.Padding(5)
         Me.Button3.Size = New System.Drawing.Size(110, 90)
@@ -665,7 +628,7 @@ Partial Class MDIParent1
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.Location = New System.Drawing.Point(993, 208)
+        Me.Button2.Location = New System.Drawing.Point(277, 530)
         Me.Button2.Name = "Button2"
         Me.Button2.Padding = New System.Windows.Forms.Padding(5)
         Me.Button2.Size = New System.Drawing.Size(107, 90)
@@ -674,6 +637,7 @@ Partial Class MDIParent1
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ToolTip.SetToolTip(Me.Button2, "Informes de Colaciones")
         Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.Visible = False
         '
         'Bttn_MantencionColacione
         '
@@ -683,7 +647,7 @@ Partial Class MDIParent1
         Me.Bttn_MantencionColacione.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Bttn_MantencionColacione.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Bttn_MantencionColacione.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_MantencionColacione.Location = New System.Drawing.Point(993, 16)
+        Me.Bttn_MantencionColacione.Location = New System.Drawing.Point(274, 434)
         Me.Bttn_MantencionColacione.Name = "Bttn_MantencionColacione"
         Me.Bttn_MantencionColacione.Padding = New System.Windows.Forms.Padding(5)
         Me.Bttn_MantencionColacione.Size = New System.Drawing.Size(110, 90)
@@ -692,6 +656,7 @@ Partial Class MDIParent1
         Me.Bttn_MantencionColacione.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ToolTip.SetToolTip(Me.Bttn_MantencionColacione, "Ingreso de Menu")
         Me.Bttn_MantencionColacione.UseVisualStyleBackColor = False
+        Me.Bttn_MantencionColacione.Visible = False
         '
         'Btt_SolAlmuerzo
         '
@@ -701,7 +666,7 @@ Partial Class MDIParent1
         Me.Btt_SolAlmuerzo.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Btt_SolAlmuerzo.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.Btt_SolAlmuerzo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btt_SolAlmuerzo.Location = New System.Drawing.Point(12, 120)
+        Me.Btt_SolAlmuerzo.Location = New System.Drawing.Point(12, 435)
         Me.Btt_SolAlmuerzo.Name = "Btt_SolAlmuerzo"
         Me.Btt_SolAlmuerzo.Padding = New System.Windows.Forms.Padding(5)
         Me.Btt_SolAlmuerzo.Size = New System.Drawing.Size(110, 90)
@@ -712,139 +677,257 @@ Partial Class MDIParent1
         Me.Btt_SolAlmuerzo.UseVisualStyleBackColor = False
         Me.Btt_SolAlmuerzo.Visible = False
         '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Empty
+        Me.ImageList1.Images.SetKeyName(0, "Btn_Colaciones.jpg")
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1111, 63)
+        Me.Panel1.TabIndex = 10
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.White
+        Me.TableLayoutPanel2.ColumnCount = 5
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Nombre, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Cod_Interno, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutEmpresa, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutTrab, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Button4, 4, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.PcturBx_Image, 3, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(713, 5)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 2
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(395, 55)
+        Me.TableLayoutPanel2.TabIndex = 14
+        Me.TableLayoutPanel2.UseWaitCursor = True
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 33)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(244, 16)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Empresa"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label2.UseWaitCursor = True
+        '
+        'Lbl_Nombre
+        '
+        Me.Lbl_Nombre.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Lbl_Nombre.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Nombre.Location = New System.Drawing.Point(3, 5)
+        Me.Lbl_Nombre.Name = "Lbl_Nombre"
+        Me.Lbl_Nombre.Size = New System.Drawing.Size(244, 16)
+        Me.Lbl_Nombre.TabIndex = 0
+        Me.Lbl_Nombre.Text = "Nombre"
+        Me.Lbl_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Lbl_Nombre.UseWaitCursor = True
+        '
+        'TxtBx_Empresa
+        '
+        Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(954, 37)
+        Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
+        Me.TxtBx_Empresa.ReadOnly = True
+        Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
+        Me.TxtBx_Empresa.TabIndex = 1
+        Me.TxtBx_Empresa.UseWaitCursor = True
+        Me.TxtBx_Empresa.Visible = False
+        '
+        'Lbl_Cod_Interno
+        '
+        Me.Lbl_Cod_Interno.AutoSize = True
+        Me.Lbl_Cod_Interno.Location = New System.Drawing.Point(253, 0)
+        Me.Lbl_Cod_Interno.Name = "Lbl_Cod_Interno"
+        Me.Lbl_Cod_Interno.Size = New System.Drawing.Size(2, 27)
+        Me.Lbl_Cod_Interno.TabIndex = 4
+        Me.Lbl_Cod_Interno.Text = "Cod_Int"
+        Me.Lbl_Cod_Interno.UseWaitCursor = True
+        '
+        'Lbl_RutEmpresa
+        '
+        Me.Lbl_RutEmpresa.AutoSize = True
+        Me.TableLayoutPanel2.SetColumnSpan(Me.Lbl_RutEmpresa, 2)
+        Me.Lbl_RutEmpresa.Location = New System.Drawing.Point(253, 27)
+        Me.Lbl_RutEmpresa.Name = "Lbl_RutEmpresa"
+        Me.Lbl_RutEmpresa.Size = New System.Drawing.Size(11, 28)
+        Me.Lbl_RutEmpresa.TabIndex = 5
+        Me.Lbl_RutEmpresa.Text = "RutEmpresa"
+        Me.Lbl_RutEmpresa.UseWaitCursor = True
+        Me.Lbl_RutEmpresa.Visible = False
+        '
+        'Lbl_RutTrab
+        '
+        Me.Lbl_RutTrab.AutoSize = True
+        Me.Lbl_RutTrab.Location = New System.Drawing.Point(261, 0)
+        Me.Lbl_RutTrab.Name = "Lbl_RutTrab"
+        Me.Lbl_RutTrab.Size = New System.Drawing.Size(3, 27)
+        Me.Lbl_RutTrab.TabIndex = 6
+        Me.Lbl_RutTrab.Text = "RutTrab"
+        Me.Lbl_RutTrab.UseWaitCursor = True
+        '
+        'Button4
+        '
+        Me.Button4.ForeColor = System.Drawing.Color.DarkBlue
+        Me.Button4.Location = New System.Drawing.Point(331, 3)
+        Me.Button4.Name = "Button4"
+        Me.TableLayoutPanel2.SetRowSpan(Me.Button4, 2)
+        Me.Button4.Size = New System.Drawing.Size(50, 49)
+        Me.Button4.TabIndex = 17
+        Me.Button4.Text = "Cerrar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sesión"
+        Me.Button4.UseSelectable = True
+        Me.Button4.UseWaitCursor = True
+        '
         'PcturBx_Image
         '
         Me.PcturBx_Image.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PcturBx_Image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PcturBx_Image.Location = New System.Drawing.Point(237, 3)
+        Me.PcturBx_Image.Location = New System.Drawing.Point(270, 3)
         Me.PcturBx_Image.Name = "PcturBx_Image"
         Me.TableLayoutPanel2.SetRowSpan(Me.PcturBx_Image, 2)
-        Me.PcturBx_Image.Size = New System.Drawing.Size(55, 50)
+        Me.PcturBx_Image.Size = New System.Drawing.Size(55, 49)
         Me.PcturBx_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PcturBx_Image.TabIndex = 13
         Me.PcturBx_Image.TabStop = False
         Me.PcturBx_Image.UseWaitCursor = True
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.White
+        Me.TableLayoutPanel1.ColumnCount = 1
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.Lbl_Cod_ID, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 0)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 5)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.09091!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.90909!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(486, 55)
+        Me.TableLayoutPanel1.TabIndex = 12
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(480, 25)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Sistema de Recursos Humanos"
+        '
+        'Lbl_Cod_ID
+        '
+        Me.Lbl_Cod_ID.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Lbl_Cod_ID.AutoSize = True
+        Me.Lbl_Cod_ID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 40)
+        Me.Lbl_Cod_ID.Name = "Lbl_Cod_ID"
+        Me.Lbl_Cod_ID.Size = New System.Drawing.Size(64, 13)
+        Me.Lbl_Cod_ID.TabIndex = 1
+        Me.Lbl_Cod_ID.Text = "Lbl_Cod_ID"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(215, 55)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
-        'ToolStripButton3
+        'TxtBx_UserName
         '
-        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(36, 36)
-        Me.ToolStripButton3.Text = "ToolStripButton3"
+        Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TxtBx_UserName.Location = New System.Drawing.Point(954, 11)
+        Me.TxtBx_UserName.Name = "TxtBx_UserName"
+        Me.TxtBx_UserName.ReadOnly = True
+        Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
+        Me.TxtBx_UserName.TabIndex = 3
+        Me.TxtBx_UserName.UseWaitCursor = True
+        Me.TxtBx_UserName.Visible = False
         '
-        'NewToolStripMenuItem
+        'Panel2
         '
-        Me.NewToolStripMenuItem.Image = CType(resources.GetObject("NewToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.NewToolStripMenuItem.Text = "&Nuevo"
+        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel2.Controls.Add(Me.Tle_Configuracion)
+        Me.Panel2.Controls.Add(Me.Tle_InformesAlmu)
+        Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
+        Me.Panel2.Controls.Add(Me.TxtBx_UserName)
+        Me.Panel2.Controls.Add(Me.Tle_MantencionColacione)
+        Me.Panel2.Controls.Add(Me.Tle_AlmuAdicional)
+        Me.Panel2.Controls.Add(Me.Tle_Permisos)
+        Me.Panel2.Controls.Add(Me.Tle_Liquidacion)
+        Me.Panel2.Controls.Add(Me.Tle_SolAlmuerzo)
+        Me.Panel2.Controls.Add(Me.Tle_Exportador)
+        Me.Panel2.Controls.Add(Me.Button6)
+        Me.Panel2.Controls.Add(Me.Bttn_Pendiente)
+        Me.Panel2.Controls.Add(Me.Button5)
+        Me.Panel2.Controls.Add(Me.Bttn_Parametros)
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Bttn_MantencionColacione)
+        Me.Panel2.Controls.Add(Me.Btt_SolAlmuerzo)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 63)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1111, 633)
+        Me.Panel2.TabIndex = 11
         '
-        'OpenToolStripMenuItem
+        'FlowLayoutPanel1
         '
-        Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.OpenToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.OpenToolStripMenuItem.Text = "&Abrir"
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 63)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1111, 3)
+        Me.FlowLayoutPanel1.TabIndex = 13
         '
-        'SaveToolStripMenuItem
+        'TiempoIngreso
         '
-        Me.SaveToolStripMenuItem.Image = CType(resources.GetObject("SaveToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.SaveToolStripMenuItem.Text = "&Guardar"
-        '
-        'PrintToolStripMenuItem
-        '
-        Me.PrintToolStripMenuItem.Image = CType(resources.GetObject("PrintToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PrintToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.PrintToolStripMenuItem.Text = "&Imprimir"
-        '
-        'PrintPreviewToolStripMenuItem
-        '
-        Me.PrintPreviewToolStripMenuItem.Image = CType(resources.GetObject("PrintPreviewToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PrintPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
-        Me.PrintPreviewToolStripMenuItem.Text = "&Vista previa de impresión"
-        '
-        'UndoToolStripMenuItem
-        '
-        Me.UndoToolStripMenuItem.Image = CType(resources.GetObject("UndoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.UndoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem"
-        Me.UndoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.UndoToolStripMenuItem.Text = "&Deshacer"
-        '
-        'RedoToolStripMenuItem
-        '
-        Me.RedoToolStripMenuItem.Image = CType(resources.GetObject("RedoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.RedoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem"
-        Me.RedoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.RedoToolStripMenuItem.Text = "&Rehacer"
-        '
-        'CutToolStripMenuItem
-        '
-        Me.CutToolStripMenuItem.Image = CType(resources.GetObject("CutToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
-        Me.CutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.CutToolStripMenuItem.Text = "Cor&tar"
-        '
-        'CopyToolStripMenuItem
-        '
-        Me.CopyToolStripMenuItem.Image = CType(resources.GetObject("CopyToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-        Me.CopyToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.CopyToolStripMenuItem.Text = "&Copiar"
-        '
-        'PasteToolStripMenuItem
-        '
-        Me.PasteToolStripMenuItem.Image = CType(resources.GetObject("PasteToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
-        Me.PasteToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.PasteToolStripMenuItem.Text = "&Pegar"
+        Me.TiempoIngreso.Interval = 1000
         '
         'MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1111, 495)
+        Me.ClientSize = New System.Drawing.Size(1111, 722)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIParent1"
         Me.Text = "Recursos Humanos  (V : 20161228)"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -857,11 +940,12 @@ Partial Class MDIParent1
         Me.Panel1.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
+        CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -906,7 +990,7 @@ Partial Class MDIParent1
     Friend WithEvents ResulucionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Lbl_Nombre As Label
     Friend WithEvents TxtBx_Empresa As TextBox
     Friend WithEvents TxtBx_UserName As TextBox
     Friend WithEvents PcturBx_Image As PictureBox
@@ -925,7 +1009,7 @@ Partial Class MDIParent1
     Friend WithEvents Button3 As Button
     Friend WithEvents Bttn_Parametros As Button
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Button4 As MetroFramework.Controls.MetroButton 'Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Bttn_Pendiente As Button
     Friend WithEvents Button6 As Button
@@ -934,4 +1018,9 @@ Partial Class MDIParent1
     Friend WithEvents Tle_SolAlmuerzo As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_Liquidacion As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_Permisos As MetroFramework.Controls.MetroTile
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Tle_MantencionColacione As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_AlmuAdicional As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_Configuracion As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_InformesAlmu As MetroFramework.Controls.MetroTile
 End Class

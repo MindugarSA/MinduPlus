@@ -33,11 +33,10 @@ Partial Class Form1
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.contextVerSelec = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.toolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.contextOcultarSelec = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.toolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btnVolver = New System.Windows.Forms.Button()
+        Me.btnVolver = New MetroFramework.Controls.MetroButton()
         Me.gradientTab1 = New MetroFramework.Controls.MetroTabControl()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.tabPage0 = New System.Windows.Forms.TabPage()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
@@ -111,7 +110,8 @@ Partial Class Form1
         Me.label17 = New System.Windows.Forms.Label()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
         Me.dataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.toolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.toolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.contextVerSelec.SuspendLayout()
         Me.contextOcultarSelec.SuspendLayout()
@@ -151,35 +151,22 @@ Partial Class Form1
         Me.contextVerSelec.Name = "contextVerSelec"
         Me.contextVerSelec.Size = New System.Drawing.Size(230, 26)
         '
-        'toolStripMenuItem1
-        '
-        Me.toolStripMenuItem1.Image = Global.ImportarExcelSQLServer.Resources.magnifier_zoom_in
-        Me.toolStripMenuItem1.Name = "toolStripMenuItem1"
-        Me.toolStripMenuItem1.Size = New System.Drawing.Size(229, 22)
-        Me.toolStripMenuItem1.Text = "Mostrar Todos los Empleados"
-        '
         'contextOcultarSelec
         '
         Me.contextOcultarSelec.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripMenuItem2})
         Me.contextOcultarSelec.Name = "contextOcultarSelec"
         Me.contextOcultarSelec.Size = New System.Drawing.Size(274, 26)
         '
-        'toolStripMenuItem2
-        '
-        Me.toolStripMenuItem2.Image = Global.ImportarExcelSQLServer.Resources.magifier_zoom_out
-        Me.toolStripMenuItem2.Name = "toolStripMenuItem2"
-        Me.toolStripMenuItem2.Size = New System.Drawing.Size(273, 22)
-        Me.toolStripMenuItem2.Text = "Ocultar Empleados NO Seleccionados"
-        '
         'btnVolver
         '
         Me.btnVolver.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnVolver.FontSize = MetroFramework.MetroButtonSize.Tall
         Me.btnVolver.Location = New System.Drawing.Point(15, 509)
         Me.btnVolver.Name = "btnVolver"
         Me.btnVolver.Size = New System.Drawing.Size(170, 46)
         Me.btnVolver.TabIndex = 10
         Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseVisualStyleBackColor = True
+        Me.btnVolver.UseSelectable = True
         '
         'gradientTab1
         '
@@ -197,6 +184,16 @@ Partial Class Form1
         Me.gradientTab1.TabIndex = 9
         Me.gradientTab1.UseSelectable = True
         '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(14, 10)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(206, 21)
+        Me.Label21.TabIndex = 11
+        Me.Label21.Text = "Exportar Datos a SQL Server"
+        '
         'tabPage0
         '
         Me.tabPage0.BackgroundImage = CType(resources.GetObject("tabPage0.BackgroundImage"), System.Drawing.Image)
@@ -205,7 +202,7 @@ Partial Class Form1
         Me.tabPage0.Location = New System.Drawing.Point(4, 38)
         Me.tabPage0.Name = "tabPage0"
         Me.tabPage0.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage0.Size = New System.Drawing.Size(1325, 430)
+        Me.tabPage0.Size = New System.Drawing.Size(1325, 426)
         Me.tabPage0.TabIndex = 0
         Me.tabPage0.Text = "Importar Excel    "
         Me.tabPage0.UseVisualStyleBackColor = True
@@ -235,7 +232,7 @@ Partial Class Form1
         Me.groupBox1.Location = New System.Drawing.Point(3, 3)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.groupBox1.Size = New System.Drawing.Size(1319, 424)
+        Me.groupBox1.Size = New System.Drawing.Size(1319, 420)
         Me.groupBox1.TabIndex = 7
         Me.groupBox1.TabStop = False
         '
@@ -275,7 +272,7 @@ Partial Class Form1
         Me.label7.AutoSize = True
         Me.label7.BackColor = System.Drawing.Color.Transparent
         Me.label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label7.Location = New System.Drawing.Point(15, 402)
+        Me.label7.Location = New System.Drawing.Point(15, 398)
         Me.label7.Name = "label7"
         Me.label7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label7.Size = New System.Drawing.Size(104, 15)
@@ -343,7 +340,7 @@ Partial Class Form1
         Me.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dataGridView1.RowHeadersVisible = False
         Me.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView1.Size = New System.Drawing.Size(1278, 322)
+        Me.dataGridView1.Size = New System.Drawing.Size(1278, 318)
         Me.dataGridView1.TabIndex = 7
         '
         'comboBox2
@@ -688,7 +685,7 @@ Partial Class Form1
         Me.tabPage2.Location = New System.Drawing.Point(4, 38)
         Me.tabPage2.Name = "tabPage2"
         Me.tabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage2.Size = New System.Drawing.Size(1325, 430)
+        Me.tabPage2.Size = New System.Drawing.Size(1325, 426)
         Me.tabPage2.TabIndex = 2
         Me.tabPage2.Text = "Consultar Resumen    "
         Me.tabPage2.UseVisualStyleBackColor = True
@@ -711,7 +708,7 @@ Partial Class Form1
         Me.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox3.Location = New System.Drawing.Point(3, 3)
         Me.groupBox3.Name = "groupBox3"
-        Me.groupBox3.Size = New System.Drawing.Size(1319, 424)
+        Me.groupBox3.Size = New System.Drawing.Size(1319, 420)
         Me.groupBox3.TabIndex = 0
         Me.groupBox3.TabStop = False
         '
@@ -721,7 +718,7 @@ Partial Class Form1
         Me.label15.AutoSize = True
         Me.label15.BackColor = System.Drawing.Color.Transparent
         Me.label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label15.Location = New System.Drawing.Point(15, 402)
+        Me.label15.Location = New System.Drawing.Point(15, 398)
         Me.label15.Name = "label15"
         Me.label15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label15.Size = New System.Drawing.Size(104, 15)
@@ -831,7 +828,7 @@ Partial Class Form1
         Me.dataGridView3.ReadOnly = True
         Me.dataGridView3.RowHeadersVisible = False
         Me.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView3.Size = New System.Drawing.Size(1278, 343)
+        Me.dataGridView3.Size = New System.Drawing.Size(1278, 339)
         Me.dataGridView3.TabIndex = 19
         '
         'button6
@@ -875,7 +872,7 @@ Partial Class Form1
         Me.tabPage3.Location = New System.Drawing.Point(4, 38)
         Me.tabPage3.Name = "tabPage3"
         Me.tabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage3.Size = New System.Drawing.Size(1325, 430)
+        Me.tabPage3.Size = New System.Drawing.Size(1325, 426)
         Me.tabPage3.TabIndex = 3
         Me.tabPage3.Text = "GESTPER    "
         Me.tabPage3.UseVisualStyleBackColor = True
@@ -899,7 +896,7 @@ Partial Class Form1
         Me.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox6.Location = New System.Drawing.Point(3, 3)
         Me.groupBox6.Name = "groupBox6"
-        Me.groupBox6.Size = New System.Drawing.Size(1319, 424)
+        Me.groupBox6.Size = New System.Drawing.Size(1319, 420)
         Me.groupBox6.TabIndex = 1
         Me.groupBox6.TabStop = False
         '
@@ -908,7 +905,7 @@ Partial Class Form1
         Me.groupBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox9.Controls.Add(Me.checkBox2)
         Me.groupBox9.Controls.Add(Me.checkBox1)
-        Me.groupBox9.Location = New System.Drawing.Point(767, 387)
+        Me.groupBox9.Location = New System.Drawing.Point(767, 383)
         Me.groupBox9.Name = "groupBox9"
         Me.groupBox9.Size = New System.Drawing.Size(527, 33)
         Me.groupBox9.TabIndex = 27
@@ -1079,7 +1076,7 @@ Partial Class Form1
         Me.label16.AutoSize = True
         Me.label16.BackColor = System.Drawing.Color.Transparent
         Me.label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label16.Location = New System.Drawing.Point(15, 396)
+        Me.label16.Location = New System.Drawing.Point(15, 392)
         Me.label16.Name = "label16"
         Me.label16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label16.Size = New System.Drawing.Size(104, 15)
@@ -1169,18 +1166,22 @@ Partial Class Form1
         Me.dataGridView4.Name = "dataGridView4"
         Me.dataGridView4.RowHeadersVisible = False
         Me.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView4.Size = New System.Drawing.Size(1278, 325)
+        Me.dataGridView4.Size = New System.Drawing.Size(1278, 321)
         Me.dataGridView4.TabIndex = 19
         '
-        'Label21
+        'toolStripMenuItem1
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(14, 10)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(206, 21)
-        Me.Label21.TabIndex = 11
-        Me.Label21.Text = "Exportar Datos a SQL Server"
+        Me.toolStripMenuItem1.Image = Global.ImportarExcelSQLServer.Resources.magnifier_zoom_in
+        Me.toolStripMenuItem1.Name = "toolStripMenuItem1"
+        Me.toolStripMenuItem1.Size = New System.Drawing.Size(229, 22)
+        Me.toolStripMenuItem1.Text = "Mostrar Todos los Empleados"
+        '
+        'toolStripMenuItem2
+        '
+        Me.toolStripMenuItem2.Image = Global.ImportarExcelSQLServer.Resources.magifier_zoom_out
+        Me.toolStripMenuItem2.Name = "toolStripMenuItem2"
+        Me.toolStripMenuItem2.Size = New System.Drawing.Size(273, 22)
+        Me.toolStripMenuItem2.Text = "Ocultar Empleados NO Seleccionados"
         '
         'Form1
         '
@@ -1305,7 +1306,7 @@ Partial Class Form1
     Friend WithEvents contextOcultarSelec As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents toolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button15 As Windows.Forms.Button
-    Friend WithEvents btnVolver As Windows.Forms.Button
+    Friend WithEvents btnVolver As MetroFramework.Controls.MetroButton 'Windows.Forms.Button
     Friend WithEvents Label21 As Windows.Forms.Label
 End Class
 

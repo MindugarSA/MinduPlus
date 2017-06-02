@@ -1095,10 +1095,9 @@ Public Partial Class Form1
     End Function
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        If pnlParent IsNot Nothing Then
-            pnlParent.Visible = True
-        End If
+
         Me.Close()
+
     End Sub
 
     Private Sub gradientTab1_Deselected(sender As Object, e As TabControlEventArgs) Handles gradientTab1.Deselected
@@ -1143,6 +1142,14 @@ Public Partial Class Form1
         Return If(dt.Rows.Count = 0, False, CType(dt.Rows(0)("Acceso"), Boolean))
 
     End Function
+
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        If pnlParent IsNot Nothing Then
+            pnlParent.Visible = True
+        End If
+
+    End Sub
 
 
 

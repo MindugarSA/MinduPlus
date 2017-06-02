@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>60</ApplicationRevision>
+    <ApplicationRevision>69</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -80,7 +80,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -785,10 +785,18 @@
     <None Include="Resources\clockwise-rotation.png" />
     <None Include="Resources\clockwise-rotation %281%29.png" />
     <None Include="Resources\cutlery.png" />
+    <None Include="Resources\cooker.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\chevron-sign-left.png" />
+    <None Include="Resources\chevron-sign-to-right.png" />
+    <None Include="Resources\chevron-pointing-to-the-left.png" />
+    <None Include="Resources\check-mark-white-on-black-circular-background.png" />
+    <None Include="Resources\check-mark-white-on-black-circular-background %281%29.png" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />
     <None Include="Resources\Gesper.jpg" />
+    <None Include="Resources\home-shape.png" />
     <Content Include="Resources\Informes.jpg" />
     <None Include="Resources\Informes1.jpg" />
     <Content Include="Resources\Liquidaciones.jpg" />
@@ -796,9 +804,11 @@
     <None Include="Resources\Logo Grande.jpg" />
     <None Include="Resources\Logo Nombre.png" />
     <None Include="Resources\Logo1.png" />
+    <None Include="Resources\list-document-interface-symbol.png" />
     <Content Include="Resources\Mant_Sist.jpg" />
     <Content Include="Resources\Menu.jpg" />
     <None Include="Resources\Menu1.jpg" />
+    <None Include="Resources\menu.png" />
     <Content Include="Resources\MINDUGAR8.BMP" />
     <None Include="Resources\MINDUGAR81.BMP" />
     <None Include="Resources\money-report.png" />
@@ -808,6 +818,11 @@
     <Content Include="Resources\PermisosSistema.png" />
     <None Include="Resources\PermisosSistema1.png" />
     <None Include="Resources\TempoNet.JPG" />
+    <None Include="Resources\restaurant.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\right-chevron.png" />
+    <None Include="Resources\save-file-option.png" />
+    <None Include="Resources\save-file-option %281%29.png" />
     <Content Include="Resources\VB-Colaciones.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
