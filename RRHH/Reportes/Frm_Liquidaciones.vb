@@ -10,6 +10,9 @@ Public Class Frm_Liquidaciones
     Dim cmd As SqlCommand
     Dim ContSelect As Integer
 
+    Public Delegate Sub LaunchEvent()
+    Public Event EnviarEvento As LaunchEvent
+
     Private Sub Frm_Liquidaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
         ContSelect = 0
@@ -83,10 +86,7 @@ Public Class Frm_Liquidaciones
         '    conexion.Close()
         'End Try
 
-
-
-
-        MDIParent1.Panel2.Visible = False
+        'MDIParent1.Panel2.Visible = False
 
     End Sub
 
@@ -137,18 +137,16 @@ Public Class Frm_Liquidaciones
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MDIParent1.Panel2.Visible = True
+        'MDIParent1.Panel2.Visible = True
         Me.Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         WebBrowser1.Print()
-        MDIParent1.Panel2.Visible = True
+        'MDIParent1.Panel2.Visible = True
         Me.Close()
     End Sub
-
-
 
     Private Sub RevisaDirectorios()
         Dim objFSO, strFolder
@@ -161,5 +159,9 @@ Public Class Frm_Liquidaciones
 
     Private Sub CmbBx_Meses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbBx_Meses.SelectedIndexChanged
         If ContSelect = 1 Then CargaLiqudacion()
+    End Sub
+
+    Private Sub Frm_Liquidaciones_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        RaiseEvent EnviarEvento()
     End Sub
 End Class
