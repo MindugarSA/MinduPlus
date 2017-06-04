@@ -398,7 +398,7 @@ Public Class MDIParent1
             For Each ChildForm As Form In Me.MdiChildren
                 ChildForm.Close()
             Next
-            Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Lbl_Cod_ID.Text)
+            Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Me.StatusStrip, Lbl_Cod_ID.Text)
             newMDIChild.MdiParent = Me
             newMDIChild.Show()
             newMDIChild.ControlBox = False
@@ -418,16 +418,25 @@ Public Class MDIParent1
             For Each ChildForm As Form In Me.MdiChildren
                 ChildForm.Close()
             Next
-            Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Lbl_Cod_ID.Text)
+
+            Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Me.StatusStrip, Lbl_Cod_ID.Text)
+            AddHandler newMDIChild.EnviarEvento, New ImportarExcelSQLServer.Form1.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
             newMDIChild.MdiParent = Me
+            newMDIChild.FormBorderStyle = FormBorderStyle.None
+            'newMDIChild.WindowState = FormWindowState.Maximized
+            newMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(newMDIChild)
+            Me.Panel2.Tag = newMDIChild
+            Ocultar_Tiles_MDI()
             newMDIChild.Show()
             newMDIChild.ControlBox = False
+            StatusStrip.Visible = False
 
             TiempoIngreso.Enabled = False
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
             'newMDIChild.WindowState = FormWindowState.Maximized
-            Me.Panel2.Visible = False
+            'Me.Panel2.Visible = False
         End If
     End Sub
 
@@ -438,17 +447,20 @@ Public Class MDIParent1
                 ChildForm.Close()
             Next
             NewMDIChild.MdiParent = Me
-            NewMDIChild.Show()
 
-            NewMDIChild.ControlBox = False
             If RevisaAcceso(30001) Then
                 TiempoIngreso.Enabled = False
             Else
                 TiempoIngreso.Enabled = True
             End If
+
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
             NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            NewMDIChild.ControlBox = False
+            NewMDIChild.Show()
+
         Else
             MsgBox("Lo lamento !" & vbNewLine & "Solicite autorización en Dto. RRHH", MsgBoxStyle.Exclamation, "Error!")
         End If
@@ -568,4 +580,25 @@ Public Class MDIParent1
         End If
 
     End Sub
+
+    Public Sub Ocultar_Tiles_MDI()
+        Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
+          (From tb As MetroFramework.Controls.MetroTile In Me.Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
+           Select tb).ToList()
+
+        For Each Tle As MetroFramework.Controls.MetroTile In listaTiles
+            Tle.Visible = False
+        Next
+    End Sub
+
+    Public Sub Visualizar_Tiles_MDI()
+        Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
+          (From tb As MetroFramework.Controls.MetroTile In Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
+           Select tb).ToList()
+
+        For Each Tle As MetroFramework.Controls.MetroTile In listaTiles
+            Tle.Visible = True
+        Next
+    End Sub
+
 End Class

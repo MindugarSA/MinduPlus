@@ -4,16 +4,322 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Frm_SolicitudColacion
 
-    Dim vDateInfo As DateTime
-    Dim dt As New DataTable
-    Dim conexion As New SqlConnection
-    Dim cmd As SqlCommand
-    Dim gRut As String = MDIParent1.Lbl_RutTrab.Text
-
+    Property vDateInfo As DateTime
+    Property dt As New DataTable
+    Property conexion As New SqlConnection
+    Property cmd As SqlCommand
+    Property gRut As String = MDIParent1.Lbl_RutTrab.Text
     Property ImagenAlmuerzo As Image = Global.RRHH.My.Resources.Resources.check_mark_white
     Property BackColorAlmuerzo As Color = Color.White
 
+    Private Sub Frm_SolicitudColacion_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
+        Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
+        Me.SuspendLayout()
+
+        Iniciar_Form_Almuerzos()
+
+        Me.ResumeLayout()
+
+    End Sub
+
     Private Sub Frm_SolicitudColación_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        Me.DoubleBuffered = True
+
+    End Sub
+
+    Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
+        End If
+    End Sub
+
+    Private Sub Bttn_Cancelar_Click(sender As Object, e As EventArgs) Handles Bttn_Cancelar.Click
+        MDIParent1.Panel2.Visible = True
+        Me.Close()
+        MDIParent1.TiempoIngreso.Enabled = True
+    End Sub
+
+    Private Sub Almuerzos_Click(sender As Object, e As EventArgs) Handles Lbl_A1.Click, Lbl_D1.Click, Lbl_C1.Click, Lbl_B1.Click, Lbl_B2.Click, Lbl_A2.Click, Lbl_D5.Click, Lbl_A5.Click, Lbl_B5.Click, Lbl_C5.Click, Lbl_D4.Click, Lbl_A4.Click, Lbl_B4.Click, Lbl_C4.Click, Lbl_D3.Click, Lbl_C3.Click, Lbl_B3.Click, Lbl_A3.Click, Lbl_C2.Click, Lbl_D2.Click
+        'If sender.text = "" Then
+        '    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+        '    MDIParent1.TlStrpSttsLbl_SQL.Text = "No existe descripción de Almuerzo.... No es posible su seleción"
+        '    Beep()
+        '    Exit Sub
+        'End If
+        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
+        Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+        Dim str_a As String = String.Format("Lbl_A{0}", Linea)
+        Dim str_b As String = String.Format("Lbl_B{0}", Linea)
+        Dim str_c As String = String.Format("Lbl_C{0}", Linea)
+        Dim str_d As String = String.Format("Lbl_D{0}", Linea)
+        controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
+        controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
+        controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
+        controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
+        If sender.name <> controlLabel_A.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_A)
+        If sender.name <> controlLabel_B.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_B)
+        If sender.name <> controlLabel_C.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_C)
+        If sender.name <> controlLabel_D.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_D)
+
+        If sender.Image Is Nothing Then
+            Seleccionar_Label_Almuerzo(CType(sender, Label))
+        Else
+            Inicializar_Label_Almuerzo(CType(sender, Label))
+            'Borrar Postres
+            Dim TblLyutPnl As TableLayoutPanel
+            Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
+            'Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+            Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
+            Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
+            Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
+            Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
+            Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
+            TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
+            controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
+            controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
+            controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
+            controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
+            If sender.name <> controlLabel_E.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_E)
+            If sender.name <> controlLabel_F.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_F)
+            If sender.name <> controlLabel_G.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_G)
+            If sender.name <> controlLabel_H.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_H)
+        End If
+
+        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
+    End Sub
+
+    Private Sub Seleccionar_Label_Almuerzo(ControlLabel As Label)
+
+        ControlLabel.Image = Global.RRHH.My.Resources.Resources.check_mark_white
+        ControlLabel.BackColor = Color.FromArgb(153, 180, 51)
+        ControlLabel.ForeColor = Color.White
+
+    End Sub
+
+    Private Sub Inicializar_Label_Almuerzo(ControlLabel As Label)
+
+        ControlLabel.Image = Nothing
+        ControlLabel.BackColor = BackColorAlmuerzo
+        ControlLabel.ForeColor = Color.Black
+
+    End Sub
+
+    Private Sub Postres_Click(sender As Object, e As EventArgs) Handles Lbl_P_A1.Click, Lbl_P_D1.Click, Lbl_P_C1.Click, Lbl_P_B1.Click, Lbl_P_D5.Click, Lbl_P_D4.Click, Lbl_P_D3.Click, Lbl_P_D2.Click, Lbl_P_C5.Click, Lbl_P_C4.Click, Lbl_P_C3.Click, Lbl_P_C2.Click, Lbl_P_B5.Click, Lbl_P_B4.Click, Lbl_P_B3.Click, Lbl_P_B2.Click, Lbl_P_A5.Click, Lbl_P_A4.Click, Lbl_P_A3.Click, Lbl_P_A2.Click
+        'If sender.text = "" Then
+        '    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+        '    MDIParent1.TlStrpSttsLbl_SQL.Text = "No existe descripción de Postre.... No es posible su seleción"
+        '    Beep()
+        '    Exit Sub
+        'End If
+        'Revisar si esta seleccionado un almuerzo
+        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
+        Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+        Dim str_a As String = String.Format("Lbl_A{0}", Linea)
+        Dim str_b As String = String.Format("Lbl_B{0}", Linea)
+        Dim str_c As String = String.Format("Lbl_C{0}", Linea)
+        Dim str_d As String = String.Format("Lbl_D{0}", Linea)
+        controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
+        controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
+        controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
+        controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
+        If IsNothing(controlLabel_A.Image) And IsNothing(controlLabel_B.Image) And IsNothing(controlLabel_C.Image) And IsNothing(controlLabel_D.Image) Then
+            Beep()
+            Exit Sub
+        End If
+        'Fin ............Revisar si esta seleccionado un almuerzo
+
+        Dim TblLyutPnl As TableLayoutPanel
+        Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
+        'Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+        Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
+        Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
+        Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
+        Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
+        Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
+        TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
+        controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
+        controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
+        controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
+        controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
+        If sender.name <> controlLabel_E.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_E)
+        If sender.name <> controlLabel_F.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_F)
+        If sender.name <> controlLabel_G.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_G)
+        If sender.name <> controlLabel_H.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_H)
+        If sender.Image Is Nothing Then
+            Seleccionar_Label_Almuerzo(CType(sender, Label))
+        Else
+            sender.Image = Nothing
+        End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+        Me.SuspendLayout()
+        vDateInfo = DateAdd("d", -7, vDateInfo)
+        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
+        txbTrabajador.AutoCompleteCustomSource.Clear()
+        txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
+
+        LLenaFechasColaciones(vDateInfo)
+        CargarColaciones(vDateInfo)
+
+        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+        Me.SuspendLayout()
+        vDateInfo = DateAdd("d", 7, vDateInfo)
+        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
+        txbTrabajador.AutoCompleteCustomSource.Clear()
+        txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
+
+        LLenaFechasColaciones(vDateInfo)
+        CargarColaciones(vDateInfo)
+
+        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
+        Me.ResumeLayout()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim Errores As String = ""
+        Dim FechaIni As Date = vDateInfo
+        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
+        Dim SelectAlmuerzo, SelectPostre As String
+        Dim TblLyutPnl As TableLayoutPanel
+        Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
+        For Linea = 1 To 5
+            SelectAlmuerzo = "-"
+            Dim str_a As String = String.Format("Lbl_A{0}", Linea)
+            Dim str_b As String = String.Format("Lbl_B{0}", Linea)
+            Dim str_c As String = String.Format("Lbl_C{0}", Linea)
+            Dim str_d As String = String.Format("Lbl_D{0}", Linea)
+            controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
+            controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
+            controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
+            controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
+            If Not controlLabel_A.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_A.Name.ToString, 2), 1)
+            If Not controlLabel_B.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_B.Name.ToString, 2), 1)
+            If Not controlLabel_C.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_C.Name.ToString, 2), 1)
+            If Not controlLabel_D.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_D.Name.ToString, 2), 1)
+
+
+            SelectPostre = "-"
+            Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
+            Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
+            Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
+            Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
+            Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
+            TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
+            controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
+            controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
+            controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
+            controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
+            If Not controlLabel_E.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_E.Name.ToString, 2), 1)
+            If Not controlLabel_F.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_F.Name.ToString, 2), 1)
+            If Not controlLabel_G.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_G.Name.ToString, 2), 1)
+            If Not controlLabel_H.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_H.Name.ToString, 2), 1)
+            Dim Rut As String = gRut 'MDIParent1.Lbl_RutTrab.ToString
+            Dim e_cod_interno As String = MDIParent1.Lbl_Cod_Interno.ToString
+            Dim e_Fecha_Graba As String = Date.Now.ToString("yyyyMMdd")
+            Dim e_Fecha_Solicitu As String = vDateInfo.ToString("yyyyMMdd")
+            Dim e_Almuerzo As String = SelectAlmuerzo
+            Dim e_Postre As String = SelectPostre
+            Dim e_Id_RutEmpresa As String = MDIParent1.Lbl_RutEmpresa.Text
+
+
+
+            cmd = New SqlCommand("Colaciones_Solicitudes_Ges", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) ' MDIParent1.Lbl_RutTrab.Text))
+            cmd.Parameters.Add(New SqlParameter("@cod_interno", MDIParent1.Lbl_Cod_Interno.Text))
+            cmd.Parameters.Add(New SqlParameter("@Fecha_Graba", Date.Now.ToString("yyyyMMdd")))
+            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", FechaIni.ToString("yyyyMMdd")))
+            cmd.Parameters.Add(New SqlParameter("@Almuerzo", SelectAlmuerzo))
+            cmd.Parameters.Add(New SqlParameter("@Postre", SelectPostre))
+            cmd.Parameters.Add(New SqlParameter("@Id_RutEmpresa", MDIParent1.Lbl_RutEmpresa.Text))
+            Try
+                dt.Reset()
+                dt.Load(cmd.ExecuteReader())
+            Catch ex As Exception
+                Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
+            Finally
+                conexion.Close()
+            End Try
+            FechaIni = DateAdd("d", 1, FechaIni)
+        Next
+        If Errores <> "" Then
+            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+            MDIParent1.TlStrpSttsLbl_SQL.Text = Errores
+        Else
+            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.CornflowerBlue
+            MDIParent1.TlStrpSttsLbl_SQL.Text = "Grabado con exito"
+        End If
+        'If Month(vDateInfo) = Month(Date.Now) Then
+        '    MsgBox("Recuerde  : " & vbCrLf & vbCrLf &
+        '    "    Para aquellos colaboradores que por algún motivo no seleccionen " & vbCrLf &
+        '    "el almuerzo mensual y lo hagan sólo esporádicamente en forma diaria, " & vbCrLf &
+        '    "ya no se contará con la opción de escoger su  preferencia, sino que  " & vbCrLf &
+        '    "la alternativa preparada dependerá  del stock disponible del " & vbCrLf &
+        '    "proveedor del casino " & vbCrLf & vbCrLf &
+        '    "Comunicado de fecha 27 de mayo del 2016", MsgBoxStyle.Exclamation, "Advertencia")
+        'End If
+    End Sub
+
+    Private Sub Frm_SolicitudColacion_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
+
+    End Sub
+
+    Private Sub txbTrabajador_TextChanged(sender As Object, e As EventArgs) Handles txbTrabajador.TextChanged
+        dt = BuscarDatosTrabajador(txbTrabajador.Text)
+        'MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("nombre_emp").ToString()
+        'MDIParent1.TxtBx_UserName.Text = txbTrabajador.Text
+        'MDIParent1.Lbl_RutTrab.Text = dt.Rows(0)("rut").ToString()
+        'MDIParent1.Lbl_Cod_Interno.Text = ""
+
+
+
+        txbRut.Text = dt.Rows(0)("rut").ToString()
+        gRut = dt.Rows(0)("rut").ToString()
+        txbCargo.Text = dt.Rows(0)("cargo").ToString()
+        txbEmpresa.Text = dt.Rows(0)("nombre_emp").ToString()
+
+        Try
+            txbFechaIngreso.Text = Date.Parse(dt.Rows(0)("fecha_ingreso")).ToString("dd-MM-yyyy")
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txbTrabajador_MouseCaptureChanged(sender As Object, e As EventArgs) Handles txbTrabajador.MouseCaptureChanged
+
+    End Sub
+
+    Private Sub txbRut_ModifiedChanged(sender As Object, e As EventArgs) Handles txbRut.ModifiedChanged
+        LLenaFechasColaciones(vDateInfo)
+        CargarColaciones(vDateInfo)
+    End Sub
+
+    Private Sub txbTrabajador_Validated(sender As Object, e As EventArgs) Handles txbTrabajador.Validated
+        LLenaFechasColaciones(vDateInfo)
+        CargarColaciones(vDateInfo)
+    End Sub
+
+    Private Sub txbTrabajador_ModifiedChanged(sender As Object, e As EventArgs) Handles txbTrabajador.ModifiedChanged
+
+    End Sub
+
+    ''' <summary>
+    '''  FUNCIONES Y PROCEDIMIENTOS
+    ''' </summary>
+    Private Sub Iniciar_Form_Almuerzos()
 
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
         MDIParent1.Panel2.Visible = False
@@ -52,44 +358,116 @@ Public Class Frm_SolicitudColacion
         CargarColaciones(vDateInfo)
         VisiblePostres()
 
-
     End Sub
 
+    Private Function listaAutocompletadaTrabajadores() As AutoCompleteStringCollection
+        Dim lista As AutoCompleteStringCollection = New AutoCompleteStringCollection()
+        conexion.Open()
+        Try
+            cmd = New SqlCommand("Solicitud_Empleados_Sugeridos", conexion)
+            cmd.Parameters.Add(New SqlParameter("@Fecha_SolicitudIni", tb_FechaIni.Text))
+            cmd.CommandType = CommandType.StoredProcedure
+            'cmd.Parameters.Add(New SqlParameter("@area", area))
+            Dim adapter As New SqlDataAdapter(cmd)
+            dt = New DataTable()
+            adapter.Fill(dt)
+            For i = 0 To dt.Rows.Count - 1
+                lista.Add(dt.Rows(i)("nombre").ToString)
+            Next
+            cmd.Dispose()
+        Catch ex As Exception
+            MsgBox("error: " + ex.Message, MsgBoxStyle.Exclamation, "Area Invalida")
+        Finally
+            conexion.Close()
+        End Try
+        Return lista
+    End Function
 
-    Private Sub VisiblePostres()
+    Private Function BuscarDatosTrabajador(ByVal nombre) As DataTable
+        Dim tabla As DataTable = New DataTable()
+        conexion.Open()
+        Try
+            Dim comand As SqlCommand = New SqlCommand("Solicitud_Buscar_Datos_Trabajador", conexion)
+            comand.CommandType = CommandType.StoredProcedure
+            comand.Parameters.Add(New SqlParameter("@nombreCompleto", nombre))
+            Dim adapter As New SqlDataAdapter(comand)
+            adapter.Fill(tabla)
+            'rut = dt.Rows(0)("rut").ToString()
+            comand.Dispose()
+        Catch ex As Exception
 
-        Lbl_P_B1.Visible = False
-        Lbl_P_C1.Visible = False
-        Lbl_P_D1.Visible = False
-        Lbl_P_B2.Visible = False
-        Lbl_P_C2.Visible = False
-        Lbl_P_D2.Visible = False
-        Lbl_P_B3.Visible = False
-        Lbl_P_C3.Visible = False
-        Lbl_P_D3.Visible = False
-        Lbl_P_B4.Visible = False
-        Lbl_P_C4.Visible = False
-        Lbl_P_D4.Visible = False
-        Lbl_P_B5.Visible = False
-        Lbl_P_C5.Visible = False
-        Lbl_P_D5.Visible = False
+        Finally
+            conexion.Close()
+        End Try
+        Return tabla
+    End Function
+
+    Private Sub BuscaSolicitudes(DateInfo As DateTime)
+        Dim Errores As String = ""
+        Dim FechaIni As Date = DateInfo
+        For Linea = 1 To 5
+            cmd = New SqlCommand("Colaciones_Solicitudes_Info", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) 'MDIParent1.Lbl_RutTrab.Text))
+            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", FechaIni.ToString("yyyyMMdd")))
+            Try
+                dt.Reset()
+                dt.Load(cmd.ExecuteReader())
+            Catch ex As Exception
+                Errores =
+                Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
+            Finally
+                conexion.Close()
+            End Try
+            Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
+            Dim str_a As String = String.Format("Lbl_A{0}", Linea)
+            Dim str_b As String = String.Format("Lbl_B{0}", Linea)
+            Dim str_c As String = String.Format("Lbl_C{0}", Linea)
+            Dim str_d As String = String.Format("Lbl_D{0}", Linea)
+
+            Dim TblLyutPnl As TableLayoutPanel
+            Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
+
+            Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
+            Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
+            Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
+            Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
+            Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
+
+            controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
+            controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
+            controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
+            controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
+
+            TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
+            controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
+            controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
+            controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
+            controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
+            If dt.Rows(0)("IdEstado") = 0 Then
+                If dt.Rows(0)("Almuerzo") = "A" Then Seleccionar_Label_Almuerzo(controlLabel_A) Else Inicializar_Label_Almuerzo(controlLabel_A)
+                If dt.Rows(0)("Almuerzo") = "B" Then Seleccionar_Label_Almuerzo(controlLabel_B) Else Inicializar_Label_Almuerzo(controlLabel_B)
+                If dt.Rows(0)("Almuerzo") = "C" Then Seleccionar_Label_Almuerzo(controlLabel_C) Else Inicializar_Label_Almuerzo(controlLabel_C)
+                If dt.Rows(0)("Almuerzo") = "D" Then Seleccionar_Label_Almuerzo(controlLabel_D) Else Inicializar_Label_Almuerzo(controlLabel_D)
+
+                If dt.Rows(0)("Postre") = "A" Then Seleccionar_Label_Almuerzo(controlLabel_E) Else Inicializar_Label_Almuerzo(controlLabel_E)
+                If dt.Rows(0)("Postre") = "B" Then Seleccionar_Label_Almuerzo(controlLabel_F) Else Inicializar_Label_Almuerzo(controlLabel_F)
+                If dt.Rows(0)("Postre") = "C" Then Seleccionar_Label_Almuerzo(controlLabel_G) Else Inicializar_Label_Almuerzo(controlLabel_G)
+                If dt.Rows(0)("Postre") = "D" Then Seleccionar_Label_Almuerzo(controlLabel_H) Else Inicializar_Label_Almuerzo(controlLabel_H)
+            Else
+                Inicializar_Label_Almuerzo(controlLabel_A)
+                Inicializar_Label_Almuerzo(controlLabel_B)
+                Inicializar_Label_Almuerzo(controlLabel_C)
+                Inicializar_Label_Almuerzo(controlLabel_D)
+                Inicializar_Label_Almuerzo(controlLabel_E)
+                Inicializar_Label_Almuerzo(controlLabel_F)
+                Inicializar_Label_Almuerzo(controlLabel_G)
+                Inicializar_Label_Almuerzo(controlLabel_H)
+            End If
+            FechaIni = DateAdd("d", 1, FechaIni)
+        Next
     End Sub
-    Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            e.SuppressKeyPress = True
-            Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
-        End If
-    End Sub
-    Private Sub Bttn_Cancelar_Click(sender As Object, e As EventArgs) Handles Bttn_Cancelar.Click
-        MDIParent1.Panel2.Visible = True
-        Me.Close()
-        MDIParent1.TiempoIngreso.Enabled = True
-    End Sub
-
-
-
-
-
 
     Sub LLenaFechasColaciones(DateInfo As Date)
         'Lbl_01.ForeColor = Color.Black
@@ -229,29 +607,6 @@ Public Class Frm_SolicitudColacion
             DateInfo = DateAdd("d", 1, DateInfo)
         Next
     End Sub
-    'Function RevisaAcceso(Campo As String) As Boolean
-    '    dt.Reset()
-    '    cmd = New SqlCommand("Colaciones_Pass_Info", conexion)
-    '    cmd.CommandType = CommandType.StoredProcedure
-    '    conexion.Open()
-    '    cmd.Parameters.Add(New SqlParameter("@Rut", MDIParent1.Lbl_RutTrab.Text))
-
-    '    cmd.Parameters.Add(New SqlParameter("@Campo", Campo))
-    '    Try
-    '        dt.Load(cmd.ExecuteReader())
-    '    Catch ex As Exception
-
-    '        MsgBox("Error al operar con la base de datos!", MsgBoxStyle.Critical, "Error!")
-    '    Finally
-    '        conexion.Close()
-    '    End Try
-    '    If dt.Rows(0)("IdEstado") = 0 Then
-    '        Return dt.Rows(0)("Acceso")
-    '    Else
-    '        Return 0
-    '    End If
-    'End Function
-
 
     Sub CargarColaciones(DateInfo As DateTime)
         Dim FechaIni As Date = DateInfo
@@ -393,385 +748,23 @@ Public Class Frm_SolicitudColacion
         'Lbl_P_D5.Text = ""
     End Sub
 
-    Private Sub Almuerzos_Click(sender As Object, e As EventArgs) Handles Lbl_A1.Click, Lbl_D1.Click, Lbl_C1.Click, Lbl_B1.Click, Lbl_B2.Click, Lbl_A2.Click, Lbl_D5.Click, Lbl_A5.Click, Lbl_B5.Click, Lbl_C5.Click, Lbl_D4.Click, Lbl_A4.Click, Lbl_B4.Click, Lbl_C4.Click, Lbl_D3.Click, Lbl_C3.Click, Lbl_B3.Click, Lbl_A3.Click, Lbl_C2.Click, Lbl_D2.Click
-        'If sender.text = "" Then
-        '    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-        '    MDIParent1.TlStrpSttsLbl_SQL.Text = "No existe descripción de Almuerzo.... No es posible su seleción"
-        '    Beep()
-        '    Exit Sub
-        'End If
-        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-        Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
-        Dim str_a As String = String.Format("Lbl_A{0}", Linea)
-        Dim str_b As String = String.Format("Lbl_B{0}", Linea)
-        Dim str_c As String = String.Format("Lbl_C{0}", Linea)
-        Dim str_d As String = String.Format("Lbl_D{0}", Linea)
-        controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
-        controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
-        controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
-        controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
-        If sender.name <> controlLabel_A.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_A)
-        If sender.name <> controlLabel_B.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_B)
-        If sender.name <> controlLabel_C.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_C)
-        If sender.name <> controlLabel_D.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_D)
+    Private Sub VisiblePostres()
 
-        If sender.Image Is Nothing Then
-            Seleccionar_Label_Almuerzo(CType(sender, Label))
-        Else
-            Inicializar_Label_Almuerzo(CType(sender, Label))
-            'Borrar Postres
-            Dim TblLyutPnl As TableLayoutPanel
-            Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
-            'Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
-            Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
-            Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
-            Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
-            Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
-            Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
-            TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
-            controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
-            controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
-            controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
-            controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
-            If sender.name <> controlLabel_E.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_E)
-            If sender.name <> controlLabel_F.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_F)
-            If sender.name <> controlLabel_G.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_G)
-            If sender.name <> controlLabel_H.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_H)
-        End If
-
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
-        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
-    End Sub
-
-    Private Sub Seleccionar_Label_Almuerzo(ControlLabel As Label)
-
-        ControlLabel.Image = Global.RRHH.My.Resources.Resources.check_mark_white
-        ControlLabel.BackColor = Color.FromArgb(153, 180, 51)
-        ControlLabel.ForeColor = Color.White
-
-    End Sub
-
-    Private Sub Inicializar_Label_Almuerzo(ControlLabel As Label)
-
-        ControlLabel.Image = Nothing
-        ControlLabel.BackColor = BackColorAlmuerzo
-        ControlLabel.ForeColor = Color.Black
-
-    End Sub
-
-    Private Sub Postres_Click(sender As Object, e As EventArgs) Handles Lbl_P_A1.Click, Lbl_P_D1.Click, Lbl_P_C1.Click, Lbl_P_B1.Click, Lbl_P_D5.Click, Lbl_P_D4.Click, Lbl_P_D3.Click, Lbl_P_D2.Click, Lbl_P_C5.Click, Lbl_P_C4.Click, Lbl_P_C3.Click, Lbl_P_C2.Click, Lbl_P_B5.Click, Lbl_P_B4.Click, Lbl_P_B3.Click, Lbl_P_B2.Click, Lbl_P_A5.Click, Lbl_P_A4.Click, Lbl_P_A3.Click, Lbl_P_A2.Click
-        'If sender.text = "" Then
-        '    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-        '    MDIParent1.TlStrpSttsLbl_SQL.Text = "No existe descripción de Postre.... No es posible su seleción"
-        '    Beep()
-        '    Exit Sub
-        'End If
-        'Revisar si esta seleccionado un almuerzo
-        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-        Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
-        Dim str_a As String = String.Format("Lbl_A{0}", Linea)
-        Dim str_b As String = String.Format("Lbl_B{0}", Linea)
-        Dim str_c As String = String.Format("Lbl_C{0}", Linea)
-        Dim str_d As String = String.Format("Lbl_D{0}", Linea)
-        controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
-        controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
-        controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
-        controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
-        If IsNothing(controlLabel_A.Image) And IsNothing(controlLabel_B.Image) And IsNothing(controlLabel_C.Image) And IsNothing(controlLabel_D.Image) Then
-            Beep()
-            Exit Sub
-        End If
-        'Fin ............Revisar si esta seleccionado un almuerzo
-
-        Dim TblLyutPnl As TableLayoutPanel
-        Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
-        'Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
-        Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
-        Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
-        Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
-        Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
-        Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
-        TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
-        controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
-        controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
-        controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
-        controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
-        If sender.name <> controlLabel_E.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_E)
-        If sender.name <> controlLabel_F.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_F)
-        If sender.name <> controlLabel_G.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_G)
-        If sender.name <> controlLabel_H.Name.ToString Then Inicializar_Label_Almuerzo(controlLabel_H)
-        If sender.Image Is Nothing Then
-            Seleccionar_Label_Almuerzo(CType(sender, Label))
-        Else
-            sender.Image = Nothing
-        End If
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-        vDateInfo = DateAdd("d", -7, vDateInfo)
-        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
-        txbTrabajador.AutoCompleteCustomSource.Clear()
-        txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
-
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
-
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
-        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-        vDateInfo = DateAdd("d", 7, vDateInfo)
-        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
-        txbTrabajador.AutoCompleteCustomSource.Clear()
-        txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
-
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
-
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
-        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim Errores As String = ""
-        Dim FechaIni As Date = vDateInfo
-        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-        Dim SelectAlmuerzo, SelectPostre As String
-        Dim TblLyutPnl As TableLayoutPanel
-        Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
-        For Linea = 1 To 5
-            SelectAlmuerzo = "-"
-            Dim str_a As String = String.Format("Lbl_A{0}", Linea)
-            Dim str_b As String = String.Format("Lbl_B{0}", Linea)
-            Dim str_c As String = String.Format("Lbl_C{0}", Linea)
-            Dim str_d As String = String.Format("Lbl_D{0}", Linea)
-            controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
-            controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
-            controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
-            controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
-            If Not controlLabel_A.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_A.Name.ToString, 2), 1)
-            If Not controlLabel_B.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_B.Name.ToString, 2), 1)
-            If Not controlLabel_C.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_C.Name.ToString, 2), 1)
-            If Not controlLabel_D.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_D.Name.ToString, 2), 1)
-
-
-            SelectPostre = "-"
-            Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
-            Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
-            Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
-            Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
-            Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
-            TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
-            controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
-            controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
-            controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
-            controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
-            If Not controlLabel_E.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_E.Name.ToString, 2), 1)
-            If Not controlLabel_F.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_F.Name.ToString, 2), 1)
-            If Not controlLabel_G.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_G.Name.ToString, 2), 1)
-            If Not controlLabel_H.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_H.Name.ToString, 2), 1)
-            Dim Rut As String = gRut 'MDIParent1.Lbl_RutTrab.ToString
-            Dim e_cod_interno As String = MDIParent1.Lbl_Cod_Interno.ToString
-            Dim e_Fecha_Graba As String = Date.Now.ToString("yyyyMMdd")
-            Dim e_Fecha_Solicitu As String = vDateInfo.ToString("yyyyMMdd")
-            Dim e_Almuerzo As String = SelectAlmuerzo
-            Dim e_Postre As String = SelectPostre
-            Dim e_Id_RutEmpresa As String = MDIParent1.Lbl_RutEmpresa.Text
-
-
-
-            cmd = New SqlCommand("Colaciones_Solicitudes_Ges", conexion)
-            cmd.CommandType = CommandType.StoredProcedure
-            conexion.Open()
-            cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) ' MDIParent1.Lbl_RutTrab.Text))
-            cmd.Parameters.Add(New SqlParameter("@cod_interno", MDIParent1.Lbl_Cod_Interno.Text))
-            cmd.Parameters.Add(New SqlParameter("@Fecha_Graba", Date.Now.ToString("yyyyMMdd")))
-            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", FechaIni.ToString("yyyyMMdd")))
-            cmd.Parameters.Add(New SqlParameter("@Almuerzo", SelectAlmuerzo))
-            cmd.Parameters.Add(New SqlParameter("@Postre", SelectPostre))
-            cmd.Parameters.Add(New SqlParameter("@Id_RutEmpresa", MDIParent1.Lbl_RutEmpresa.Text))
-            Try
-                dt.Reset()
-                dt.Load(cmd.ExecuteReader())
-            Catch ex As Exception
-                Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
-            Finally
-                conexion.Close()
-            End Try
-            FechaIni = DateAdd("d", 1, FechaIni)
-        Next
-        If Errores <> "" Then
-            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-            MDIParent1.TlStrpSttsLbl_SQL.Text = Errores
-        Else
-            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.CornflowerBlue
-            MDIParent1.TlStrpSttsLbl_SQL.Text = "Grabado con exito"
-        End If
-        'If Month(vDateInfo) = Month(Date.Now) Then
-        '    MsgBox("Recuerde  : " & vbCrLf & vbCrLf &
-        '    "    Para aquellos colaboradores que por algún motivo no seleccionen " & vbCrLf &
-        '    "el almuerzo mensual y lo hagan sólo esporádicamente en forma diaria, " & vbCrLf &
-        '    "ya no se contará con la opción de escoger su  preferencia, sino que  " & vbCrLf &
-        '    "la alternativa preparada dependerá  del stock disponible del " & vbCrLf &
-        '    "proveedor del casino " & vbCrLf & vbCrLf &
-        '    "Comunicado de fecha 27 de mayo del 2016", MsgBoxStyle.Exclamation, "Advertencia")
-        'End If
-    End Sub
-
-    Private Sub BuscaSolicitudes(DateInfo As DateTime)
-        Dim Errores As String = ""
-        Dim FechaIni As Date = DateInfo
-        For Linea = 1 To 5
-            cmd = New SqlCommand("Colaciones_Solicitudes_Info", conexion)
-            cmd.CommandType = CommandType.StoredProcedure
-            conexion.Open()
-            cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) 'MDIParent1.Lbl_RutTrab.Text))
-            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", FechaIni.ToString("yyyyMMdd")))
-            Try
-                dt.Reset()
-                dt.Load(cmd.ExecuteReader())
-            Catch ex As Exception
-                Errores =
-                Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
-            Finally
-                conexion.Close()
-            End Try
-            Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-            Dim str_a As String = String.Format("Lbl_A{0}", Linea)
-            Dim str_b As String = String.Format("Lbl_B{0}", Linea)
-            Dim str_c As String = String.Format("Lbl_C{0}", Linea)
-            Dim str_d As String = String.Format("Lbl_D{0}", Linea)
-
-            Dim TblLyutPnl As TableLayoutPanel
-            Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
-
-            Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
-            Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
-            Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
-            Dim str_g As String = String.Format("Lbl_P_C{0}", Linea)
-            Dim str_h As String = String.Format("Lbl_P_D{0}", Linea)
-
-            controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
-            controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
-            controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
-            controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
-
-            TblLyutPnl = CType(Me.TableLayoutPanel2.Controls(str_T), TableLayoutPanel)
-            controlLabel_E = CType(TblLyutPnl.Controls(str_e), Label)
-            controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
-            controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
-            controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
-            If dt.Rows(0)("IdEstado") = 0 Then
-                If dt.Rows(0)("Almuerzo") = "A" Then Seleccionar_Label_Almuerzo(controlLabel_A) Else Inicializar_Label_Almuerzo(controlLabel_A)
-                If dt.Rows(0)("Almuerzo") = "B" Then Seleccionar_Label_Almuerzo(controlLabel_B) Else Inicializar_Label_Almuerzo(controlLabel_B)
-                If dt.Rows(0)("Almuerzo") = "C" Then Seleccionar_Label_Almuerzo(controlLabel_C) Else Inicializar_Label_Almuerzo(controlLabel_C)
-                If dt.Rows(0)("Almuerzo") = "D" Then Seleccionar_Label_Almuerzo(controlLabel_D) Else Inicializar_Label_Almuerzo(controlLabel_D)
-
-                If dt.Rows(0)("Postre") = "A" Then Seleccionar_Label_Almuerzo(controlLabel_E) Else Inicializar_Label_Almuerzo(controlLabel_E)
-                If dt.Rows(0)("Postre") = "B" Then Seleccionar_Label_Almuerzo(controlLabel_F) Else Inicializar_Label_Almuerzo(controlLabel_F)
-                If dt.Rows(0)("Postre") = "C" Then Seleccionar_Label_Almuerzo(controlLabel_G) Else Inicializar_Label_Almuerzo(controlLabel_G)
-                If dt.Rows(0)("Postre") = "D" Then Seleccionar_Label_Almuerzo(controlLabel_H) Else Inicializar_Label_Almuerzo(controlLabel_H)
-            Else
-                Inicializar_Label_Almuerzo(controlLabel_A)
-                Inicializar_Label_Almuerzo(controlLabel_B)
-                Inicializar_Label_Almuerzo(controlLabel_C)
-                Inicializar_Label_Almuerzo(controlLabel_D)
-                Inicializar_Label_Almuerzo(controlLabel_E)
-                Inicializar_Label_Almuerzo(controlLabel_F)
-                Inicializar_Label_Almuerzo(controlLabel_G)
-                Inicializar_Label_Almuerzo(controlLabel_H)
-            End If
-            FechaIni = DateAdd("d", 1, FechaIni)
-        Next
-    End Sub
-
-    Private Sub Frm_SolicitudColacion_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
-
-    End Sub
-
-    Private Function BuscarDatosTrabajador(ByVal nombre) As DataTable
-        Dim tabla As DataTable = New DataTable()
-        conexion.Open()
-        Try
-            Dim comand As SqlCommand = New SqlCommand("Solicitud_Buscar_Datos_Trabajador", conexion)
-            comand.CommandType = CommandType.StoredProcedure
-            comand.Parameters.Add(New SqlParameter("@nombreCompleto", nombre))
-            Dim adapter As New SqlDataAdapter(comand)
-            adapter.Fill(tabla)
-            'rut = dt.Rows(0)("rut").ToString()
-            comand.Dispose()
-        Catch ex As Exception
-
-        Finally
-            conexion.Close()
-        End Try
-        Return tabla
-    End Function
-
-    Private Sub txbTrabajador_TextChanged(sender As Object, e As EventArgs) Handles txbTrabajador.TextChanged
-        dt = BuscarDatosTrabajador(txbTrabajador.Text)
-        'MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("nombre_emp").ToString()
-        'MDIParent1.TxtBx_UserName.Text = txbTrabajador.Text
-        'MDIParent1.Lbl_RutTrab.Text = dt.Rows(0)("rut").ToString()
-        'MDIParent1.Lbl_Cod_Interno.Text = ""
-
-
-
-        txbRut.Text = dt.Rows(0)("rut").ToString()
-        gRut = dt.Rows(0)("rut").ToString()
-        txbCargo.Text = dt.Rows(0)("cargo").ToString()
-        txbEmpresa.Text = dt.Rows(0)("nombre_emp").ToString()
-
-        Try
-            txbFechaIngreso.Text = Date.Parse(dt.Rows(0)("fecha_ingreso")).ToString("dd-MM-yyyy")
-        Catch ex As Exception
-        End Try
-    End Sub
-
-    Private Function listaAutocompletadaTrabajadores() As AutoCompleteStringCollection
-        Dim lista As AutoCompleteStringCollection = New AutoCompleteStringCollection()
-        conexion.Open()
-        Try
-            cmd = New SqlCommand("Solicitud_Empleados_Sugeridos", conexion)
-            cmd.Parameters.Add(New SqlParameter("@Fecha_SolicitudIni", tb_FechaIni.Text))
-            cmd.CommandType = CommandType.StoredProcedure
-            'cmd.Parameters.Add(New SqlParameter("@area", area))
-            Dim adapter As New SqlDataAdapter(cmd)
-            dt = New DataTable()
-            adapter.Fill(dt)
-            For i = 0 To dt.Rows.Count - 1
-                lista.Add(dt.Rows(i)("nombre").ToString)
-            Next
-            cmd.Dispose()
-        Catch ex As Exception
-            MsgBox("error: " + ex.Message, MsgBoxStyle.Exclamation, "Area Invalida")
-        Finally
-            conexion.Close()
-        End Try
-        Return lista
-    End Function
-
-    Private Sub txbTrabajador_MouseCaptureChanged(sender As Object, e As EventArgs) Handles txbTrabajador.MouseCaptureChanged
-
-    End Sub
-
-    Private Sub txbRut_ModifiedChanged(sender As Object, e As EventArgs) Handles txbRut.ModifiedChanged
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
-    End Sub
-
-    Private Sub txbTrabajador_Validated(sender As Object, e As EventArgs) Handles txbTrabajador.Validated
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
-    End Sub
-
-    Private Sub txbTrabajador_ModifiedChanged(sender As Object, e As EventArgs) Handles txbTrabajador.ModifiedChanged
-
+        Lbl_P_B1.Visible = False
+        Lbl_P_C1.Visible = False
+        Lbl_P_D1.Visible = False
+        Lbl_P_B2.Visible = False
+        Lbl_P_C2.Visible = False
+        Lbl_P_D2.Visible = False
+        Lbl_P_B3.Visible = False
+        Lbl_P_C3.Visible = False
+        Lbl_P_D3.Visible = False
+        Lbl_P_B4.Visible = False
+        Lbl_P_C4.Visible = False
+        Lbl_P_D4.Visible = False
+        Lbl_P_B5.Visible = False
+        Lbl_P_C5.Visible = False
+        Lbl_P_D5.Visible = False
     End Sub
 
 
@@ -788,4 +781,28 @@ Public Class Frm_SolicitudColacion
     '        "Comunicado de fecha 27 de mayo del 2016", MsgBoxStyle.Exclamation, "Advertencia")
     '    End If
     'End Sub
+
+    'Function RevisaAcceso(Campo As String) As Boolean
+    '    dt.Reset()
+    '    cmd = New SqlCommand("Colaciones_Pass_Info", conexion)
+    '    cmd.CommandType = CommandType.StoredProcedure
+    '    conexion.Open()
+    '    cmd.Parameters.Add(New SqlParameter("@Rut", MDIParent1.Lbl_RutTrab.Text))
+
+    '    cmd.Parameters.Add(New SqlParameter("@Campo", Campo))
+    '    Try
+    '        dt.Load(cmd.ExecuteReader())
+    '    Catch ex As Exception
+
+    '        MsgBox("Error al operar con la base de datos!", MsgBoxStyle.Critical, "Error!")
+    '    Finally
+    '        conexion.Close()
+    '    End Try
+    '    If dt.Rows(0)("IdEstado") = 0 Then
+    '        Return dt.Rows(0)("Acceso")
+    '    Else
+    '        Return 0
+    '    End If
+    'End Function
+
 End Class

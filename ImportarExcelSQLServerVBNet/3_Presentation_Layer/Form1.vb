@@ -26,8 +26,12 @@ Public Partial Class Form1
 	Private bEmpOcultos As Boolean
 	Private iEmpSelec As Integer
     Private pnlParent As Panel
+    Private StatusBarBottom As StatusStrip
     Private Id As String
     Private Tab_gradient As Integer
+
+    Public Delegate Sub LaunchEvent()
+    Public Event EnviarEvento As LaunchEvent
 
     Public Property bAcceso() As Boolean
 		Get
@@ -58,22 +62,25 @@ Public Partial Class Form1
         End Set
     End Property
 
-    Public Sub New(prmPnlParent As Panel, parentHeight As Integer, Id As String)
+    Public Sub New(prmPnlParent As Panel, parentHeight As Integer, prmStatusBarBottom As StatusStrip, Id As String)
         Me.Id = Id
+        Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
         InitializeComponent()
         Me.pnlParent = prmPnlParent
-        'btnVolver.Location = New Point(20, parentHeight - btnVolver.Size.Height - 175)
-
+        Me.StatusBarBottom = prmStatusBarBottom
         ' To report progress from the background worker we need to set this property
         backgroundWorker1.WorkerReportsProgress = True
         ' This event will be raised on the worker thread when the worker starts
         AddHandler backgroundWorker1.DoWork, New DoWorkEventHandler(AddressOf backgroundWorker1_DoWork)
         ' This event will be raised when we call ReportProgress
         AddHandler backgroundWorker1.ProgressChanged, New ProgressChangedEventHandler(AddressOf backgroundWorker1_ProgressChanged)
-        Me.WindowState = FormWindowState.Maximized
-        Me.Size = New Size(prmPnlParent.Size.Width, prmPnlParent.Size.Height + prmPnlParent.Location.Y - Me.Location.Y - 70)
+        'Me.Size = New Size(prmPnlParent.Size.Width, prmPnlParent.Size.Height + prmPnlParent.Location.Y - Me.Location.Y - 70)
     End Sub
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Me.SuspendLayout()
+        Me.DoubleBuffered = True
+
         gradientTab1.SelectedIndex = -1
         bEmpOcultos = False
         iEmpSelec = 0
@@ -81,8 +88,10 @@ Public Partial Class Form1
         CargarCombosPeriodosRegistrados()
         CargarComboEmpresas()
         gradientTab1.SelectedIndex = 0
-        'Comentario de prueba 
-        'Cambios de prueba para verificar
+
+        Me.ResumeLayout()
+    End Sub
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
     Private Sub backgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs)
@@ -1146,13 +1155,12 @@ Public Partial Class Form1
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
         If pnlParent IsNot Nothing Then
+            Me.StatusBarBottom.Visible = True
+            RaiseEvent EnviarEvento()
             pnlParent.Visible = True
         End If
 
     End Sub
-
-
-
 
 
 

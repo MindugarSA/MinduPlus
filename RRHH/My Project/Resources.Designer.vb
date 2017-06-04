@@ -213,6 +213,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property home_shape_32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("home_shape_32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property home_shape64() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("home_shape64", resourceCulture)
@@ -346,6 +356,16 @@ Namespace My.Resources
         Friend ReadOnly Property PermisosSistema() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("PermisosSistema", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property printing32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("printing32", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

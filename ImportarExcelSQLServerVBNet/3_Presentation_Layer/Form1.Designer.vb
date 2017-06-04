@@ -24,19 +24,20 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.backgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.backgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.contextVerSelec = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.toolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.contextOcultarSelec = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.btnVolver = New MetroFramework.Controls.MetroButton()
+        Me.toolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.gradientTab1 = New MetroFramework.Controls.MetroTabControl()
-        Me.Label21 = New System.Windows.Forms.Label()
         Me.tabPage0 = New System.Windows.Forms.TabPage()
         Me.groupBox1 = New System.Windows.Forms.GroupBox()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
@@ -110,8 +111,7 @@ Partial Class Form1
         Me.label17 = New System.Windows.Forms.Label()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
         Me.dataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.toolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.toolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label21 = New System.Windows.Forms.Label()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.contextVerSelec.SuspendLayout()
         Me.contextOcultarSelec.SuspendLayout()
@@ -151,22 +151,43 @@ Partial Class Form1
         Me.contextVerSelec.Name = "contextVerSelec"
         Me.contextVerSelec.Size = New System.Drawing.Size(230, 26)
         '
+        'toolStripMenuItem1
+        '
+        Me.toolStripMenuItem1.Image = Global.ImportarExcelSQLServer.Resources.magnifier_zoom_in
+        Me.toolStripMenuItem1.Name = "toolStripMenuItem1"
+        Me.toolStripMenuItem1.Size = New System.Drawing.Size(229, 22)
+        Me.toolStripMenuItem1.Text = "Mostrar Todos los Empleados"
+        '
         'contextOcultarSelec
         '
         Me.contextOcultarSelec.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripMenuItem2})
         Me.contextOcultarSelec.Name = "contextOcultarSelec"
         Me.contextOcultarSelec.Size = New System.Drawing.Size(274, 26)
         '
+        'toolStripMenuItem2
+        '
+        Me.toolStripMenuItem2.Image = Global.ImportarExcelSQLServer.Resources.magifier_zoom_out
+        Me.toolStripMenuItem2.Name = "toolStripMenuItem2"
+        Me.toolStripMenuItem2.Size = New System.Drawing.Size(273, 22)
+        Me.toolStripMenuItem2.Text = "Ocultar Empleados NO Seleccionados"
+        '
         'btnVolver
         '
         Me.btnVolver.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnVolver.FontSize = MetroFramework.MetroButtonSize.Tall
-        Me.btnVolver.Location = New System.Drawing.Point(15, 509)
+        Me.btnVolver.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnVolver.Image = Global.ImportarExcelSQLServer.Resources.home_shape32
+        Me.btnVolver.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnVolver.Location = New System.Drawing.Point(15, 540)
+        Me.btnVolver.Margin = New System.Windows.Forms.Padding(0)
         Me.btnVolver.Name = "btnVolver"
-        Me.btnVolver.Size = New System.Drawing.Size(170, 46)
+        Me.btnVolver.Size = New System.Drawing.Size(170, 52)
         Me.btnVolver.TabIndex = 10
-        Me.btnVolver.Text = "Volver"
-        Me.btnVolver.UseSelectable = True
+        Me.btnVolver.Text = "Volver" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A Inicio"
+        Me.btnVolver.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnVolver.UseVisualStyleBackColor = False
         '
         'gradientTab1
         '
@@ -179,20 +200,10 @@ Partial Class Form1
         Me.gradientTab1.Controls.Add(Me.tabPage3)
         Me.gradientTab1.Location = New System.Drawing.Point(12, 34)
         Me.gradientTab1.Name = "gradientTab1"
-        Me.gradientTab1.SelectedIndex = 1
-        Me.gradientTab1.Size = New System.Drawing.Size(1333, 468)
+        Me.gradientTab1.SelectedIndex = 0
+        Me.gradientTab1.Size = New System.Drawing.Size(1333, 508)
         Me.gradientTab1.TabIndex = 9
         Me.gradientTab1.UseSelectable = True
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(14, 10)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(206, 21)
-        Me.Label21.TabIndex = 11
-        Me.Label21.Text = "Exportar Datos a SQL Server"
         '
         'tabPage0
         '
@@ -202,7 +213,7 @@ Partial Class Form1
         Me.tabPage0.Location = New System.Drawing.Point(4, 38)
         Me.tabPage0.Name = "tabPage0"
         Me.tabPage0.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage0.Size = New System.Drawing.Size(1325, 426)
+        Me.tabPage0.Size = New System.Drawing.Size(1325, 466)
         Me.tabPage0.TabIndex = 0
         Me.tabPage0.Text = "Importar Excel    "
         Me.tabPage0.UseVisualStyleBackColor = True
@@ -229,17 +240,19 @@ Partial Class Form1
         Me.groupBox1.Controls.Add(Me.label3)
         Me.groupBox1.Controls.Add(Me.label2)
         Me.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.groupBox1.Location = New System.Drawing.Point(3, 3)
+        Me.groupBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.groupBox1.Name = "groupBox1"
         Me.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.groupBox1.Size = New System.Drawing.Size(1319, 420)
+        Me.groupBox1.Size = New System.Drawing.Size(1319, 460)
         Me.groupBox1.TabIndex = 7
         Me.groupBox1.TabStop = False
         '
         'pictureBox1
         '
         Me.pictureBox1.Image = Global.ImportarExcelSQLServer.Resources.Loader
-        Me.pictureBox1.Location = New System.Drawing.Point(78, 5)
+        Me.pictureBox1.Location = New System.Drawing.Point(78, 7)
         Me.pictureBox1.Name = "pictureBox1"
         Me.pictureBox1.Size = New System.Drawing.Size(30, 30)
         Me.pictureBox1.TabIndex = 19
@@ -272,7 +285,7 @@ Partial Class Form1
         Me.label7.AutoSize = True
         Me.label7.BackColor = System.Drawing.Color.Transparent
         Me.label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label7.Location = New System.Drawing.Point(15, 398)
+        Me.label7.Location = New System.Drawing.Point(15, 422)
         Me.label7.Name = "label7"
         Me.label7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label7.Size = New System.Drawing.Size(104, 15)
@@ -282,17 +295,17 @@ Partial Class Form1
         'button3
         '
         Me.button3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button3.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button3.FlatAppearance.BorderSize = 0
         Me.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button3.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button3.Location = New System.Drawing.Point(962, 33)
+        Me.button3.Image = Global.ImportarExcelSQLServer.Resources.search_white16
+        Me.button3.Location = New System.Drawing.Point(962, 31)
         Me.button3.Name = "button3"
         Me.button3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button3.Size = New System.Drawing.Size(25, 23)
+        Me.button3.Size = New System.Drawing.Size(27, 27)
         Me.button3.TabIndex = 14
-        Me.button3.Text = "..."
-        Me.button3.UseVisualStyleBackColor = True
+        Me.button3.UseVisualStyleBackColor = False
         '
         'label5
         '
@@ -325,14 +338,14 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle5
         Me.dataGridView1.Location = New System.Drawing.Point(15, 77)
         Me.dataGridView1.MultiSelect = False
         Me.dataGridView1.Name = "dataGridView1"
@@ -340,7 +353,7 @@ Partial Class Form1
         Me.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dataGridView1.RowHeadersVisible = False
         Me.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView1.Size = New System.Drawing.Size(1278, 318)
+        Me.dataGridView1.Size = New System.Drawing.Size(1278, 342)
         Me.dataGridView1.TabIndex = 7
         '
         'comboBox2
@@ -419,32 +432,38 @@ Partial Class Form1
         'button2
         '
         Me.button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button2.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button2.Enabled = False
+        Me.button2.FlatAppearance.BorderSize = 0
         Me.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button2.Image = Global.ImportarExcelSQLServer.Resources._1491870612_icons_user2
+        Me.button2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.button2.Image = Global.ImportarExcelSQLServer.Resources.profile_user_white16
         Me.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.button2.Location = New System.Drawing.Point(1130, 33)
+        Me.button2.Location = New System.Drawing.Point(1130, 31)
         Me.button2.Name = "button2"
         Me.button2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button2.Size = New System.Drawing.Size(163, 23)
+        Me.button2.Size = New System.Drawing.Size(163, 27)
         Me.button2.TabIndex = 2
         Me.button2.Text = "Exportar a SQL"
-        Me.button2.UseVisualStyleBackColor = True
+        Me.button2.UseVisualStyleBackColor = False
         '
         'button1
         '
-        Me.button1.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button1.FlatAppearance.BorderSize = 0
         Me.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button1.Location = New System.Drawing.Point(555, 33)
+        Me.button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.button1.Location = New System.Drawing.Point(555, 31)
         Me.button1.Name = "button1"
         Me.button1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button1.Size = New System.Drawing.Size(25, 23)
+        Me.button1.Size = New System.Drawing.Size(27, 27)
         Me.button1.TabIndex = 7
         Me.button1.Text = "..."
-        Me.button1.UseVisualStyleBackColor = True
+        Me.button1.UseVisualStyleBackColor = False
         '
         'label3
         '
@@ -478,7 +497,7 @@ Partial Class Form1
         Me.tabPage1.Location = New System.Drawing.Point(4, 38)
         Me.tabPage1.Name = "tabPage1"
         Me.tabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage1.Size = New System.Drawing.Size(1325, 426)
+        Me.tabPage1.Size = New System.Drawing.Size(1325, 434)
         Me.tabPage1.TabIndex = 1
         Me.tabPage1.Text = "Consultar Asistencias    "
         Me.tabPage1.UseVisualStyleBackColor = True
@@ -502,27 +521,30 @@ Partial Class Form1
         Me.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox2.Location = New System.Drawing.Point(3, 3)
         Me.groupBox2.Name = "groupBox2"
-        Me.groupBox2.Size = New System.Drawing.Size(1319, 420)
+        Me.groupBox2.Size = New System.Drawing.Size(1319, 428)
         Me.groupBox2.TabIndex = 0
         Me.groupBox2.TabStop = False
         '
         'Button15
         '
         Me.Button15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button15.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.Button15.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button15.Enabled = False
+        Me.Button15.FlatAppearance.BorderSize = 0
         Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Image = Global.ImportarExcelSQLServer.Resources.black_ms_excel_16
+        Me.Button15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Button15.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button15.Image = Global.ImportarExcelSQLServer.Resources.ms_excel_white16
         Me.Button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button15.Location = New System.Drawing.Point(1047, 21)
+        Me.Button15.Location = New System.Drawing.Point(1047, 19)
         Me.Button15.Name = "Button15"
         Me.Button15.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Button15.Size = New System.Drawing.Size(137, 23)
+        Me.Button15.Size = New System.Drawing.Size(137, 27)
         Me.Button15.TabIndex = 28
         Me.Button15.Text = "Ver Archivo Origen"
         Me.Button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button15.UseVisualStyleBackColor = True
+        Me.Button15.UseVisualStyleBackColor = False
         '
         'label14
         '
@@ -530,7 +552,7 @@ Partial Class Form1
         Me.label14.AutoSize = True
         Me.label14.BackColor = System.Drawing.Color.Transparent
         Me.label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label14.Location = New System.Drawing.Point(15, 398)
+        Me.label14.Location = New System.Drawing.Point(15, 390)
         Me.label14.Name = "label14"
         Me.label14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label14.Size = New System.Drawing.Size(104, 15)
@@ -540,17 +562,17 @@ Partial Class Form1
         'button8
         '
         Me.button8.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button8.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button8.FlatAppearance.BorderSize = 0
         Me.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button8.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button8.Location = New System.Drawing.Point(854, 21)
+        Me.button8.Image = CType(resources.GetObject("button8.Image"), System.Drawing.Image)
+        Me.button8.Location = New System.Drawing.Point(854, 19)
         Me.button8.Name = "button8"
         Me.button8.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button8.Size = New System.Drawing.Size(25, 23)
+        Me.button8.Size = New System.Drawing.Size(27, 27)
         Me.button8.TabIndex = 25
-        Me.button8.Text = "..."
-        Me.button8.UseVisualStyleBackColor = True
+        Me.button8.UseVisualStyleBackColor = False
         '
         'textBox4
         '
@@ -604,17 +626,18 @@ Partial Class Form1
         '
         'button5
         '
-        Me.button5.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button5.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.button5.FlatAppearance.BorderSize = 0
         Me.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button5.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button5.Location = New System.Drawing.Point(229, 19)
+        Me.button5.Image = CType(resources.GetObject("button5.Image"), System.Drawing.Image)
+        Me.button5.Location = New System.Drawing.Point(229, 18)
         Me.button5.Name = "button5"
         Me.button5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button5.Size = New System.Drawing.Size(25, 23)
+        Me.button5.Size = New System.Drawing.Size(27, 27)
         Me.button5.TabIndex = 15
-        Me.button5.Text = "..."
-        Me.button5.UseVisualStyleBackColor = True
+        Me.button5.UseVisualStyleBackColor = False
         '
         'dataGridView2
         '
@@ -626,42 +649,45 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle6
         Me.dataGridView2.Location = New System.Drawing.Point(16, 56)
         Me.dataGridView2.MultiSelect = False
         Me.dataGridView2.Name = "dataGridView2"
         Me.dataGridView2.ReadOnly = True
         Me.dataGridView2.RowHeadersVisible = False
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView2.Size = New System.Drawing.Size(1278, 339)
+        Me.dataGridView2.Size = New System.Drawing.Size(1278, 331)
         Me.dataGridView2.TabIndex = 5
         '
         'button4
         '
         Me.button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button4.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button4.Enabled = False
+        Me.button4.FlatAppearance.BorderSize = 0
         Me.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button4.Location = New System.Drawing.Point(1190, 21)
+        Me.button4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.button4.Location = New System.Drawing.Point(1190, 19)
         Me.button4.Name = "button4"
         Me.button4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button4.Size = New System.Drawing.Size(101, 23)
+        Me.button4.Size = New System.Drawing.Size(101, 27)
         Me.button4.TabIndex = 3
         Me.button4.Text = "Exportar a Excel"
-        Me.button4.UseVisualStyleBackColor = True
+        Me.button4.UseVisualStyleBackColor = False
         '
         'label8
         '
         Me.label8.AutoSize = True
-        Me.label8.Location = New System.Drawing.Point(16, 23)
+        Me.label8.Location = New System.Drawing.Point(16, 24)
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(100, 13)
         Me.label8.TabIndex = 1
@@ -672,7 +698,7 @@ Partial Class Form1
         Me.comboBox3.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox3.FormattingEnabled = True
-        Me.comboBox3.Location = New System.Drawing.Point(122, 20)
+        Me.comboBox3.Location = New System.Drawing.Point(122, 21)
         Me.comboBox3.Name = "comboBox3"
         Me.comboBox3.Size = New System.Drawing.Size(102, 21)
         Me.comboBox3.TabIndex = 0
@@ -685,7 +711,7 @@ Partial Class Form1
         Me.tabPage2.Location = New System.Drawing.Point(4, 38)
         Me.tabPage2.Name = "tabPage2"
         Me.tabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage2.Size = New System.Drawing.Size(1325, 426)
+        Me.tabPage2.Size = New System.Drawing.Size(1325, 434)
         Me.tabPage2.TabIndex = 2
         Me.tabPage2.Text = "Consultar Resumen    "
         Me.tabPage2.UseVisualStyleBackColor = True
@@ -708,7 +734,7 @@ Partial Class Form1
         Me.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox3.Location = New System.Drawing.Point(3, 3)
         Me.groupBox3.Name = "groupBox3"
-        Me.groupBox3.Size = New System.Drawing.Size(1319, 420)
+        Me.groupBox3.Size = New System.Drawing.Size(1319, 428)
         Me.groupBox3.TabIndex = 0
         Me.groupBox3.TabStop = False
         '
@@ -718,7 +744,7 @@ Partial Class Form1
         Me.label15.AutoSize = True
         Me.label15.BackColor = System.Drawing.Color.Transparent
         Me.label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label15.Location = New System.Drawing.Point(15, 398)
+        Me.label15.Location = New System.Drawing.Point(15, 390)
         Me.label15.Name = "label15"
         Me.label15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label15.Size = New System.Drawing.Size(104, 15)
@@ -728,32 +754,35 @@ Partial Class Form1
         'button9
         '
         Me.button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button9.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button9.Enabled = False
+        Me.button9.FlatAppearance.BorderSize = 0
         Me.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.button9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.button9.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.button9.Location = New System.Drawing.Point(1190, 21)
         Me.button9.Name = "button9"
         Me.button9.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button9.Size = New System.Drawing.Size(101, 23)
+        Me.button9.Size = New System.Drawing.Size(101, 27)
         Me.button9.TabIndex = 27
         Me.button9.Text = "Exportar a Excel"
-        Me.button9.UseVisualStyleBackColor = True
+        Me.button9.UseVisualStyleBackColor = False
         '
         'button7
         '
         Me.button7.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button7.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button7.FlatAppearance.BorderSize = 0
         Me.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button7.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button7.Location = New System.Drawing.Point(854, 21)
+        Me.button7.Image = CType(resources.GetObject("button7.Image"), System.Drawing.Image)
+        Me.button7.Location = New System.Drawing.Point(854, 19)
         Me.button7.Name = "button7"
         Me.button7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button7.Size = New System.Drawing.Size(25, 23)
+        Me.button7.Size = New System.Drawing.Size(27, 27)
         Me.button7.TabIndex = 25
-        Me.button7.Text = "..."
-        Me.button7.UseVisualStyleBackColor = True
+        Me.button7.UseVisualStyleBackColor = False
         '
         'textBox3
         '
@@ -814,41 +843,41 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView3.DefaultCellStyle = DataGridViewCellStyle7
         Me.dataGridView3.Location = New System.Drawing.Point(16, 56)
         Me.dataGridView3.MultiSelect = False
         Me.dataGridView3.Name = "dataGridView3"
         Me.dataGridView3.ReadOnly = True
         Me.dataGridView3.RowHeadersVisible = False
         Me.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView3.Size = New System.Drawing.Size(1278, 339)
+        Me.dataGridView3.Size = New System.Drawing.Size(1278, 331)
         Me.dataGridView3.TabIndex = 19
         '
         'button6
         '
-        Me.button6.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button6.FlatAppearance.BorderSize = 0
         Me.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button6.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button6.Location = New System.Drawing.Point(229, 19)
+        Me.button6.Image = CType(resources.GetObject("button6.Image"), System.Drawing.Image)
+        Me.button6.Location = New System.Drawing.Point(229, 18)
         Me.button6.Name = "button6"
         Me.button6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button6.Size = New System.Drawing.Size(25, 23)
+        Me.button6.Size = New System.Drawing.Size(27, 27)
         Me.button6.TabIndex = 18
-        Me.button6.Text = "..."
-        Me.button6.UseVisualStyleBackColor = True
+        Me.button6.UseVisualStyleBackColor = False
         '
         'label9
         '
         Me.label9.AutoSize = True
-        Me.label9.Location = New System.Drawing.Point(16, 23)
+        Me.label9.Location = New System.Drawing.Point(16, 24)
         Me.label9.Name = "label9"
         Me.label9.Size = New System.Drawing.Size(100, 13)
         Me.label9.TabIndex = 17
@@ -859,7 +888,7 @@ Partial Class Form1
         Me.comboBox4.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox4.FormattingEnabled = True
-        Me.comboBox4.Location = New System.Drawing.Point(122, 20)
+        Me.comboBox4.Location = New System.Drawing.Point(122, 21)
         Me.comboBox4.Name = "comboBox4"
         Me.comboBox4.Size = New System.Drawing.Size(102, 21)
         Me.comboBox4.TabIndex = 16
@@ -872,7 +901,7 @@ Partial Class Form1
         Me.tabPage3.Location = New System.Drawing.Point(4, 38)
         Me.tabPage3.Name = "tabPage3"
         Me.tabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPage3.Size = New System.Drawing.Size(1325, 426)
+        Me.tabPage3.Size = New System.Drawing.Size(1325, 466)
         Me.tabPage3.TabIndex = 3
         Me.tabPage3.Text = "GESTPER    "
         Me.tabPage3.UseVisualStyleBackColor = True
@@ -895,8 +924,9 @@ Partial Class Form1
         Me.groupBox6.Controls.Add(Me.dataGridView4)
         Me.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox6.Location = New System.Drawing.Point(3, 3)
+        Me.groupBox6.Margin = New System.Windows.Forms.Padding(0)
         Me.groupBox6.Name = "groupBox6"
-        Me.groupBox6.Size = New System.Drawing.Size(1319, 420)
+        Me.groupBox6.Size = New System.Drawing.Size(1319, 460)
         Me.groupBox6.TabIndex = 1
         Me.groupBox6.TabStop = False
         '
@@ -905,7 +935,7 @@ Partial Class Form1
         Me.groupBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox9.Controls.Add(Me.checkBox2)
         Me.groupBox9.Controls.Add(Me.checkBox1)
-        Me.groupBox9.Location = New System.Drawing.Point(767, 383)
+        Me.groupBox9.Location = New System.Drawing.Point(767, 423)
         Me.groupBox9.Name = "groupBox9"
         Me.groupBox9.Size = New System.Drawing.Size(527, 33)
         Me.groupBox9.TabIndex = 27
@@ -937,17 +967,20 @@ Partial Class Form1
         'button10
         '
         Me.button10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button10.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button10.Enabled = False
+        Me.button10.FlatAppearance.BorderSize = 0
         Me.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button10.Location = New System.Drawing.Point(1036, 21)
+        Me.button10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.button10.Location = New System.Drawing.Point(1036, 19)
         Me.button10.Name = "button10"
         Me.button10.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button10.Size = New System.Drawing.Size(101, 23)
+        Me.button10.Size = New System.Drawing.Size(101, 27)
         Me.button10.TabIndex = 32
         Me.button10.Text = "Exportar a Excel"
-        Me.button10.UseVisualStyleBackColor = True
+        Me.button10.UseVisualStyleBackColor = False
         '
         'label20
         '
@@ -1024,17 +1057,17 @@ Partial Class Form1
         '
         'button14
         '
-        Me.button14.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button14.FlatAppearance.BorderSize = 0
         Me.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button14.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button14.Location = New System.Drawing.Point(639, 12)
+        Me.button14.Image = Global.ImportarExcelSQLServer.Resources.search_white16
+        Me.button14.Location = New System.Drawing.Point(639, 10)
         Me.button14.Name = "button14"
         Me.button14.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button14.Size = New System.Drawing.Size(25, 23)
+        Me.button14.Size = New System.Drawing.Size(27, 27)
         Me.button14.TabIndex = 18
-        Me.button14.Text = "..."
-        Me.button14.UseVisualStyleBackColor = True
+        Me.button14.UseVisualStyleBackColor = False
         '
         'comboBox7
         '
@@ -1076,7 +1109,7 @@ Partial Class Form1
         Me.label16.AutoSize = True
         Me.label16.BackColor = System.Drawing.Color.Transparent
         Me.label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label16.Location = New System.Drawing.Point(15, 392)
+        Me.label16.Location = New System.Drawing.Point(15, 432)
         Me.label16.Name = "label16"
         Me.label16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label16.Size = New System.Drawing.Size(104, 15)
@@ -1086,34 +1119,37 @@ Partial Class Form1
         'button12
         '
         Me.button12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button12.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button12.FlatAppearance.BorderSize = 0
         Me.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button12.Image = Global.ImportarExcelSQLServer.Resources._1491870612_icons_user2
+        Me.button12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.button12.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.button12.Image = Global.ImportarExcelSQLServer.Resources.profile_user_white16
         Me.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.button12.Location = New System.Drawing.Point(1143, 21)
+        Me.button12.Location = New System.Drawing.Point(1143, 19)
         Me.button12.Name = "button12"
         Me.button12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button12.Size = New System.Drawing.Size(138, 23)
+        Me.button12.Size = New System.Drawing.Size(138, 27)
         Me.button12.TabIndex = 27
         Me.button12.Text = "Exportar a GESTPER"
         Me.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.button12.UseVisualStyleBackColor = True
+        Me.button12.UseVisualStyleBackColor = False
         '
         'button13
         '
         Me.button13.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button13.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+        Me.button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.button13.FlatAppearance.BorderSize = 0
         Me.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.button13.Image = Global.ImportarExcelSQLServer.Resources.LupaP2
-        Me.button13.Location = New System.Drawing.Point(977, 21)
+        Me.button13.Image = Global.ImportarExcelSQLServer.Resources.search_white16
+        Me.button13.Location = New System.Drawing.Point(977, 19)
         Me.button13.Name = "button13"
         Me.button13.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.button13.Size = New System.Drawing.Size(25, 23)
+        Me.button13.Size = New System.Drawing.Size(27, 27)
         Me.button13.TabIndex = 25
-        Me.button13.Text = "..."
-        Me.button13.UseVisualStyleBackColor = True
+        Me.button13.UseVisualStyleBackColor = False
         '
         'textBox5
         '
@@ -1153,35 +1189,31 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView4.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView4.DefaultCellStyle = DataGridViewCellStyle8
         Me.dataGridView4.Location = New System.Drawing.Point(16, 56)
         Me.dataGridView4.MultiSelect = False
         Me.dataGridView4.Name = "dataGridView4"
         Me.dataGridView4.RowHeadersVisible = False
         Me.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataGridView4.Size = New System.Drawing.Size(1278, 321)
+        Me.dataGridView4.Size = New System.Drawing.Size(1278, 361)
         Me.dataGridView4.TabIndex = 19
         '
-        'toolStripMenuItem1
+        'Label21
         '
-        Me.toolStripMenuItem1.Image = Global.ImportarExcelSQLServer.Resources.magnifier_zoom_in
-        Me.toolStripMenuItem1.Name = "toolStripMenuItem1"
-        Me.toolStripMenuItem1.Size = New System.Drawing.Size(229, 22)
-        Me.toolStripMenuItem1.Text = "Mostrar Todos los Empleados"
-        '
-        'toolStripMenuItem2
-        '
-        Me.toolStripMenuItem2.Image = Global.ImportarExcelSQLServer.Resources.magifier_zoom_out
-        Me.toolStripMenuItem2.Name = "toolStripMenuItem2"
-        Me.toolStripMenuItem2.Size = New System.Drawing.Size(273, 22)
-        Me.toolStripMenuItem2.Text = "Ocultar Empleados NO Seleccionados"
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(14, 10)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(206, 21)
+        Me.Label21.TabIndex = 11
+        Me.Label21.Text = "Exportar Datos a SQL Server"
         '
         'Form1
         '
@@ -1192,6 +1224,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.gradientTab1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form1"
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.contextVerSelec.ResumeLayout(False)
@@ -1306,7 +1340,7 @@ Partial Class Form1
     Friend WithEvents contextOcultarSelec As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents toolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button15 As Windows.Forms.Button
-    Friend WithEvents btnVolver As MetroFramework.Controls.MetroButton 'Windows.Forms.Button
+    Friend WithEvents btnVolver As Windows.Forms.Button 'MetroFramework.Controls.MetroButton 
     Friend WithEvents Label21 As Windows.Forms.Label
 End Class
 

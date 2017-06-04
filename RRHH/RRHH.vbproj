@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>69</ApplicationRevision>
+    <ApplicationRevision>71</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -110,6 +110,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Kesoft.Windows.Forms.Win7StyleTreeView, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kesoft.Windows.Forms.Win7StyleTreeView.1.0.0.1\lib\net20\Kesoft.Windows.Forms.Win7StyleTreeView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -797,6 +801,7 @@
     <Content Include="Resources\Flecha Izquerda.jpg" />
     <None Include="Resources\Gesper.jpg" />
     <None Include="Resources\home-shape.png" />
+    <None Include="Resources\home-shape %281%29.png" />
     <Content Include="Resources\Informes.jpg" />
     <None Include="Resources\Informes1.jpg" />
     <Content Include="Resources\Liquidaciones.jpg" />
@@ -823,6 +828,7 @@
     <None Include="Resources\right-chevron.png" />
     <None Include="Resources\save-file-option.png" />
     <None Include="Resources\save-file-option %281%29.png" />
+    <None Include="Resources\printing.png" />
     <Content Include="Resources\VB-Colaciones.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

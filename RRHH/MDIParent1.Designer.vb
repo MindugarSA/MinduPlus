@@ -84,16 +84,16 @@ Partial Class MDIParent1
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Lbl_Nombre = New System.Windows.Forms.Label()
-        Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.Lbl_Cod_Interno = New System.Windows.Forms.Label()
         Me.Lbl_RutEmpresa = New System.Windows.Forms.Label()
         Me.Lbl_RutTrab = New System.Windows.Forms.Label()
         Me.Button4 = New MetroFramework.Controls.MetroButton()
         Me.PcturBx_Image = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Lbl_Cod_ID = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -366,7 +366,6 @@ Partial Class MDIParent1
         '
         Me.TlStrpSttsLbl_Proceso.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.TlStrpSttsLbl_Proceso.BorderStyle = System.Windows.Forms.Border3DStyle.Raised
         Me.TlStrpSttsLbl_Proceso.Name = "TlStrpSttsLbl_Proceso"
         Me.TlStrpSttsLbl_Proceso.Size = New System.Drawing.Size(62, 21)
         Me.TlStrpSttsLbl_Proceso.Text = "Proceso : "
@@ -376,7 +375,6 @@ Partial Class MDIParent1
         Me.TlStrpSttsLbl_SQL.BackColor = System.Drawing.Color.AliceBlue
         Me.TlStrpSttsLbl_SQL.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.TlStrpSttsLbl_SQL.BorderStyle = System.Windows.Forms.Border3DStyle.Raised
         Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_SQL.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.TlStrpSttsLbl_SQL.Name = "TlStrpSttsLbl_SQL"
@@ -437,7 +435,7 @@ Partial Class MDIParent1
         '
         Me.Tle_MantencionColacione.ActiveControl = Nothing
         Me.Tle_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(151, Byte), Integer))
+        Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Tle_MantencionColacione.Location = New System.Drawing.Point(984, 180)
         Me.Tle_MantencionColacione.Name = "Tle_MantencionColacione"
         Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 107)
@@ -706,7 +704,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Nombre, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Cod_Interno, 1, 0)
@@ -746,17 +744,6 @@ Partial Class MDIParent1
         Me.Lbl_Nombre.Text = "Nombre"
         Me.Lbl_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_Nombre.UseWaitCursor = True
-        '
-        'TxtBx_Empresa
-        '
-        Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(954, 37)
-        Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
-        Me.TxtBx_Empresa.ReadOnly = True
-        Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
-        Me.TxtBx_Empresa.TabIndex = 1
-        Me.TxtBx_Empresa.UseWaitCursor = True
-        Me.TxtBx_Empresa.Visible = False
         '
         'Lbl_Cod_Interno
         '
@@ -831,6 +818,17 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(486, 55)
         Me.TableLayoutPanel1.TabIndex = 12
         '
+        'Lbl_Cod_ID
+        '
+        Me.Lbl_Cod_ID.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Lbl_Cod_ID.AutoSize = True
+        Me.Lbl_Cod_ID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 40)
+        Me.Lbl_Cod_ID.Name = "Lbl_Cod_ID"
+        Me.Lbl_Cod_ID.Size = New System.Drawing.Size(64, 13)
+        Me.Lbl_Cod_ID.TabIndex = 1
+        Me.Lbl_Cod_ID.Text = "Lbl_Cod_ID"
+        '
         'Label3
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -843,17 +841,6 @@ Partial Class MDIParent1
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Sistema de Recursos Humanos"
         '
-        'Lbl_Cod_ID
-        '
-        Me.Lbl_Cod_ID.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Lbl_Cod_ID.AutoSize = True
-        Me.Lbl_Cod_ID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 40)
-        Me.Lbl_Cod_ID.Name = "Lbl_Cod_ID"
-        Me.Lbl_Cod_ID.Size = New System.Drawing.Size(64, 13)
-        Me.Lbl_Cod_ID.TabIndex = 1
-        Me.Lbl_Cod_ID.Text = "Lbl_Cod_ID"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -863,6 +850,17 @@ Partial Class MDIParent1
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
+        '
+        'TxtBx_Empresa
+        '
+        Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(954, 37)
+        Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
+        Me.TxtBx_Empresa.ReadOnly = True
+        Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
+        Me.TxtBx_Empresa.TabIndex = 1
+        Me.TxtBx_Empresa.UseWaitCursor = True
+        Me.TxtBx_Empresa.Visible = False
         '
         'TxtBx_UserName
         '
