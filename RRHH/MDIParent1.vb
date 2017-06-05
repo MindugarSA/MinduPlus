@@ -423,7 +423,7 @@ Public Class MDIParent1
             AddHandler newMDIChild.EnviarEvento, New ImportarExcelSQLServer.Form1.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
             newMDIChild.MdiParent = Me
             newMDIChild.FormBorderStyle = FormBorderStyle.None
-            newMDIChild.WindowState = FormWindowState.Maximized
+            'newMDIChild.WindowState = FormWindowState.Maximized
             newMDIChild.Dock = DockStyle.Fill
             Me.Panel2.Controls.Add(newMDIChild)
             Me.Panel2.Tag = newMDIChild
