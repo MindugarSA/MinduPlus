@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>76</ApplicationRevision>
+    <ApplicationRevision>77</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -87,6 +87,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\favicon %283%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -781,6 +784,7 @@
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
       <LastGenOutput>ModeloVisualRRHH.vb</LastGenOutput>
     </Content>
+    <Content Include="favicon.ico" />
     <Content Include="Resources\Btn_Colaciones.jpg" />
     <None Include="Resources\VB-Colaciones1.jpg" />
     <None Include="Resources\Btn_Colaciones1.jpg" />
@@ -798,6 +802,7 @@
     <None Include="Resources\check-mark-white-on-black-circular-background %281%29.png" />
     <None Include="Resources\favicon.ico" />
     <None Include="Resources\favicon %281%29.ico" />
+    <None Include="Resources\favicon %283%29.ico" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />

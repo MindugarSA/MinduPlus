@@ -28,7 +28,6 @@ Partial Class Login
         Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.Bttn_Login = New MetroFramework.Controls.MetroButton()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -48,7 +47,6 @@ Partial Class Login
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +56,7 @@ Partial Class Login
         'TxtBx_Password
         '
         Me.TxtBx_Password.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.TxtBx_Password.Location = New System.Drawing.Point(226, 133)
+        Me.TxtBx_Password.Location = New System.Drawing.Point(226, 136)
         Me.TxtBx_Password.MaxLength = 4
         Me.TxtBx_Password.Name = "TxtBx_Password"
         Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -69,7 +67,7 @@ Partial Class Login
         '
         Me.TxtBx_UserID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtBx_UserID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_UserID.Location = New System.Drawing.Point(226, 81)
+        Me.TxtBx_UserID.Location = New System.Drawing.Point(226, 84)
         Me.TxtBx_UserID.Name = "TxtBx_UserID"
         Me.TxtBx_UserID.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 29)
@@ -79,7 +77,7 @@ Partial Class Login
         'PasswordLabel
         '
         Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.Location = New System.Drawing.Point(226, 110)
+        Me.PasswordLabel.Location = New System.Drawing.Point(226, 113)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 6
@@ -89,7 +87,7 @@ Partial Class Login
         'UsernameLabel
         '
         Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.Location = New System.Drawing.Point(226, 60)
+        Me.UsernameLabel.Location = New System.Drawing.Point(226, 63)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 4
@@ -99,38 +97,28 @@ Partial Class Login
         'Bttn_Login
         '
         Me.Bttn_Login.FontSize = MetroFramework.MetroButtonSize.Medium
-        Me.Bttn_Login.Location = New System.Drawing.Point(347, 209)
+        Me.Bttn_Login.Location = New System.Drawing.Point(347, 227)
         Me.Bttn_Login.Name = "Bttn_Login"
         Me.Bttn_Login.Size = New System.Drawing.Size(112, 35)
         Me.Bttn_Login.TabIndex = 8
         Me.Bttn_Login.Text = "Entrar"
         Me.Bttn_Login.UseSelectable = True
         '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 0, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 56)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(192, 191)
-        Me.TableLayoutPanel1.TabIndex = 10
-        '
         'PictureBox1
         '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Image = Global.RRHH.My.Resources.Resources.Logo1
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 63)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(186, 185)
+        Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TableLayoutPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -148,7 +136,7 @@ Partial Class Login
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(478, 40)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(486, 55)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
@@ -365,18 +353,18 @@ Partial Class Login
         'TxtBx_ConfPass
         '
         Me.TxtBx_ConfPass.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 186)
+        Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 189)
         Me.TxtBx_ConfPass.MaxLength = 4
         Me.TxtBx_ConfPass.Name = "TxtBx_ConfPass"
         Me.TxtBx_ConfPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtBx_ConfPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(115, 29)
+        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(233, 29)
         Me.TxtBx_ConfPass.TabIndex = 3
         '
         'Lbl__ConfPass
         '
         Me.Lbl__ConfPass.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl__ConfPass.Location = New System.Drawing.Point(226, 163)
+        Me.Lbl__ConfPass.Location = New System.Drawing.Point(226, 166)
         Me.Lbl__ConfPass.Name = "Lbl__ConfPass"
         Me.Lbl__ConfPass.Size = New System.Drawing.Size(220, 23)
         Me.Lbl__ConfPass.TabIndex = 12
@@ -411,13 +399,13 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(684, 292)
+        Me.ClientSize = New System.Drawing.Size(700, 300)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TxtBx_ConfPass)
         Me.Controls.Add(Me.Lbl__ConfPass)
         Me.Controls.Add(Me.TableLayoutPanel2)
-        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Bttn_Login)
         Me.Controls.Add(Me.TxtBx_Password)
         Me.Controls.Add(Me.TxtBx_UserID)
@@ -427,7 +415,6 @@ Partial Class Login
         Me.MaximumSize = New System.Drawing.Size(700, 300)
         Me.MinimizeBox = False
         Me.Name = "Login"
-        Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
@@ -443,7 +430,6 @@ Partial Class Login
     Friend WithEvents PasswordLabel As Label
     Friend WithEvents UsernameLabel As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents TxtBx_ConfPass As TextBox
     Friend WithEvents Lbl__ConfPass As Label

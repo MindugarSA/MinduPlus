@@ -90,6 +90,7 @@ Partial Class MDIParent1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrDesplaza = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -474,7 +475,7 @@ Partial Class MDIParent1
         '
         Me.Tle_Liquidacion.ActiveControl = Nothing
         Me.Tle_Liquidacion.BackColor = System.Drawing.Color.Green
-        Me.Tle_Liquidacion.Location = New System.Drawing.Point(135, 11)
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(134, 11)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
         Me.Tle_Liquidacion.TabIndex = 11
@@ -489,7 +490,7 @@ Partial Class MDIParent1
         '
         Me.Tle_SolAlmuerzo.ActiveControl = Nothing
         Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(12, 11)
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(9, 11)
         Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
         Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_SolAlmuerzo.TabIndex = 10
@@ -745,6 +746,9 @@ Partial Class MDIParent1
         '
         Me.TiempoIngreso.Interval = 1000
         '
+        'TmrDesplaza
+        '
+        '
         'MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -846,4 +850,5 @@ Partial Class MDIParent1
     Friend WithEvents Tle_AlmuAdicional As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_Configuracion As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_InformesAlmu As MetroFramework.Controls.MetroTile
+    Friend WithEvents TmrDesplaza As Timer
 End Class

@@ -11,7 +11,7 @@ Public Class MDIParent1
 
 
 
-    Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2_Click(sender, e)
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
         'MenuStrip.Visible = False
@@ -392,6 +392,7 @@ Public Class MDIParent1
 
             Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Me.StatusStrip, Lbl_Cod_ID.Text)
             AddHandler newMDIChild.EnviarEvento, New ImportarExcelSQLServer.Form1.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+            AddHandler newMDIChild.EnviarEvento, New ImportarExcelSQLServer.Form1.LaunchEvent(AddressOf Desplazamiento_Tiles)
 
             newMDIChild.MdiParent = Me
             'newMDIChild.WindowState = FormWindowState.Maximized
@@ -414,6 +415,8 @@ Public Class MDIParent1
         If RevisaAcceso(31001) Then
             Dim NewMDIChild As New Frm_SolicitudColacion()
             AddHandler NewMDIChild.EnviarEvento, New Frm_SolicitudColacion.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+            AddHandler NewMDIChild.EnviarEvento, New Frm_SolicitudColacion.LaunchEvent(AddressOf Desplazamiento_Tiles)
+
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
 
@@ -456,6 +459,8 @@ Public Class MDIParent1
         If RevisaAcceso(31003) Then
             Dim NewMDIChild As New Frm_Liquidaciones()
             AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+            AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Desplazamiento_Tiles)
+
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Dock = DockStyle.Fill
@@ -581,17 +586,61 @@ Public Class MDIParent1
         Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_Permisos.MouseEnter, Tle_Exportador.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_AlmuAdicional.MouseEnter, Tle_Configuracion.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_Permisos.MouseLeave, Tle_Exportador.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_AlmuAdicional.MouseLeave, Tle_Configuracion.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
         sender.Width = sender.Width - 8
     End Sub
+
+    Private Sub TmrDesplaza_Tick(sender As Object, e As EventArgs) Handles TmrDesplaza.Tick
+
+        Tle_SolAlmuerzo.Left += 100
+        Tle_Liquidacion.Left += 100
+        Tle_Permisos.Left += 100
+        Tle_Exportador.Left += 100
+
+        Tle_MantencionColacione.Top -= 100
+        Tle_AlmuAdicional.Top -= 100
+        Tle_InformesAlmu.Top -= 100
+        Tle_Configuracion.Top -= 100
+
+        If Tle_Exportador.Left >= 378 Then
+            TmrDesplaza.Stop()
+        End If
+
+    End Sub
+
+    Public Sub Desplazamiento_Tiles()
+
+        Tle_SolAlmuerzo.Left = Tle_SolAlmuerzo.Left - 500
+        Tle_Liquidacion.Left = Tle_Liquidacion.Left - 500
+        Tle_Permisos.Left = Tle_Permisos.Left - 500
+        Tle_Exportador.Left = Tle_Exportador.Left - 500
+
+        Tle_MantencionColacione.Top = Tle_MantencionColacione.Top + 500
+        Tle_AlmuAdicional.Top = Tle_AlmuAdicional.Top + 500
+        Tle_InformesAlmu.Top = Tle_InformesAlmu.Top + 500
+        Tle_Configuracion.Top = Tle_Configuracion.Top + 500
+
+        TmrDesplaza.Start()
+
+    End Sub
+
+    Private Sub Panel2_VisibleChanged(sender As Object, e As EventArgs) Handles Panel2.VisibleChanged
+
+        If Panel2.Visible = True Then
+            Desplazamiento_Tiles()
+        End If
+
+    End Sub
+
+
 End Class

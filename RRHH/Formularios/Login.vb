@@ -69,21 +69,25 @@ Public Class Login
             Try
                 dt.Load(cmd.ExecuteReader())
 
-                If dt.Rows(0)("IdEstado") >= 0 Then
-                    NewSystem = True
+                If dt.Rows.Count > 0 Then
+                    If dt.Rows(0)("IdEstado") >= 0 Then
+                        NewSystem = True
 
-                    MDIParent1.Lbl_Nombre.Visible = True
-                    MDIParent1.Label2.Visible = True
-                    MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
-                    MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+                        MDIParent1.Lbl_Nombre.Visible = True
+                        MDIParent1.Label2.Visible = True
+                        MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                        MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
 
-                    MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
-                    MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
-                    MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
-                    MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
+                        MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                        MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+                        MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
+                        MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
 
+                    End If
+                Else
+                    MetroFramework.MetroMessageBox.Show(Me, "Numero de RUT No Encontrado", "RUT Sin Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Information, 350)
+                    TxtBx_UserID.Focus()
                 End If
-
 
             Catch ex As Exception
                 MsgBox("Error al operar con la base de datos!", MsgBoxStyle.Critical, "Error!")
@@ -111,27 +115,28 @@ Public Class Login
             'Dim value As String = String.Format("{0}", dt.Rows(0)("f_finiquito"))
             'value = String.Format("{0}", dt.Rows(0)("fecingreso"))
 
+            If (dt.Rows.Count > 0) Then
 
-            If IIf(dt.Rows.Count > 0, dt.Rows(0)("IdEstado") < 0, False) Then
-                MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-                MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
-                MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr").ToString
-                TxtBx_UserID.Text = ""
-                TxtBx_UserID.Focus()
-                TxtBx_Password.Text = ""
-                p_User_Pass = ""
+                If (dt.Rows(0)("IdEstado") < 0) Then
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+                    MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr").ToString
+                    TxtBx_UserID.Text = ""
+                    TxtBx_UserID.Focus()
+                    TxtBx_Password.Text = ""
+                    p_User_Pass = ""
 
-            ElseIf Format("{0}", dt.Rows(0)("f_finiquito") < Date.Now) Then
-                MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-                MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
-                MDIParent1.TlStrpSttsLbl_SQL.Text = "Favor de Pasar al Depto. de Personal"
-                TxtBx_UserID.Text = ""
-                TxtBx_Password.Text = ""
-                p_User_Pass = ""
-                TxtBx_UserID.Focus()
-            Else
+                ElseIf Format("{0}", dt.Rows(0)("f_finiquito") < Date.Now) Then
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+                    MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = "Favor de Pasar al Depto. de Personal"
+                    TxtBx_UserID.Text = ""
+                    TxtBx_Password.Text = ""
+                    p_User_Pass = ""
+                    TxtBx_UserID.Focus()
+                Else
 
-                MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
                     MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
                     MDIParent1.TlStrpSttsLbl_SQL.Text = "Consulta Realizada con exito"
                     TxtBx_UserID.Text = dt.Rows(0)("Rut").ToString
@@ -162,7 +167,8 @@ Public Class Login
                     Catch ex As Exception
                     End Try
                 End If
-            Else
+            End If
+        Else
                 TxtBx_UserID.Focus()
         End If
     End Sub
