@@ -12,6 +12,9 @@ Public Class Frm_SolicitudColacion
     Property ImagenAlmuerzo As Image = Global.RRHH.My.Resources.Resources.check_mark_white
     Property BackColorAlmuerzo As Color = Color.White
 
+    Public Delegate Sub LaunchEvent()
+    Public Event EnviarEvento As LaunchEvent
+
     Private Sub Frm_SolicitudColacion_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 
         Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
@@ -38,6 +41,7 @@ Public Class Frm_SolicitudColacion
 
     Private Sub Bttn_Cancelar_Click(sender As Object, e As EventArgs) Handles Bttn_Cancelar.Click
         MDIParent1.Panel2.Visible = True
+        RaiseEvent EnviarEvento()
         Me.Close()
         MDIParent1.TiempoIngreso.Enabled = True
     End Sub
@@ -322,7 +326,7 @@ Public Class Frm_SolicitudColacion
     Private Sub Iniciar_Form_Almuerzos()
 
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
-        MDIParent1.Panel2.Visible = False
+        'MDIParent1.Panel2.Visible = False
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler

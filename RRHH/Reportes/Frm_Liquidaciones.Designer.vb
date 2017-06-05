@@ -48,7 +48,7 @@ Partial Class Frm_Liquidaciones
         Me.CmbBx_Meses.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Meses.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbBx_Meses.FormattingEnabled = True
-        Me.CmbBx_Meses.Location = New System.Drawing.Point(778, 44)
+        Me.CmbBx_Meses.Location = New System.Drawing.Point(778, 45)
         Me.CmbBx_Meses.Name = "CmbBx_Meses"
         Me.CmbBx_Meses.Size = New System.Drawing.Size(196, 28)
         Me.CmbBx_Meses.TabIndex = 3
@@ -83,7 +83,7 @@ Partial Class Frm_Liquidaciones
         Me.Button1.Location = New System.Drawing.Point(12, 517)
         Me.Button1.Margin = New System.Windows.Forms.Padding(0)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(169, 56)
+        Me.Button1.Size = New System.Drawing.Size(140, 56)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Volver" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Al Inicio"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomRight
@@ -96,9 +96,9 @@ Partial Class Frm_Liquidaciones
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(21, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(184, 21)
+        Me.Label1.Size = New System.Drawing.Size(177, 21)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Recibos de Liquidaciones"
+        Me.Label1.Text = "Recibo de Liquidaciones"
         '
         'Frm_Liquidaciones
         '

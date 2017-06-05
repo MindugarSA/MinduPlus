@@ -423,7 +423,7 @@ Public Class MDIParent1
             AddHandler newMDIChild.EnviarEvento, New ImportarExcelSQLServer.Form1.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
             newMDIChild.MdiParent = Me
             newMDIChild.FormBorderStyle = FormBorderStyle.None
-            'newMDIChild.WindowState = FormWindowState.Maximized
+            newMDIChild.WindowState = FormWindowState.Maximized
             newMDIChild.Dock = DockStyle.Fill
             Me.Panel2.Controls.Add(newMDIChild)
             Me.Panel2.Tag = newMDIChild
@@ -443,6 +443,7 @@ Public Class MDIParent1
     Private Sub Tle_SolAlmuerzo_Click(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.Click
         If RevisaAcceso(31001) Then
             Dim NewMDIChild As New Frm_SolicitudColacion()
+            AddHandler NewMDIChild.EnviarEvento, New Frm_SolicitudColacion.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
             For Each ChildForm As Form In Me.MdiChildren
                 ChildForm.Close()
             Next
@@ -458,6 +459,9 @@ Public Class MDIParent1
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
             NewMDIChild.WindowState = FormWindowState.Maximized
             NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
             NewMDIChild.ControlBox = False
             NewMDIChild.Show()
 
