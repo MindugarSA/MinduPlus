@@ -27,9 +27,7 @@ Public Class MDIParent1
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PcturBx_Image.Click
         TiempoIngreso.Enabled = False
-        For Each ChildForm As Form In Me.MdiChildren
-            ChildForm.Close()
-        Next
+        Cerrar_Forms_Children()
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
         NewMDIChild.Show()
@@ -45,9 +43,7 @@ Public Class MDIParent1
     Private Sub Btt_SolAlmuerzo_Click(sender As Object, e As EventArgs) Handles Btt_SolAlmuerzo.Click
         If RevisaAcceso(31001) Then
             Dim NewMDIChild As New Frm_SolicitudColacion()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -68,9 +64,7 @@ Public Class MDIParent1
     Private Sub Bttn_MantencionColacione_Click(sender As Object, e As EventArgs) Handles Bttn_MantencionColacione.Click
         If RevisaAcceso(31002) Then
             Dim NewMDIChild As New Frm_MantencionColaciones()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -88,9 +82,7 @@ Public Class MDIParent1
         If RevisaAcceso(30003) Then
             Dim NewMDIChild As New Frm_Informes()
 
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -107,11 +99,7 @@ Public Class MDIParent1
         If RevisaAcceso(31003) Then
             Dim NewMDIChild As New Frm_Liquidaciones()
 
-
-
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -127,13 +115,8 @@ Public Class MDIParent1
     Private Sub Bttn_Parametros_Click(sender As Object, e As EventArgs) Handles Bttn_Parametros.Click
         If RevisaAcceso(30002) Then
 
-
-
-
             Dim NewMDIChild As New Frm_Parametros2()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -175,9 +158,7 @@ Public Class MDIParent1
         If RevisaAcceso(30001) Then
 
             Dim NewMDIChild As New Frm_SolicitudGerencial()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -246,9 +227,8 @@ Public Class MDIParent1
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         If TiempoActivo = 0 Then
             TiempoIngreso.Enabled = False
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
+            Visualizar_Tiles_MDI()
             Dim NewMDIChild As New Login()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
@@ -345,10 +325,6 @@ Public Class MDIParent1
 
 
 
-
-
-
-
     Private Sub ResulucionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResulucionToolStripMenuItem.Click
         'Dim desktopSize As Size
         'desktopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize
@@ -363,9 +339,10 @@ Public Class MDIParent1
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         TiempoIngreso.Enabled = False
-        For Each ChildForm As Form In Me.MdiChildren
-            ChildForm.Close()
-        Next
+
+        Cerrar_Forms_Children()
+        Visualizar_Tiles_MDI()
+
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
         NewMDIChild.Show()
@@ -379,9 +356,7 @@ Public Class MDIParent1
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         If RevisaAcceso(90000) Then
             TiempoIngreso.Enabled = False
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             Dim NewMDIChild As New FrmSolicPermHrasExt(0)
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
@@ -395,9 +370,7 @@ Public Class MDIParent1
     Private Sub Bttn_Pendiente_Click(sender As Object, e As EventArgs) Handles Bttn_Pendiente.Click
         If RevisaAcceso(91000) Then
             TiempoIngreso.Enabled = False
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Me.StatusStrip, Lbl_Cod_ID.Text)
             newMDIChild.MdiParent = Me
             newMDIChild.Show()
@@ -415,28 +388,25 @@ Public Class MDIParent1
     Private Sub Exportador_Click(sender As Object, e As EventArgs) Handles Tle_Exportador.Click
         If RevisaAcceso(91000) Then
             TiempoIngreso.Enabled = False
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
 
             Dim newMDIChild As New ImportarExcelSQLServer.Form1(Me.Panel2, Me.Size.Height, Me.StatusStrip, Lbl_Cod_ID.Text)
             AddHandler newMDIChild.EnviarEvento, New ImportarExcelSQLServer.Form1.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+
             newMDIChild.MdiParent = Me
-            newMDIChild.FormBorderStyle = FormBorderStyle.None
             'newMDIChild.WindowState = FormWindowState.Maximized
             newMDIChild.Dock = DockStyle.Fill
             Me.Panel2.Controls.Add(newMDIChild)
             Me.Panel2.Tag = newMDIChild
             Ocultar_Tiles_MDI()
-            newMDIChild.Show()
             newMDIChild.ControlBox = False
             StatusStrip.Visible = False
+            newMDIChild.Show()
 
             TiempoIngreso.Enabled = False
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-            'newMDIChild.WindowState = FormWindowState.Maximized
-            'Me.Panel2.Visible = False
+
         End If
     End Sub
 
@@ -444,9 +414,7 @@ Public Class MDIParent1
         If RevisaAcceso(31001) Then
             Dim NewMDIChild As New Frm_SolicitudColacion()
             AddHandler NewMDIChild.EnviarEvento, New Frm_SolicitudColacion.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
 
             If RevisaAcceso(30001) Then
@@ -473,9 +441,7 @@ Public Class MDIParent1
     Private Sub Tle_Permisos_Click(sender As Object, e As EventArgs) Handles Tle_Permisos.Click
         If RevisaAcceso(90000) Then
             TiempoIngreso.Enabled = False
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             Dim NewMDIChild As New FrmSolicPermHrasExt(0)
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
@@ -490,9 +456,7 @@ Public Class MDIParent1
         If RevisaAcceso(31003) Then
             Dim NewMDIChild As New Frm_Liquidaciones()
             AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Dock = DockStyle.Fill
             Me.Panel2.Controls.Add(NewMDIChild)
@@ -512,9 +476,7 @@ Public Class MDIParent1
 
         If RevisaAcceso(31002) Then
             Dim NewMDIChild As New Frm_MantencionColaciones()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -531,9 +493,7 @@ Public Class MDIParent1
         If RevisaAcceso(30001) Then
 
             Dim NewMDIChild As New Frm_SolicitudGerencial()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -550,9 +510,7 @@ Public Class MDIParent1
         If RevisaAcceso(30003) Then
             Dim NewMDIChild As New Frm_Informes()
 
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -570,9 +528,7 @@ Public Class MDIParent1
         If RevisaAcceso(30002) Then
 
             Dim NewMDIChild As New Frm_Parametros2()
-            For Each ChildForm As Form In Me.MdiChildren
-                ChildForm.Close()
-            Next
+            Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
 
@@ -585,6 +541,24 @@ Public Class MDIParent1
 
         End If
 
+    End Sub
+
+    Private Sub Cerrar_Forms_Children()
+        For Each ChildForm As Form In Me.MdiChildren
+            ChildForm.Close()
+        Next
+
+        Cerrar_Forms_Dentro_de_Panel(Me.Panel2)
+
+    End Sub
+    Public Sub Cerrar_Forms_Dentro_de_Panel(PanelName As Panel)
+        Dim listaForm As List(Of Form) =
+          (From frm As Form In PanelName.Controls.OfType(Of Form)()
+           Select frm).ToList()
+
+        For Each frm As Form In listaForm
+            frm.Close()
+        Next
     End Sub
 
     Public Sub Ocultar_Tiles_MDI()
