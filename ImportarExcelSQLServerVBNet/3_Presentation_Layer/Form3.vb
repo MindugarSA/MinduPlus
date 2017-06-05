@@ -11,7 +11,7 @@ Imports ImportarExcelSQLServer._2_Business_Layer
 
 Namespace _3_Presentation_Layer
 	Public Partial Class Form3
-        Inherits Form
+        Inherits MetroFramework.Forms.MetroForm 'Form
 
         Public Property Opener As IComunication
 

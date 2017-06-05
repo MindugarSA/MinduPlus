@@ -4,12 +4,18 @@ Imports System.Data.SqlClient
 
 
 Public Class Login
+
     Dim conexion As New SqlConnection
     Dim dt As New DataTable
     Dim cmd As SqlCommand
     Private p_User_Pass As String
     Public NewSystem As Boolean
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+    Private Sub Login_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
+        Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
+        Me.SuspendLayout()
+
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
         Lbl__ConfPass.Visible = False
         TxtBx_ConfPass.Visible = False
@@ -19,6 +25,8 @@ Public Class Login
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
+        MDIParent1.Lbl_Nombre.Visible = False
+        MDIParent1.Label2.Visible = False
         MDIParent1.TxtBx_Empresa.Text = ""
         MDIParent1.TxtBx_UserName.Text = ""
         MDIParent1.Lbl_RutTrab.Text = ""
@@ -29,6 +37,15 @@ Public Class Login
         MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
         TxtBx_UserID.Focus()
         TxtBx_UserID.Tag = 1
+
+        Me.ResumeLayout()
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
+        Me.DoubleBuffered = True
+
     End Sub
 
     Private Sub UsernameTextBox_Validated(sender As Object, e As EventArgs) Handles TxtBx_UserID.Validated
@@ -52,14 +69,25 @@ Public Class Login
             Try
                 dt.Load(cmd.ExecuteReader())
 
-                If dt.Rows(0)("IdEstado") >= 0 Then
-                    NewSystem = True
-                    MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString
-                    MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString
-                    MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
-                    MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
-                End If
+                If dt.Rows.Count > 0 Then
+                    If dt.Rows(0)("IdEstado") >= 0 Then
+                        NewSystem = True
 
+                        MDIParent1.Lbl_Nombre.Visible = True
+                        MDIParent1.Label2.Visible = True
+                        MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                        MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+
+                        MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                        MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+                        MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
+                        MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
+
+                    End If
+                Else
+                    MetroFramework.MetroMessageBox.Show(Me, "Numero de RUT No Encontrado", "RUT Sin Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Information, 350)
+                    TxtBx_UserID.Focus()
+                End If
 
             Catch ex As Exception
                 MsgBox("Error al operar con la base de datos!", MsgBoxStyle.Critical, "Error!")
@@ -87,82 +115,63 @@ Public Class Login
             'Dim value As String = String.Format("{0}", dt.Rows(0)("f_finiquito"))
             'value = String.Format("{0}", dt.Rows(0)("fecingreso"))
 
+            If (dt.Rows.Count > 0) Then
 
-            If dt.Rows(0)("IdEstado") < 0 Then
-                MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-                MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
-                MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr").ToString
-                TxtBx_UserID.Text = ""
-                TxtBx_UserID.Focus()
-                TxtBx_Password.Text = ""
-                p_User_Pass = ""
+                If (dt.Rows(0)("IdEstado") < 0) Then
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+                    MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr").ToString
+                    TxtBx_UserID.Text = ""
+                    TxtBx_UserID.Focus()
+                    TxtBx_Password.Text = ""
+                    p_User_Pass = ""
 
-            ElseIf Format("{0}", dt.Rows(0)("f_finiquito") < Date.Now) Then
-                MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
-                MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
-                MDIParent1.TlStrpSttsLbl_SQL.Text = "Favor de Pasar al Depto. de Personal"
-                TxtBx_UserID.Text = ""
-                TxtBx_Password.Text = ""
-                p_User_Pass = ""
-                TxtBx_UserID.Focus()
-            Else
+                ElseIf Format("{0}", dt.Rows(0)("f_finiquito") < Date.Now) Then
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
+                    MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.White
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = "Favor de Pasar al Depto. de Personal"
+                    TxtBx_UserID.Text = ""
+                    TxtBx_Password.Text = ""
+                    p_User_Pass = ""
+                    TxtBx_UserID.Focus()
+                Else
 
-                MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
-                MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
-                MDIParent1.TlStrpSttsLbl_SQL.Text = "Consulta Realizada con exito"
-                TxtBx_UserID.Text = dt.Rows(0)("Rut").ToString
-                'TxtBx_Password.Text = Trim(dt.Rows(0)("Pass").ToString)
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
+                    MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = "Consulta Realizada con exito"
+                    TxtBx_UserID.Text = dt.Rows(0)("Rut").ToString
+                    'TxtBx_Password.Text = Trim(dt.Rows(0)("Pass").ToString)
 
-                'p_User_Pass = Trim(dt.Rows(0)("Pass").ToString)
-                TxtBx_Password.Focus()
-                If MDIParent1.Lbl_Cod_ID.Text = "0" Then
-                    Lbl__ConfPass.Visible = True
-                    TxtBx_ConfPass.Visible = True
-                    TxtBx_ConfPass.Tag = 1
-                    'p_User_Pass = ""
+                    'p_User_Pass = Trim(dt.Rows(0)("Pass").ToString)
+                    TxtBx_Password.Focus()
+                    If MDIParent1.Lbl_Cod_ID.Text = "0" Then
+                        Lbl__ConfPass.Visible = True
+                        TxtBx_ConfPass.Visible = True
+                        TxtBx_ConfPass.Tag = 1
+                        'p_User_Pass = ""
+                    End If
+
+                    MDIParent1.Lbl_Nombre.Visible = True
+                    MDIParent1.Label2.Visible = True
+                    MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                    MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+
+                    MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
+                    MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+                    MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
+                    MDIParent1.Lbl_Cod_ID.Refresh()
+                    MDIParent1.Lbl_RutTrab.Text = TxtBx_UserID.Text
+                    MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
+                    Try
+                        MDIParent1.PcturBx_Image.Image = Image.FromFile("\\FSSAPBO\gestper\Mindugar_sa\Images\" + dt.Rows(0)("Rut_Empleado").ToString + ".jpg")
+                    Catch ex As Exception
+                    End Try
                 End If
-                MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString
-                MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString
-                MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
-                MDIParent1.Lbl_Cod_ID.Refresh()
-                MDIParent1.Lbl_RutTrab.Text = TxtBx_UserID.Text
-                MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
-                Try
-                    MDIParent1.PcturBx_Image.Image = Image.FromFile("\\FSSAPBO\gestper\Mindugar_sa\Images\" + dt.Rows(0)("Rut_Empleado").ToString + ".jpg")
-                Catch ex As Exception
-                End Try
             End If
         Else
-            TxtBx_UserID.Focus()
+                TxtBx_UserID.Focus()
         End If
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     '----------Funcion Declare tecla Entrer--------
     Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
@@ -245,14 +254,6 @@ Public Class Login
                         End Try
                     End If
 
-
-
-
-
-
-
-
-
                 End If
             End If
         Else
@@ -275,9 +276,6 @@ Public Class Login
                         conexion.Close()
                     End Try
 
-
-
-
                     If dt.Rows(0)("IdEstado") = 0 Then
                         MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
                         MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
@@ -286,9 +284,6 @@ Public Class Login
                         TxtBx_ConfPass.Visible = False
                         TxtBx_ConfPass.Tag = 0
                         p_User_Pass = TxtBx_ConfPass.Text
-
-
-
 
                     End If
                     UsernameTextBox_Validated(sender, e)
@@ -312,15 +307,7 @@ Public Class Login
 
         End If
 
-
-
-
     End Sub
-
-
-
-
-
 
     Private Sub TxtBx_Select_Click(sender As Object, e As EventArgs) Handles TxtBx_Password.Click
         If TxtBx_UserID.Tag = 1 Then
@@ -331,12 +318,6 @@ Public Class Login
             TxtBx_Password.Tag = 0
         End If
     End Sub
-
-
-
-
-
-
 
     Private Sub Bttn_1_Enter(sender As Object, e As EventArgs) Handles Label1.Click, Label9.Click, Label8.Click, Label7.Click, Label6.Click, Label5.Click, Label4.Click, Label3.Click, Label2.Click, Label12.Click, Label11.Click, Label10.Click
         If TxtBx_UserID.Tag = 1 Then
@@ -358,4 +339,36 @@ Public Class Login
         End If
     End Sub
 
+
+
+    Private Sub Bttn_Login_MouseEnter(sender As Object, e As EventArgs) Handles Bttn_Login.MouseEnter
+
+        Bttn_Login.Left = Bttn_Login.Left - 3
+        Bttn_Login.Top = Bttn_Login.Top - 3
+        Bttn_Login.Height = Bttn_Login.Height + 6
+        Bttn_Login.Width = Bttn_Login.Width + 6
+
+    End Sub
+
+    Private Sub Bttn_Login_MouseLeave(sender As Object, e As EventArgs) Handles Bttn_Login.MouseLeave
+
+        Bttn_Login.Left = Bttn_Login.Left + 3
+        Bttn_Login.Top = Bttn_Login.Top + 3
+        Bttn_Login.Height = Bttn_Login.Height - 6
+        Bttn_Login.Width = Bttn_Login.Width - 6
+
+    End Sub
+
+    Private Sub Label1_MouseEnter(sender As Object, e As EventArgs) Handles Label1.MouseEnter, Label9.MouseEnter, Label8.MouseEnter, Label7.MouseEnter, Label6.MouseEnter, Label5.MouseEnter, Label4.MouseEnter, Label3.MouseEnter, Label2.MouseEnter, Label12.MouseEnter, Label11.MouseEnter, Label10.MouseEnter
+
+        'Segoe UI, 14,25pt, style=Bold
+        CType(sender, Label).Font = New Font("Segoe UI", 19, FontStyle.Bold)
+
+    End Sub
+
+    Private Sub Label1_MouseLeave(sender As Object, e As EventArgs) Handles Label1.MouseLeave, Label9.MouseLeave, Label8.MouseLeave, Label7.MouseLeave, Label6.MouseLeave, Label5.MouseLeave, Label4.MouseLeave, Label3.MouseLeave, Label2.MouseLeave, Label12.MouseLeave, Label11.MouseLeave, Label10.MouseLeave
+
+        CType(sender, Label).Font = New Font("Segoe UI", 14.25, FontStyle.Bold)
+
+    End Sub
 End Class

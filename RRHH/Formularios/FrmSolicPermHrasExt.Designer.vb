@@ -22,15 +22,16 @@ Partial Class FrmSolicPermHrasExt
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Permisos")
         Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Hr. Extras")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
+        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes                            ", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
         Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciòn de Permisos")
         Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion Horas Extras")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones                      ", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
         Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
         Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8})
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8})
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -40,7 +41,7 @@ Partial Class FrmSolicPermHrasExt
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TreeView1 = New System.Windows.Forms.TreeView()
+        Me.TreeView1 = New Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView(Me.components)
         Me.btnVolver = New System.Windows.Forms.Button()
         Me.Pnl_InformePermisos = New System.Windows.Forms.Panel()
         Me.lblNombreInformePermisos = New System.Windows.Forms.Label()
@@ -277,27 +278,32 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.TreeView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TreeView1.HotTracking = True
         Me.TreeView1.Location = New System.Drawing.Point(0, 25)
         Me.TreeView1.Name = "TreeView1"
         TreeNode1.Name = "Nd_SolPermisos"
         TreeNode1.Text = "Solicitud de Permisos"
         TreeNode2.Name = "Nd_SolHrExt"
         TreeNode2.Text = "Solicitud de Hr. Extras"
+        TreeNode3.BackColor = System.Drawing.Color.AliceBlue
         TreeNode3.Name = "Nodo0"
-        TreeNode3.Text = "Solicitudes"
+        TreeNode3.Text = "Solicitudes                            "
         TreeNode4.Name = "Nd_AutPermisos"
         TreeNode4.Text = "Autorizaciòn de Permisos"
         TreeNode5.Name = "Nd_AutHrExt"
         TreeNode5.Text = "Autorizacion Horas Extras"
+        TreeNode6.BackColor = System.Drawing.Color.AliceBlue
         TreeNode6.Name = "Nodo2"
-        TreeNode6.Text = "Autorizaciones"
+        TreeNode6.Text = "Autorizaciones                      "
         TreeNode7.Name = "Nd_InformePermisos"
         TreeNode7.Text = "Informe Permisos"
         TreeNode8.Name = "Nd_InformeHorasExtras"
         TreeNode8.Text = "Informe Horas Extras"
+        TreeNode9.BackColor = System.Drawing.Color.AliceBlue
         TreeNode9.Name = "Nodo1"
-        TreeNode9.Text = "Informe"
+        TreeNode9.Text = "Informe                                 "
         Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode9})
+        Me.TreeView1.ShowLines = False
         Me.TreeView1.Size = New System.Drawing.Size(197, 716)
         Me.TreeView1.TabIndex = 1
         '
@@ -1435,7 +1441,7 @@ Partial Class FrmSolicPermHrasExt
         Me.pnlHora.Controls.Add(Me.Label11)
         Me.pnlHora.Location = New System.Drawing.Point(39, 297)
         Me.pnlHora.Name = "pnlHora"
-        Me.pnlHora.Size = New System.Drawing.Size(257, 116)
+        Me.pnlHora.Size = New System.Drawing.Size(257, 168)
         Me.pnlHora.TabIndex = 60
         '
         'dtpHoraSalida
@@ -2004,7 +2010,7 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents Label5 As Label
     Friend WithEvents cmbNumeroSolicitud As ComboBox
     Friend WithEvents txbDetalle As TextBox
-    Friend WithEvents TreeView1 As TreeView
+    Friend WithEvents TreeView1 As Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView 'TreeView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Lbl_Titulo As Label

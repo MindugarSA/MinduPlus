@@ -2105,4 +2105,6 @@ Public Class FrmSolicPermHrasExt
             End Using
         End If
     End Sub
+
+
 End Class

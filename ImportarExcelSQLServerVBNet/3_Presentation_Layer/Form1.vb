@@ -16,8 +16,8 @@ Imports ImportarExcelSQLServer._2_Business_Layer
 Imports ImportarExcelSQLServer._3_Presentation_Layer
 
 Public Partial Class Form1
-	Inherits Form
-	Implements IComunication
+    Inherits MetroFramework.Forms.MetroForm
+    Implements IComunication
 	Private dtDatosExcel As DataTable
 	Private dtDetallePeriodo As DataTable
 	Private dtResumenPeriodo As DataTable
@@ -26,8 +26,12 @@ Public Partial Class Form1
 	Private bEmpOcultos As Boolean
 	Private iEmpSelec As Integer
     Private pnlParent As Panel
+    Private StatusBarBottom As StatusStrip
     Private Id As String
     Private Tab_gradient As Integer
+
+    Public Delegate Sub LaunchEvent()
+    Public Event EnviarEvento As LaunchEvent
 
     Public Property bAcceso() As Boolean
 		Get
@@ -58,20 +62,25 @@ Public Partial Class Form1
         End Set
     End Property
 
-    Public Sub New(prmPnlParent As Panel, parentHeight As Integer, Id As String)
+    Public Sub New(prmPnlParent As Panel, parentHeight As Integer, prmStatusBarBottom As StatusStrip, Id As String)
+        Me.Id = Id
+        Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
         InitializeComponent()
-
+        Me.pnlParent = prmPnlParent
+        Me.StatusBarBottom = prmStatusBarBottom
         ' To report progress from the background worker we need to set this property
         backgroundWorker1.WorkerReportsProgress = True
         ' This event will be raised on the worker thread when the worker starts
         AddHandler backgroundWorker1.DoWork, New DoWorkEventHandler(AddressOf backgroundWorker1_DoWork)
         ' This event will be raised when we call ReportProgress
         AddHandler backgroundWorker1.ProgressChanged, New ProgressChangedEventHandler(AddressOf backgroundWorker1_ProgressChanged)
-        Me.pnlParent = prmPnlParent
-        'btnVolver.Location = New Point(20, parentHeight - btnVolver.Size.Height - 175)
-        Me.Id = Id
+        'Me.Size = New Size(prmPnlParent.Size.Width, prmPnlParent.Size.Height + prmPnlParent.Location.Y - Me.Location.Y - 70)
     End Sub
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Me.SuspendLayout()
+        Me.DoubleBuffered = True
+
         gradientTab1.SelectedIndex = -1
         bEmpOcultos = False
         iEmpSelec = 0
@@ -79,7 +88,11 @@ Public Partial Class Form1
         CargarCombosPeriodosRegistrados()
         CargarComboEmpresas()
         gradientTab1.SelectedIndex = 0
-        'Comentario de prueba 
+
+        Me.ResumeLayout()
+    End Sub
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
     Private Sub backgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs)
         dtDatosExcel = ExcelExtensions.LoadDataTableFromExcel(sPathBook, 0)
@@ -1091,10 +1104,9 @@ Public Partial Class Form1
     End Function
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        If pnlParent IsNot Nothing Then
-            pnlParent.Visible = True
-        End If
+
         Me.Close()
+
     End Sub
 
     Private Sub gradientTab1_Deselected(sender As Object, e As TabControlEventArgs) Handles gradientTab1.Deselected
@@ -1135,11 +1147,20 @@ Public Partial Class Form1
         Finally
             conexion.Close()
         End Try
-        Return dt.Rows(0)("Acceso")
+
+        Return If(dt.Rows.Count = 0, False, CType(dt.Rows(0)("Acceso"), Boolean))
+
     End Function
 
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
+        If pnlParent IsNot Nothing Then
+            Me.StatusBarBottom.Visible = True
+            RaiseEvent EnviarEvento()
+            pnlParent.Visible = True
+        End If
 
+    End Sub
 
 
 

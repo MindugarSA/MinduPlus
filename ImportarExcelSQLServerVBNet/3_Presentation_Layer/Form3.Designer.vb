@@ -37,7 +37,7 @@ Namespace _3_Presentation_Layer
             '
             Me.pictureBox1.BackgroundImage = Global.ImportarExcelSQLServer.Resources.user
             Me.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-            Me.pictureBox1.Location = New System.Drawing.Point(10, 12)
+            Me.pictureBox1.Location = New System.Drawing.Point(10, 64)
             Me.pictureBox1.Name = "pictureBox1"
             Me.pictureBox1.Size = New System.Drawing.Size(129, 121)
             Me.pictureBox1.TabIndex = 0
@@ -46,66 +46,77 @@ Namespace _3_Presentation_Layer
             'label1
             '
             Me.label1.AutoSize = True
-            Me.label1.Location = New System.Drawing.Point(150, 43)
+            Me.label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.label1.Location = New System.Drawing.Point(146, 70)
             Me.label1.Name = "label1"
-            Me.label1.Size = New System.Drawing.Size(43, 13)
+            Me.label1.Size = New System.Drawing.Size(54, 17)
             Me.label1.TabIndex = 1
             Me.label1.Text = "Usuario"
             '
             'textBox1
             '
-            Me.textBox1.Location = New System.Drawing.Point(199, 40)
+            Me.textBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.textBox1.Location = New System.Drawing.Point(199, 66)
             Me.textBox1.Name = "textBox1"
-            Me.textBox1.Size = New System.Drawing.Size(139, 20)
+            Me.textBox1.Size = New System.Drawing.Size(139, 25)
             Me.textBox1.TabIndex = 1
             '
             'textBox2
             '
-            Me.textBox2.Location = New System.Drawing.Point(199, 66)
+            Me.textBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.textBox2.Location = New System.Drawing.Point(199, 95)
             Me.textBox2.Name = "textBox2"
             Me.textBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-            Me.textBox2.Size = New System.Drawing.Size(139, 20)
+            Me.textBox2.Size = New System.Drawing.Size(139, 25)
             Me.textBox2.TabIndex = 2
             '
             'label2
             '
             Me.label2.AutoSize = True
-            Me.label2.Location = New System.Drawing.Point(150, 69)
+            Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.label2.Location = New System.Drawing.Point(146, 99)
             Me.label2.Name = "label2"
-            Me.label2.Size = New System.Drawing.Size(34, 13)
+            Me.label2.Size = New System.Drawing.Size(40, 17)
             Me.label2.TabIndex = 3
             Me.label2.Text = "Clave"
             '
             'button1
             '
-            Me.button1.BackgroundImage = Global.ImportarExcelSQLServer.Resources.BtnDfto1
+            Me.button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
             Me.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+            Me.button1.FlatAppearance.BorderSize = 0
             Me.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.button1.Location = New System.Drawing.Point(184, 111)
+            Me.button1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+            Me.button1.Location = New System.Drawing.Point(184, 148)
+            Me.button1.Margin = New System.Windows.Forms.Padding(0)
             Me.button1.Name = "button1"
-            Me.button1.Size = New System.Drawing.Size(75, 23)
+            Me.button1.Size = New System.Drawing.Size(75, 35)
             Me.button1.TabIndex = 3
             Me.button1.Text = "OK"
-            Me.button1.UseVisualStyleBackColor = True
+            Me.button1.UseVisualStyleBackColor = False
             '
             'button2
             '
-            Me.button2.BackgroundImage = Global.ImportarExcelSQLServer.Resources.Bnt
+            Me.button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
             Me.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+            Me.button2.FlatAppearance.BorderSize = 0
             Me.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-            Me.button2.Location = New System.Drawing.Point(263, 111)
+            Me.button2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            Me.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+            Me.button2.Location = New System.Drawing.Point(263, 148)
+            Me.button2.Margin = New System.Windows.Forms.Padding(0)
             Me.button2.Name = "button2"
-            Me.button2.Size = New System.Drawing.Size(75, 23)
+            Me.button2.Size = New System.Drawing.Size(75, 35)
             Me.button2.TabIndex = 4
             Me.button2.Text = "Cancelar"
-            Me.button2.UseVisualStyleBackColor = True
+            Me.button2.UseVisualStyleBackColor = False
             '
             'Form3
             '
             Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
             Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.BackColor = System.Drawing.Color.AliceBlue
-            Me.ClientSize = New System.Drawing.Size(353, 150)
+            Me.ClientSize = New System.Drawing.Size(353, 197)
             Me.Controls.Add(Me.button2)
             Me.Controls.Add(Me.button1)
             Me.Controls.Add(Me.textBox2)
@@ -113,11 +124,9 @@ Namespace _3_Presentation_Layer
             Me.Controls.Add(Me.textBox1)
             Me.Controls.Add(Me.label1)
             Me.Controls.Add(Me.pictureBox1)
-            Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
             Me.MaximizeBox = False
             Me.MinimizeBox = False
             Me.Name = "Form3"
-            Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
             Me.Text = "Acceso"
             CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)

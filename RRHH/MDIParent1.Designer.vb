@@ -63,32 +63,34 @@ Partial Class MDIParent1
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Bttn_Pendiente = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Bttn_Parametros = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Bttn_MantencionColacione = New System.Windows.Forms.Button()
-        Me.Btt_SolAlmuerzo = New System.Windows.Forms.Button()
+        Me.Tle_Configuracion = New MetroFramework.Controls.MetroTile()
+        Me.Tle_InformesAlmu = New MetroFramework.Controls.MetroTile()
+        Me.Tle_MantencionColacione = New MetroFramework.Controls.MetroTile()
+        Me.Tle_AlmuAdicional = New MetroFramework.Controls.MetroTile()
+        Me.Tle_Permisos = New MetroFramework.Controls.MetroTile()
+        Me.Tle_Liquidacion = New MetroFramework.Controls.MetroTile()
+        Me.Tle_SolAlmuerzo = New MetroFramework.Controls.MetroTile()
+        Me.Tle_Exportador = New MetroFramework.Controls.MetroTile()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
-        Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
+        Me.Lbl_Nombre = New System.Windows.Forms.Label()
         Me.Lbl_Cod_Interno = New System.Windows.Forms.Label()
         Me.Lbl_RutEmpresa = New System.Windows.Forms.Label()
         Me.Lbl_RutTrab = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button4 = New MetroFramework.Controls.MetroButton()
         Me.PcturBx_Image = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Lbl_Cod_ID = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
+        Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrDesplaza = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -347,7 +349,7 @@ Partial Class MDIParent1
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpSttsLbl_Proceso, Me.TlStrpSttsLbl_SQL, Me.ToolStripStatusLabel, Me.ToolStripProgressBar1})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 469)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 696)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Size = New System.Drawing.Size(1111, 26)
         Me.StatusStrip.TabIndex = 7
@@ -357,7 +359,6 @@ Partial Class MDIParent1
         '
         Me.TlStrpSttsLbl_Proceso.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.TlStrpSttsLbl_Proceso.BorderStyle = System.Windows.Forms.Border3DStyle.Raised
         Me.TlStrpSttsLbl_Proceso.Name = "TlStrpSttsLbl_Proceso"
         Me.TlStrpSttsLbl_Proceso.Size = New System.Drawing.Size(62, 21)
         Me.TlStrpSttsLbl_Proceso.Text = "Proceso : "
@@ -367,7 +368,6 @@ Partial Class MDIParent1
         Me.TlStrpSttsLbl_SQL.BackColor = System.Drawing.Color.AliceBlue
         Me.TlStrpSttsLbl_SQL.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.TlStrpSttsLbl_SQL.BorderStyle = System.Windows.Forms.Border3DStyle.Raised
         Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_SQL.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.TlStrpSttsLbl_SQL.Name = "TlStrpSttsLbl_SQL"
@@ -392,146 +392,129 @@ Partial Class MDIParent1
         Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 20)
         Me.ToolStripProgressBar1.Value = 30
         '
-        'Button6
+        'Tle_Configuracion
         '
-        Me.Button6.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button6.BackgroundImage = Global.RRHH.My.Resources.Resources.Gesper
-        Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button6.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Button6.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button6.Location = New System.Drawing.Point(244, 15)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Padding = New System.Windows.Forms.Padding(5)
-        Me.Button6.Size = New System.Drawing.Size(110, 90)
-        Me.Button6.TabIndex = 8
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Button6, "Permisos y solicitud de Horas Extras")
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.Tle_Configuracion.ActiveControl = Nothing
+        Me.Tle_Configuracion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_Configuracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Tle_Configuracion.Location = New System.Drawing.Point(984, 519)
+        Me.Tle_Configuracion.Name = "Tle_Configuracion"
+        Me.Tle_Configuracion.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_Configuracion.TabIndex = 16
+        Me.Tle_Configuracion.Text = "Configuraciones"
+        Me.Tle_Configuracion.TileImage = Global.RRHH.My.Resources.Resources.settings
+        Me.ToolTip.SetToolTip(Me.Tle_Configuracion, "Ingreso de Menu")
+        Me.Tle_Configuracion.UseCustomBackColor = True
+        Me.Tle_Configuracion.UseSelectable = True
+        Me.Tle_Configuracion.UseTileImage = True
         '
-        'Bttn_Pendiente
+        'Tle_InformesAlmu
         '
-        Me.Bttn_Pendiente.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_Pendiente.BackgroundImage = Global.RRHH.My.Resources.Resources.TempoNet
-        Me.Bttn_Pendiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Bttn_Pendiente.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Bttn_Pendiente.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_Pendiente.Location = New System.Drawing.Point(360, 16)
-        Me.Bttn_Pendiente.Name = "Bttn_Pendiente"
-        Me.Bttn_Pendiente.Padding = New System.Windows.Forms.Padding(5)
-        Me.Bttn_Pendiente.Size = New System.Drawing.Size(110, 90)
-        Me.Bttn_Pendiente.TabIndex = 7
-        Me.Bttn_Pendiente.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Bttn_Pendiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Bttn_Pendiente, "Traspaso de Temponet a GestPer")
-        Me.Bttn_Pendiente.UseVisualStyleBackColor = False
+        Me.Tle_InformesAlmu.ActiveControl = Nothing
+        Me.Tle_InformesAlmu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_InformesAlmu.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(984, 406)
+        Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
+        Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_InformesAlmu.TabIndex = 15
+        Me.Tle_InformesAlmu.Text = "Informes"
+        Me.Tle_InformesAlmu.TileImage = Global.RRHH.My.Resources.Resources.list_document_interface_symbol
+        Me.ToolTip.SetToolTip(Me.Tle_InformesAlmu, "Ingreso de Menu")
+        Me.Tle_InformesAlmu.UseCustomBackColor = True
+        Me.Tle_InformesAlmu.UseSelectable = True
+        Me.Tle_InformesAlmu.UseTileImage = True
         '
-        'Button5
+        'Tle_MantencionColacione
         '
-        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button5.BackgroundImage = Global.RRHH.My.Resources.Resources.Btn_Colaciones1
-        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button5.Location = New System.Drawing.Point(993, 112)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Padding = New System.Windows.Forms.Padding(5)
-        Me.Button5.Size = New System.Drawing.Size(110, 90)
-        Me.Button5.TabIndex = 6
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Button5, "Solicitar almuerzo Adicionales")
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.Tle_MantencionColacione.ActiveControl = Nothing
+        Me.Tle_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(984, 180)
+        Me.Tle_MantencionColacione.Name = "Tle_MantencionColacione"
+        Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_MantencionColacione.TabIndex = 14
+        Me.Tle_MantencionColacione.Text = "Ingreso Menu"
+        Me.Tle_MantencionColacione.TileImage = Global.RRHH.My.Resources.Resources.menu1
+        Me.ToolTip.SetToolTip(Me.Tle_MantencionColacione, "Ingreso de Menu")
+        Me.Tle_MantencionColacione.UseCustomBackColor = True
+        Me.Tle_MantencionColacione.UseSelectable = True
+        Me.Tle_MantencionColacione.UseTileImage = True
         '
-        'Bttn_Parametros
+        'Tle_AlmuAdicional
         '
-        Me.Bttn_Parametros.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bttn_Parametros.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_Parametros.BackgroundImage = Global.RRHH.My.Resources.Resources.PermisosSistema
-        Me.Bttn_Parametros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Bttn_Parametros.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Bttn_Parametros.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_Parametros.Location = New System.Drawing.Point(993, 304)
-        Me.Bttn_Parametros.Name = "Bttn_Parametros"
-        Me.Bttn_Parametros.Padding = New System.Windows.Forms.Padding(5)
-        Me.Bttn_Parametros.Size = New System.Drawing.Size(110, 90)
-        Me.Bttn_Parametros.TabIndex = 5
-        Me.Bttn_Parametros.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Bttn_Parametros.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Bttn_Parametros, "Control de Permisos")
-        Me.Bttn_Parametros.UseVisualStyleBackColor = False
+        Me.Tle_AlmuAdicional.ActiveControl = Nothing
+        Me.Tle_AlmuAdicional.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(71, Byte), Integer))
+        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(984, 293)
+        Me.Tle_AlmuAdicional.Name = "Tle_AlmuAdicional"
+        Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_AlmuAdicional.TabIndex = 13
+        Me.Tle_AlmuAdicional.Text = "Adicionales"
+        Me.Tle_AlmuAdicional.TileImage = Global.RRHH.My.Resources.Resources.restaurant
+        Me.ToolTip.SetToolTip(Me.Tle_AlmuAdicional, "Solicitar Almuerzos Adicionales")
+        Me.Tle_AlmuAdicional.UseCustomBackColor = True
+        Me.Tle_AlmuAdicional.UseSelectable = True
+        Me.Tle_AlmuAdicional.UseTileImage = True
         '
-        'Button3
+        'Tle_Permisos
         '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button3.BackgroundImage = Global.RRHH.My.Resources.Resources.Liquidaciones
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button3.Location = New System.Drawing.Point(128, 15)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Padding = New System.Windows.Forms.Padding(5)
-        Me.Button3.Size = New System.Drawing.Size(110, 90)
-        Me.Button3.TabIndex = 4
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Button3, "Ver o imprimir " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Liquidaciones de Sueldos")
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Tle_Permisos.ActiveControl = Nothing
+        Me.Tle_Permisos.BackColor = System.Drawing.Color.DarkMagenta
+        Me.Tle_Permisos.Location = New System.Drawing.Point(254, 11)
+        Me.Tle_Permisos.Name = "Tle_Permisos"
+        Me.Tle_Permisos.Size = New System.Drawing.Size(118, 107)
+        Me.Tle_Permisos.TabIndex = 12
+        Me.Tle_Permisos.Text = "Permisos "
+        Me.Tle_Permisos.TileImage = Global.RRHH.My.Resources.Resources.people_check
+        Me.ToolTip.SetToolTip(Me.Tle_Permisos, "Permisos y solicitud de Horas Extras")
+        Me.Tle_Permisos.UseCustomBackColor = True
+        Me.Tle_Permisos.UseSelectable = True
+        Me.Tle_Permisos.UseTileImage = True
         '
-        'Button2
+        'Tle_Liquidacion
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.BackgroundImage = Global.RRHH.My.Resources.Resources.Informes
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.Location = New System.Drawing.Point(993, 208)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(5)
-        Me.Button2.Size = New System.Drawing.Size(107, 90)
-        Me.Button2.TabIndex = 3
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Button2, "Informes de Colaciones")
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Tle_Liquidacion.ActiveControl = Nothing
+        Me.Tle_Liquidacion.BackColor = System.Drawing.Color.Green
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(134, 11)
+        Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
+        Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
+        Me.Tle_Liquidacion.TabIndex = 11
+        Me.Tle_Liquidacion.Text = "Liquidacion "
+        Me.Tle_Liquidacion.TileImage = Global.RRHH.My.Resources.Resources.money_report
+        Me.ToolTip.SetToolTip(Me.Tle_Liquidacion, "Ver o imprimir " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Liquidaciones de Sueldos")
+        Me.Tle_Liquidacion.UseCustomBackColor = True
+        Me.Tle_Liquidacion.UseSelectable = True
+        Me.Tle_Liquidacion.UseTileImage = True
         '
-        'Bttn_MantencionColacione
+        'Tle_SolAlmuerzo
         '
-        Me.Bttn_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Bttn_MantencionColacione.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_MantencionColacione.BackgroundImage = Global.RRHH.My.Resources.Resources.Menu
-        Me.Bttn_MantencionColacione.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Bttn_MantencionColacione.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Bttn_MantencionColacione.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_MantencionColacione.Location = New System.Drawing.Point(993, 16)
-        Me.Bttn_MantencionColacione.Name = "Bttn_MantencionColacione"
-        Me.Bttn_MantencionColacione.Padding = New System.Windows.Forms.Padding(5)
-        Me.Bttn_MantencionColacione.Size = New System.Drawing.Size(110, 90)
-        Me.Bttn_MantencionColacione.TabIndex = 2
-        Me.Bttn_MantencionColacione.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Bttn_MantencionColacione.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Bttn_MantencionColacione, "Ingreso de Menu")
-        Me.Bttn_MantencionColacione.UseVisualStyleBackColor = False
+        Me.Tle_SolAlmuerzo.ActiveControl = Nothing
+        Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(9, 11)
+        Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
+        Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_SolAlmuerzo.TabIndex = 10
+        Me.Tle_SolAlmuerzo.Text = "Almuerzos"
+        Me.Tle_SolAlmuerzo.TileImage = Global.RRHH.My.Resources.Resources.cutlery
+        Me.ToolTip.SetToolTip(Me.Tle_SolAlmuerzo, "Solicitar Almuerzos")
+        Me.Tle_SolAlmuerzo.UseCustomBackColor = True
+        Me.Tle_SolAlmuerzo.UseSelectable = True
+        Me.Tle_SolAlmuerzo.UseTileImage = True
         '
-        'Btt_SolAlmuerzo
+        'Tle_Exportador
         '
-        Me.Btt_SolAlmuerzo.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Btt_SolAlmuerzo.BackgroundImage = Global.RRHH.My.Resources.Resources.Btn_Colaciones
-        Me.Btt_SolAlmuerzo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btt_SolAlmuerzo.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.Btt_SolAlmuerzo.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Btt_SolAlmuerzo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btt_SolAlmuerzo.Location = New System.Drawing.Point(12, 15)
-        Me.Btt_SolAlmuerzo.Name = "Btt_SolAlmuerzo"
-        Me.Btt_SolAlmuerzo.Padding = New System.Windows.Forms.Padding(5)
-        Me.Btt_SolAlmuerzo.Size = New System.Drawing.Size(110, 90)
-        Me.Btt_SolAlmuerzo.TabIndex = 1
-        Me.Btt_SolAlmuerzo.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Btt_SolAlmuerzo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ToolTip.SetToolTip(Me.Btt_SolAlmuerzo, "Solicitar almuerzo")
-        Me.Btt_SolAlmuerzo.UseVisualStyleBackColor = False
+        Me.Tle_Exportador.ActiveControl = Nothing
+        Me.Tle_Exportador.BackColor = System.Drawing.Color.Orange
+        Me.Tle_Exportador.Location = New System.Drawing.Point(378, 11)
+        Me.Tle_Exportador.Name = "Tle_Exportador"
+        Me.Tle_Exportador.Size = New System.Drawing.Size(110, 107)
+        Me.Tle_Exportador.TabIndex = 9
+        Me.Tle_Exportador.Text = "Exportador"
+        Me.Tle_Exportador.TileImage = Global.RRHH.My.Resources.Resources.clockwise_rotation__1_
+        Me.ToolTip.SetToolTip(Me.Tle_Exportador, "Traspaso de Temponet a GestPer")
+        Me.Tle_Exportador.UseCustomBackColor = True
+        Me.Tle_Exportador.UseSelectable = True
+        Me.Tle_Exportador.UseTileImage = True
         '
         'ImageList1
         '
@@ -543,9 +526,8 @@ Partial Class MDIParent1
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -557,83 +539,59 @@ Partial Class MDIParent1
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.AliceBlue
-        Me.TableLayoutPanel2.ColumnCount = 6
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 55.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162.0!))
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.White
+        Me.TableLayoutPanel2.ColumnCount = 5
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TxtBx_UserName, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.TxtBx_Empresa, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Cod_Interno, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutEmpresa, 2, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutTrab, 3, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button4, 5, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.PcturBx_Image, 4, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(753, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Nombre, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_Cod_Interno, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutEmpresa, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutTrab, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Button4, 4, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.PcturBx_Image, 3, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(713, 5)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(351, 56)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(395, 55)
         Me.TableLayoutPanel2.TabIndex = 14
         Me.TableLayoutPanel2.UseWaitCursor = True
         '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label2.Location = New System.Drawing.Point(3, 34)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 33)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 16)
+        Me.Label2.Size = New System.Drawing.Size(244, 16)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Empresa"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Label2.UseWaitCursor = True
         '
-        'Label1
+        'Lbl_Nombre
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.Location = New System.Drawing.Point(3, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 16)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label1.UseWaitCursor = True
-        '
-        'TxtBx_UserName
-        '
-        Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_UserName.Location = New System.Drawing.Point(58, 4)
-        Me.TxtBx_UserName.Name = "TxtBx_UserName"
-        Me.TxtBx_UserName.ReadOnly = True
-        Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
-        Me.TxtBx_UserName.TabIndex = 3
-        Me.TxtBx_UserName.UseWaitCursor = True
-        '
-        'TxtBx_Empresa
-        '
-        Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(58, 32)
-        Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
-        Me.TxtBx_Empresa.ReadOnly = True
-        Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
-        Me.TxtBx_Empresa.TabIndex = 1
-        Me.TxtBx_Empresa.UseWaitCursor = True
+        Me.Lbl_Nombre.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Lbl_Nombre.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Nombre.Location = New System.Drawing.Point(3, 5)
+        Me.Lbl_Nombre.Name = "Lbl_Nombre"
+        Me.Lbl_Nombre.Size = New System.Drawing.Size(244, 16)
+        Me.Lbl_Nombre.TabIndex = 0
+        Me.Lbl_Nombre.Text = "Nombre"
+        Me.Lbl_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Lbl_Nombre.UseWaitCursor = True
         '
         'Lbl_Cod_Interno
         '
         Me.Lbl_Cod_Interno.AutoSize = True
-        Me.Lbl_Cod_Interno.Location = New System.Drawing.Point(220, 0)
+        Me.Lbl_Cod_Interno.Location = New System.Drawing.Point(253, 0)
         Me.Lbl_Cod_Interno.Name = "Lbl_Cod_Interno"
-        Me.Lbl_Cod_Interno.Size = New System.Drawing.Size(2, 28)
+        Me.Lbl_Cod_Interno.Size = New System.Drawing.Size(2, 27)
         Me.Lbl_Cod_Interno.TabIndex = 4
         Me.Lbl_Cod_Interno.Text = "Cod_Int"
         Me.Lbl_Cod_Interno.UseWaitCursor = True
@@ -642,7 +600,7 @@ Partial Class MDIParent1
         '
         Me.Lbl_RutEmpresa.AutoSize = True
         Me.TableLayoutPanel2.SetColumnSpan(Me.Lbl_RutEmpresa, 2)
-        Me.Lbl_RutEmpresa.Location = New System.Drawing.Point(220, 28)
+        Me.Lbl_RutEmpresa.Location = New System.Drawing.Point(253, 27)
         Me.Lbl_RutEmpresa.Name = "Lbl_RutEmpresa"
         Me.Lbl_RutEmpresa.Size = New System.Drawing.Size(11, 28)
         Me.Lbl_RutEmpresa.TabIndex = 5
@@ -653,9 +611,9 @@ Partial Class MDIParent1
         'Lbl_RutTrab
         '
         Me.Lbl_RutTrab.AutoSize = True
-        Me.Lbl_RutTrab.Location = New System.Drawing.Point(228, 0)
+        Me.Lbl_RutTrab.Location = New System.Drawing.Point(261, 0)
         Me.Lbl_RutTrab.Name = "Lbl_RutTrab"
-        Me.Lbl_RutTrab.Size = New System.Drawing.Size(3, 28)
+        Me.Lbl_RutTrab.Size = New System.Drawing.Size(3, 27)
         Me.Lbl_RutTrab.TabIndex = 6
         Me.Lbl_RutTrab.Text = "RutTrab"
         Me.Lbl_RutTrab.UseWaitCursor = True
@@ -663,24 +621,22 @@ Partial Class MDIParent1
         'Button4
         '
         Me.Button4.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Button4.Location = New System.Drawing.Point(298, 3)
+        Me.Button4.Location = New System.Drawing.Point(331, 3)
         Me.Button4.Name = "Button4"
-        Me.Button4.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TableLayoutPanel2.SetRowSpan(Me.Button4, 2)
-        Me.Button4.Size = New System.Drawing.Size(50, 50)
+        Me.Button4.Size = New System.Drawing.Size(50, 49)
         Me.Button4.TabIndex = 17
-        Me.Button4.Text = "Cerrar Sesión"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Text = "Cerrar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sesión"
+        Me.Button4.UseSelectable = True
         Me.Button4.UseWaitCursor = True
         '
         'PcturBx_Image
         '
         Me.PcturBx_Image.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PcturBx_Image.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PcturBx_Image.Location = New System.Drawing.Point(237, 3)
+        Me.PcturBx_Image.Location = New System.Drawing.Point(270, 3)
         Me.PcturBx_Image.Name = "PcturBx_Image"
         Me.TableLayoutPanel2.SetRowSpan(Me.PcturBx_Image, 2)
-        Me.PcturBx_Image.Size = New System.Drawing.Size(55, 50)
+        Me.PcturBx_Image.Size = New System.Drawing.Size(55, 49)
         Me.PcturBx_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PcturBx_Image.TabIndex = 13
         Me.PcturBx_Image.TabStop = False
@@ -690,82 +646,123 @@ Partial Class MDIParent1
         '
         Me.TableLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.AliceBlue
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Lbl_Cod_ID, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 5)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(532, 55)
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.09091!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.90909!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(486, 55)
         Me.TableLayoutPanel1.TabIndex = 12
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(149, 3)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(234, 20)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Sistema de Recursos Humanos"
         '
         'Lbl_Cod_ID
         '
+        Me.Lbl_Cod_ID.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Lbl_Cod_ID.AutoSize = True
-        Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 27)
+        Me.Lbl_Cod_ID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 40)
         Me.Lbl_Cod_ID.Name = "Lbl_Cod_ID"
-        Me.Lbl_Cod_ID.Size = New System.Drawing.Size(63, 13)
+        Me.Lbl_Cod_ID.Size = New System.Drawing.Size(64, 13)
         Me.Lbl_Cod_ID.TabIndex = 1
         Me.Lbl_Cod_ID.Text = "Lbl_Cod_ID"
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(480, 25)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Sistema de Recursos Humanos"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 5)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(215, 55)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
         '
+        'TxtBx_Empresa
+        '
+        Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(954, 37)
+        Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
+        Me.TxtBx_Empresa.ReadOnly = True
+        Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
+        Me.TxtBx_Empresa.TabIndex = 1
+        Me.TxtBx_Empresa.UseWaitCursor = True
+        Me.TxtBx_Empresa.Visible = False
+        '
+        'TxtBx_UserName
+        '
+        Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.TxtBx_UserName.Location = New System.Drawing.Point(954, 11)
+        Me.TxtBx_UserName.Name = "TxtBx_UserName"
+        Me.TxtBx_UserName.ReadOnly = True
+        Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
+        Me.TxtBx_UserName.TabIndex = 3
+        Me.TxtBx_UserName.UseWaitCursor = True
+        Me.TxtBx_UserName.Visible = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Controls.Add(Me.Bttn_Pendiente)
-        Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Controls.Add(Me.Bttn_Parametros)
-        Me.Panel2.Controls.Add(Me.Button3)
-        Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Controls.Add(Me.Bttn_MantencionColacione)
-        Me.Panel2.Controls.Add(Me.Btt_SolAlmuerzo)
+        Me.Panel2.Controls.Add(Me.Tle_Configuracion)
+        Me.Panel2.Controls.Add(Me.Tle_InformesAlmu)
+        Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
+        Me.Panel2.Controls.Add(Me.TxtBx_UserName)
+        Me.Panel2.Controls.Add(Me.Tle_MantencionColacione)
+        Me.Panel2.Controls.Add(Me.Tle_AlmuAdicional)
+        Me.Panel2.Controls.Add(Me.Tle_Permisos)
+        Me.Panel2.Controls.Add(Me.Tle_Liquidacion)
+        Me.Panel2.Controls.Add(Me.Tle_SolAlmuerzo)
+        Me.Panel2.Controls.Add(Me.Tle_Exportador)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 63)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1111, 406)
+        Me.Panel2.Size = New System.Drawing.Size(1111, 633)
         Me.Panel2.TabIndex = 11
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 63)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1111, 3)
+        Me.FlowLayoutPanel1.TabIndex = 13
         '
         'TiempoIngreso
         '
         Me.TiempoIngreso.Interval = 1000
         '
+        'TmrDesplaza
+        '
+        '
         'MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1111, 495)
+        Me.ClientSize = New System.Drawing.Size(1111, 722)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIParent1"
         Me.Text = "Recursos Humanos  (V : 20161228)"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -783,6 +780,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -822,12 +820,11 @@ Partial Class MDIParent1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Btt_SolAlmuerzo As Button
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ResulucionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Lbl_Nombre As Label
     Friend WithEvents TxtBx_Empresa As TextBox
     Friend WithEvents TxtBx_UserName As TextBox
     Friend WithEvents PcturBx_Image As PictureBox
@@ -837,18 +834,21 @@ Partial Class MDIParent1
     Friend WithEvents TiempoIngreso As Timer
     Friend WithEvents TlStrpSttsLbl_SQL As ToolStripStatusLabel
     Friend WithEvents TlStrpSttsLbl_Proceso As ToolStripStatusLabel
-    Friend WithEvents Bttn_MantencionColacione As Button
     Friend WithEvents Lbl_Cod_ID As Label
     Friend WithEvents Lbl_Cod_Interno As Label
     Friend WithEvents Lbl_RutEmpresa As Label
     Friend WithEvents Lbl_RutTrab As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Bttn_Parametros As Button
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Bttn_Pendiente As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents Button4 As MetroFramework.Controls.MetroButton 'Button
     Friend WithEvents ToolStripButton3 As ToolStripButton
+    Friend WithEvents Tle_Exportador As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_SolAlmuerzo As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_Liquidacion As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_Permisos As MetroFramework.Controls.MetroTile
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents Tle_MantencionColacione As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_AlmuAdicional As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_Configuracion As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_InformesAlmu As MetroFramework.Controls.MetroTile
+    Friend WithEvents TmrDesplaza As Timer
 End Class

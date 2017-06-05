@@ -9,8 +9,8 @@ Imports System.Windows.Forms
 
 Namespace _3_Presentation_Layer
 	Public Partial Class Form4
-		Inherits Form
-		Public Delegate Sub LaunchEvent(lConceptos As List(Of String))
+        Inherits MetroFramework.Forms.MetroForm 'Form
+        Public Delegate Sub LaunchEvent(lConceptos As List(Of String))
         Public Event EnviarEvento As LaunchEvent
         Public Property Opener As IComunication
         Public Property dtConceptos() As DataTable
