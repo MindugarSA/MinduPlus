@@ -333,6 +333,8 @@ Public Class Login
         End If
     End Sub
 
+
+
     Private Sub Bttn_Login_MouseEnter(sender As Object, e As EventArgs) Handles Bttn_Login.MouseEnter
 
         Bttn_Login.Left = Bttn_Login.Left - 3
@@ -351,4 +353,16 @@ Public Class Login
 
     End Sub
 
+    Private Sub Label1_MouseEnter(sender As Object, e As EventArgs) Handles Label1.MouseEnter, Label9.MouseEnter, Label8.MouseEnter, Label7.MouseEnter, Label6.MouseEnter, Label5.MouseEnter, Label4.MouseEnter, Label3.MouseEnter, Label2.MouseEnter, Label12.MouseEnter, Label11.MouseEnter, Label10.MouseEnter
+
+        'Segoe UI, 14,25pt, style=Bold
+        CType(sender, Label).Font = New Font("Segoe UI", 19, FontStyle.Bold)
+
+    End Sub
+
+    Private Sub Label1_MouseLeave(sender As Object, e As EventArgs) Handles Label1.MouseLeave, Label9.MouseLeave, Label8.MouseLeave, Label7.MouseLeave, Label6.MouseLeave, Label5.MouseLeave, Label4.MouseLeave, Label3.MouseLeave, Label2.MouseLeave, Label12.MouseLeave, Label11.MouseLeave, Label10.MouseLeave
+
+        CType(sender, Label).Font = New Font("Segoe UI", 14.25, FontStyle.Bold)
+
+    End Sub
 End Class

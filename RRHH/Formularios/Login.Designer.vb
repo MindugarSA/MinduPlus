@@ -47,37 +47,39 @@ Partial Class Login
         Me.Lbl__ConfPass = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtBx_Password
         '
-        Me.TxtBx_Password.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_Password.Location = New System.Drawing.Point(226, 136)
+        Me.TxtBx_Password.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.TxtBx_Password.Location = New System.Drawing.Point(226, 133)
         Me.TxtBx_Password.MaxLength = 4
         Me.TxtBx_Password.Name = "TxtBx_Password"
         Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtBx_Password.Size = New System.Drawing.Size(233, 21)
+        Me.TxtBx_Password.Size = New System.Drawing.Size(233, 29)
         Me.TxtBx_Password.TabIndex = 2
         '
         'TxtBx_UserID
         '
         Me.TxtBx_UserID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxtBx_UserID.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_UserID.Location = New System.Drawing.Point(226, 96)
+        Me.TxtBx_UserID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBx_UserID.Location = New System.Drawing.Point(226, 81)
         Me.TxtBx_UserID.Name = "TxtBx_UserID"
         Me.TxtBx_UserID.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 21)
+        Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 29)
         Me.TxtBx_UserID.TabIndex = 1
         Me.TxtBx_UserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'PasswordLabel
         '
         Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.Location = New System.Drawing.Point(224, 115)
+        Me.PasswordLabel.Location = New System.Drawing.Point(226, 110)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 6
@@ -87,7 +89,7 @@ Partial Class Login
         'UsernameLabel
         '
         Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.Location = New System.Drawing.Point(224, 75)
+        Me.UsernameLabel.Location = New System.Drawing.Point(226, 60)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 4
@@ -362,19 +364,19 @@ Partial Class Login
         '
         'TxtBx_ConfPass
         '
-        Me.TxtBx_ConfPass.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 180)
+        Me.TxtBx_ConfPass.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 186)
         Me.TxtBx_ConfPass.MaxLength = 4
         Me.TxtBx_ConfPass.Name = "TxtBx_ConfPass"
         Me.TxtBx_ConfPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtBx_ConfPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(233, 21)
+        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(115, 29)
         Me.TxtBx_ConfPass.TabIndex = 3
         '
         'Lbl__ConfPass
         '
         Me.Lbl__ConfPass.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl__ConfPass.Location = New System.Drawing.Point(224, 158)
+        Me.Lbl__ConfPass.Location = New System.Drawing.Point(226, 163)
         Me.Lbl__ConfPass.Name = "Lbl__ConfPass"
         Me.Lbl__ConfPass.Size = New System.Drawing.Size(220, 23)
         Me.Lbl__ConfPass.TabIndex = 12
@@ -385,7 +387,7 @@ Partial Class Login
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(23, 19)
+        Me.Label13.Location = New System.Drawing.Point(45, 19)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(160, 25)
         Me.Label13.TabIndex = 14
@@ -395,11 +397,22 @@ Partial Class Login
         '
         Me.MetroStyleManager1.Owner = Nothing
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.RRHH.My.Resources.Resources.plus
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 16)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 15
+        Me.PictureBox2.TabStop = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(684, 292)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TxtBx_ConfPass)
         Me.Controls.Add(Me.Lbl__ConfPass)
@@ -419,6 +432,7 @@ Partial Class Login
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -448,4 +462,5 @@ Partial Class Login
     Friend WithEvents Label13 As Label
     Friend WithEvents Bttn_Login As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

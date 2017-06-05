@@ -40,7 +40,7 @@ Public Class MDIParent1
 
     End Sub
 
-    Private Sub Btt_SolAlmuerzo_Click(sender As Object, e As EventArgs) Handles Btt_SolAlmuerzo.Click
+    Private Sub Btt_SolAlmuerzo_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(31001) Then
             Dim NewMDIChild As New Frm_SolicitudColacion()
             Cerrar_Forms_Children()
@@ -61,7 +61,7 @@ Public Class MDIParent1
         End If
     End Sub
 
-    Private Sub Bttn_MantencionColacione_Click(sender As Object, e As EventArgs) Handles Bttn_MantencionColacione.Click
+    Private Sub Bttn_MantencionColacione_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(31002) Then
             Dim NewMDIChild As New Frm_MantencionColaciones()
             Cerrar_Forms_Children()
@@ -78,7 +78,7 @@ Public Class MDIParent1
 
 
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30003) Then
             Dim NewMDIChild As New Frm_Informes()
 
@@ -95,7 +95,7 @@ Public Class MDIParent1
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(31003) Then
             Dim NewMDIChild As New Frm_Liquidaciones()
 
@@ -112,7 +112,7 @@ Public Class MDIParent1
 
     End Sub
 
-    Private Sub Bttn_Parametros_Click(sender As Object, e As EventArgs) Handles Bttn_Parametros.Click
+    Private Sub Bttn_Parametros_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30002) Then
 
             Dim NewMDIChild As New Frm_Parametros2()
@@ -154,7 +154,7 @@ Public Class MDIParent1
 
 
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30001) Then
 
             Dim NewMDIChild As New Frm_SolicitudGerencial()
@@ -353,7 +353,7 @@ Public Class MDIParent1
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(90000) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
@@ -367,7 +367,7 @@ Public Class MDIParent1
         End If
     End Sub
 
-    Private Sub Bttn_Pendiente_Click(sender As Object, e As EventArgs) Handles Bttn_Pendiente.Click
+    Private Sub Bttn_Pendiente_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(91000) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
@@ -581,4 +581,17 @@ Public Class MDIParent1
         Next
     End Sub
 
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_Permisos.MouseEnter, Tle_Exportador.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_AlmuAdicional.MouseEnter, Tle_Configuracion.MouseEnter
+        sender.Left = sender.Left - 4
+        sender.Top = sender.Top - 4
+        sender.Height = sender.Height + 8
+        sender.Width = sender.Width + 8
+    End Sub
+
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_Permisos.MouseLeave, Tle_Exportador.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_AlmuAdicional.MouseLeave, Tle_Configuracion.MouseLeave
+        sender.Left = sender.Left + 4
+        sender.Top = sender.Top + 4
+        sender.Height = sender.Height - 8
+        sender.Width = sender.Width - 8
+    End Sub
 End Class

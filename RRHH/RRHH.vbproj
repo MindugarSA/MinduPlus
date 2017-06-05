@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>76</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -796,6 +796,8 @@
     <None Include="Resources\chevron-pointing-to-the-left.png" />
     <None Include="Resources\check-mark-white-on-black-circular-background.png" />
     <None Include="Resources\check-mark-white-on-black-circular-background %281%29.png" />
+    <None Include="Resources\favicon.ico" />
+    <None Include="Resources\favicon %281%29.ico" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />
@@ -818,6 +820,7 @@
     <None Include="Resources\MINDUGAR81.BMP" />
     <None Include="Resources\money-report.png" />
     <None Include="Resources\people-check.png" />
+    <None Include="Resources\MinduPlus.png" />
     <Content Include="Resources\PermisosPers.jpg" />
     <None Include="Resources\PermisosPers1.jpg" />
     <Content Include="Resources\PermisosSistema.png" />
@@ -829,6 +832,7 @@
     <None Include="Resources\save-file-option.png" />
     <None Include="Resources\save-file-option %281%29.png" />
     <None Include="Resources\printing.png" />
+    <None Include="Resources\plus.png" />
     <Content Include="Resources\VB-Colaciones.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
