@@ -488,11 +488,11 @@ Public Class Frm_SolicitudColacion
         Dim FechaIni As Date = DateInfo
         'tb_FechaIni.Text = DateInfo.ToString("yyyyMMdd")
         Dim FechaFin As Date = DateAdd("d", 7 - 1, DateInfo)
-        lbl_Fecha.Text = FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
+        lbl_Fecha.Text = (FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
                          Space(2) +
-                         "hasta  el " +
+                         "hasta el" +
                          Space(2) +
-                         FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)
+                         FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)).ToUpper()
         'REVISAR
         ControlEnable(FechaIni)
         'Coloca dias
@@ -769,6 +769,14 @@ Public Class Frm_SolicitudColacion
         Lbl_P_B5.Visible = False
         Lbl_P_C5.Visible = False
         Lbl_P_D5.Visible = False
+    End Sub
+
+    Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter, PictureBox1.MouseEnter
+        CType(sender, PictureBox).BackColor = Color.FromArgb(255, 194, 31)
+    End Sub
+
+    Private Sub PictureBox2_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave, PictureBox1.MouseLeave
+        CType(sender, PictureBox).BackColor = Color.FromArgb(227, 162, 26)
     End Sub
 
 

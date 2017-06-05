@@ -14,6 +14,7 @@ Public Class MDIParent1
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2_Click(sender, e)
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        'Me.Icon = My.Resources.favicon__1_
         'MenuStrip.Visible = False
         'ToolStrip.Visible = False
         'Dim NewMDIChild As New Principal()

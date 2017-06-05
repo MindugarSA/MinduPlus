@@ -85,7 +85,11 @@ Public Class Login
 
                     End If
                 Else
-                    MetroFramework.MetroMessageBox.Show(Me, "Numero de RUT No Encontrado", "RUT Sin Coincidencia", MessageBoxButtons.OK, MessageBoxIcon.Information, 350)
+                    MetroFramework.MetroMessageBox.Show(MdiParent, "Numero de RUT No Registrado en la Base de Datos",
+                                                        "RUT Sin Coincidencia",
+                                                        MessageBoxButtons.OK,
+                                                        MessageBoxIcon.Information,
+                                                        370)
                     TxtBx_UserID.Focus()
                 End If
 

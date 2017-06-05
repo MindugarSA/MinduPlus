@@ -7,9 +7,21 @@ Public Class Frm_MantencionColaciones
     Dim conexion As New SqlConnection
     Dim cmd As SqlCommand
 
+    Private Sub Frm_MantencionColaciones_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
+        Me.SuspendLayout()
 
+        Inicializar_Form_Almuerzos()
+
+        Me.ResumeLayout()
+    End Sub
     Private Sub Frm_MantencionColaciones_Load(sender As Object, e As EventArgs) Handles Me.Load
 
+        Me.DoubleBuffered = True
+
+    End Sub
+
+    Private Sub Inicializar_Form_Almuerzos()
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
 
         MDIParent1.Panel2.Visible = False
@@ -30,7 +42,6 @@ Public Class Frm_MantencionColaciones
             vDiaNum = Weekday(vDateInfo)
         End While
         vDateFin = DateAdd("d", 7 - 1, vDateInfo)
-        lbl_Fecha.ForeColor = Drawing.Color.Blue
         LLenaFechasColaciones(vDateInfo)
         CargarColaciones(vDateInfo)
         VisiblePostres()
@@ -80,11 +91,11 @@ Public Class Frm_MantencionColaciones
 
     Sub LLenaFechasColaciones(DateInfo As Date)
 
-        Lbl_A1.ForeColor = Color.Black
-        Lbl_A2.ForeColor = Color.Black
-        Lbl_A3.ForeColor = Color.Black
-        Lbl_A4.ForeColor = Color.Black
-        Lbl_A5.ForeColor = Color.Black
+        'Lbl_A1.ForeColor = Color.Black
+        'Lbl_A2.ForeColor = Color.Black
+        'Lbl_A3.ForeColor = Color.Black
+        'Lbl_A4.ForeColor = Color.Black
+        'Lbl_A5.ForeColor = Color.Black
         Lbl_A1.Text = ""
         Lbl_A2.Text = ""
         Lbl_A3.Text = ""
@@ -93,21 +104,25 @@ Public Class Frm_MantencionColaciones
 
         Dim FechaIni As Date = DateInfo
         Dim FechaFin As Date = DateAdd("d", 7 - 1, DateInfo)
-        lbl_Fecha.Text = FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) + Space(3) + "hasta  el " + Space(3) + FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)
+        lbl_Fecha.Text = (FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
+                         Space(2) +
+                         "hasta el" +
+                         Space(2) +
+                         FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)).ToUpper
 
         ControlEnable(FechaIni)
 
 
         'Coloca dias
-        Lbl_A1.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+        Lbl_A1.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
         DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A2.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+        Lbl_A2.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
         DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A3.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+        Lbl_A3.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
         DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A4.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+        Lbl_A4.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
         DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A5.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+        Lbl_A5.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
 
 
         'Pinta Dias feriado
@@ -513,4 +528,14 @@ Public Class Frm_MantencionColaciones
         LLenaFechasColaciones(vDateInfo)
         CargarColaciones(vDateInfo)
     End Sub
+
+    Private Sub PictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave, PictureBox1.MouseLeave
+        CType(sender, PictureBox).BackColor = Color.FromArgb(227, 162, 26)
+    End Sub
+
+    Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter, PictureBox1.MouseEnter
+        CType(sender, PictureBox).BackColor = Color.FromArgb(255, 194, 31)
+    End Sub
+
+
 End Class

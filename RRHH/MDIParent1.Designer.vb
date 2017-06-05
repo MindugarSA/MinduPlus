@@ -25,6 +25,7 @@ Partial Class MDIParent1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIParent1))
+        Dim PictureBox1 As System.Windows.Forms.PictureBox
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -84,13 +85,13 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Lbl_Cod_ID = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
         Me.TmrDesplaza = New System.Windows.Forms.Timer(Me.components)
+        PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -98,7 +99,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -530,7 +531,7 @@ Partial Class MDIParent1
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(PictureBox1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1111, 63)
@@ -684,13 +685,13 @@ Partial Class MDIParent1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(215, 55)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 11
-        Me.PictureBox1.TabStop = False
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        PictureBox1.Location = New System.Drawing.Point(3, 5)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New System.Drawing.Size(215, 55)
+        PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 11
+        PictureBox1.TabStop = False
         '
         'TxtBx_Empresa
         '
@@ -778,7 +779,7 @@ Partial Class MDIParent1
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
@@ -818,7 +819,6 @@ Partial Class MDIParent1
     Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ResulucionToolStripMenuItem As ToolStripMenuItem
