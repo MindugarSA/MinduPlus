@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>80</ApplicationRevision>
+    <ApplicationRevision>81</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -790,6 +790,7 @@
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Resources\Btn_Colaciones.jpg" />
+    <None Include="Resources\white-ms-excel-32.png" />
     <None Include="Resources\VB-Colaciones1.jpg" />
     <None Include="Resources\Btn_Colaciones1.jpg" />
     <None Include="Resources\Btn_Colaciones2.jpg" />
