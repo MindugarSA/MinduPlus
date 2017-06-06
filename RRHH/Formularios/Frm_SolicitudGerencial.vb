@@ -14,22 +14,18 @@ Public Class Frm_SolicitudGerencial
 
     Private Sub Frm_SolicitudGerencial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
-        'MDIParent1.Panel2.Visible = False
+
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
 
-        Me.WindowState = FormWindowState.Maximized
-
-
-        MDIParent1.Panel2.Visible = False
-
-        panelCentral.Location = New Point(MDIParent1.Width / 2 - panelCentral.Width / 2, 0)
-        'btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 200)
         Txt_Fecha.Text = Format(MonthCalendar1.TodayDate, "dddd  dd-MMM-yyyy")
         Lbl_Fecha.Text = Format(MonthCalendar1.TodayDate, "yyyyMMdd")
         Lbl_Fecha.Visible = False
+        MonthCalendar1.Visible = False
+
+        Me.WindowState = FormWindowState.Maximized
 
 
     End Sub
@@ -42,12 +38,13 @@ Public Class Frm_SolicitudGerencial
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
-        MDIParent1.Panel2.Visible = True
+        MDIParent1.Visualizar_Tiles_MDI()
         MDIParent1.TiempoIngreso.Enabled = True
         Me.Close()
     End Sub
 
     Private Sub MonthCalendar1_DateSelected(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateSelected
+
         Txt_Fecha.Text = Format(sender.SelectionStart, "dddd  dd-MMM-yyyy")
         Lbl_Fecha.Text = Format(sender.SelectionStart, "yyyyMMdd")
         cmd = New SqlCommand("Colaciones_SolAdicional_Info", conexion)
@@ -57,6 +54,7 @@ Public Class Frm_SolicitudGerencial
         cmd.Parameters.Add(New SqlParameter("@Fecha_SolicitudIni", Lbl_Fecha.Text))
         cmd.Parameters.Add(New SqlParameter("@Fecha_SolicitudFin", Lbl_Fecha.Text))
         Try
+
             dt.Reset()
             dt.Load(cmd.ExecuteReader())
             If dt.Rows(0)("IdEstado") = 0 Then
@@ -71,16 +69,11 @@ Public Class Frm_SolicitudGerencial
                 TB_ComentAlmNorm.Text = ""
             End If
 
-
-
         Catch ex As Exception
 
         Finally
             conexion.Close()
         End Try
-
-
-
 
     End Sub
 
@@ -119,6 +112,42 @@ Public Class Frm_SolicitudGerencial
         End Try
     End Sub
 
+    Private Sub MonthCalendar2_DaySelected(sender As Object, e As Pabo.Calendar.DaySelectedEventArgs) Handles MonthCalendar2.DaySelected
 
+        Txt_Fecha.Text = Format(MonthCalendar2.SelectedDates.Item(0), "dddd  dd-MMM-yyyy")
+        Lbl_Fecha.Text = Format(MonthCalendar2.SelectedDates.Item(0), "yyyyMMdd")
 
+        cmd = New SqlCommand("Colaciones_SolAdicional_Info", conexion)
+        cmd.CommandType = CommandType.StoredProcedure
+        conexion.Open()
+        cmd.Parameters.Add(New SqlParameter("@Rut", "96588890-K"))
+        cmd.Parameters.Add(New SqlParameter("@Fecha_SolicitudIni", Lbl_Fecha.Text))
+        cmd.Parameters.Add(New SqlParameter("@Fecha_SolicitudFin", Lbl_Fecha.Text))
+        Try
+
+            dt.Reset()
+            dt.Load(cmd.ExecuteReader())
+            If dt.Rows(0)("IdEstado") = 0 Then
+                Tb_Gerencia.Text = dt.Rows(0)("Gcia")
+                Tt_ComentAlmGcial.Text = dt.Rows(0)("ComentAlmGcial")
+                TB_AlmuerzoNormales.Text = dt.Rows(0)("Nor")
+                TB_ComentAlmNorm.Text = dt.Rows(0)("ComentAlmNorm")
+            Else
+                Tb_Gerencia.Text = "0"
+                Tt_ComentAlmGcial.Text = ""
+                TB_AlmuerzoNormales.Text = "0"
+                TB_ComentAlmNorm.Text = ""
+            End If
+
+        Catch ex As Exception
+
+        Finally
+            conexion.Close()
+        End Try
+
+    End Sub
+
+    Private Sub MonthCalendar2_DayDeselected(sender As Object, e As Pabo.Calendar.DaySelectedEventArgs) Handles MonthCalendar2.DayDeselected
+
+    End Sub
 End Class

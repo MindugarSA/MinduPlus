@@ -448,6 +448,10 @@ Public Class MDIParent1
             Cerrar_Forms_Children()
             Dim NewMDIChild As New FrmSolicPermHrasExt(0)
             NewMDIChild.MdiParent = Me
+            'NewMDIChild.Dock = DockStyle.Fill
+            'Me.Panel2.Controls.Add(NewMDIChild)
+            'Me.Panel2.Tag = NewMDIChild
+            'Ocultar_Tiles_MDI()
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
@@ -501,6 +505,11 @@ Public Class MDIParent1
             Dim NewMDIChild As New Frm_SolicitudGerencial()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
+            NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
             NewMDIChild.Show()
 
             NewMDIChild.ControlBox = False
@@ -508,7 +517,6 @@ Public Class MDIParent1
             'TiempoIngreso.Enabled = True
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-            NewMDIChild.WindowState = FormWindowState.Maximized
         End If
     End Sub
 
