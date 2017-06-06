@@ -68,7 +68,7 @@ Public Class FrmSolicPermHrasExt
                     Lbl_Titulo.Text = "Solicitud de Permisos"
                     Pnl_SolPermisos.Location = New Point(3, 52)
                     Pnl_SolPermisos.Visible = True
-                    Pnl_SolPermisos.Size = New Size(100000, 100000)
+                    Pnl_SolPermisos.Dock = DockStyle.Fill
 
                     dtpDia.Text = Date.Now
                     dtpHoraEntrada.Text = Date.Now
@@ -97,7 +97,7 @@ Public Class FrmSolicPermHrasExt
                     Lbl_Titulo.Text = "Solicitud de Horas Extras"
                     Pnl_SolHrasExt.Location = New Point(3, 52)
                     Pnl_SolHrasExt.Visible = True
-                    Pnl_SolHrasExt.Size = New Size(100000, 100000)
+                    Pnl_SolHrasExt.Dock = DockStyle.Fill
 
                     txbSupervisorSolicitante.Text = MDIParent1.TxtBx_UserName.Text
                     MDIParent1.Panel2.Visible = False
@@ -105,11 +105,11 @@ Public Class FrmSolicPermHrasExt
 
                     ComboBox3.DataSource = listaAreas()
 
-                    btnSolicitar.Location = New Point(btnVolver.Location.X + 800, btnVolver.Location.Y - 30)
+                    btnSolicitar.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height)
                     If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50 < 1184 Then
-                        dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnVolver.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
                     Else
-                        dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnVolver.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
                     End If
 
                     Panel6.Size = New Size(100000, 100000)
@@ -121,11 +121,11 @@ Public Class FrmSolicPermHrasExt
                     Lbl_Titulo.Text = "Autoriza  Permisos"
                     Pnl_AutPermisos.Location = New Point(3, 52)
                     Pnl_AutPermisos.Visible = True
-                    Pnl_AutPermisos.Size = New Size(100000, 100000)
+                    Pnl_AutPermisos.Dock = DockStyle.Fill
                     btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
                     Lbl_Titulo.Text += (Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25).ToString
                     If Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25 < 1270 Then
-                        dgvSolicitudesSalida.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25, btnVolver.Location.Y - dgvSolicitudesSalida.Location.Y - 10)
+                        dgvSolicitudesSalida.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25, pnlCentral.Size.Height - pnlCentral.Location.Y - dgvSolicitudesSalida.Location.Y - 10)
                     Else
                         dgvSolicitudesSalida.Size = New Size(1270, btnVolver.Location.Y - dgvSolicitudesSalida.Location.Y - 10)
                     End If
@@ -144,16 +144,17 @@ Public Class FrmSolicPermHrasExt
                     Pnl_AutHrExt.Visible = True
                     MDIParent1.Panel2.Visible = False
                     CargarNumeroSolicitudes()
-                    Pnl_AutHrExt.Size = New Size(100000, 100000)
+                    Pnl_AutHrExt.Dock = DockStyle.Fill
+                    btnImprimir.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimir.Height - 10)
                     btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
                     Lbl_Titulo.Text += (Screen.PrimaryScreen.Bounds.Width - dgvColaboradores.Location.X - TreeView1.Size.Width - 25).ToString
                     If Screen.PrimaryScreen.Bounds.Width - dgvColaboradores.Location.X - TreeView1.Size.Width - 25 < 1183 Then
                         Lbl_Titulo.Text += "true"
-                        dgvColaboradores.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradores.Location.X - TreeView1.Size.Width - 25, btnVolver.Location.Y - dgvColaboradores.Location.Y - 60)
+                        dgvColaboradores.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradores.Location.X - TreeView1.Size.Width - 25, btnImprimir.Location.Y - dgvColaboradores.Location.Y - 60)
                     Else
-                        dgvColaboradores.Size = New Size(1183, btnVolver.Location.Y - dgvColaboradores.Location.Y - 60)
+                        dgvColaboradores.Size = New Size(1183, btnImprimir.Location.Y - dgvColaboradores.Location.Y - 60)
                     End If
-                    btnImprimir.Location = New Point(btnImprimir.Location.X, dgvColaboradores.Size.Height + dgvColaboradores.Location.Y + 10)
+
                 End If
 
 
@@ -161,7 +162,7 @@ Public Class FrmSolicPermHrasExt
                 If MDIParent1.RevisaAcceso(90021) Then
                     Lbl_Titulo.Text = "Informe Horas Extras"
                     Pnl_InformeHHEE.Location = New Point(3, 52)
-                    Pnl_InformeHHEE.Size = New Size(100000, 100000)
+                    Pnl_InformeHHEE.Dock = DockStyle.Fill
                     Pnl_InformeHHEE.Visible = True
                     MDIParent1.Panel2.Visible = False
 
@@ -172,16 +173,20 @@ Public Class FrmSolicPermHrasExt
                     trabajadorHHEE = New Persona()
                     trabajadorHHEE.Rut = ""
                     trabajadorHHEE.Nombre = ""
-                    btnImprimirInformeHHEE.Location = New Point(btnVolver.Location.X + 800, btnVolver.Location.Y - 10)
-                    btnBuscarInformeHHEE.Location = New Point(btnVolver.Location.X + 400, btnVolver.Location.Y - 10)
-                    dgvColaboradoresInformeHHEE.Size = New Size(dgvColaboradoresInformeHHEE.Size.Width, btnVolver.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
+                    btnImprimirInformeHHEE.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimirInformeHHEE.Height - 10)
+                    btnBuscarInformeHHEE.Location = New Point(btnImprimirInformeHHEE.Location.X + btnImprimirInformeHHEE.Width + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnBuscarInformeHHEE.Height - 10)
+                    If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25 < 1063 Then
+                        dgvColaboradoresInformeHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
+                    Else
+                        dgvColaboradoresInformeHHEE.Size = New Size(dgvColaboradoresInformeHHEE.Size.Width, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
+                    End If
                 End If
 
 
-            Case UCase("Nd_InformePermisos")
+                    Case UCase("Nd_InformePermisos")
                 If MDIParent1.RevisaAcceso(90020) Then
                     Pnl_InformePermisos.Location = New Point(3, 52)
-                    Pnl_InformePermisos.Size = New Size(100000, 100000)
+                    Pnl_InformePermisos.Dock = DockStyle.Fill
                     Pnl_InformePermisos.Visible = True
                     MDIParent1.Panel2.Visible = False
 
@@ -193,9 +198,13 @@ Public Class FrmSolicPermHrasExt
                     trabajadorInformePermisos.Rut = ""
 
                     trabajadorInformePermisos.Nombre = ""
-                    btnImprimirInformePermisos.Location = New Point(btnVolver.Location.X + 800, btnVolver.Location.Y)
-                    btnBuscarInformePermisos.Location = New Point(btnVolver.Location.X + 400, btnVolver.Location.Y)
-                    dgvSolicitudesSalidaInformePermisos.Size = New Size(dgvSolicitudesSalidaInformePermisos.Size.Width, btnVolver.Location.Y - dgvSolicitudesSalidaInformePermisos.Location.Y - 20)
+                    btnImprimirInformePermisos.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimirInformePermisos.Height - 10)
+                    btnBuscarInformePermisos.Location = New Point(btnImprimirInformePermisos.Location.X + btnImprimirInformePermisos.Width + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnBuscarInformePermisos.Height - 10)
+                    If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25 < 1032 Then
+                        dgvSolicitudesSalidaInformePermisos.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalidaInformePermisos.Location.X - TreeView1.Size.Width - 25, btnBuscarInformePermisos.Location.Y - dgvSolicitudesSalidaInformePermisos.Location.Y - 20)
+                    Else
+                        dgvSolicitudesSalidaInformePermisos.Size = New Size(dgvSolicitudesSalidaInformePermisos.Size.Width, btnBuscarInformePermisos.Location.Y - dgvSolicitudesSalidaInformePermisos.Location.Y - 20)
+                    End If
                 End If
         End Select
     End Sub
