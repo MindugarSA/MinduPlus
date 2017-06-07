@@ -46,7 +46,7 @@ Public Class FrmSolicPermHrasExt
             TreeView1.Visible = False
             SplitContainer1.Panel1Collapsed = True
             BtnVolver2.Visible = True
-            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 144)
+            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
         End If
 
         If modoEntrada = 90002 Then
@@ -54,7 +54,7 @@ Public Class FrmSolicPermHrasExt
             TreeView1.Visible = False
             SplitContainer1.Panel1Collapsed = True
             BtnVolver2.Visible = True
-            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 144)
+            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
         End If
     End Sub
     Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -122,15 +122,28 @@ Public Class FrmSolicPermHrasExt
 
                     ComboBox3.DataSource = listaAreas()
                     If modoEntrada = 90002 Then
-                        btnSolicitar.Location = New Point(pnlCentral.Location.X + 40 + BtnVolver2.Size.Width, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height - 144)
+                        btnSolicitar.Location = New Point(pnlCentral.Location.X + 40 + BtnVolver2.Size.Width, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height - 444)
+                        If Screen.PrimaryScreen.Bounds.Width - 40 < dgvColaboradoresSHHEE.Width Then
+                            dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - 40, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                            dgvColaboradoresSHHEE.Columns("cargoSolicitarHHEE").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 6)
+                            dgvColaboradoresSHHEE.Columns("cargoSolicitarHHEE").Width = 120
+                            dgvColaboradoresSHHEE.Columns("rutSolicitarHHEE").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 7)
+                            dgvColaboradoresSHHEE.Columns("rutSolicitarHHEE").Width = 66
+                            dgvColaboradoresSHHEE.Columns("nombreColaborador").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 6)
+                            dgvColaboradoresSHHEE.Columns("nombreColaborador").Width = 175
+                            dgvColaboradoresSHHEE.Columns("cantidadHoras").Width = 80
+                        Else
+                            dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        End If
                     Else
                         btnSolicitar.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height)
+                        If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50 < 1184 Then
+                            dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        Else
+                            dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        End If
                     End If
-                    If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50 < 1184 Then
-                        dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
-                    Else
-                        dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
-                    End If
+
 
                     Panel6.Size = New Size(100000, 100000)
                 End If
@@ -203,7 +216,7 @@ Public Class FrmSolicPermHrasExt
                 End If
 
 
-                    Case UCase("Nd_InformePermisos")
+            Case UCase("Nd_InformePermisos")
                 If MDIParent1.RevisaAcceso(90020) Then
                     Pnl_InformePermisos.Location = New Point(3, 52)
                     Pnl_InformePermisos.Dock = DockStyle.Fill
@@ -1042,7 +1055,7 @@ Public Class FrmSolicPermHrasExt
                     Return False
                 End If
                 Dim comand As SqlCommand = New SqlCommand("Solicitud_Validar_Trabajador_HoraExtra", conexion)
-                    comand.CommandType = CommandType.StoredProcedure
+                comand.CommandType = CommandType.StoredProcedure
                 comand.Parameters.Add(New SqlParameter("@rut", dgvColaboradoresSHHEE.Rows(i).Cells("rutSolicitarHHEE").Value.ToString))
                 Dim fecha As DateTime = Convert.ToDateTime(dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value)
                 comand.Parameters.Add(New SqlParameter("@fecha", New DateTime(fecha.Year, fecha.Month, fecha.Day, 0, 0, 0, 0)))

@@ -35,10 +35,10 @@ Partial Class FrmSolicPermHrasExt
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TreeView1 = New Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView(Me.components)
@@ -106,16 +106,6 @@ Partial Class FrmSolicPermHrasExt
         Me.btnSolicitar = New System.Windows.Forms.Button()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.dgvColaboradoresSHHEE = New System.Windows.Forms.DataGridView()
-        Me.numeroSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreColaborador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rutSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargoSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreEmpresaSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaInicioSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaTerminoSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidadHoras = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaRealSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnEliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -220,6 +210,16 @@ Partial Class FrmSolicPermHrasExt
         Me.txbNombreInformeHHEE = New System.Windows.Forms.TextBox()
         Me.Lbl_Titulo = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.numeroSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreColaborador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rutSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargoSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmpresaSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaInicioSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaTerminoSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidadHoras = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaRealSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -915,92 +915,6 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvColaboradoresSHHEE.Name = "dgvColaboradoresSHHEE"
         Me.dgvColaboradoresSHHEE.Size = New System.Drawing.Size(1184, 266)
         Me.dgvColaboradoresSHHEE.TabIndex = 20
-        '
-        'numeroSolicitarHHEE
-        '
-        Me.numeroSolicitarHHEE.HeaderText = "N°"
-        Me.numeroSolicitarHHEE.Name = "numeroSolicitarHHEE"
-        Me.numeroSolicitarHHEE.ReadOnly = True
-        Me.numeroSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.numeroSolicitarHHEE.Width = 30
-        '
-        'nombreColaborador
-        '
-        Me.nombreColaborador.HeaderText = "Nombre Colaborador"
-        Me.nombreColaborador.Name = "nombreColaborador"
-        Me.nombreColaborador.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.nombreColaborador.Width = 250
-        '
-        'rutSolicitarHHEE
-        '
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.rutSolicitarHHEE.DefaultCellStyle = DataGridViewCellStyle4
-        Me.rutSolicitarHHEE.HeaderText = "R.U.T."
-        Me.rutSolicitarHHEE.MaxInputLength = 10
-        Me.rutSolicitarHHEE.Name = "rutSolicitarHHEE"
-        Me.rutSolicitarHHEE.ReadOnly = True
-        Me.rutSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'cargoSolicitarHHEE
-        '
-        Me.cargoSolicitarHHEE.HeaderText = "Cargo"
-        Me.cargoSolicitarHHEE.Name = "cargoSolicitarHHEE"
-        Me.cargoSolicitarHHEE.ReadOnly = True
-        Me.cargoSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.cargoSolicitarHHEE.Width = 175
-        '
-        'nombreEmpresaSolicitarHHEE
-        '
-        Me.nombreEmpresaSolicitarHHEE.HeaderText = "Nombre Empresa"
-        Me.nombreEmpresaSolicitarHHEE.Name = "nombreEmpresaSolicitarHHEE"
-        Me.nombreEmpresaSolicitarHHEE.ReadOnly = True
-        Me.nombreEmpresaSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.nombreEmpresaSolicitarHHEE.Width = 125
-        '
-        'horaInicioSolicitarHHEE
-        '
-        Me.horaInicioSolicitarHHEE.HeaderText = "Horas Compromiso Inicio"
-        Me.horaInicioSolicitarHHEE.MaxInputLength = 5
-        Me.horaInicioSolicitarHHEE.Name = "horaInicioSolicitarHHEE"
-        Me.horaInicioSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.horaInicioSolicitarHHEE.Width = 80
-        '
-        'horaTerminoSolicitarHHEE
-        '
-        Me.horaTerminoSolicitarHHEE.HeaderText = "Horas Compromiso Termino"
-        Me.horaTerminoSolicitarHHEE.MaxInputLength = 5
-        Me.horaTerminoSolicitarHHEE.Name = "horaTerminoSolicitarHHEE"
-        Me.horaTerminoSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.horaTerminoSolicitarHHEE.Width = 80
-        '
-        'cantidadHoras
-        '
-        Me.cantidadHoras.HeaderText = "Horas Totales"
-        Me.cantidadHoras.Name = "cantidadHoras"
-        Me.cantidadHoras.ReadOnly = True
-        '
-        'fechaRealSolicitarHHEE
-        '
-        Me.fechaRealSolicitarHHEE.HeaderText = "Fecha Real"
-        Me.fechaRealSolicitarHHEE.Name = "fechaRealSolicitarHHEE"
-        Me.fechaRealSolicitarHHEE.ReadOnly = True
-        Me.fechaRealSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'btnEliminar
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.btnEliminar.DefaultCellStyle = DataGridViewCellStyle5
-        Me.btnEliminar.HeaderText = "Eliminar Filas"
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Text = "eliminar"
-        Me.btnEliminar.ToolTipText = "eliminar fila"
-        Me.btnEliminar.UseColumnTextForButtonValue = True
         '
         'Label25
         '
@@ -1972,6 +1886,92 @@ Partial Class FrmSolicPermHrasExt
         Me.Panel3.Size = New System.Drawing.Size(1702, 21)
         Me.Panel3.TabIndex = 39
         '
+        'numeroSolicitarHHEE
+        '
+        Me.numeroSolicitarHHEE.HeaderText = "N°"
+        Me.numeroSolicitarHHEE.Name = "numeroSolicitarHHEE"
+        Me.numeroSolicitarHHEE.ReadOnly = True
+        Me.numeroSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.numeroSolicitarHHEE.Width = 30
+        '
+        'nombreColaborador
+        '
+        Me.nombreColaborador.HeaderText = "Nombre Colaborador"
+        Me.nombreColaborador.Name = "nombreColaborador"
+        Me.nombreColaborador.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.nombreColaborador.Width = 250
+        '
+        'rutSolicitarHHEE
+        '
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.rutSolicitarHHEE.DefaultCellStyle = DataGridViewCellStyle4
+        Me.rutSolicitarHHEE.HeaderText = "R.U.T."
+        Me.rutSolicitarHHEE.MaxInputLength = 10
+        Me.rutSolicitarHHEE.Name = "rutSolicitarHHEE"
+        Me.rutSolicitarHHEE.ReadOnly = True
+        Me.rutSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'cargoSolicitarHHEE
+        '
+        Me.cargoSolicitarHHEE.HeaderText = "Cargo"
+        Me.cargoSolicitarHHEE.Name = "cargoSolicitarHHEE"
+        Me.cargoSolicitarHHEE.ReadOnly = True
+        Me.cargoSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cargoSolicitarHHEE.Width = 175
+        '
+        'nombreEmpresaSolicitarHHEE
+        '
+        Me.nombreEmpresaSolicitarHHEE.HeaderText = "Nombre Empresa"
+        Me.nombreEmpresaSolicitarHHEE.Name = "nombreEmpresaSolicitarHHEE"
+        Me.nombreEmpresaSolicitarHHEE.ReadOnly = True
+        Me.nombreEmpresaSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.nombreEmpresaSolicitarHHEE.Width = 125
+        '
+        'horaInicioSolicitarHHEE
+        '
+        Me.horaInicioSolicitarHHEE.HeaderText = "Horas Compromiso Inicio"
+        Me.horaInicioSolicitarHHEE.MaxInputLength = 5
+        Me.horaInicioSolicitarHHEE.Name = "horaInicioSolicitarHHEE"
+        Me.horaInicioSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.horaInicioSolicitarHHEE.Width = 80
+        '
+        'horaTerminoSolicitarHHEE
+        '
+        Me.horaTerminoSolicitarHHEE.HeaderText = "Horas Compromiso Termino"
+        Me.horaTerminoSolicitarHHEE.MaxInputLength = 5
+        Me.horaTerminoSolicitarHHEE.Name = "horaTerminoSolicitarHHEE"
+        Me.horaTerminoSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.horaTerminoSolicitarHHEE.Width = 80
+        '
+        'cantidadHoras
+        '
+        Me.cantidadHoras.HeaderText = "Horas Totales"
+        Me.cantidadHoras.Name = "cantidadHoras"
+        Me.cantidadHoras.ReadOnly = True
+        '
+        'fechaRealSolicitarHHEE
+        '
+        Me.fechaRealSolicitarHHEE.HeaderText = "Fecha Real"
+        Me.fechaRealSolicitarHHEE.Name = "fechaRealSolicitarHHEE"
+        Me.fechaRealSolicitarHHEE.ReadOnly = True
+        Me.fechaRealSolicitarHHEE.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'btnEliminar
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.btnEliminar.DefaultCellStyle = DataGridViewCellStyle5
+        Me.btnEliminar.HeaderText = "Eliminar Filas"
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Text = "eliminar"
+        Me.btnEliminar.ToolTipText = "eliminar fila"
+        Me.btnEliminar.UseColumnTextForButtonValue = True
+        '
         'FrmSolicPermHrasExt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2105,16 +2105,6 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents Label30 As Label
     Friend WithEvents txbHorasExtras As TextBox
     Friend WithEvents txbSupervisorSolicitante As TextBox
-    Friend WithEvents numeroSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents nombreColaborador As DataGridViewTextBoxColumn
-    Friend WithEvents rutSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents cargoSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents nombreEmpresaSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents horaInicioSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents horaTerminoSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents cantidadHoras As DataGridViewTextBoxColumn
-    Friend WithEvents fechaRealSolicitarHHEE As DataGridViewTextBoxColumn
-    Friend WithEvents btnEliminar As DataGridViewButtonColumn
     Friend WithEvents numeroSolicitud As DataGridViewTextBoxColumn
     Friend WithEvents trabajador As DataGridViewTextBoxColumn
     Friend WithEvents fechaInforme As DataGridViewTextBoxColumn
@@ -2198,4 +2188,14 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents colTipoPermisoInformePermisos As DataGridViewTextBoxColumn
     Friend WithEvents pnlCentral As Panel
     Friend WithEvents BtnVolver2 As Button
+    Friend WithEvents numeroSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents nombreColaborador As DataGridViewTextBoxColumn
+    Friend WithEvents rutSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents cargoSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents nombreEmpresaSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents horaInicioSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents horaTerminoSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents cantidadHoras As DataGridViewTextBoxColumn
+    Friend WithEvents fechaRealSolicitarHHEE As DataGridViewTextBoxColumn
+    Friend WithEvents btnEliminar As DataGridViewButtonColumn
 End Class
