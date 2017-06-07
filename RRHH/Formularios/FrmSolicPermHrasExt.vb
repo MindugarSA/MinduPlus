@@ -93,7 +93,7 @@ Public Class FrmSolicPermHrasExt
                     dtpDia.Text = Date.Now
                     dtpHoraEntrada.Text = Date.Now
                     dtpHoraSalida.Text = Date.Now
-                    If modoEntrada = 0 Then
+                    If modoEntrada = 0 Or modoEntrada = 90001 Then
                         cmbAreas.DataSource = listaAreas()
                     End If
                     If modoEntrada = 2 Or modoEntrada = 1 Then
