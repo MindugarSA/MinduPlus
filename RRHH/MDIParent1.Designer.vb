@@ -90,11 +90,11 @@ Partial Class MDIParent1
         Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlMovingRight = New System.Windows.Forms.Panel()
+        Me.pnlMovingTop = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
         Me.TmrDesplaza = New System.Windows.Forms.Timer(Me.components)
-        Me.pnlMovingTop = New System.Windows.Forms.Panel()
-        Me.pnlMovingRight = New System.Windows.Forms.Panel()
         PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
@@ -105,8 +105,8 @@ Partial Class MDIParent1
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.pnlMovingTop.SuspendLayout()
         Me.pnlMovingRight.SuspendLayout()
+        Me.pnlMovingTop.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -286,7 +286,7 @@ Partial Class MDIParent1
         '
         Me.ViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolBarToolStripMenuItem, Me.StatusBarToolStripMenuItem})
         Me.ViewMenu.Name = "ViewMenu"
-        Me.ViewMenu.Size = New System.Drawing.Size(36, 20)
+        Me.ViewMenu.Size = New System.Drawing.Size(35, 20)
         Me.ViewMenu.Text = "&Ver"
         '
         'ToolBarToolStripMenuItem
@@ -311,7 +311,7 @@ Partial Class MDIParent1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResulucionToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(128, 20)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(127, 20)
         Me.ToolStripMenuItem1.Text = "ToolStripMenuItem1"
         '
         'ResulucionToolStripMenuItem
@@ -414,9 +414,9 @@ Partial Class MDIParent1
         Me.Tle_Configuracion.ActiveControl = Nothing
         Me.Tle_Configuracion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Configuracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Tle_Configuracion.Location = New System.Drawing.Point(15, 578)
+        Me.Tle_Configuracion.Location = New System.Drawing.Point(7, 578)
         Me.Tle_Configuracion.Name = "Tle_Configuracion"
-        Me.Tle_Configuracion.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_Configuracion.Size = New System.Drawing.Size(247, 107)
         Me.Tle_Configuracion.TabIndex = 16
         Me.Tle_Configuracion.Text = "Configuraciones"
         Me.Tle_Configuracion.TileImage = Global.RRHH.My.Resources.Resources.settings
@@ -430,7 +430,7 @@ Partial Class MDIParent1
         Me.Tle_InformesAlmu.ActiveControl = Nothing
         Me.Tle_InformesAlmu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_InformesAlmu.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(15, 465)
+        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(135, 465)
         Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
         Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 107)
         Me.Tle_InformesAlmu.TabIndex = 15
@@ -446,7 +446,7 @@ Partial Class MDIParent1
         Me.Tle_MantencionColacione.ActiveControl = Nothing
         Me.Tle_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(15, 239)
+        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(135, 239)
         Me.Tle_MantencionColacione.Name = "Tle_MantencionColacione"
         Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 107)
         Me.Tle_MantencionColacione.TabIndex = 14
@@ -462,7 +462,7 @@ Partial Class MDIParent1
         Me.Tle_AlmuAdicional.ActiveControl = Nothing
         Me.Tle_AlmuAdicional.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(71, Byte), Integer))
-        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(15, 352)
+        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(135, 352)
         Me.Tle_AlmuAdicional.Name = "Tle_AlmuAdicional"
         Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 107)
         Me.Tle_AlmuAdicional.TabIndex = 13
@@ -477,8 +477,8 @@ Partial Class MDIParent1
         '
         Me.Tle_Permisos.ActiveControl = Nothing
         Me.Tle_Permisos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_Permisos.BackColor = System.Drawing.Color.DarkMagenta
-        Me.Tle_Permisos.Location = New System.Drawing.Point(15, 126)
+        Me.Tle_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.Tle_Permisos.Location = New System.Drawing.Point(7, 465)
         Me.Tle_Permisos.Name = "Tle_Permisos"
         Me.Tle_Permisos.Size = New System.Drawing.Size(118, 107)
         Me.Tle_Permisos.TabIndex = 12
@@ -492,8 +492,9 @@ Partial Class MDIParent1
         'Tle_Liquidacion
         '
         Me.Tle_Liquidacion.ActiveControl = Nothing
+        Me.Tle_Liquidacion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Liquidacion.BackColor = System.Drawing.Color.Green
-        Me.Tle_Liquidacion.Location = New System.Drawing.Point(128, 3)
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(128, 6)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
         Me.Tle_Liquidacion.TabIndex = 11
@@ -507,8 +508,9 @@ Partial Class MDIParent1
         'Tle_SolAlmuerzo
         '
         Me.Tle_SolAlmuerzo.ActiveControl = Nothing
+        Me.Tle_SolAlmuerzo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(3, 3)
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(3, 6)
         Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
         Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_SolAlmuerzo.TabIndex = 10
@@ -524,7 +526,7 @@ Partial Class MDIParent1
         Me.Tle_Exportador.ActiveControl = Nothing
         Me.Tle_Exportador.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Exportador.BackColor = System.Drawing.Color.Orange
-        Me.Tle_Exportador.Location = New System.Drawing.Point(15, 13)
+        Me.Tle_Exportador.Location = New System.Drawing.Point(7, 352)
         Me.Tle_Exportador.Name = "Tle_Exportador"
         Me.Tle_Exportador.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Exportador.TabIndex = 9
@@ -538,14 +540,15 @@ Partial Class MDIParent1
         'Tle_Solicitar_Permisos
         '
         Me.Tle_Solicitar_Permisos.ActiveControl = Nothing
-        Me.Tle_Solicitar_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(373, 3)
+        Me.Tle_Solicitar_Permisos.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Tle_Solicitar_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(373, 6)
         Me.Tle_Solicitar_Permisos.Name = "Tle_Solicitar_Permisos"
         Me.Tle_Solicitar_Permisos.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Solicitar_Permisos.TabIndex = 17
         Me.Tle_Solicitar_Permisos.Text = "Permisos"
-        Me.Tle_Solicitar_Permisos.TileImage = Global.RRHH.My.Resources.Resources.cutlery
-        Me.ToolTip.SetToolTip(Me.Tle_Solicitar_Permisos, "Solicitar Almuerzos")
+        Me.Tle_Solicitar_Permisos.TileImage = Global.RRHH.My.Resources.Resources.Exit_white_64
+        Me.ToolTip.SetToolTip(Me.Tle_Solicitar_Permisos, "Solicitar Permiso")
         Me.Tle_Solicitar_Permisos.UseCustomBackColor = True
         Me.Tle_Solicitar_Permisos.UseSelectable = True
         Me.Tle_Solicitar_Permisos.UseTileImage = True
@@ -553,14 +556,15 @@ Partial Class MDIParent1
         'TleSolicitar_HHEE
         '
         Me.TleSolicitar_HHEE.ActiveControl = Nothing
-        Me.TleSolicitar_HHEE.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(248, 3)
+        Me.TleSolicitar_HHEE.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TleSolicitar_HHEE.BackColor = System.Drawing.Color.Orange
+        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(248, 6)
         Me.TleSolicitar_HHEE.Name = "TleSolicitar_HHEE"
         Me.TleSolicitar_HHEE.Size = New System.Drawing.Size(119, 107)
         Me.TleSolicitar_HHEE.TabIndex = 18
         Me.TleSolicitar_HHEE.Text = "Hora Extra"
-        Me.TleSolicitar_HHEE.TileImage = Global.RRHH.My.Resources.Resources.cutlery
-        Me.ToolTip.SetToolTip(Me.TleSolicitar_HHEE, "Solicitar Almuerzos")
+        Me.TleSolicitar_HHEE.TileImage = Global.RRHH.My.Resources.Resources.HoraExtra_iloveimg_resized__1_
+        Me.ToolTip.SetToolTip(Me.TleSolicitar_HHEE, "Solicitar Hora Extra")
         Me.TleSolicitar_HHEE.UseCustomBackColor = True
         Me.TleSolicitar_HHEE.UseSelectable = True
         Me.TleSolicitar_HHEE.UseTileImage = True
@@ -734,7 +738,7 @@ Partial Class MDIParent1
         'TxtBx_Empresa
         '
         Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(951, 82)
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 36)
         Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
         Me.TxtBx_Empresa.ReadOnly = True
         Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
@@ -745,7 +749,7 @@ Partial Class MDIParent1
         'TxtBx_UserName
         '
         Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_UserName.Location = New System.Drawing.Point(951, 56)
+        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 10)
         Me.TxtBx_UserName.Name = "TxtBx_UserName"
         Me.TxtBx_UserName.ReadOnly = True
         Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
@@ -766,6 +770,31 @@ Partial Class MDIParent1
         Me.Panel2.Size = New System.Drawing.Size(1129, 817)
         Me.Panel2.TabIndex = 11
         '
+        'pnlMovingRight
+        '
+        Me.pnlMovingRight.Controls.Add(Me.Tle_SolAlmuerzo)
+        Me.pnlMovingRight.Controls.Add(Me.Tle_Liquidacion)
+        Me.pnlMovingRight.Controls.Add(Me.TleSolicitar_HHEE)
+        Me.pnlMovingRight.Controls.Add(Me.Tle_Solicitar_Permisos)
+        Me.pnlMovingRight.Location = New System.Drawing.Point(12, 5)
+        Me.pnlMovingRight.Name = "pnlMovingRight"
+        Me.pnlMovingRight.Size = New System.Drawing.Size(500, 120)
+        Me.pnlMovingRight.TabIndex = 20
+        '
+        'pnlMovingTop
+        '
+        Me.pnlMovingTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
+        Me.pnlMovingTop.Location = New System.Drawing.Point(860, 126)
+        Me.pnlMovingTop.Name = "pnlMovingTop"
+        Me.pnlMovingTop.Size = New System.Drawing.Size(266, 688)
+        Me.pnlMovingTop.TabIndex = 19
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
@@ -782,31 +811,6 @@ Partial Class MDIParent1
         'TmrDesplaza
         '
         Me.TmrDesplaza.Interval = 25
-        '
-        'pnlMovingTop
-        '
-        Me.pnlMovingTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
-        Me.pnlMovingTop.Location = New System.Drawing.Point(980, 126)
-        Me.pnlMovingTop.Name = "pnlMovingTop"
-        Me.pnlMovingTop.Size = New System.Drawing.Size(146, 688)
-        Me.pnlMovingTop.TabIndex = 19
-        '
-        'pnlMovingRight
-        '
-        Me.pnlMovingRight.Controls.Add(Me.Tle_SolAlmuerzo)
-        Me.pnlMovingRight.Controls.Add(Me.Tle_Liquidacion)
-        Me.pnlMovingRight.Controls.Add(Me.TleSolicitar_HHEE)
-        Me.pnlMovingRight.Controls.Add(Me.Tle_Solicitar_Permisos)
-        Me.pnlMovingRight.Location = New System.Drawing.Point(12, 9)
-        Me.pnlMovingRight.Name = "pnlMovingRight"
-        Me.pnlMovingRight.Size = New System.Drawing.Size(500, 120)
-        Me.pnlMovingRight.TabIndex = 20
         '
         'MDIParent1
         '
@@ -840,8 +844,8 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.pnlMovingTop.ResumeLayout(False)
         Me.pnlMovingRight.ResumeLayout(False)
+        Me.pnlMovingTop.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

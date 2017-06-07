@@ -818,12 +818,16 @@
     <None Include="Resources\favicon.ico" />
     <None Include="Resources\favicon %281%29.ico" />
     <None Include="Resources\favicon %283%29.ico" />
+    <None Include="Resources\exit.png" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />
     <None Include="Resources\Gesper.jpg" />
     <None Include="Resources\home-shape.png" />
     <None Include="Resources\home-shape %281%29.png" />
+    <None Include="Resources\HoraExtra-iloveimg-resized.png" />
+    <None Include="Resources\HoraExtra.png" />
+    <None Include="Resources\HoraExtra-iloveimg-resized %281%29.png" />
     <Content Include="Resources\Informes.jpg" />
     <None Include="Resources\Informes1.jpg" />
     <Content Include="Resources\Liquidaciones.jpg" />
