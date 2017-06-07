@@ -8,7 +8,10 @@ Public Class MDIParent1
     Public TiempoActivo As Integer
     Private m_ChildFormNumber As Integer
     Public Tiempo_Str As Integer = 30
+    Public Tiempo_Animacion As Integer = 0
 
+    Private Const DESPLAZAMIENTO As Integer = 25
+    Private Const CANTIDAD_DESPLAZO As Integer = 25
 
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -602,35 +605,24 @@ Public Class MDIParent1
     End Sub
 
     Private Sub TmrDesplaza_Tick(sender As Object, e As EventArgs) Handles TmrDesplaza.Tick
+        pnlMovingRight.Left += DESPLAZAMIENTO
+        pnlMovingTop.Top -= DESPLAZAMIENTO
 
-        Tle_SolAlmuerzo.Left += 100
-        Tle_Liquidacion.Left += 100
-        Tle_Permisos.Left += 100
-        Tle_Exportador.Left += 100
+        Tiempo_Animacion += 1
 
-        Tle_MantencionColacione.Top -= 100
-        Tle_AlmuAdicional.Top -= 100
-        Tle_InformesAlmu.Top -= 100
-        Tle_Configuracion.Top -= 100
-
-        If Tle_Exportador.Left >= 378 Then
+        If Tiempo_Animacion = CANTIDAD_DESPLAZO Then
             TmrDesplaza.Stop()
+            TmrDesplaza.Enabled = False
+            Tiempo_Animacion = 0
         End If
 
     End Sub
 
     Public Sub Desplazamiento_Tiles()
+        pnlMovingRight.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
+        pnlMovingTop.Top += DESPLAZAMIENTO * CANTIDAD_DESPLAZO
 
-        Tle_SolAlmuerzo.Left = Tle_SolAlmuerzo.Left - 500
-        Tle_Liquidacion.Left = Tle_Liquidacion.Left - 500
-        Tle_Permisos.Left = Tle_Permisos.Left - 500
-        Tle_Exportador.Left = Tle_Exportador.Left - 500
-
-        Tle_MantencionColacione.Top = Tle_MantencionColacione.Top + 500
-        Tle_AlmuAdicional.Top = Tle_AlmuAdicional.Top + 500
-        Tle_InformesAlmu.Top = Tle_InformesAlmu.Top + 500
-        Tle_Configuracion.Top = Tle_Configuracion.Top + 500
-
+        TmrDesplaza.Enabled = True
         TmrDesplaza.Start()
 
     End Sub
@@ -643,5 +635,31 @@ Public Class MDIParent1
 
     End Sub
 
+    Private Sub Tle_Solicitar_Permisos_Click(sender As Object, e As EventArgs) Handles Tle_Solicitar_Permisos.Click
+        If RevisaAcceso(90001) Then
+            TiempoIngreso.Enabled = False
+            Cerrar_Forms_Children()
+            Dim NewMDIChild As New FrmSolicPermHrasExt(90001)
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        End If
+    End Sub
 
+    Private Sub TleSolicitar_HHEE_Click(sender As Object, e As EventArgs) Handles TleSolicitar_HHEE.Click
+        If RevisaAcceso(90001) Then
+            TiempoIngreso.Enabled = False
+            Cerrar_Forms_Children()
+            Dim NewMDIChild As New FrmSolicPermHrasExt(90002)
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.Show()
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        End If
+    End Sub
 End Class

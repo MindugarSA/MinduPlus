@@ -28,6 +28,7 @@ Public Class FrmSolicPermHrasExt
         eventFlag = True
         btnVolver.Location = New Point(3, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
         TreeView1.Size = New Size(TreeView1.Size.Width, btnVolver.Location.Y - TreeView1.Location.Y - 25)
+
     End Sub
 
 
@@ -40,6 +41,21 @@ Public Class FrmSolicPermHrasExt
         Next
         Me.WindowState = FormWindowState.Maximized
         Me.TreeView1.ExpandAll()
+        If modoEntrada = 90001 Then
+            TreeView1.SelectedNode = TreeView1.Nodes("Nodo0").Nodes("Nd_SolPermisos")
+            TreeView1.Visible = False
+            SplitContainer1.Panel1Collapsed = True
+            BtnVolver2.Visible = True
+            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 144)
+        End If
+
+        If modoEntrada = 90002 Then
+            TreeView1.SelectedNode = TreeView1.Nodes("Nodo0").Nodes("Nd_SolHrExt")
+            TreeView1.Visible = False
+            SplitContainer1.Panel1Collapsed = True
+            BtnVolver2.Visible = True
+            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 144)
+        End If
     End Sub
     Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -69,6 +85,7 @@ Public Class FrmSolicPermHrasExt
                     Pnl_SolPermisos.Location = New Point(3, 52)
                     Pnl_SolPermisos.Visible = True
                     Pnl_SolPermisos.Dock = DockStyle.Fill
+
 
                     dtpDia.Text = Date.Now
                     dtpHoraEntrada.Text = Date.Now
@@ -104,8 +121,11 @@ Public Class FrmSolicPermHrasExt
                     dtpFecha.Value = Date.Now.ToString("dd-MM-yyyy")
 
                     ComboBox3.DataSource = listaAreas()
-
-                    btnSolicitar.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height)
+                    If modoEntrada = 90002 Then
+                        btnSolicitar.Location = New Point(pnlCentral.Location.X + 40 + BtnVolver2.Size.Width, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height - 144)
+                    Else
+                        btnSolicitar.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height)
+                    End If
                     If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50 < 1184 Then
                         dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
                     Else
@@ -2115,5 +2135,9 @@ Public Class FrmSolicPermHrasExt
         End If
     End Sub
 
-
+    Private Sub BtnVolver2_Click(sender As Object, e As EventArgs) Handles BtnVolver2.Click
+        MDIParent1.Panel2.Visible = True
+        MDIParent1.TiempoIngreso.Enabled = True
+        Me.Close()
+    End Sub
 End Class
