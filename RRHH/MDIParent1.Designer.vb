@@ -82,7 +82,7 @@ Partial Class MDIParent1
         Me.Lbl_Cod_Interno = New System.Windows.Forms.Label()
         Me.Lbl_RutEmpresa = New System.Windows.Forms.Label()
         Me.Lbl_RutTrab = New System.Windows.Forms.Label()
-        Me.Button4 = New MetroFramework.Controls.MetroButton()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.PcturBx_Image = New System.Windows.Forms.PictureBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Lbl_Cod_ID = New System.Windows.Forms.Label()
@@ -413,7 +413,7 @@ Partial Class MDIParent1
         '
         Me.Tle_Configuracion.ActiveControl = Nothing
         Me.Tle_Configuracion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_Configuracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.Tle_Configuracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.Tle_Configuracion.Location = New System.Drawing.Point(7, 578)
         Me.Tle_Configuracion.Name = "Tle_Configuracion"
         Me.Tle_Configuracion.Size = New System.Drawing.Size(247, 107)
@@ -461,7 +461,7 @@ Partial Class MDIParent1
         '
         Me.Tle_AlmuAdicional.ActiveControl = Nothing
         Me.Tle_AlmuAdicional.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(71, Byte), Integer))
+        Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(135, 352)
         Me.Tle_AlmuAdicional.Name = "Tle_AlmuAdicional"
         Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 107)
@@ -477,7 +477,7 @@ Partial Class MDIParent1
         '
         Me.Tle_Permisos.ActiveControl = Nothing
         Me.Tle_Permisos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.Tle_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Tle_Permisos.Location = New System.Drawing.Point(7, 465)
         Me.Tle_Permisos.Name = "Tle_Permisos"
         Me.Tle_Permisos.Size = New System.Drawing.Size(118, 107)
@@ -493,7 +493,7 @@ Partial Class MDIParent1
         '
         Me.Tle_Liquidacion.ActiveControl = Nothing
         Me.Tle_Liquidacion.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Tle_Liquidacion.BackColor = System.Drawing.Color.Green
+        Me.Tle_Liquidacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.Tle_Liquidacion.Location = New System.Drawing.Point(128, 6)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
@@ -673,14 +673,20 @@ Partial Class MDIParent1
         '
         'Button4
         '
-        Me.Button4.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Button4.Location = New System.Drawing.Point(331, 3)
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(332, 0)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(0)
         Me.Button4.Name = "Button4"
         Me.TableLayoutPanel2.SetRowSpan(Me.Button4, 2)
-        Me.Button4.Size = New System.Drawing.Size(50, 49)
+        Me.Button4.Size = New System.Drawing.Size(58, 54)
         Me.Button4.TabIndex = 17
         Me.Button4.Text = "Cerrar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sesión"
-        Me.Button4.UseSelectable = True
+        Me.Button4.UseVisualStyleBackColor = False
         Me.Button4.UseWaitCursor = True
         '
         'PcturBx_Image
@@ -903,7 +909,7 @@ Partial Class MDIParent1
     Friend WithEvents Lbl_RutEmpresa As Label
     Friend WithEvents Lbl_RutTrab As Label
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents Button4 As MetroFramework.Controls.MetroButton 'Button
+    Friend WithEvents Button4 As Button 'MetroFramework.Controls.MetroButton '
     Friend WithEvents ToolStripButton3 As ToolStripButton
     Friend WithEvents Tle_Exportador As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_SolAlmuerzo As MetroFramework.Controls.MetroTile

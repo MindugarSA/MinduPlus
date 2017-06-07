@@ -451,10 +451,10 @@ Public Class MDIParent1
             Cerrar_Forms_Children()
             Dim NewMDIChild As New FrmSolicPermHrasExt(0)
             NewMDIChild.MdiParent = Me
-            'NewMDIChild.Dock = DockStyle.Fill
-            'Me.Panel2.Controls.Add(NewMDIChild)
-            'Me.Panel2.Tag = NewMDIChild
-            'Ocultar_Tiles_MDI()
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
@@ -606,14 +606,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -657,6 +657,11 @@ Public Class MDIParent1
             Cerrar_Forms_Children()
             Dim NewMDIChild As New FrmSolicPermHrasExt(90001)
             NewMDIChild.MdiParent = Me
+            NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
@@ -671,6 +676,11 @@ Public Class MDIParent1
             Cerrar_Forms_Children()
             Dim NewMDIChild As New FrmSolicPermHrasExt(90002)
             NewMDIChild.MdiParent = Me
+            NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False

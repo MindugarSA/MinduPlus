@@ -26,15 +26,15 @@ Public Class FrmSolicPermHrasExt
         InitializeComponent()
         modoEntrada = modo
         eventFlag = True
-        btnVolver.Location = New Point(3, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
-        TreeView1.Size = New Size(TreeView1.Size.Width, btnVolver.Location.Y - TreeView1.Location.Y - 25)
+        'btnVolver.Location = New Point(3, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
+        'TreeView1.Size = New Size(TreeView1.Size.Width, btnVolver.Location.Y - TreeView1.Location.Y - 25)
 
     End Sub
 
 
     Private Sub FrmSolicPermHrasExt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
-        MDIParent1.Panel2.Visible = False
+        'MDIParent1.Panel2.Visible = False
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
@@ -46,7 +46,8 @@ Public Class FrmSolicPermHrasExt
             TreeView1.Visible = False
             SplitContainer1.Panel1Collapsed = True
             BtnVolver2.Visible = True
-            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
+            'BtnVolver2.Location = New Point(BtnVolver2.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
+            'BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
         End If
 
         If modoEntrada = 90002 Then
@@ -54,7 +55,8 @@ Public Class FrmSolicPermHrasExt
             TreeView1.Visible = False
             SplitContainer1.Panel1Collapsed = True
             BtnVolver2.Visible = True
-            BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
+            BtnVolver2.Location = New Point(BtnVolver2.Location.X, btnSolicitar.Location.Y)
+            'BtnVolver2.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - BtnVolver2.Size.Height - 444)
         End If
     End Sub
     Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -85,6 +87,7 @@ Public Class FrmSolicPermHrasExt
                     Pnl_SolPermisos.Location = New Point(3, 52)
                     Pnl_SolPermisos.Visible = True
                     Pnl_SolPermisos.Dock = DockStyle.Fill
+                    Pnl_SolicitudPermisos.Dock = DockStyle.Fill
 
 
                     dtpDia.Text = Date.Now
@@ -115,37 +118,39 @@ Public Class FrmSolicPermHrasExt
                     Pnl_SolHrasExt.Location = New Point(3, 52)
                     Pnl_SolHrasExt.Visible = True
                     Pnl_SolHrasExt.Dock = DockStyle.Fill
+                    Panel6.Dock = DockStyle.Fill
 
                     txbSupervisorSolicitante.Text = MDIParent1.TxtBx_UserName.Text
-                    MDIParent1.Panel2.Visible = False
+                    'MDIParent1.Panel2.Visible = False
                     dtpFecha.Value = Date.Now.ToString("dd-MM-yyyy")
 
                     ComboBox3.DataSource = listaAreas()
                     If modoEntrada = 90002 Then
-                        btnSolicitar.Location = New Point(pnlCentral.Location.X + 40 + BtnVolver2.Size.Width, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height - 444)
-                        If Screen.PrimaryScreen.Bounds.Width - 40 < dgvColaboradoresSHHEE.Width Then
-                            dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - 40, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
-                            dgvColaboradoresSHHEE.Columns("cargoSolicitarHHEE").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 6)
-                            dgvColaboradoresSHHEE.Columns("cargoSolicitarHHEE").Width = 120
-                            dgvColaboradoresSHHEE.Columns("rutSolicitarHHEE").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 7)
-                            dgvColaboradoresSHHEE.Columns("rutSolicitarHHEE").Width = 66
-                            dgvColaboradoresSHHEE.Columns("nombreColaborador").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 6)
-                            dgvColaboradoresSHHEE.Columns("nombreColaborador").Width = 175
-                            dgvColaboradoresSHHEE.Columns("cantidadHoras").Width = 80
-                        Else
-                            dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
-                        End If
+                        'btnSolicitar.Location = New Point(pnlCentral.Location.X + 40 + BtnVolver2.Size.Width, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height - 444)
+                        'If Screen.PrimaryScreen.Bounds.Width - 40 < dgvColaboradoresSHHEE.Width Then
+                        '    dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - 40, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        '    dgvColaboradoresSHHEE.Columns("cargoSolicitarHHEE").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 6)
+                        '    dgvColaboradoresSHHEE.Columns("cargoSolicitarHHEE").Width = 120
+                        '    dgvColaboradoresSHHEE.Columns("rutSolicitarHHEE").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 7)
+                        '    dgvColaboradoresSHHEE.Columns("rutSolicitarHHEE").Width = 66
+                        '    dgvColaboradoresSHHEE.Columns("nombreColaborador").DefaultCellStyle.Font = New Font(New FontFamily("Arial"), 6)
+                        '    dgvColaboradoresSHHEE.Columns("nombreColaborador").Width = 175
+                        '    dgvColaboradoresSHHEE.Columns("cantidadHoras").Width = 80
+                        'Else
+                        '    dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        'End If
                     Else
-                        btnSolicitar.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height)
-                        If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50 < 1184 Then
-                            dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
-                        Else
-                            dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
-                        End If
+                        'btnSolicitar.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - 20 - btnSolicitar.Size.Height)
+                        'If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50 < 1184 Then
+                        '    dgvColaboradoresSHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresSHHEE.Location.X - TreeView1.Size.Width - 50, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        'Else
+                        '    'dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        '    dgvColaboradoresSHHEE.Size = New Size(dgvColaboradoresSHHEE.Size.Width, btnSolicitar.Location.Y - dgvColaboradoresSHHEE.Location.Y - 40)
+                        'End If
                     End If
 
 
-                    Panel6.Size = New Size(100000, 100000)
+                    'Panel6.Size = New Size(100000, 100000)
                 End If
 
 
@@ -155,7 +160,7 @@ Public Class FrmSolicPermHrasExt
                     Pnl_AutPermisos.Location = New Point(3, 52)
                     Pnl_AutPermisos.Visible = True
                     Pnl_AutPermisos.Dock = DockStyle.Fill
-                    btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
+                    'btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
                     Lbl_Titulo.Text += (Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25).ToString
                     If Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25 < 1270 Then
                         dgvSolicitudesSalida.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalida.Location.X - TreeView1.Size.Width - 25, pnlCentral.Size.Height - pnlCentral.Location.Y - dgvSolicitudesSalida.Location.Y - 10)
@@ -175,11 +180,11 @@ Public Class FrmSolicPermHrasExt
                     Lbl_Titulo.Text = "Autoriza Horas Extras"
                     Pnl_AutHrExt.Location = New Point(3, 52)
                     Pnl_AutHrExt.Visible = True
-                    MDIParent1.Panel2.Visible = False
+                    ' MDIParent1.Panel2.Visible = False
                     CargarNumeroSolicitudes()
                     Pnl_AutHrExt.Dock = DockStyle.Fill
                     btnImprimir.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimir.Height - 10)
-                    btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
+                    'btnVolver.Location = New Point(20, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
                     Lbl_Titulo.Text += (Screen.PrimaryScreen.Bounds.Width - dgvColaboradores.Location.X - TreeView1.Size.Width - 25).ToString
                     If Screen.PrimaryScreen.Bounds.Width - dgvColaboradores.Location.X - TreeView1.Size.Width - 25 < 1183 Then
                         Lbl_Titulo.Text += "true"
@@ -197,7 +202,7 @@ Public Class FrmSolicPermHrasExt
                     Pnl_InformeHHEE.Location = New Point(3, 52)
                     Pnl_InformeHHEE.Dock = DockStyle.Fill
                     Pnl_InformeHHEE.Visible = True
-                    MDIParent1.Panel2.Visible = False
+                    ' MDIParent1.Panel2.Visible = False
 
                     dtpInicioInformeHHEE.Value = DateTime.Now
                     dtpTerminoInformeHHEE.Value = DateTime.Now
@@ -221,7 +226,7 @@ Public Class FrmSolicPermHrasExt
                     Pnl_InformePermisos.Location = New Point(3, 52)
                     Pnl_InformePermisos.Dock = DockStyle.Fill
                     Pnl_InformePermisos.Visible = True
-                    MDIParent1.Panel2.Visible = False
+                    ' MDIParent1.Panel2.Visible = False
 
                     dtpInicioInformePermisos.Value = DateTime.Now
                     dtpTerminoInformePermisos.Value = DateTime.Now
@@ -416,6 +421,7 @@ Public Class FrmSolicPermHrasExt
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
+        MDIParent1.Visualizar_Tiles_MDI()
         Me.Close()
     End Sub
     'Ok
@@ -801,6 +807,7 @@ Public Class FrmSolicPermHrasExt
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
+        MDIParent1.Visualizar_Tiles_MDI()
         Me.Close()
     End Sub
     'Ok
@@ -2082,6 +2089,7 @@ Public Class FrmSolicPermHrasExt
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
+        MDIParent1.Visualizar_Tiles_MDI()
         Me.Close()
     End Sub
 
@@ -2151,6 +2159,8 @@ Public Class FrmSolicPermHrasExt
     Private Sub BtnVolver2_Click(sender As Object, e As EventArgs) Handles BtnVolver2.Click
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
+        MDIParent1.Visualizar_Tiles_MDI()
         Me.Close()
     End Sub
+
 End Class
