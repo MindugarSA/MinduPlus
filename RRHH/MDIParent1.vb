@@ -583,23 +583,27 @@ Public Class MDIParent1
     End Sub
 
     Public Sub Ocultar_Tiles_MDI()
-        Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
-          (From tb As MetroFramework.Controls.MetroTile In Me.Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
-           Select tb).ToList()
+        pnlMovingRight.Visible = False
+        pnlMovingTop.Visible = False
+        'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
+        '  (From tb As MetroFramework.Controls.MetroTile In Me.Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
+        '   Select tb).ToList()
 
-        For Each Tle As MetroFramework.Controls.MetroTile In listaTiles
-            Tle.Visible = False
-        Next
+        'For Each Tle As MetroFramework.Controls.MetroTile In listaTiles
+        '    Tle.Visible = False
+        'Next
     End Sub
 
     Public Sub Visualizar_Tiles_MDI()
-        Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
-          (From tb As MetroFramework.Controls.MetroTile In Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
-           Select tb).ToList()
+        pnlMovingRight.Visible = True
+        pnlMovingTop.Visible = True
+        'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
+        '  (From tb As MetroFramework.Controls.MetroTile In Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
+        '   Select tb).ToList()
 
-        For Each Tle As MetroFramework.Controls.MetroTile In listaTiles
-            Tle.Visible = True
-        Next
+        'For Each Tle As MetroFramework.Controls.MetroTile In listaTiles
+        '    Tle.Visible = True
+        'Next
     End Sub
 
     Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter
