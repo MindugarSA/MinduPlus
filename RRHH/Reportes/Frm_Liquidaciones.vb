@@ -9,7 +9,6 @@ Public Class Frm_Liquidaciones
     Dim conexion As New SqlConnection
     Dim cmd As SqlCommand
     Dim ContSelect As Integer
-    Dim firstLoad As Boolean
 
     Public Delegate Sub LaunchEvent()
     Public Event EnviarEvento As LaunchEvent
@@ -17,7 +16,6 @@ Public Class Frm_Liquidaciones
     Private Sub Frm_Liquidaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
         ContSelect = 0
-        firstLoad = True
 
         cmd = New SqlCommand("Colaciones_Liquidaciones_Info_Meses", conexion)
         cmd.CommandType = CommandType.StoredProcedure
@@ -43,7 +41,6 @@ Public Class Frm_Liquidaciones
             conexion.Close()
             ContSelect = 1
             CargaLiqudacion()
-            firstLoad = False
         End Try
 
 
@@ -73,7 +70,7 @@ Public Class Frm_Liquidaciones
         '        Dim Encabezado2 As String = "<tr><td width =" & Chr(34) & "33%" & Chr(34) & " > Empresa <br> Rut <br> direcciom  </td>"
         '        Dim Encabezado3 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "center" & Chr(34) & "> autoconsulta </div></td>"
         '        Dim Encabezado4 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "right" & Chr(34) & ">" &
-        '                                    "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.BMP" & Chr(34) & "width = " & Chr(34) & "247" & Chr(34) & "height=" & Chr(34) & "65" & Chr(34) & "></div></td> "
+        '                                    "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.PNG" & Chr(34) & "width = " & Chr(34) & "247" & Chr(34) & "height=" & Chr(34) & "65" & Chr(34) & "></div></td> "
         '        Dim Encabezado As String = Encabezado1 & Encabezado2 & Encabezado3 & Encabezado4
         '        sw.WriteLine(Encabezado)
         '        sw.WriteLine(texto)
@@ -115,26 +112,17 @@ Public Class Frm_Liquidaciones
             If dt.Rows(0)("IdEstado") = 0 Then
                 Dim texto As String = dt.Rows(0)("liquidacion_txt")
                 Dim sw As New System.IO.StreamWriter(ArchivoTMP)
-                Dim empresa As String = dt.Rows(0)("nombre_Emp")
-                Dim direccion As String = dt.Rows(0)("Direcc_Emp")
+
                 Dim Encabezado1 As String = "<table width = " & Chr(34) & "100%" & Chr(34) & " border= " & Chr(34) & "0" & Chr(34) & " align = " & Chr(34) & "center" & Chr(34) & " cellpadding= " & Chr(34) & "0" & Chr(34) & ">"
-                Dim Encabezado2 As String = "<tr><td width =" & Chr(34) & "33%" & Chr(34) & " > Empresa: " & empresa & " <br> Rut: " & MDIParent1.Lbl_RutEmpresa.Text & " <br> direccion: " & direccion & "  </td>"
+                Dim Encabezado2 As String = "<tr><td width =" & Chr(34) & "33%" & Chr(34) & " > Empresa <br> Rut <br> direccion  </td>"
                 Dim Encabezado3 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "center" & Chr(34) & "> autoconsulta </div></td>"
                 Dim Encabezado4 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "right" & Chr(34) & ">" &
-                                            "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.BMP" & Chr(34) & "width = " & Chr(34) & "275" & Chr(34) & "height=" & Chr(34) & "58" & Chr(34) & "></div></td> "
+                                            "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.BMP" & Chr(34) & "width = " & Chr(34) & "247" & Chr(34) & "height=" & Chr(34) & "65" & Chr(34) & "></div></td> "
                 Dim Encabezado As String = Encabezado1 & Encabezado2 & Encabezado3 & Encabezado4
-                sw.WriteLine("<html>")
-                sw.WriteLine("<header>")
-                If (firstLoad) Then
-                    sw.WriteLine("<style>*{font-size=100%}</style>")
-                Else
-                    sw.WriteLine("<style>*{font-size=98%}</style>")
-                End If
                 sw.WriteLine(Encabezado)
-                sw.WriteLine("</header>")
                 sw.WriteLine(texto)
+                sw.WriteLine("<style> *{font-size: 100%;}</style>")
                 sw.WriteLine("</tr> </table>")
-                sw.WriteLine("</html>")
                 sw.Close()
                 WebBrowser1.Navigate(ArchivoTMP)
 
@@ -157,6 +145,7 @@ Public Class Frm_Liquidaciones
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         WebBrowser1.Print()
+
         'MDIParent1.Panel2.Visible = True
         Me.Close()
     End Sub

@@ -10,7 +10,6 @@ Public Class Frm_Informes
 
     Private Sub Frm_Informes_Load(sender As Object, e As EventArgs) Handles Me.Load
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
-        MDIParent1.Panel2.Visible = False
         CmbBx_Informe.SelectedIndex = 0
         CmbBx_Informe_Orden.SelectedIndex = 0
         CmbBx_Informe_Empresa.SelectedIndex = 0
@@ -23,19 +22,10 @@ Public Class Frm_Informes
         Next
         CmbBx_Periodos.SelectedIndex = 0
 
-
-        'CmbBx_Periodos
-
-
-
-
-        'DtTimPickr_Fecha_Fin.Visible = False
-        CmbBx_Periodos.Visible = False
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MDIParent1.Panel2.Visible = True
+        MDIParent1.Visualizar_Tiles_MDI()
         MDIParent1.TiempoIngreso.Enabled = True
         Me.Close()
     End Sub

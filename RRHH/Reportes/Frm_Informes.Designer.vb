@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_Informes
-    Inherits System.Windows.Forms.Form
+    Inherits MetroFramework.Forms.MetroForm 'System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -53,81 +53,100 @@ Partial Class Frm_Informes
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.CmbBx_ResumDetall = New System.Windows.Forms.ComboBox()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(27, 42)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(15, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 13)
+        Me.Label1.Size = New System.Drawing.Size(41, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Fecha"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(374, 17)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(328, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 13)
+        Me.Label2.Size = New System.Drawing.Size(103, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Ordenado Por : "
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(27, 17)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(15, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.Size = New System.Drawing.Size(60, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Informe :"
         '
         'CmbBx_Informe
         '
+        Me.CmbBx_Informe.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Informe.FormattingEnabled = True
         Me.CmbBx_Informe.Items.AddRange(New Object() {"Informe de Colaciones Diarias", "Informe de Colaciones Entre Fechas", "Informe de Descuentos GESPER"})
-        Me.CmbBx_Informe.Location = New System.Drawing.Point(142, 9)
+        Me.CmbBx_Informe.Location = New System.Drawing.Point(83, 10)
         Me.CmbBx_Informe.Name = "CmbBx_Informe"
-        Me.CmbBx_Informe.Size = New System.Drawing.Size(226, 21)
+        Me.CmbBx_Informe.Size = New System.Drawing.Size(226, 25)
         Me.CmbBx_Informe.TabIndex = 3
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(30, 393)
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Image = Global.RRHH.My.Resources.Resources.home_shape_32
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.Location = New System.Drawing.Point(18, 430)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(162, 35)
+        Me.Button1.Size = New System.Drawing.Size(150, 57)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Cerrar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Text = "Volver"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'CmbBx_Informe_Orden
         '
+        Me.CmbBx_Informe_Orden.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Informe_Orden.FormattingEnabled = True
         Me.CmbBx_Informe_Orden.Items.AddRange(New Object() {"R.U.T", "Nombre", "Apellidos"})
-        Me.CmbBx_Informe_Orden.Location = New System.Drawing.Point(471, 9)
+        Me.CmbBx_Informe_Orden.Location = New System.Drawing.Point(455, 10)
         Me.CmbBx_Informe_Orden.Name = "CmbBx_Informe_Orden"
-        Me.CmbBx_Informe_Orden.Size = New System.Drawing.Size(121, 21)
+        Me.CmbBx_Informe_Orden.Size = New System.Drawing.Size(133, 25)
         Me.CmbBx_Informe_Orden.TabIndex = 5
         '
         'DtTimPickr_Fecha_Ini
         '
-        Me.DtTimPickr_Fecha_Ini.Location = New System.Drawing.Point(142, 36)
+        Me.DtTimPickr_Fecha_Ini.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DtTimPickr_Fecha_Ini.Location = New System.Drawing.Point(83, 38)
         Me.DtTimPickr_Fecha_Ini.MinDate = New Date(2016, 1, 1, 0, 0, 0, 0)
         Me.DtTimPickr_Fecha_Ini.Name = "DtTimPickr_Fecha_Ini"
-        Me.DtTimPickr_Fecha_Ini.Size = New System.Drawing.Size(200, 20)
+        Me.DtTimPickr_Fecha_Ini.Size = New System.Drawing.Size(226, 25)
         Me.DtTimPickr_Fecha_Ini.TabIndex = 6
         '
         'Bttn_GenerarInf
         '
-        Me.Bttn_GenerarInf.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Bttn_GenerarInf.Location = New System.Drawing.Point(647, 62)
+        Me.Bttn_GenerarInf.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Bttn_GenerarInf.FlatAppearance.BorderSize = 0
+        Me.Bttn_GenerarInf.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Bttn_GenerarInf.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bttn_GenerarInf.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Bttn_GenerarInf.Location = New System.Drawing.Point(607, 65)
+        Me.Bttn_GenerarInf.Margin = New System.Windows.Forms.Padding(0)
         Me.Bttn_GenerarInf.Name = "Bttn_GenerarInf"
-        Me.Bttn_GenerarInf.Size = New System.Drawing.Size(152, 23)
+        Me.Bttn_GenerarInf.Size = New System.Drawing.Size(189, 26)
         Me.Bttn_GenerarInf.TabIndex = 7
         Me.Bttn_GenerarInf.Text = "Generar"
         Me.Bttn_GenerarInf.UseVisualStyleBackColor = False
@@ -136,22 +155,26 @@ Partial Class Frm_Informes
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.Location = New System.Drawing.Point(30, 89)
+        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.Location = New System.Drawing.Point(18, 96)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(769, 257)
+        Me.DataGridView1.Size = New System.Drawing.Size(779, 289)
         Me.DataGridView1.TabIndex = 8
         '
         'DtTimPickr_Fecha_Fin
         '
-        Me.DtTimPickr_Fecha_Fin.Location = New System.Drawing.Point(392, 36)
+        Me.DtTimPickr_Fecha_Fin.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DtTimPickr_Fecha_Fin.Location = New System.Drawing.Point(329, 36)
         Me.DtTimPickr_Fecha_Fin.Name = "DtTimPickr_Fecha_Fin"
-        Me.DtTimPickr_Fecha_Fin.Size = New System.Drawing.Size(200, 20)
+        Me.DtTimPickr_Fecha_Fin.Size = New System.Drawing.Size(259, 25)
         Me.DtTimPickr_Fecha_Fin.TabIndex = 9
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel1.ColumnCount = 12
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.174312!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.82569!))
@@ -164,7 +187,7 @@ Partial Class Frm_Informes
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 0)
@@ -177,7 +200,7 @@ Partial Class Frm_Informes
         Me.TableLayoutPanel1.Controls.Add(Me.TxtBx_TotCol, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TB_Tot_ExtGcial, 5, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TB_Tot_ExtNorm, 7, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(30, 360)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(18, 394)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -188,9 +211,9 @@ Partial Class Frm_Informes
         '
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(4, 0)
+        Me.Label11.Location = New System.Drawing.Point(3, 7)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(5, 27)
+        Me.Label11.Size = New System.Drawing.Size(1, 13)
         Me.Label11.TabIndex = 10
         Me.Label11.Text = "Extras Gcia."
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -210,7 +233,7 @@ Partial Class Frm_Informes
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 7)
+        Me.Label4.Location = New System.Drawing.Point(10, 7)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 0
@@ -221,7 +244,7 @@ Partial Class Frm_Informes
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(615, 7)
+        Me.Label5.Location = New System.Drawing.Point(610, 7)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 13)
         Me.Label5.TabIndex = 9
@@ -230,7 +253,7 @@ Partial Class Frm_Informes
         '
         'TxtBx_TotLeche
         '
-        Me.TxtBx_TotLeche.Location = New System.Drawing.Point(712, 3)
+        Me.TxtBx_TotLeche.Location = New System.Drawing.Point(707, 3)
         Me.TxtBx_TotLeche.Name = "TxtBx_TotLeche"
         Me.TxtBx_TotLeche.ReadOnly = True
         Me.TxtBx_TotLeche.Size = New System.Drawing.Size(52, 20)
@@ -240,7 +263,7 @@ Partial Class Frm_Informes
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(447, 7)
+        Me.Label10.Location = New System.Drawing.Point(442, 7)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(31, 13)
         Me.Label10.TabIndex = 7
@@ -251,7 +274,7 @@ Partial Class Frm_Informes
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(144, 7)
+        Me.Label9.Location = New System.Drawing.Point(139, 7)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 13)
         Me.Label9.TabIndex = 5
@@ -262,7 +285,7 @@ Partial Class Frm_Informes
         '
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(275, 7)
+        Me.Label12.Location = New System.Drawing.Point(270, 7)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(67, 13)
         Me.Label12.TabIndex = 12
@@ -271,7 +294,7 @@ Partial Class Frm_Informes
         '
         'TB_Total
         '
-        Me.TB_Total.Location = New System.Drawing.Point(526, 3)
+        Me.TB_Total.Location = New System.Drawing.Point(521, 3)
         Me.TB_Total.Name = "TB_Total"
         Me.TB_Total.ReadOnly = True
         Me.TB_Total.Size = New System.Drawing.Size(54, 20)
@@ -279,7 +302,7 @@ Partial Class Frm_Informes
         '
         'TxtBx_TotCol
         '
-        Me.TxtBx_TotCol.Location = New System.Drawing.Point(83, 3)
+        Me.TxtBx_TotCol.Location = New System.Drawing.Point(78, 3)
         Me.TxtBx_TotCol.Name = "TxtBx_TotCol"
         Me.TxtBx_TotCol.ReadOnly = True
         Me.TxtBx_TotCol.Size = New System.Drawing.Size(45, 20)
@@ -287,7 +310,7 @@ Partial Class Frm_Informes
         '
         'TB_Tot_ExtGcial
         '
-        Me.TB_Tot_ExtGcial.Location = New System.Drawing.Point(220, 3)
+        Me.TB_Tot_ExtGcial.Location = New System.Drawing.Point(215, 3)
         Me.TB_Tot_ExtGcial.Name = "TB_Tot_ExtGcial"
         Me.TB_Tot_ExtGcial.ReadOnly = True
         Me.TB_Tot_ExtGcial.Size = New System.Drawing.Size(45, 20)
@@ -295,7 +318,7 @@ Partial Class Frm_Informes
         '
         'TB_Tot_ExtNorm
         '
-        Me.TB_Tot_ExtNorm.Location = New System.Drawing.Point(392, 3)
+        Me.TB_Tot_ExtNorm.Location = New System.Drawing.Point(387, 3)
         Me.TB_Tot_ExtNorm.Name = "TB_Tot_ExtNorm"
         Me.TB_Tot_ExtNorm.ReadOnly = True
         Me.TB_Tot_ExtNorm.Size = New System.Drawing.Size(45, 20)
@@ -304,56 +327,69 @@ Partial Class Frm_Informes
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(27, 70)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(15, 70)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(48, 13)
+        Me.Label6.Size = New System.Drawing.Size(59, 17)
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Empresa"
         '
         'CmbBx_Informe_Empresa
         '
+        Me.CmbBx_Informe_Empresa.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Informe_Empresa.FormattingEnabled = True
         Me.CmbBx_Informe_Empresa.Items.AddRange(New Object() {"Todas Las Empresas", "096588890-K          Mindugar S.A", "083073600-K          Mindugar Industrial", "076033420-0          Mindugar Montajes"})
-        Me.CmbBx_Informe_Empresa.Location = New System.Drawing.Point(142, 62)
+        Me.CmbBx_Informe_Empresa.Location = New System.Drawing.Point(83, 66)
         Me.CmbBx_Informe_Empresa.Name = "CmbBx_Informe_Empresa"
-        Me.CmbBx_Informe_Empresa.Size = New System.Drawing.Size(200, 21)
+        Me.CmbBx_Informe_Empresa.Size = New System.Drawing.Size(226, 25)
         Me.CmbBx_Informe_Empresa.TabIndex = 12
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(374, 65)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(328, 70)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(98, 13)
+        Me.Label7.Size = New System.Drawing.Size(120, 17)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Tipo de Colaciones"
         '
         'CmbBx_Informe_TipColac
         '
+        Me.CmbBx_Informe_TipColac.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Informe_TipColac.FormattingEnabled = True
         Me.CmbBx_Informe_TipColac.Items.AddRange(New Object() {"Todas", "Almuerzo", "Colacione"})
-        Me.CmbBx_Informe_TipColac.Location = New System.Drawing.Point(506, 62)
+        Me.CmbBx_Informe_TipColac.Location = New System.Drawing.Point(454, 66)
         Me.CmbBx_Informe_TipColac.Name = "CmbBx_Informe_TipColac"
-        Me.CmbBx_Informe_TipColac.Size = New System.Drawing.Size(121, 21)
+        Me.CmbBx_Informe_TipColac.Size = New System.Drawing.Size(134, 25)
         Me.CmbBx_Informe_TipColac.TabIndex = 14
         '
         'CmbBx_Periodos
         '
+        Me.CmbBx_Periodos.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Periodos.FormattingEnabled = True
-        Me.CmbBx_Periodos.Location = New System.Drawing.Point(647, 12)
+        Me.CmbBx_Periodos.Location = New System.Drawing.Point(607, 10)
         Me.CmbBx_Periodos.Name = "CmbBx_Periodos"
-        Me.CmbBx_Periodos.Size = New System.Drawing.Size(162, 21)
+        Me.CmbBx_Periodos.Size = New System.Drawing.Size(181, 25)
         Me.CmbBx_Periodos.TabIndex = 16
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(564, 395)
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button2.Image = Global.RRHH.My.Resources.Resources.white_ms_excel_32
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button2.Location = New System.Drawing.Point(647, 430)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(235, 23)
+        Me.Button2.Size = New System.Drawing.Size(150, 57)
         Me.Button2.TabIndex = 17
-        Me.Button2.Text = "Exportar vista a EXCELL"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Text = "Exportar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " a EXCEL"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
@@ -365,46 +401,63 @@ Partial Class Frm_Informes
         '
         'CmbBx_ResumDetall
         '
+        Me.CmbBx_ResumDetall.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_ResumDetall.FormattingEnabled = True
         Me.CmbBx_ResumDetall.Items.AddRange(New Object() {"Resumida ", "Detallada por Día"})
-        Me.CmbBx_ResumDetall.Location = New System.Drawing.Point(647, 33)
+        Me.CmbBx_ResumDetall.Location = New System.Drawing.Point(607, 38)
         Me.CmbBx_ResumDetall.Name = "CmbBx_ResumDetall"
-        Me.CmbBx_ResumDetall.Size = New System.Drawing.Size(162, 21)
+        Me.CmbBx_ResumDetall.Size = New System.Drawing.Size(181, 25)
         Me.CmbBx_ResumDetall.TabIndex = 18
+        '
+        'MetroPanel1
+        '
+        Me.MetroPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.MetroPanel1.Controls.Add(Me.Button2)
+        Me.MetroPanel1.Controls.Add(Me.CmbBx_ResumDetall)
+        Me.MetroPanel1.Controls.Add(Me.CmbBx_Informe)
+        Me.MetroPanel1.Controls.Add(Me.CmbBx_Periodos)
+        Me.MetroPanel1.Controls.Add(Me.Label1)
+        Me.MetroPanel1.Controls.Add(Me.CmbBx_Informe_TipColac)
+        Me.MetroPanel1.Controls.Add(Me.Label2)
+        Me.MetroPanel1.Controls.Add(Me.Label7)
+        Me.MetroPanel1.Controls.Add(Me.Label3)
+        Me.MetroPanel1.Controls.Add(Me.CmbBx_Informe_Empresa)
+        Me.MetroPanel1.Controls.Add(Me.Button1)
+        Me.MetroPanel1.Controls.Add(Me.Label6)
+        Me.MetroPanel1.Controls.Add(Me.CmbBx_Informe_Orden)
+        Me.MetroPanel1.Controls.Add(Me.TableLayoutPanel1)
+        Me.MetroPanel1.Controls.Add(Me.DtTimPickr_Fecha_Ini)
+        Me.MetroPanel1.Controls.Add(Me.DtTimPickr_Fecha_Fin)
+        Me.MetroPanel1.Controls.Add(Me.Bttn_GenerarInf)
+        Me.MetroPanel1.Controls.Add(Me.DataGridView1)
+        Me.MetroPanel1.HorizontalScrollbarBarColor = True
+        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.HorizontalScrollbarSize = 10
+        Me.MetroPanel1.Location = New System.Drawing.Point(23, 63)
+        Me.MetroPanel1.Name = "MetroPanel1"
+        Me.MetroPanel1.Size = New System.Drawing.Size(819, 498)
+        Me.MetroPanel1.TabIndex = 19
+        Me.MetroPanel1.VerticalScrollbarBarColor = True
+        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.VerticalScrollbarSize = 10
         '
         'Frm_Informes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(832, 430)
-        Me.Controls.Add(Me.CmbBx_ResumDetall)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.CmbBx_Periodos)
-        Me.Controls.Add(Me.CmbBx_Informe_TipColac)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.CmbBx_Informe_Empresa)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Controls.Add(Me.DtTimPickr_Fecha_Fin)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Bttn_GenerarInf)
-        Me.Controls.Add(Me.DtTimPickr_Fecha_Ini)
-        Me.Controls.Add(Me.CmbBx_Informe_Orden)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.CmbBx_Informe)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(880, 685)
+        Me.Controls.Add(Me.MetroPanel1)
         Me.MaximizeBox = False
         Me.Name = "Frm_Informes"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Frm_Informes"
+        Me.Text = "Informes de Colaciones"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.MetroPanel1.ResumeLayout(False)
+        Me.MetroPanel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -439,4 +492,5 @@ Partial Class Frm_Informes
     Friend WithEvents TB_Tot_ExtNorm As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents CmbBx_ResumDetall As ComboBox
+    Friend WithEvents MetroPanel1 As MetroFramework.Controls.MetroPanel
 End Class
