@@ -26,6 +26,7 @@ Public Class Frm_Informes
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MDIParent1.Visualizar_Tiles_MDI()
+        MDIParent1.Desplazamiento_Tiles()
         MDIParent1.TiempoIngreso.Enabled = True
         Me.Close()
     End Sub

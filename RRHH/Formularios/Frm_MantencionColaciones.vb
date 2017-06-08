@@ -24,12 +24,11 @@ Public Class Frm_MantencionColaciones
     Private Sub Inicializar_Form_Almuerzos()
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
 
-        MDIParent1.Panel2.Visible = False
+        'MDIParent1.Panel2.Visible = False
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
-        Me.WindowState = FormWindowState.Maximized
         '--------------------------------------------------
 
         Dim vDateFin As DateTime
@@ -45,6 +44,7 @@ Public Class Frm_MantencionColaciones
         LLenaFechasColaciones(vDateInfo)
         CargarColaciones(vDateInfo)
         VisiblePostres()
+
     End Sub
     Private Sub VisiblePostres()
         TxtBx_Pos_A1.Visible = True
@@ -83,6 +83,8 @@ Public Class Frm_MantencionColaciones
 
     Private Sub Bttn_Cancelar_Click(sender As Object, e As EventArgs) Handles Button2.Click
         MDIParent1.Panel2.Visible = True
+        MDIParent1.Visualizar_Tiles_MDI()
+        MDIParent1.Desplazamiento_Tiles()
         MDIParent1.TiempoIngreso.Enabled = True
         Me.Close()
     End Sub

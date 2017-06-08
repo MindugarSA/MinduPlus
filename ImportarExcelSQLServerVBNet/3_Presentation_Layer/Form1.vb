@@ -88,6 +88,7 @@ Public Partial Class Form1
         CargarCombosPeriodosRegistrados()
         CargarComboEmpresas()
         gradientTab1.SelectedIndex = 0
+        'progressBar1.BackColor = Color.FromArgb(153, 180, 51)
 
         Me.ResumeLayout()
     End Sub
@@ -128,7 +129,8 @@ Public Partial Class Form1
 
                 label6.Visible = True
                 label6.Text = "Cargando Datos Desde Archivo Excel " & Path.GetFileName(sPathBook)
-                pictureBox1.Visible = True
+                'pictureBox1.Visible = True
+                MetroProgressSpinner1.Visible = True
                 VerificarArchivoExcelXlsx()
                 If (dtDatosExcel IsNot Nothing) Then
                     dtDatosExcel.Columns.Clear()
@@ -463,6 +465,7 @@ Public Partial Class Form1
         progressBar2.Visible = False
         progressBar3.Visible = False
         pictureBox1.Visible = False
+        MetroProgressSpinner1.Visible = False
         button11.Visible = False
         'transparentTabControl1.MakeTransparent();
         label6.Visible = False
@@ -480,8 +483,7 @@ Public Partial Class Form1
         radioButton1.Checked = True
     End Sub
     Private Sub RegistrarAsistenciasEnSQL()
-        progressBar1.ForeColor = Color.Blue
-        progressBar1.Style = ProgressBarStyle.Continuous
+
         progressBar1.Visible = True
         'label6.Visible = true;
         progressBar1.Maximum = dataGridView1.Rows.Count
@@ -953,6 +955,7 @@ Public Partial Class Form1
     Private Sub backgroundWorker2_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles backgroundWorker2.RunWorkerCompleted
         label6.Visible = False
         pictureBox1.Visible = False
+        MetroProgressSpinner1.Visible = False
         'progressBar3.Visible = false;
         'progressBar3.Style = ProgressBarStyle.Continuous;
 

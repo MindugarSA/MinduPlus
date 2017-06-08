@@ -13,20 +13,17 @@ Public Class MDIParent1
     Private Const DESPLAZAMIENTO As Integer = 25
     Private Const CANTIDAD_DESPLAZO As Integer = 25
 
+    Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim cp As CreateParams = MyBase.CreateParams
+            cp.ExStyle = cp.ExStyle Or 33554432
+            Return cp
+        End Get
+    End Property
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2_Click(sender, e)
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
-        'Me.Icon = My.Resources.favicon__1_
-        'MenuStrip.Visible = False
-        'ToolStrip.Visible = False
-        'Dim NewMDIChild As New Principal()
-        'NewMDIChild.MdiParent = Me
-        'NewMDIChild.Show()
-        'NewMDIChild.WindowState = FormWindowState.Maximized
-        'NewMDIChild.ControlBox = False
-        'Lbl_Cod_Interno1.Visible = False
-        'Bttn_Pendiente.Visible = False
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PcturBx_Image.Click
@@ -40,7 +37,6 @@ Public Class MDIParent1
         TiempoIngreso.Enabled = True
         TiempoActivo = Tiempo_Str
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-
 
     End Sub
 
@@ -242,7 +238,7 @@ Public Class MDIParent1
     End Sub
 
 
-    Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripMenuItem.Click
+    Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         '' Cree una nueva instancia del formulario secundario.
         'Panel2.Visible = False
         'Dim ChildForm As New System.Windows.Forms.Form
@@ -255,7 +251,7 @@ Public Class MDIParent1
         'ChildForm.Show()
     End Sub
 
-    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
         'Panel2.Visible = False
         'Dim OpenFileDialog As New OpenFileDialog
         'OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
@@ -266,7 +262,7 @@ Public Class MDIParent1
         'End If
     End Sub
 
-    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SaveAsToolStripMenuItem.Click
+    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         'Dim SaveFileDialog As New SaveFileDialog
         'SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
         'SaveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
@@ -278,27 +274,27 @@ Public Class MDIParent1
     End Sub
 
 
-    Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CutToolStripMenuItem.Click
+    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         ' Utilice My.Computer.Clipboard para insertar el texto o las imágenes seleccionadas en el Portapapeles
     End Sub
 
-    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CopyToolStripMenuItem.Click
+    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         ' Utilice My.Computer.Clipboard para insertar el texto o las imágenes seleccionadas en el Portapapeles
     End Sub
 
-    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles PasteToolStripMenuItem.Click
+    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         'Utilice My.Computer.Clipboard.GetText() o My.Computer.Clipboard.GetData para recuperar la información del Portapapeles.
     End Sub
 
-    Private Sub ToolBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ToolBarToolStripMenuItem.Click
+    Private Sub ToolBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         'Me.ToolStrip.Visible = Me.ToolBarToolStripMenuItem.Checked
     End Sub
 
-    Private Sub StatusBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles StatusBarToolStripMenuItem.Click
+    Private Sub StatusBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         'Me.StatusStrip.Visible = Me.StatusBarToolStripMenuItem.Checked
     End Sub
 
@@ -329,7 +325,7 @@ Public Class MDIParent1
 
 
 
-    Private Sub ResulucionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResulucionToolStripMenuItem.Click
+    Private Sub ResulucionToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Dim desktopSize As Size
         'desktopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize
         'Dim height As Integer = desktopSize.Height
@@ -491,13 +487,18 @@ Public Class MDIParent1
             Dim NewMDIChild As New Frm_MantencionColaciones()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
+            'NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
+            NewMDIChild.ControlBox = False
             NewMDIChild.Show()
 
-            NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-            NewMDIChild.WindowState = FormWindowState.Maximized
+
         End If
 
     End Sub
@@ -551,6 +552,11 @@ Public Class MDIParent1
             Dim NewMDIChild As New Frm_Parametros2()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
+            NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
             NewMDIChild.Show()
 
             NewMDIChild.ControlBox = False
@@ -558,7 +564,6 @@ Public Class MDIParent1
             'TiempoIngreso.Enabled = True
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-            NewMDIChild.WindowState = FormWindowState.Maximized
 
         End If
 
@@ -597,6 +602,7 @@ Public Class MDIParent1
     Public Sub Visualizar_Tiles_MDI()
         pnlMovingRight.Visible = True
         pnlMovingTop.Visible = True
+
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
         '  (From tb As MetroFramework.Controls.MetroTile In Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
         '   Select tb).ToList()
@@ -688,4 +694,14 @@ Public Class MDIParent1
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         End If
     End Sub
+
+    Private Sub Button4_MouseEnter(sender As Object, e As EventArgs) Handles Button4.MouseEnter
+        Button4.BackColor = Color.FromArgb(255, 196, 37)
+    End Sub
+
+    Private Sub Button4_MouseLeave(sender As Object, e As EventArgs) Handles Button4.MouseLeave
+        Button4.BackColor = Color.FromArgb(45, 137, 239)
+    End Sub
+
+
 End Class

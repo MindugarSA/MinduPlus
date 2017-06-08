@@ -38,11 +38,6 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_C5 = New System.Windows.Forms.TextBox()
         Me.TxtBx_Pos_B5 = New System.Windows.Forms.TextBox()
         Me.TxtBx_Pos_A5 = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TxtBx_Pos_D4 = New System.Windows.Forms.TextBox()
-        Me.TxtBx_Pos_C4 = New System.Windows.Forms.TextBox()
-        Me.TxtBx_Pos_B4 = New System.Windows.Forms.TextBox()
-        Me.TxtBx_Pos_A4 = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.TxtBx_Pos_D3 = New System.Windows.Forms.TextBox()
         Me.TxtBx_Pos_C3 = New System.Windows.Forms.TextBox()
@@ -83,6 +78,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_C1 = New System.Windows.Forms.TextBox()
         Me.TxtBx_Pos_B1 = New System.Windows.Forms.TextBox()
         Me.TxtBx_Pos_A1 = New System.Windows.Forms.TextBox()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TxtBx_Pos_D4 = New System.Windows.Forms.TextBox()
+        Me.TxtBx_Pos_C4 = New System.Windows.Forms.TextBox()
+        Me.TxtBx_Pos_B4 = New System.Windows.Forms.TextBox()
+        Me.TxtBx_Pos_A4 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -91,10 +91,10 @@ Partial Class Frm_MantencionColaciones
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -167,7 +167,7 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 318.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.Label12, 5, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label11, 4, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label10, 3, 0)
@@ -204,7 +204,7 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel2.Controls.Add(Me.Lbl_A1, 0, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel3, 5, 1)
         Me.TableLayoutPanel2.Controls.Add(Me.TableLayoutPanel6, 5, 4)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 80)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 80)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 6
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.472032!))
@@ -213,7 +213,7 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.7056!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.7056!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.7056!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1102, 436)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1107, 436)
         Me.TableLayoutPanel2.TabIndex = 2
         '
         'Label12
@@ -226,10 +226,10 @@ Partial Class Frm_MantencionColaciones
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label12.Location = New System.Drawing.Point(784, 1)
+        Me.Label12.Location = New System.Drawing.Point(788, 1)
         Me.Label12.Margin = New System.Windows.Forms.Padding(0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(317, 27)
+        Me.Label12.Size = New System.Drawing.Size(318, 27)
         Me.Label12.TabIndex = 43
         Me.Label12.Text = "Postres"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -244,10 +244,10 @@ Partial Class Frm_MantencionColaciones
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label11.Location = New System.Drawing.Point(621, 1)
+        Me.Label11.Location = New System.Drawing.Point(624, 1)
         Me.Label11.Margin = New System.Windows.Forms.Padding(0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(162, 27)
+        Me.Label11.Size = New System.Drawing.Size(163, 27)
         Me.Label11.TabIndex = 42
         Me.Label11.Text = "Almuerzo "" D """
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -262,10 +262,10 @@ Partial Class Frm_MantencionColaciones
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label10.Location = New System.Drawing.Point(458, 1)
+        Me.Label10.Location = New System.Drawing.Point(460, 1)
         Me.Label10.Margin = New System.Windows.Forms.Padding(0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(162, 27)
+        Me.Label10.Size = New System.Drawing.Size(163, 27)
         Me.Label10.TabIndex = 41
         Me.Label10.Text = "Almuerzo "" C """
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -280,10 +280,10 @@ Partial Class Frm_MantencionColaciones
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label9.Location = New System.Drawing.Point(295, 1)
+        Me.Label9.Location = New System.Drawing.Point(296, 1)
         Me.Label9.Margin = New System.Windows.Forms.Padding(0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(162, 27)
+        Me.Label9.Size = New System.Drawing.Size(163, 27)
         Me.Label9.TabIndex = 40
         Me.Label9.Text = "Almuerzo "" B """
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -319,7 +319,7 @@ Partial Class Frm_MantencionColaciones
         Me.Label8.Location = New System.Drawing.Point(132, 1)
         Me.Label8.Margin = New System.Windows.Forms.Padding(0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(162, 27)
+        Me.Label8.Size = New System.Drawing.Size(163, 27)
         Me.Label8.TabIndex = 34
         Me.Label8.Text = "Almuerzo "" A """
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -337,14 +337,14 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel7.Controls.Add(Me.TxtBx_Pos_C5, 0, 1)
         Me.TableLayoutPanel7.Controls.Add(Me.TxtBx_Pos_B5, 1, 0)
         Me.TableLayoutPanel7.Controls.Add(Me.TxtBx_Pos_A5, 0, 0)
-        Me.TableLayoutPanel7.Location = New System.Drawing.Point(785, 354)
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(789, 354)
         Me.TableLayoutPanel7.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
         Me.TableLayoutPanel7.RowCount = 2
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(315, 80)
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(316, 80)
         Me.TableLayoutPanel7.TabIndex = 24
         '
         'TxtBx_Pos_D5
@@ -355,7 +355,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_D5.Location = New System.Drawing.Point(161, 48)
         Me.TxtBx_Pos_D5.MaxLength = 30
         Me.TxtBx_Pos_D5.Name = "TxtBx_Pos_D5"
-        Me.TxtBx_Pos_D5.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_D5.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_D5.TabIndex = 3
         '
         'TxtBx_Pos_C5
@@ -377,7 +377,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_B5.Location = New System.Drawing.Point(161, 8)
         Me.TxtBx_Pos_B5.MaxLength = 30
         Me.TxtBx_Pos_B5.Name = "TxtBx_Pos_B5"
-        Me.TxtBx_Pos_B5.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_B5.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_B5.TabIndex = 1
         '
         'TxtBx_Pos_A5
@@ -392,74 +392,6 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_A5.TabIndex = 0
         Me.TxtBx_Pos_A5.Text = "Libre elección"
         '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.TableLayoutPanel6.ColumnCount = 2
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_D4, 1, 1)
-        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_C4, 0, 1)
-        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_B4, 1, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_A4, 0, 0)
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(785, 273)
-        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(1)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 2
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(315, 78)
-        Me.TableLayoutPanel6.TabIndex = 19
-        '
-        'TxtBx_Pos_D4
-        '
-        Me.TxtBx_Pos_D4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBx_Pos_D4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtBx_Pos_D4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Pos_D4.Location = New System.Drawing.Point(161, 46)
-        Me.TxtBx_Pos_D4.MaxLength = 30
-        Me.TxtBx_Pos_D4.Name = "TxtBx_Pos_D4"
-        Me.TxtBx_Pos_D4.Size = New System.Drawing.Size(150, 23)
-        Me.TxtBx_Pos_D4.TabIndex = 3
-        '
-        'TxtBx_Pos_C4
-        '
-        Me.TxtBx_Pos_C4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBx_Pos_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtBx_Pos_C4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Pos_C4.Location = New System.Drawing.Point(4, 46)
-        Me.TxtBx_Pos_C4.MaxLength = 30
-        Me.TxtBx_Pos_C4.Name = "TxtBx_Pos_C4"
-        Me.TxtBx_Pos_C4.Size = New System.Drawing.Size(150, 23)
-        Me.TxtBx_Pos_C4.TabIndex = 2
-        '
-        'TxtBx_Pos_B4
-        '
-        Me.TxtBx_Pos_B4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBx_Pos_B4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtBx_Pos_B4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Pos_B4.Location = New System.Drawing.Point(161, 8)
-        Me.TxtBx_Pos_B4.MaxLength = 30
-        Me.TxtBx_Pos_B4.Name = "TxtBx_Pos_B4"
-        Me.TxtBx_Pos_B4.Size = New System.Drawing.Size(150, 23)
-        Me.TxtBx_Pos_B4.TabIndex = 1
-        '
-        'TxtBx_Pos_A4
-        '
-        Me.TxtBx_Pos_A4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtBx_Pos_A4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtBx_Pos_A4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Pos_A4.Location = New System.Drawing.Point(4, 8)
-        Me.TxtBx_Pos_A4.MaxLength = 30
-        Me.TxtBx_Pos_A4.Name = "TxtBx_Pos_A4"
-        Me.TxtBx_Pos_A4.Size = New System.Drawing.Size(150, 23)
-        Me.TxtBx_Pos_A4.TabIndex = 0
-        Me.TxtBx_Pos_A4.Text = "Libre elección"
-        '
         'TableLayoutPanel5
         '
         Me.TableLayoutPanel5.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -473,14 +405,14 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel5.Controls.Add(Me.TxtBx_Pos_C3, 0, 1)
         Me.TableLayoutPanel5.Controls.Add(Me.TxtBx_Pos_B3, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.TxtBx_Pos_A3, 0, 0)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(785, 192)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(789, 192)
         Me.TableLayoutPanel5.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 2
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(315, 78)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(316, 78)
         Me.TableLayoutPanel5.TabIndex = 14
         '
         'TxtBx_Pos_D3
@@ -491,7 +423,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_D3.Location = New System.Drawing.Point(161, 46)
         Me.TxtBx_Pos_D3.MaxLength = 30
         Me.TxtBx_Pos_D3.Name = "TxtBx_Pos_D3"
-        Me.TxtBx_Pos_D3.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_D3.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_D3.TabIndex = 3
         '
         'TxtBx_Pos_C3
@@ -513,7 +445,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_B3.Location = New System.Drawing.Point(161, 8)
         Me.TxtBx_Pos_B3.MaxLength = 30
         Me.TxtBx_Pos_B3.Name = "TxtBx_Pos_B3"
-        Me.TxtBx_Pos_B3.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_B3.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_B3.TabIndex = 1
         '
         'TxtBx_Pos_A3
@@ -541,14 +473,14 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel4.Controls.Add(Me.TxtBx_Pos_C2, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.TxtBx_Pos_B2, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.TxtBx_Pos_A2, 0, 0)
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(785, 111)
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(789, 111)
         Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
         Me.TableLayoutPanel4.RowCount = 2
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(315, 78)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(316, 78)
         Me.TableLayoutPanel4.TabIndex = 9
         '
         'TxtBx_Pos_D2
@@ -559,7 +491,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_D2.Location = New System.Drawing.Point(161, 46)
         Me.TxtBx_Pos_D2.MaxLength = 30
         Me.TxtBx_Pos_D2.Name = "TxtBx_Pos_D2"
-        Me.TxtBx_Pos_D2.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_D2.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_D2.TabIndex = 3
         '
         'TxtBx_Pos_C2
@@ -581,7 +513,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_B2.Location = New System.Drawing.Point(161, 8)
         Me.TxtBx_Pos_B2.MaxLength = 30
         Me.TxtBx_Pos_B2.Name = "TxtBx_Pos_B2"
-        Me.TxtBx_Pos_B2.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_B2.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_B2.TabIndex = 1
         '
         'TxtBx_Pos_A2
@@ -673,11 +605,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_C4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_C4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_C4.Location = New System.Drawing.Point(461, 275)
+        Me.TxtBx_Alm_C4.Location = New System.Drawing.Point(463, 275)
         Me.TxtBx_Alm_C4.MaxLength = 100
         Me.TxtBx_Alm_C4.Multiline = True
         Me.TxtBx_Alm_C4.Name = "TxtBx_Alm_C4"
-        Me.TxtBx_Alm_C4.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_C4.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_C4.TabIndex = 17
         '
         'TxtBx_Alm_B4
@@ -685,11 +617,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_B4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_B4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_B4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_B4.Location = New System.Drawing.Point(298, 275)
+        Me.TxtBx_Alm_B4.Location = New System.Drawing.Point(299, 275)
         Me.TxtBx_Alm_B4.MaxLength = 100
         Me.TxtBx_Alm_B4.Multiline = True
         Me.TxtBx_Alm_B4.Name = "TxtBx_Alm_B4"
-        Me.TxtBx_Alm_B4.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_B4.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_B4.TabIndex = 16
         '
         'TxtBx_Alm_A5
@@ -701,7 +633,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_A5.MaxLength = 100
         Me.TxtBx_Alm_A5.Multiline = True
         Me.TxtBx_Alm_A5.Name = "TxtBx_Alm_A5"
-        Me.TxtBx_Alm_A5.Size = New System.Drawing.Size(156, 76)
+        Me.TxtBx_Alm_A5.Size = New System.Drawing.Size(157, 76)
         Me.TxtBx_Alm_A5.TabIndex = 20
         '
         'TxtBx_Alm_D4
@@ -709,12 +641,12 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_D4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_D4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_D4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_D4.Location = New System.Drawing.Point(624, 275)
+        Me.TxtBx_Alm_D4.Location = New System.Drawing.Point(627, 275)
         Me.TxtBx_Alm_D4.MaxLength = 100
         Me.TxtBx_Alm_D4.Multiline = True
         Me.TxtBx_Alm_D4.Name = "TxtBx_Alm_D4"
         Me.TxtBx_Alm_D4.ReadOnly = True
-        Me.TxtBx_Alm_D4.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_D4.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_D4.TabIndex = 18
         Me.TxtBx_Alm_D4.Text = "Vale Casino"
         '
@@ -723,11 +655,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_C3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_C3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_C3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_C3.Location = New System.Drawing.Point(461, 194)
+        Me.TxtBx_Alm_C3.Location = New System.Drawing.Point(463, 194)
         Me.TxtBx_Alm_C3.MaxLength = 100
         Me.TxtBx_Alm_C3.Multiline = True
         Me.TxtBx_Alm_C3.Name = "TxtBx_Alm_C3"
-        Me.TxtBx_Alm_C3.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_C3.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_C3.TabIndex = 12
         '
         'TxtBx_Alm_B3
@@ -735,11 +667,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_B3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_B3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_B3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_B3.Location = New System.Drawing.Point(298, 194)
+        Me.TxtBx_Alm_B3.Location = New System.Drawing.Point(299, 194)
         Me.TxtBx_Alm_B3.MaxLength = 100
         Me.TxtBx_Alm_B3.Multiline = True
         Me.TxtBx_Alm_B3.Name = "TxtBx_Alm_B3"
-        Me.TxtBx_Alm_B3.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_B3.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_B3.TabIndex = 11
         '
         'TxtBx_Alm_D3
@@ -747,12 +679,12 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_D3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_D3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_D3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_D3.Location = New System.Drawing.Point(624, 194)
+        Me.TxtBx_Alm_D3.Location = New System.Drawing.Point(627, 194)
         Me.TxtBx_Alm_D3.MaxLength = 100
         Me.TxtBx_Alm_D3.Multiline = True
         Me.TxtBx_Alm_D3.Name = "TxtBx_Alm_D3"
         Me.TxtBx_Alm_D3.ReadOnly = True
-        Me.TxtBx_Alm_D3.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_D3.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_D3.TabIndex = 13
         Me.TxtBx_Alm_D3.Text = "Vale Casino"
         '
@@ -761,12 +693,12 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_D2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_D2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_D2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_D2.Location = New System.Drawing.Point(624, 113)
+        Me.TxtBx_Alm_D2.Location = New System.Drawing.Point(627, 113)
         Me.TxtBx_Alm_D2.MaxLength = 100
         Me.TxtBx_Alm_D2.Multiline = True
         Me.TxtBx_Alm_D2.Name = "TxtBx_Alm_D2"
         Me.TxtBx_Alm_D2.ReadOnly = True
-        Me.TxtBx_Alm_D2.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_D2.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_D2.TabIndex = 8
         Me.TxtBx_Alm_D2.Text = "Vale Casino"
         '
@@ -775,12 +707,12 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_D5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_D5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_D5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_D5.Location = New System.Drawing.Point(624, 356)
+        Me.TxtBx_Alm_D5.Location = New System.Drawing.Point(627, 356)
         Me.TxtBx_Alm_D5.MaxLength = 100
         Me.TxtBx_Alm_D5.Multiline = True
         Me.TxtBx_Alm_D5.Name = "TxtBx_Alm_D5"
         Me.TxtBx_Alm_D5.ReadOnly = True
-        Me.TxtBx_Alm_D5.Size = New System.Drawing.Size(156, 76)
+        Me.TxtBx_Alm_D5.Size = New System.Drawing.Size(157, 76)
         Me.TxtBx_Alm_D5.TabIndex = 23
         Me.TxtBx_Alm_D5.Text = "Vale Casino"
         '
@@ -789,11 +721,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_C5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_C5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_C5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_C5.Location = New System.Drawing.Point(461, 356)
+        Me.TxtBx_Alm_C5.Location = New System.Drawing.Point(463, 356)
         Me.TxtBx_Alm_C5.MaxLength = 100
         Me.TxtBx_Alm_C5.Multiline = True
         Me.TxtBx_Alm_C5.Name = "TxtBx_Alm_C5"
-        Me.TxtBx_Alm_C5.Size = New System.Drawing.Size(156, 76)
+        Me.TxtBx_Alm_C5.Size = New System.Drawing.Size(157, 76)
         Me.TxtBx_Alm_C5.TabIndex = 22
         '
         'TxtBx_Alm_B5
@@ -801,11 +733,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_B5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_B5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_B5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_B5.Location = New System.Drawing.Point(298, 356)
+        Me.TxtBx_Alm_B5.Location = New System.Drawing.Point(299, 356)
         Me.TxtBx_Alm_B5.MaxLength = 100
         Me.TxtBx_Alm_B5.Multiline = True
         Me.TxtBx_Alm_B5.Name = "TxtBx_Alm_B5"
-        Me.TxtBx_Alm_B5.Size = New System.Drawing.Size(156, 76)
+        Me.TxtBx_Alm_B5.Size = New System.Drawing.Size(157, 76)
         Me.TxtBx_Alm_B5.TabIndex = 21
         '
         'TxtBx_Alm_A4
@@ -817,7 +749,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_A4.MaxLength = 100
         Me.TxtBx_Alm_A4.Multiline = True
         Me.TxtBx_Alm_A4.Name = "TxtBx_Alm_A4"
-        Me.TxtBx_Alm_A4.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_A4.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_A4.TabIndex = 15
         '
         'TxtBx_Alm_A3
@@ -829,7 +761,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_A3.MaxLength = 100
         Me.TxtBx_Alm_A3.Multiline = True
         Me.TxtBx_Alm_A3.Name = "TxtBx_Alm_A3"
-        Me.TxtBx_Alm_A3.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_A3.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_A3.TabIndex = 10
         '
         'TxtBx_Alm_B2
@@ -837,11 +769,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_B2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_B2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_B2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_B2.Location = New System.Drawing.Point(298, 113)
+        Me.TxtBx_Alm_B2.Location = New System.Drawing.Point(299, 113)
         Me.TxtBx_Alm_B2.MaxLength = 100
         Me.TxtBx_Alm_B2.Multiline = True
         Me.TxtBx_Alm_B2.Name = "TxtBx_Alm_B2"
-        Me.TxtBx_Alm_B2.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_B2.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_B2.TabIndex = 6
         '
         'TxtBx_Alm_A2
@@ -853,7 +785,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_A2.MaxLength = 100
         Me.TxtBx_Alm_A2.Multiline = True
         Me.TxtBx_Alm_A2.Name = "TxtBx_Alm_A2"
-        Me.TxtBx_Alm_A2.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_A2.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_A2.TabIndex = 5
         '
         'TxtBx_Alm_A1
@@ -861,11 +793,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_A1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_A1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_A1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_A1.Location = New System.Drawing.Point(298, 32)
+        Me.TxtBx_Alm_A1.Location = New System.Drawing.Point(299, 32)
         Me.TxtBx_Alm_A1.MaxLength = 100
         Me.TxtBx_Alm_A1.Multiline = True
         Me.TxtBx_Alm_A1.Name = "TxtBx_Alm_A1"
-        Me.TxtBx_Alm_A1.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_A1.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_A1.TabIndex = 0
         '
         'TxtBx_Alm_C2
@@ -873,11 +805,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_C2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_C2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_C2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_C2.Location = New System.Drawing.Point(461, 113)
+        Me.TxtBx_Alm_C2.Location = New System.Drawing.Point(463, 113)
         Me.TxtBx_Alm_C2.MaxLength = 100
         Me.TxtBx_Alm_C2.Multiline = True
         Me.TxtBx_Alm_C2.Name = "TxtBx_Alm_C2"
-        Me.TxtBx_Alm_C2.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_C2.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_C2.TabIndex = 7
         '
         'TxtBx_Alm_D1
@@ -885,12 +817,12 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_D1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_D1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_D1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_D1.Location = New System.Drawing.Point(624, 32)
+        Me.TxtBx_Alm_D1.Location = New System.Drawing.Point(627, 32)
         Me.TxtBx_Alm_D1.MaxLength = 100
         Me.TxtBx_Alm_D1.Multiline = True
         Me.TxtBx_Alm_D1.Name = "TxtBx_Alm_D1"
         Me.TxtBx_Alm_D1.ReadOnly = True
-        Me.TxtBx_Alm_D1.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_D1.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_D1.TabIndex = 3
         Me.TxtBx_Alm_D1.Text = "Vale Casino"
         '
@@ -899,11 +831,11 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_C1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBx_Alm_C1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TxtBx_Alm_C1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtBx_Alm_C1.Location = New System.Drawing.Point(461, 32)
+        Me.TxtBx_Alm_C1.Location = New System.Drawing.Point(463, 32)
         Me.TxtBx_Alm_C1.MaxLength = 100
         Me.TxtBx_Alm_C1.Multiline = True
         Me.TxtBx_Alm_C1.Name = "TxtBx_Alm_C1"
-        Me.TxtBx_Alm_C1.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_C1.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_C1.TabIndex = 2
         '
         'TxtBx_Alm_B1
@@ -915,7 +847,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Alm_B1.MaxLength = 100
         Me.TxtBx_Alm_B1.Multiline = True
         Me.TxtBx_Alm_B1.Name = "TxtBx_Alm_B1"
-        Me.TxtBx_Alm_B1.Size = New System.Drawing.Size(156, 74)
+        Me.TxtBx_Alm_B1.Size = New System.Drawing.Size(157, 74)
         Me.TxtBx_Alm_B1.TabIndex = 1
         '
         'Lbl_A1
@@ -949,13 +881,13 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel3.Controls.Add(Me.TxtBx_Pos_C1, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.TxtBx_Pos_B1, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.TxtBx_Pos_A1, 0, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(785, 30)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(789, 30)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(1)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 2
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(315, 78)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(316, 78)
         Me.TableLayoutPanel3.TabIndex = 4
         '
         'TxtBx_Pos_D1
@@ -966,7 +898,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_D1.Location = New System.Drawing.Point(161, 46)
         Me.TxtBx_Pos_D1.MaxLength = 30
         Me.TxtBx_Pos_D1.Name = "TxtBx_Pos_D1"
-        Me.TxtBx_Pos_D1.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_D1.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_D1.TabIndex = 4
         '
         'TxtBx_Pos_C1
@@ -988,7 +920,7 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_B1.Location = New System.Drawing.Point(161, 8)
         Me.TxtBx_Pos_B1.MaxLength = 30
         Me.TxtBx_Pos_B1.Name = "TxtBx_Pos_B1"
-        Me.TxtBx_Pos_B1.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_B1.Size = New System.Drawing.Size(151, 23)
         Me.TxtBx_Pos_B1.TabIndex = 2
         '
         'TxtBx_Pos_A1
@@ -1003,6 +935,74 @@ Partial Class Frm_MantencionColaciones
         Me.TxtBx_Pos_A1.Size = New System.Drawing.Size(150, 23)
         Me.TxtBx_Pos_A1.TabIndex = 1
         Me.TxtBx_Pos_A1.Text = "Libre elección"
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel6.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_D4, 1, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_C4, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_B4, 1, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.TxtBx_Pos_A4, 0, 0)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(789, 273)
+        Me.TableLayoutPanel6.Margin = New System.Windows.Forms.Padding(1)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(316, 78)
+        Me.TableLayoutPanel6.TabIndex = 19
+        '
+        'TxtBx_Pos_D4
+        '
+        Me.TxtBx_Pos_D4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBx_Pos_D4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBx_Pos_D4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtBx_Pos_D4.Location = New System.Drawing.Point(161, 46)
+        Me.TxtBx_Pos_D4.MaxLength = 30
+        Me.TxtBx_Pos_D4.Name = "TxtBx_Pos_D4"
+        Me.TxtBx_Pos_D4.Size = New System.Drawing.Size(151, 23)
+        Me.TxtBx_Pos_D4.TabIndex = 3
+        '
+        'TxtBx_Pos_C4
+        '
+        Me.TxtBx_Pos_C4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBx_Pos_C4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBx_Pos_C4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtBx_Pos_C4.Location = New System.Drawing.Point(4, 46)
+        Me.TxtBx_Pos_C4.MaxLength = 30
+        Me.TxtBx_Pos_C4.Name = "TxtBx_Pos_C4"
+        Me.TxtBx_Pos_C4.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_C4.TabIndex = 2
+        '
+        'TxtBx_Pos_B4
+        '
+        Me.TxtBx_Pos_B4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBx_Pos_B4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBx_Pos_B4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtBx_Pos_B4.Location = New System.Drawing.Point(161, 8)
+        Me.TxtBx_Pos_B4.MaxLength = 30
+        Me.TxtBx_Pos_B4.Name = "TxtBx_Pos_B4"
+        Me.TxtBx_Pos_B4.Size = New System.Drawing.Size(151, 23)
+        Me.TxtBx_Pos_B4.TabIndex = 1
+        '
+        'TxtBx_Pos_A4
+        '
+        Me.TxtBx_Pos_A4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtBx_Pos_A4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBx_Pos_A4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtBx_Pos_A4.Location = New System.Drawing.Point(4, 8)
+        Me.TxtBx_Pos_A4.MaxLength = 30
+        Me.TxtBx_Pos_A4.Name = "TxtBx_Pos_A4"
+        Me.TxtBx_Pos_A4.Size = New System.Drawing.Size(150, 23)
+        Me.TxtBx_Pos_A4.TabIndex = 0
+        Me.TxtBx_Pos_A4.Text = "Libre elección"
         '
         'Button2
         '
@@ -1059,12 +1059,15 @@ Partial Class Frm_MantencionColaciones
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1107, 596)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Frm_MantencionColaciones"
-        Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
@@ -1074,14 +1077,14 @@ Partial Class Frm_MantencionColaciones
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel6.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

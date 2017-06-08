@@ -828,6 +828,8 @@
     <None Include="Resources\HoraExtra-iloveimg-resized.png" />
     <None Include="Resources\HoraExtra.png" />
     <None Include="Resources\HoraExtra-iloveimg-resized %281%29.png" />
+    <None Include="Resources\indicators.png" />
+    <None Include="Resources\indicators %281%29.png" />
     <Content Include="Resources\Informes.jpg" />
     <None Include="Resources\Informes1.jpg" />
     <Content Include="Resources\Liquidaciones.jpg" />

@@ -117,7 +117,7 @@ Public Class Frm_Liquidaciones
                 Dim Encabezado2 As String = "<tr><td width =" & Chr(34) & "33%" & Chr(34) & " > Empresa <br> Rut <br> direccion  </td>"
                 Dim Encabezado3 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "center" & Chr(34) & "> autoconsulta </div></td>"
                 Dim Encabezado4 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "right" & Chr(34) & ">" &
-                                            "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.BMP" & Chr(34) & "width = " & Chr(34) & "247" & Chr(34) & "height=" & Chr(34) & "65" & Chr(34) & "></div></td> "
+                                            "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.BMP" & Chr(34) & "width = " & Chr(34) & "247" & Chr(34) & "height=" & Chr(34) & "60" & Chr(34) & "></div></td> "
                 Dim Encabezado As String = Encabezado1 & Encabezado2 & Encabezado3 & Encabezado4
                 sw.WriteLine(Encabezado)
                 sw.WriteLine(texto)

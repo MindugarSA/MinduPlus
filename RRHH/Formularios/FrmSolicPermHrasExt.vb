@@ -18,6 +18,14 @@ Public Class FrmSolicPermHrasExt
     Private enableBuscarInformePermisos As Boolean = False
     Private trabajadorInformePermisos As Persona
 
+    Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim cp As CreateParams = MyBase.CreateParams
+            cp.ExStyle = cp.ExStyle Or 33554432
+            Return cp
+        End Get
+    End Property
+
     Public Sub New(modo As Integer)
         eventFlag = False
         ' Llamada necesaria para el diseñador.
@@ -2090,6 +2098,7 @@ Public Class FrmSolicPermHrasExt
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
         MDIParent1.Visualizar_Tiles_MDI()
+        MDIParent1.Desplazamiento_Tiles()
         Me.Close()
     End Sub
 
@@ -2160,6 +2169,7 @@ Public Class FrmSolicPermHrasExt
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
         MDIParent1.Visualizar_Tiles_MDI()
+        MDIParent1.Desplazamiento_Tiles()
         Me.Close()
     End Sub
 

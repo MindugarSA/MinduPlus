@@ -9,7 +9,6 @@ Public Class Frm_Parametros2
     Dim SelLin As Integer
     Private Sub Frm_Parametros2_Load(sender As Object, e As EventArgs) Handles Me.Load
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
-        MDIParent1.Panel2.Visible = False
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
@@ -193,7 +192,8 @@ Public Class Frm_Parametros2
     End Function
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MDIParent1.Panel2.Visible = True
+        MDIParent1.Visualizar_Tiles_MDI()
+        MDIParent1.Desplazamiento_Tiles()
         MDIParent1.TiempoIngreso.Enabled = True
         Me.Close()
     End Sub
