@@ -360,7 +360,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Pnl_SolHrasExt.Controls.Add(Me.Panel6)
         Me.Pnl_SolHrasExt.Location = New System.Drawing.Point(38, 10)
         Me.Pnl_SolHrasExt.Name = "Pnl_SolHrasExt"
-        Me.Pnl_SolHrasExt.Size = New System.Drawing.Size(240, 168)
+        Me.Pnl_SolHrasExt.Size = New System.Drawing.Size(261, 168)
         Me.Pnl_SolHrasExt.TabIndex = 42
         '
         'Panel6
@@ -1604,7 +1604,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Pnl_SolPermisos.Controls.Add(Me.Pnl_SolicitudPermisos)
         Me.Pnl_SolPermisos.Location = New System.Drawing.Point(38, 187)
         Me.Pnl_SolPermisos.Name = "Pnl_SolPermisos"
-        Me.Pnl_SolPermisos.Size = New System.Drawing.Size(240, 120)
+        Me.Pnl_SolPermisos.Size = New System.Drawing.Size(228, 120)
         Me.Pnl_SolPermisos.TabIndex = 41
         '
         'Pnl_SolicitudPermisos
