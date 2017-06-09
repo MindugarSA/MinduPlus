@@ -86,7 +86,7 @@ Partial Class Frm_Parametros2
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel2)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel1)
         Me.SplitContainer1.Size = New System.Drawing.Size(1290, 674)
-        Me.SplitContainer1.SplitterDistance = 332
+        Me.SplitContainer1.SplitterDistance = 266
         Me.SplitContainer1.TabIndex = 0
         '
         'TreeView1
@@ -110,7 +110,7 @@ Partial Class Frm_Parametros2
         TreeNode3.Name = "Nodo5"
         TreeNode3.Text = "Asistencia"
         Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3})
-        Me.TreeView1.Size = New System.Drawing.Size(332, 674)
+        Me.TreeView1.Size = New System.Drawing.Size(266, 674)
         Me.TreeView1.TabIndex = 0
         '
         'Panel2
@@ -119,7 +119,7 @@ Partial Class Frm_Parametros2
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(954, 42)
+        Me.Panel2.Size = New System.Drawing.Size(1020, 42)
         Me.Panel2.TabIndex = 2
         '
         'Lbl_Titulo
@@ -132,7 +132,7 @@ Partial Class Frm_Parametros2
         Me.Lbl_Titulo.Location = New System.Drawing.Point(0, 0)
         Me.Lbl_Titulo.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_Titulo.Name = "Lbl_Titulo"
-        Me.Lbl_Titulo.Size = New System.Drawing.Size(954, 42)
+        Me.Lbl_Titulo.Size = New System.Drawing.Size(1020, 42)
         Me.Lbl_Titulo.TabIndex = 5
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
