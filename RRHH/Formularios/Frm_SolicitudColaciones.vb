@@ -12,6 +12,17 @@ Public Class Frm_SolicitudColacion
     Property ImagenAlmuerzo As Image = Global.RRHH.My.Resources.Resources.check_mark_white
     Property BackColorAlmuerzo As Color = Color.White
 
+    Private WithEvents timer As Timer
+    Private listaControl As List(Of Control)
+    Private Const DESPLAZAMIENTO As Integer = 100
+    Private time As Integer = 0
+    Private maxTime As Integer = 0
+    Private originalPos As Point
+    Private bitmap As Bitmap
+    Private panelAntiguo As PictureBox
+    Private sentido As Integer
+    Private clickPictureBoxActivo As Boolean
+
     Public Delegate Sub LaunchEvent()
     Public Event EnviarEvento As LaunchEvent
 
@@ -22,14 +33,18 @@ Public Class Frm_SolicitudColacion
 
         Iniciar_Form_Almuerzos()
 
-        Me.ResumeLayout()
 
+        Me.ResumeLayout()
+        timer = New Timer()
+        timer.Interval = 30
+        listaControl = New List(Of Control)
+        makeList()
     End Sub
 
     Private Sub Frm_SolicitudColación_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Me.DoubleBuffered = True
-
+        clickPictureBoxActivo = True
     End Sub
 
     Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
@@ -161,36 +176,67 @@ Public Class Frm_SolicitudColacion
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If clickPictureBoxActivo Then
+            clickPictureBoxActivo = False
+            Me.SuspendLayout()
+            vDateInfo = DateAdd("d", -7, vDateInfo)
+            tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
+            txbTrabajador.AutoCompleteCustomSource.Clear()
+            txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
 
-        Me.SuspendLayout()
-        vDateInfo = DateAdd("d", -7, vDateInfo)
-        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
-        txbTrabajador.AutoCompleteCustomSource.Clear()
-        txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
+            LLenaFechasColaciones(vDateInfo)
+            CargarColaciones(vDateInfo)
 
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
+            MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
+            MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
 
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
-        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
-        Me.ResumeLayout()
+            sentido = 1
+            generarMove()
+
+            Me.ResumeLayout()
+        End If
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        If clickPictureBoxActivo Then
+            clickPictureBoxActivo = False
+            Me.SuspendLayout()
+            vDateInfo = DateAdd("d", 7, vDateInfo)
+            tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
+            txbTrabajador.AutoCompleteCustomSource.Clear()
+            txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
 
-        Me.SuspendLayout()
-        vDateInfo = DateAdd("d", 7, vDateInfo)
-        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
-        txbTrabajador.AutoCompleteCustomSource.Clear()
-        txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
+            LLenaFechasColaciones(vDateInfo)
+            CargarColaciones(vDateInfo)
 
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
+            MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
+            MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
 
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
-        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
-        Me.ResumeLayout()
+            sentido = -1
+            generarMove()
+            Me.ResumeLayout()
+        End If
     End Sub
+
+    Public Sub generarMove()
+        bitmap = New Bitmap(TableLayoutPanel2.ClientSize.Width, TableLayoutPanel2.ClientSize.Height)
+        Dim rec As Rectangle = New Rectangle(0, 0, bitmap.Width, bitmap.Height)
+        TableLayoutPanel2.DrawToBitmap(bitmap, rec)
+        originalPos = TableLayoutPanel2.Location
+        TableLayoutPanel2.Left -= sentido * TableLayoutPanel2.Width
+        time = 0
+        maxTime = TableLayoutPanel2.Width / DESPLAZAMIENTO
+        panelAntiguo = New PictureBox()
+        panelAntiguo.Image = bitmap
+        panelAntiguo.Location = originalPos
+        panelAntiguo.Size = TableLayoutPanel2.Size
+        panelAntiguo.Visible = True
+        Me.Controls.Add(panelAntiguo)
+
+        timer.Start()
+    End Sub
+
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim Errores As String = ""
@@ -753,7 +799,6 @@ Public Class Frm_SolicitudColacion
     End Sub
 
     Private Sub VisiblePostres()
-
         Lbl_P_B1.Visible = False
         Lbl_P_C1.Visible = False
         Lbl_P_D1.Visible = False
@@ -816,5 +861,56 @@ Public Class Frm_SolicitudColacion
     '        Return 0
     '    End If
     'End Function
+
+
+    Private Sub DoTheTimer() Handles timer.Tick
+        If time <> maxTime Then
+            panelAntiguo.Left += sentido * DESPLAZAMIENTO
+            TableLayoutPanel2.Left += sentido * DESPLAZAMIENTO
+            time += 1
+        Else
+            TableLayoutPanel2.Location = originalPos
+            panelAntiguo.Dispose()
+            bitmap.Dispose()
+            clickPictureBoxActivo = True
+            timer.Stop()
+        End If
+
+
+    End Sub
+
+    Private Sub makeList()
+        listaControl.Add(Me.Lbl_A1)
+        listaControl.Add(Me.Lbl_A2)
+        listaControl.Add(Me.Lbl_A3)
+        listaControl.Add(Me.Lbl_A4)
+        listaControl.Add(Me.Lbl_A5)
+        listaControl.Add(Me.Lbl_B1)
+        listaControl.Add(Me.Lbl_B2)
+        listaControl.Add(Me.Lbl_B3)
+        listaControl.Add(Me.Lbl_B4)
+        listaControl.Add(Me.Lbl_B5)
+        listaControl.Add(Me.Lbl_C1)
+        listaControl.Add(Me.Lbl_C2)
+        listaControl.Add(Me.Lbl_C3)
+        listaControl.Add(Me.Lbl_C4)
+        listaControl.Add(Me.Lbl_C5)
+        listaControl.Add(Me.Lbl_D1)
+        listaControl.Add(Me.Lbl_D2)
+        listaControl.Add(Me.Lbl_D3)
+        listaControl.Add(Me.Lbl_D4)
+        listaControl.Add(Me.Lbl_D5)
+        listaControl.Add(Me.Lbl_01)
+        listaControl.Add(Me.Lbl_02)
+        listaControl.Add(Me.Lbl_03)
+        listaControl.Add(Me.Lbl_04)
+        listaControl.Add(Me.Lbl_05)
+        listaControl.Add(TblLyutPnl_1)
+        listaControl.Add(TblLyutPnl_2)
+        listaControl.Add(TblLyutPnl_3)
+        listaControl.Add(TblLyutPnl_4)
+        listaControl.Add(TblLyutPnl_5)
+    End Sub
+
 
 End Class
