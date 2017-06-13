@@ -256,6 +256,7 @@ Public Class FrmSolicPermHrasExt
                     trabajadorInformePermisos.Nombre = ""
                     btnImprimirInformePermisos.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimirInformePermisos.Height - 10)
                     btnBuscarInformePermisos.Location = New Point(btnImprimirInformePermisos.Location.X + btnImprimirInformePermisos.Width + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnBuscarInformePermisos.Height - 10)
+                    btnExportarExcelPermiso.Location = New Point(btnBuscarInformePermisos.Location.X + btnBuscarInformePermisos.Width + 20, btnBuscarInformePermisos.Location.Y)
                     If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25 < 1032 Then
                         dgvSolicitudesSalidaInformePermisos.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvSolicitudesSalidaInformePermisos.Location.X - TreeView1.Size.Width - 25, btnBuscarInformePermisos.Location.Y - dgvSolicitudesSalidaInformePermisos.Location.Y - 20)
                     Else
@@ -2112,6 +2113,13 @@ Public Class FrmSolicPermHrasExt
             LimpiarDatosInformePermisos()
         End If
     End Sub
+
+    Private Sub btnExportarExcelPermiso_Click(sender As Object, e As EventArgs) Handles btnExportarExcelPermiso.Click
+        If dgvSolicitudesSalidaInformePermisos.Rows.Count > 0 Then
+            dgvSolicitudesSalidaInformePermisos.ExportToExcel
+        End If
+    End Sub
+
     '------------------------- Fin Informe Permisos -----------------------------------
 
 
@@ -2193,6 +2201,4 @@ Public Class FrmSolicPermHrasExt
         MDIParent1.Desplazamiento_Tiles()
         Me.Close()
     End Sub
-
-
 End Class
