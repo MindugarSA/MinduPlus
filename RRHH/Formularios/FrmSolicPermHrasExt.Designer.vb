@@ -42,13 +42,11 @@ Partial Class FrmSolicPermHrasExt
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSolicPermHrasExt))
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -58,6 +56,9 @@ Partial Class FrmSolicPermHrasExt
         Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TreeView1 = New Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView(Me.components)
         Me.btnVolver = New System.Windows.Forms.Button()
@@ -68,31 +69,31 @@ Partial Class FrmSolicPermHrasExt
         Me.Pnl_SolPermisos = New System.Windows.Forms.Panel()
         Me.Pnl_SolicitudPermisos = New System.Windows.Forms.Panel()
         Me.pnlModificar = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.cmbModificarTrabajador = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.cmbModificarTrabajador = New MetroFramework.Controls.MetroComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.chkDiaCompleto = New System.Windows.Forms.CheckBox()
+        Me.chkDiaCompleto = New MetroFramework.Controls.MetroCheckBox()
         Me.pnlHora = New System.Windows.Forms.Panel()
         Me.dtpHoraSalida = New MetroFramework.Controls.MetroDateTime()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.dtpHoraEntrada = New MetroFramework.Controls.MetroDateTime()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txbTotalHoras = New System.Windows.Forms.TextBox()
+        Me.txbTotalHoras = New MetroFramework.Controls.MetroTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.cmbJefes = New System.Windows.Forms.ComboBox()
+        Me.cmbJefes = New MetroFramework.Controls.MetroComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.txbTramite = New System.Windows.Forms.TextBox()
-        Me.txbEmpresa = New System.Windows.Forms.TextBox()
+        Me.txbTramite = New MetroFramework.Controls.MetroTextBox()
+        Me.txbEmpresa = New MetroFramework.Controls.MetroTextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.txbTrabajador = New System.Windows.Forms.TextBox()
-        Me.txbCargo = New System.Windows.Forms.TextBox()
+        Me.txbTrabajador = New MetroFramework.Controls.MetroTextBox()
+        Me.txbCargo = New MetroFramework.Controls.MetroTextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.txbRut = New System.Windows.Forms.TextBox()
-        Me.txbFechaIngreso = New System.Windows.Forms.TextBox()
+        Me.txbRut = New MetroFramework.Controls.MetroTextBox()
+        Me.txbFechaIngreso = New MetroFramework.Controls.MetroTextBox()
         Me.lblArea = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -107,10 +108,11 @@ Partial Class FrmSolicPermHrasExt
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Pnl_SolHrasExt = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.dtpfech = New MetroFramework.Controls.MetroDateTime()
+        Me.ComboBox2 = New MetroFramework.Controls.MetroComboBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.btnSolicitar = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox3 = New MetroFramework.Controls.MetroComboBox()
         Me.dgvColaboradoresSHHEE = New MetroFramework.Controls.MetroGrid()
         Me.numeroSolicitarHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreColaborador = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -127,36 +129,19 @@ Partial Class FrmSolicPermHrasExt
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.TxtBxDetalleSHX = New System.Windows.Forms.TextBox()
+        Me.TxtBxDetalleSHX = New MetroFramework.Controls.MetroTextBox()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.txbHorasExtras = New System.Windows.Forms.TextBox()
-        Me.txbSupervisorSolicitante = New System.Windows.Forms.TextBox()
+        Me.txbHorasExtras = New MetroFramework.Controls.MetroTextBox()
+        Me.txbSupervisorSolicitante = New MetroFramework.Controls.MetroTextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Pnl_AutPermisos = New System.Windows.Forms.Panel()
         Me.Pnl_Central = New System.Windows.Forms.Panel()
-        Me.chkVerPendientes = New System.Windows.Forms.CheckBox()
+        Me.chkVerPendientes = New MetroFramework.Controls.MetroCheckBox()
         Me.dtpFechaTermino = New MetroFramework.Controls.MetroDateTime()
         Me.dtpFechaInicio = New MetroFramework.Controls.MetroDateTime()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.dgvSolicitudesSalida = New MetroFramework.Controls.MetroGrid()
-        Me.numeroSolicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaInforme = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreSolicitante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rutTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargoAutorizarPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.diaCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horasTotales = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAutorizarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnRechazarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnImprimirPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnVerHistorial = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Pnl_AutHrExt = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -164,41 +149,31 @@ Partial Class FrmSolicPermHrasExt
         Me.dtpTermino = New MetroFramework.Controls.MetroDateTime()
         Me.dtpInicio = New MetroFramework.Controls.MetroDateTime()
         Me.btnImprimir = New System.Windows.Forms.Button()
-        Me.chkTodas = New System.Windows.Forms.CheckBox()
-        Me.txbSolicitante = New System.Windows.Forms.TextBox()
-        Me.txbFecha = New System.Windows.Forms.TextBox()
+        Me.chkTodas = New MetroFramework.Controls.MetroCheckBox()
+        Me.txbSolicitante = New MetroFramework.Controls.MetroTextBox()
+        Me.txbFecha = New MetroFramework.Controls.MetroTextBox()
         Me.btnRechazarTodas = New System.Windows.Forms.Button()
         Me.btnAutorizarTodas = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvColaboradores = New MetroFramework.Controls.MetroGrid()
-        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreColaboradores = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaTermino = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAutorizar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnRechazar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.cmbNumeroSolicitud = New System.Windows.Forms.ComboBox()
-        Me.txbDetalle = New System.Windows.Forms.TextBox()
+        Me.cmbNumeroSolicitud = New MetroFramework.Controls.MetroComboBox()
+        Me.txbDetalle = New MetroFramework.Controls.MetroTextBox()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.Pnl_InformePermisos = New System.Windows.Forms.Panel()
         Me.lblNombreInformePermisos = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.chkBuscarTodosInformePermisos = New System.Windows.Forms.CheckBox()
+        Me.chkBuscarTodosInformePermisos = New MetroFramework.Controls.MetroCheckBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btnImprimirInformePermisos = New System.Windows.Forms.Button()
-        Me.cmbEmpresaInformePermisos = New System.Windows.Forms.ComboBox()
+        Me.cmbEmpresaInformePermisos = New MetroFramework.Controls.MetroComboBox()
         Me.btnBuscarInformePermisos = New System.Windows.Forms.Button()
         Me.dtpInicioInformePermisos = New MetroFramework.Controls.MetroDateTime()
-        Me.txbRutInformePermisos = New System.Windows.Forms.TextBox()
+        Me.txbRutInformePermisos = New MetroFramework.Controls.MetroTextBox()
         Me.Label36 = New System.Windows.Forms.Label()
-        Me.txbNombreInformePermisos = New System.Windows.Forms.TextBox()
+        Me.txbNombreInformePermisos = New MetroFramework.Controls.MetroTextBox()
         Me.dtpTerminoInformePermisos = New MetroFramework.Controls.MetroDateTime()
         Me.lblRutInformePermisos = New System.Windows.Forms.Label()
         Me.dgvSolicitudesSalidaInformePermisos = New MetroFramework.Controls.MetroGrid()
@@ -225,25 +200,51 @@ Partial Class FrmSolicPermHrasExt
         Me.colHoraTerminoInformeHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTotalHorasExtrasInformeHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFechaRealInformeHHEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txbTotalEmpleadosInformeHHEE = New System.Windows.Forms.TextBox()
+        Me.txbTotalEmpleadosInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
-        Me.chkTodaEmpresaInformeHHEE = New System.Windows.Forms.CheckBox()
-        Me.cmbEmpresaInformeHHEE = New System.Windows.Forms.ComboBox()
+        Me.chkTodaEmpresaInformeHHEE = New MetroFramework.Controls.MetroCheckBox()
+        Me.cmbEmpresaInformeHHEE = New MetroFramework.Controls.MetroComboBox()
         Me.lblHHEEAcumuladasInformeHHEE = New System.Windows.Forms.Label()
         Me.dtpInicioInformeHHEE = New MetroFramework.Controls.MetroDateTime()
-        Me.txbHHEEAcumuladasInformeHHEE = New System.Windows.Forms.TextBox()
+        Me.txbHHEEAcumuladasInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.lblEmpresaInformeHHEE = New System.Windows.Forms.Label()
         Me.btnImprimirInformeHHEE = New System.Windows.Forms.Button()
         Me.dtpTerminoInformeHHEE = New MetroFramework.Controls.MetroDateTime()
         Me.lblNombreInformeHHEE = New System.Windows.Forms.Label()
-        Me.chkBuscarTodosInformeHHEE = New System.Windows.Forms.CheckBox()
+        Me.chkBuscarTodosInformeHHEE = New MetroFramework.Controls.MetroCheckBox()
         Me.lblRutInformeHHEE = New System.Windows.Forms.Label()
-        Me.txbRutInformeHHEE = New System.Windows.Forms.TextBox()
-        Me.txbNombreInformeHHEE = New System.Windows.Forms.TextBox()
+        Me.txbRutInformeHHEE = New MetroFramework.Controls.MetroTextBox()
+        Me.txbNombreInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.Lbl_Titulo = New System.Windows.Forms.Label()
-        Me.dtpFecha = New MetroFramework.Controls.MetroDateTime()
+        Me.numeroSolicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaInforme = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreSolicitante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rutTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargoAutorizarPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diaCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horasTotales = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAutorizarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnRechazarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnImprimirPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnVerHistorial = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreColaboradores = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaTermino = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAutorizar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnRechazar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -465,23 +466,25 @@ Partial Class FrmSolicPermHrasExt
         '
         'ComboBox1
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(112, 105)
+        Me.ComboBox1.ItemHeight = 23
+        Me.ComboBox1.Location = New System.Drawing.Point(112, 102)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(247, 25)
+        Me.ComboBox1.Size = New System.Drawing.Size(247, 29)
         Me.ComboBox1.TabIndex = 4
+        Me.ComboBox1.UseSelectable = True
         '
         'cmbModificarTrabajador
         '
-        Me.cmbModificarTrabajador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbModificarTrabajador.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbModificarTrabajador.FormattingEnabled = True
-        Me.cmbModificarTrabajador.Location = New System.Drawing.Point(112, 74)
+        Me.cmbModificarTrabajador.ItemHeight = 23
+        Me.cmbModificarTrabajador.Location = New System.Drawing.Point(112, 68)
         Me.cmbModificarTrabajador.Name = "cmbModificarTrabajador"
-        Me.cmbModificarTrabajador.Size = New System.Drawing.Size(247, 25)
+        Me.cmbModificarTrabajador.Size = New System.Drawing.Size(247, 29)
         Me.cmbModificarTrabajador.TabIndex = 3
+        Me.cmbModificarTrabajador.UseSelectable = True
         '
         'Label16
         '
@@ -516,13 +519,12 @@ Partial Class FrmSolicPermHrasExt
         'chkDiaCompleto
         '
         Me.chkDiaCompleto.AutoSize = True
-        Me.chkDiaCompleto.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDiaCompleto.Location = New System.Drawing.Point(273, 333)
+        Me.chkDiaCompleto.Location = New System.Drawing.Point(273, 338)
         Me.chkDiaCompleto.Name = "chkDiaCompleto"
-        Me.chkDiaCompleto.Size = New System.Drawing.Size(109, 21)
+        Me.chkDiaCompleto.Size = New System.Drawing.Size(96, 15)
         Me.chkDiaCompleto.TabIndex = 61
         Me.chkDiaCompleto.Text = "Dia Completo"
-        Me.chkDiaCompleto.UseVisualStyleBackColor = True
+        Me.chkDiaCompleto.UseSelectable = True
         '
         'pnlHora
         '
@@ -585,12 +587,34 @@ Partial Class FrmSolicPermHrasExt
         '
         'txbTotalHoras
         '
-        Me.txbTotalHoras.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbTotalHoras.CustomButton.Image = Nothing
+        Me.txbTotalHoras.CustomButton.Location = New System.Drawing.Point(146, 1)
+        Me.txbTotalHoras.CustomButton.Name = ""
+        Me.txbTotalHoras.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbTotalHoras.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbTotalHoras.CustomButton.TabIndex = 1
+        Me.txbTotalHoras.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbTotalHoras.CustomButton.UseSelectable = True
+        Me.txbTotalHoras.CustomButton.Visible = False
+        Me.txbTotalHoras.Lines = New String(-1) {}
         Me.txbTotalHoras.Location = New System.Drawing.Point(117, 82)
+        Me.txbTotalHoras.MaxLength = 32767
         Me.txbTotalHoras.Name = "txbTotalHoras"
+        Me.txbTotalHoras.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbTotalHoras.ReadOnly = True
+        Me.txbTotalHoras.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbTotalHoras.SelectedText = ""
+        Me.txbTotalHoras.SelectionLength = 0
+        Me.txbTotalHoras.SelectionStart = 0
+        Me.txbTotalHoras.ShortcutsEnabled = True
         Me.txbTotalHoras.Size = New System.Drawing.Size(170, 25)
         Me.txbTotalHoras.TabIndex = 47
+        Me.txbTotalHoras.UseSelectable = True
+        Me.txbTotalHoras.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbTotalHoras.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label11
         '
@@ -604,13 +628,14 @@ Partial Class FrmSolicPermHrasExt
         '
         'cmbJefes
         '
-        Me.cmbJefes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbJefes.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbJefes.FormattingEnabled = True
+        Me.cmbJefes.ItemHeight = 23
         Me.cmbJefes.Location = New System.Drawing.Point(133, 248)
         Me.cmbJefes.Name = "cmbJefes"
-        Me.cmbJefes.Size = New System.Drawing.Size(293, 25)
+        Me.cmbJefes.Size = New System.Drawing.Size(293, 29)
         Me.cmbJefes.TabIndex = 59
+        Me.cmbJefes.UseSelectable = True
         '
         'Label13
         '
@@ -624,22 +649,66 @@ Partial Class FrmSolicPermHrasExt
         '
         'txbTramite
         '
-        Me.txbTramite.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbTramite.CustomButton.Image = Nothing
+        Me.txbTramite.CustomButton.Location = New System.Drawing.Point(255, 2)
+        Me.txbTramite.CustomButton.Name = ""
+        Me.txbTramite.CustomButton.Size = New System.Drawing.Size(59, 59)
+        Me.txbTramite.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbTramite.CustomButton.TabIndex = 1
+        Me.txbTramite.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbTramite.CustomButton.UseSelectable = True
+        Me.txbTramite.CustomButton.Visible = False
+        Me.txbTramite.Lines = New String(-1) {}
         Me.txbTramite.Location = New System.Drawing.Point(504, 306)
+        Me.txbTramite.MaxLength = 32767
         Me.txbTramite.Multiline = True
         Me.txbTramite.Name = "txbTramite"
+        Me.txbTramite.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbTramite.ReadOnly = True
+        Me.txbTramite.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbTramite.SelectedText = ""
+        Me.txbTramite.SelectionLength = 0
+        Me.txbTramite.SelectionStart = 0
+        Me.txbTramite.ShortcutsEnabled = True
         Me.txbTramite.Size = New System.Drawing.Size(317, 64)
         Me.txbTramite.TabIndex = 26
+        Me.txbTramite.UseSelectable = True
+        Me.txbTramite.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbTramite.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txbEmpresa
         '
-        Me.txbEmpresa.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbEmpresa.CustomButton.Image = Nothing
+        Me.txbEmpresa.CustomButton.Location = New System.Drawing.Point(269, 1)
+        Me.txbEmpresa.CustomButton.Name = ""
+        Me.txbEmpresa.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbEmpresa.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbEmpresa.CustomButton.TabIndex = 1
+        Me.txbEmpresa.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbEmpresa.CustomButton.UseSelectable = True
+        Me.txbEmpresa.CustomButton.Visible = False
+        Me.txbEmpresa.Lines = New String(-1) {}
         Me.txbEmpresa.Location = New System.Drawing.Point(133, 186)
+        Me.txbEmpresa.MaxLength = 32767
         Me.txbEmpresa.Name = "txbEmpresa"
+        Me.txbEmpresa.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbEmpresa.ReadOnly = True
+        Me.txbEmpresa.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbEmpresa.SelectedText = ""
+        Me.txbEmpresa.SelectionLength = 0
+        Me.txbEmpresa.SelectionStart = 0
+        Me.txbEmpresa.ShortcutsEnabled = True
         Me.txbEmpresa.Size = New System.Drawing.Size(293, 25)
         Me.txbEmpresa.TabIndex = 57
+        Me.txbEmpresa.UseSelectable = True
+        Me.txbEmpresa.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbEmpresa.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label12
         '
@@ -665,21 +734,65 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.txbTrabajador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txbTrabajador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txbTrabajador.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbTrabajador.CustomButton.Image = Nothing
+        Me.txbTrabajador.CustomButton.Location = New System.Drawing.Point(269, 1)
+        Me.txbTrabajador.CustomButton.Name = ""
+        Me.txbTrabajador.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbTrabajador.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbTrabajador.CustomButton.TabIndex = 1
+        Me.txbTrabajador.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbTrabajador.CustomButton.UseSelectable = True
+        Me.txbTrabajador.CustomButton.Visible = False
+        Me.txbTrabajador.Lines = New String(-1) {}
         Me.txbTrabajador.Location = New System.Drawing.Point(133, 93)
+        Me.txbTrabajador.MaxLength = 32767
         Me.txbTrabajador.Name = "txbTrabajador"
+        Me.txbTrabajador.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbTrabajador.ReadOnly = True
+        Me.txbTrabajador.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbTrabajador.SelectedText = ""
+        Me.txbTrabajador.SelectionLength = 0
+        Me.txbTrabajador.SelectionStart = 0
+        Me.txbTrabajador.ShortcutsEnabled = True
         Me.txbTrabajador.Size = New System.Drawing.Size(293, 25)
         Me.txbTrabajador.TabIndex = 8
+        Me.txbTrabajador.UseSelectable = True
+        Me.txbTrabajador.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbTrabajador.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txbCargo
         '
-        Me.txbCargo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbCargo.CustomButton.Image = Nothing
+        Me.txbCargo.CustomButton.Location = New System.Drawing.Point(269, 1)
+        Me.txbCargo.CustomButton.Name = ""
+        Me.txbCargo.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbCargo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbCargo.CustomButton.TabIndex = 1
+        Me.txbCargo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbCargo.CustomButton.UseSelectable = True
+        Me.txbCargo.CustomButton.Visible = False
+        Me.txbCargo.Lines = New String(-1) {}
         Me.txbCargo.Location = New System.Drawing.Point(133, 155)
+        Me.txbCargo.MaxLength = 32767
         Me.txbCargo.Name = "txbCargo"
+        Me.txbCargo.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbCargo.ReadOnly = True
+        Me.txbCargo.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbCargo.SelectedText = ""
+        Me.txbCargo.SelectionLength = 0
+        Me.txbCargo.SelectionStart = 0
+        Me.txbCargo.ShortcutsEnabled = True
         Me.txbCargo.Size = New System.Drawing.Size(293, 25)
         Me.txbCargo.TabIndex = 55
+        Me.txbCargo.UseSelectable = True
+        Me.txbCargo.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbCargo.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label18
         '
@@ -703,21 +816,65 @@ Partial Class FrmSolicPermHrasExt
         '
         'txbRut
         '
-        Me.txbRut.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbRut.CustomButton.Image = Nothing
+        Me.txbRut.CustomButton.Location = New System.Drawing.Point(269, 1)
+        Me.txbRut.CustomButton.Name = ""
+        Me.txbRut.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbRut.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbRut.CustomButton.TabIndex = 1
+        Me.txbRut.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbRut.CustomButton.UseSelectable = True
+        Me.txbRut.CustomButton.Visible = False
+        Me.txbRut.Lines = New String(-1) {}
         Me.txbRut.Location = New System.Drawing.Point(133, 124)
+        Me.txbRut.MaxLength = 32767
         Me.txbRut.Name = "txbRut"
+        Me.txbRut.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbRut.ReadOnly = True
+        Me.txbRut.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbRut.SelectedText = ""
+        Me.txbRut.SelectionLength = 0
+        Me.txbRut.SelectionStart = 0
+        Me.txbRut.ShortcutsEnabled = True
         Me.txbRut.Size = New System.Drawing.Size(293, 25)
         Me.txbRut.TabIndex = 10
+        Me.txbRut.UseSelectable = True
+        Me.txbRut.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbRut.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txbFechaIngreso
         '
-        Me.txbFechaIngreso.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        '
+        '
+        Me.txbFechaIngreso.CustomButton.Image = Nothing
+        Me.txbFechaIngreso.CustomButton.Location = New System.Drawing.Point(98, 1)
+        Me.txbFechaIngreso.CustomButton.Name = ""
+        Me.txbFechaIngreso.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbFechaIngreso.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbFechaIngreso.CustomButton.TabIndex = 1
+        Me.txbFechaIngreso.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbFechaIngreso.CustomButton.UseSelectable = True
+        Me.txbFechaIngreso.CustomButton.Visible = False
+        Me.txbFechaIngreso.Lines = New String(-1) {}
         Me.txbFechaIngreso.Location = New System.Drawing.Point(133, 217)
+        Me.txbFechaIngreso.MaxLength = 32767
         Me.txbFechaIngreso.Name = "txbFechaIngreso"
+        Me.txbFechaIngreso.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbFechaIngreso.ReadOnly = True
+        Me.txbFechaIngreso.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbFechaIngreso.SelectedText = ""
+        Me.txbFechaIngreso.SelectionLength = 0
+        Me.txbFechaIngreso.SelectionStart = 0
+        Me.txbFechaIngreso.ShortcutsEnabled = True
         Me.txbFechaIngreso.Size = New System.Drawing.Size(122, 25)
         Me.txbFechaIngreso.TabIndex = 53
+        Me.txbFechaIngreso.UseSelectable = True
+        Me.txbFechaIngreso.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbFechaIngreso.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'lblArea
         '
@@ -865,6 +1022,7 @@ Partial Class FrmSolicPermHrasExt
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.White
+        Me.Panel6.Controls.Add(Me.dtpfech)
         Me.Panel6.Controls.Add(Me.ComboBox2)
         Me.Panel6.Controls.Add(Me.Label24)
         Me.Panel6.Controls.Add(Me.btnSolicitar)
@@ -884,21 +1042,31 @@ Partial Class FrmSolicPermHrasExt
         Me.Panel6.Size = New System.Drawing.Size(1191, 518)
         Me.Panel6.TabIndex = 54
         '
+        'dtpfech
+        '
+        Me.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpfech.Location = New System.Drawing.Point(673, 8)
+        Me.dtpfech.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpfech.Name = "dtpfech"
+        Me.dtpfech.Size = New System.Drawing.Size(125, 29)
+        Me.dtpfech.TabIndex = 62
+        '
         'ComboBox2
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(185, 82)
+        Me.ComboBox2.ItemHeight = 23
+        Me.ComboBox2.Location = New System.Drawing.Point(185, 74)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(389, 25)
+        Me.ComboBox2.Size = New System.Drawing.Size(392, 29)
         Me.ComboBox2.TabIndex = 61
+        Me.ComboBox2.UseSelectable = True
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label24.Location = New System.Drawing.Point(14, 86)
+        Me.Label24.Location = New System.Drawing.Point(14, 78)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(113, 20)
         Me.Label24.TabIndex = 60
@@ -924,13 +1092,12 @@ Partial Class FrmSolicPermHrasExt
         '
         'ComboBox3
         '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(408, 45)
+        Me.ComboBox3.ItemHeight = 23
+        Me.ComboBox3.Location = New System.Drawing.Point(592, 74)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(167, 25)
-        Me.ComboBox3.TabIndex = 52
+        Me.ComboBox3.Size = New System.Drawing.Size(207, 29)
+        Me.ComboBox3.TabIndex = 63
+        Me.ComboBox3.UseSelectable = True
         '
         'dgvColaboradoresSHHEE
         '
@@ -1072,7 +1239,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label25.Location = New System.Drawing.Point(14, 13)
+        Me.Label25.Location = New System.Drawing.Point(14, 12)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(158, 20)
         Me.Label25.TabIndex = 0
@@ -1082,7 +1249,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label26.Location = New System.Drawing.Point(583, 13)
+        Me.Label26.Location = New System.Drawing.Point(604, 12)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(49, 20)
         Me.Label26.TabIndex = 1
@@ -1092,7 +1259,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label27.Location = New System.Drawing.Point(14, 49)
+        Me.Label27.Location = New System.Drawing.Point(14, 45)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(125, 20)
         Me.Label27.TabIndex = 3
@@ -1102,7 +1269,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label28.Location = New System.Drawing.Point(226, 49)
+        Me.Label28.Location = New System.Drawing.Point(226, 45)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(173, 20)
         Me.Label28.TabIndex = 4
@@ -1112,7 +1279,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label29.Location = New System.Drawing.Point(584, 49)
+        Me.Label29.Location = New System.Drawing.Point(589, 45)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(180, 20)
         Me.Label29.TabIndex = 5
@@ -1120,19 +1287,40 @@ Partial Class FrmSolicPermHrasExt
         '
         'TxtBxDetalleSHX
         '
-        Me.TxtBxDetalleSHX.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.TxtBxDetalleSHX.Location = New System.Drawing.Point(782, 36)
+        '
+        '
+        '
+        Me.TxtBxDetalleSHX.CustomButton.Image = Nothing
+        Me.TxtBxDetalleSHX.CustomButton.Location = New System.Drawing.Point(309, 1)
+        Me.TxtBxDetalleSHX.CustomButton.Name = ""
+        Me.TxtBxDetalleSHX.CustomButton.Size = New System.Drawing.Size(65, 65)
+        Me.TxtBxDetalleSHX.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.TxtBxDetalleSHX.CustomButton.TabIndex = 1
+        Me.TxtBxDetalleSHX.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.TxtBxDetalleSHX.CustomButton.UseSelectable = True
+        Me.TxtBxDetalleSHX.CustomButton.Visible = False
+        Me.TxtBxDetalleSHX.Lines = New String(-1) {}
+        Me.TxtBxDetalleSHX.Location = New System.Drawing.Point(808, 36)
         Me.TxtBxDetalleSHX.MaxLength = 100
         Me.TxtBxDetalleSHX.Multiline = True
         Me.TxtBxDetalleSHX.Name = "TxtBxDetalleSHX"
-        Me.TxtBxDetalleSHX.Size = New System.Drawing.Size(403, 74)
+        Me.TxtBxDetalleSHX.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtBxDetalleSHX.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.TxtBxDetalleSHX.SelectedText = ""
+        Me.TxtBxDetalleSHX.SelectionLength = 0
+        Me.TxtBxDetalleSHX.SelectionStart = 0
+        Me.TxtBxDetalleSHX.ShortcutsEnabled = True
+        Me.TxtBxDetalleSHX.Size = New System.Drawing.Size(375, 67)
         Me.TxtBxDetalleSHX.TabIndex = 18
+        Me.TxtBxDetalleSHX.UseSelectable = True
+        Me.TxtBxDetalleSHX.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.TxtBxDetalleSHX.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label30
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Segoe UI Semibold", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.Label30.Location = New System.Drawing.Point(778, 13)
+        Me.Label30.Location = New System.Drawing.Point(806, 13)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(382, 20)
         Me.Label30.TabIndex = 9
@@ -1140,22 +1328,65 @@ Partial Class FrmSolicPermHrasExt
         '
         'txbHorasExtras
         '
-        Me.txbHorasExtras.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.txbHorasExtras.Location = New System.Drawing.Point(184, 46)
+        '
+        '
+        '
+        Me.txbHorasExtras.CustomButton.Image = Nothing
+        Me.txbHorasExtras.CustomButton.Location = New System.Drawing.Point(8, 1)
+        Me.txbHorasExtras.CustomButton.Name = ""
+        Me.txbHorasExtras.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbHorasExtras.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbHorasExtras.CustomButton.TabIndex = 1
+        Me.txbHorasExtras.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbHorasExtras.CustomButton.UseSelectable = True
+        Me.txbHorasExtras.CustomButton.Visible = False
+        Me.txbHorasExtras.Lines = New String() {"1"}
+        Me.txbHorasExtras.Location = New System.Drawing.Point(183, 43)
+        Me.txbHorasExtras.MaxLength = 32767
         Me.txbHorasExtras.Name = "txbHorasExtras"
+        Me.txbHorasExtras.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txbHorasExtras.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbHorasExtras.SelectedText = ""
+        Me.txbHorasExtras.SelectionLength = 0
+        Me.txbHorasExtras.SelectionStart = 0
+        Me.txbHorasExtras.ShortcutsEnabled = True
         Me.txbHorasExtras.Size = New System.Drawing.Size(32, 25)
         Me.txbHorasExtras.TabIndex = 13
         Me.txbHorasExtras.Text = "1"
+        Me.txbHorasExtras.UseSelectable = True
+        Me.txbHorasExtras.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbHorasExtras.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txbSupervisorSolicitante
         '
-        Me.txbSupervisorSolicitante.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.txbSupervisorSolicitante.Location = New System.Drawing.Point(185, 10)
+        '
+        '
+        '
+        Me.txbSupervisorSolicitante.CustomButton.Image = Nothing
+        Me.txbSupervisorSolicitante.CustomButton.Location = New System.Drawing.Point(368, 1)
+        Me.txbSupervisorSolicitante.CustomButton.Name = ""
+        Me.txbSupervisorSolicitante.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.txbSupervisorSolicitante.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbSupervisorSolicitante.CustomButton.TabIndex = 1
+        Me.txbSupervisorSolicitante.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbSupervisorSolicitante.CustomButton.UseSelectable = True
+        Me.txbSupervisorSolicitante.CustomButton.Visible = False
+        Me.txbSupervisorSolicitante.Lines = New String(-1) {}
+        Me.txbSupervisorSolicitante.Location = New System.Drawing.Point(183, 10)
         Me.txbSupervisorSolicitante.MaxLength = 50
         Me.txbSupervisorSolicitante.Name = "txbSupervisorSolicitante"
+        Me.txbSupervisorSolicitante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbSupervisorSolicitante.ReadOnly = True
+        Me.txbSupervisorSolicitante.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbSupervisorSolicitante.SelectedText = ""
+        Me.txbSupervisorSolicitante.SelectionLength = 0
+        Me.txbSupervisorSolicitante.SelectionStart = 0
+        Me.txbSupervisorSolicitante.ShortcutsEnabled = True
         Me.txbSupervisorSolicitante.Size = New System.Drawing.Size(392, 25)
         Me.txbSupervisorSolicitante.TabIndex = 10
+        Me.txbSupervisorSolicitante.UseSelectable = True
+        Me.txbSupervisorSolicitante.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbSupervisorSolicitante.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'TabPage3
         '
@@ -1191,12 +1422,12 @@ Partial Class FrmSolicPermHrasExt
         'chkVerPendientes
         '
         Me.chkVerPendientes.AutoSize = True
-        Me.chkVerPendientes.Location = New System.Drawing.Point(253, 15)
+        Me.chkVerPendientes.Location = New System.Drawing.Point(253, 16)
         Me.chkVerPendientes.Name = "chkVerPendientes"
-        Me.chkVerPendientes.Size = New System.Drawing.Size(122, 17)
+        Me.chkVerPendientes.Size = New System.Drawing.Size(126, 15)
         Me.chkVerPendientes.TabIndex = 5
         Me.chkVerPendientes.Text = "Ver Solo Pendientes"
-        Me.chkVerPendientes.UseVisualStyleBackColor = True
+        Me.chkVerPendientes.UseSelectable = True
         '
         'dtpFechaTermino
         '
@@ -1283,132 +1514,6 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvSolicitudesSalida.Size = New System.Drawing.Size(981, 314)
         Me.dgvSolicitudesSalida.TabIndex = 0
         '
-        'numeroSolicitud
-        '
-        Me.numeroSolicitud.Frozen = True
-        Me.numeroSolicitud.HeaderText = "N°"
-        Me.numeroSolicitud.Name = "numeroSolicitud"
-        Me.numeroSolicitud.ReadOnly = True
-        Me.numeroSolicitud.Width = 30
-        '
-        'trabajador
-        '
-        Me.trabajador.Frozen = True
-        Me.trabajador.HeaderText = "Trabajador"
-        Me.trabajador.Name = "trabajador"
-        Me.trabajador.ReadOnly = True
-        Me.trabajador.Width = 200
-        '
-        'fechaInforme
-        '
-        Me.fechaInforme.HeaderText = "Fecha Solicitud"
-        Me.fechaInforme.Name = "fechaInforme"
-        Me.fechaInforme.Width = 65
-        '
-        'nombreSolicitante
-        '
-        Me.nombreSolicitante.HeaderText = "Solicitante"
-        Me.nombreSolicitante.Name = "nombreSolicitante"
-        Me.nombreSolicitante.ReadOnly = True
-        '
-        'rutTrabajador
-        '
-        Me.rutTrabajador.HeaderText = "RUT Trabajador"
-        Me.rutTrabajador.Name = "rutTrabajador"
-        Me.rutTrabajador.ReadOnly = True
-        Me.rutTrabajador.Width = 65
-        '
-        'cargoAutorizarPermiso
-        '
-        Me.cargoAutorizarPermiso.HeaderText = "Cargo"
-        Me.cargoAutorizarPermiso.Name = "cargoAutorizarPermiso"
-        Me.cargoAutorizarPermiso.ReadOnly = True
-        Me.cargoAutorizarPermiso.Width = 140
-        '
-        'empresa
-        '
-        Me.empresa.HeaderText = "Empresa"
-        Me.empresa.Name = "empresa"
-        Me.empresa.ReadOnly = True
-        Me.empresa.Width = 80
-        '
-        'fechaSalida
-        '
-        Me.fechaSalida.HeaderText = "Fecha Salida"
-        Me.fechaSalida.Name = "fechaSalida"
-        Me.fechaSalida.ReadOnly = True
-        Me.fechaSalida.Width = 65
-        '
-        'diaCompleto
-        '
-        Me.diaCompleto.HeaderText = "Dia Completo"
-        Me.diaCompleto.Name = "diaCompleto"
-        Me.diaCompleto.ReadOnly = True
-        Me.diaCompleto.Width = 30
-        '
-        'horaSalida
-        '
-        Me.horaSalida.HeaderText = "Hora Salida"
-        Me.horaSalida.Name = "horaSalida"
-        Me.horaSalida.ReadOnly = True
-        Me.horaSalida.Width = 35
-        '
-        'horaEntrada
-        '
-        Me.horaEntrada.HeaderText = "Hora Entrada"
-        Me.horaEntrada.Name = "horaEntrada"
-        Me.horaEntrada.ReadOnly = True
-        Me.horaEntrada.Width = 35
-        '
-        'horasTotales
-        '
-        Me.horasTotales.HeaderText = "Horas Totales"
-        Me.horasTotales.Name = "horasTotales"
-        Me.horasTotales.ReadOnly = True
-        Me.horasTotales.Width = 35
-        '
-        'tipoPermiso
-        '
-        Me.tipoPermiso.HeaderText = "Tipo de Permiso"
-        Me.tipoPermiso.Name = "tipoPermiso"
-        Me.tipoPermiso.ReadOnly = True
-        Me.tipoPermiso.Width = 70
-        '
-        'btnAutorizarPermiso
-        '
-        Me.btnAutorizarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutorizarPermiso.HeaderText = "Autorizar"
-        Me.btnAutorizarPermiso.Name = "btnAutorizarPermiso"
-        Me.btnAutorizarPermiso.Text = "Autorizar"
-        Me.btnAutorizarPermiso.UseColumnTextForButtonValue = True
-        Me.btnAutorizarPermiso.Width = 68
-        '
-        'btnRechazarPermiso
-        '
-        Me.btnRechazarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRechazarPermiso.HeaderText = "Rechazar"
-        Me.btnRechazarPermiso.Name = "btnRechazarPermiso"
-        Me.btnRechazarPermiso.Text = "Rechazar"
-        Me.btnRechazarPermiso.UseColumnTextForButtonValue = True
-        Me.btnRechazarPermiso.Width = 68
-        '
-        'btnImprimirPermiso
-        '
-        Me.btnImprimirPermiso.HeaderText = "Imprimir"
-        Me.btnImprimirPermiso.Name = "btnImprimirPermiso"
-        Me.btnImprimirPermiso.ReadOnly = True
-        Me.btnImprimirPermiso.Text = "Imprimir"
-        Me.btnImprimirPermiso.UseColumnTextForButtonValue = True
-        Me.btnImprimirPermiso.Width = 68
-        '
-        'btnVerHistorial
-        '
-        Me.btnVerHistorial.HeaderText = "Ver Historial"
-        Me.btnVerHistorial.Name = "btnVerHistorial"
-        Me.btnVerHistorial.Text = "Ver Historial"
-        Me.btnVerHistorial.UseColumnTextForButtonValue = True
-        Me.btnVerHistorial.Width = 68
-        '
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.Pnl_AutHrExt)
@@ -1484,57 +1589,127 @@ Partial Class FrmSolicPermHrasExt
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(448, 444)
+        Me.btnImprimir.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnImprimir.FlatAppearance.BorderSize = 0
+        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimir.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimir.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnImprimir.Image = Global.RRHH.My.Resources.Resources.printing32
+        Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnImprimir.Location = New System.Drawing.Point(816, 422)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(200, 34)
+        Me.btnImprimir.Size = New System.Drawing.Size(172, 80)
         Me.btnImprimir.TabIndex = 38
         Me.btnImprimir.Text = "Imprimir Formulario"
-        Me.btnImprimir.UseVisualStyleBackColor = True
+        Me.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnImprimir.UseVisualStyleBackColor = False
         '
         'chkTodas
         '
         Me.chkTodas.AutoSize = True
-        Me.chkTodas.Location = New System.Drawing.Point(219, 104)
+        Me.chkTodas.Location = New System.Drawing.Point(219, 105)
         Me.chkTodas.Name = "chkTodas"
-        Me.chkTodas.Size = New System.Drawing.Size(71, 17)
+        Me.chkTodas.Size = New System.Drawing.Size(71, 15)
         Me.chkTodas.TabIndex = 37
         Me.chkTodas.Text = "Ver todas"
-        Me.chkTodas.UseVisualStyleBackColor = True
+        Me.chkTodas.UseSelectable = True
         '
         'txbSolicitante
         '
-        Me.txbSolicitante.Location = New System.Drawing.Point(131, 63)
+        '
+        '
+        '
+        Me.txbSolicitante.CustomButton.Image = Nothing
+        Me.txbSolicitante.CustomButton.Location = New System.Drawing.Point(224, 2)
+        Me.txbSolicitante.CustomButton.Name = ""
+        Me.txbSolicitante.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbSolicitante.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbSolicitante.CustomButton.TabIndex = 1
+        Me.txbSolicitante.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbSolicitante.CustomButton.UseSelectable = True
+        Me.txbSolicitante.CustomButton.Visible = False
+        Me.txbSolicitante.Lines = New String(-1) {}
+        Me.txbSolicitante.Location = New System.Drawing.Point(131, 67)
+        Me.txbSolicitante.MaxLength = 32767
         Me.txbSolicitante.Name = "txbSolicitante"
+        Me.txbSolicitante.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbSolicitante.ReadOnly = True
+        Me.txbSolicitante.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbSolicitante.SelectedText = ""
+        Me.txbSolicitante.SelectionLength = 0
+        Me.txbSolicitante.SelectionStart = 0
+        Me.txbSolicitante.ShortcutsEnabled = True
         Me.txbSolicitante.Size = New System.Drawing.Size(242, 20)
         Me.txbSolicitante.TabIndex = 33
+        Me.txbSolicitante.UseSelectable = True
+        Me.txbSolicitante.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbSolicitante.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txbFecha
         '
+        '
+        '
+        '
+        Me.txbFecha.CustomButton.Image = Nothing
+        Me.txbFecha.CustomButton.Location = New System.Drawing.Point(82, 2)
+        Me.txbFecha.CustomButton.Name = ""
+        Me.txbFecha.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbFecha.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbFecha.CustomButton.TabIndex = 1
+        Me.txbFecha.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbFecha.CustomButton.UseSelectable = True
+        Me.txbFecha.CustomButton.Visible = False
+        Me.txbFecha.Lines = New String(-1) {}
         Me.txbFecha.Location = New System.Drawing.Point(131, 38)
+        Me.txbFecha.MaxLength = 32767
         Me.txbFecha.Name = "txbFecha"
+        Me.txbFecha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbFecha.ReadOnly = True
+        Me.txbFecha.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbFecha.SelectedText = ""
+        Me.txbFecha.SelectionLength = 0
+        Me.txbFecha.SelectionStart = 0
+        Me.txbFecha.ShortcutsEnabled = True
         Me.txbFecha.Size = New System.Drawing.Size(100, 20)
         Me.txbFecha.TabIndex = 36
+        Me.txbFecha.UseSelectable = True
+        Me.txbFecha.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbFecha.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'btnRechazarTodas
         '
-        Me.btnRechazarTodas.Location = New System.Drawing.Point(822, 443)
+        Me.btnRechazarTodas.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnRechazarTodas.FlatAppearance.BorderSize = 0
+        Me.btnRechazarTodas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazarTodas.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRechazarTodas.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnRechazarTodas.Image = CType(resources.GetObject("btnRechazarTodas.Image"), System.Drawing.Image)
+        Me.btnRechazarTodas.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnRechazarTodas.Location = New System.Drawing.Point(638, 422)
         Me.btnRechazarTodas.Name = "btnRechazarTodas"
-        Me.btnRechazarTodas.Size = New System.Drawing.Size(149, 35)
+        Me.btnRechazarTodas.Size = New System.Drawing.Size(172, 80)
         Me.btnRechazarTodas.TabIndex = 31
-        Me.btnRechazarTodas.Text = "Rechazar Todas Las Filas"
-        Me.btnRechazarTodas.UseVisualStyleBackColor = True
+        Me.btnRechazarTodas.Text = "Rechazar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Todas Las Filas"
+        Me.btnRechazarTodas.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnRechazarTodas.UseVisualStyleBackColor = False
         Me.btnRechazarTodas.Visible = False
         '
         'btnAutorizarTodas
         '
-        Me.btnAutorizarTodas.Location = New System.Drawing.Point(654, 444)
+        Me.btnAutorizarTodas.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnAutorizarTodas.FlatAppearance.BorderSize = 0
+        Me.btnAutorizarTodas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizarTodas.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutorizarTodas.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAutorizarTodas.Image = Global.RRHH.My.Resources.Resources.check_mark_white
+        Me.btnAutorizarTodas.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnAutorizarTodas.Location = New System.Drawing.Point(460, 422)
         Me.btnAutorizarTodas.Name = "btnAutorizarTodas"
-        Me.btnAutorizarTodas.Size = New System.Drawing.Size(149, 34)
+        Me.btnAutorizarTodas.Size = New System.Drawing.Size(172, 80)
         Me.btnAutorizarTodas.TabIndex = 30
-        Me.btnAutorizarTodas.Text = "Autorizar Todas las Filas"
-        Me.btnAutorizarTodas.UseVisualStyleBackColor = True
+        Me.btnAutorizarTodas.Text = "Autorizar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Todas las Filas"
+        Me.btnAutorizarTodas.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnAutorizarTodas.UseVisualStyleBackColor = False
         Me.btnAutorizarTodas.Visible = False
         '
         'Label1
@@ -1604,93 +1779,6 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvColaboradores.Size = New System.Drawing.Size(979, 230)
         Me.dgvColaboradores.TabIndex = 21
         '
-        'numero
-        '
-        Me.numero.Frozen = True
-        Me.numero.HeaderText = "N°"
-        Me.numero.Name = "numero"
-        Me.numero.ReadOnly = True
-        Me.numero.Width = 30
-        '
-        'nombreColaboradores
-        '
-        Me.nombreColaboradores.Frozen = True
-        Me.nombreColaboradores.HeaderText = "Nombre Colaborador"
-        Me.nombreColaboradores.Name = "nombreColaboradores"
-        Me.nombreColaboradores.ReadOnly = True
-        Me.nombreColaboradores.Width = 250
-        '
-        'rut
-        '
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.NullValue = Nothing
-        Me.rut.DefaultCellStyle = DataGridViewCellStyle13
-        Me.rut.HeaderText = "R.U.T."
-        Me.rut.MaxInputLength = 10
-        Me.rut.Name = "rut"
-        Me.rut.ReadOnly = True
-        '
-        'cargo
-        '
-        Me.cargo.HeaderText = "Cargo"
-        Me.cargo.Name = "cargo"
-        Me.cargo.ReadOnly = True
-        Me.cargo.Width = 175
-        '
-        'nombreEmpresa
-        '
-        Me.nombreEmpresa.HeaderText = "Nombre Empresa"
-        Me.nombreEmpresa.Name = "nombreEmpresa"
-        Me.nombreEmpresa.ReadOnly = True
-        Me.nombreEmpresa.Width = 125
-        '
-        'horaInicio
-        '
-        Me.horaInicio.HeaderText = "Horas Compromiso Inicio"
-        Me.horaInicio.Name = "horaInicio"
-        Me.horaInicio.ReadOnly = True
-        Me.horaInicio.Width = 80
-        '
-        'horaTermino
-        '
-        Me.horaTermino.HeaderText = "Horas Compromiso Termino"
-        Me.horaTermino.Name = "horaTermino"
-        Me.horaTermino.ReadOnly = True
-        Me.horaTermino.Width = 80
-        '
-        'fechaReal
-        '
-        Me.fechaReal.HeaderText = "Fecha Real"
-        Me.fechaReal.Name = "fechaReal"
-        Me.fechaReal.ReadOnly = True
-        '
-        'btnAutorizar
-        '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle14
-        Me.btnAutorizar.HeaderText = "Autorizar"
-        Me.btnAutorizar.Name = "btnAutorizar"
-        Me.btnAutorizar.Text = "Autorizar"
-        Me.btnAutorizar.ToolTipText = "autorizar empleado"
-        Me.btnAutorizar.UseColumnTextForButtonValue = True
-        '
-        'btnRechazar
-        '
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
-        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle15
-        Me.btnRechazar.HeaderText = "Rechazar"
-        Me.btnRechazar.Name = "btnRechazar"
-        Me.btnRechazar.Text = "Rechazar"
-        Me.btnRechazar.ToolTipText = "rechazar solicitud"
-        Me.btnRechazar.UseColumnTextForButtonValue = True
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -1711,21 +1799,45 @@ Partial Class FrmSolicPermHrasExt
         '
         'cmbNumeroSolicitud
         '
-        Me.cmbNumeroSolicitud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbNumeroSolicitud.FormattingEnabled = True
-        Me.cmbNumeroSolicitud.Location = New System.Drawing.Point(131, 10)
+        Me.cmbNumeroSolicitud.ItemHeight = 23
+        Me.cmbNumeroSolicitud.Location = New System.Drawing.Point(131, 5)
         Me.cmbNumeroSolicitud.Name = "cmbNumeroSolicitud"
-        Me.cmbNumeroSolicitud.Size = New System.Drawing.Size(100, 21)
+        Me.cmbNumeroSolicitud.Size = New System.Drawing.Size(100, 29)
         Me.cmbNumeroSolicitud.TabIndex = 28
+        Me.cmbNumeroSolicitud.UseSelectable = True
         '
         'txbDetalle
         '
+        '
+        '
+        '
+        Me.txbDetalle.CustomButton.Image = Nothing
+        Me.txbDetalle.CustomButton.Location = New System.Drawing.Point(349, 2)
+        Me.txbDetalle.CustomButton.Name = ""
+        Me.txbDetalle.CustomButton.Size = New System.Drawing.Size(135, 135)
+        Me.txbDetalle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbDetalle.CustomButton.TabIndex = 1
+        Me.txbDetalle.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbDetalle.CustomButton.UseSelectable = True
+        Me.txbDetalle.CustomButton.Visible = False
+        Me.txbDetalle.Lines = New String(-1) {}
         Me.txbDetalle.Location = New System.Drawing.Point(389, 16)
+        Me.txbDetalle.MaxLength = 32767
         Me.txbDetalle.Multiline = True
         Me.txbDetalle.Name = "txbDetalle"
+        Me.txbDetalle.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbDetalle.ReadOnly = True
+        Me.txbDetalle.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbDetalle.SelectedText = ""
+        Me.txbDetalle.SelectionLength = 0
+        Me.txbDetalle.SelectionStart = 0
+        Me.txbDetalle.ShortcutsEnabled = True
         Me.txbDetalle.Size = New System.Drawing.Size(487, 140)
         Me.txbDetalle.TabIndex = 29
+        Me.txbDetalle.UseSelectable = True
+        Me.txbDetalle.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbDetalle.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'TabPage5
         '
@@ -1761,7 +1873,7 @@ Partial Class FrmSolicPermHrasExt
         'lblNombreInformePermisos
         '
         Me.lblNombreInformePermisos.AutoSize = True
-        Me.lblNombreInformePermisos.Location = New System.Drawing.Point(418, 27)
+        Me.lblNombreInformePermisos.Location = New System.Drawing.Point(373, 21)
         Me.lblNombreInformePermisos.Name = "lblNombreInformePermisos"
         Me.lblNombreInformePermisos.Size = New System.Drawing.Size(94, 13)
         Me.lblNombreInformePermisos.TabIndex = 18
@@ -1779,12 +1891,12 @@ Partial Class FrmSolicPermHrasExt
         'chkBuscarTodosInformePermisos
         '
         Me.chkBuscarTodosInformePermisos.AutoSize = True
-        Me.chkBuscarTodosInformePermisos.Location = New System.Drawing.Point(308, 26)
+        Me.chkBuscarTodosInformePermisos.Location = New System.Drawing.Point(261, 20)
         Me.chkBuscarTodosInformePermisos.Name = "chkBuscarTodosInformePermisos"
-        Me.chkBuscarTodosInformePermisos.Size = New System.Drawing.Size(92, 17)
+        Me.chkBuscarTodosInformePermisos.Size = New System.Drawing.Size(93, 15)
         Me.chkBuscarTodosInformePermisos.TabIndex = 24
         Me.chkBuscarTodosInformePermisos.Text = "Buscar Todos"
-        Me.chkBuscarTodosInformePermisos.UseVisualStyleBackColor = True
+        Me.chkBuscarTodosInformePermisos.UseSelectable = True
         '
         'Label35
         '
@@ -1797,54 +1909,94 @@ Partial Class FrmSolicPermHrasExt
         '
         'btnImprimirInformePermisos
         '
-        Me.btnImprimirInformePermisos.Location = New System.Drawing.Point(814, 599)
+        Me.btnImprimirInformePermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnImprimirInformePermisos.FlatAppearance.BorderSize = 0
+        Me.btnImprimirInformePermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirInformePermisos.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnImprimirInformePermisos.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnImprimirInformePermisos.Image = Global.RRHH.My.Resources.Resources.printing32
+        Me.btnImprimirInformePermisos.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnImprimirInformePermisos.Location = New System.Drawing.Point(819, 570)
         Me.btnImprimirInformePermisos.Name = "btnImprimirInformePermisos"
-        Me.btnImprimirInformePermisos.Size = New System.Drawing.Size(231, 40)
+        Me.btnImprimirInformePermisos.Size = New System.Drawing.Size(223, 80)
         Me.btnImprimirInformePermisos.TabIndex = 23
         Me.btnImprimirInformePermisos.Text = "Imprimir"
-        Me.btnImprimirInformePermisos.UseVisualStyleBackColor = True
+        Me.btnImprimirInformePermisos.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnImprimirInformePermisos.UseVisualStyleBackColor = False
         '
         'cmbEmpresaInformePermisos
         '
-        Me.cmbEmpresaInformePermisos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEmpresaInformePermisos.FormattingEnabled = True
+        Me.cmbEmpresaInformePermisos.ItemHeight = 23
         Me.cmbEmpresaInformePermisos.Items.AddRange(New Object() {"Mindugar SA", "Mindugar Industrial", "Mindugar Montajes"})
-        Me.cmbEmpresaInformePermisos.Location = New System.Drawing.Point(84, 20)
+        Me.cmbEmpresaInformePermisos.Location = New System.Drawing.Point(90, 14)
         Me.cmbEmpresaInformePermisos.Name = "cmbEmpresaInformePermisos"
-        Me.cmbEmpresaInformePermisos.Size = New System.Drawing.Size(151, 21)
+        Me.cmbEmpresaInformePermisos.Size = New System.Drawing.Size(156, 29)
         Me.cmbEmpresaInformePermisos.TabIndex = 12
+        Me.cmbEmpresaInformePermisos.UseSelectable = True
         '
         'btnBuscarInformePermisos
         '
-        Me.btnBuscarInformePermisos.Location = New System.Drawing.Point(585, 599)
+        Me.btnBuscarInformePermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnBuscarInformePermisos.FlatAppearance.BorderSize = 0
+        Me.btnBuscarInformePermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarInformePermisos.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscarInformePermisos.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBuscarInformePermisos.Image = CType(resources.GetObject("btnBuscarInformePermisos.Image"), System.Drawing.Image)
+        Me.btnBuscarInformePermisos.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnBuscarInformePermisos.Location = New System.Drawing.Point(590, 570)
         Me.btnBuscarInformePermisos.Name = "btnBuscarInformePermisos"
-        Me.btnBuscarInformePermisos.Size = New System.Drawing.Size(223, 40)
+        Me.btnBuscarInformePermisos.Size = New System.Drawing.Size(223, 80)
         Me.btnBuscarInformePermisos.TabIndex = 22
         Me.btnBuscarInformePermisos.Text = "Buscar"
-        Me.btnBuscarInformePermisos.UseVisualStyleBackColor = True
+        Me.btnBuscarInformePermisos.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnBuscarInformePermisos.UseVisualStyleBackColor = False
         '
         'dtpInicioInformePermisos
         '
         Me.dtpInicioInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpInicioInformePermisos.Location = New System.Drawing.Point(114, 48)
+        Me.dtpInicioInformePermisos.Location = New System.Drawing.Point(120, 48)
         Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpInicioInformePermisos.Name = "dtpInicioInformePermisos"
-        Me.dtpInicioInformePermisos.Size = New System.Drawing.Size(121, 29)
+        Me.dtpInicioInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpInicioInformePermisos.TabIndex = 15
         '
         'txbRutInformePermisos
         '
         Me.txbRutInformePermisos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txbRutInformePermisos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txbRutInformePermisos.Location = New System.Drawing.Point(516, 55)
+        '
+        '
+        '
+        Me.txbRutInformePermisos.CustomButton.Image = Nothing
+        Me.txbRutInformePermisos.CustomButton.Location = New System.Drawing.Point(251, 2)
+        Me.txbRutInformePermisos.CustomButton.Name = ""
+        Me.txbRutInformePermisos.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbRutInformePermisos.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbRutInformePermisos.CustomButton.TabIndex = 1
+        Me.txbRutInformePermisos.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbRutInformePermisos.CustomButton.UseSelectable = True
+        Me.txbRutInformePermisos.CustomButton.Visible = False
+        Me.txbRutInformePermisos.Lines = New String(-1) {}
+        Me.txbRutInformePermisos.Location = New System.Drawing.Point(469, 42)
+        Me.txbRutInformePermisos.MaxLength = 32767
         Me.txbRutInformePermisos.Name = "txbRutInformePermisos"
+        Me.txbRutInformePermisos.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txbRutInformePermisos.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbRutInformePermisos.SelectedText = ""
+        Me.txbRutInformePermisos.SelectionLength = 0
+        Me.txbRutInformePermisos.SelectionStart = 0
+        Me.txbRutInformePermisos.ShortcutsEnabled = True
         Me.txbRutInformePermisos.Size = New System.Drawing.Size(269, 20)
         Me.txbRutInformePermisos.TabIndex = 21
+        Me.txbRutInformePermisos.UseSelectable = True
+        Me.txbRutInformePermisos.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbRutInformePermisos.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(29, 23)
+        Me.Label36.Location = New System.Drawing.Point(29, 22)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(51, 13)
         Me.Label36.TabIndex = 11
@@ -1854,24 +2006,47 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.txbNombreInformePermisos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txbNombreInformePermisos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txbNombreInformePermisos.Location = New System.Drawing.Point(516, 27)
+        '
+        '
+        '
+        Me.txbNombreInformePermisos.CustomButton.Image = Nothing
+        Me.txbNombreInformePermisos.CustomButton.Location = New System.Drawing.Point(251, 2)
+        Me.txbNombreInformePermisos.CustomButton.Name = ""
+        Me.txbNombreInformePermisos.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbNombreInformePermisos.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbNombreInformePermisos.CustomButton.TabIndex = 1
+        Me.txbNombreInformePermisos.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbNombreInformePermisos.CustomButton.UseSelectable = True
+        Me.txbNombreInformePermisos.CustomButton.Visible = False
+        Me.txbNombreInformePermisos.Lines = New String(-1) {}
+        Me.txbNombreInformePermisos.Location = New System.Drawing.Point(469, 17)
+        Me.txbNombreInformePermisos.MaxLength = 32767
         Me.txbNombreInformePermisos.Name = "txbNombreInformePermisos"
+        Me.txbNombreInformePermisos.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txbNombreInformePermisos.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbNombreInformePermisos.SelectedText = ""
+        Me.txbNombreInformePermisos.SelectionLength = 0
+        Me.txbNombreInformePermisos.SelectionStart = 0
+        Me.txbNombreInformePermisos.ShortcutsEnabled = True
         Me.txbNombreInformePermisos.Size = New System.Drawing.Size(269, 20)
         Me.txbNombreInformePermisos.TabIndex = 20
+        Me.txbNombreInformePermisos.UseSelectable = True
+        Me.txbNombreInformePermisos.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbNombreInformePermisos.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'dtpTerminoInformePermisos
         '
         Me.dtpTerminoInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTerminoInformePermisos.Location = New System.Drawing.Point(114, 83)
+        Me.dtpTerminoInformePermisos.Location = New System.Drawing.Point(120, 83)
         Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpTerminoInformePermisos.Name = "dtpTerminoInformePermisos"
-        Me.dtpTerminoInformePermisos.Size = New System.Drawing.Size(121, 29)
+        Me.dtpTerminoInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpTerminoInformePermisos.TabIndex = 16
         '
         'lblRutInformePermisos
         '
         Me.lblRutInformePermisos.AutoSize = True
-        Me.lblRutInformePermisos.Location = New System.Drawing.Point(418, 55)
+        Me.lblRutInformePermisos.Location = New System.Drawing.Point(373, 46)
         Me.lblRutInformePermisos.Name = "lblRutInformePermisos"
         Me.lblRutInformePermisos.Size = New System.Drawing.Size(27, 13)
         Me.lblRutInformePermisos.TabIndex = 19
@@ -2029,17 +2204,25 @@ Partial Class FrmSolicPermHrasExt
         Me.Pnl_InformeHHEE.Controls.Add(Me.txbNombreInformeHHEE)
         Me.Pnl_InformeHHEE.Location = New System.Drawing.Point(3, 3)
         Me.Pnl_InformeHHEE.Name = "Pnl_InformeHHEE"
-        Me.Pnl_InformeHHEE.Size = New System.Drawing.Size(1103, 573)
+        Me.Pnl_InformeHHEE.Size = New System.Drawing.Size(1103, 598)
         Me.Pnl_InformeHHEE.TabIndex = 45
         '
         'btnBuscarInformeHHEE
         '
-        Me.btnBuscarInformeHHEE.Location = New System.Drawing.Point(540, 508)
+        Me.btnBuscarInformeHHEE.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnBuscarInformeHHEE.FlatAppearance.BorderSize = 0
+        Me.btnBuscarInformeHHEE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarInformeHHEE.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBuscarInformeHHEE.Image = CType(resources.GetObject("btnBuscarInformeHHEE.Image"), System.Drawing.Image)
+        Me.btnBuscarInformeHHEE.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnBuscarInformeHHEE.Location = New System.Drawing.Point(635, 508)
         Me.btnBuscarInformeHHEE.Name = "btnBuscarInformeHHEE"
-        Me.btnBuscarInformeHHEE.Size = New System.Drawing.Size(231, 45)
+        Me.btnBuscarInformeHHEE.Size = New System.Drawing.Size(223, 80)
         Me.btnBuscarInformeHHEE.TabIndex = 36
         Me.btnBuscarInformeHHEE.Text = "Buscar"
-        Me.btnBuscarInformeHHEE.UseVisualStyleBackColor = True
+        Me.btnBuscarInformeHHEE.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnBuscarInformeHHEE.UseVisualStyleBackColor = False
         '
         'dgvColaboradoresInformeHHEE
         '
@@ -2157,74 +2340,101 @@ Partial Class FrmSolicPermHrasExt
         '
         'txbTotalEmpleadosInformeHHEE
         '
-        Me.txbTotalEmpleadosInformeHHEE.Location = New System.Drawing.Point(681, 165)
+        '
+        '
+        '
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Image = Nothing
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Location = New System.Drawing.Point(111, 2)
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Name = ""
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.TabIndex = 1
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.UseSelectable = True
+        Me.txbTotalEmpleadosInformeHHEE.CustomButton.Visible = False
+        Me.txbTotalEmpleadosInformeHHEE.Lines = New String(-1) {}
+        Me.txbTotalEmpleadosInformeHHEE.Location = New System.Drawing.Point(735, 159)
+        Me.txbTotalEmpleadosInformeHHEE.MaxLength = 32767
         Me.txbTotalEmpleadosInformeHHEE.Name = "txbTotalEmpleadosInformeHHEE"
+        Me.txbTotalEmpleadosInformeHHEE.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbTotalEmpleadosInformeHHEE.ReadOnly = True
-        Me.txbTotalEmpleadosInformeHHEE.Size = New System.Drawing.Size(100, 20)
+        Me.txbTotalEmpleadosInformeHHEE.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbTotalEmpleadosInformeHHEE.SelectedText = ""
+        Me.txbTotalEmpleadosInformeHHEE.SelectionLength = 0
+        Me.txbTotalEmpleadosInformeHHEE.SelectionStart = 0
+        Me.txbTotalEmpleadosInformeHHEE.ShortcutsEnabled = True
+        Me.txbTotalEmpleadosInformeHHEE.Size = New System.Drawing.Size(129, 20)
         Me.txbTotalEmpleadosInformeHHEE.TabIndex = 42
+        Me.txbTotalEmpleadosInformeHHEE.UseSelectable = True
+        Me.txbTotalEmpleadosInformeHHEE.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbTotalEmpleadosInformeHHEE.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Label31
         '
         Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.Location = New System.Drawing.Point(34, 55)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(68, 13)
+        Me.Label31.Size = New System.Drawing.Size(78, 17)
         Me.Label31.TabIndex = 27
         Me.Label31.Text = "Fecha Inicio:"
         '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(571, 165)
+        Me.Label32.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(571, 161)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(81, 13)
+        Me.Label32.Size = New System.Drawing.Size(99, 17)
         Me.Label32.TabIndex = 41
         Me.Label32.Text = "Total Empleado"
         '
         'Label33
         '
         Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.Location = New System.Drawing.Point(34, 90)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(81, 13)
+        Me.Label33.Size = New System.Drawing.Size(95, 17)
         Me.Label33.TabIndex = 28
         Me.Label33.Text = "Fecha Termino:"
         '
         'chkTodaEmpresaInformeHHEE
         '
         Me.chkTodaEmpresaInformeHHEE.AutoSize = True
-        Me.chkTodaEmpresaInformeHHEE.Location = New System.Drawing.Point(258, 25)
+        Me.chkTodaEmpresaInformeHHEE.Location = New System.Drawing.Point(274, 21)
         Me.chkTodaEmpresaInformeHHEE.Name = "chkTodaEmpresaInformeHHEE"
-        Me.chkTodaEmpresaInformeHHEE.Size = New System.Drawing.Size(95, 17)
+        Me.chkTodaEmpresaInformeHHEE.Size = New System.Drawing.Size(97, 15)
         Me.chkTodaEmpresaInformeHHEE.TabIndex = 40
         Me.chkTodaEmpresaInformeHHEE.Text = "Toda Empresa"
-        Me.chkTodaEmpresaInformeHHEE.UseVisualStyleBackColor = True
+        Me.chkTodaEmpresaInformeHHEE.UseSelectable = True
         Me.chkTodaEmpresaInformeHHEE.Visible = False
         '
         'cmbEmpresaInformeHHEE
         '
-        Me.cmbEmpresaInformeHHEE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbEmpresaInformeHHEE.FormattingEnabled = True
+        Me.cmbEmpresaInformeHHEE.ItemHeight = 23
         Me.cmbEmpresaInformeHHEE.Items.AddRange(New Object() {"Mindugar SA", "Mindugar Industrial", "Mindugar Montajes"})
-        Me.cmbEmpresaInformeHHEE.Location = New System.Drawing.Point(89, 21)
+        Me.cmbEmpresaInformeHHEE.Location = New System.Drawing.Point(105, 14)
         Me.cmbEmpresaInformeHHEE.Name = "cmbEmpresaInformeHHEE"
-        Me.cmbEmpresaInformeHHEE.Size = New System.Drawing.Size(152, 21)
+        Me.cmbEmpresaInformeHHEE.Size = New System.Drawing.Size(152, 29)
         Me.cmbEmpresaInformeHHEE.TabIndex = 26
+        Me.cmbEmpresaInformeHHEE.UseSelectable = True
         '
         'lblHHEEAcumuladasInformeHHEE
         '
         Me.lblHHEEAcumuladasInformeHHEE.AutoSize = True
-        Me.lblHHEEAcumuladasInformeHHEE.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHHEEAcumuladasInformeHHEE.Location = New System.Drawing.Point(568, 134)
+        Me.lblHHEEAcumuladasInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHHEEAcumuladasInformeHHEE.Location = New System.Drawing.Point(571, 133)
         Me.lblHHEEAcumuladasInformeHHEE.Name = "lblHHEEAcumuladasInformeHHEE"
-        Me.lblHHEEAcumuladasInformeHHEE.Size = New System.Drawing.Size(174, 17)
+        Me.lblHHEEAcumuladasInformeHHEE.Size = New System.Drawing.Size(159, 17)
         Me.lblHHEEAcumuladasInformeHHEE.TabIndex = 39
         Me.lblHHEEAcumuladasInformeHHEE.Text = "Horas Extras Acumuladas:"
         '
         'dtpInicioInformeHHEE
         '
         Me.dtpInicioInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpInicioInformeHHEE.Location = New System.Drawing.Point(119, 49)
+        Me.dtpInicioInformeHHEE.Location = New System.Drawing.Point(135, 49)
         Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpInicioInformeHHEE.Name = "dtpInicioInformeHHEE"
         Me.dtpInicioInformeHHEE.Size = New System.Drawing.Size(122, 29)
@@ -2232,34 +2442,66 @@ Partial Class FrmSolicPermHrasExt
         '
         'txbHHEEAcumuladasInformeHHEE
         '
-        Me.txbHHEEAcumuladasInformeHHEE.Location = New System.Drawing.Point(748, 131)
+        '
+        '
+        '
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Image = Nothing
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Location = New System.Drawing.Point(111, 2)
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Name = ""
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.TabIndex = 1
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.UseSelectable = True
+        Me.txbHHEEAcumuladasInformeHHEE.CustomButton.Visible = False
+        Me.txbHHEEAcumuladasInformeHHEE.Lines = New String(-1) {}
+        Me.txbHHEEAcumuladasInformeHHEE.Location = New System.Drawing.Point(735, 131)
+        Me.txbHHEEAcumuladasInformeHHEE.MaxLength = 32767
         Me.txbHHEEAcumuladasInformeHHEE.Name = "txbHHEEAcumuladasInformeHHEE"
+        Me.txbHHEEAcumuladasInformeHHEE.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txbHHEEAcumuladasInformeHHEE.ReadOnly = True
+        Me.txbHHEEAcumuladasInformeHHEE.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbHHEEAcumuladasInformeHHEE.SelectedText = ""
+        Me.txbHHEEAcumuladasInformeHHEE.SelectionLength = 0
+        Me.txbHHEEAcumuladasInformeHHEE.SelectionStart = 0
+        Me.txbHHEEAcumuladasInformeHHEE.ShortcutsEnabled = True
         Me.txbHHEEAcumuladasInformeHHEE.Size = New System.Drawing.Size(129, 20)
         Me.txbHHEEAcumuladasInformeHHEE.TabIndex = 38
+        Me.txbHHEEAcumuladasInformeHHEE.UseSelectable = True
+        Me.txbHHEEAcumuladasInformeHHEE.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbHHEEAcumuladasInformeHHEE.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'lblEmpresaInformeHHEE
         '
         Me.lblEmpresaInformeHHEE.AutoSize = True
-        Me.lblEmpresaInformeHHEE.Location = New System.Drawing.Point(34, 24)
+        Me.lblEmpresaInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpresaInformeHHEE.Location = New System.Drawing.Point(34, 20)
         Me.lblEmpresaInformeHHEE.Name = "lblEmpresaInformeHHEE"
-        Me.lblEmpresaInformeHHEE.Size = New System.Drawing.Size(51, 13)
+        Me.lblEmpresaInformeHHEE.Size = New System.Drawing.Size(62, 17)
         Me.lblEmpresaInformeHHEE.TabIndex = 25
         Me.lblEmpresaInformeHHEE.Text = "Empresa:"
         '
         'btnImprimirInformeHHEE
         '
-        Me.btnImprimirInformeHHEE.Location = New System.Drawing.Point(777, 508)
+        Me.btnImprimirInformeHHEE.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnImprimirInformeHHEE.FlatAppearance.BorderSize = 0
+        Me.btnImprimirInformeHHEE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimirInformeHHEE.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnImprimirInformeHHEE.Image = Global.RRHH.My.Resources.Resources.printing32
+        Me.btnImprimirInformeHHEE.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnImprimirInformeHHEE.Location = New System.Drawing.Point(864, 508)
         Me.btnImprimirInformeHHEE.Name = "btnImprimirInformeHHEE"
-        Me.btnImprimirInformeHHEE.Size = New System.Drawing.Size(231, 48)
+        Me.btnImprimirInformeHHEE.Size = New System.Drawing.Size(223, 80)
         Me.btnImprimirInformeHHEE.TabIndex = 37
         Me.btnImprimirInformeHHEE.Text = "Imprimir"
-        Me.btnImprimirInformeHHEE.UseVisualStyleBackColor = True
+        Me.btnImprimirInformeHHEE.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnImprimirInformeHHEE.UseVisualStyleBackColor = False
         '
         'dtpTerminoInformeHHEE
         '
         Me.dtpTerminoInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpTerminoInformeHHEE.Location = New System.Drawing.Point(119, 84)
+        Me.dtpTerminoInformeHHEE.Location = New System.Drawing.Point(135, 84)
         Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpTerminoInformeHHEE.Name = "dtpTerminoInformeHHEE"
         Me.dtpTerminoInformeHHEE.Size = New System.Drawing.Size(122, 29)
@@ -2268,28 +2510,30 @@ Partial Class FrmSolicPermHrasExt
         'lblNombreInformeHHEE
         '
         Me.lblNombreInformeHHEE.AutoSize = True
-        Me.lblNombreInformeHHEE.Location = New System.Drawing.Point(147, 131)
+        Me.lblNombreInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreInformeHHEE.Location = New System.Drawing.Point(147, 133)
         Me.lblNombreInformeHHEE.Name = "lblNombreInformeHHEE"
-        Me.lblNombreInformeHHEE.Size = New System.Drawing.Size(94, 13)
+        Me.lblNombreInformeHHEE.Size = New System.Drawing.Size(121, 17)
         Me.lblNombreInformeHHEE.TabIndex = 31
         Me.lblNombreInformeHHEE.Text = "Nombre Completo:"
         '
         'chkBuscarTodosInformeHHEE
         '
         Me.chkBuscarTodosInformeHHEE.AutoSize = True
-        Me.chkBuscarTodosInformeHHEE.Location = New System.Drawing.Point(37, 130)
+        Me.chkBuscarTodosInformeHHEE.Location = New System.Drawing.Point(37, 133)
         Me.chkBuscarTodosInformeHHEE.Name = "chkBuscarTodosInformeHHEE"
-        Me.chkBuscarTodosInformeHHEE.Size = New System.Drawing.Size(92, 17)
+        Me.chkBuscarTodosInformeHHEE.Size = New System.Drawing.Size(93, 15)
         Me.chkBuscarTodosInformeHHEE.TabIndex = 35
         Me.chkBuscarTodosInformeHHEE.Text = "Buscar Todos"
-        Me.chkBuscarTodosInformeHHEE.UseVisualStyleBackColor = True
+        Me.chkBuscarTodosInformeHHEE.UseSelectable = True
         '
         'lblRutInformeHHEE
         '
         Me.lblRutInformeHHEE.AutoSize = True
-        Me.lblRutInformeHHEE.Location = New System.Drawing.Point(147, 159)
+        Me.lblRutInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRutInformeHHEE.Location = New System.Drawing.Point(147, 161)
         Me.lblRutInformeHHEE.Name = "lblRutInformeHHEE"
-        Me.lblRutInformeHHEE.Size = New System.Drawing.Size(27, 13)
+        Me.lblRutInformeHHEE.Size = New System.Drawing.Size(30, 17)
         Me.lblRutInformeHHEE.TabIndex = 32
         Me.lblRutInformeHHEE.Text = "Rut:"
         '
@@ -2297,19 +2541,65 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.txbRutInformeHHEE.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txbRutInformeHHEE.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txbRutInformeHHEE.Location = New System.Drawing.Point(245, 159)
+        '
+        '
+        '
+        Me.txbRutInformeHHEE.CustomButton.Image = Nothing
+        Me.txbRutInformeHHEE.CustomButton.Location = New System.Drawing.Point(251, 2)
+        Me.txbRutInformeHHEE.CustomButton.Name = ""
+        Me.txbRutInformeHHEE.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbRutInformeHHEE.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbRutInformeHHEE.CustomButton.TabIndex = 1
+        Me.txbRutInformeHHEE.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbRutInformeHHEE.CustomButton.UseSelectable = True
+        Me.txbRutInformeHHEE.CustomButton.Visible = False
+        Me.txbRutInformeHHEE.Lines = New String(-1) {}
+        Me.txbRutInformeHHEE.Location = New System.Drawing.Point(275, 159)
+        Me.txbRutInformeHHEE.MaxLength = 32767
         Me.txbRutInformeHHEE.Name = "txbRutInformeHHEE"
+        Me.txbRutInformeHHEE.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txbRutInformeHHEE.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbRutInformeHHEE.SelectedText = ""
+        Me.txbRutInformeHHEE.SelectionLength = 0
+        Me.txbRutInformeHHEE.SelectionStart = 0
+        Me.txbRutInformeHHEE.ShortcutsEnabled = True
         Me.txbRutInformeHHEE.Size = New System.Drawing.Size(269, 20)
         Me.txbRutInformeHHEE.TabIndex = 34
+        Me.txbRutInformeHHEE.UseSelectable = True
+        Me.txbRutInformeHHEE.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbRutInformeHHEE.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'txbNombreInformeHHEE
         '
         Me.txbNombreInformeHHEE.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txbNombreInformeHHEE.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txbNombreInformeHHEE.Location = New System.Drawing.Point(245, 131)
+        '
+        '
+        '
+        Me.txbNombreInformeHHEE.CustomButton.Image = Nothing
+        Me.txbNombreInformeHHEE.CustomButton.Location = New System.Drawing.Point(251, 2)
+        Me.txbNombreInformeHHEE.CustomButton.Name = ""
+        Me.txbNombreInformeHHEE.CustomButton.Size = New System.Drawing.Size(15, 15)
+        Me.txbNombreInformeHHEE.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.txbNombreInformeHHEE.CustomButton.TabIndex = 1
+        Me.txbNombreInformeHHEE.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.txbNombreInformeHHEE.CustomButton.UseSelectable = True
+        Me.txbNombreInformeHHEE.CustomButton.Visible = False
+        Me.txbNombreInformeHHEE.Lines = New String(-1) {}
+        Me.txbNombreInformeHHEE.Location = New System.Drawing.Point(275, 131)
+        Me.txbNombreInformeHHEE.MaxLength = 32767
         Me.txbNombreInformeHHEE.Name = "txbNombreInformeHHEE"
+        Me.txbNombreInformeHHEE.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txbNombreInformeHHEE.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txbNombreInformeHHEE.SelectedText = ""
+        Me.txbNombreInformeHHEE.SelectionLength = 0
+        Me.txbNombreInformeHHEE.SelectionStart = 0
+        Me.txbNombreInformeHHEE.ShortcutsEnabled = True
         Me.txbNombreInformeHHEE.Size = New System.Drawing.Size(269, 20)
         Me.txbNombreInformeHHEE.TabIndex = 33
+        Me.txbNombreInformeHHEE.UseSelectable = True
+        Me.txbNombreInformeHHEE.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.txbNombreInformeHHEE.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Lbl_Titulo
         '
@@ -2326,12 +2616,217 @@ Partial Class FrmSolicPermHrasExt
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'dtpFecha
+        'numeroSolicitud
         '
-        Me.dtpFecha.Location = New System.Drawing.Point(0, 0)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFecha.TabIndex = 0
+        Me.numeroSolicitud.Frozen = True
+        Me.numeroSolicitud.HeaderText = "N°"
+        Me.numeroSolicitud.Name = "numeroSolicitud"
+        Me.numeroSolicitud.ReadOnly = True
+        Me.numeroSolicitud.Width = 30
+        '
+        'trabajador
+        '
+        Me.trabajador.Frozen = True
+        Me.trabajador.HeaderText = "Trabajador"
+        Me.trabajador.Name = "trabajador"
+        Me.trabajador.ReadOnly = True
+        Me.trabajador.Width = 200
+        '
+        'fechaInforme
+        '
+        Me.fechaInforme.HeaderText = "Fecha Solicitud"
+        Me.fechaInforme.Name = "fechaInforme"
+        Me.fechaInforme.Width = 65
+        '
+        'nombreSolicitante
+        '
+        Me.nombreSolicitante.HeaderText = "Solicitante"
+        Me.nombreSolicitante.Name = "nombreSolicitante"
+        Me.nombreSolicitante.ReadOnly = True
+        '
+        'rutTrabajador
+        '
+        Me.rutTrabajador.HeaderText = "RUT Trabajador"
+        Me.rutTrabajador.Name = "rutTrabajador"
+        Me.rutTrabajador.ReadOnly = True
+        Me.rutTrabajador.Width = 65
+        '
+        'cargoAutorizarPermiso
+        '
+        Me.cargoAutorizarPermiso.HeaderText = "Cargo"
+        Me.cargoAutorizarPermiso.Name = "cargoAutorizarPermiso"
+        Me.cargoAutorizarPermiso.ReadOnly = True
+        Me.cargoAutorizarPermiso.Width = 140
+        '
+        'empresa
+        '
+        Me.empresa.HeaderText = "Empresa"
+        Me.empresa.Name = "empresa"
+        Me.empresa.ReadOnly = True
+        Me.empresa.Width = 80
+        '
+        'fechaSalida
+        '
+        Me.fechaSalida.HeaderText = "Fecha Salida"
+        Me.fechaSalida.Name = "fechaSalida"
+        Me.fechaSalida.ReadOnly = True
+        Me.fechaSalida.Width = 65
+        '
+        'diaCompleto
+        '
+        Me.diaCompleto.HeaderText = "Dia Completo"
+        Me.diaCompleto.Name = "diaCompleto"
+        Me.diaCompleto.ReadOnly = True
+        Me.diaCompleto.Width = 30
+        '
+        'horaSalida
+        '
+        Me.horaSalida.HeaderText = "Hora Salida"
+        Me.horaSalida.Name = "horaSalida"
+        Me.horaSalida.ReadOnly = True
+        Me.horaSalida.Width = 35
+        '
+        'horaEntrada
+        '
+        Me.horaEntrada.HeaderText = "Hora Entrada"
+        Me.horaEntrada.Name = "horaEntrada"
+        Me.horaEntrada.ReadOnly = True
+        Me.horaEntrada.Width = 35
+        '
+        'horasTotales
+        '
+        Me.horasTotales.HeaderText = "Horas Totales"
+        Me.horasTotales.Name = "horasTotales"
+        Me.horasTotales.ReadOnly = True
+        Me.horasTotales.Width = 35
+        '
+        'tipoPermiso
+        '
+        Me.tipoPermiso.HeaderText = "Tipo de Permiso"
+        Me.tipoPermiso.Name = "tipoPermiso"
+        Me.tipoPermiso.ReadOnly = True
+        Me.tipoPermiso.Width = 70
+        '
+        'btnAutorizarPermiso
+        '
+        Me.btnAutorizarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizarPermiso.HeaderText = "Autorizar"
+        Me.btnAutorizarPermiso.Name = "btnAutorizarPermiso"
+        Me.btnAutorizarPermiso.Text = "Autorizar"
+        Me.btnAutorizarPermiso.UseColumnTextForButtonValue = True
+        Me.btnAutorizarPermiso.Width = 68
+        '
+        'btnRechazarPermiso
+        '
+        Me.btnRechazarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazarPermiso.HeaderText = "Rechazar"
+        Me.btnRechazarPermiso.Name = "btnRechazarPermiso"
+        Me.btnRechazarPermiso.Text = "Rechazar"
+        Me.btnRechazarPermiso.UseColumnTextForButtonValue = True
+        Me.btnRechazarPermiso.Width = 68
+        '
+        'btnImprimirPermiso
+        '
+        Me.btnImprimirPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirPermiso.HeaderText = "Imprimir"
+        Me.btnImprimirPermiso.Name = "btnImprimirPermiso"
+        Me.btnImprimirPermiso.ReadOnly = True
+        Me.btnImprimirPermiso.Text = "Imprimir"
+        Me.btnImprimirPermiso.UseColumnTextForButtonValue = True
+        Me.btnImprimirPermiso.Width = 68
+        '
+        'btnVerHistorial
+        '
+        Me.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVerHistorial.HeaderText = "Ver Historial"
+        Me.btnVerHistorial.Name = "btnVerHistorial"
+        Me.btnVerHistorial.Text = "Ver Historial"
+        Me.btnVerHistorial.UseColumnTextForButtonValue = True
+        Me.btnVerHistorial.Width = 68
+        '
+        'numero
+        '
+        Me.numero.Frozen = True
+        Me.numero.HeaderText = "N°"
+        Me.numero.Name = "numero"
+        Me.numero.ReadOnly = True
+        Me.numero.Width = 30
+        '
+        'nombreColaboradores
+        '
+        Me.nombreColaboradores.Frozen = True
+        Me.nombreColaboradores.HeaderText = "Nombre Colaborador"
+        Me.nombreColaboradores.Name = "nombreColaboradores"
+        Me.nombreColaboradores.ReadOnly = True
+        Me.nombreColaboradores.Width = 250
+        '
+        'rut
+        '
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.rut.DefaultCellStyle = DataGridViewCellStyle13
+        Me.rut.HeaderText = "R.U.T."
+        Me.rut.MaxInputLength = 10
+        Me.rut.Name = "rut"
+        Me.rut.ReadOnly = True
+        '
+        'cargo
+        '
+        Me.cargo.HeaderText = "Cargo"
+        Me.cargo.Name = "cargo"
+        Me.cargo.ReadOnly = True
+        Me.cargo.Width = 175
+        '
+        'nombreEmpresa
+        '
+        Me.nombreEmpresa.HeaderText = "Nombre Empresa"
+        Me.nombreEmpresa.Name = "nombreEmpresa"
+        Me.nombreEmpresa.ReadOnly = True
+        Me.nombreEmpresa.Width = 125
+        '
+        'horaInicio
+        '
+        Me.horaInicio.HeaderText = "Horas Compromiso Inicio"
+        Me.horaInicio.Name = "horaInicio"
+        Me.horaInicio.ReadOnly = True
+        Me.horaInicio.Width = 80
+        '
+        'horaTermino
+        '
+        Me.horaTermino.HeaderText = "Horas Compromiso Termino"
+        Me.horaTermino.Name = "horaTermino"
+        Me.horaTermino.ReadOnly = True
+        Me.horaTermino.Width = 80
+        '
+        'fechaReal
+        '
+        Me.fechaReal.HeaderText = "Fecha Real"
+        Me.fechaReal.Name = "fechaReal"
+        Me.fechaReal.ReadOnly = True
+        '
+        'btnAutorizar
+        '
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle14
+        Me.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizar.HeaderText = "Autorizar"
+        Me.btnAutorizar.Name = "btnAutorizar"
+        Me.btnAutorizar.Text = "Autorizar"
+        Me.btnAutorizar.ToolTipText = "autorizar empleado"
+        Me.btnAutorizar.UseColumnTextForButtonValue = True
+        '
+        'btnRechazar
+        '
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle15
+        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazar.HeaderText = "Rechazar"
+        Me.btnRechazar.Name = "btnRechazar"
+        Me.btnRechazar.Text = "Rechazar"
+        Me.btnRechazar.ToolTipText = "rechazar solicitud"
+        Me.btnRechazar.UseColumnTextForButtonValue = True
         '
         'FrmSolicPermHrasExt
         '
@@ -2393,9 +2888,9 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents dtpTermino As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents dtpInicio As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents btnImprimir As Button
-    Friend WithEvents chkTodas As CheckBox
-    Friend WithEvents txbSolicitante As TextBox
-    Friend WithEvents txbFecha As TextBox
+    Friend WithEvents chkTodas As MetroFramework.Controls.MetroCheckBox ' CheckBox
+    Friend WithEvents txbSolicitante As MetroFramework.Controls.MetroTextBox 'TextBox
+    Friend WithEvents txbFecha As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents btnRechazarTodas As Button
     Friend WithEvents btnAutorizarTodas As Button
     Friend WithEvents Label1 As Label
@@ -2403,13 +2898,13 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents dgvColaboradores As MetroFramework.Controls.MetroGrid 'DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents cmbNumeroSolicitud As ComboBox
-    Friend WithEvents txbDetalle As TextBox
+    Friend WithEvents cmbNumeroSolicitud As MetroFramework.Controls.MetroComboBox ' ComboBox
+    Friend WithEvents txbDetalle As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents TreeView1 As Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView 'TreeView
     Friend WithEvents Lbl_Titulo As Label
     Friend WithEvents Pnl_AutPermisos As Panel
     Friend WithEvents Pnl_Central As Panel
-    Friend WithEvents chkVerPendientes As CheckBox
+    Friend WithEvents chkVerPendientes As MetroFramework.Controls.MetroCheckBox 'CheckBox
     Friend WithEvents dtpFechaTermino As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents btnVolver As Button
     Friend WithEvents dtpFechaInicio As MetroFramework.Controls.MetroDateTime 'DateTimePicker
@@ -2420,31 +2915,31 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents Pnl_SolHrasExt As Panel
     Friend WithEvents Pnl_SolicitudPermisos As Panel
     Friend WithEvents pnlModificar As Panel
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents cmbModificarTrabajador As ComboBox
+    Friend WithEvents ComboBox1 As MetroFramework.Controls.MetroComboBox 'ComboBox
+    Friend WithEvents cmbModificarTrabajador As MetroFramework.Controls.MetroComboBox 'ComboBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents chkDiaCompleto As CheckBox
+    Friend WithEvents chkDiaCompleto As MetroFramework.Controls.MetroCheckBox 'CheckBox
     Friend WithEvents pnlHora As Panel
     Friend WithEvents dtpHoraSalida As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents Label10 As Label
     Friend WithEvents dtpHoraEntrada As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents Label9 As Label
-    Friend WithEvents txbTotalHoras As TextBox
+    Friend WithEvents txbTotalHoras As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents cmbJefes As ComboBox
+    Friend WithEvents cmbJefes As MetroFramework.Controls.MetroComboBox 'ComboBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents txbTramite As TextBox
-    Friend WithEvents txbEmpresa As TextBox
+    Friend WithEvents txbTramite As MetroFramework.Controls.MetroTextBox 'TextBox
+    Friend WithEvents txbEmpresa As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents txbTrabajador As TextBox
-    Friend WithEvents txbCargo As TextBox
+    Friend WithEvents txbTrabajador As MetroFramework.Controls.MetroTextBox 'TextBox
+    Friend WithEvents txbCargo As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents txbRut As TextBox
-    Friend WithEvents txbFechaIngreso As TextBox
+    Friend WithEvents txbRut As MetroFramework.Controls.MetroTextBox 'TextBox
+    Friend WithEvents txbFechaIngreso As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents lblArea As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
@@ -2457,47 +2952,19 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents rbPermisoComisionServicio As RadioButton
     Friend WithEvents btnAgregarSolicitud As Button
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents ComboBox2 As MetroFramework.Controls.MetroComboBox ' ComboBox
     Friend WithEvents Label24 As Label
     Friend WithEvents btnSolicitar As Button
-    Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents dgvColaboradoresSHHEE As MetroFramework.Controls.MetroGrid 'DataGridView
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents Label29 As Label
-    Friend WithEvents TxtBxDetalleSHX As TextBox
+    Friend WithEvents TxtBxDetalleSHX As MetroFramework.Controls.MetroTextBox ' TextBox
     Friend WithEvents Label30 As Label
-    Friend WithEvents txbHorasExtras As TextBox
-    Friend WithEvents txbSupervisorSolicitante As TextBox
-    Friend WithEvents numeroSolicitud As DataGridViewTextBoxColumn
-    Friend WithEvents trabajador As DataGridViewTextBoxColumn
-    Friend WithEvents fechaInforme As DataGridViewTextBoxColumn
-    Friend WithEvents nombreSolicitante As DataGridViewTextBoxColumn
-    Friend WithEvents rutTrabajador As DataGridViewTextBoxColumn
-    Friend WithEvents cargoAutorizarPermiso As DataGridViewTextBoxColumn
-    Friend WithEvents empresa As DataGridViewTextBoxColumn
-    Friend WithEvents fechaSalida As DataGridViewTextBoxColumn
-    Friend WithEvents diaCompleto As DataGridViewTextBoxColumn
-    Friend WithEvents horaSalida As DataGridViewTextBoxColumn
-    Friend WithEvents horaEntrada As DataGridViewTextBoxColumn
-    Friend WithEvents horasTotales As DataGridViewTextBoxColumn
-    Friend WithEvents tipoPermiso As DataGridViewTextBoxColumn
-    Friend WithEvents btnAutorizarPermiso As DataGridViewButtonColumn
-    Friend WithEvents btnRechazarPermiso As DataGridViewButtonColumn
-    Friend WithEvents btnImprimirPermiso As DataGridViewButtonColumn
-    Friend WithEvents btnVerHistorial As DataGridViewButtonColumn
-    Friend WithEvents numero As DataGridViewTextBoxColumn
-    Friend WithEvents nombreColaboradores As DataGridViewTextBoxColumn
-    Friend WithEvents rut As DataGridViewTextBoxColumn
-    Friend WithEvents cargo As DataGridViewTextBoxColumn
-    Friend WithEvents nombreEmpresa As DataGridViewTextBoxColumn
-    Friend WithEvents horaInicio As DataGridViewTextBoxColumn
-    Friend WithEvents horaTermino As DataGridViewTextBoxColumn
-    Friend WithEvents fechaReal As DataGridViewTextBoxColumn
-    Friend WithEvents btnAutorizar As DataGridViewButtonColumn
-    Friend WithEvents btnRechazar As DataGridViewButtonColumn
+    Friend WithEvents txbHorasExtras As New MetroFramework.Controls.MetroTextBox 'TextBox
+    Friend WithEvents txbSupervisorSolicitante As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Pnl_InformeHHEE As Panel
     Private WithEvents btnBuscarInformeHHEE As Button
     Friend WithEvents dgvColaboradoresInformeHHEE As MetroFramework.Controls.MetroGrid 'DataGridView
@@ -2510,35 +2977,35 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents colHoraTerminoInformeHHEE As DataGridViewTextBoxColumn
     Friend WithEvents colTotalHorasExtrasInformeHHEE As DataGridViewTextBoxColumn
     Friend WithEvents colFechaRealInformeHHEE As DataGridViewTextBoxColumn
-    Private WithEvents txbTotalEmpleadosInformeHHEE As TextBox
+    Private WithEvents txbTotalEmpleadosInformeHHEE As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Label31 As Label
     Private WithEvents Label32 As Label
     Friend WithEvents Label33 As Label
-    Private WithEvents chkTodaEmpresaInformeHHEE As CheckBox
-    Friend WithEvents cmbEmpresaInformeHHEE As ComboBox
+    Private WithEvents chkTodaEmpresaInformeHHEE As MetroFramework.Controls.MetroCheckBox 'CheckBox
+    Friend WithEvents cmbEmpresaInformeHHEE As MetroFramework.Controls.MetroComboBox ' ComboBox
     Private WithEvents lblHHEEAcumuladasInformeHHEE As Label
     Friend WithEvents dtpInicioInformeHHEE As MetroFramework.Controls.MetroDateTime 'DateTimePicker
-    Private WithEvents txbHHEEAcumuladasInformeHHEE As TextBox
+    Private WithEvents txbHHEEAcumuladasInformeHHEE As MetroFramework.Controls.MetroTextBox ' TextBox
     Friend WithEvents lblEmpresaInformeHHEE As Label
     Private WithEvents btnImprimirInformeHHEE As Button
     Friend WithEvents dtpTerminoInformeHHEE As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents lblNombreInformeHHEE As Label
-    Private WithEvents chkBuscarTodosInformeHHEE As CheckBox
+    Private WithEvents chkBuscarTodosInformeHHEE As MetroFramework.Controls.MetroCheckBox 'CheckBox
     Friend WithEvents lblRutInformeHHEE As Label
-    Friend WithEvents txbRutInformeHHEE As TextBox
-    Friend WithEvents txbNombreInformeHHEE As TextBox
+    Friend WithEvents txbRutInformeHHEE As MetroFramework.Controls.MetroTextBox 'TextBox
+    Friend WithEvents txbNombreInformeHHEE As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Pnl_InformePermisos As Panel
     Friend WithEvents lblNombreInformePermisos As Label
     Friend WithEvents Label34 As Label
-    Private WithEvents chkBuscarTodosInformePermisos As CheckBox
+    Private WithEvents chkBuscarTodosInformePermisos As MetroFramework.Controls.MetroCheckBox 'CheckBox
     Friend WithEvents Label35 As Label
     Private WithEvents btnImprimirInformePermisos As Button
-    Friend WithEvents cmbEmpresaInformePermisos As ComboBox
+    Friend WithEvents cmbEmpresaInformePermisos As MetroFramework.Controls.MetroComboBox ' ComboBox
     Private WithEvents btnBuscarInformePermisos As Button
     Friend WithEvents dtpInicioInformePermisos As MetroFramework.Controls.MetroDateTime 'DateTimePicker
-    Friend WithEvents txbRutInformePermisos As TextBox
+    Friend WithEvents txbRutInformePermisos As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents Label36 As Label
-    Friend WithEvents txbNombreInformePermisos As TextBox
+    Friend WithEvents txbNombreInformePermisos As MetroFramework.Controls.MetroTextBox 'TextBox
     Friend WithEvents dtpTerminoInformePermisos As MetroFramework.Controls.MetroDateTime 'DateTimePicker
     Friend WithEvents lblRutInformePermisos As Label
     Friend WithEvents dgvSolicitudesSalidaInformePermisos As MetroFramework.Controls.MetroGrid 'DataGridView
@@ -2571,5 +3038,34 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents dtpFecha As MetroFramework.Controls.MetroDateTime
+    'Friend WithEvents dtpFecha As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents dtpfech As MetroFramework.Controls.MetroDateTime
+    Friend WithEvents ComboBox3 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents numeroSolicitud As DataGridViewTextBoxColumn
+    Friend WithEvents trabajador As DataGridViewTextBoxColumn
+    Friend WithEvents fechaInforme As DataGridViewTextBoxColumn
+    Friend WithEvents nombreSolicitante As DataGridViewTextBoxColumn
+    Friend WithEvents rutTrabajador As DataGridViewTextBoxColumn
+    Friend WithEvents cargoAutorizarPermiso As DataGridViewTextBoxColumn
+    Friend WithEvents empresa As DataGridViewTextBoxColumn
+    Friend WithEvents fechaSalida As DataGridViewTextBoxColumn
+    Friend WithEvents diaCompleto As DataGridViewTextBoxColumn
+    Friend WithEvents horaSalida As DataGridViewTextBoxColumn
+    Friend WithEvents horaEntrada As DataGridViewTextBoxColumn
+    Friend WithEvents horasTotales As DataGridViewTextBoxColumn
+    Friend WithEvents tipoPermiso As DataGridViewTextBoxColumn
+    Friend WithEvents btnAutorizarPermiso As DataGridViewButtonColumn
+    Friend WithEvents btnRechazarPermiso As DataGridViewButtonColumn
+    Friend WithEvents btnImprimirPermiso As DataGridViewButtonColumn
+    Friend WithEvents btnVerHistorial As DataGridViewButtonColumn
+    Friend WithEvents numero As DataGridViewTextBoxColumn
+    Friend WithEvents nombreColaboradores As DataGridViewTextBoxColumn
+    Friend WithEvents rut As DataGridViewTextBoxColumn
+    Friend WithEvents cargo As DataGridViewTextBoxColumn
+    Friend WithEvents nombreEmpresa As DataGridViewTextBoxColumn
+    Friend WithEvents horaInicio As DataGridViewTextBoxColumn
+    Friend WithEvents horaTermino As DataGridViewTextBoxColumn
+    Friend WithEvents fechaReal As DataGridViewTextBoxColumn
+    Friend WithEvents btnAutorizar As DataGridViewButtonColumn
+    Friend WithEvents btnRechazar As DataGridViewButtonColumn
 End Class

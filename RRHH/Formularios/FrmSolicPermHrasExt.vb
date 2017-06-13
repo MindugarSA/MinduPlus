@@ -131,7 +131,7 @@ Public Class FrmSolicPermHrasExt
 
                     txbSupervisorSolicitante.Text = MDIParent1.TxtBx_UserName.Text
                     'MDIParent1.Panel2.Visible = False
-                    dtpFecha.Value = Date.Now.ToString("dd-MM-yyyy")
+                    dtpfech.Value = Date.Now.ToString("dd-MM-yyyy")
 
                     ComboBox3.DataSource = listaAreas()
                     If modoEntrada = 90002 Then
@@ -757,9 +757,9 @@ Public Class FrmSolicPermHrasExt
 
     ' ----------------------- Solicitud Horas Extras -----------------------------------------
     'ok
-    Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFecha.ValueChanged
+    Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpfech.ValueChanged
         For i = 0 To dgvColaboradoresSHHEE.RowCount - 2
-            dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value = dtpFecha.Value.ToString("dd-MM-yyyy")
+            dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value = dtpfech.Value.ToString("dd-MM-yyyy")
         Next
     End Sub
     ''Ok
@@ -921,7 +921,7 @@ Public Class FrmSolicPermHrasExt
                 dgvColaboradoresSHHEE.Rows(e.RowIndex - 1).Cells("horaTerminoSolicitarHHEE").Value = (18 + txbHorasExtras.Text - 24).ToString + ":00"
             End If
 
-            dgvColaboradoresSHHEE.Rows(e.RowIndex - 1).Cells("fechaRealSolicitarHHEE").Value = dtpFecha.Value.ToString("dd-MM-yyyy")
+            dgvColaboradoresSHHEE.Rows(e.RowIndex - 1).Cells("fechaRealSolicitarHHEE").Value = dtpfech.Value.ToString("dd-MM-yyyy")
         End If
 
     End Sub
