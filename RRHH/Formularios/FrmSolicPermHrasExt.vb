@@ -29,13 +29,9 @@ Public Class FrmSolicPermHrasExt
     Public Sub New(modo As Integer)
         eventFlag = False
         ' Llamada necesaria para el diseñador.
-        'lala la comentando
-        'Otro comentario mas
         InitializeComponent()
         modoEntrada = modo
         eventFlag = True
-        'btnVolver.Location = New Point(3, MDIParent1.Size.Height - btnVolver.Size.Height - 170)
-        'TreeView1.Size = New Size(TreeView1.Size.Width, btnVolver.Location.Y - TreeView1.Location.Y - 25)
 
     End Sub
 
@@ -47,6 +43,7 @@ Public Class FrmSolicPermHrasExt
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
+        TabControl1.Visible = False
         Me.WindowState = FormWindowState.Maximized
         Me.TreeView1.ExpandAll()
         If modoEntrada = 90001 Then
@@ -92,6 +89,8 @@ Public Class FrmSolicPermHrasExt
             Case UCase("Nd_SolPermisos")
                 If MDIParent1.RevisaAcceso(90001) Then
                     Lbl_Titulo.Text = "Solicitud de Permisos"
+                    Pnl_SolPermisos.Parent = pnlCentral
+
                     Pnl_SolPermisos.Location = New Point(3, 52)
                     Pnl_SolPermisos.Visible = True
                     Pnl_SolPermisos.Dock = DockStyle.Fill
@@ -123,6 +122,8 @@ Public Class FrmSolicPermHrasExt
             Case UCase("Nd_SolHrExt")
                 If MDIParent1.RevisaAcceso(90002) Then
                     Lbl_Titulo.Text = "Solicitud de Horas Extras"
+                    'TabControl1.
+                    Pnl_SolHrasExt.Parent = pnlCentral
                     Pnl_SolHrasExt.Location = New Point(3, 52)
                     Pnl_SolHrasExt.Visible = True
                     Pnl_SolHrasExt.Dock = DockStyle.Fill
@@ -130,7 +131,7 @@ Public Class FrmSolicPermHrasExt
 
                     txbSupervisorSolicitante.Text = MDIParent1.TxtBx_UserName.Text
                     'MDIParent1.Panel2.Visible = False
-                    dtpFecha.Value = Date.Now.ToString("dd-MM-yyyy")
+                    dtpfech.Value = Date.Now.ToString("dd-MM-yyyy")
 
                     ComboBox3.DataSource = listaAreas()
                     If modoEntrada = 90002 Then
@@ -165,6 +166,8 @@ Public Class FrmSolicPermHrasExt
             Case UCase("Nd_AutPermisos")
                 If MDIParent1.RevisaAcceso(90010) Then
                     Lbl_Titulo.Text = "Autoriza  Permisos"
+                    Pnl_AutPermisos.Parent = pnlCentral
+
                     Pnl_AutPermisos.Location = New Point(3, 52)
                     Pnl_AutPermisos.Visible = True
                     Pnl_AutPermisos.Dock = DockStyle.Fill
@@ -186,6 +189,8 @@ Public Class FrmSolicPermHrasExt
             Case UCase("Nd_AutHrExt")
                 If MDIParent1.RevisaAcceso(90011) Then
                     Lbl_Titulo.Text = "Autoriza Horas Extras"
+                    Pnl_AutHrExt.Parent = pnlCentral
+
                     Pnl_AutHrExt.Location = New Point(3, 52)
                     Pnl_AutHrExt.Visible = True
                     ' MDIParent1.Panel2.Visible = False
@@ -207,6 +212,8 @@ Public Class FrmSolicPermHrasExt
             Case UCase("Nd_InformeHorasExtras")
                 If MDIParent1.RevisaAcceso(90021) Then
                     Lbl_Titulo.Text = "Informe Horas Extras"
+                    Pnl_InformeHHEE.Parent = pnlCentral
+
                     Pnl_InformeHHEE.Location = New Point(3, 52)
                     Pnl_InformeHHEE.Dock = DockStyle.Fill
                     Pnl_InformeHHEE.Visible = True
@@ -231,6 +238,8 @@ Public Class FrmSolicPermHrasExt
 
             Case UCase("Nd_InformePermisos")
                 If MDIParent1.RevisaAcceso(90020) Then
+                    Pnl_InformePermisos.Parent = pnlCentral
+
                     Pnl_InformePermisos.Location = New Point(3, 52)
                     Pnl_InformePermisos.Dock = DockStyle.Fill
                     Pnl_InformePermisos.Visible = True
@@ -748,9 +757,9 @@ Public Class FrmSolicPermHrasExt
 
     ' ----------------------- Solicitud Horas Extras -----------------------------------------
     'ok
-    Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpFecha.ValueChanged
+    Private Sub dtpFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtpfech.ValueChanged
         For i = 0 To dgvColaboradoresSHHEE.RowCount - 2
-            dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value = dtpFecha.Value.ToString("dd-MM-yyyy")
+            dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value = dtpfech.Value.ToString("dd-MM-yyyy")
         Next
     End Sub
     ''Ok
@@ -912,7 +921,7 @@ Public Class FrmSolicPermHrasExt
                 dgvColaboradoresSHHEE.Rows(e.RowIndex - 1).Cells("horaTerminoSolicitarHHEE").Value = (18 + txbHorasExtras.Text - 24).ToString + ":00"
             End If
 
-            dgvColaboradoresSHHEE.Rows(e.RowIndex - 1).Cells("fechaRealSolicitarHHEE").Value = dtpFecha.Value.ToString("dd-MM-yyyy")
+            dgvColaboradoresSHHEE.Rows(e.RowIndex - 1).Cells("fechaRealSolicitarHHEE").Value = dtpfech.Value.ToString("dd-MM-yyyy")
         End If
 
     End Sub
@@ -2172,5 +2181,6 @@ Public Class FrmSolicPermHrasExt
         MDIParent1.Desplazamiento_Tiles()
         Me.Close()
     End Sub
+
 
 End Class
