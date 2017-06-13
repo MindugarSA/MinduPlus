@@ -117,6 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBuscarInformeHHEE.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4QYKEQIHQIdJJQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJzSURBVFhH
+        tZe/Sx1BFIUjIkLUQCBdsLKwCHbB0kJIFdAi/4Fl8A+QlArpBSEBk8rKMpamSJ9fhQGbEBLTWARCGkNC
+        SDbfeXt8b2d2dt/u+t4HB8Rz751xdubOeG0YWZbNo4foBfqAvqOf6CN6hbbRXTThlNFAwRvoGWrKO7Tk
+        9KtBoXvoq6q25Dd6hCZdqh0kXkdP0VV5jRZdtjkkDRv8HB2hA3SK/qIqPqEZlx4OwVr2FL/QFrrt0D78
+        bg6toy8oxZ5D6yFQGy71zd+iOw6rhBhNZF8JEf/QqsOqISi12zX4lEMaQbyOZMxnNOuQMpg65zFa9qF/
+        eQw5U+i9CkRsOqQMpppMzJbt1pC7hP70qgw4tl0GUx0uprTh2kD+m7xMH/WHadshGGqvRc5tdYYaT/JS
+        AQu2QzDU24sc2eoMNTbyUgErtkMwdLEUObDVGWo8yEsFpI8jhm61Iqe2OkONx3mpgHnbIRi6Uouovc7Z
+        7gT5L3uVBmiV09c1Rqp5rNtuDbnqqj96VQac2C6DqcdEjHp7p1Ug73mvQsiO7TKYE0iPiZh9hzSGnPt5
+        asAFuuWQNASoe6lZxOjzNLoPiNPg35QUseuQegjUSyaFenvlUwtP3zy17JdsOLQeAieRXjIp1NvVXtXh
+        1GR0znXUtNvjDRejlV3zMPUQuIj0khk1rSYxg/aQHhOjpPkkBMGrSI+Jpmi37yJ9otSGFq0nMYs20bGT
+        Y9ThTtAO6h81fl5Do5nEJSRNowW0grQ6eklV/jeEN/pJtEWDeLAU+v2yQ8cHg9RN4tBh44WBqiZx5pDx
+        w2CpSVRfUuOAAZfRITrT4FmW3fwPoHnY1iV5ZsUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="colNumeroInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colNombreColaboradoresInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colRutInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colDepartamentoInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colCargoInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colHoraInicioInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colHoraTerminoInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colTotalHorasExtrasInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colFechaRealInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="numeroSolicitarHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -198,7 +244,6 @@
   <metadata name="btnVerHistorial.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnRechazarTodas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
@@ -289,51 +334,6 @@
     <value>True</value>
   </metadata>
   <metadata name="colTipoPermisoInformePermisos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnBuscarInformeHHEE.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QYKEQIHQIdJJQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJzSURBVFhH
-        tZe/Sx1BFIUjIkLUQCBdsLKwCHbB0kJIFdAi/4Fl8A+QlArpBSEBk8rKMpamSJ9fhQGbEBLTWARCGkNC
-        SDbfeXt8b2d2dt/u+t4HB8Rz751xdubOeG0YWZbNo4foBfqAvqOf6CN6hbbRXTThlNFAwRvoGWrKO7Tk
-        9KtBoXvoq6q25Dd6hCZdqh0kXkdP0VV5jRZdtjkkDRv8HB2hA3SK/qIqPqEZlx4OwVr2FL/QFrrt0D78
-        bg6toy8oxZ5D6yFQGy71zd+iOw6rhBhNZF8JEf/QqsOqISi12zX4lEMaQbyOZMxnNOuQMpg65zFa9qF/
-        eQw5U+i9CkRsOqQMpppMzJbt1pC7hP70qgw4tl0GUx0uprTh2kD+m7xMH/WHadshGGqvRc5tdYYaT/JS
-        AQu2QzDU24sc2eoMNTbyUgErtkMwdLEUObDVGWo8yEsFpI8jhm61Iqe2OkONx3mpgHnbIRi6Uouovc7Z
-        7gT5L3uVBmiV09c1Rqp5rNtuDbnqqj96VQac2C6DqcdEjHp7p1Ug73mvQsiO7TKYE0iPiZh9hzSGnPt5
-        asAFuuWQNASoe6lZxOjzNLoPiNPg35QUseuQegjUSyaFenvlUwtP3zy17JdsOLQeAieRXjIp1NvVXtXh
-        1GR0znXUtNvjDRejlV3zMPUQuIj0khk1rSYxg/aQHhOjpPkkBMGrSI+Jpmi37yJ9otSGFq0nMYs20bGT
-        Y9ThTtAO6h81fl5Do5nEJSRNowW0grQ6eklV/jeEN/pJtEWDeLAU+v2yQ8cHg9RN4tBh44WBqiZx5pDx
-        w2CpSVRfUuOAAZfRITrT4FmW3fwPoHnY1iV5ZsUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="colNumeroInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colNombreColaboradoresInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colRutInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colDepartamentoInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colCargoInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colHoraInicioInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colHoraTerminoInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colTotalHorasExtrasInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colFechaRealInformeHHEE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

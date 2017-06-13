@@ -23,42 +23,42 @@ Partial Class FrmSolicPermHrasExt
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Permisos")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Hr. Extras")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes                            ", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciòn de Permisos")
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion Horas Extras")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones                      ", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
-        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
-        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8})
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Permisos")
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Hr. Extras")
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes                            ", New System.Windows.Forms.TreeNode() {TreeNode10, TreeNode11})
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciòn de Permisos")
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion Horas Extras")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones                      ", New System.Windows.Forms.TreeNode() {TreeNode13, TreeNode14})
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
+        Dim TreeNode17 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
+        Dim TreeNode18 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode16, TreeNode17})
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSolicPermHrasExt))
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TreeView1 = New Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView(Me.components)
         Me.btnVolver = New System.Windows.Forms.Button()
@@ -142,6 +142,23 @@ Partial Class FrmSolicPermHrasExt
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.dgvSolicitudesSalida = New MetroFramework.Controls.MetroGrid()
+        Me.numeroSolicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaInforme = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreSolicitante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rutTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargoAutorizarPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diaCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horasTotales = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAutorizarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnRechazarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnImprimirPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnVerHistorial = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Pnl_AutHrExt = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -157,6 +174,16 @@ Partial Class FrmSolicPermHrasExt
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvColaboradores = New MetroFramework.Controls.MetroGrid()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreColaboradores = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaTermino = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAutorizar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnRechazar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbNumeroSolicitud = New MetroFramework.Controls.MetroComboBox()
@@ -218,33 +245,7 @@ Partial Class FrmSolicPermHrasExt
         Me.txbRutInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.txbNombreInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.Lbl_Titulo = New System.Windows.Forms.Label()
-        Me.numeroSolicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaInforme = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreSolicitante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rutTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargoAutorizarPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.diaCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horasTotales = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAutorizarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnRechazarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnImprimirPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnVerHistorial = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreColaboradores = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaTermino = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAutorizar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnRechazar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnExportarExcel = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -305,31 +306,31 @@ Partial Class FrmSolicPermHrasExt
         Me.TreeView1.HotTracking = True
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode1.Name = "Nd_SolPermisos"
-        TreeNode1.Text = "Solicitud de Permisos"
-        TreeNode2.Name = "Nd_SolHrExt"
-        TreeNode2.Text = "Solicitud de Hr. Extras"
-        TreeNode3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode3.ForeColor = System.Drawing.Color.White
-        TreeNode3.Name = "Nodo0"
-        TreeNode3.Text = "Solicitudes                            "
-        TreeNode4.Name = "Nd_AutPermisos"
-        TreeNode4.Text = "Autorizaciòn de Permisos"
-        TreeNode5.Name = "Nd_AutHrExt"
-        TreeNode5.Text = "Autorizacion Horas Extras"
-        TreeNode6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode6.ForeColor = System.Drawing.Color.White
-        TreeNode6.Name = "Nodo2"
-        TreeNode6.Text = "Autorizaciones                      "
-        TreeNode7.Name = "Nd_InformePermisos"
-        TreeNode7.Text = "Informe Permisos"
-        TreeNode8.Name = "Nd_InformeHorasExtras"
-        TreeNode8.Text = "Informe Horas Extras"
-        TreeNode9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode9.ForeColor = System.Drawing.Color.White
-        TreeNode9.Name = "Nodo1"
-        TreeNode9.Text = "Informe                                 "
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode9})
+        TreeNode10.Name = "Nd_SolPermisos"
+        TreeNode10.Text = "Solicitud de Permisos"
+        TreeNode11.Name = "Nd_SolHrExt"
+        TreeNode11.Text = "Solicitud de Hr. Extras"
+        TreeNode12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        TreeNode12.ForeColor = System.Drawing.Color.White
+        TreeNode12.Name = "Nodo0"
+        TreeNode12.Text = "Solicitudes                            "
+        TreeNode13.Name = "Nd_AutPermisos"
+        TreeNode13.Text = "Autorizaciòn de Permisos"
+        TreeNode14.Name = "Nd_AutHrExt"
+        TreeNode14.Text = "Autorizacion Horas Extras"
+        TreeNode15.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        TreeNode15.ForeColor = System.Drawing.Color.White
+        TreeNode15.Name = "Nodo2"
+        TreeNode15.Text = "Autorizaciones                      "
+        TreeNode16.Name = "Nd_InformePermisos"
+        TreeNode16.Text = "Informe Permisos"
+        TreeNode17.Name = "Nd_InformeHorasExtras"
+        TreeNode17.Text = "Informe Horas Extras"
+        TreeNode18.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        TreeNode18.ForeColor = System.Drawing.Color.White
+        TreeNode18.Name = "Nodo1"
+        TreeNode18.Text = "Informe                                 "
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode12, TreeNode15, TreeNode18})
         Me.TreeView1.ShowLines = False
         Me.TreeView1.Size = New System.Drawing.Size(243, 715)
         Me.TreeView1.TabIndex = 1
@@ -1046,7 +1047,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfech.Location = New System.Drawing.Point(673, 8)
-        Me.dtpfech.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpfech.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpfech.Name = "dtpfech"
         Me.dtpfech.Size = New System.Drawing.Size(125, 29)
         Me.dtpfech.TabIndex = 62
@@ -1104,46 +1105,46 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvColaboradoresSHHEE.AllowDrop = True
         Me.dgvColaboradoresSHHEE.AllowUserToDeleteRows = False
         Me.dgvColaboradoresSHHEE.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan
-        Me.dgvColaboradoresSHHEE.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.LightCyan
+        Me.dgvColaboradoresSHHEE.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle32
         Me.dgvColaboradoresSHHEE.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.dgvColaboradoresSHHEE.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgvColaboradoresSHHEE.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvColaboradoresSHHEE.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvColaboradoresSHHEE.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvColaboradoresSHHEE.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvColaboradoresSHHEE.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle33
         Me.dgvColaboradoresSHHEE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvColaboradoresSHHEE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numeroSolicitarHHEE, Me.nombreColaborador, Me.rutSolicitarHHEE, Me.cargoSolicitarHHEE, Me.nombreEmpresaSolicitarHHEE, Me.horaInicioSolicitarHHEE, Me.horaTerminoSolicitarHHEE, Me.cantidadHoras, Me.fechaRealSolicitarHHEE, Me.btnEliminar})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvColaboradoresSHHEE.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle36.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvColaboradoresSHHEE.DefaultCellStyle = DataGridViewCellStyle36
         Me.dgvColaboradoresSHHEE.EnableHeadersVisualStyles = False
         Me.dgvColaboradoresSHHEE.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvColaboradoresSHHEE.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvColaboradoresSHHEE.Location = New System.Drawing.Point(3, 118)
         Me.dgvColaboradoresSHHEE.Name = "dgvColaboradoresSHHEE"
         Me.dgvColaboradoresSHHEE.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvColaboradoresSHHEE.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle37.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle37.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvColaboradoresSHHEE.RowHeadersDefaultCellStyle = DataGridViewCellStyle37
         Me.dgvColaboradoresSHHEE.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgvColaboradoresSHHEE.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvColaboradoresSHHEE.Size = New System.Drawing.Size(1184, 310)
@@ -1166,9 +1167,9 @@ Partial Class FrmSolicPermHrasExt
         '
         'rutSolicitarHHEE
         '
-        DataGridViewCellStyle3.Format = "N2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.rutSolicitarHHEE.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle34.Format = "N2"
+        DataGridViewCellStyle34.NullValue = Nothing
+        Me.rutSolicitarHHEE.DefaultCellStyle = DataGridViewCellStyle34
         Me.rutSolicitarHHEE.HeaderText = "R.U.T."
         Me.rutSolicitarHHEE.MaxInputLength = 10
         Me.rutSolicitarHHEE.Name = "rutSolicitarHHEE"
@@ -1222,13 +1223,13 @@ Partial Class FrmSolicPermHrasExt
         '
         'btnEliminar
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Transparent
-        Me.btnEliminar.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle35.BackColor = System.Drawing.Color.Black
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle35.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Transparent
+        Me.btnEliminar.DefaultCellStyle = DataGridViewCellStyle35
         Me.btnEliminar.HeaderText = "Eliminar Filas"
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Text = "eliminar"
@@ -1424,7 +1425,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkVerPendientes.AutoSize = True
         Me.chkVerPendientes.Location = New System.Drawing.Point(253, 16)
         Me.chkVerPendientes.Name = "chkVerPendientes"
-        Me.chkVerPendientes.Size = New System.Drawing.Size(126, 15)
+        Me.chkVerPendientes.Size = New System.Drawing.Size(127, 15)
         Me.chkVerPendientes.TabIndex = 5
         Me.chkVerPendientes.Text = "Ver Solo Pendientes"
         Me.chkVerPendientes.UseSelectable = True
@@ -1433,7 +1434,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaTermino.Location = New System.Drawing.Point(117, 46)
-        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFechaTermino.Name = "dtpFechaTermino"
         Me.dtpFechaTermino.Size = New System.Drawing.Size(109, 29)
         Me.dtpFechaTermino.TabIndex = 4
@@ -1442,7 +1443,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInicio.Location = New System.Drawing.Point(117, 9)
-        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFechaInicio.Name = "dtpFechaInicio"
         Me.dtpFechaInicio.Size = New System.Drawing.Size(108, 29)
         Me.dtpFechaInicio.TabIndex = 3
@@ -1471,48 +1472,176 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvSolicitudesSalida.AllowUserToDeleteRows = False
         Me.dgvSolicitudesSalida.AllowUserToOrderColumns = True
         Me.dgvSolicitudesSalida.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan
-        Me.dgvSolicitudesSalida.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle38.BackColor = System.Drawing.Color.LightCyan
+        Me.dgvSolicitudesSalida.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle38
         Me.dgvSolicitudesSalida.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgvSolicitudesSalida.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvSolicitudesSalida.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvSolicitudesSalida.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSolicitudesSalida.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle39.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSolicitudesSalida.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle39
         Me.dgvSolicitudesSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSolicitudesSalida.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numeroSolicitud, Me.trabajador, Me.fechaInforme, Me.nombreSolicitante, Me.rutTrabajador, Me.cargoAutorizarPermiso, Me.empresa, Me.fechaSalida, Me.diaCompleto, Me.horaSalida, Me.horaEntrada, Me.horasTotales, Me.tipoPermiso, Me.btnAutorizarPermiso, Me.btnRechazarPermiso, Me.btnImprimirPermiso, Me.btnVerHistorial})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSolicitudesSalida.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle40.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSolicitudesSalida.DefaultCellStyle = DataGridViewCellStyle40
         Me.dgvSolicitudesSalida.EnableHeadersVisualStyles = False
         Me.dgvSolicitudesSalida.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvSolicitudesSalida.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvSolicitudesSalida.Location = New System.Drawing.Point(3, 87)
         Me.dgvSolicitudesSalida.Name = "dgvSolicitudesSalida"
         Me.dgvSolicitudesSalida.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSolicitudesSalida.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle41.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle41.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSolicitudesSalida.RowHeadersDefaultCellStyle = DataGridViewCellStyle41
         Me.dgvSolicitudesSalida.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgvSolicitudesSalida.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSolicitudesSalida.Size = New System.Drawing.Size(981, 314)
         Me.dgvSolicitudesSalida.TabIndex = 0
+        '
+        'numeroSolicitud
+        '
+        Me.numeroSolicitud.Frozen = True
+        Me.numeroSolicitud.HeaderText = "N°"
+        Me.numeroSolicitud.Name = "numeroSolicitud"
+        Me.numeroSolicitud.ReadOnly = True
+        Me.numeroSolicitud.Width = 30
+        '
+        'trabajador
+        '
+        Me.trabajador.Frozen = True
+        Me.trabajador.HeaderText = "Trabajador"
+        Me.trabajador.Name = "trabajador"
+        Me.trabajador.ReadOnly = True
+        Me.trabajador.Width = 200
+        '
+        'fechaInforme
+        '
+        Me.fechaInforme.HeaderText = "Fecha Solicitud"
+        Me.fechaInforme.Name = "fechaInforme"
+        Me.fechaInforme.Width = 65
+        '
+        'nombreSolicitante
+        '
+        Me.nombreSolicitante.HeaderText = "Solicitante"
+        Me.nombreSolicitante.Name = "nombreSolicitante"
+        Me.nombreSolicitante.ReadOnly = True
+        '
+        'rutTrabajador
+        '
+        Me.rutTrabajador.HeaderText = "RUT Trabajador"
+        Me.rutTrabajador.Name = "rutTrabajador"
+        Me.rutTrabajador.ReadOnly = True
+        Me.rutTrabajador.Width = 65
+        '
+        'cargoAutorizarPermiso
+        '
+        Me.cargoAutorizarPermiso.HeaderText = "Cargo"
+        Me.cargoAutorizarPermiso.Name = "cargoAutorizarPermiso"
+        Me.cargoAutorizarPermiso.ReadOnly = True
+        Me.cargoAutorizarPermiso.Width = 140
+        '
+        'empresa
+        '
+        Me.empresa.HeaderText = "Empresa"
+        Me.empresa.Name = "empresa"
+        Me.empresa.ReadOnly = True
+        Me.empresa.Width = 80
+        '
+        'fechaSalida
+        '
+        Me.fechaSalida.HeaderText = "Fecha Salida"
+        Me.fechaSalida.Name = "fechaSalida"
+        Me.fechaSalida.ReadOnly = True
+        Me.fechaSalida.Width = 65
+        '
+        'diaCompleto
+        '
+        Me.diaCompleto.HeaderText = "Dia Completo"
+        Me.diaCompleto.Name = "diaCompleto"
+        Me.diaCompleto.ReadOnly = True
+        Me.diaCompleto.Width = 30
+        '
+        'horaSalida
+        '
+        Me.horaSalida.HeaderText = "Hora Salida"
+        Me.horaSalida.Name = "horaSalida"
+        Me.horaSalida.ReadOnly = True
+        Me.horaSalida.Width = 35
+        '
+        'horaEntrada
+        '
+        Me.horaEntrada.HeaderText = "Hora Entrada"
+        Me.horaEntrada.Name = "horaEntrada"
+        Me.horaEntrada.ReadOnly = True
+        Me.horaEntrada.Width = 35
+        '
+        'horasTotales
+        '
+        Me.horasTotales.HeaderText = "Horas Totales"
+        Me.horasTotales.Name = "horasTotales"
+        Me.horasTotales.ReadOnly = True
+        Me.horasTotales.Width = 35
+        '
+        'tipoPermiso
+        '
+        Me.tipoPermiso.HeaderText = "Tipo de Permiso"
+        Me.tipoPermiso.Name = "tipoPermiso"
+        Me.tipoPermiso.ReadOnly = True
+        Me.tipoPermiso.Width = 70
+        '
+        'btnAutorizarPermiso
+        '
+        Me.btnAutorizarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizarPermiso.HeaderText = "Autorizar"
+        Me.btnAutorizarPermiso.Name = "btnAutorizarPermiso"
+        Me.btnAutorizarPermiso.Text = "Autorizar"
+        Me.btnAutorizarPermiso.UseColumnTextForButtonValue = True
+        Me.btnAutorizarPermiso.Width = 68
+        '
+        'btnRechazarPermiso
+        '
+        Me.btnRechazarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazarPermiso.HeaderText = "Rechazar"
+        Me.btnRechazarPermiso.Name = "btnRechazarPermiso"
+        Me.btnRechazarPermiso.Text = "Rechazar"
+        Me.btnRechazarPermiso.UseColumnTextForButtonValue = True
+        Me.btnRechazarPermiso.Width = 68
+        '
+        'btnImprimirPermiso
+        '
+        Me.btnImprimirPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirPermiso.HeaderText = "Imprimir"
+        Me.btnImprimirPermiso.Name = "btnImprimirPermiso"
+        Me.btnImprimirPermiso.ReadOnly = True
+        Me.btnImprimirPermiso.Text = "Imprimir"
+        Me.btnImprimirPermiso.UseColumnTextForButtonValue = True
+        Me.btnImprimirPermiso.Width = 68
+        '
+        'btnVerHistorial
+        '
+        Me.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVerHistorial.HeaderText = "Ver Historial"
+        Me.btnVerHistorial.Name = "btnVerHistorial"
+        Me.btnVerHistorial.Text = "Ver Historial"
+        Me.btnVerHistorial.UseColumnTextForButtonValue = True
+        Me.btnVerHistorial.Width = 68
         '
         'TabPage4
         '
@@ -1571,7 +1700,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTermino.Location = New System.Drawing.Point(73, 132)
-        Me.dtpTermino.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTermino.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTermino.Name = "dtpTermino"
         Me.dtpTermino.Size = New System.Drawing.Size(125, 29)
         Me.dtpTermino.TabIndex = 40
@@ -1581,7 +1710,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicio.Location = New System.Drawing.Point(73, 98)
-        Me.dtpInicio.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicio.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicio.Name = "dtpInicio"
         Me.dtpInicio.Size = New System.Drawing.Size(125, 29)
         Me.dtpInicio.TabIndex = 39
@@ -1609,7 +1738,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkTodas.AutoSize = True
         Me.chkTodas.Location = New System.Drawing.Point(219, 105)
         Me.chkTodas.Name = "chkTodas"
-        Me.chkTodas.Size = New System.Drawing.Size(71, 15)
+        Me.chkTodas.Size = New System.Drawing.Size(72, 15)
         Me.chkTodas.TabIndex = 37
         Me.chkTodas.Text = "Ver todas"
         Me.chkTodas.UseSelectable = True
@@ -1736,48 +1865,132 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvColaboradores.AllowUserToAddRows = False
         Me.dgvColaboradores.AllowUserToDeleteRows = False
         Me.dgvColaboradores.AllowUserToResizeRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.LightCyan
-        Me.dgvColaboradores.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle42.BackColor = System.Drawing.Color.LightCyan
+        Me.dgvColaboradores.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle42
         Me.dgvColaboradores.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgvColaboradores.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvColaboradores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvColaboradores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvColaboradores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle43.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvColaboradores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle43
         Me.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvColaboradores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.numero, Me.nombreColaboradores, Me.rut, Me.cargo, Me.nombreEmpresa, Me.horaInicio, Me.horaTermino, Me.fechaReal, Me.btnAutorizar, Me.btnRechazar})
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvColaboradores.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle47.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle47.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvColaboradores.DefaultCellStyle = DataGridViewCellStyle47
         Me.dgvColaboradores.EnableHeadersVisualStyles = False
         Me.dgvColaboradores.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvColaboradores.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvColaboradores.Location = New System.Drawing.Point(7, 168)
         Me.dgvColaboradores.Name = "dgvColaboradores"
         Me.dgvColaboradores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvColaboradores.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle48.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle48.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvColaboradores.RowHeadersDefaultCellStyle = DataGridViewCellStyle48
         Me.dgvColaboradores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvColaboradores.Size = New System.Drawing.Size(979, 230)
         Me.dgvColaboradores.TabIndex = 21
+        '
+        'numero
+        '
+        Me.numero.Frozen = True
+        Me.numero.HeaderText = "N°"
+        Me.numero.Name = "numero"
+        Me.numero.ReadOnly = True
+        Me.numero.Width = 30
+        '
+        'nombreColaboradores
+        '
+        Me.nombreColaboradores.Frozen = True
+        Me.nombreColaboradores.HeaderText = "Nombre Colaborador"
+        Me.nombreColaboradores.Name = "nombreColaboradores"
+        Me.nombreColaboradores.ReadOnly = True
+        Me.nombreColaboradores.Width = 250
+        '
+        'rut
+        '
+        DataGridViewCellStyle44.Format = "N2"
+        DataGridViewCellStyle44.NullValue = Nothing
+        Me.rut.DefaultCellStyle = DataGridViewCellStyle44
+        Me.rut.HeaderText = "R.U.T."
+        Me.rut.MaxInputLength = 10
+        Me.rut.Name = "rut"
+        Me.rut.ReadOnly = True
+        '
+        'cargo
+        '
+        Me.cargo.HeaderText = "Cargo"
+        Me.cargo.Name = "cargo"
+        Me.cargo.ReadOnly = True
+        Me.cargo.Width = 175
+        '
+        'nombreEmpresa
+        '
+        Me.nombreEmpresa.HeaderText = "Nombre Empresa"
+        Me.nombreEmpresa.Name = "nombreEmpresa"
+        Me.nombreEmpresa.ReadOnly = True
+        Me.nombreEmpresa.Width = 125
+        '
+        'horaInicio
+        '
+        Me.horaInicio.HeaderText = "Horas Compromiso Inicio"
+        Me.horaInicio.Name = "horaInicio"
+        Me.horaInicio.ReadOnly = True
+        Me.horaInicio.Width = 80
+        '
+        'horaTermino
+        '
+        Me.horaTermino.HeaderText = "Horas Compromiso Termino"
+        Me.horaTermino.Name = "horaTermino"
+        Me.horaTermino.ReadOnly = True
+        Me.horaTermino.Width = 80
+        '
+        'fechaReal
+        '
+        Me.fechaReal.HeaderText = "Fecha Real"
+        Me.fechaReal.Name = "fechaReal"
+        Me.fechaReal.ReadOnly = True
+        '
+        'btnAutorizar
+        '
+        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle45
+        Me.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizar.HeaderText = "Autorizar"
+        Me.btnAutorizar.Name = "btnAutorizar"
+        Me.btnAutorizar.Text = "Autorizar"
+        Me.btnAutorizar.ToolTipText = "autorizar empleado"
+        Me.btnAutorizar.UseColumnTextForButtonValue = True
+        '
+        'btnRechazar
+        '
+        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle46.ForeColor = System.Drawing.Color.White
+        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle46
+        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazar.HeaderText = "Rechazar"
+        Me.btnRechazar.Name = "btnRechazar"
+        Me.btnRechazar.Text = "Rechazar"
+        Me.btnRechazar.ToolTipText = "rechazar solicitud"
+        Me.btnRechazar.UseColumnTextForButtonValue = True
         '
         'Label3
         '
@@ -1893,7 +2106,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkBuscarTodosInformePermisos.AutoSize = True
         Me.chkBuscarTodosInformePermisos.Location = New System.Drawing.Point(261, 20)
         Me.chkBuscarTodosInformePermisos.Name = "chkBuscarTodosInformePermisos"
-        Me.chkBuscarTodosInformePermisos.Size = New System.Drawing.Size(93, 15)
+        Me.chkBuscarTodosInformePermisos.Size = New System.Drawing.Size(94, 15)
         Me.chkBuscarTodosInformePermisos.TabIndex = 24
         Me.chkBuscarTodosInformePermisos.Text = "Buscar Todos"
         Me.chkBuscarTodosInformePermisos.UseSelectable = True
@@ -2058,44 +2271,44 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvSolicitudesSalidaInformePermisos.AllowUserToDeleteRows = False
         Me.dgvSolicitudesSalidaInformePermisos.AllowUserToOrderColumns = True
         Me.dgvSolicitudesSalidaInformePermisos.AllowUserToResizeRows = False
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.LightCyan
-        Me.dgvSolicitudesSalidaInformePermisos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle49.BackColor = System.Drawing.Color.LightCyan
+        Me.dgvSolicitudesSalidaInformePermisos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle49
         Me.dgvSolicitudesSalidaInformePermisos.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgvSolicitudesSalidaInformePermisos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvSolicitudesSalidaInformePermisos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvSolicitudesSalidaInformePermisos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSolicitudesSalidaInformePermisos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle50.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle50.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle50.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSolicitudesSalidaInformePermisos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle50
         Me.dgvSolicitudesSalidaInformePermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvSolicitudesSalidaInformePermisos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNumeroSolicitudInformePermisos, Me.colTrabajadorInformePermisos, Me.colDepartamentoInformePermisos, Me.colCargoInformePermisos, Me.colFechaSalidaInformePermisos, Me.colDiaCompletoInformePermisos, Me.colHoraSalidaInformePermisos, Me.colHoraEntradaInformePermisos, Me.colHorasTotalesInformePermisos, Me.colTipoPermisoInformePermisos})
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvSolicitudesSalidaInformePermisos.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle51.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle51.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle51.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle51.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvSolicitudesSalidaInformePermisos.DefaultCellStyle = DataGridViewCellStyle51
         Me.dgvSolicitudesSalidaInformePermisos.EnableHeadersVisualStyles = False
         Me.dgvSolicitudesSalidaInformePermisos.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvSolicitudesSalidaInformePermisos.GridColor = System.Drawing.Color.Gainsboro
         Me.dgvSolicitudesSalidaInformePermisos.Location = New System.Drawing.Point(11, 135)
         Me.dgvSolicitudesSalidaInformePermisos.Name = "dgvSolicitudesSalidaInformePermisos"
         Me.dgvSolicitudesSalidaInformePermisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSolicitudesSalidaInformePermisos.RowHeadersDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle52.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle52.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle52.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle52.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSolicitudesSalidaInformePermisos.RowHeadersDefaultCellStyle = DataGridViewCellStyle52
         Me.dgvSolicitudesSalidaInformePermisos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgvSolicitudesSalidaInformePermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSolicitudesSalidaInformePermisos.Size = New System.Drawing.Size(1034, 396)
@@ -2183,6 +2396,7 @@ Partial Class FrmSolicPermHrasExt
         '
         'Pnl_InformeHHEE
         '
+        Me.Pnl_InformeHHEE.Controls.Add(Me.btnExportarExcel)
         Me.Pnl_InformeHHEE.Controls.Add(Me.btnBuscarInformeHHEE)
         Me.Pnl_InformeHHEE.Controls.Add(Me.dgvColaboradoresInformeHHEE)
         Me.Pnl_InformeHHEE.Controls.Add(Me.txbTotalEmpleadosInformeHHEE)
@@ -2230,44 +2444,44 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvColaboradoresInformeHHEE.AllowUserToAddRows = False
         Me.dgvColaboradoresInformeHHEE.AllowUserToDeleteRows = False
         Me.dgvColaboradoresInformeHHEE.AllowUserToResizeRows = False
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.LightCyan
-        Me.dgvColaboradoresInformeHHEE.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.LightCyan
+        Me.dgvColaboradoresInformeHHEE.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle27
         Me.dgvColaboradoresInformeHHEE.BackgroundColor = System.Drawing.Color.Gainsboro
         Me.dgvColaboradoresInformeHHEE.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvColaboradoresInformeHHEE.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvColaboradoresInformeHHEE.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvColaboradoresInformeHHEE.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvColaboradoresInformeHHEE.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle28
         Me.dgvColaboradoresInformeHHEE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvColaboradoresInformeHHEE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNumeroInformeHHEE, Me.colNombreColaboradoresInformeHHEE, Me.colRutInformeHHEE, Me.colDepartamentoInformeHHEE, Me.colCargoInformeHHEE, Me.colHoraInicioInformeHHEE, Me.colHoraTerminoInformeHHEE, Me.colTotalHorasExtrasInformeHHEE, Me.colFechaRealInformeHHEE})
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvColaboradoresInformeHHEE.DefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvColaboradoresInformeHHEE.DefaultCellStyle = DataGridViewCellStyle30
         Me.dgvColaboradoresInformeHHEE.EnableHeadersVisualStyles = False
         Me.dgvColaboradoresInformeHHEE.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dgvColaboradoresInformeHHEE.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgvColaboradoresInformeHHEE.Location = New System.Drawing.Point(27, 199)
         Me.dgvColaboradoresInformeHHEE.Name = "dgvColaboradoresInformeHHEE"
         Me.dgvColaboradoresInformeHHEE.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvColaboradoresInformeHHEE.RowHeadersDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvColaboradoresInformeHHEE.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
         Me.dgvColaboradoresInformeHHEE.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgvColaboradoresInformeHHEE.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvColaboradoresInformeHHEE.Size = New System.Drawing.Size(1063, 301)
@@ -2289,9 +2503,9 @@ Partial Class FrmSolicPermHrasExt
         '
         'colRutInformeHHEE
         '
-        DataGridViewCellStyle24.Format = "N2"
-        DataGridViewCellStyle24.NullValue = Nothing
-        Me.colRutInformeHHEE.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle29.Format = "N2"
+        DataGridViewCellStyle29.NullValue = Nothing
+        Me.colRutInformeHHEE.DefaultCellStyle = DataGridViewCellStyle29
         Me.colRutInformeHHEE.HeaderText = "R.U.T."
         Me.colRutInformeHHEE.MaxInputLength = 10
         Me.colRutInformeHHEE.Name = "colRutInformeHHEE"
@@ -2385,7 +2599,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Label32.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.Location = New System.Drawing.Point(571, 161)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(99, 17)
+        Me.Label32.Size = New System.Drawing.Size(100, 17)
         Me.Label32.TabIndex = 41
         Me.Label32.Text = "Total Empleado"
         '
@@ -2395,7 +2609,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Label33.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.Location = New System.Drawing.Point(34, 90)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(95, 17)
+        Me.Label33.Size = New System.Drawing.Size(96, 17)
         Me.Label33.TabIndex = 28
         Me.Label33.Text = "Fecha Termino:"
         '
@@ -2404,7 +2618,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkTodaEmpresaInformeHHEE.AutoSize = True
         Me.chkTodaEmpresaInformeHHEE.Location = New System.Drawing.Point(274, 21)
         Me.chkTodaEmpresaInformeHHEE.Name = "chkTodaEmpresaInformeHHEE"
-        Me.chkTodaEmpresaInformeHHEE.Size = New System.Drawing.Size(97, 15)
+        Me.chkTodaEmpresaInformeHHEE.Size = New System.Drawing.Size(98, 15)
         Me.chkTodaEmpresaInformeHHEE.TabIndex = 40
         Me.chkTodaEmpresaInformeHHEE.Text = "Toda Empresa"
         Me.chkTodaEmpresaInformeHHEE.UseSelectable = True
@@ -2522,7 +2736,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkBuscarTodosInformeHHEE.AutoSize = True
         Me.chkBuscarTodosInformeHHEE.Location = New System.Drawing.Point(37, 133)
         Me.chkBuscarTodosInformeHHEE.Name = "chkBuscarTodosInformeHHEE"
-        Me.chkBuscarTodosInformeHHEE.Size = New System.Drawing.Size(93, 15)
+        Me.chkBuscarTodosInformeHHEE.Size = New System.Drawing.Size(94, 15)
         Me.chkBuscarTodosInformeHHEE.TabIndex = 35
         Me.chkBuscarTodosInformeHHEE.Text = "Buscar Todos"
         Me.chkBuscarTodosInformeHHEE.UseSelectable = True
@@ -2616,217 +2830,22 @@ Partial Class FrmSolicPermHrasExt
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'numeroSolicitud
+        'btnExportarExcel
         '
-        Me.numeroSolicitud.Frozen = True
-        Me.numeroSolicitud.HeaderText = "N°"
-        Me.numeroSolicitud.Name = "numeroSolicitud"
-        Me.numeroSolicitud.ReadOnly = True
-        Me.numeroSolicitud.Width = 30
-        '
-        'trabajador
-        '
-        Me.trabajador.Frozen = True
-        Me.trabajador.HeaderText = "Trabajador"
-        Me.trabajador.Name = "trabajador"
-        Me.trabajador.ReadOnly = True
-        Me.trabajador.Width = 200
-        '
-        'fechaInforme
-        '
-        Me.fechaInforme.HeaderText = "Fecha Solicitud"
-        Me.fechaInforme.Name = "fechaInforme"
-        Me.fechaInforme.Width = 65
-        '
-        'nombreSolicitante
-        '
-        Me.nombreSolicitante.HeaderText = "Solicitante"
-        Me.nombreSolicitante.Name = "nombreSolicitante"
-        Me.nombreSolicitante.ReadOnly = True
-        '
-        'rutTrabajador
-        '
-        Me.rutTrabajador.HeaderText = "RUT Trabajador"
-        Me.rutTrabajador.Name = "rutTrabajador"
-        Me.rutTrabajador.ReadOnly = True
-        Me.rutTrabajador.Width = 65
-        '
-        'cargoAutorizarPermiso
-        '
-        Me.cargoAutorizarPermiso.HeaderText = "Cargo"
-        Me.cargoAutorizarPermiso.Name = "cargoAutorizarPermiso"
-        Me.cargoAutorizarPermiso.ReadOnly = True
-        Me.cargoAutorizarPermiso.Width = 140
-        '
-        'empresa
-        '
-        Me.empresa.HeaderText = "Empresa"
-        Me.empresa.Name = "empresa"
-        Me.empresa.ReadOnly = True
-        Me.empresa.Width = 80
-        '
-        'fechaSalida
-        '
-        Me.fechaSalida.HeaderText = "Fecha Salida"
-        Me.fechaSalida.Name = "fechaSalida"
-        Me.fechaSalida.ReadOnly = True
-        Me.fechaSalida.Width = 65
-        '
-        'diaCompleto
-        '
-        Me.diaCompleto.HeaderText = "Dia Completo"
-        Me.diaCompleto.Name = "diaCompleto"
-        Me.diaCompleto.ReadOnly = True
-        Me.diaCompleto.Width = 30
-        '
-        'horaSalida
-        '
-        Me.horaSalida.HeaderText = "Hora Salida"
-        Me.horaSalida.Name = "horaSalida"
-        Me.horaSalida.ReadOnly = True
-        Me.horaSalida.Width = 35
-        '
-        'horaEntrada
-        '
-        Me.horaEntrada.HeaderText = "Hora Entrada"
-        Me.horaEntrada.Name = "horaEntrada"
-        Me.horaEntrada.ReadOnly = True
-        Me.horaEntrada.Width = 35
-        '
-        'horasTotales
-        '
-        Me.horasTotales.HeaderText = "Horas Totales"
-        Me.horasTotales.Name = "horasTotales"
-        Me.horasTotales.ReadOnly = True
-        Me.horasTotales.Width = 35
-        '
-        'tipoPermiso
-        '
-        Me.tipoPermiso.HeaderText = "Tipo de Permiso"
-        Me.tipoPermiso.Name = "tipoPermiso"
-        Me.tipoPermiso.ReadOnly = True
-        Me.tipoPermiso.Width = 70
-        '
-        'btnAutorizarPermiso
-        '
-        Me.btnAutorizarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutorizarPermiso.HeaderText = "Autorizar"
-        Me.btnAutorizarPermiso.Name = "btnAutorizarPermiso"
-        Me.btnAutorizarPermiso.Text = "Autorizar"
-        Me.btnAutorizarPermiso.UseColumnTextForButtonValue = True
-        Me.btnAutorizarPermiso.Width = 68
-        '
-        'btnRechazarPermiso
-        '
-        Me.btnRechazarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRechazarPermiso.HeaderText = "Rechazar"
-        Me.btnRechazarPermiso.Name = "btnRechazarPermiso"
-        Me.btnRechazarPermiso.Text = "Rechazar"
-        Me.btnRechazarPermiso.UseColumnTextForButtonValue = True
-        Me.btnRechazarPermiso.Width = 68
-        '
-        'btnImprimirPermiso
-        '
-        Me.btnImprimirPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimirPermiso.HeaderText = "Imprimir"
-        Me.btnImprimirPermiso.Name = "btnImprimirPermiso"
-        Me.btnImprimirPermiso.ReadOnly = True
-        Me.btnImprimirPermiso.Text = "Imprimir"
-        Me.btnImprimirPermiso.UseColumnTextForButtonValue = True
-        Me.btnImprimirPermiso.Width = 68
-        '
-        'btnVerHistorial
-        '
-        Me.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVerHistorial.HeaderText = "Ver Historial"
-        Me.btnVerHistorial.Name = "btnVerHistorial"
-        Me.btnVerHistorial.Text = "Ver Historial"
-        Me.btnVerHistorial.UseColumnTextForButtonValue = True
-        Me.btnVerHistorial.Width = 68
-        '
-        'numero
-        '
-        Me.numero.Frozen = True
-        Me.numero.HeaderText = "N°"
-        Me.numero.Name = "numero"
-        Me.numero.ReadOnly = True
-        Me.numero.Width = 30
-        '
-        'nombreColaboradores
-        '
-        Me.nombreColaboradores.Frozen = True
-        Me.nombreColaboradores.HeaderText = "Nombre Colaborador"
-        Me.nombreColaboradores.Name = "nombreColaboradores"
-        Me.nombreColaboradores.ReadOnly = True
-        Me.nombreColaboradores.Width = 250
-        '
-        'rut
-        '
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.NullValue = Nothing
-        Me.rut.DefaultCellStyle = DataGridViewCellStyle13
-        Me.rut.HeaderText = "R.U.T."
-        Me.rut.MaxInputLength = 10
-        Me.rut.Name = "rut"
-        Me.rut.ReadOnly = True
-        '
-        'cargo
-        '
-        Me.cargo.HeaderText = "Cargo"
-        Me.cargo.Name = "cargo"
-        Me.cargo.ReadOnly = True
-        Me.cargo.Width = 175
-        '
-        'nombreEmpresa
-        '
-        Me.nombreEmpresa.HeaderText = "Nombre Empresa"
-        Me.nombreEmpresa.Name = "nombreEmpresa"
-        Me.nombreEmpresa.ReadOnly = True
-        Me.nombreEmpresa.Width = 125
-        '
-        'horaInicio
-        '
-        Me.horaInicio.HeaderText = "Horas Compromiso Inicio"
-        Me.horaInicio.Name = "horaInicio"
-        Me.horaInicio.ReadOnly = True
-        Me.horaInicio.Width = 80
-        '
-        'horaTermino
-        '
-        Me.horaTermino.HeaderText = "Horas Compromiso Termino"
-        Me.horaTermino.Name = "horaTermino"
-        Me.horaTermino.ReadOnly = True
-        Me.horaTermino.Width = 80
-        '
-        'fechaReal
-        '
-        Me.fechaReal.HeaderText = "Fecha Real"
-        Me.fechaReal.Name = "fechaReal"
-        Me.fechaReal.ReadOnly = True
-        '
-        'btnAutorizar
-        '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle14
-        Me.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutorizar.HeaderText = "Autorizar"
-        Me.btnAutorizar.Name = "btnAutorizar"
-        Me.btnAutorizar.Text = "Autorizar"
-        Me.btnAutorizar.ToolTipText = "autorizar empleado"
-        Me.btnAutorizar.UseColumnTextForButtonValue = True
-        '
-        'btnRechazar
-        '
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
-        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle15
-        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRechazar.HeaderText = "Rechazar"
-        Me.btnRechazar.Name = "btnRechazar"
-        Me.btnRechazar.Text = "Rechazar"
-        Me.btnRechazar.ToolTipText = "rechazar solicitud"
-        Me.btnRechazar.UseColumnTextForButtonValue = True
+        Me.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnExportarExcel.FlatAppearance.BorderSize = 0
+        Me.btnExportarExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExportarExcel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportarExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnExportarExcel.Image = Global.RRHH.My.Resources.Resources.white_ms_excel_32
+        Me.btnExportarExcel.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnExportarExcel.Location = New System.Drawing.Point(406, 508)
+        Me.btnExportarExcel.Name = "btnExportarExcel"
+        Me.btnExportarExcel.Size = New System.Drawing.Size(223, 80)
+        Me.btnExportarExcel.TabIndex = 43
+        Me.btnExportarExcel.Text = "Exportar a Excel"
+        Me.btnExportarExcel.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnExportarExcel.UseVisualStyleBackColor = False
         '
         'FrmSolicPermHrasExt
         '
@@ -3068,4 +3087,5 @@ Partial Class FrmSolicPermHrasExt
     Friend WithEvents fechaReal As DataGridViewTextBoxColumn
     Friend WithEvents btnAutorizar As DataGridViewButtonColumn
     Friend WithEvents btnRechazar As DataGridViewButtonColumn
+    Private WithEvents btnExportarExcel As Button
 End Class

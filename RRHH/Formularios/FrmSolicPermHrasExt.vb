@@ -227,7 +227,8 @@ Public Class FrmSolicPermHrasExt
                     trabajadorHHEE.Rut = ""
                     trabajadorHHEE.Nombre = ""
                     btnImprimirInformeHHEE.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimirInformeHHEE.Height - 10)
-                    btnBuscarInformeHHEE.Location = New Point(btnImprimirInformeHHEE.Location.X + btnImprimirInformeHHEE.Width + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnBuscarInformeHHEE.Height - 10)
+                    btnBuscarInformeHHEE.Location = New Point(btnImprimirInformeHHEE.Location.X + btnImprimirInformeHHEE.Width + 20, btnImprimirInformeHHEE.Location.Y)
+                    btnExportarExcel.Location = New Point(btnBuscarInformeHHEE.Location.X + btnBuscarInformeHHEE.Width + 20, btnImprimirInformeHHEE.Location.Y)
                     If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25 < 1063 Then
                         dgvColaboradoresInformeHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
                     Else
@@ -1917,29 +1918,31 @@ Public Class FrmSolicPermHrasExt
     End Sub
 
     Private Sub btnImprimirInformeHHEE_Click(sender As Object, e As EventArgs) Handles btnImprimirInformeHHEE.Click
-        If chkBuscarTodosInformeHHEE.Checked Then
-            If chkTodaEmpresaInformeHHEE.Checked Then
-                Dim informe As New InformeHorasExtrasFechas()
-                informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
-                informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
-                Dim formInforme As New Frm_ImprimirReporte(informe)
-                formInforme.Show()
-            Else
-                Dim informe As New InformeHorasExtrasFechasEmpresa()
-                informe.SetParameterValue("@empresa", cmbEmpresaInformeHHEE.Text)
-                informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
-                informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
-                Dim formInforme As New Frm_ImprimirReporte(informe)
+        If dgvColaboradoresInformeHHEE.Rows.Count > 0 Then
+            If chkBuscarTodosInformeHHEE.Checked Then
+                If chkTodaEmpresaInformeHHEE.Checked Then
+                    Dim informe As New InformeHorasExtrasFechas()
+                    informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
+                    informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
+                    Dim formInforme As New Frm_ImprimirReporte(informe)
+                    formInforme.Show()
+                Else
+                    Dim informe As New InformeHorasExtrasFechasEmpresa()
+                    informe.SetParameterValue("@empresa", cmbEmpresaInformeHHEE.Text)
+                    informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
+                    informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
+                    Dim formInforme As New Frm_ImprimirReporte(informe)
 
+                    formInforme.Show()
+                End If
+            Else
+                Dim informe As New InformeHorasExtrasPersonaFechas()
+                informe.SetParameterValue("@rut", txbRutInformeHHEE.Text)
+                informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
+                informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
+                Dim formInforme As New Frm_ImprimirReporte(informe)
                 formInforme.Show()
             End If
-        Else
-            Dim informe As New InformeHorasExtrasPersonaFechas()
-            informe.SetParameterValue("@rut", txbRutInformeHHEE.Text)
-            informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
-            informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
-            Dim formInforme As New Frm_ImprimirReporte(informe)
-            formInforme.Show()
         End If
     End Sub
 
@@ -1952,6 +1955,13 @@ Public Class FrmSolicPermHrasExt
             cmbEmpresaInformeHHEE.Visible = False
         End If
     End Sub
+
+    Private Sub btnExportarExcel_Click(sender As Object, e As EventArgs) Handles btnExportarExcel.Click
+        If dgvColaboradoresInformeHHEE.Rows.Count > 0 Then
+            dgvColaboradoresInformeHHEE.ExportToExcel
+        End If
+    End Sub
+
     '------------------------- Fin Informe Horas Extras -------------------------------
 
 
@@ -2068,20 +2078,22 @@ Public Class FrmSolicPermHrasExt
     End Sub
 
     Private Sub btnImprimirInformePermisos_Click(sender As Object, e As EventArgs) Handles btnImprimirInformePermisos.Click
-        If chkBuscarTodosInformePermisos.Checked Then
-            Dim informe As New InformePermisos()
-            informe.SetParameterValue("@empresa", cmbEmpresaInformePermisos.Text)
-            informe.SetParameterValue("@fecha_inicio", dtpInicioInformePermisos.Value)
-            informe.SetParameterValue("@fecha_termino", dtpTerminoInformePermisos.Value.AddDays(1))
-            Dim formInforme As New Frm_ImprimirReporte(informe)
-            formInforme.Show()
-        Else
-            Dim informe As New InformePermisoPersona()
-            informe.SetParameterValue("@rut", txbRutInformePermisos.Text)
-            informe.SetParameterValue("@fecha_inicio", dtpInicioInformePermisos.Value)
-            informe.SetParameterValue("@fecha_termino", dtpTerminoInformePermisos.Value.AddDays(1))
-            Dim formInforme As New Frm_ImprimirReporte(informe)
-            formInforme.Show()
+        If dgvSolicitudesSalidaInformePermisos.Rows.Count > 0 Then
+            If chkBuscarTodosInformePermisos.Checked Then
+                Dim informe As New InformePermisos()
+                informe.SetParameterValue("@empresa", cmbEmpresaInformePermisos.Text)
+                informe.SetParameterValue("@fecha_inicio", dtpInicioInformePermisos.Value)
+                informe.SetParameterValue("@fecha_termino", dtpTerminoInformePermisos.Value.AddDays(1))
+                Dim formInforme As New Frm_ImprimirReporte(informe)
+                formInforme.Show()
+            Else
+                Dim informe As New InformePermisoPersona()
+                informe.SetParameterValue("@rut", txbRutInformePermisos.Text)
+                informe.SetParameterValue("@fecha_inicio", dtpInicioInformePermisos.Value)
+                informe.SetParameterValue("@fecha_termino", dtpTerminoInformePermisos.Value.AddDays(1))
+                Dim formInforme As New Frm_ImprimirReporte(informe)
+                formInforme.Show()
+            End If
         End If
     End Sub
 
