@@ -235,6 +235,12 @@
     <Compile Include="DALC\Solicitud_Salida.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmPresenciaEmpleados.Designer.vb">
+      <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPresenciaEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmSolicPermHrasExt.Designer.vb">
       <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
     </Compile>
@@ -311,6 +317,7 @@
     <Compile Include="Modelo\DataGridViewExtensions.vb" />
     <Compile Include="Modelo\HoraExtra.vb" />
     <Compile Include="Modelo\HoraExtraColaboradores.vb" />
+    <Compile Include="Modelo\MindugarConexion.vb" />
     <Compile Include="Modelo\Permiso.vb" />
     <Compile Include="Modelo\Persona.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -432,6 +439,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmPresenciaEmpleados.resx">
+      <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmSolicPermHrasExt.resx">
       <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
     </EmbeddedResource>
