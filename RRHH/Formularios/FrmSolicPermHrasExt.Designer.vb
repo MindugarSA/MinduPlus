@@ -47,6 +47,9 @@ Partial Class FrmSolicPermHrasExt
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -56,9 +59,6 @@ Partial Class FrmSolicPermHrasExt
         Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TreeView1 = New Kesoft.Windows.Forms.Win7StyleTreeView.Win7StyleTreeView(Me.components)
         Me.btnVolver = New System.Windows.Forms.Button()
@@ -142,6 +142,23 @@ Partial Class FrmSolicPermHrasExt
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.dgvSolicitudesSalida = New MetroFramework.Controls.MetroGrid()
+        Me.numeroSolicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaInforme = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreSolicitante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rutTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargoAutorizarPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.diaCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horasTotales = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tipoPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAutorizarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnRechazarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnImprimirPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnVerHistorial = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Pnl_AutHrExt = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -157,6 +174,16 @@ Partial Class FrmSolicPermHrasExt
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvColaboradores = New MetroFramework.Controls.MetroGrid()
+        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreColaboradores = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombreEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.horaTermino = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAutorizar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.btnRechazar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmbNumeroSolicitud = New MetroFramework.Controls.MetroComboBox()
@@ -218,33 +245,6 @@ Partial Class FrmSolicPermHrasExt
         Me.txbRutInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.txbNombreInformeHHEE = New MetroFramework.Controls.MetroTextBox()
         Me.Lbl_Titulo = New System.Windows.Forms.Label()
-        Me.numeroSolicitud = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.trabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaInforme = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreSolicitante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rutTrabajador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargoAutorizarPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.empresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.diaCompleto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaSalida = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horasTotales = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tipoPermiso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAutorizarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnRechazarPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnImprimirPermiso = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnVerHistorial = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.numero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreColaboradores = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rut = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cargo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombreEmpresa = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.horaTermino = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAutorizar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.btnRechazar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -414,7 +414,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Pnl_SolPermisos.Controls.Add(Me.Pnl_SolicitudPermisos)
         Me.Pnl_SolPermisos.Location = New System.Drawing.Point(15, 16)
         Me.Pnl_SolPermisos.Name = "Pnl_SolPermisos"
-        Me.Pnl_SolPermisos.Size = New System.Drawing.Size(947, 514)
+        Me.Pnl_SolPermisos.Size = New System.Drawing.Size(947, 579)
         Me.Pnl_SolPermisos.TabIndex = 41
         '
         'Pnl_SolicitudPermisos
@@ -1046,7 +1046,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfech.Location = New System.Drawing.Point(673, 8)
-        Me.dtpfech.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpfech.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpfech.Name = "dtpfech"
         Me.dtpfech.Size = New System.Drawing.Size(125, 29)
         Me.dtpfech.TabIndex = 62
@@ -1433,7 +1433,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaTermino.Location = New System.Drawing.Point(117, 46)
-        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFechaTermino.Name = "dtpFechaTermino"
         Me.dtpFechaTermino.Size = New System.Drawing.Size(109, 29)
         Me.dtpFechaTermino.TabIndex = 4
@@ -1442,7 +1442,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInicio.Location = New System.Drawing.Point(117, 9)
-        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFechaInicio.Name = "dtpFechaInicio"
         Me.dtpFechaInicio.Size = New System.Drawing.Size(108, 29)
         Me.dtpFechaInicio.TabIndex = 3
@@ -1514,6 +1514,134 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvSolicitudesSalida.Size = New System.Drawing.Size(981, 314)
         Me.dgvSolicitudesSalida.TabIndex = 0
         '
+        'numeroSolicitud
+        '
+        Me.numeroSolicitud.Frozen = True
+        Me.numeroSolicitud.HeaderText = "N°"
+        Me.numeroSolicitud.Name = "numeroSolicitud"
+        Me.numeroSolicitud.ReadOnly = True
+        Me.numeroSolicitud.Width = 30
+        '
+        'trabajador
+        '
+        Me.trabajador.Frozen = True
+        Me.trabajador.HeaderText = "Trabajador"
+        Me.trabajador.Name = "trabajador"
+        Me.trabajador.ReadOnly = True
+        Me.trabajador.Width = 200
+        '
+        'fechaInforme
+        '
+        Me.fechaInforme.HeaderText = "Fecha Solicitud"
+        Me.fechaInforme.Name = "fechaInforme"
+        Me.fechaInforme.Width = 65
+        '
+        'nombreSolicitante
+        '
+        Me.nombreSolicitante.HeaderText = "Solicitante"
+        Me.nombreSolicitante.Name = "nombreSolicitante"
+        Me.nombreSolicitante.ReadOnly = True
+        '
+        'rutTrabajador
+        '
+        Me.rutTrabajador.HeaderText = "RUT Trabajador"
+        Me.rutTrabajador.Name = "rutTrabajador"
+        Me.rutTrabajador.ReadOnly = True
+        Me.rutTrabajador.Width = 65
+        '
+        'cargoAutorizarPermiso
+        '
+        Me.cargoAutorizarPermiso.HeaderText = "Cargo"
+        Me.cargoAutorizarPermiso.Name = "cargoAutorizarPermiso"
+        Me.cargoAutorizarPermiso.ReadOnly = True
+        Me.cargoAutorizarPermiso.Width = 140
+        '
+        'empresa
+        '
+        Me.empresa.HeaderText = "Empresa"
+        Me.empresa.Name = "empresa"
+        Me.empresa.ReadOnly = True
+        Me.empresa.Width = 80
+        '
+        'fechaSalida
+        '
+        Me.fechaSalida.HeaderText = "Fecha Salida"
+        Me.fechaSalida.Name = "fechaSalida"
+        Me.fechaSalida.ReadOnly = True
+        Me.fechaSalida.Width = 65
+        '
+        'diaCompleto
+        '
+        Me.diaCompleto.HeaderText = "Dia Completo"
+        Me.diaCompleto.Name = "diaCompleto"
+        Me.diaCompleto.ReadOnly = True
+        Me.diaCompleto.Width = 30
+        '
+        'horaSalida
+        '
+        Me.horaSalida.HeaderText = "Hora Salida"
+        Me.horaSalida.Name = "horaSalida"
+        Me.horaSalida.ReadOnly = True
+        Me.horaSalida.Width = 35
+        '
+        'horaEntrada
+        '
+        Me.horaEntrada.HeaderText = "Hora Entrada"
+        Me.horaEntrada.Name = "horaEntrada"
+        Me.horaEntrada.ReadOnly = True
+        Me.horaEntrada.Width = 35
+        '
+        'horasTotales
+        '
+        Me.horasTotales.HeaderText = "Horas Totales"
+        Me.horasTotales.Name = "horasTotales"
+        Me.horasTotales.ReadOnly = True
+        Me.horasTotales.Width = 35
+        '
+        'tipoPermiso
+        '
+        Me.tipoPermiso.HeaderText = "Tipo de Permiso"
+        Me.tipoPermiso.Name = "tipoPermiso"
+        Me.tipoPermiso.ReadOnly = True
+        Me.tipoPermiso.Width = 70
+        '
+        'btnAutorizarPermiso
+        '
+        Me.btnAutorizarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizarPermiso.HeaderText = "Autorizar"
+        Me.btnAutorizarPermiso.Name = "btnAutorizarPermiso"
+        Me.btnAutorizarPermiso.Text = "Autorizar"
+        Me.btnAutorizarPermiso.UseColumnTextForButtonValue = True
+        Me.btnAutorizarPermiso.Width = 68
+        '
+        'btnRechazarPermiso
+        '
+        Me.btnRechazarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazarPermiso.HeaderText = "Rechazar"
+        Me.btnRechazarPermiso.Name = "btnRechazarPermiso"
+        Me.btnRechazarPermiso.Text = "Rechazar"
+        Me.btnRechazarPermiso.UseColumnTextForButtonValue = True
+        Me.btnRechazarPermiso.Width = 68
+        '
+        'btnImprimirPermiso
+        '
+        Me.btnImprimirPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirPermiso.HeaderText = "Imprimir"
+        Me.btnImprimirPermiso.Name = "btnImprimirPermiso"
+        Me.btnImprimirPermiso.ReadOnly = True
+        Me.btnImprimirPermiso.Text = "Imprimir"
+        Me.btnImprimirPermiso.UseColumnTextForButtonValue = True
+        Me.btnImprimirPermiso.Width = 68
+        '
+        'btnVerHistorial
+        '
+        Me.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVerHistorial.HeaderText = "Ver Historial"
+        Me.btnVerHistorial.Name = "btnVerHistorial"
+        Me.btnVerHistorial.Text = "Ver Historial"
+        Me.btnVerHistorial.UseColumnTextForButtonValue = True
+        Me.btnVerHistorial.Width = 68
+        '
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.Pnl_AutHrExt)
@@ -1571,7 +1699,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTermino.Location = New System.Drawing.Point(73, 132)
-        Me.dtpTermino.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTermino.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTermino.Name = "dtpTermino"
         Me.dtpTermino.Size = New System.Drawing.Size(125, 29)
         Me.dtpTermino.TabIndex = 40
@@ -1581,7 +1709,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicio.Location = New System.Drawing.Point(73, 98)
-        Me.dtpInicio.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicio.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicio.Name = "dtpInicio"
         Me.dtpInicio.Size = New System.Drawing.Size(125, 29)
         Me.dtpInicio.TabIndex = 39
@@ -1779,6 +1907,90 @@ Partial Class FrmSolicPermHrasExt
         Me.dgvColaboradores.Size = New System.Drawing.Size(979, 230)
         Me.dgvColaboradores.TabIndex = 21
         '
+        'numero
+        '
+        Me.numero.Frozen = True
+        Me.numero.HeaderText = "N°"
+        Me.numero.Name = "numero"
+        Me.numero.ReadOnly = True
+        Me.numero.Width = 30
+        '
+        'nombreColaboradores
+        '
+        Me.nombreColaboradores.Frozen = True
+        Me.nombreColaboradores.HeaderText = "Nombre Colaborador"
+        Me.nombreColaboradores.Name = "nombreColaboradores"
+        Me.nombreColaboradores.ReadOnly = True
+        Me.nombreColaboradores.Width = 250
+        '
+        'rut
+        '
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.rut.DefaultCellStyle = DataGridViewCellStyle13
+        Me.rut.HeaderText = "R.U.T."
+        Me.rut.MaxInputLength = 10
+        Me.rut.Name = "rut"
+        Me.rut.ReadOnly = True
+        '
+        'cargo
+        '
+        Me.cargo.HeaderText = "Cargo"
+        Me.cargo.Name = "cargo"
+        Me.cargo.ReadOnly = True
+        Me.cargo.Width = 175
+        '
+        'nombreEmpresa
+        '
+        Me.nombreEmpresa.HeaderText = "Nombre Empresa"
+        Me.nombreEmpresa.Name = "nombreEmpresa"
+        Me.nombreEmpresa.ReadOnly = True
+        Me.nombreEmpresa.Width = 125
+        '
+        'horaInicio
+        '
+        Me.horaInicio.HeaderText = "Horas Compromiso Inicio"
+        Me.horaInicio.Name = "horaInicio"
+        Me.horaInicio.ReadOnly = True
+        Me.horaInicio.Width = 80
+        '
+        'horaTermino
+        '
+        Me.horaTermino.HeaderText = "Horas Compromiso Termino"
+        Me.horaTermino.Name = "horaTermino"
+        Me.horaTermino.ReadOnly = True
+        Me.horaTermino.Width = 80
+        '
+        'fechaReal
+        '
+        Me.fechaReal.HeaderText = "Fecha Real"
+        Me.fechaReal.Name = "fechaReal"
+        Me.fechaReal.ReadOnly = True
+        '
+        'btnAutorizar
+        '
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle14
+        Me.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAutorizar.HeaderText = "Autorizar"
+        Me.btnAutorizar.Name = "btnAutorizar"
+        Me.btnAutorizar.Text = "Autorizar"
+        Me.btnAutorizar.ToolTipText = "autorizar empleado"
+        Me.btnAutorizar.UseColumnTextForButtonValue = True
+        '
+        'btnRechazar
+        '
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle15
+        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazar.HeaderText = "Rechazar"
+        Me.btnRechazar.Name = "btnRechazar"
+        Me.btnRechazar.Text = "Rechazar"
+        Me.btnRechazar.ToolTipText = "rechazar solicitud"
+        Me.btnRechazar.UseColumnTextForButtonValue = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -1956,7 +2168,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformePermisos.Location = New System.Drawing.Point(120, 48)
-        Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicioInformePermisos.Name = "dtpInicioInformePermisos"
         Me.dtpInicioInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpInicioInformePermisos.TabIndex = 15
@@ -2038,7 +2250,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformePermisos.Location = New System.Drawing.Point(120, 83)
-        Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTerminoInformePermisos.Name = "dtpTerminoInformePermisos"
         Me.dtpTerminoInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpTerminoInformePermisos.TabIndex = 16
@@ -2435,7 +2647,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformeHHEE.Location = New System.Drawing.Point(135, 49)
-        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicioInformeHHEE.Name = "dtpInicioInformeHHEE"
         Me.dtpInicioInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpInicioInformeHHEE.TabIndex = 29
@@ -2502,7 +2714,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformeHHEE.Location = New System.Drawing.Point(135, 84)
-        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTerminoInformeHHEE.Name = "dtpTerminoInformeHHEE"
         Me.dtpTerminoInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpTerminoInformeHHEE.TabIndex = 30
@@ -2615,218 +2827,6 @@ Partial Class FrmSolicPermHrasExt
         Me.Lbl_Titulo.TabIndex = 5
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'numeroSolicitud
-        '
-        Me.numeroSolicitud.Frozen = True
-        Me.numeroSolicitud.HeaderText = "N°"
-        Me.numeroSolicitud.Name = "numeroSolicitud"
-        Me.numeroSolicitud.ReadOnly = True
-        Me.numeroSolicitud.Width = 30
-        '
-        'trabajador
-        '
-        Me.trabajador.Frozen = True
-        Me.trabajador.HeaderText = "Trabajador"
-        Me.trabajador.Name = "trabajador"
-        Me.trabajador.ReadOnly = True
-        Me.trabajador.Width = 200
-        '
-        'fechaInforme
-        '
-        Me.fechaInforme.HeaderText = "Fecha Solicitud"
-        Me.fechaInforme.Name = "fechaInforme"
-        Me.fechaInforme.Width = 65
-        '
-        'nombreSolicitante
-        '
-        Me.nombreSolicitante.HeaderText = "Solicitante"
-        Me.nombreSolicitante.Name = "nombreSolicitante"
-        Me.nombreSolicitante.ReadOnly = True
-        '
-        'rutTrabajador
-        '
-        Me.rutTrabajador.HeaderText = "RUT Trabajador"
-        Me.rutTrabajador.Name = "rutTrabajador"
-        Me.rutTrabajador.ReadOnly = True
-        Me.rutTrabajador.Width = 65
-        '
-        'cargoAutorizarPermiso
-        '
-        Me.cargoAutorizarPermiso.HeaderText = "Cargo"
-        Me.cargoAutorizarPermiso.Name = "cargoAutorizarPermiso"
-        Me.cargoAutorizarPermiso.ReadOnly = True
-        Me.cargoAutorizarPermiso.Width = 140
-        '
-        'empresa
-        '
-        Me.empresa.HeaderText = "Empresa"
-        Me.empresa.Name = "empresa"
-        Me.empresa.ReadOnly = True
-        Me.empresa.Width = 80
-        '
-        'fechaSalida
-        '
-        Me.fechaSalida.HeaderText = "Fecha Salida"
-        Me.fechaSalida.Name = "fechaSalida"
-        Me.fechaSalida.ReadOnly = True
-        Me.fechaSalida.Width = 65
-        '
-        'diaCompleto
-        '
-        Me.diaCompleto.HeaderText = "Dia Completo"
-        Me.diaCompleto.Name = "diaCompleto"
-        Me.diaCompleto.ReadOnly = True
-        Me.diaCompleto.Width = 30
-        '
-        'horaSalida
-        '
-        Me.horaSalida.HeaderText = "Hora Salida"
-        Me.horaSalida.Name = "horaSalida"
-        Me.horaSalida.ReadOnly = True
-        Me.horaSalida.Width = 35
-        '
-        'horaEntrada
-        '
-        Me.horaEntrada.HeaderText = "Hora Entrada"
-        Me.horaEntrada.Name = "horaEntrada"
-        Me.horaEntrada.ReadOnly = True
-        Me.horaEntrada.Width = 35
-        '
-        'horasTotales
-        '
-        Me.horasTotales.HeaderText = "Horas Totales"
-        Me.horasTotales.Name = "horasTotales"
-        Me.horasTotales.ReadOnly = True
-        Me.horasTotales.Width = 35
-        '
-        'tipoPermiso
-        '
-        Me.tipoPermiso.HeaderText = "Tipo de Permiso"
-        Me.tipoPermiso.Name = "tipoPermiso"
-        Me.tipoPermiso.ReadOnly = True
-        Me.tipoPermiso.Width = 70
-        '
-        'btnAutorizarPermiso
-        '
-        Me.btnAutorizarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutorizarPermiso.HeaderText = "Autorizar"
-        Me.btnAutorizarPermiso.Name = "btnAutorizarPermiso"
-        Me.btnAutorizarPermiso.Text = "Autorizar"
-        Me.btnAutorizarPermiso.UseColumnTextForButtonValue = True
-        Me.btnAutorizarPermiso.Width = 68
-        '
-        'btnRechazarPermiso
-        '
-        Me.btnRechazarPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRechazarPermiso.HeaderText = "Rechazar"
-        Me.btnRechazarPermiso.Name = "btnRechazarPermiso"
-        Me.btnRechazarPermiso.Text = "Rechazar"
-        Me.btnRechazarPermiso.UseColumnTextForButtonValue = True
-        Me.btnRechazarPermiso.Width = 68
-        '
-        'btnImprimirPermiso
-        '
-        Me.btnImprimirPermiso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimirPermiso.HeaderText = "Imprimir"
-        Me.btnImprimirPermiso.Name = "btnImprimirPermiso"
-        Me.btnImprimirPermiso.ReadOnly = True
-        Me.btnImprimirPermiso.Text = "Imprimir"
-        Me.btnImprimirPermiso.UseColumnTextForButtonValue = True
-        Me.btnImprimirPermiso.Width = 68
-        '
-        'btnVerHistorial
-        '
-        Me.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVerHistorial.HeaderText = "Ver Historial"
-        Me.btnVerHistorial.Name = "btnVerHistorial"
-        Me.btnVerHistorial.Text = "Ver Historial"
-        Me.btnVerHistorial.UseColumnTextForButtonValue = True
-        Me.btnVerHistorial.Width = 68
-        '
-        'numero
-        '
-        Me.numero.Frozen = True
-        Me.numero.HeaderText = "N°"
-        Me.numero.Name = "numero"
-        Me.numero.ReadOnly = True
-        Me.numero.Width = 30
-        '
-        'nombreColaboradores
-        '
-        Me.nombreColaboradores.Frozen = True
-        Me.nombreColaboradores.HeaderText = "Nombre Colaborador"
-        Me.nombreColaboradores.Name = "nombreColaboradores"
-        Me.nombreColaboradores.ReadOnly = True
-        Me.nombreColaboradores.Width = 250
-        '
-        'rut
-        '
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.NullValue = Nothing
-        Me.rut.DefaultCellStyle = DataGridViewCellStyle13
-        Me.rut.HeaderText = "R.U.T."
-        Me.rut.MaxInputLength = 10
-        Me.rut.Name = "rut"
-        Me.rut.ReadOnly = True
-        '
-        'cargo
-        '
-        Me.cargo.HeaderText = "Cargo"
-        Me.cargo.Name = "cargo"
-        Me.cargo.ReadOnly = True
-        Me.cargo.Width = 175
-        '
-        'nombreEmpresa
-        '
-        Me.nombreEmpresa.HeaderText = "Nombre Empresa"
-        Me.nombreEmpresa.Name = "nombreEmpresa"
-        Me.nombreEmpresa.ReadOnly = True
-        Me.nombreEmpresa.Width = 125
-        '
-        'horaInicio
-        '
-        Me.horaInicio.HeaderText = "Horas Compromiso Inicio"
-        Me.horaInicio.Name = "horaInicio"
-        Me.horaInicio.ReadOnly = True
-        Me.horaInicio.Width = 80
-        '
-        'horaTermino
-        '
-        Me.horaTermino.HeaderText = "Horas Compromiso Termino"
-        Me.horaTermino.Name = "horaTermino"
-        Me.horaTermino.ReadOnly = True
-        Me.horaTermino.Width = 80
-        '
-        'fechaReal
-        '
-        Me.fechaReal.HeaderText = "Fecha Real"
-        Me.fechaReal.Name = "fechaReal"
-        Me.fechaReal.ReadOnly = True
-        '
-        'btnAutorizar
-        '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAutorizar.DefaultCellStyle = DataGridViewCellStyle14
-        Me.btnAutorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAutorizar.HeaderText = "Autorizar"
-        Me.btnAutorizar.Name = "btnAutorizar"
-        Me.btnAutorizar.Text = "Autorizar"
-        Me.btnAutorizar.ToolTipText = "autorizar empleado"
-        Me.btnAutorizar.UseColumnTextForButtonValue = True
-        '
-        'btnRechazar
-        '
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
-        Me.btnRechazar.DefaultCellStyle = DataGridViewCellStyle15
-        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRechazar.HeaderText = "Rechazar"
-        Me.btnRechazar.Name = "btnRechazar"
-        Me.btnRechazar.Text = "Rechazar"
-        Me.btnRechazar.ToolTipText = "rechazar solicitud"
-        Me.btnRechazar.UseColumnTextForButtonValue = True
         '
         'FrmSolicPermHrasExt
         '
