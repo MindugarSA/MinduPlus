@@ -308,6 +308,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modelo\CommonBC.vb" />
+    <Compile Include="Modelo\DataGridViewExtensions.vb" />
     <Compile Include="Modelo\HoraExtra.vb" />
     <Compile Include="Modelo\HoraExtraColaboradores.vb" />
     <Compile Include="Modelo\Permiso.vb" />
