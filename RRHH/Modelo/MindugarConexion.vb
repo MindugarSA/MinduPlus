@@ -21,4 +21,20 @@ Public Module MindugarConexion
             cmb.Items.Add(dt.Rows(index)(0).ToString)
         Next
     End Sub
+
+    Public Function ExecuteSql(ByVal sql As String) As Boolean
+        Using con As New SqlConnection(My.Settings.SBO_COMERCIALConnectionString)
+            Dim cmd As New SqlCommand(sql, con)
+            con.Open()
+            Try
+                cmd.ExecuteNonQuery()
+                Return True
+            Catch ex As Exception
+                Return False
+            Finally
+                con.Close()
+            End Try
+        End Using
+    End Function
+
 End Module
