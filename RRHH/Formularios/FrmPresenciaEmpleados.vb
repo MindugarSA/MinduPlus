@@ -15,7 +15,7 @@
         PopulateDataTable(cmbDepartamentos, dt)
         dt = SelectDataTable("EXEC [SAC_Mindugar].[dbo].[PresenciaEmpleado_CargosPorDepartamento]")
         PopulateDataTable(cmbCargos, dt)
-
+        Me.WindowState = FormWindowState.Maximized
         CargarConfiguracion()
         AsociarGridView()
     End Sub
@@ -92,6 +92,7 @@
             Dim dt As DataTable
             dt = SelectDataTable("Exec [SAC_Mindugar].[dbo].[PresenciaEmpleado_Buscar_Presencias] " + where)
             dgvPresencias.DataSource = dt
+            ResizeGrid()
         End If
     End Sub
 
@@ -145,4 +146,48 @@
             dgvPresencias.ExportToExcel
         End If
     End Sub
+
+    Private Sub btnExportarExcel_MouseEnter(sender As Object, e As EventArgs) Handles btnExportarExcel.MouseEnter
+        btnExportarExcel.Location = New Point(btnExportarExcel.Location.X - 5, btnExportarExcel.Location.Y - 5)
+        btnExportarExcel.Size = New Size(btnExportarExcel.Width + 10, btnExportarExcel.Height + 10)
+    End Sub
+
+    Private Sub btnExportarExcel_MouseLeave(sender As Object, e As EventArgs) Handles btnExportarExcel.MouseLeave
+        btnExportarExcel.Location = New Point(btnExportarExcel.Location.X + 5, btnExportarExcel.Location.Y + 5)
+        btnExportarExcel.Size = New Size(btnExportarExcel.Width - 10, btnExportarExcel.Height - 10)
+    End Sub
+
+    Private Sub ResizeGrid()
+        'MessageBox.Show("count: " + dgvPresencias.ColumnCount.ToString)
+        dgvPresencias.AutoResizeColumns()
+        Dim width As Integer = 20
+        For index = 0 To dgvPresencias.ColumnCount - 1
+            width += dgvPresencias.Columns(index).Width
+        Next
+        dgvPresencias.Size = New Size(width, dgvPresencias.Height)
+
+        While Screen.PrimaryScreen.Bounds.Width < dgvPresencias.Width + dgvPresencias.Location.X
+            Dim oldFont = dgvPresencias.DefaultCellStyle.Font
+            dgvPresencias.DefaultCellStyle.Font = New Font(New FontFamily(oldFont.Name), oldFont.Size - 1)
+            dgvPresencias.ColumnHeadersDefaultCellStyle.Font = New Font(New FontFamily(oldFont.Name), oldFont.Size - 1)
+            dgvPresencias.AutoResizeColumns()
+            width = 20
+            For index = 0 To dgvPresencias.ColumnCount - 1
+                width += dgvPresencias.Columns(index).Width
+            Next
+            dgvPresencias.Size = New Size(width, dgvPresencias.Height)
+        End While
+
+
+
+
+
+        'Using graphics As System.Drawing.Graphics = Me.CreateGraphics
+        '    Dim size As SizeF = graphics.MeasureString("Hello there", New Font("Segoe UI", 11, FontStyle.Regular, GraphicsUnit.Point))
+        'End Using
+
+
+    End Sub
+
+
 End Class
