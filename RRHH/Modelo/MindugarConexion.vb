@@ -12,7 +12,7 @@ Public Module MindugarConexion
         Return dt
     End Function
 
-    Public Sub PopulateDataTable(ByRef cmb As ComboBox, ByRef dt As DataTable, ByVal Optional firstBlank As Boolean = True)
+    Public Sub PopulateComboboxWithDataTable(ByRef cmb As ComboBox, ByRef dt As DataTable, ByVal Optional firstBlank As Boolean = True)
         cmb.Items.Clear()
         If firstBlank Then
             cmb.Items.Add("")

@@ -10,11 +10,11 @@
         modificar = True
         idUsuario = "19936726-9"
         Dim dt As DataTable = SelectDataTable("select empresa from [SAC_Mindugar].[dbo].[DepartamentosPorEmpresa] group by Empresa")
-        PopulateDataTable(cmbEmpresas, dt)
+        PopulateComboboxWithDataTable(cmbEmpresas, dt)
         dt = SelectDataTable("EXEC [SAC_Mindugar].[dbo].[PresenciaEmpleado_Departamentos]")
-        PopulateDataTable(cmbDepartamentos, dt)
+        PopulateComboboxWithDataTable(cmbDepartamentos, dt)
         dt = SelectDataTable("EXEC [SAC_Mindugar].[dbo].[PresenciaEmpleado_CargosPorDepartamento]")
-        PopulateDataTable(cmbCargos, dt)
+        PopulateComboboxWithDataTable(cmbCargos, dt)
         Me.WindowState = FormWindowState.Maximized
         CargarConfiguracion()
         AsociarGridView()
@@ -27,7 +27,7 @@
             query += "@empresa = N'" + cmbEmpresas.SelectedItem + "'"
         End If
         dt = SelectDataTable(query)
-        PopulateDataTable(cmbDepartamentos, dt)
+        PopulateComboboxWithDataTable(cmbDepartamentos, dt)
         cmbDepartamentos.SelectedIndex = 0
     End Sub
 
@@ -45,7 +45,7 @@
             End If
         End If
         dt = SelectDataTable(query)
-        PopulateDataTable(cmbCargos, dt)
+        PopulateComboboxWithDataTable(cmbCargos, dt)
         cmbCargos.SelectedIndex = 0
     End Sub
 
@@ -158,7 +158,6 @@
     End Sub
 
     Private Sub ResizeGrid()
-        'MessageBox.Show("count: " + dgvPresencias.ColumnCount.ToString)
         dgvPresencias.AutoResizeColumns()
         Dim width As Integer = 20
         For index = 0 To dgvPresencias.ColumnCount - 1
@@ -188,6 +187,4 @@
 
 
     End Sub
-
-
 End Class
