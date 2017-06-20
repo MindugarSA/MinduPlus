@@ -144,8 +144,6 @@ Partial Class FrmPresenciaEmpleados
         '
         'chkAusentes
         '
-        Me.chkAusentes.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chkAusentes.AutoSize = True
         Me.chkAusentes.Location = New System.Drawing.Point(514, 92)
         Me.chkAusentes.Name = "chkAusentes"
@@ -176,6 +174,8 @@ Partial Class FrmPresenciaEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(1169, 622)
         Me.Controls.Add(Me.btnExportarExcel)
         Me.Controls.Add(Me.chkAusentes)
@@ -186,8 +186,9 @@ Partial Class FrmPresenciaEmpleados
         Me.Controls.Add(Me.cmbDepartamentos)
         Me.Controls.Add(Me.cmbEmpresas)
         Me.Controls.Add(Me.dgvPresencias)
+        Me.ForeColor = System.Drawing.Color.White
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmPresenciaEmpleados"
-        Me.Text = "FrmPresenciaEmpleados"
         CType(Me.dgvPresencias, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

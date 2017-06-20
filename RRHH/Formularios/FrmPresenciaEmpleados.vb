@@ -157,7 +157,7 @@
         btnExportarExcel.Size = New Size(btnExportarExcel.Width - 10, btnExportarExcel.Height - 10)
     End Sub
 
-    Private Sub ResizeGrid()
+    Public Sub ResizeGrid()
         dgvPresencias.AutoResizeColumns()
         Dim width As Integer = 20
         For index = 0 To dgvPresencias.ColumnCount - 1
@@ -186,5 +186,9 @@
         'End Using
 
 
+    End Sub
+
+    Private Sub dgvPresencias_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvPresencias.ColumnHeaderMouseClick
+        ResizeGrid()
     End Sub
 End Class
