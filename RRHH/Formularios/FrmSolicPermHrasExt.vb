@@ -84,6 +84,11 @@ Public Class FrmSolicPermHrasExt
         Pnl_InformeHHEE.Visible = False
         Pnl_InformePermisos.Visible = False
 
+        If Application.OpenForms().OfType(Of FrmPresenciaEmpleados).Any Then
+            Application.OpenForms().OfType(Of FrmPresenciaEmpleados).First.Visible = False
+        End If
+
+
         Lbl_Titulo.Text = "*** Seleccione una Opciòn ***"
         Select Case UCase(TreeView1.SelectedNode.Name)
             Case UCase("Nd_SolPermisos")
@@ -263,6 +268,37 @@ Public Class FrmSolicPermHrasExt
                         dgvSolicitudesSalidaInformePermisos.Size = New Size(dgvSolicitudesSalidaInformePermisos.Size.Width, btnBuscarInformePermisos.Location.Y - dgvSolicitudesSalidaInformePermisos.Location.Y - 20)
                     End If
                 End If
+
+            Case UCase("Nd_InformePresencia")
+                If MDIParent1.RevisaAcceso(90020) Then
+                    'Pnl_InformePermisos.Parent = pnlCentral
+
+                    'Pnl_InformePermisos.Location = New Point(3, 52)
+                    'Pnl_InformePermisos.Dock = DockStyle.Fill
+                    'Pnl_InformePermisos.Visible = True
+                    ' MDIParent1.Panel2.Visible = False
+
+                    If Application.OpenForms().OfType(Of FrmPresenciaEmpleados).Any Then
+                        Application.OpenForms().OfType(Of FrmPresenciaEmpleados).First.Visible = True
+                    Else
+                        Dim NewMDIChild As New FrmPresenciaEmpleados()
+                        NewMDIChild.TopLevel = False
+                        NewMDIChild.Visible = False
+                        NewMDIChild.MdiParent = Me.MdiParent
+                        NewMDIChild.WindowState = FormWindowState.Maximized
+                        NewMDIChild.Dock = DockStyle.Fill
+                        Me.pnlCentral.Controls.Add(NewMDIChild)
+                        Me.pnlCentral.Tag = NewMDIChild
+                        NewMDIChild.Show()
+                        NewMDIChild.ControlBox = False
+                        NewMDIChild.ResizeGrid()
+                        NewMDIChild.Visible = True
+
+                    End If
+                    'Application.OpenForms.OfType(Of FrmPresenciaEmpleados)().First
+
+                End If
+
         End Select
     End Sub
 
