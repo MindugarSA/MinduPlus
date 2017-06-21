@@ -33,6 +33,8 @@ Partial Class FrmSolicPermHrasExt
         Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
         Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Presencia")
         Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9})
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eliminar Hora Extra")
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Control de Solicitud", New System.Windows.Forms.TreeNode() {TreeNode11})
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -334,7 +336,11 @@ Partial Class FrmSolicPermHrasExt
         TreeNode10.ForeColor = System.Drawing.Color.White
         TreeNode10.Name = "Nodo1"
         TreeNode10.Text = "Informe                                 "
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode10})
+        TreeNode11.Name = "Nd_EliminarHoraExtra"
+        TreeNode11.Text = "Eliminar Hora Extra"
+        TreeNode12.Name = "Nodo3"
+        TreeNode12.Text = "Control de Solicitud"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode10, TreeNode12})
         Me.TreeView1.ShowLines = False
         Me.TreeView1.Size = New System.Drawing.Size(243, 715)
         Me.TreeView1.TabIndex = 1

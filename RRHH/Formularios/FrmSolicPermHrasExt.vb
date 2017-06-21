@@ -87,6 +87,9 @@ Public Class FrmSolicPermHrasExt
         If Application.OpenForms().OfType(Of FrmPresenciaEmpleados).Any Then
             Application.OpenForms().OfType(Of FrmPresenciaEmpleados).First.Visible = False
         End If
+        If Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).Any Then
+            Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).First.Visible = False
+        End If
 
 
         Lbl_Titulo.Text = "*** Seleccione una Opciòn ***"
@@ -299,6 +302,25 @@ Public Class FrmSolicPermHrasExt
 
                 End If
 
+            Case UCase("Nd_EliminarHoraExtra")
+                If MDIParent1.RevisaAcceso(90020) Then
+                    If Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).Any Then
+                        Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).First.Visible = True
+                    Else
+                        Dim NewMDIChild As New Frm_EliminarHoraExtra()
+                        NewMDIChild.TopLevel = False
+                        NewMDIChild.Visible = False
+                        NewMDIChild.MdiParent = Me.MdiParent
+                        NewMDIChild.WindowState = FormWindowState.Maximized
+                        NewMDIChild.Dock = DockStyle.Fill
+                        Me.pnlCentral.Controls.Add(NewMDIChild)
+                        Me.pnlCentral.Tag = NewMDIChild
+                        NewMDIChild.Show()
+                        NewMDIChild.ControlBox = False
+                        NewMDIChild.ResizeGrid()
+                        NewMDIChild.Visible = True
+                    End If
+                End If
         End Select
     End Sub
 
