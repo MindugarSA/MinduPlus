@@ -1015,24 +1015,24 @@ Public Class FrmSolicPermHrasExt
     Private Function MandarInformeSolicitudHrasExt(ByVal correo As String) As Boolean
         Try
             'El mensaje contiene un informe de los datos de la solicitud
-            Dim mensaje As String = "El solicitante " & txbSupervisorSolicitante.Text & " pide permiso para hora extra para el area: " & cmbAreas.Text & "."
+            Dim mensaje As String = "El solicitante " & txbSupervisorSolicitante.Text & " pide permiso para hora extra para el area: " & ComboBox3.Text & "."
             mensaje += vbCrLf
             mensaje += "Horas extras: " & txbHorasExtras.Text & "."
             mensaje += vbCrLf
-            mensaje += "Detalle del trabajo: " & txbDetalle.Text & "."
+            mensaje += "Detalle del trabajo: " & TxtBxDetalleSHX.Text & "."
             mensaje += vbCrLf
             mensaje += vbCrLf
             mensaje += "Colaboradores:"
             mensaje += vbCrLf
-            For i = 0 To dgvColaboradores.RowCount - 2
+            For i = 0 To dgvColaboradoresSHHEE.RowCount - 2
                 mensaje += vbCrLf
-                mensaje += "Nombre      : " & dgvColaboradores.Rows(i).Cells("nombreColaborador").Value & "." & vbCrLf
-                mensaje += "Rut         : " & dgvColaboradores.Rows(i).Cells("rutSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Cargo       : " & dgvColaboradores.Rows(i).Cells("cargoSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Empresa     : " & dgvColaboradores.Rows(i).Cells("nombreEmpresaSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Hora Inicio : " & dgvColaboradores.Rows(i).Cells("horaInicioSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Hora Termino: " & dgvColaboradores.Rows(i).Cells("horaTerminoSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Fecha       : " & dgvColaboradores.Rows(i).Cells("fechaRealSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Nombre      : " & dgvColaboradoresSHHEE.Rows(i).Cells("nombreColaborador").Value & "." & vbCrLf
+                mensaje += "Rut         : " & dgvColaboradoresSHHEE.Rows(i).Cells("rutSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Cargo       : " & dgvColaboradoresSHHEE.Rows(i).Cells("cargoSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Empresa     : " & dgvColaboradoresSHHEE.Rows(i).Cells("nombreEmpresaSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Hora Inicio : " & dgvColaboradoresSHHEE.Rows(i).Cells("horaInicioSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Hora Termino: " & dgvColaboradoresSHHEE.Rows(i).Cells("horaTerminoSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Fecha       : " & dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value & "." & vbCrLf
             Next
 
             'Un correo conteniendo los datos es entonces enviado al responsable de la autorización
