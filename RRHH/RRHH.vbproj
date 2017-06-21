@@ -234,6 +234,12 @@
     <Compile Include="DALC\Solicitud_Salida.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmPresenciaEmpleados.Designer.vb">
+      <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPresenciaEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\FrmSolicPermHrasExt.Designer.vb">
       <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
     </Compile>
@@ -244,6 +250,12 @@
       <DependentUpon>Frm_Configuracion.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Configuracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_EliminarHoraExtra.Designer.vb">
+      <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_EliminarHoraExtra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Frm_HistorialPermisoPersona.designer.vb">
@@ -310,8 +322,10 @@
     <Compile Include="Modelo\DataGridViewExtensions.vb" />
     <Compile Include="Modelo\HoraExtra.vb" />
     <Compile Include="Modelo\HoraExtraColaboradores.vb" />
+    <Compile Include="Modelo\MindugarConexion.vb" />
     <Compile Include="Modelo\Permiso.vb" />
     <Compile Include="Modelo\Persona.vb" />
+    <Compile Include="Modelo\ReadConfigPresencias.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -431,11 +445,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\FrmPresenciaEmpleados.resx">
+      <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmSolicPermHrasExt.resx">
       <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Configuracion.resx">
       <DependentUpon>Frm_Configuracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_EliminarHoraExtra.resx">
+      <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_HistorialPermisoPersona.resx">
       <DependentUpon>Frm_HistorialPermisoPersona.vb</DependentUpon>

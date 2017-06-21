@@ -31,7 +31,10 @@ Partial Class FrmSolicPermHrasExt
         Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones                      ", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
         Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
         Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
-        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8})
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Presencia")
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9})
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eliminar Hora Extra")
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Control de Solicitud", New System.Windows.Forms.TreeNode() {TreeNode11})
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -327,11 +330,17 @@ Partial Class FrmSolicPermHrasExt
         TreeNode7.Text = "Informe Permisos"
         TreeNode8.Name = "Nd_InformeHorasExtras"
         TreeNode8.Text = "Informe Horas Extras"
-        TreeNode9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode9.ForeColor = System.Drawing.Color.White
-        TreeNode9.Name = "Nodo1"
-        TreeNode9.Text = "Informe                                 "
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode9})
+        TreeNode9.Name = "Nd_InformePresencia"
+        TreeNode9.Text = "Informe Presencia"
+        TreeNode10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        TreeNode10.ForeColor = System.Drawing.Color.White
+        TreeNode10.Name = "Nodo1"
+        TreeNode10.Text = "Informe                                 "
+        TreeNode11.Name = "Nd_EliminarHoraExtra"
+        TreeNode11.Text = "Eliminar Hora Extra"
+        TreeNode12.Name = "Nodo3"
+        TreeNode12.Text = "Control de Solicitud"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode10, TreeNode12})
         Me.TreeView1.ShowLines = False
         Me.TreeView1.Size = New System.Drawing.Size(243, 715)
         Me.TreeView1.TabIndex = 1
@@ -1048,7 +1057,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfech.Location = New System.Drawing.Point(673, 8)
-        Me.dtpfech.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpfech.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpfech.Name = "dtpfech"
         Me.dtpfech.Size = New System.Drawing.Size(125, 29)
         Me.dtpfech.TabIndex = 62
@@ -1426,7 +1435,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkVerPendientes.AutoSize = True
         Me.chkVerPendientes.Location = New System.Drawing.Point(253, 16)
         Me.chkVerPendientes.Name = "chkVerPendientes"
-        Me.chkVerPendientes.Size = New System.Drawing.Size(126, 15)
+        Me.chkVerPendientes.Size = New System.Drawing.Size(127, 15)
         Me.chkVerPendientes.TabIndex = 5
         Me.chkVerPendientes.Text = "Ver Solo Pendientes"
         Me.chkVerPendientes.UseSelectable = True
@@ -1739,7 +1748,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkTodas.AutoSize = True
         Me.chkTodas.Location = New System.Drawing.Point(219, 105)
         Me.chkTodas.Name = "chkTodas"
-        Me.chkTodas.Size = New System.Drawing.Size(71, 15)
+        Me.chkTodas.Size = New System.Drawing.Size(72, 15)
         Me.chkTodas.TabIndex = 37
         Me.chkTodas.Text = "Ver todas"
         Me.chkTodas.UseSelectable = True
@@ -2125,7 +2134,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkBuscarTodosInformePermisos.AutoSize = True
         Me.chkBuscarTodosInformePermisos.Location = New System.Drawing.Point(261, 20)
         Me.chkBuscarTodosInformePermisos.Name = "chkBuscarTodosInformePermisos"
-        Me.chkBuscarTodosInformePermisos.Size = New System.Drawing.Size(93, 15)
+        Me.chkBuscarTodosInformePermisos.Size = New System.Drawing.Size(94, 15)
         Me.chkBuscarTodosInformePermisos.TabIndex = 24
         Me.chkBuscarTodosInformePermisos.Text = "Buscar Todos"
         Me.chkBuscarTodosInformePermisos.UseSelectable = True
@@ -2635,7 +2644,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Label32.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.Location = New System.Drawing.Point(571, 161)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(99, 17)
+        Me.Label32.Size = New System.Drawing.Size(100, 17)
         Me.Label32.TabIndex = 41
         Me.Label32.Text = "Total Empleado"
         '
@@ -2645,7 +2654,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Label33.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.Location = New System.Drawing.Point(34, 90)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(95, 17)
+        Me.Label33.Size = New System.Drawing.Size(96, 17)
         Me.Label33.TabIndex = 28
         Me.Label33.Text = "Fecha Termino:"
         '
@@ -2654,7 +2663,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkTodaEmpresaInformeHHEE.AutoSize = True
         Me.chkTodaEmpresaInformeHHEE.Location = New System.Drawing.Point(274, 21)
         Me.chkTodaEmpresaInformeHHEE.Name = "chkTodaEmpresaInformeHHEE"
-        Me.chkTodaEmpresaInformeHHEE.Size = New System.Drawing.Size(97, 15)
+        Me.chkTodaEmpresaInformeHHEE.Size = New System.Drawing.Size(98, 15)
         Me.chkTodaEmpresaInformeHHEE.TabIndex = 40
         Me.chkTodaEmpresaInformeHHEE.Text = "Toda Empresa"
         Me.chkTodaEmpresaInformeHHEE.UseSelectable = True
@@ -2685,7 +2694,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformeHHEE.Location = New System.Drawing.Point(135, 49)
-        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicioInformeHHEE.Name = "dtpInicioInformeHHEE"
         Me.dtpInicioInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpInicioInformeHHEE.TabIndex = 29
@@ -2752,7 +2761,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformeHHEE.Location = New System.Drawing.Point(135, 84)
-        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTerminoInformeHHEE.Name = "dtpTerminoInformeHHEE"
         Me.dtpTerminoInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpTerminoInformeHHEE.TabIndex = 30
@@ -2772,7 +2781,7 @@ Partial Class FrmSolicPermHrasExt
         Me.chkBuscarTodosInformeHHEE.AutoSize = True
         Me.chkBuscarTodosInformeHHEE.Location = New System.Drawing.Point(37, 133)
         Me.chkBuscarTodosInformeHHEE.Name = "chkBuscarTodosInformeHHEE"
-        Me.chkBuscarTodosInformeHHEE.Size = New System.Drawing.Size(93, 15)
+        Me.chkBuscarTodosInformeHHEE.Size = New System.Drawing.Size(94, 15)
         Me.chkBuscarTodosInformeHHEE.TabIndex = 35
         Me.chkBuscarTodosInformeHHEE.Text = "Buscar Todos"
         Me.chkBuscarTodosInformeHHEE.UseSelectable = True
