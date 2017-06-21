@@ -1015,24 +1015,24 @@ Public Class FrmSolicPermHrasExt
     Private Function MandarInformeSolicitudHrasExt(ByVal correo As String) As Boolean
         Try
             'El mensaje contiene un informe de los datos de la solicitud
-            Dim mensaje As String = "El solicitante " & txbSupervisorSolicitante.Text & " pide permiso para hora extra para el area: " & cmbAreas.Text & "."
+            Dim mensaje As String = "El solicitante " & txbSupervisorSolicitante.Text & " pide permiso para hora extra para el area: " & ComboBox3.Text & "."
             mensaje += vbCrLf
             mensaje += "Horas extras: " & txbHorasExtras.Text & "."
             mensaje += vbCrLf
-            mensaje += "Detalle del trabajo: " & txbDetalle.Text & "."
+            mensaje += "Detalle del trabajo: " & TxtBxDetalleSHX.Text & "."
             mensaje += vbCrLf
             mensaje += vbCrLf
             mensaje += "Colaboradores:"
             mensaje += vbCrLf
-            For i = 0 To dgvColaboradores.RowCount - 2
+            For i = 0 To dgvColaboradoresSHHEE.RowCount - 2
                 mensaje += vbCrLf
-                mensaje += "Nombre      : " & dgvColaboradores.Rows(i).Cells("nombreColaborador").Value & "." & vbCrLf
-                mensaje += "Rut         : " & dgvColaboradores.Rows(i).Cells("rutSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Cargo       : " & dgvColaboradores.Rows(i).Cells("cargoSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Empresa     : " & dgvColaboradores.Rows(i).Cells("nombreEmpresaSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Hora Inicio : " & dgvColaboradores.Rows(i).Cells("horaInicioSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Hora Termino: " & dgvColaboradores.Rows(i).Cells("horaTerminoSolicitarHHEE").Value & "." & vbCrLf
-                mensaje += "Fecha       : " & dgvColaboradores.Rows(i).Cells("fechaRealSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Nombre      : " & dgvColaboradoresSHHEE.Rows(i).Cells("nombreColaborador").Value & "." & vbCrLf
+                mensaje += "Rut         : " & dgvColaboradoresSHHEE.Rows(i).Cells("rutSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Cargo       : " & dgvColaboradoresSHHEE.Rows(i).Cells("cargoSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Empresa     : " & dgvColaboradoresSHHEE.Rows(i).Cells("nombreEmpresaSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Hora Inicio : " & dgvColaboradoresSHHEE.Rows(i).Cells("horaInicioSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Hora Termino: " & dgvColaboradoresSHHEE.Rows(i).Cells("horaTerminoSolicitarHHEE").Value & "." & vbCrLf
+                mensaje += "Fecha       : " & dgvColaboradoresSHHEE.Rows(i).Cells("fechaRealSolicitarHHEE").Value & "." & vbCrLf
             Next
 
             'Un correo conteniendo los datos es entonces enviado al responsable de la autorización
@@ -1381,6 +1381,7 @@ Public Class FrmSolicPermHrasExt
         Dim adapter As New SqlDataAdapter(comand)
         Dim table As DataTable = New DataTable()
         Try
+            dgvColaboradores.Visible = False
             adapter.Fill(table)
             For i = 0 To table.Rows.Count - 1
                 dgvColaboradores.Rows.Add(1)
@@ -1417,7 +1418,7 @@ Public Class FrmSolicPermHrasExt
         Catch ex As Exception
             MsgBox("Error al operar con la base de datos: " + ex.Message, MsgBoxStyle.Critical, "Error!")
         End Try
-
+        dgvColaboradores.Visible = True
     End Sub
     ''OK
     Private Sub LimparDataGridView()
@@ -1658,7 +1659,7 @@ Public Class FrmSolicPermHrasExt
             Dim adapter As New SqlDataAdapter(comand)
             adapter.Fill(tabla)
             comand.Dispose()
-
+            dgvSolicitudesSalida.Visible = False
             For i = 0 To tabla.Rows.Count - 1
                 dgvSolicitudesSalida.Rows.Add(1)
                 dgvSolicitudesSalida.Rows(i).Cells("numeroSolicitud").Value = tabla.Rows(i)("id_solicitud_salida").ToString
@@ -1695,6 +1696,7 @@ Public Class FrmSolicPermHrasExt
 
         Catch ex As Exception
         Finally
+            dgvSolicitudesSalida.Visible = True
             conexion.Close()
         End Try
     End Sub
@@ -1753,7 +1755,7 @@ Public Class FrmSolicPermHrasExt
             Dim adapter As New SqlDataAdapter(comand)
             adapter.Fill(tabla)
             comand.Dispose()
-
+            dgvSolicitudesSalida.Visible = False
             For i = 0 To tabla.Rows.Count - 1
                 dgvSolicitudesSalida.Rows.Add(1)
                 dgvSolicitudesSalida.Rows(i).Cells("numeroSolicitud").Value = tabla.Rows(i)("id_solicitud_salida").ToString
@@ -1790,6 +1792,7 @@ Public Class FrmSolicPermHrasExt
 
         Catch ex As Exception
         Finally
+            dgvSolicitudesSalida.Visible = True
             conexion.Close()
         End Try
     End Sub
@@ -1908,17 +1911,18 @@ Public Class FrmSolicPermHrasExt
             Dim rut As String = ""
             Dim hheeAcumuladas As [Double] = 0
             Dim totalEmpleados As Int16 = 0
+            dgvColaboradoresInformeHHEE.Visible = False
             For Each horaExtra As HoraExtraColaboradores In horasExras
                 dgvColaboradoresInformeHHEE.Rows.Add(1)
                 If rut <> horaExtra.Rut Then
                     totalEmpleados += 1
                 End If
                 rut = horaExtra.Rut
-                dgvColaboradoresInformeHHEE.Rows(i).Cells("colNumeroInformeHHEE").Value = horaExtra.IdSolicitudHHEE.ToString()
+                dgvColaboradoresInformeHHEE.Rows(i).Cells("colNumeroInformeHHEE").Value = horaExtra.IdSolicitudHHEE
                 dgvColaboradoresInformeHHEE.Rows(i).Cells("colNombreColaboradoresInformeHHEE").Value = horaExtra.NombreCompleto
                 dgvColaboradoresInformeHHEE.Rows(i).Cells("colRutInformeHHEE").Value = horaExtra.Rut
                 dgvColaboradoresInformeHHEE.Rows(i).Cells("colCargoInformeHHEE").Value = horaExtra.Cargo
-                dgvColaboradoresInformeHHEE.Rows(i).Cells("colFechaRealInformeHHEE").Value = horaExtra.FechaReal.ToString("dd-MM-yyyy")
+                dgvColaboradoresInformeHHEE.Rows(i).Cells("colFechaRealInformeHHEE").Value = horaExtra.FechaReal
                 dgvColaboradoresInformeHHEE.Rows(i).Cells("colDepartamentoInformeHHEE").Value = horaExtra.Area
 
                 dgvColaboradoresInformeHHEE.Rows(i).Cells("colHoraInicioInformeHHEE").Value = horaExtra.HorasCompromisoInicial.ToString("hh\:mm")
@@ -1938,6 +1942,7 @@ Public Class FrmSolicPermHrasExt
                 hheeAcumuladas += horaExtra.TotalHorasCompromiso
                 i += 1
             Next
+            dgvColaboradoresInformeHHEE.Visible = True
             txbTotalEmpleadosInformeHHEE.Text = totalEmpleados.ToString
             'txbHHEEAcumuladas.Text = hheeAcumuladas.ToString();
             txbHHEEAcumuladasInformeHHEE.Text = Math.Truncate(hheeAcumuladas) & ":" & (Math.Truncate(60 * (hheeAcumuladas - Math.Truncate(hheeAcumuladas))))
@@ -2109,13 +2114,14 @@ Public Class FrmSolicPermHrasExt
                 permisos = Permiso.ListarIntevalo(Nothing, cmbEmpresaInformePermisos.Text, inicio, termino)
             End If
             Dim i As Integer = 0
+            dgvSolicitudesSalidaInformePermisos.Visible = False
             For Each permiso__1 As Permiso In permisos
                 dgvSolicitudesSalidaInformePermisos.Rows.Add(1)
-                dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colNumeroSolicitudInformePermisos").Value = permiso__1.Id.ToString()
+                dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colNumeroSolicitudInformePermisos").Value = permiso__1.Id
                 dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colTrabajadorInformePermisos").Value = permiso__1.Trabajador
                 dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colDepartamentoInformePermisos").Value = permiso__1.Departamento
                 dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colCargoInformePermisos").Value = permiso__1.Cargo
-                dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colFechaSalidaInformePermisos").Value = permiso__1.FechaPermiso.ToString("dd-MM-yyyy")
+                dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colFechaSalidaInformePermisos").Value = permiso__1.FechaPermiso
                 dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colDiaCompletoInformePermisos").Value = If(permiso__1.DiaCompleto, "SI", "NO")
                 If Not permiso__1.DiaCompleto Then
                     dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colHoraSalidaInformePermisos").Value = permiso__1.HoraSalida.ToString("hh\:mm")
@@ -2125,6 +2131,7 @@ Public Class FrmSolicPermHrasExt
                 dgvSolicitudesSalidaInformePermisos.Rows(i).Cells("colTipoPermisoInformePermisos").Value = If(permiso__1.ComisonServicio, "COMISION SERVICIO", "PARTICULAR")
                 i += 1
             Next
+            dgvSolicitudesSalidaInformePermisos.Visible = True
         End If
     End Sub
 
@@ -2233,7 +2240,7 @@ Public Class FrmSolicPermHrasExt
                         cmd.Parameters.Add("@id_solicitud_horas_extra", SqlDbType.Int).Value = dt.Rows(0)("id_solicitud_horas_extra")
                         cmd.ExecuteNonQuery()
                     Next
-                    Dim mandado As Boolean = MandarInformeSolicitud(BuscarCorreoResponsable(ComboBox2.Text))
+                    Dim mandado As Boolean = MandarInformeSolicitudHrasExt(BuscarCorreoResponsable(ComboBox2.Text))
                     If mandado Then
                         MsgBox("Solicitud de hora extra enviada", MsgBoxStyle.Information, "Solicitud de hora extra")
                     Else
