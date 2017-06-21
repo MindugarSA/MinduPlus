@@ -252,6 +252,12 @@
     <Compile Include="Formularios\Frm_Configuracion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Frm_EliminarHoraExtra.Designer.vb">
+      <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_EliminarHoraExtra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Frm_HistorialPermisoPersona.designer.vb">
       <DependentUpon>Frm_HistorialPermisoPersona.vb</DependentUpon>
     </Compile>
@@ -447,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Configuracion.resx">
       <DependentUpon>Frm_Configuracion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_EliminarHoraExtra.resx">
+      <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_HistorialPermisoPersona.resx">
       <DependentUpon>Frm_HistorialPermisoPersona.vb</DependentUpon>
