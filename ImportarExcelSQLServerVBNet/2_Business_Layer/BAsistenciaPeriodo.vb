@@ -11,7 +11,8 @@ Namespace _2_Business_Layer
         Public Shared Function Insertar(Periodo As String, Id As String, Horario As String, Fecha As String, Marcajes As String, Marcajes2 As String,
             Presencia As String, Trabajo As String, Retraso As String, Extras As String, Mov As String, Trabajo2 As String,
             Ausencia As String, Aus As String, TotDesc As String, Licencia As String, Vacaciones As String, BonoMeta As String,
-            BonoNoche As String, Inc As String, Registro As DateTime, NumReg As Integer, HorarioE As String, HorarioS As String) As String
+            BonoNoche As String, Inc As String, Registro As DateTime, NumReg As Integer, HorarioE As String, HorarioS As String,
+            FechaFiniquito As String) As String
 
             Dim Obj As New DAsistenciaPeriodo()
 
@@ -39,6 +40,7 @@ Namespace _2_Business_Layer
             Obj.NumReg = NumReg
             Obj.HorarioE = HorarioE
             Obj.HorarioS = HorarioS
+            Obj.FechaFiniquito = FechaFiniquito
 
             Return Obj.Insertar(Obj)
         End Function
