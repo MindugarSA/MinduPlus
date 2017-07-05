@@ -31,7 +31,7 @@ Public Class Login
         MDIParent1.TxtBx_UserName.Text = ""
         MDIParent1.Lbl_RutTrab.Text = ""
         MDIParent1.Lbl_Cod_Interno.Text = ""
-        MDIParent1.Lbl_Cod_ID.Visible = False
+        MDIParent1.Lbl_Cod_ID.Text = ""
         MDIParent1.TiempoIngreso.Enabled = False
         MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
         MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo

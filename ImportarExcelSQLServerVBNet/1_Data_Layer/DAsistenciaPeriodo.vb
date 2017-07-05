@@ -31,8 +31,6 @@ Namespace _1_Data_Layer
         Private mNumReg As Integer
         Private mHorarioE As String
         Private mHorarioS As String
-        Private mFechaFiniquito As String
-
 
         Public Property Periodo() As [String]
             Get
@@ -250,23 +248,13 @@ Namespace _1_Data_Layer
             End Set
         End Property
 
-        Public Property FechaFiniquito As String
-            Get
-                Return mFechaFiniquito
-            End Get
-            Set(value As String)
-                mFechaFiniquito = value
-            End Set
-        End Property
-
         Public Sub New()
         End Sub
 
         Public Sub New(Periodo As String, Id As String, Horario As String, Fecha As String, Marcajes As String, Marcajes2 As String,
             Presencia As String, Trabajo As String, Retraso As String, Extras As String, Mov As String, Trabajo2 As String,
             Ausencia As String, Aus As String, TotDesc As String, Licencia As String, Vacaciones As String, BonoMeta As String,
-            BonoNoche As String, Inc As String, Registro As DateTime, NumReg As Integer, HorarioE As String, HorarioS As String,
-            FechaFiniquito As String)
+            BonoNoche As String, Inc As String, Registro As DateTime, NumReg As Integer, HorarioE As String, HorarioS As String)
 
             mPeriodo = Periodo
             mId = Id
@@ -292,7 +280,6 @@ Namespace _1_Data_Layer
             mNumReg = NumReg
             mHorarioE = HorarioE
             mHorarioS = HorarioS
-            mFechaFiniquito = FechaFiniquito
 
         End Sub
 
@@ -332,7 +319,8 @@ Namespace _1_Data_Layer
                 SqlCmd.Parameters.AddWithValue("@NumReg", Asistencia.NumReg)
                 SqlCmd.Parameters.AddWithValue("@HorarioE", Asistencia.HorarioE)
                 SqlCmd.Parameters.AddWithValue("@HorarioS", Asistencia.HorarioS)
-                SqlCmd.Parameters.AddWithValue("@FechaFiniquito", Asistencia.FechaFiniquito)
+
+
 
                 rpta = If(SqlCmd.ExecuteNonQuery() = 1, "OK", "NO se Ingreso el Registro")
 			Catch ex As Exception

@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -126,9 +126,6 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="MonthCalendar">
-      <HintPath>..\MonthCalendar.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -226,7 +223,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="ImportarExcelSQLServer.Converted_ClaveTemporal.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

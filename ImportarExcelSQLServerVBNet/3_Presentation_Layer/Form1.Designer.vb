@@ -61,9 +61,9 @@ Partial Class Form1
         Me.label5 = New System.Windows.Forms.Label()
         Me.textBox2 = New System.Windows.Forms.TextBox()
         Me.dataGridView1 = New MetroFramework.Controls.MetroGrid()
-        Me.comboBox2 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox2 = New System.Windows.Forms.ComboBox()
         Me.progressBar1 = New MetroFramework.Controls.MetroProgressBar()
-        Me.comboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox1 = New System.Windows.Forms.ComboBox()
         Me.label4 = New System.Windows.Forms.Label()
         Me.textBox1 = New System.Windows.Forms.TextBox()
         Me.label1 = New System.Windows.Forms.Label()
@@ -79,13 +79,13 @@ Partial Class Form1
         Me.textBox4 = New System.Windows.Forms.TextBox()
         Me.label12 = New System.Windows.Forms.Label()
         Me.label13 = New System.Windows.Forms.Label()
-        Me.comboBox6 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox6 = New System.Windows.Forms.ComboBox()
         Me.groupBox5 = New System.Windows.Forms.GroupBox()
         Me.button5 = New System.Windows.Forms.Button()
         Me.dataGridView2 = New MetroFramework.Controls.MetroGrid()
         Me.button4 = New System.Windows.Forms.Button()
         Me.label8 = New System.Windows.Forms.Label()
-        Me.comboBox3 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox3 = New System.Windows.Forms.ComboBox()
         Me.tabPage2 = New System.Windows.Forms.TabPage()
         Me.groupBox3 = New System.Windows.Forms.GroupBox()
         Me.label15 = New System.Windows.Forms.Label()
@@ -94,12 +94,12 @@ Partial Class Form1
         Me.textBox3 = New System.Windows.Forms.TextBox()
         Me.label11 = New System.Windows.Forms.Label()
         Me.label10 = New System.Windows.Forms.Label()
-        Me.comboBox5 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox5 = New System.Windows.Forms.ComboBox()
         Me.groupBox4 = New System.Windows.Forms.GroupBox()
         Me.dataGridView3 = New MetroFramework.Controls.MetroGrid()
         Me.button6 = New System.Windows.Forms.Button()
         Me.label9 = New System.Windows.Forms.Label()
-        Me.comboBox4 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox4 = New System.Windows.Forms.ComboBox()
         Me.tabPage3 = New System.Windows.Forms.TabPage()
         Me.groupBox6 = New System.Windows.Forms.GroupBox()
         Me.groupBox9 = New System.Windows.Forms.GroupBox()
@@ -112,9 +112,9 @@ Partial Class Form1
         Me.radioButton2 = New System.Windows.Forms.RadioButton()
         Me.radioButton1 = New System.Windows.Forms.RadioButton()
         Me.label19 = New System.Windows.Forms.Label()
-        Me.comboBox8 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox8 = New System.Windows.Forms.ComboBox()
         Me.button14 = New System.Windows.Forms.Button()
-        Me.comboBox7 = New MetroFramework.Controls.MetroComboBox()
+        Me.comboBox7 = New System.Windows.Forms.ComboBox()
         Me.label18 = New System.Windows.Forms.Label()
         Me.button11 = New System.Windows.Forms.Button()
         Me.label16 = New System.Windows.Forms.Label()
@@ -336,7 +336,7 @@ Partial Class Form1
         Me.label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label5.AutoSize = True
         Me.label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.label5.Location = New System.Drawing.Point(870, 11)
+        Me.label5.Location = New System.Drawing.Point(870, 15)
         Me.label5.Name = "label5"
         Me.label5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label5.Size = New System.Drawing.Size(101, 19)
@@ -418,14 +418,12 @@ Partial Class Form1
         Me.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox2.FormattingEnabled = True
-        Me.comboBox2.ItemHeight = 23
         Me.comboBox2.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.comboBox2.Location = New System.Drawing.Point(754, 30)
+        Me.comboBox2.Location = New System.Drawing.Point(754, 32)
         Me.comboBox2.Name = "comboBox2"
         Me.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.comboBox2.Size = New System.Drawing.Size(52, 29)
+        Me.comboBox2.Size = New System.Drawing.Size(52, 23)
         Me.comboBox2.TabIndex = 11
-        Me.comboBox2.UseSelectable = True
         '
         'progressBar1
         '
@@ -443,21 +441,19 @@ Partial Class Form1
         Me.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox1.FormattingEnabled = True
-        Me.comboBox1.ItemHeight = 23
         Me.comboBox1.Items.AddRange(New Object() {"2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"})
-        Me.comboBox1.Location = New System.Drawing.Point(643, 30)
+        Me.comboBox1.Location = New System.Drawing.Point(643, 32)
         Me.comboBox1.Name = "comboBox1"
         Me.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.comboBox1.Size = New System.Drawing.Size(65, 29)
+        Me.comboBox1.Size = New System.Drawing.Size(65, 23)
         Me.comboBox1.TabIndex = 10
-        Me.comboBox1.UseSelectable = True
         '
         'label4
         '
         Me.label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label4.AutoSize = True
         Me.label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.label4.Location = New System.Drawing.Point(678, 11)
+        Me.label4.Location = New System.Drawing.Point(670, 15)
         Me.label4.Name = "label4"
         Me.label4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.label4.Size = New System.Drawing.Size(77, 19)
@@ -670,12 +666,10 @@ Partial Class Form1
         Me.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox6.FormattingEnabled = True
-        Me.comboBox6.ItemHeight = 23
-        Me.comboBox6.Location = New System.Drawing.Point(442, 19)
+        Me.comboBox6.Location = New System.Drawing.Point(442, 22)
         Me.comboBox6.Name = "comboBox6"
-        Me.comboBox6.Size = New System.Drawing.Size(155, 29)
+        Me.comboBox6.Size = New System.Drawing.Size(155, 23)
         Me.comboBox6.TabIndex = 22
-        Me.comboBox6.UseSelectable = True
         '
         'groupBox5
         '
@@ -697,7 +691,7 @@ Partial Class Form1
         Me.button5.FlatAppearance.BorderSize = 0
         Me.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button5.Image = CType(resources.GetObject("button5.Image"), System.Drawing.Image)
-        Me.button5.Location = New System.Drawing.Point(233, 19)
+        Me.button5.Location = New System.Drawing.Point(229, 19)
         Me.button5.Name = "button5"
         Me.button5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button5.Size = New System.Drawing.Size(27, 27)
@@ -716,7 +710,6 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -792,12 +785,10 @@ Partial Class Form1
         Me.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox3.FormattingEnabled = True
-        Me.comboBox3.ItemHeight = 23
-        Me.comboBox3.Location = New System.Drawing.Point(127, 18)
+        Me.comboBox3.Location = New System.Drawing.Point(122, 21)
         Me.comboBox3.Name = "comboBox3"
-        Me.comboBox3.Size = New System.Drawing.Size(102, 29)
+        Me.comboBox3.Size = New System.Drawing.Size(102, 23)
         Me.comboBox3.TabIndex = 0
-        Me.comboBox3.UseSelectable = True
         '
         'tabPage2
         '
@@ -918,12 +909,10 @@ Partial Class Form1
         Me.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox5.FormattingEnabled = True
-        Me.comboBox5.ItemHeight = 23
-        Me.comboBox5.Location = New System.Drawing.Point(433, 19)
+        Me.comboBox5.Location = New System.Drawing.Point(433, 22)
         Me.comboBox5.Name = "comboBox5"
-        Me.comboBox5.Size = New System.Drawing.Size(155, 29)
+        Me.comboBox5.Size = New System.Drawing.Size(155, 23)
         Me.comboBox5.TabIndex = 22
-        Me.comboBox5.UseSelectable = True
         '
         'groupBox4
         '
@@ -948,7 +937,6 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -997,7 +985,7 @@ Partial Class Form1
         Me.button6.FlatAppearance.BorderSize = 0
         Me.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button6.Image = CType(resources.GetObject("button6.Image"), System.Drawing.Image)
-        Me.button6.Location = New System.Drawing.Point(233, 19)
+        Me.button6.Location = New System.Drawing.Point(229, 18)
         Me.button6.Name = "button6"
         Me.button6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button6.Size = New System.Drawing.Size(27, 27)
@@ -1020,12 +1008,10 @@ Partial Class Form1
         Me.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox4.FormattingEnabled = True
-        Me.comboBox4.ItemHeight = 23
-        Me.comboBox4.Location = New System.Drawing.Point(127, 18)
+        Me.comboBox4.Location = New System.Drawing.Point(122, 21)
         Me.comboBox4.Name = "comboBox4"
-        Me.comboBox4.Size = New System.Drawing.Size(102, 29)
+        Me.comboBox4.Size = New System.Drawing.Size(102, 23)
         Me.comboBox4.TabIndex = 16
-        Me.comboBox4.UseSelectable = True
         '
         'tabPage3
         '
@@ -1192,12 +1178,10 @@ Partial Class Form1
         Me.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox8.FormattingEnabled = True
-        Me.comboBox8.ItemHeight = 23
-        Me.comboBox8.Location = New System.Drawing.Point(135, 10)
+        Me.comboBox8.Location = New System.Drawing.Point(130, 13)
         Me.comboBox8.Name = "comboBox8"
-        Me.comboBox8.Size = New System.Drawing.Size(102, 29)
+        Me.comboBox8.Size = New System.Drawing.Size(102, 23)
         Me.comboBox8.TabIndex = 16
-        Me.comboBox8.UseSelectable = True
         '
         'button14
         '
@@ -1219,13 +1203,11 @@ Partial Class Form1
         Me.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.comboBox7.FormattingEnabled = True
-        Me.comboBox7.ItemHeight = 23
         Me.comboBox7.Items.AddRange(New Object() {"MINDUGAR S.A. - 96588890-K", "MINDUGAR INDUSTRIAL - 83073600-K", "MINDUGAR MONTAJES - 76033420-0"})
-        Me.comboBox7.Location = New System.Drawing.Point(303, 10)
+        Me.comboBox7.Location = New System.Drawing.Point(301, 13)
         Me.comboBox7.Name = "comboBox7"
-        Me.comboBox7.Size = New System.Drawing.Size(155, 29)
+        Me.comboBox7.Size = New System.Drawing.Size(155, 23)
         Me.comboBox7.TabIndex = 22
-        Me.comboBox7.UseSelectable = True
         '
         'label18
         '
@@ -1342,7 +1324,6 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dataGridView4.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
         Me.dataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -1440,14 +1421,14 @@ Partial Class Form1
     Friend WithEvents groupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents dataGridView2 As MetroFramework.Controls.MetroGrid 'System.Windows.Forms.DataGridView
     Friend WithEvents button4 As System.Windows.Forms.Button
-    Friend WithEvents comboBox3 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents button5 As System.Windows.Forms.Button
     Friend WithEvents label8 As System.Windows.Forms.Label
     Friend WithEvents button8 As System.Windows.Forms.Button
     Friend WithEvents textBox4 As System.Windows.Forms.TextBox
     Friend WithEvents label12 As System.Windows.Forms.Label
     Friend WithEvents label13 As System.Windows.Forms.Label
-    Friend WithEvents comboBox6 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox6 As System.Windows.Forms.ComboBox
     Friend WithEvents groupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents label14 As System.Windows.Forms.Label
     Friend WithEvents groupBox1 As System.Windows.Forms.GroupBox
@@ -1457,9 +1438,9 @@ Partial Class Form1
     Friend WithEvents label5 As System.Windows.Forms.Label
     Friend WithEvents textBox2 As System.Windows.Forms.TextBox
     Friend WithEvents dataGridView1 As MetroFramework.Controls.MetroGrid ' System.Windows.Forms.DataGridView
-    Friend WithEvents comboBox2 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents progressBar1 As MetroFramework.Controls.MetroProgressBar 'System.Windows.Forms.ProgressBar
-    Friend WithEvents comboBox1 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents label4 As System.Windows.Forms.Label
     Friend WithEvents textBox1 As System.Windows.Forms.TextBox
     Friend WithEvents label1 As System.Windows.Forms.Label
@@ -1474,12 +1455,12 @@ Partial Class Form1
     Friend WithEvents textBox3 As System.Windows.Forms.TextBox
     Friend WithEvents label11 As System.Windows.Forms.Label
     Friend WithEvents label10 As System.Windows.Forms.Label
-    Friend WithEvents comboBox5 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox5 As System.Windows.Forms.ComboBox
     Friend WithEvents groupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents dataGridView3 As MetroFramework.Controls.MetroGrid ' System.Windows.Forms.DataGridView
     Friend WithEvents button6 As System.Windows.Forms.Button
     Friend WithEvents label9 As System.Windows.Forms.Label
-    Friend WithEvents comboBox4 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents gradientTab1 As New MetroFramework.Controls.MetroTabControl '_2_Business_Layer.GradientTab
     Friend WithEvents tabPage0 As System.Windows.Forms.TabPage
     Friend WithEvents tabPage1 As System.Windows.Forms.TabPage
@@ -1489,9 +1470,9 @@ Partial Class Form1
     Friend WithEvents groupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents groupBox8 As System.Windows.Forms.GroupBox
     Friend WithEvents label19 As System.Windows.Forms.Label
-    Friend WithEvents comboBox8 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox8 As System.Windows.Forms.ComboBox
     Friend WithEvents button14 As System.Windows.Forms.Button
-    Friend WithEvents comboBox7 As MetroFramework.Controls.MetroComboBox 'System.Windows.Forms.ComboBox
+    Friend WithEvents comboBox7 As System.Windows.Forms.ComboBox
     Friend WithEvents label18 As System.Windows.Forms.Label
     Friend WithEvents button11 As System.Windows.Forms.Button
     Friend WithEvents label16 As System.Windows.Forms.Label

@@ -23,7 +23,6 @@ Public Class MDIParent1
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PictureBox2_Click(sender, e)
-        Lbl_Cod_ID.Visible = False
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
     End Sub
 

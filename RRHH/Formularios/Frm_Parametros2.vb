@@ -13,7 +13,7 @@ Public Class Frm_Parametros2
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
-        'Me.WindowState = FormWindowState.Maximized
+        Me.WindowState = FormWindowState.Maximized
         CargaUsuarios(1)
         LLenaDatosUsuario()
 
