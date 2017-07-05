@@ -839,6 +839,7 @@
     <None Include="Resources\favicon %281%29.ico" />
     <None Include="Resources\favicon %283%29.ico" />
     <None Include="Resources\exit.png" />
+    <None Include="Resources\exam.png" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />
