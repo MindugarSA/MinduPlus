@@ -42,6 +42,7 @@ Partial Class MDIParent1
         Me.Tle_Exportador = New MetroFramework.Controls.MetroTile()
         Me.Tle_Solicitar_Permisos = New MetroFramework.Controls.MetroTile()
         Me.TleSolicitar_HHEE = New MetroFramework.Controls.MetroTile()
+        Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -159,7 +160,7 @@ Partial Class MDIParent1
         Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
         Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 107)
         Me.Tle_InformesAlmu.TabIndex = 15
-        Me.Tle_InformesAlmu.Text = "Informes"
+        Me.Tle_InformesAlmu.Text = "Informes Almuerzos"
         Me.Tle_InformesAlmu.TileImage = Global.RRHH.My.Resources.Resources.list_document_interface_symbol
         Me.ToolTip.SetToolTip(Me.Tle_InformesAlmu, "Ingreso de Menu")
         Me.Tle_InformesAlmu.UseCustomBackColor = True
@@ -203,13 +204,13 @@ Partial Class MDIParent1
         Me.Tle_Permisos.ActiveControl = Nothing
         Me.Tle_Permisos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Tle_Permisos.Location = New System.Drawing.Point(9, 465)
+        Me.Tle_Permisos.Location = New System.Drawing.Point(9, 352)
         Me.Tle_Permisos.Name = "Tle_Permisos"
-        Me.Tle_Permisos.Size = New System.Drawing.Size(118, 107)
+        Me.Tle_Permisos.Size = New System.Drawing.Size(118, 220)
         Me.Tle_Permisos.TabIndex = 12
-        Me.Tle_Permisos.Text = "Permisos "
+        Me.Tle_Permisos.Text = "Informes y " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Autorizaciones"
         Me.Tle_Permisos.TileImage = Global.RRHH.My.Resources.Resources.people_check
-        Me.ToolTip.SetToolTip(Me.Tle_Permisos, "Permisos y solicitud de Horas Extras")
+        Me.ToolTip.SetToolTip(Me.Tle_Permisos, "Informes y" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Autorizaciones" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Horas Extras - Permisos")
         Me.Tle_Permisos.UseCustomBackColor = True
         Me.Tle_Permisos.UseSelectable = True
         Me.Tle_Permisos.UseTileImage = True
@@ -219,7 +220,7 @@ Partial Class MDIParent1
         Me.Tle_Liquidacion.ActiveControl = Nothing
         Me.Tle_Liquidacion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Liquidacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.Tle_Liquidacion.Location = New System.Drawing.Point(128, 6)
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(130, 6)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
         Me.Tle_Liquidacion.TabIndex = 11
@@ -235,7 +236,7 @@ Partial Class MDIParent1
         Me.Tle_SolAlmuerzo.ActiveControl = Nothing
         Me.Tle_SolAlmuerzo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(3, 6)
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(5, 6)
         Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
         Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_SolAlmuerzo.TabIndex = 10
@@ -251,7 +252,7 @@ Partial Class MDIParent1
         Me.Tle_Exportador.ActiveControl = Nothing
         Me.Tle_Exportador.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Exportador.BackColor = System.Drawing.Color.Orange
-        Me.Tle_Exportador.Location = New System.Drawing.Point(9, 352)
+        Me.Tle_Exportador.Location = New System.Drawing.Point(9, 238)
         Me.Tle_Exportador.Name = "Tle_Exportador"
         Me.Tle_Exportador.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Exportador.TabIndex = 9
@@ -267,7 +268,7 @@ Partial Class MDIParent1
         Me.Tle_Solicitar_Permisos.ActiveControl = Nothing
         Me.Tle_Solicitar_Permisos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Solicitar_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(373, 6)
+        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(499, 6)
         Me.Tle_Solicitar_Permisos.Name = "Tle_Solicitar_Permisos"
         Me.Tle_Solicitar_Permisos.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Solicitar_Permisos.TabIndex = 17
@@ -283,7 +284,7 @@ Partial Class MDIParent1
         Me.TleSolicitar_HHEE.ActiveControl = Nothing
         Me.TleSolicitar_HHEE.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TleSolicitar_HHEE.BackColor = System.Drawing.Color.Orange
-        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(248, 6)
+        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(374, 6)
         Me.TleSolicitar_HHEE.Name = "TleSolicitar_HHEE"
         Me.TleSolicitar_HHEE.Size = New System.Drawing.Size(119, 107)
         Me.TleSolicitar_HHEE.TabIndex = 18
@@ -293,6 +294,22 @@ Partial Class MDIParent1
         Me.TleSolicitar_HHEE.UseCustomBackColor = True
         Me.TleSolicitar_HHEE.UseSelectable = True
         Me.TleSolicitar_HHEE.UseTileImage = True
+        '
+        'MetroTile1
+        '
+        Me.MetroTile1.ActiveControl = Nothing
+        Me.MetroTile1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MetroTile1.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.MetroTile1.Location = New System.Drawing.Point(249, 6)
+        Me.MetroTile1.Name = "MetroTile1"
+        Me.MetroTile1.Size = New System.Drawing.Size(119, 107)
+        Me.MetroTile1.TabIndex = 19
+        Me.MetroTile1.Text = "Asistencias"
+        Me.MetroTile1.TileImage = Global.RRHH.My.Resources.Resources.Asistencia64
+        Me.ToolTip.SetToolTip(Me.MetroTile1, "Solicitar Permiso")
+        Me.MetroTile1.UseCustomBackColor = True
+        Me.MetroTile1.UseSelectable = True
+        Me.MetroTile1.UseTileImage = True
         '
         'ImageList1
         '
@@ -505,13 +522,14 @@ Partial Class MDIParent1
         '
         'pnlMovingRight
         '
+        Me.pnlMovingRight.Controls.Add(Me.MetroTile1)
         Me.pnlMovingRight.Controls.Add(Me.Tle_SolAlmuerzo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Liquidacion)
         Me.pnlMovingRight.Controls.Add(Me.TleSolicitar_HHEE)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Solicitar_Permisos)
         Me.pnlMovingRight.Location = New System.Drawing.Point(5, 0)
         Me.pnlMovingRight.Name = "pnlMovingRight"
-        Me.pnlMovingRight.Size = New System.Drawing.Size(500, 120)
+        Me.pnlMovingRight.Size = New System.Drawing.Size(640, 120)
         Me.pnlMovingRight.TabIndex = 20
         '
         'pnlMovingTop
@@ -629,4 +647,5 @@ Partial Class MDIParent1
     Friend WithEvents pnlMovingTop As Panel
     Friend WithEvents pnlMovingRight As Panel
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
 End Class
