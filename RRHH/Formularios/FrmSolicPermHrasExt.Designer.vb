@@ -32,9 +32,10 @@ Partial Class FrmSolicPermHrasExt
         Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
         Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Horas Extras")
         Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Presencia")
-        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9})
-        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eliminar Hora Extra")
-        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Control de Solicitud", New System.Windows.Forms.TreeNode() {TreeNode11})
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Asistencias")
+        Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9, TreeNode10})
+        Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eliminar Hora Extra")
+        Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Control de Solicitud", New System.Windows.Forms.TreeNode() {TreeNode12})
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -332,15 +333,17 @@ Partial Class FrmSolicPermHrasExt
         TreeNode8.Text = "Informe Horas Extras"
         TreeNode9.Name = "Nd_InformePresencia"
         TreeNode9.Text = "Informe Presencia"
-        TreeNode10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode10.ForeColor = System.Drawing.Color.White
-        TreeNode10.Name = "Nodo1"
-        TreeNode10.Text = "Informe                                 "
-        TreeNode11.Name = "Nd_EliminarHoraExtra"
-        TreeNode11.Text = "Eliminar Hora Extra"
-        TreeNode12.Name = "Nodo3"
-        TreeNode12.Text = "Control de Solicitud"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode10, TreeNode12})
+        TreeNode10.Name = "Nd_InformeAsistencias"
+        TreeNode10.Text = "Informe Asistencias"
+        TreeNode11.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        TreeNode11.ForeColor = System.Drawing.Color.White
+        TreeNode11.Name = "Nodo1"
+        TreeNode11.Text = "Informe                                 "
+        TreeNode12.Name = "Nd_EliminarHoraExtra"
+        TreeNode12.Text = "Eliminar Hora Extra"
+        TreeNode13.Name = "Nodo3"
+        TreeNode13.Text = "Control de Solicitud"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode11, TreeNode13})
         Me.TreeView1.ShowLines = False
         Me.TreeView1.Size = New System.Drawing.Size(243, 715)
         Me.TreeView1.TabIndex = 1
@@ -2197,7 +2200,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformePermisos.Location = New System.Drawing.Point(120, 48)
-        Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpInicioInformePermisos.Name = "dtpInicioInformePermisos"
         Me.dtpInicioInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpInicioInformePermisos.TabIndex = 15
@@ -2279,7 +2282,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformePermisos.Location = New System.Drawing.Point(120, 83)
-        Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpTerminoInformePermisos.Name = "dtpTerminoInformePermisos"
         Me.dtpTerminoInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpTerminoInformePermisos.TabIndex = 16
@@ -2694,7 +2697,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformeHHEE.Location = New System.Drawing.Point(135, 49)
-        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpInicioInformeHHEE.Name = "dtpInicioInformeHHEE"
         Me.dtpInicioInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpInicioInformeHHEE.TabIndex = 29
@@ -2761,7 +2764,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformeHHEE.Location = New System.Drawing.Point(135, 84)
-        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpTerminoInformeHHEE.Name = "dtpTerminoInformeHHEE"
         Me.dtpTerminoInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpTerminoInformeHHEE.TabIndex = 30

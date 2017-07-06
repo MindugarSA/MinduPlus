@@ -321,6 +321,31 @@ Public Class FrmSolicPermHrasExt
                         NewMDIChild.Visible = True
                     End If
                 End If
+
+            Case UCase("Nd_InformeAsistencias")
+                If MDIParent1.RevisaAcceso(90020) Then
+
+
+                    'If Application.OpenForms().OfType(Of FrmPresenciaEmpleados).Any Then
+                    '    Application.OpenForms().OfType(Of FrmPresenciaEmpleados).First.Visible = True
+                    'Else
+                    '    Dim NewMDIChild As New FrmPresenciaEmpleados()
+                    '    NewMDIChild.TopLevel = False
+                    '    NewMDIChild.Visible = False
+                    '    NewMDIChild.MdiParent = Me.MdiParent
+                    '    NewMDIChild.WindowState = FormWindowState.Maximized
+                    '    NewMDIChild.Dock = DockStyle.Fill
+                    '    Me.pnlCentral.Controls.Add(NewMDIChild)
+                    '    Me.pnlCentral.Tag = NewMDIChild
+                    '    NewMDIChild.Show()
+                    '    NewMDIChild.ControlBox = False
+                    '    NewMDIChild.ResizeGrid()
+                    '    NewMDIChild.Visible = True
+
+                    'End If
+                    'Application.OpenForms.OfType(Of FrmPresenciaEmpleados)().First
+
+                End If
         End Select
     End Sub
 

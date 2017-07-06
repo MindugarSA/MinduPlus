@@ -703,5 +703,22 @@ Public Class MDIParent1
         Button4.BackColor = Color.FromArgb(45, 137, 239)
     End Sub
 
+    Private Sub Tle_Asistencias_Periodo_Click(sender As Object, e As EventArgs) Handles Tle_Asistencias_Periodo.Click
 
+        Dim informe As New InformePlanillaAsistencia()
+
+        Dim formInforme As New Frm_AsistenciasPeriodo(informe)
+        Cerrar_Forms_Children()
+        formInforme.MdiParent = Me
+        formInforme.Dock = DockStyle.Fill
+        Me.Panel2.Controls.Add(formInforme)
+        Me.Panel2.Tag = formInforme
+        Ocultar_Tiles_MDI()
+        formInforme.Show()
+
+        TiempoIngreso.Enabled = True
+        TiempoActivo = Tiempo_Str
+        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
+    End Sub
 End Class

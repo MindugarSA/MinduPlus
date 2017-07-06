@@ -42,7 +42,7 @@ Partial Class MDIParent1
         Me.Tle_Exportador = New MetroFramework.Controls.MetroTile()
         Me.Tle_Solicitar_Permisos = New MetroFramework.Controls.MetroTile()
         Me.TleSolicitar_HHEE = New MetroFramework.Controls.MetroTile()
-        Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
+        Me.Tle_Asistencias_Periodo = New MetroFramework.Controls.MetroTile()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -295,21 +295,21 @@ Partial Class MDIParent1
         Me.TleSolicitar_HHEE.UseSelectable = True
         Me.TleSolicitar_HHEE.UseTileImage = True
         '
-        'MetroTile1
+        'Tle_Asistencias_Periodo
         '
-        Me.MetroTile1.ActiveControl = Nothing
-        Me.MetroTile1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.MetroTile1.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.MetroTile1.Location = New System.Drawing.Point(249, 6)
-        Me.MetroTile1.Name = "MetroTile1"
-        Me.MetroTile1.Size = New System.Drawing.Size(119, 107)
-        Me.MetroTile1.TabIndex = 19
-        Me.MetroTile1.Text = "Asistencias"
-        Me.MetroTile1.TileImage = Global.RRHH.My.Resources.Resources.Asistencia64
-        Me.ToolTip.SetToolTip(Me.MetroTile1, "Solicitar Permiso")
-        Me.MetroTile1.UseCustomBackColor = True
-        Me.MetroTile1.UseSelectable = True
-        Me.MetroTile1.UseTileImage = True
+        Me.Tle_Asistencias_Periodo.ActiveControl = Nothing
+        Me.Tle_Asistencias_Periodo.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Tle_Asistencias_Periodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Tle_Asistencias_Periodo.Location = New System.Drawing.Point(249, 6)
+        Me.Tle_Asistencias_Periodo.Name = "Tle_Asistencias_Periodo"
+        Me.Tle_Asistencias_Periodo.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_Asistencias_Periodo.TabIndex = 19
+        Me.Tle_Asistencias_Periodo.Text = "Asistencias"
+        Me.Tle_Asistencias_Periodo.TileImage = Global.RRHH.My.Resources.Resources.Asistencia64
+        Me.ToolTip.SetToolTip(Me.Tle_Asistencias_Periodo, "Solicitar Permiso")
+        Me.Tle_Asistencias_Periodo.UseCustomBackColor = True
+        Me.Tle_Asistencias_Periodo.UseSelectable = True
+        Me.Tle_Asistencias_Periodo.UseTileImage = True
         '
         'ImageList1
         '
@@ -522,7 +522,7 @@ Partial Class MDIParent1
         '
         'pnlMovingRight
         '
-        Me.pnlMovingRight.Controls.Add(Me.MetroTile1)
+        Me.pnlMovingRight.Controls.Add(Me.Tle_Asistencias_Periodo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_SolAlmuerzo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Liquidacion)
         Me.pnlMovingRight.Controls.Add(Me.TleSolicitar_HHEE)
@@ -647,5 +647,5 @@ Partial Class MDIParent1
     Friend WithEvents pnlMovingTop As Panel
     Friend WithEvents pnlMovingRight As Panel
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents MetroTile1 As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_Asistencias_Periodo As MetroFramework.Controls.MetroTile
 End Class
