@@ -18,7 +18,7 @@ Public Class Frm_AsistenciasPeriodo
         reporte = prmReporte
     End Sub
     Private Sub Frm_AsistenciasPeriodo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CrystalReportViewer1.ReportSource = reporte
+        'CrystalReportViewer1.ReportSource = reporte
         CrystalReportViewer1.Zoom(140)
 
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
@@ -31,7 +31,7 @@ Public Class Frm_AsistenciasPeriodo
             Dim adaptador As New SqlDataAdapter(cmd)
             Dim dt1 As New DataTable
             adaptador.Fill(dtPeriodos)
-            If dtPeriodos.rows.count > 0 Then
+            If dtPeriodos.Rows.Count > 0 Then
                 With MetroComboBox1
                     .DataSource = dtPeriodos
                     .DisplayMember = "PeriodoC"
