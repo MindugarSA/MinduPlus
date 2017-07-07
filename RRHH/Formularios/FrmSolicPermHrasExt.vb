@@ -2008,28 +2008,31 @@ Public Class FrmSolicPermHrasExt
 
     Private Sub btnImprimirInformeHHEE_Click(sender As Object, e As EventArgs) Handles btnImprimirInformeHHEE.Click
         If dgvColaboradoresInformeHHEE.Rows.Count > 0 Then
+            Dim FecIni As Date = dtpInicioInformeHHEE.Value
+            Dim FecFin As Date = dtpTerminoInformeHHEE.Value
+
             If chkBuscarTodosInformeHHEE.Checked Then
                 If chkTodaEmpresaInformeHHEE.Checked Then
                     Dim informe As New InformeHorasExtrasFechas()
-                    informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
-                    informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
-                    Dim formInforme As New Frm_ImprimirReporte(informe)
+                    informe.SetParameterValue("@fecha_inicio", FecIni)
+                    informe.SetParameterValue("@fecha_termino", FecFin)
+                    Dim formInforme As New Frm_VisualizarReporte(informe)
                     formInforme.Show()
                 Else
                     Dim informe As New InformeHorasExtrasFechasEmpresa()
                     informe.SetParameterValue("@empresa", cmbEmpresaInformeHHEE.Text)
-                    informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
-                    informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
-                    Dim formInforme As New Frm_ImprimirReporte(informe)
+                    informe.SetParameterValue("@fecha_inicio", FecIni)
+                    informe.SetParameterValue("@fecha_termino", FecFin)
+                    Dim formInforme As New Frm_VisualizarReporte(informe)
 
                     formInforme.Show()
                 End If
             Else
                 Dim informe As New InformeHorasExtrasPersonaFechas()
                 informe.SetParameterValue("@rut", txbRutInformeHHEE.Text)
-                informe.SetParameterValue("@fecha_inicio", dtpInicioInformeHHEE.Value)
-                informe.SetParameterValue("@fecha_termino", dtpTerminoInformeHHEE.Value)
-                Dim formInforme As New Frm_ImprimirReporte(informe)
+                informe.SetParameterValue("@fecha_inicio", FecIni)
+                informe.SetParameterValue("@fecha_termino", FecFin)
+                Dim formInforme As New Frm_VisualizarReporte(informe)
                 formInforme.Show()
             End If
         End If

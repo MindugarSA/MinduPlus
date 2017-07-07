@@ -86,4 +86,9 @@ Public Class Frm_AsistenciasPeriodo
     Private Sub MetroComboBox1_Click(sender As Object, e As EventArgs) Handles MetroComboBox1.Click
         iLoad = 3
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'CrystalReportViewer1.PrintReport()
+        reporte.PrintToPrinter(1, False, 0, 0)
+    End Sub
 End Class

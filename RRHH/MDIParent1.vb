@@ -612,14 +612,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -676,7 +676,7 @@ Public Class MDIParent1
         End If
     End Sub
 
-    Private Sub TleSolicitar_HHEE_Click(sender As Object, e As EventArgs) Handles TleSolicitar_HHEE.Click
+    Private Sub TleSolicitar_HHEE_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(90001) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
@@ -703,7 +703,7 @@ Public Class MDIParent1
         Button4.BackColor = Color.FromArgb(45, 137, 239)
     End Sub
 
-    Private Sub Tle_Asistencias_Periodo_Click(sender As Object, e As EventArgs) Handles Tle_Asistencias_Periodo.Click
+    Private Sub Tle_Asistencias_Periodo_Click(sender As Object, e As EventArgs) Handles Tle_Asistencias_Periodo.Click, TleSolicitar_HHEE.Click
 
         Dim informe As New InformePlanillaAsistencia()
 

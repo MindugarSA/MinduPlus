@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>92</ApplicationRevision>
+    <ApplicationRevision>93</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -372,6 +372,12 @@
     <Compile Include="Reportes\Frm_Reportes_Menu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Frm_VisualizarReporte.Designer.vb">
+      <DependentUpon>Frm_VisualizarReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_VisualizarReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\InformeHoraExtraPorDia1.vb">
       <DependentUpon>InformeHoraExtraPorDia.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -519,6 +525,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Reportes_Menu.resx">
       <DependentUpon>Frm_Reportes_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_VisualizarReporte.resx">
+      <DependentUpon>Frm_VisualizarReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\InformeHoraExtraPorDia.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -890,6 +899,7 @@
     <None Include="Resources\save-file-option %281%29.png" />
     <None Include="Resources\printing.png" />
     <None Include="Resources\plus.png" />
+    <None Include="Resources\printing %281%29.png" />
     <Content Include="Resources\VB-Colaciones.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

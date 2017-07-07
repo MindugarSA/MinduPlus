@@ -233,26 +233,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Flecha_Derecha() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Flecha Derecha", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property Flecha_Izquerda() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Flecha Izquerda", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property Gesper() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Gesper", resourceCulture)
@@ -483,6 +463,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property printing_64() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("printing_64", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property printing32() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("printing32", resourceCulture)
@@ -546,16 +536,6 @@ Namespace My.Resources
         Friend ReadOnly Property TempoNet() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("TempoNet", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property VB_Colaciones() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("VB-Colaciones", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
