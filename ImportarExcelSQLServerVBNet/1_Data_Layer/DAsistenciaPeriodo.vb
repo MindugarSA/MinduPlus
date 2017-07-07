@@ -6,20 +6,20 @@ Imports System.Text
 Imports System.Threading.Tasks
 
 Namespace _1_Data_Layer
-	Public Class DAsistenciaPeriodo
-		Private mPeriodo As String
-		Private mId As String
-		Private mHorario As String
-		Private mFecha As String
-		Private mMarcajes As String
-		Private mMarcajes2 As String
-		Private mPresencia As String
-		Private mTrabajo As String
-		Private mRetraso As String
-		Private mExtras As String
-		Private mMov As String
-		Private mTrabajo2 As String
-		Private mAusencia As String
+    Public Class DAsistenciaPeriodo
+        Private mPeriodo As String
+        Private mId As String
+        Private mHorario As String
+        Private mFecha As String
+        Private mMarcajes As String
+        Private mMarcajes2 As String
+        Private mPresencia As String
+        Private mTrabajo As String
+        Private mRetraso As String
+        Private mExtras As String
+        Private mMov As String
+        Private mTrabajo2 As String
+        Private mAusencia As String
         Private mAus As String
         Private mTotDesc As String
         Private mLicencia As String
@@ -31,6 +31,8 @@ Namespace _1_Data_Layer
         Private mNumReg As Integer
         Private mHorarioE As String
         Private mHorarioS As String
+        Private mFechaFiniquito As String
+
 
         Public Property Periodo() As [String]
             Get
@@ -248,13 +250,23 @@ Namespace _1_Data_Layer
             End Set
         End Property
 
+        Public Property FechaFiniquito As String
+            Get
+                Return mFechaFiniquito
+            End Get
+            Set(value As String)
+                mFechaFiniquito = value
+            End Set
+        End Property
+
         Public Sub New()
         End Sub
 
         Public Sub New(Periodo As String, Id As String, Horario As String, Fecha As String, Marcajes As String, Marcajes2 As String,
             Presencia As String, Trabajo As String, Retraso As String, Extras As String, Mov As String, Trabajo2 As String,
             Ausencia As String, Aus As String, TotDesc As String, Licencia As String, Vacaciones As String, BonoMeta As String,
-            BonoNoche As String, Inc As String, Registro As DateTime, NumReg As Integer, HorarioE As String, HorarioS As String)
+            BonoNoche As String, Inc As String, Registro As DateTime, NumReg As Integer, HorarioE As String, HorarioS As String,
+            FechaFiniquito As String)
 
             mPeriodo = Periodo
             mId = Id
@@ -280,34 +292,35 @@ Namespace _1_Data_Layer
             mNumReg = NumReg
             mHorarioE = HorarioE
             mHorarioS = HorarioS
+            mFechaFiniquito = FechaFiniquito
 
         End Sub
 
         Public Function Insertar(Asistencia As DAsistenciaPeriodo) As String
-			Dim rpta As String = ""
-			Dim SlqCon As New SqlConnection()
+            Dim rpta As String = ""
+            Dim SlqCon As New SqlConnection()
 
-			Try
-				Dim sp As String = "SpASISTENCIA_PERIODOInsertar"
-				SlqCon.ConnectionString = Conection.Cn
-				Dim SqlCmd As New SqlCommand(sp, SlqCon)
-				SqlCmd.CommandType = CommandType.StoredProcedure
+            Try
+                Dim sp As String = "SpASISTENCIA_PERIODOInsertar"
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
+                SqlCmd.CommandType = CommandType.StoredProcedure
 
-				SlqCon.Open()
+                SlqCon.Open()
 
-				SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
-				SqlCmd.Parameters.AddWithValue("@Id", Asistencia.Id)
-				SqlCmd.Parameters.AddWithValue("@Horario", Asistencia.Horario)
-				SqlCmd.Parameters.AddWithValue("@Fecha", Asistencia.Fecha)
-				SqlCmd.Parameters.AddWithValue("@Marcajes", Asistencia.Marcajes)
-				SqlCmd.Parameters.AddWithValue("@Marcajes2", Asistencia.Marcajes2)
-				SqlCmd.Parameters.AddWithValue("@Presencia", Asistencia.Presencia)
-				SqlCmd.Parameters.AddWithValue("@Trabajo", Asistencia.Trabajo)
-				SqlCmd.Parameters.AddWithValue("@Retraso", Asistencia.Retraso)
-				SqlCmd.Parameters.AddWithValue("@Extras", Asistencia.Extras)
-				SqlCmd.Parameters.AddWithValue("@Mov", Asistencia.Mov)
-				SqlCmd.Parameters.AddWithValue("@Trabajo2", Asistencia.Trabajo2)
-				SqlCmd.Parameters.AddWithValue("@Ausencia", Asistencia.Ausencia)
+                SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
+                SqlCmd.Parameters.AddWithValue("@Id", Asistencia.Id)
+                SqlCmd.Parameters.AddWithValue("@Horario", Asistencia.Horario)
+                SqlCmd.Parameters.AddWithValue("@Fecha", Asistencia.Fecha)
+                SqlCmd.Parameters.AddWithValue("@Marcajes", Asistencia.Marcajes)
+                SqlCmd.Parameters.AddWithValue("@Marcajes2", Asistencia.Marcajes2)
+                SqlCmd.Parameters.AddWithValue("@Presencia", Asistencia.Presencia)
+                SqlCmd.Parameters.AddWithValue("@Trabajo", Asistencia.Trabajo)
+                SqlCmd.Parameters.AddWithValue("@Retraso", Asistencia.Retraso)
+                SqlCmd.Parameters.AddWithValue("@Extras", Asistencia.Extras)
+                SqlCmd.Parameters.AddWithValue("@Mov", Asistencia.Mov)
+                SqlCmd.Parameters.AddWithValue("@Trabajo2", Asistencia.Trabajo2)
+                SqlCmd.Parameters.AddWithValue("@Ausencia", Asistencia.Ausencia)
                 SqlCmd.Parameters.AddWithValue("@Aus", Asistencia.Aus)
                 SqlCmd.Parameters.AddWithValue("@TotDesc", Asistencia.TotDesc)
                 SqlCmd.Parameters.AddWithValue("@Licencia", Asistencia.Licencia)
@@ -319,168 +332,167 @@ Namespace _1_Data_Layer
                 SqlCmd.Parameters.AddWithValue("@NumReg", Asistencia.NumReg)
                 SqlCmd.Parameters.AddWithValue("@HorarioE", Asistencia.HorarioE)
                 SqlCmd.Parameters.AddWithValue("@HorarioS", Asistencia.HorarioS)
-
-
+                SqlCmd.Parameters.AddWithValue("@FechaFiniquito", Asistencia.FechaFiniquito)
 
                 rpta = If(SqlCmd.ExecuteNonQuery() = 1, "OK", "NO se Ingreso el Registro")
-			Catch ex As Exception
-				rpta = ex.Message
-			Finally
-				If SlqCon.State = ConnectionState.Open Then
-					SlqCon.Close()
-				End If
-			End Try
+            Catch ex As Exception
+                rpta = ex.Message
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
 
-			Return rpta
-		End Function
+            Return rpta
+        End Function
 
-		Public Function Eliminar(Asistencia As DAsistenciaPeriodo) As String
-			Dim rpta As String = ""
-			Dim SlqCon As New SqlConnection()
+        Public Function Eliminar(Asistencia As DAsistenciaPeriodo) As String
+            Dim rpta As String = ""
+            Dim SlqCon As New SqlConnection()
 
-			Try
-				Dim sp As String = "SpASISTENCIA_PERIODOEliminar"
+            Try
+                Dim sp As String = "SpASISTENCIA_PERIODOEliminar"
 
-				SlqCon.ConnectionString = Conection.Cn
-				Dim SqlCmd As New SqlCommand(sp, SlqCon)
-				SqlCmd.CommandType = CommandType.StoredProcedure
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
+                SqlCmd.CommandType = CommandType.StoredProcedure
 
-				SlqCon.Open()
+                SlqCon.Open()
 
-				SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
+                SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
 
-				rpta = If(SqlCmd.ExecuteNonQuery() = 1, "OK", "NO se Elimino el Registro")
+                rpta = If(SqlCmd.ExecuteNonQuery() = 1, "OK", "NO se Elimino el Registro")
 
 
-				Return rpta
-			Catch ex As Exception
-				rpta = ex.Message
-			Finally
-				If SlqCon.State = ConnectionState.Open Then
-					SlqCon.Close()
-				End If
-			End Try
+                Return rpta
+            Catch ex As Exception
+                rpta = ex.Message
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
 
-			Return rpta
-		End Function
+            Return rpta
+        End Function
 
-		Public Function Buscar(Asistencia As DAsistenciaPeriodo) As Boolean
-			Dim DtResultado As New DataTable()
-			Dim SlqCon As New SqlConnection()
-			Dim Existe As Boolean = False
+        Public Function Buscar(Asistencia As DAsistenciaPeriodo) As Boolean
+            Dim DtResultado As New DataTable()
+            Dim SlqCon As New SqlConnection()
+            Dim Existe As Boolean = False
 
-			Try
-				Dim sp As String = "SpASISTENCIA_PERIODOOExiste"
+            Try
+                Dim sp As String = "SpASISTENCIA_PERIODOOExiste"
 
-				SlqCon.ConnectionString = Conection.Cn
-				Dim SqlCmd As New SqlCommand(sp, SlqCon)
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
 
-				SlqCon.Open()
-				SqlCmd.CommandType = CommandType.StoredProcedure
-				SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
+                SlqCon.Open()
+                SqlCmd.CommandType = CommandType.StoredProcedure
+                SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
 
-				Dim SqlDat As New SqlDataAdapter(SqlCmd)
-				SqlDat.Fill(DtResultado)
+                Dim SqlDat As New SqlDataAdapter(SqlCmd)
+                SqlDat.Fill(DtResultado)
 
-				If DtResultado IsNot Nothing AndAlso DtResultado.Rows.Count > 0 Then
-					Existe = True
+                If DtResultado IsNot Nothing AndAlso DtResultado.Rows.Count > 0 Then
+                    Existe = True
 
-				End If
-			Catch
-			Finally
-				If SlqCon.State = ConnectionState.Open Then
-					SlqCon.Close()
-				End If
-			End Try
-			Return Existe
+                End If
+            Catch
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
+            Return Existe
 
-		End Function
+        End Function
 
-		Public Function ConsultarPeriodosRegistrados() As DataTable
+        Public Function ConsultarPeriodosRegistrados() As DataTable
 
-			Dim DtResultado As New DataTable()
-			Dim SlqCon As New SqlConnection()
+            Dim DtResultado As New DataTable()
+            Dim SlqCon As New SqlConnection()
 
-			Try
-				Dim sp As String = "SpASISTENCIA_Periodos_Registrados"
+            Try
+                Dim sp As String = "SpASISTENCIA_Periodos_Registrados"
 
-				SlqCon.ConnectionString = Conection.Cn
-				Dim SqlCmd As New SqlCommand(sp, SlqCon)
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
 
-				SlqCon.Open()
-				SqlCmd.CommandType = CommandType.StoredProcedure
+                SlqCon.Open()
+                SqlCmd.CommandType = CommandType.StoredProcedure
 
-				Dim SqlDat As New SqlDataAdapter(SqlCmd)
+                Dim SqlDat As New SqlDataAdapter(SqlCmd)
 
-				SqlDat.Fill(DtResultado)
-			Catch e As Exception
-				DtResultado = Nothing
-			Finally
-				If SlqCon.State = ConnectionState.Open Then
-					SlqCon.Close()
-				End If
-			End Try
-			Return DtResultado
+                SqlDat.Fill(DtResultado)
+            Catch e As Exception
+                DtResultado = Nothing
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
+            Return DtResultado
 
-		End Function
+        End Function
 
-		Public Function ConsultarAsistenciaDetallada(Asistencia As DAsistenciaPeriodo) As DataTable
+        Public Function ConsultarAsistenciaDetallada(Asistencia As DAsistenciaPeriodo) As DataTable
 
-			Dim DtResultado As New DataTable()
-			Dim SlqCon As New SqlConnection()
+            Dim DtResultado As New DataTable()
+            Dim SlqCon As New SqlConnection()
 
-			Try
-				Dim sp As String = "SpASISTENCIA_DETALLADA_PERIODO"
+            Try
+                Dim sp As String = "SpASISTENCIA_DETALLADA_PERIODO"
 
-				SlqCon.ConnectionString = Conection.Cn
-				Dim SqlCmd As New SqlCommand(sp, SlqCon)
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
 
-				SlqCon.Open()
-				SqlCmd.CommandType = CommandType.StoredProcedure
-				SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
+                SlqCon.Open()
+                SqlCmd.CommandType = CommandType.StoredProcedure
+                SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
 
-				Dim SqlDat As New SqlDataAdapter(SqlCmd)
+                Dim SqlDat As New SqlDataAdapter(SqlCmd)
 
-				SqlDat.Fill(DtResultado)
-			Catch
-				DtResultado = Nothing
-			Finally
-				If SlqCon.State = ConnectionState.Open Then
-					SlqCon.Close()
-				End If
-			End Try
-			Return DtResultado
+                SqlDat.Fill(DtResultado)
+            Catch
+                DtResultado = Nothing
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
+            Return DtResultado
 
-		End Function
+        End Function
 
-		Public Function ConsultarAsistenciaResumen(Asistencia As DAsistenciaPeriodo) As DataTable
+        Public Function ConsultarAsistenciaResumen(Asistencia As DAsistenciaPeriodo) As DataTable
 
-			Dim DtResultado As New DataTable()
-			Dim SlqCon As New SqlConnection()
+            Dim DtResultado As New DataTable()
+            Dim SlqCon As New SqlConnection()
 
-			Try
-				Dim sp As String = "SpASISTENCIA_RESUMEN_PERIODO"
+            Try
+                Dim sp As String = "SpASISTENCIA_RESUMEN_PERIODO"
 
-				SlqCon.ConnectionString = Conection.Cn
-				Dim SqlCmd As New SqlCommand(sp, SlqCon)
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
 
-				SlqCon.Open()
-				SqlCmd.CommandType = CommandType.StoredProcedure
-				SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
+                SlqCon.Open()
+                SqlCmd.CommandType = CommandType.StoredProcedure
+                SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
 
-				Dim SqlDat As New SqlDataAdapter(SqlCmd)
+                Dim SqlDat As New SqlDataAdapter(SqlCmd)
 
-				SqlDat.Fill(DtResultado)
-			Catch
-				DtResultado = Nothing
-			Finally
-				If SlqCon.State = ConnectionState.Open Then
-					SlqCon.Close()
-				End If
-			End Try
-			Return DtResultado
+                SqlDat.Fill(DtResultado)
+            Catch
+                DtResultado = Nothing
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
+            Return DtResultado
 
-		End Function
+        End Function
 
-	End Class
+    End Class
 End Namespace

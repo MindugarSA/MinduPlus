@@ -15,16 +15,16 @@ Imports System.Data.SqlClient
 Imports ImportarExcelSQLServer._2_Business_Layer
 Imports ImportarExcelSQLServer._3_Presentation_Layer
 
-Public Partial Class Form1
+Partial Public Class Form1
     Inherits MetroFramework.Forms.MetroForm
     Implements IComunication
-	Private dtDatosExcel As DataTable
-	Private dtDetallePeriodo As DataTable
-	Private dtResumenPeriodo As DataTable
-	Private dtConceptos As DataTable
-	Private sPathBook As String
-	Private bEmpOcultos As Boolean
-	Private iEmpSelec As Integer
+    Private dtDatosExcel As DataTable
+    Private dtDetallePeriodo As DataTable
+    Private dtResumenPeriodo As DataTable
+    Private dtConceptos As DataTable
+    Private sPathBook As String
+    Private bEmpOcultos As Boolean
+    Private iEmpSelec As Integer
     Private pnlParent As Panel
     Private StatusBarBottom As StatusStrip
     Private Id As String
@@ -34,22 +34,22 @@ Public Partial Class Form1
     Public Event EnviarEvento As LaunchEvent
 
     Public Property bAcceso() As Boolean
-		Get
-			Return m_bAcceso
-		End Get
-		Set
-			m_bAcceso = Value
-		End Set
-	End Property
-	Private m_bAcceso As Boolean
-	Public Property bFiltroConcepto() As Boolean
-		Get
-			Return m_bFiltroConcepto
-		End Get
-		Set
-			m_bFiltroConcepto = Value
-		End Set
-	End Property
+        Get
+            Return m_bAcceso
+        End Get
+        Set
+            m_bAcceso = Value
+        End Set
+    End Property
+    Private m_bAcceso As Boolean
+    Public Property bFiltroConcepto() As Boolean
+        Get
+            Return m_bFiltroConcepto
+        End Get
+        Set
+            m_bFiltroConcepto = Value
+        End Set
+    End Property
     Private m_bFiltroConcepto As Boolean
 
     Private m_sUsuario As String
@@ -530,7 +530,8 @@ Public Partial Class Form1
                                         , dRegistro _
                                         , nProxReg _
                                         , row.Cells(19).Value.ToString() _
-                                        , row.Cells(20).Value.ToString())
+                                        , row.Cells(20).Value.ToString() _
+                                        , row.Cells(21).Value.ToString())
             progressBar1.PerformStep()
             label6.Text = progressBar1.Value.ToString() & " / " & progressBar1.Maximum.ToString()
         Next
@@ -886,9 +887,23 @@ Public Partial Class Form1
                 RegistroOrigen = 0
             End If
 
-            BAsistenciaConceptos.Insertar(row.Cells("Periodo").Value.ToString(), row.Cells(1).Value.ToString(), row.Cells(2).Value.ToString(), row.Cells(3).Value.ToString(), row.Cells(4).Value.ToString(), Convert.ToInt32(row.Cells(5).Value),
-                row.Cells(6).Value.ToString(), row.Cells(7).Value.ToString(), row.Cells(8).Value.ToString(), row.Cells(9).Value.ToString(), Convert.ToDouble(row.Cells(10).Value.ToString()), row.Cells(11).Value.ToString(),
-                dFechaActual, ProxRegistro, Convert.ToInt32(RegistroOrigen), sUsuario)
+            BAsistenciaConceptos.Insertar(row.Cells("Periodo").Value.ToString(),
+                                          row.Cells(1).Value.ToString(),
+                                          row.Cells(2).Value.ToString(),
+                                          row.Cells(3).Value.ToString(),
+                                          row.Cells(4).Value.ToString(),
+                                          Convert.ToInt32(row.Cells(5).Value),
+                                          row.Cells(6).Value.ToString(),
+                                          row.Cells(7).Value.ToString(),
+                                          row.Cells(8).Value.ToString(),
+                                          row.Cells(9).Value.ToString(),
+                                          Convert.ToDouble(row.Cells(10).Value.ToString()),
+                                          row.Cells(11).Value.ToString(),
+                                          dFechaActual,
+                                          ProxRegistro,
+                                          Convert.ToInt32(RegistroOrigen),
+                                          sUsuario)
+
         Next
 
     End Sub
