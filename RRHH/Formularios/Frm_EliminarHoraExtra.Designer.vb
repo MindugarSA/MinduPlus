@@ -232,12 +232,17 @@ Partial Class Frm_EliminarHoraExtra
         'btnEliminar
         '
         Me.btnEliminar.ActiveControl = Nothing
-        Me.btnEliminar.Location = New System.Drawing.Point(630, 457)
+        Me.btnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnEliminar.Location = New System.Drawing.Point(623, 458)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(134, 78)
+        Me.btnEliminar.Size = New System.Drawing.Size(142, 87)
         Me.btnEliminar.TabIndex = 10
         Me.btnEliminar.Text = "Eliminar Registro"
+        Me.btnEliminar.TileImage = Global.RRHH.My.Resources.Resources.close_button32
+        Me.btnEliminar.UseCustomBackColor = True
         Me.btnEliminar.UseSelectable = True
+        Me.btnEliminar.UseTileImage = True
         '
         'Frm_EliminarHoraExtra
         '

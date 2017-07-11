@@ -91,4 +91,10 @@ Public Class Frm_AsistenciasPeriodo
         'CrystalReportViewer1.PrintReport()
         reporte.PrintToPrinter(1, False, 0, 0)
     End Sub
+
+    Private Sub Frm_AsistenciasPeriodo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        reporte.Dispose()
+        reporte.Close()
+        Me.Dispose()
+    End Sub
 End Class

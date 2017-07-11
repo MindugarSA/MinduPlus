@@ -676,7 +676,7 @@ Public Class MDIParent1
         End If
     End Sub
 
-    Private Sub TleSolicitar_HHEE_Click(sender As Object, e As EventArgs)
+    Private Sub TleSolicitar_HHEE_Click(sender As Object, e As EventArgs) Handles TleSolicitar_HHEE.Click
         If RevisaAcceso(90001) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
@@ -703,7 +703,7 @@ Public Class MDIParent1
         Button4.BackColor = Color.FromArgb(45, 137, 239)
     End Sub
 
-    Private Sub Tle_Asistencias_Periodo_Click(sender As Object, e As EventArgs) Handles Tle_Asistencias_Periodo.Click, TleSolicitar_HHEE.Click
+    Private Sub Tle_Asistencias_Periodo_Click(sender As Object, e As EventArgs) Handles Tle_Asistencias_Periodo.Click
 
         Dim informe As New InformePlanillaAsistencia()
 

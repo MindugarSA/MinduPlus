@@ -90,9 +90,12 @@ Public Class FrmSolicPermHrasExt
         If Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).Any Then
             Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).First.Visible = False
         End If
+        If Application.OpenForms().OfType(Of Frm_InformeAsistencias).Any Then
+            Application.OpenForms().OfType(Of Frm_InformeAsistencias).First.Visible = False
+        End If
 
 
-        Lbl_Titulo.Text = "*** Seleccione una Opciòn ***"
+        Lbl_Titulo.Text = "<<< SELECIONE UNA OPCIÓN >>>"
         Select Case UCase(TreeView1.SelectedNode.Name)
             Case UCase("Nd_SolPermisos")
                 If MDIParent1.RevisaAcceso(90001) Then
@@ -173,7 +176,7 @@ Public Class FrmSolicPermHrasExt
 
             Case UCase("Nd_AutPermisos")
                 If MDIParent1.RevisaAcceso(90010) Then
-                    Lbl_Titulo.Text = "Autoriza  Permisos"
+                    Lbl_Titulo.Text = "Autorizar  Permisos"
                     Pnl_AutPermisos.Parent = pnlCentral
 
                     Pnl_AutPermisos.Location = New Point(3, 52)
@@ -196,7 +199,7 @@ Public Class FrmSolicPermHrasExt
 
             Case UCase("Nd_AutHrExt")
                 If MDIParent1.RevisaAcceso(90011) Then
-                    Lbl_Titulo.Text = "Autoriza Horas Extras"
+                    Lbl_Titulo.Text = "Autorizar Horas Extras"
                     Pnl_AutHrExt.Parent = pnlCentral
 
                     Pnl_AutHrExt.Location = New Point(3, 52)
@@ -225,7 +228,6 @@ Public Class FrmSolicPermHrasExt
                     Pnl_InformeHHEE.Location = New Point(3, 52)
                     Pnl_InformeHHEE.Dock = DockStyle.Fill
                     Pnl_InformeHHEE.Visible = True
-                    ' MDIParent1.Panel2.Visible = False
 
                     dtpInicioInformeHHEE.Value = DateTime.Now
                     dtpTerminoInformeHHEE.Value = DateTime.Now
@@ -234,19 +236,21 @@ Public Class FrmSolicPermHrasExt
                     trabajadorHHEE = New Persona()
                     trabajadorHHEE.Rut = ""
                     trabajadorHHEE.Nombre = ""
+
                     btnImprimirInformeHHEE.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimirInformeHHEE.Height - 10)
                     btnBuscarInformeHHEE.Location = New Point(btnImprimirInformeHHEE.Location.X + btnImprimirInformeHHEE.Width + 20, btnImprimirInformeHHEE.Location.Y)
                     btnExportarExcel.Location = New Point(btnBuscarInformeHHEE.Location.X + btnBuscarInformeHHEE.Width + 20, btnImprimirInformeHHEE.Location.Y)
-                    If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25 < 1063 Then
-                        dgvColaboradoresInformeHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
-                    Else
-                        dgvColaboradoresInformeHHEE.Size = New Size(dgvColaboradoresInformeHHEE.Size.Width, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
-                    End If
+                    'If Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25 < 1063 Then
+                    '    dgvColaboradoresInformeHHEE.Size = New Size(Screen.PrimaryScreen.Bounds.Width - dgvColaboradoresInformeHHEE.Location.X - TreeView1.Size.Width - 25, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
+                    'Else
+                    '    dgvColaboradoresInformeHHEE.Size = New Size(dgvColaboradoresInformeHHEE.Size.Width, btnBuscarInformeHHEE.Location.Y - dgvColaboradoresInformeHHEE.Location.Y - 20)
+                    'End If
                 End If
 
 
             Case UCase("Nd_InformePermisos")
                 If MDIParent1.RevisaAcceso(90020) Then
+                    Lbl_Titulo.Text = "Informe de Permisos"
                     Pnl_InformePermisos.Parent = pnlCentral
 
                     Pnl_InformePermisos.Location = New Point(3, 52)
@@ -260,8 +264,8 @@ Public Class FrmSolicPermHrasExt
                     cmbEmpresaInformePermisos.SelectedIndex = 0
                     trabajadorInformePermisos = New Persona()
                     trabajadorInformePermisos.Rut = ""
-
                     trabajadorInformePermisos.Nombre = ""
+
                     btnImprimirInformePermisos.Location = New Point(pnlCentral.Location.X + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnImprimirInformePermisos.Height - 10)
                     btnBuscarInformePermisos.Location = New Point(btnImprimirInformePermisos.Location.X + btnImprimirInformePermisos.Width + 20, pnlCentral.Size.Height - pnlCentral.Location.Y - btnBuscarInformePermisos.Height - 10)
                     btnExportarExcelPermiso.Location = New Point(btnBuscarInformePermisos.Location.X + btnBuscarInformePermisos.Width + 20, btnBuscarInformePermisos.Location.Y)
@@ -274,6 +278,8 @@ Public Class FrmSolicPermHrasExt
 
             Case UCase("Nd_InformePresencia")
                 If MDIParent1.RevisaAcceso(90020) Then
+                    Lbl_Titulo.Text = "Informe de Presencia"
+
                     'Pnl_InformePermisos.Parent = pnlCentral
 
                     'Pnl_InformePermisos.Location = New Point(3, 52)
@@ -304,6 +310,7 @@ Public Class FrmSolicPermHrasExt
 
             Case UCase("Nd_EliminarHoraExtra")
                 If MDIParent1.RevisaAcceso(90020) Then
+                    Lbl_Titulo.Text = "Eliminacion de Horas Extras"
                     If Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).Any Then
                         Application.OpenForms().OfType(Of Frm_EliminarHoraExtra).First.Visible = True
                     Else
@@ -324,28 +331,25 @@ Public Class FrmSolicPermHrasExt
 
             Case UCase("Nd_InformeAsistencias")
                 If MDIParent1.RevisaAcceso(90020) Then
+                    Lbl_Titulo.Text = "Informe de Asistencias por Periodo"
 
-
-                    'If Application.OpenForms().OfType(Of FrmPresenciaEmpleados).Any Then
-                    '    Application.OpenForms().OfType(Of FrmPresenciaEmpleados).First.Visible = True
-                    'Else
-                    '    Dim NewMDIChild As New FrmPresenciaEmpleados()
-                    '    NewMDIChild.TopLevel = False
-                    '    NewMDIChild.Visible = False
-                    '    NewMDIChild.MdiParent = Me.MdiParent
-                    '    NewMDIChild.WindowState = FormWindowState.Maximized
-                    '    NewMDIChild.Dock = DockStyle.Fill
-                    '    Me.pnlCentral.Controls.Add(NewMDIChild)
-                    '    Me.pnlCentral.Tag = NewMDIChild
-                    '    NewMDIChild.Show()
-                    '    NewMDIChild.ControlBox = False
-                    '    NewMDIChild.ResizeGrid()
-                    '    NewMDIChild.Visible = True
-
-                    'End If
-                    'Application.OpenForms.OfType(Of FrmPresenciaEmpleados)().First
-
+                    If Application.OpenForms().OfType(Of Frm_InformeAsistencias).Any Then
+                        Application.OpenForms().OfType(Of Frm_InformeAsistencias).First.Visible = True
+                    Else
+                        Dim NewMDIChild As New Frm_InformeAsistencias()
+                        NewMDIChild.TopLevel = False
+                        NewMDIChild.Visible = False
+                        NewMDIChild.MdiParent = Me.MdiParent
+                        NewMDIChild.WindowState = FormWindowState.Maximized
+                        NewMDIChild.Dock = DockStyle.Fill
+                        Me.pnlCentral.Controls.Add(NewMDIChild)
+                        Me.pnlCentral.Tag = NewMDIChild
+                        NewMDIChild.Show()
+                        NewMDIChild.ControlBox = False
+                        NewMDIChild.Visible = True
+                    End If
                 End If
+
         End Select
     End Sub
 
@@ -2007,35 +2011,52 @@ Public Class FrmSolicPermHrasExt
     End Sub
 
     Private Sub btnImprimirInformeHHEE_Click(sender As Object, e As EventArgs) Handles btnImprimirInformeHHEE.Click
-        If dgvColaboradoresInformeHHEE.Rows.Count > 0 Then
-            Dim FecIni As Date = dtpInicioInformeHHEE.Value
-            Dim FecFin As Date = dtpTerminoInformeHHEE.Value
+        Try
+            If dgvColaboradoresInformeHHEE.Rows.Count > 0 Then
+                Dim FecIni As Date = dtpInicioInformeHHEE.Value
+                Dim FecFin As Date = dtpTerminoInformeHHEE.Value
 
-            If chkBuscarTodosInformeHHEE.Checked Then
-                If chkTodaEmpresaInformeHHEE.Checked Then
-                    Dim informe As New InformeHorasExtrasFechas()
-                    informe.SetParameterValue("@fecha_inicio", FecIni)
-                    informe.SetParameterValue("@fecha_termino", FecFin)
-                    Dim formInforme As New Frm_VisualizarReporte(informe)
-                    formInforme.Show()
+                If chkBuscarTodosInformeHHEE.Checked Then
+                    If chkTodaEmpresaInformeHHEE.Checked Then
+                        Dim informe As New InformeHorasExtrasFechas()
+                        informe.SetParameterValue("@fecha_inicio", FecIni)
+                        informe.SetParameterValue("@fecha_termino", FecFin)
+                        Dim formInforme As New Frm_ImprimirReporte(informe)
+
+                        MostrarFormExterno_en_Panel(Me, pnlCentral, formInforme)
+
+                        'formInforme.TopLevel = False
+                        'formInforme.Visible = False
+                        'formInforme.MdiParent = Me.MdiParent
+                        'formInforme.WindowState = FormWindowState.Maximized
+                        'formInforme.Dock = DockStyle.Fill
+                        'Me.pnlCentral.Controls.Add(formInforme)
+                        'Me.pnlCentral.Tag = formInforme
+                        'formInforme.Visible = True
+                        'formInforme.BringToFront()
+                        'formInforme.Show()
+                        'formInforme.Refresh()
+
+                    Else
+                        Dim informe As New InformeHorasExtrasFechasEmpresa()
+                        informe.SetParameterValue("@empresa", cmbEmpresaInformeHHEE.Text)
+                        informe.SetParameterValue("@fecha_inicio", FecIni)
+                        informe.SetParameterValue("@fecha_termino", FecFin)
+                        Dim formInforme As New Frm_ImprimirReporte(informe)
+                        MostrarFormExterno_en_Panel(Me, pnlCentral, formInforme)
+                    End If
                 Else
-                    Dim informe As New InformeHorasExtrasFechasEmpresa()
-                    informe.SetParameterValue("@empresa", cmbEmpresaInformeHHEE.Text)
+                    Dim informe As New InformeHorasExtrasPersonaFechas()
+                    informe.SetParameterValue("@rut", txbRutInformeHHEE.Text)
                     informe.SetParameterValue("@fecha_inicio", FecIni)
                     informe.SetParameterValue("@fecha_termino", FecFin)
-                    Dim formInforme As New Frm_VisualizarReporte(informe)
-
-                    formInforme.Show()
+                    Dim formInforme As New Frm_ImprimirReporte(informe)
+                    MostrarFormExterno_en_Panel(Me, pnlCentral, formInforme)
                 End If
-            Else
-                Dim informe As New InformeHorasExtrasPersonaFechas()
-                informe.SetParameterValue("@rut", txbRutInformeHHEE.Text)
-                informe.SetParameterValue("@fecha_inicio", FecIni)
-                informe.SetParameterValue("@fecha_termino", FecFin)
-                Dim formInforme As New Frm_VisualizarReporte(informe)
-                formInforme.Show()
             End If
-        End If
+        Catch ex As Exception
+        End Try
+
     End Sub
 
     Private Sub chkTodaEmpresaInformeHHEE_CheckedChanged(sender As Object, e As EventArgs) Handles chkTodaEmpresaInformeHHEE.CheckedChanged
@@ -2057,7 +2078,21 @@ Public Class FrmSolicPermHrasExt
     '------------------------- Fin Informe Horas Extras -------------------------------
 
 
+    Private Sub MostrarFormExterno_en_Panel(FormPadre As Form, PanelAsignado As Panel, FormExterno As Form)
 
+        FormExterno.TopLevel = False
+        FormExterno.Visible = False
+        FormExterno.MdiParent = FormPadre.MdiParent
+        FormExterno.WindowState = FormWindowState.Maximized
+        FormExterno.Dock = DockStyle.Fill
+        PanelAsignado.Controls.Add(FormExterno)
+        PanelAsignado.Tag = FormExterno
+        FormExterno.Visible = True
+        FormExterno.BringToFront()
+        FormExterno.Show()
+        FormExterno.Refresh()
+
+    End Sub
 
 
 
@@ -2179,14 +2214,14 @@ Public Class FrmSolicPermHrasExt
                 informe.SetParameterValue("@fecha_inicio", dtpInicioInformePermisos.Value)
                 informe.SetParameterValue("@fecha_termino", dtpTerminoInformePermisos.Value.AddDays(1))
                 Dim formInforme As New Frm_ImprimirReporte(informe)
-                formInforme.Show()
+                MostrarFormExterno_en_Panel(Me, pnlCentral, formInforme)
             Else
                 Dim informe As New InformePermisoPersona()
                 informe.SetParameterValue("@rut", txbRutInformePermisos.Text)
                 informe.SetParameterValue("@fecha_inicio", dtpInicioInformePermisos.Value)
                 informe.SetParameterValue("@fecha_termino", dtpTerminoInformePermisos.Value.AddDays(1))
                 Dim formInforme As New Frm_ImprimirReporte(informe)
-                formInforme.Show()
+                MostrarFormExterno_en_Panel(Me, pnlCentral, formInforme)
             End If
         End If
     End Sub

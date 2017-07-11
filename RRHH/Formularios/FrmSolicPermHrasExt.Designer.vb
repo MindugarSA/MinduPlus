@@ -24,9 +24,9 @@ Partial Class FrmSolicPermHrasExt
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Permisos")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Hr. Extras")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitud de Horas Extras")
         Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Solicitudes                            ", New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2})
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciòn de Permisos")
+        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion de Permisos")
         Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizacion Horas Extras")
         Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Autorizaciones                      ", New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5})
         Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe Permisos")
@@ -314,13 +314,13 @@ Partial Class FrmSolicPermHrasExt
         TreeNode1.Name = "Nd_SolPermisos"
         TreeNode1.Text = "Solicitud de Permisos"
         TreeNode2.Name = "Nd_SolHrExt"
-        TreeNode2.Text = "Solicitud de Hr. Extras"
+        TreeNode2.Text = "Solicitud de Horas Extras"
         TreeNode3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         TreeNode3.ForeColor = System.Drawing.Color.White
         TreeNode3.Name = "Nodo0"
         TreeNode3.Text = "Solicitudes                            "
         TreeNode4.Name = "Nd_AutPermisos"
-        TreeNode4.Text = "Autorizaciòn de Permisos"
+        TreeNode4.Text = "Autorizacion de Permisos"
         TreeNode5.Name = "Nd_AutHrExt"
         TreeNode5.Text = "Autorizacion Horas Extras"
         TreeNode6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))

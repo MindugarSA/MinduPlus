@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>94</ApplicationRevision>
+    <ApplicationRevision>95</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -169,20 +169,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALC\ModeloVisualRRHH.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloVisualRRHH.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="DALC\ModeloVisualRRHH.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DALC\ModeloVisualRRHH.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\Solicitud_Buscar_Datos_Trabajador_Result.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
@@ -354,6 +344,12 @@
     <Compile Include="Reportes\Frm_ImprimirReporte.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Frm_InformeAsistencias.Designer.vb">
+      <DependentUpon>Frm_InformeAsistencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_InformeAsistencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\Frm_Informes.Designer.vb">
       <DependentUpon>Frm_Informes.vb</DependentUpon>
     </Compile>
@@ -516,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_ImprimirReporte.resx">
       <DependentUpon>Frm_ImprimirReporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_InformeAsistencias.resx">
+      <DependentUpon>Frm_InformeAsistencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Informes.resx">
       <DependentUpon>Frm_Informes.vb</DependentUpon>
@@ -827,15 +826,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DALC\ModeloVisualRRHH.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloVisualRRHH.Context.tt</DependentUpon>
+    </Content>
     <Content Include="DALC\ModeloVisualRRHH.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModeloVisualRRHH.Context.vb</LastGenOutput>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
+      <LastGenOutput>ModeloVisualRRHH.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DALC\ModeloVisualRRHH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Content>
     <Content Include="DALC\ModeloVisualRRHH.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
-      <LastGenOutput>ModeloVisualRRHH.vb</LastGenOutput>
+      <LastGenOutput>ModeloVisualRRHH.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Resources\Btn_Colaciones.jpg" />
@@ -859,6 +868,7 @@
     <None Include="Resources\favicon %283%29.ico" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\exam.png" />
+    <None Include="Resources\close-button.png" />
     <Content Include="Resources\Flecha Derecha.jpg" />
     <None Include="Resources\Flecha Derecha1.jpg" />
     <Content Include="Resources\Flecha Izquerda.jpg" />
