@@ -169,10 +169,20 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALC\ModeloVisualRRHH.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloVisualRRHH.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="DALC\ModeloVisualRRHH.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\ModeloVisualRRHH.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\Solicitud_Buscar_Datos_Trabajador_Result.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
@@ -826,25 +836,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DALC\ModeloVisualRRHH.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloVisualRRHH.Context.tt</DependentUpon>
-    </Content>
     <Content Include="DALC\ModeloVisualRRHH.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
-      <LastGenOutput>ModeloVisualRRHH.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DALC\ModeloVisualRRHH.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
+      <LastGenOutput>ModeloVisualRRHH.Context.vb</LastGenOutput>
     </Content>
     <Content Include="DALC\ModeloVisualRRHH.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
-      <LastGenOutput>ModeloVisualRRHH.cs</LastGenOutput>
+      <LastGenOutput>ModeloVisualRRHH.vb</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Resources\Btn_Colaciones.jpg" />
