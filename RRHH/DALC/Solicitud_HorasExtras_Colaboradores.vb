@@ -25,6 +25,7 @@ Partial Public Class Solicitud_HorasExtras_Colaboradores
     Public Property fecha_resolucion As Nullable(Of Date)
     Public Property responsable_resolucion As String
     Public Property id_solicitud_horas_extra As Integer
+    Public Property Empresa_Id As String
 
     Public Overridable Property Solicitud_HorasExtras As Solicitud_HorasExtras
 

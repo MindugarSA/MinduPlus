@@ -22,8 +22,17 @@ Public Class MDIParent1
     End Property
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PictureBox2_Click(sender, e)
         conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        Me.ShowInTaskbar = True
+    End Sub
+
+    Private Sub MDIParent1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
+        Me.WindowState = FormWindowState.Minimized
+        Me.WindowState = FormWindowState.Maximized
+
+        PictureBox2_Click(sender, e)
+
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PcturBx_Image.Click
@@ -32,7 +41,6 @@ Public Class MDIParent1
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
         NewMDIChild.Show()
-        NewMDIChild.ControlBox = False
 
         TiempoIngreso.Enabled = True
         TiempoActivo = Tiempo_Str
@@ -456,6 +464,7 @@ Public Class MDIParent1
             TiempoIngreso.Enabled = False
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            TmrDesplaza.Enabled = False
         End If
     End Sub
 
@@ -721,4 +730,5 @@ Public Class MDIParent1
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
 
     End Sub
+
 End Class

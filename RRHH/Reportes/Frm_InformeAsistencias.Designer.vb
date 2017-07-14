@@ -22,9 +22,9 @@ Partial Class Frm_InformeAsistencias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
@@ -39,10 +39,15 @@ Partial Class Frm_InformeAsistencias
         Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
-        Me.btnImprimirInformePermisos = New System.Windows.Forms.Button()
+        Me.btnImprimirInforme = New System.Windows.Forms.Button()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
         Me.CachedInformeHoraExtra1 = New RRHH.CachedInformeHoraExtra()
+        Me.MetroCheckBox1 = New MetroFramework.Controls.MetroCheckBox()
+        Me.MetroComboBox4 = New MetroFramework.Controls.MetroComboBox()
+        Me.MetroComboBox5 = New MetroFramework.Controls.MetroComboBox()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,12 +58,13 @@ Partial Class Frm_InformeAsistencias
         '
         Me.MetroPanel1.Controls.Add(Me.GroupBox2)
         Me.MetroPanel1.Controls.Add(Me.GroupBox1)
+        Me.MetroPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(12, 24)
+        Me.MetroPanel1.Location = New System.Drawing.Point(0, 0)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(1053, 539)
+        Me.MetroPanel1.Size = New System.Drawing.Size(1111, 584)
         Me.MetroPanel1.TabIndex = 26
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
@@ -66,6 +72,14 @@ Partial Class Frm_InformeAsistencias
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.MetroLabel8)
+        Me.GroupBox2.Controls.Add(Me.MetroLabel6)
+        Me.GroupBox2.Controls.Add(Me.MetroComboBox5)
+        Me.GroupBox2.Controls.Add(Me.MetroComboBox4)
+        Me.GroupBox2.Controls.Add(Me.MetroCheckBox1)
         Me.GroupBox2.Controls.Add(Me.MetroGrid1)
         Me.GroupBox2.Controls.Add(Me.MetroLabel7)
         Me.GroupBox2.Controls.Add(Me.MetroComboBox3)
@@ -76,7 +90,7 @@ Partial Class Frm_InformeAsistencias
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(13, 186)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1026, 337)
+        Me.GroupBox2.Size = New System.Drawing.Size(1026, 379)
         Me.GroupBox2.TabIndex = 29
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Asitencia Grupo"
@@ -84,44 +98,48 @@ Partial Class Frm_InformeAsistencias
         'MetroGrid1
         '
         Me.MetroGrid1.AllowUserToResizeRows = False
-        Me.MetroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MetroGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroGrid1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid1.Location = New System.Drawing.Point(164, 119)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.MetroGrid1.RowHeadersVisible = False
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(419, 202)
+        Me.MetroGrid1.Size = New System.Drawing.Size(845, 242)
         Me.MetroGrid1.TabIndex = 32
         '
         'MetroLabel7
@@ -190,11 +208,13 @@ Partial Class Frm_InformeAsistencias
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.MetroLabel3)
         Me.GroupBox1.Controls.Add(Me.MetroComboBox1)
         Me.GroupBox1.Controls.Add(Me.MetroLabel1)
         Me.GroupBox1.Controls.Add(Me.MetroTextBox1)
-        Me.GroupBox1.Controls.Add(Me.btnImprimirInformePermisos)
+        Me.GroupBox1.Controls.Add(Me.btnImprimirInforme)
         Me.GroupBox1.Controls.Add(Me.MetroLabel2)
         Me.GroupBox1.Controls.Add(Me.MetroTextBox2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -265,22 +285,22 @@ Partial Class Frm_InformeAsistencias
         Me.MetroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.MetroTextBox1.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'btnImprimirInformePermisos
+        'btnImprimirInforme
         '
-        Me.btnImprimirInformePermisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnImprimirInformePermisos.FlatAppearance.BorderSize = 0
-        Me.btnImprimirInformePermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnImprimirInformePermisos.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.btnImprimirInformePermisos.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnImprimirInformePermisos.Image = Global.RRHH.My.Resources.Resources.printing32
-        Me.btnImprimirInformePermisos.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnImprimirInformePermisos.Location = New System.Drawing.Point(468, 44)
-        Me.btnImprimirInformePermisos.Name = "btnImprimirInformePermisos"
-        Me.btnImprimirInformePermisos.Size = New System.Drawing.Size(115, 80)
-        Me.btnImprimirInformePermisos.TabIndex = 27
-        Me.btnImprimirInformePermisos.Text = "Imprimir"
-        Me.btnImprimirInformePermisos.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnImprimirInformePermisos.UseVisualStyleBackColor = False
+        Me.btnImprimirInforme.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnImprimirInforme.FlatAppearance.BorderSize = 0
+        Me.btnImprimirInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimirInforme.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.btnImprimirInforme.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnImprimirInforme.Image = Global.RRHH.My.Resources.Resources.printing32
+        Me.btnImprimirInforme.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnImprimirInforme.Location = New System.Drawing.Point(468, 44)
+        Me.btnImprimirInforme.Name = "btnImprimirInforme"
+        Me.btnImprimirInforme.Size = New System.Drawing.Size(115, 80)
+        Me.btnImprimirInforme.TabIndex = 27
+        Me.btnImprimirInforme.Text = "Imprimir"
+        Me.btnImprimirInforme.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnImprimirInforme.UseVisualStyleBackColor = False
         '
         'MetroLabel2
         '
@@ -323,12 +343,62 @@ Partial Class Frm_InformeAsistencias
         Me.MetroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.MetroTextBox2.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'MetroCheckBox1
+        '
+        Me.MetroCheckBox1.AutoSize = True
+        Me.MetroCheckBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroCheckBox1.Location = New System.Drawing.Point(891, 22)
+        Me.MetroCheckBox1.Name = "MetroCheckBox1"
+        Me.MetroCheckBox1.Size = New System.Drawing.Size(118, 15)
+        Me.MetroCheckBox1.TabIndex = 33
+        Me.MetroCheckBox1.Text = "Seleccionar Todos"
+        Me.MetroCheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.MetroCheckBox1.UseSelectable = True
+        '
+        'MetroComboBox4
+        '
+        Me.MetroComboBox4.FormattingEnabled = True
+        Me.MetroComboBox4.ItemHeight = 23
+        Me.MetroComboBox4.Location = New System.Drawing.Point(705, 44)
+        Me.MetroComboBox4.Name = "MetroComboBox4"
+        Me.MetroComboBox4.Size = New System.Drawing.Size(304, 29)
+        Me.MetroComboBox4.TabIndex = 34
+        Me.MetroComboBox4.UseSelectable = True
+        '
+        'MetroComboBox5
+        '
+        Me.MetroComboBox5.FormattingEnabled = True
+        Me.MetroComboBox5.ItemHeight = 23
+        Me.MetroComboBox5.Location = New System.Drawing.Point(705, 79)
+        Me.MetroComboBox5.Name = "MetroComboBox5"
+        Me.MetroComboBox5.Size = New System.Drawing.Size(304, 29)
+        Me.MetroComboBox5.TabIndex = 35
+        Me.MetroComboBox5.UseSelectable = True
+        '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.Location = New System.Drawing.Point(659, 48)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(40, 19)
+        Me.MetroLabel6.TabIndex = 36
+        Me.MetroLabel6.Text = "Area:"
+        '
+        'MetroLabel8
+        '
+        Me.MetroLabel8.AutoSize = True
+        Me.MetroLabel8.Location = New System.Drawing.Point(601, 83)
+        Me.MetroLabel8.Name = "MetroLabel8"
+        Me.MetroLabel8.Size = New System.Drawing.Size(98, 19)
+        Me.MetroLabel8.TabIndex = 37
+        Me.MetroLabel8.Text = "Departamento:"
+        '
         'Frm_InformeAsistencias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1111, 575)
+        Me.ClientSize = New System.Drawing.Size(1111, 584)
         Me.Controls.Add(Me.MetroPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Frm_InformeAsistencias"
@@ -348,7 +418,7 @@ Partial Class Frm_InformeAsistencias
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroTextBox2 As MetroFramework.Controls.MetroTextBox
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
-    Private WithEvents btnImprimirInformePermisos As Button
+    Private WithEvents btnImprimirInforme As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
@@ -361,4 +431,9 @@ Partial Class Frm_InformeAsistencias
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroComboBox3 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents MetroCheckBox1 As MetroFramework.Controls.MetroCheckBox
+    Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel6 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroComboBox5 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
 End Class

@@ -4,18 +4,27 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="SAC_MindugarModelVisual.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+    <Schema Namespace="SAC_MindugarModelVisual.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="RUT" Type="nvarchar" MaxLength="12" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+          <Property Name="DB_Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Solicitud_HorasExtras">
           <Key>
             <PropertyRef Name="id_solicitud_horas_extra" />
           </Key>
-          <Property Name="id_solicitud_horas_extra" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="supervisor_solicitante" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="rut_solicitante" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="fecha" Nullable="false" Type="datetime" />
-          <Property Name="cantidad_horas_extras" Nullable="false" Type="int" />
-          <Property Name="area" Nullable="false" MaxLength="30" Type="varchar" />
-          <Property Name="detalle" Nullable="false" MaxLength="300" Type="varchar" />
+          <Property Name="id_solicitud_horas_extra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="supervisor_solicitante" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rut_solicitante" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="cantidad_horas_extras" Type="int" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="detalle" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="resuelto" Type="bit" />
           <Property Name="fecha_resolucion" Type="datetime" />
         </EntityType>
@@ -24,51 +33,53 @@
             <PropertyRef Name="rut" />
             <PropertyRef Name="fecha_real" />
           </Key>
-          <Property Name="rut" Nullable="false" MaxLength="15" Type="varchar" />
-          <Property Name="nombre_completo" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="horas_compromiso_inicio" Nullable="false" Precision="7" Type="time" />
-          <Property Name="total_horas_compromiso" Nullable="false" Type="float" />
-          <Property Name="fecha_real" Nullable="false" Type="date" />
-          <Property Name="horas_efectivas_inicio" Precision="7" Type="time" />
+          <Property Name="rut" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="nombre_completo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="horas_compromiso_inicio" Type="time" Precision="7" Nullable="false" />
+          <Property Name="total_horas_compromiso" Type="float" Nullable="false" />
+          <Property Name="fecha_real" Type="date" Nullable="false" />
+          <Property Name="horas_efectivas_inicio" Type="time" Precision="7" />
           <Property Name="total_horas_efectivas" Type="float" />
-          <Property Name="empresa" Nullable="false" MaxLength="30" Type="varchar" />
-          <Property Name="cargo" Nullable="false" MaxLength="100" Type="varchar" />
+          <Property Name="empresa" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="cargo" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="autorizado" Type="bit" />
           <Property Name="rechazado" Type="bit" />
           <Property Name="fecha_resolucion" Type="datetime" />
-          <Property Name="responsable_resolucion" MaxLength="50" Type="varchar" />
-          <Property Name="id_solicitud_horas_extra" Nullable="false" Type="int" />
+          <Property Name="responsable_resolucion" Type="varchar" MaxLength="50" />
+          <Property Name="id_solicitud_horas_extra" Type="int" Nullable="false" />
+          <Property Name="Empresa_Id" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Solicitud_Salida">
           <Key>
             <PropertyRef Name="id_solicitud_salida" />
           </Key>
-          <Property Name="id_solicitud_salida" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-          <Property Name="solicitante" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="trabajador" Nullable="false" MaxLength="50" Type="varchar" />
-          <Property Name="rut" Nullable="false" MaxLength="15" Type="varchar" />
-          <Property Name="permiso_particular" Nullable="false" Type="bit" />
-          <Property Name="permiso_comision_servicio" Nullable="false" Type="bit" />
-          <Property Name="dia" Nullable="false" Type="date" />
-          <Property Name="hora_salida" Precision="7" Type="time" />
+          <Property Name="id_solicitud_salida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="solicitante" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="trabajador" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rut" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="permiso_particular" Type="bit" Nullable="false" />
+          <Property Name="permiso_comision_servicio" Type="bit" Nullable="false" />
+          <Property Name="dia" Type="date" Nullable="false" />
+          <Property Name="hora_salida" Type="time" Precision="7" />
           <Property Name="total_horas" Type="float" />
           <Property Name="fecha_real" Type="datetime" />
-          <Property Name="fecha_solicitud" Nullable="false" Type="datetime" />
-          <Property Name="empresa" Nullable="false" MaxLength="30" Type="varchar" />
-          <Property Name="cargo" Nullable="false" MaxLength="100" Type="varchar" />
+          <Property Name="fecha_solicitud" Type="datetime" Nullable="false" />
+          <Property Name="empresa" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="cargo" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="rechazada" Type="bit" />
           <Property Name="autorizada" Type="bit" />
-          <Property Name="dia_completo" Nullable="false" Type="bit" />
-          <Property Name="tramite" Nullable="false" MaxLength="100" Type="varchar" />
-          <Property Name="area" Nullable="false" MaxLength="30" Type="varchar" />
+          <Property Name="dia_completo" Type="bit" Nullable="false" />
+          <Property Name="tramite" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="fecha_resolucion" Type="datetime" />
-          <Property Name="responsable_resolucion" MaxLength="50" Type="varchar" />
+          <Property Name="responsable_resolucion" Type="varchar" MaxLength="50" />
           <Property Name="check_basetempo" Type="bit" />
-          <Property Name="rut_solicitante" Nullable="false" MaxLength="15" Type="varchar" />
+          <Property Name="rut_solicitante" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Empresa_Id" Type="nchar" MaxLength="10" />
         </EntityType>
         <Association Name="FK_Solicitud_HorasExtras_Colaboradores_Solicitud_HorasExtras">
-          <End Type="Self.Solicitud_HorasExtras" Multiplicity="1" Role="Solicitud_HorasExtras" />
-          <End Type="Self.Solicitud_HorasExtras_Colaboradores" Multiplicity="*" Role="Solicitud_HorasExtras_Colaboradores" />
+          <End Role="Solicitud_HorasExtras" Type="Self.Solicitud_HorasExtras" Multiplicity="1" />
+          <End Role="Solicitud_HorasExtras_Colaboradores" Type="Self.Solicitud_HorasExtras_Colaboradores" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Solicitud_HorasExtras">
               <PropertyRef Name="id_solicitud_horas_extra" />
@@ -90,6 +101,7 @@
         <Function Name="Solicitud_Buscar_Empleado_PorRut" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="rut" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Solicitud_Buscar_Empresas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Solicitud_Buscar_HoraExtra_PorFechas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="fecha_inicio" Type="datetime" Mode="In" />
           <Parameter Name="fecha_termino" Type="datetime" Mode="In" />
@@ -134,21 +146,30 @@
         </Function>
         <Function Name="Solicitud_Buscar_Solicitudes_HoraExtra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+          <Parameter Name="verTodas" Type="bit" Mode="In" />
         </Function>
         <Function Name="Solicitud_Buscar_Solicitudes_Permisos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
           <Parameter Name="fecha_inicio" Type="datetime" Mode="In" />
           <Parameter Name="fecha_termino" Type="datetime" Mode="In" />
+          <Parameter Name="verTodas" Type="bit" Mode="In" />
         </Function>
         <Function Name="Solicitud_Buscar_Solicitudes_PermisosPendiente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
           <Parameter Name="fecha_inicio" Type="datetime" Mode="In" />
           <Parameter Name="fecha_termino" Type="datetime" Mode="In" />
+          <Parameter Name="verTodas" Type="bit" Mode="In" />
         </Function>
         <Function Name="Solicitud_Buscar_Todas_HoraExtra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
           <Parameter Name="fecha_inicio" Type="datetime" Mode="In" />
           <Parameter Name="fecha_termino" Type="datetime" Mode="In" />
+          <Parameter Name="verTodas" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Solicitud_Empleados_Empresa_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Empresa" Type="nvarchar" Mode="In" />
+          <Parameter Name="fechaInicio" Type="datetime" Mode="In" />
+          <Parameter Name="fechaTermino" Type="datetime" Mode="In" />
         </Function>
         <Function Name="Solicitud_Empleados_Sugeridos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Fecha_SolicitudIni" Type="char" Mode="In" />
@@ -159,6 +180,7 @@
         <Function Name="Solicitud_Empleados_Sugeridos_Empresa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="empresa" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="Solicitud_Empleados_Sugeridos_Todos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Solicitud_HoraExtra_Autorizar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
           <Parameter Name="id" Type="int" Mode="In" />
@@ -188,16 +210,16 @@
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="SAC_MindugarModelVisualStoreContainer">
+          <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Solicitud_HorasExtras" EntityType="Self.Solicitud_HorasExtras" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Solicitud_HorasExtras_Colaboradores" EntityType="Self.Solicitud_HorasExtras_Colaboradores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Solicitud_Salida" EntityType="Self.Solicitud_Salida" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Solicitud_HorasExtras_Colaboradores_Solicitud_HorasExtras" Association="Self.FK_Solicitud_HorasExtras_Colaboradores_Solicitud_HorasExtras">
-            <End EntitySet="Solicitud_HorasExtras" Role="Solicitud_HorasExtras" />
-            <End EntitySet="Solicitud_HorasExtras_Colaboradores" Role="Solicitud_HorasExtras_Colaboradores" />
+            <End Role="Solicitud_HorasExtras" EntitySet="Solicitud_HorasExtras" />
+            <End Role="Solicitud_HorasExtras_Colaboradores" EntitySet="Solicitud_HorasExtras_Colaboradores" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SAC_MindugarModelVisual" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -236,6 +258,7 @@
           <Property Name="responsable_resolucion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_solicitud_horas_extra" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Solicitud_HorasExtras" Relationship="Self.FK_Solicitud_HorasExtras_Colaboradores_Solicitud_HorasExtras" FromRole="Solicitud_HorasExtras_Colaboradores" ToRole="Solicitud_HorasExtras" />
+          <Property Name="Empresa_Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="Solicitud_Salida">
           <Key>
@@ -263,6 +286,7 @@
           <Property Name="responsable_resolucion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="check_basetempo" Type="Boolean" />
           <Property Name="rut_solicitante" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Empresa_Id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK_Solicitud_HorasExtras_Colaboradores_Solicitud_HorasExtras">
           <End Role="Solicitud_HorasExtras" Type="Self.Solicitud_HorasExtras" Multiplicity="1" />
@@ -285,113 +309,125 @@
             <End Role="Solicitud_HorasExtras_Colaboradores" EntitySet="Solicitud_HorasExtras_Colaboradores" />
           </AssociationSet>
           <FunctionImport Name="Solicitud_Buscar_Correo" ReturnType="Collection(String)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
+          <Parameter Name="nombreCompleto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Datos_Trabajador" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Datos_Trabajador_Result)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
+          <Parameter Name="nombreCompleto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Empleado_PorNombre" ReturnType="Collection(String)">
-            <Parameter Name="nombre" Type="String" Mode="In" />
+          <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Empleado_PorRut" ReturnType="Collection(String)">
-            <Parameter Name="rut" Type="String" Mode="In" />
+          <Parameter Name="rut" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_HoraExtra_PorFechas" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_HoraExtra_PorFechas_Result)">
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_HoraExtra_PorFechasEmpresa" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_HoraExtra_PorFechasEmpresa_Result)">
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
-            <Parameter Name="empresa" Type="String" Mode="In" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
+            <Parameter Name="empresa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_HoraExtra_PorId" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_HoraExtra_PorId_Result)">
-            <Parameter Name="id" Type="Int32" Mode="In" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_HoraExtra_PorRutFechas" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_HoraExtra_PorRutFechas_Result)">
-            <Parameter Name="rut" Type="String" Mode="In" />
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
+            <Parameter Name="rut" Mode="In" Type="String" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Permisos_PorFecha" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Permisos_PorFecha_Result)">
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
-            <Parameter Name="empresa" Type="String" Mode="In" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
+            <Parameter Name="empresa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Permisos_PorId" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Permisos_PorId_Result)">
-            <Parameter Name="id" Type="Int32" Mode="In" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Permisos_PorRut" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Permisos_PorRut_Result)">
-            <Parameter Name="rut" Type="String" Mode="In" />
+          <Parameter Name="rut" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Permisos_PorRutFecha" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Permisos_PorRutFecha_Result)">
-            <Parameter Name="rut" Type="String" Mode="In" />
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
+            <Parameter Name="rut" Mode="In" Type="String" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Responsables_HorasExtras" ReturnType="Collection(String)">
-            <Parameter Name="area" Type="String" Mode="In" />
-            <Parameter Name="empresa" Type="String" Mode="In" />
+            <Parameter Name="area" Mode="In" Type="String" />
+            <Parameter Name="empresa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Responsables_Permisos" ReturnType="Collection(String)">
-            <Parameter Name="area" Type="String" Mode="In" />
-            <Parameter Name="empresa" Type="String" Mode="In" />
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
+            <Parameter Name="area" Mode="In" Type="String" />
+            <Parameter Name="empresa" Mode="In" Type="String" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Solicitudes_HoraExtra" ReturnType="Collection(Int32)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="verTodas" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Solicitudes_Permisos" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Solicitudes_Permisos_Result)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
+            <Parameter Name="verTodas" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Solicitudes_PermisosPendiente" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Solicitudes_PermisosPendiente_Result)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
+            <Parameter Name="verTodas" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Todas_HoraExtra" ReturnType="Collection(Int32)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
-            <Parameter Name="fecha_inicio" Type="DateTime" Mode="In" />
-            <Parameter Name="fecha_termino" Type="DateTime" Mode="In" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="fecha_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_termino" Mode="In" Type="DateTime" />
+            <Parameter Name="verTodas" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Empleados_Sugeridos" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Empleados_Sugeridos_Result)">
-            <Parameter Name="Fecha_SolicitudIni" Type="String" Mode="In" />
+          <Parameter Name="Fecha_SolicitudIni" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Empleados_Sugeridos_Area" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Empleados_Sugeridos_Area_Result)">
-            <Parameter Name="area" Type="String" Mode="In" />
+          <Parameter Name="area" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Empleados_Sugeridos_Empresa" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Empleados_Sugeridos_Empresa_Result)">
-            <Parameter Name="empresa" Type="String" Mode="In" />
+          <Parameter Name="empresa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_HoraExtra_Autorizar">
-            <Parameter Name="nombre" Type="String" Mode="In" />
-            <Parameter Name="id" Type="Int32" Mode="In" />
-            <Parameter Name="responsable_resolucion" Type="String" Mode="In" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="responsable_resolucion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_HoraExtra_Rechazar">
-            <Parameter Name="nombre" Type="String" Mode="In" />
-            <Parameter Name="id" Type="Int32" Mode="In" />
-            <Parameter Name="responsable_resolucion" Type="String" Mode="In" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="responsable_resolucion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Permiso_Autorizar">
-            <Parameter Name="id" Type="Int32" Mode="In" />
-            <Parameter Name="responsable" Type="String" Mode="In" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="responsable" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Permiso_Rechazar">
-            <Parameter Name="id" Type="Int32" Mode="In" />
-            <Parameter Name="responsable" Type="String" Mode="In" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="responsable" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Trabador_Con_Solicitud" ReturnType="Collection(String)">
-            <Parameter Name="nombreCompleto" Type="String" Mode="In" />
+          <Parameter Name="nombreCompleto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Validar_Trabajador_HoraExtra">
-            <Parameter Name="rut" Type="String" Mode="In" />
-            <Parameter Name="fecha" Type="DateTime" Mode="In" />
+            <Parameter Name="rut" Mode="In" Type="String" />
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Verificar_Resolucion">
-            <Parameter Name="id" Type="Int32" Mode="In" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Solicitud_Empleados_Sugeridos_Todos" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Empleados_Sugeridos_Todos_Result)" />
+          <EntitySet Name="Empresas" EntityType="SAC_MindugarModelVisual.Empresas" />
+          <FunctionImport Name="Solicitud_Buscar_Empresas" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Empresas_Result)" />
+          <FunctionImport Name="Solicitud_Empleados_Empresa_Periodo" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Empleados_Empresa_Periodo_Result)">
+            <Parameter Name="Empresa" Mode="In" Type="String" />
+            <Parameter Name="fechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fechaTermino" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Solicitud_Buscar_Datos_Trabajador_Result">
@@ -594,6 +630,33 @@
           <Property Type="String" Name="rut" Nullable="true" MaxLength="11" />
           <Property Type="String" Name="nombre" Nullable="true" MaxLength="61" />
         </ComplexType>
+        <ComplexType Name="Solicitud_Empleados_Sugeridos_Todos_Result">
+          <Property Type="String" Name="rut" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="61" />
+        </ComplexType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="RUT" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DB_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="Solicitud_Buscar_Empresas_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="RUT" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DB_Name" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="Solicitud_Empleados_Empresa_Periodo_Result">
+          <Property Type="String" Name="rut" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="nombre_completo" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="cargo" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="AREA" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Empresa" Nullable="false" MaxLength="19" />
+          <Property Type="String" Name="RutEmp" Nullable="false" MaxLength="10" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -618,6 +681,7 @@
           <EntitySetMapping Name="Solicitud_HorasExtras_Colaboradores">
             <EntityTypeMapping TypeName="SAC_MindugarModelVisual.Solicitud_HorasExtras_Colaboradores">
               <MappingFragment StoreEntitySet="Solicitud_HorasExtras_Colaboradores">
+                <ScalarProperty Name="Empresa_Id" ColumnName="Empresa_Id" />
                 <ScalarProperty Name="rut" ColumnName="rut" />
                 <ScalarProperty Name="nombre_completo" ColumnName="nombre_completo" />
                 <ScalarProperty Name="horas_compromiso_inicio" ColumnName="horas_compromiso_inicio" />
@@ -638,6 +702,7 @@
           <EntitySetMapping Name="Solicitud_Salida">
             <EntityTypeMapping TypeName="SAC_MindugarModelVisual.Solicitud_Salida">
               <MappingFragment StoreEntitySet="Solicitud_Salida">
+                <ScalarProperty Name="Empresa_Id" ColumnName="Empresa_Id" />
                 <ScalarProperty Name="id_solicitud_salida" ColumnName="id_solicitud_salida" />
                 <ScalarProperty Name="solicitante" ColumnName="solicitante" />
                 <ScalarProperty Name="trabajador" ColumnName="trabajador" />
@@ -933,6 +998,46 @@
           <FunctionImportMapping FunctionImportName="Solicitud_Trabador_Con_Solicitud" FunctionName="SAC_MindugarModelVisual.Store.Solicitud_Trabador_Con_Solicitud" />
           <FunctionImportMapping FunctionImportName="Solicitud_Validar_Trabajador_HoraExtra" FunctionName="SAC_MindugarModelVisual.Store.Solicitud_Validar_Trabajador_HoraExtra" />
           <FunctionImportMapping FunctionImportName="Solicitud_Verificar_Resolucion" FunctionName="SAC_MindugarModelVisual.Store.Solicitud_Verificar_Resolucion" />
+          <FunctionImportMapping FunctionImportName="Solicitud_Empleados_Sugeridos_Todos" FunctionName="SAC_MindugarModelVisual.Store.Solicitud_Empleados_Sugeridos_Todos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SAC_MindugarModelVisual.Solicitud_Empleados_Sugeridos_Todos_Result">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="SAC_MindugarModelVisual.Empresas">
+              <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="DB_Name" ColumnName="DB_Name" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Solicitud_Buscar_Empresas" FunctionName="SAC_MindugarModelVisual.Store.Solicitud_Buscar_Empresas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SAC_MindugarModelVisual.Solicitud_Buscar_Empresas_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="DB_Name" ColumnName="DB_Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Solicitud_Empleados_Empresa_Periodo" FunctionName="SAC_MindugarModelVisual.Store.Solicitud_Empleados_Empresa_Periodo" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SAC_MindugarModelVisual.Solicitud_Empleados_Empresa_Periodo_Result">
+                <ScalarProperty Name="rut" ColumnName="rut" />
+                <ScalarProperty Name="nombre_completo" ColumnName="nombre_completo" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="RutEmp" ColumnName="RutEmp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

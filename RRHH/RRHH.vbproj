@@ -169,6 +169,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALC\Empresas.vb">
+      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
+    </Compile>
     <Compile Include="DALC\ModeloVisualRRHH.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +188,9 @@
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\Solicitud_Buscar_Datos_Trabajador_Result.vb">
+      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\Solicitud_Buscar_Empresas_Result.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\Solicitud_Buscar_HoraExtra_PorFechasEmpresa_Result.vb">
@@ -217,6 +223,9 @@
     <Compile Include="DALC\Solicitud_Buscar_Solicitudes_Permisos_Result.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
+    <Compile Include="DALC\Solicitud_Empleados_Empresa_Periodo_Result.vb">
+      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
+    </Compile>
     <Compile Include="DALC\Solicitud_Empleados_Sugeridos_Area_Result.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
@@ -224,6 +233,9 @@
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\Solicitud_Empleados_Sugeridos_Result.vb">
+      <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\Solicitud_Empleados_Sugeridos_Todos_Result.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\Solicitud_HorasExtras.vb">
@@ -307,6 +319,13 @@
     <Compile Include="Formularios\Frm_SolicitudGerencial.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modelo\DataTableExtensions.vb" />
+    <Compile Include="Reportes\InformePlanillaAsistenciaGrp.vb">
+      <DependentUpon>InformePlanillaAsistenciaGrp.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Formularios\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -319,8 +338,10 @@
     <Compile Include="MDIParent1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modelo\ComboBoxExtensions.vb" />
     <Compile Include="Modelo\CommonBC.vb" />
     <Compile Include="Modelo\DataGridViewExtensions.vb" />
+    <Compile Include="Modelo\Empresas.vb" />
     <Compile Include="Modelo\HoraExtra.vb" />
     <Compile Include="Modelo\HoraExtraColaboradores.vb" />
     <Compile Include="Modelo\MindugarConexion.vb" />
@@ -502,6 +523,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_SolicitudGerencial.resx">
       <DependentUpon>Frm_SolicitudGerencial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\InformePlanillaAsistenciaGrp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformePlanillaAsistenciaGrp.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

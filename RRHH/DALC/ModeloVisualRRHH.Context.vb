@@ -27,6 +27,7 @@ Partial Public Class SAC_MindugarEntitiesVisual
     Public Overridable Property Solicitud_HorasExtras() As DbSet(Of Solicitud_HorasExtras)
     Public Overridable Property Solicitud_HorasExtras_Colaboradores() As DbSet(Of Solicitud_HorasExtras_Colaboradores)
     Public Overridable Property Solicitud_Salida() As DbSet(Of Solicitud_Salida)
+    Public Overridable Property Empresas() As DbSet(Of Empresas)
 
     Public Overridable Function Solicitud_Buscar_Correo(nombreCompleto As String) As ObjectResult(Of String)
         Dim nombreCompletoParameter As ObjectParameter = If(nombreCompleto IsNot Nothing, New ObjectParameter("nombreCompleto", nombreCompleto), New ObjectParameter("nombreCompleto", GetType(String)))
@@ -136,40 +137,48 @@ Partial Public Class SAC_MindugarEntitiesVisual
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of String)("Solicitud_Buscar_Responsables_Permisos", areaParameter, empresaParameter, nombreCompletoParameter)
     End Function
 
-    Public Overridable Function Solicitud_Buscar_Solicitudes_HoraExtra(nombreCompleto As String) As ObjectResult(Of Nullable(Of Integer))
+    Public Overridable Function Solicitud_Buscar_Solicitudes_HoraExtra(nombreCompleto As String, verTodas As Nullable(Of Boolean)) As ObjectResult(Of Nullable(Of Integer))
         Dim nombreCompletoParameter As ObjectParameter = If(nombreCompleto IsNot Nothing, New ObjectParameter("nombreCompleto", nombreCompleto), New ObjectParameter("nombreCompleto", GetType(String)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Integer))("Solicitud_Buscar_Solicitudes_HoraExtra", nombreCompletoParameter)
+        Dim verTodasParameter As ObjectParameter = If(verTodas.HasValue, New ObjectParameter("verTodas", verTodas), New ObjectParameter("verTodas", GetType(Boolean)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Integer))("Solicitud_Buscar_Solicitudes_HoraExtra", nombreCompletoParameter, verTodasParameter)
     End Function
 
-    Public Overridable Function Solicitud_Buscar_Solicitudes_Permisos(nombreCompleto As String, fecha_inicio As Nullable(Of Date), fecha_termino As Nullable(Of Date)) As ObjectResult(Of Solicitud_Buscar_Solicitudes_Permisos_Result)
+    Public Overridable Function Solicitud_Buscar_Solicitudes_Permisos(nombreCompleto As String, fecha_inicio As Nullable(Of Date), fecha_termino As Nullable(Of Date), verTodas As Nullable(Of Boolean)) As ObjectResult(Of Solicitud_Buscar_Solicitudes_Permisos_Result)
         Dim nombreCompletoParameter As ObjectParameter = If(nombreCompleto IsNot Nothing, New ObjectParameter("nombreCompleto", nombreCompleto), New ObjectParameter("nombreCompleto", GetType(String)))
 
         Dim fecha_inicioParameter As ObjectParameter = If(fecha_inicio.HasValue, New ObjectParameter("fecha_inicio", fecha_inicio), New ObjectParameter("fecha_inicio", GetType(Date)))
 
         Dim fecha_terminoParameter As ObjectParameter = If(fecha_termino.HasValue, New ObjectParameter("fecha_termino", fecha_termino), New ObjectParameter("fecha_termino", GetType(Date)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Buscar_Solicitudes_Permisos_Result)("Solicitud_Buscar_Solicitudes_Permisos", nombreCompletoParameter, fecha_inicioParameter, fecha_terminoParameter)
+        Dim verTodasParameter As ObjectParameter = If(verTodas.HasValue, New ObjectParameter("verTodas", verTodas), New ObjectParameter("verTodas", GetType(Boolean)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Buscar_Solicitudes_Permisos_Result)("Solicitud_Buscar_Solicitudes_Permisos", nombreCompletoParameter, fecha_inicioParameter, fecha_terminoParameter, verTodasParameter)
     End Function
 
-    Public Overridable Function Solicitud_Buscar_Solicitudes_PermisosPendiente(nombreCompleto As String, fecha_inicio As Nullable(Of Date), fecha_termino As Nullable(Of Date)) As ObjectResult(Of Solicitud_Buscar_Solicitudes_PermisosPendiente_Result)
+    Public Overridable Function Solicitud_Buscar_Solicitudes_PermisosPendiente(nombreCompleto As String, fecha_inicio As Nullable(Of Date), fecha_termino As Nullable(Of Date), verTodas As Nullable(Of Boolean)) As ObjectResult(Of Solicitud_Buscar_Solicitudes_PermisosPendiente_Result)
         Dim nombreCompletoParameter As ObjectParameter = If(nombreCompleto IsNot Nothing, New ObjectParameter("nombreCompleto", nombreCompleto), New ObjectParameter("nombreCompleto", GetType(String)))
 
         Dim fecha_inicioParameter As ObjectParameter = If(fecha_inicio.HasValue, New ObjectParameter("fecha_inicio", fecha_inicio), New ObjectParameter("fecha_inicio", GetType(Date)))
 
         Dim fecha_terminoParameter As ObjectParameter = If(fecha_termino.HasValue, New ObjectParameter("fecha_termino", fecha_termino), New ObjectParameter("fecha_termino", GetType(Date)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Buscar_Solicitudes_PermisosPendiente_Result)("Solicitud_Buscar_Solicitudes_PermisosPendiente", nombreCompletoParameter, fecha_inicioParameter, fecha_terminoParameter)
+        Dim verTodasParameter As ObjectParameter = If(verTodas.HasValue, New ObjectParameter("verTodas", verTodas), New ObjectParameter("verTodas", GetType(Boolean)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Buscar_Solicitudes_PermisosPendiente_Result)("Solicitud_Buscar_Solicitudes_PermisosPendiente", nombreCompletoParameter, fecha_inicioParameter, fecha_terminoParameter, verTodasParameter)
     End Function
 
-    Public Overridable Function Solicitud_Buscar_Todas_HoraExtra(nombreCompleto As String, fecha_inicio As Nullable(Of Date), fecha_termino As Nullable(Of Date)) As ObjectResult(Of Nullable(Of Integer))
+    Public Overridable Function Solicitud_Buscar_Todas_HoraExtra(nombreCompleto As String, fecha_inicio As Nullable(Of Date), fecha_termino As Nullable(Of Date), verTodas As Nullable(Of Boolean)) As ObjectResult(Of Nullable(Of Integer))
         Dim nombreCompletoParameter As ObjectParameter = If(nombreCompleto IsNot Nothing, New ObjectParameter("nombreCompleto", nombreCompleto), New ObjectParameter("nombreCompleto", GetType(String)))
 
         Dim fecha_inicioParameter As ObjectParameter = If(fecha_inicio.HasValue, New ObjectParameter("fecha_inicio", fecha_inicio), New ObjectParameter("fecha_inicio", GetType(Date)))
 
         Dim fecha_terminoParameter As ObjectParameter = If(fecha_termino.HasValue, New ObjectParameter("fecha_termino", fecha_termino), New ObjectParameter("fecha_termino", GetType(Date)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Integer))("Solicitud_Buscar_Todas_HoraExtra", nombreCompletoParameter, fecha_inicioParameter, fecha_terminoParameter)
+        Dim verTodasParameter As ObjectParameter = If(verTodas.HasValue, New ObjectParameter("verTodas", verTodas), New ObjectParameter("verTodas", GetType(Boolean)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Nullable(Of Integer))("Solicitud_Buscar_Todas_HoraExtra", nombreCompletoParameter, fecha_inicioParameter, fecha_terminoParameter, verTodasParameter)
     End Function
 
     Public Overridable Function Solicitud_Empleados_Sugeridos(fecha_SolicitudIni As String) As ObjectResult(Of Solicitud_Empleados_Sugeridos_Result)
@@ -244,6 +253,24 @@ Partial Public Class SAC_MindugarEntitiesVisual
         Dim idParameter As ObjectParameter = If(id.HasValue, New ObjectParameter("id", id), New ObjectParameter("id", GetType(Integer)))
 
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("Solicitud_Verificar_Resolucion", idParameter)
+    End Function
+
+    Public Overridable Function Solicitud_Empleados_Sugeridos_Todos() As ObjectResult(Of Solicitud_Empleados_Sugeridos_Todos_Result)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Empleados_Sugeridos_Todos_Result)("Solicitud_Empleados_Sugeridos_Todos")
+    End Function
+
+    Public Overridable Function Solicitud_Buscar_Empresas() As ObjectResult(Of Solicitud_Buscar_Empresas_Result)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Buscar_Empresas_Result)("Solicitud_Buscar_Empresas")
+    End Function
+
+    Public Overridable Function Solicitud_Empleados_Empresa_Periodo(empresa As String, fechaInicio As Nullable(Of Date), fechaTermino As Nullable(Of Date)) As ObjectResult(Of Solicitud_Empleados_Empresa_Periodo_Result)
+        Dim empresaParameter As ObjectParameter = If(empresa IsNot Nothing, New ObjectParameter("Empresa", empresa), New ObjectParameter("Empresa", GetType(String)))
+
+        Dim fechaInicioParameter As ObjectParameter = If(fechaInicio.HasValue, New ObjectParameter("fechaInicio", fechaInicio), New ObjectParameter("fechaInicio", GetType(Date)))
+
+        Dim fechaTerminoParameter As ObjectParameter = If(fechaTermino.HasValue, New ObjectParameter("fechaTermino", fechaTermino), New ObjectParameter("fechaTermino", GetType(Date)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of Solicitud_Empleados_Empresa_Periodo_Result)("Solicitud_Empleados_Empresa_Periodo", empresaParameter, fechaInicioParameter, fechaTerminoParameter)
     End Function
 
 End Class

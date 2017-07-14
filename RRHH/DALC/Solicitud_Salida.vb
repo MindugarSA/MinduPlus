@@ -33,5 +33,6 @@ Partial Public Class Solicitud_Salida
     Public Property responsable_resolucion As String
     Public Property check_basetempo As Nullable(Of Boolean)
     Public Property rut_solicitante As String
+    Public Property Empresa_Id As String
 
 End Class

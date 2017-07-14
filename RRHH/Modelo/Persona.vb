@@ -130,5 +130,33 @@ Public Class Persona
         End Try
         Return lista
     End Function
+
+    Public Shared Function ListarPorEmpresaPeriodo(empresa As [String], FecInicio As DateTime, FecFin As DateTime) As DataTable
+        'Dim lista As New List(Of Persona)()
+        Dim dt As DataTable = Nothing
+        Try
+            Dim results As ObjectResult(Of Solicitud_Empleados_Empresa_Periodo_Result) = CommonBC.EntidadesSAC.Solicitud_Empleados_Empresa_Periodo(empresa, FecInicio, FecFin)
+
+            dt = dt.LINQResultToDataTable(Of Object)(results)
+
+        Catch
+        End Try
+        Return dt
+    End Function
+
+    Public Shared Function ListarTodos() As List(Of Persona)
+        Dim lista As New List(Of Persona)()
+        Try
+            Dim results As ObjectResult(Of Solicitud_Empleados_Sugeridos_Todos_Result) = CommonBC.EntidadesSAC.Solicitud_Empleados_Sugeridos_Todos()
+            For Each result As Solicitud_Empleados_Sugeridos_Todos_Result In results
+                Dim persona As New Persona()
+                persona.Nombre = result.nombre
+                persona.Rut = result.rut
+                lista.Add(persona)
+            Next
+        Catch
+        End Try
+        Return lista
+    End Function
 #End Region
 End Class

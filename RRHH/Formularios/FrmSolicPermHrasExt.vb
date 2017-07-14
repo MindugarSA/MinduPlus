@@ -318,6 +318,7 @@ Public Class FrmSolicPermHrasExt
                         NewMDIChild.TopLevel = False
                         NewMDIChild.Visible = False
                         NewMDIChild.MdiParent = Me.MdiParent
+                        NewMDIChild.Parent = Me
                         NewMDIChild.WindowState = FormWindowState.Maximized
                         NewMDIChild.Dock = DockStyle.Fill
                         Me.pnlCentral.Controls.Add(NewMDIChild)
@@ -352,21 +353,6 @@ Public Class FrmSolicPermHrasExt
 
         End Select
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2078,7 +2064,7 @@ Public Class FrmSolicPermHrasExt
     '------------------------- Fin Informe Horas Extras -------------------------------
 
 
-    Private Sub MostrarFormExterno_en_Panel(FormPadre As Form, PanelAsignado As Panel, FormExterno As Form)
+    Public Sub MostrarFormExterno_en_Panel(FormPadre As Form, PanelAsignado As Panel, FormExterno As Form)
 
         FormExterno.TopLevel = False
         FormExterno.Visible = False
@@ -2093,10 +2079,6 @@ Public Class FrmSolicPermHrasExt
         FormExterno.Refresh()
 
     End Sub
-
-
-
-
 
 
 

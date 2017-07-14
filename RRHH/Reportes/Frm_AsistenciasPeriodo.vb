@@ -51,6 +51,7 @@ Public Class Frm_AsistenciasPeriodo
 
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
+        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
         MDIParent1.Visualizar_Tiles_MDI()
         MDIParent1.Desplazamiento_Tiles()
         Me.Close()
@@ -66,6 +67,8 @@ Public Class Frm_AsistenciasPeriodo
             Dim sPeriodo As String = MetroComboBox1.SelectedIndex
             Dim RutTrab As String = MDIParent1.Lbl_RutTrab.Text
             RutTrab = RutTrab.Remove(RutTrab.Length - 2)
+            RutTrab = If(RutTrab.StartsWith("0"), RutTrab.Substring(1), RutTrab)
+            RutTrab = If(RutTrab.StartsWith("0"), RutTrab.Substring(1), RutTrab)
             RutTrab = If(RutTrab.StartsWith("0"), RutTrab.Substring(1), RutTrab)
             Dim dFechaIni As Date = dtPeriodos.Rows(MetroComboBox1.SelectedIndex)(2)
             Dim dFechaFin As Date = dtPeriodos.Rows(MetroComboBox1.SelectedIndex)(3)

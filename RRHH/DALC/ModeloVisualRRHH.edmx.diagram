@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="SAC_MindugarModelVisual.Solicitud_HorasExtras_Colaboradores" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="SAC_MindugarModelVisual.Solicitud_Salida" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SAC_MindugarModelVisual.FK_Solicitud_HorasExtras_Colaboradores_Solicitud_HorasExtras" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SAC_MindugarModelVisual.Empresas" Width="1.5" PointX="8" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
