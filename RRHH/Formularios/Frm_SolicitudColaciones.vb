@@ -371,7 +371,7 @@ Public Class Frm_SolicitudColacion
     ''' </summary>
     Private Sub Iniciar_Form_Almuerzos()
 
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         'MDIParent1.Panel2.Visible = False
         Dim ctl As Control
         For Each ctl In Me.Controls
@@ -601,8 +601,8 @@ Public Class Frm_SolicitudColacion
 
     Sub ControlEnable(DateInfo As Date)
         Dim TblLyutPnl As TableLayoutPanel
-        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-        Dim controlLabel_PA, controlLabel_PB, controlLabel_PC, controlLabel_PD As Label
+        Dim controlLabel_A, controlLabel_B, controlLabel_C As Label 'controlLabel_D As Label
+        'Dim controlLabel_PA, controlLabel_PB, controlLabel_PC, controlLabel_PD As Label
         For Linea = 1 To 5
             Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
             Dim str_a As String = String.Format("Lbl_A{0}", Linea)

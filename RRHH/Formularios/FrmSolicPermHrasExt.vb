@@ -37,7 +37,7 @@ Public Class FrmSolicPermHrasExt
 
 
     Private Sub FrmSolicPermHrasExt_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         'MDIParent1.Panel2.Visible = False
         Dim ctl As Control
         For Each ctl In Me.Controls
@@ -633,6 +633,7 @@ Public Class FrmSolicPermHrasExt
             Dim comand As SqlCommand = New SqlCommand("Solicitud_Buscar_Datos_Trabajador", conexion)
             comand.CommandType = CommandType.StoredProcedure
             comand.Parameters.Add(New SqlParameter("@nombreCompleto", nombre))
+            comand.Parameters.Add(New SqlParameter("@Activo", 1))
             Dim adapter As New SqlDataAdapter(comand)
             adapter.Fill(tabla)
             'rut = dt.Rows(0)("rut").ToString()
@@ -2246,7 +2247,7 @@ Public Class FrmSolicPermHrasExt
 
     Private Sub btnSolicitarHHEE_Click(sender As Object, e As EventArgs) Handles btnSolicitar.Click
         If ValidarFormulario() Then
-            Dim transaction As SqlTransaction
+            Dim transaction As SqlTransaction = Nothing
             Using con As New SqlConnection(My.Settings.SBO_COMERCIALConnectionString)
                 Try
                     con.Open()

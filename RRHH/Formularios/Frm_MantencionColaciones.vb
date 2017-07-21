@@ -22,7 +22,7 @@ Public Class Frm_MantencionColaciones
     End Sub
 
     Private Sub Inicializar_Form_Almuerzos()
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
 
         'MDIParent1.Panel2.Visible = False
         Dim ctl As Control

@@ -6,9 +6,25 @@ Public Class Frm_InformeAsistencias
     Private enableBuscarNombreInforme As Boolean = True
     Private enableBuscarInforme As Boolean = False
     Private trabajadorInforme As Persona
+    Private Property bSelecTodos As Boolean = False
+    Public Property dtEmpleados As DataTable
     Public Property conexion As New SqlConnection
     Public Property cmd As SqlCommand
     Public Property dtPeriodos As New DataTable
+
+    Private Declare Function GetClassName Lib "user32" Alias "GetClassNameA" _
+    (ByVal hWnd As Long, ByVal lpClassName As String, ByVal nMaxCount As Long) As Long
+
+    Private Declare Function FindWindow _
+    Lib "user32" _
+    Alias "FindWindowA" (
+        ByVal lpClassName As String,
+        ByVal lpWindowName As String) As Long
+
+    Private Declare Function ShowWindow _
+    Lib "user32" (
+        ByVal hwnd As Long,
+        ByVal nCmdShow As Long) As Long
 
     Private Sub Frm_InformeAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -24,6 +40,7 @@ Public Class Frm_InformeAsistencias
 
             AutocompletarNombreRut("")
             MetroCheckBox1.Visible = False
+            MetroLabel9.Visible = False
 
         Catch ex As Exception
         End Try
@@ -92,6 +109,30 @@ Public Class Frm_InformeAsistencias
         Try
             If (MetroComboBox2.SelectedIndex > -1 And MetroComboBox3.SelectedValue.Trim().Length > 0) Then
 
+                Dim dtEmple As DataTable = CType(MetroGrid1.DataSource, DataTable)
+                Dim dtResult As DataTable = Nothing
+                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtEmple.AsEnumerable()
+                                                                                 Where (myRow.Field(Of Boolean)("chk"))
+                                                                                 Order By myRow(0)
+                                                                                 Select myRow
+
+                If results.Any() Then
+                    dtResult = results.CopyToDataTable()
+                    While dtResult.Columns.Count > 2
+                        dtResult.Columns.RemoveAt(dtResult.Columns.Count - 1)
+                    End While
+                    dtResult.Columns(0).ColumnName = "RutId"
+                    dtResult.Columns(1).ColumnName = "Nombre"
+                    For Each row As DataRow In dtResult.Rows
+                        Dim RutTrab As String = row(0)
+                        RutTrab = RutTrab.Remove(RutTrab.Length - 2)
+                        RutTrab = If(RutTrab.StartsWith("0"), RutTrab.Substring(1), RutTrab)
+                        RutTrab = If(RutTrab.StartsWith("0"), RutTrab.Substring(1), RutTrab)
+                        RutTrab = If(RutTrab.StartsWith("0"), RutTrab.Substring(1), RutTrab)
+                        row(0) = RutTrab
+                    Next
+                End If
+
                 Dim RutEmp As String = MetroComboBox3.SelectedValue
                 Dim dFechaIni As Date = dtPeriodos.Rows(MetroComboBox2.SelectedIndex)(2)
                 Dim dFechaFin As Date = dtPeriodos.Rows(MetroComboBox2.SelectedIndex)(3)
@@ -101,9 +142,27 @@ Public Class Frm_InformeAsistencias
                 informe.SetParameterValue("@Empresa", RutEmp)
                 informe.SetParameterValue("@fechaInicio", dFechaIni)
                 informe.SetParameterValue("@fechaTermino", dFechaFin)
+                'informe.SetParameterValue("@GrupoEmple", dtResult)
                 Dim formInforme As New Frm_ImprimirReporte(informe)
 
                 MostrarFormExterno_en_Panel(Me, MetroPanel1, formInforme)
+
+                'Dim hWnd As Long
+                'Dim sClassName As String
+                'Dim ClassName As String
+                'Dim nMaxCount As Long
+
+                'hWnd = FindWindow(sClassName, Me.Text)
+                'hWnd = FindWindow(vbNullString, "")
+                'nMaxCount = 256
+                'sClassName = Space$(nMaxCount)
+                'nMaxCount = GetClassName(hWnd, sClassName, nMaxCount)
+                'ClassName = Strings.Left(sClassName, nMaxCount)
+
+                'Handle = FindWindow(vbNullString, "MSN Messenger")
+
+                'Call ShowWindow(hWnd, 0)
+                'Call ShowWindow(hWnd, 1)
 
                 'For Each Form As Form In Application.OpenForms
                 '    If Form.IsMdiContainer Then
@@ -142,6 +201,7 @@ Public Class Frm_InformeAsistencias
 
     Private Sub MetroComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox3.SelectedIndexChanged
 
+        MetroCheckBox1.Checked = False
         If MetroComboBox3.SelectedIndex > -1 And MetroComboBox3.SelectedValue IsNot Nothing Then
 
             If MetroGrid1.DataSource IsNot Nothing Then
@@ -152,14 +212,14 @@ Public Class Frm_InformeAsistencias
             Dim dFechaFin As Date = dtPeriodos.Rows(MetroComboBox2.SelectedIndex)(3)
             Dim RutEmp As String = MetroComboBox3.SelectedValue
 
-            Dim dt As DataTable = Persona.ListarPorEmpresaPeriodo(RutEmp, dFechaIni, dFechaFin)
+            dtEmpleados = Persona.ListarPorEmpresaPeriodo(RutEmp, dFechaIni, dFechaFin)
 
-            MetroGrid1.DataSource = dt
+            MetroGrid1.DataSource = dtEmpleados
 
             FormatearGridEmpleados()
             AgregarColumnaCheckEmplados()
-            CargarComboAreas(dt)
-            CargarComboDepartamentos(dt)
+            CargarComboAreas(dtEmpleados)
+            CargarComboDepartamentos(dtEmpleados)
 
             MetroCheckBox1.Checked = True
             MetroCheckBox1.Visible = True
@@ -167,6 +227,9 @@ Public Class Frm_InformeAsistencias
             MetroLabel8.Visible = True
             MetroComboBox4.Visible = True
             MetroComboBox5.Visible = True
+            MetroLabel9.Visible = True
+            MetroLabel9.Text = "Cantidad : " + dtEmpleados.Rows.Count.ToString()
+            bSelecTodos = True
 
         Else
 
@@ -177,6 +240,32 @@ Public Class Frm_InformeAsistencias
             MetroComboBox5.Visible = False
             MetroGrid1.Columns.Clear()
         End If
+
+    End Sub
+
+    Private Sub MetroComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox4.SelectedIndexChanged
+
+        If MetroComboBox4.Text.ToString.Trim.Length > 0 Then
+            FiltrarPorCargo(MetroComboBox4.SelectedValue)
+        Else
+            MetroGrid1.DataSource = dtEmpleados
+        End If
+        MetroCheckBox1.Checked = False
+        MetroCheckBox1.Checked = True
+        MetroLabel9.Text = "Cantidad : " + MetroGrid1.DataSource.Rows.Count.ToString()
+
+    End Sub
+
+    Private Sub MetroComboBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox5.SelectedIndexChanged
+
+        If MetroComboBox5.Text.ToString.Trim.Length > 0 Then
+            FiltrarPorDepto(MetroComboBox5.SelectedValue)
+        Else
+            MetroGrid1.DataSource = dtEmpleados
+        End If
+        MetroCheckBox1.Checked = False
+        MetroCheckBox1.Checked = True
+        MetroLabel9.Text = "Cantidad : " + MetroGrid1.DataSource.Rows.Count.ToString()
 
     End Sub
 
@@ -240,12 +329,33 @@ Public Class Frm_InformeAsistencias
 
     End Sub
     Private Sub AgregarColumnaCheckEmplados()
-        Dim chk As New DataGridViewCheckBoxColumn()
+
+        Dim dt As DataTable = DirectCast(MetroGrid1.DataSource, DataTable)
+
+        If Not DirectCast(MetroGrid1.DataSource, DataTable).Columns.Contains("chk") Then
+            DirectCast(MetroGrid1.DataSource, DataTable).Columns.Add(New DataColumn("chk", GetType(Boolean)))
+        End If
+
+        For Each row As DataRow In DirectCast(MetroGrid1.DataSource, DataTable).Rows
+            row("chk") = False
+        Next
+
+        DirectCast(MetroGrid1.DataSource, DataTable).AcceptChanges()
+        'dataGridView4.DataSource 
+
+        Dim chk As DataGridViewCheckBoxColumn = DirectCast(MetroGrid1.Columns("chk"), DataGridViewCheckBoxColumn)
+        chk.Visible = True
         chk.[ReadOnly] = False
         chk.HeaderText = "Selec."
         chk.Name = "chk"
         chk.Width = 100
-        MetroGrid1.Columns.Add(chk)
+
+        'Dim chk As New DataGridViewCheckBoxColumn()
+        'chk.[ReadOnly] = False
+        'chk.HeaderText = "Selec."
+        'chk.Name = "chk"
+        'chk.Width = 100
+        'MetroGrid1.Columns.Add(chk)
     End Sub
 
     Private Sub CargarComboEmpresas()
@@ -264,7 +374,7 @@ Public Class Frm_InformeAsistencias
 
     Private Sub CargarDTPeriodos(DTdata As DataTable)
 
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
 
         cmd = New SqlCommand("[MINDU_INTERMEDIA].[dbo].[SpASISTENCIA_Periodos_Registrados_Fechas]", conexion)
         cmd.CommandType = CommandType.StoredProcedure
@@ -327,6 +437,45 @@ Public Class Frm_InformeAsistencias
         btn.Size = New Size(btn.Width + 10, btn.Height + 10)
     End Sub
 
+    Private Sub FiltrarPorCargo(Cargo As String)
+        Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtEmpleados.AsEnumerable()
+                                                                         Where (myRow.Field(Of String)("cargo").Trim.Equals(Cargo.Trim))
+                                                                         Order By myRow(0)
+                                                                         Select myRow
+
+        If results.Any() Then
+            Dim dtf As DataTable = results.CopyToDataTable()
+            If dtf.Rows.Count > 0 Then
+                'dtf.DefaultView.Sort = "P_CI";
+                MetroGrid1.DataSource = dtf
+            End If
+        End If
+    End Sub
+
+    Private Sub FiltrarPorDepto(Cargo As String)
+        Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtEmpleados.AsEnumerable()
+                                                                         Where (myRow.Field(Of String)("AREA").Trim.Equals(Cargo.Trim))
+                                                                         Order By myRow(0)
+                                                                         Select myRow
+
+        If results.Any() Then
+            Dim dtf As DataTable = results.CopyToDataTable()
+            If dtf.Rows.Count > 0 Then
+                'dtf.DefaultView.Sort = "P_CI";
+                MetroGrid1.DataSource = dtf
+            End If
+        End If
+    End Sub
+
+    Private Sub MetroGrid1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles MetroGrid1.CellClick
+
+        If (e.ColumnIndex = 6) Then
+            Dim chkCell = TryCast(MetroGrid1(e.ColumnIndex, e.RowIndex), DataGridViewCheckBoxCell)
+            If Not CBool(chkCell.EditedFormattedValue) Then
+
+            End If
+        End If
 
 
+    End Sub
 End Class

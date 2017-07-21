@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 Imports System.Data.SqlClient
+
 Public Class MDIParent1
     Dim conexion As New SqlConnection
     Dim dt As New DataTable
@@ -22,8 +23,9 @@ Public Class MDIParent1
     End Property
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         Me.ShowInTaskbar = True
+
     End Sub
 
     Private Sub MDIParent1_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
@@ -598,6 +600,7 @@ Public Class MDIParent1
 
     Public Sub Ocultar_Tiles_MDI()
         pnlMovingRight.Visible = False
+        pnlMovingRight2.Visible = False
         pnlMovingTop.Visible = False
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
         '  (From tb As MetroFramework.Controls.MetroTile In Me.Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
@@ -610,6 +613,7 @@ Public Class MDIParent1
 
     Public Sub Visualizar_Tiles_MDI()
         pnlMovingRight.Visible = True
+        pnlMovingRight2.Visible = True
         pnlMovingTop.Visible = True
 
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
@@ -621,14 +625,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -637,6 +641,7 @@ Public Class MDIParent1
 
     Private Sub TmrDesplaza_Tick(sender As Object, e As EventArgs) Handles TmrDesplaza.Tick
         pnlMovingRight.Left += DESPLAZAMIENTO
+        pnlMovingRight2.Left += DESPLAZAMIENTO
         pnlMovingTop.Top -= DESPLAZAMIENTO
 
         Tiempo_Animacion += 1
@@ -651,6 +656,7 @@ Public Class MDIParent1
 
     Public Sub Desplazamiento_Tiles()
         pnlMovingRight.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
+        pnlMovingRight2.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
         pnlMovingTop.Top += DESPLAZAMIENTO * CANTIDAD_DESPLAZO
 
         TmrDesplaza.Enabled = True
@@ -731,4 +737,35 @@ Public Class MDIParent1
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Dim FormPrueba As New CapaPresentacion.FrmInstrumentosPrecision(Me.Panel2, Me.StatusStrip, "")
+        'FormPrueba.MdiParent = Me
+        'FormPrueba.Text = "PRUEBA DE LLAMADA"
+        FormPrueba.Show()
+    End Sub
+
+    Private Sub Tle_Herramientas_Pre_Click(sender As Object, e As EventArgs) Handles Tle_Herramientas_Pre.Click
+        If RevisaAcceso(95000) Then
+            TiempoIngreso.Enabled = False
+            Cerrar_Forms_Children()
+
+            Dim newMDIChild As New CapaPresentacion.FrmInstrumentosPrecision(Me.Panel2, Me.StatusStrip, Lbl_Cod_ID.Text)
+            AddHandler newMDIChild.EnviarEvento, New CapaPresentacion.FrmInstrumentosPrecision.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+            AddHandler newMDIChild.EnviarEvento, New CapaPresentacion.FrmInstrumentosPrecision.LaunchEvent(AddressOf Desplazamiento_Tiles)
+
+            newMDIChild.MdiParent = Me
+            'newMDIChild.WindowState = FormWindowState.Maximized
+            newMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(newMDIChild)
+            Me.Panel2.Tag = newMDIChild
+            Ocultar_Tiles_MDI()
+            newMDIChild.ControlBox = False
+            StatusStrip.Visible = False
+            newMDIChild.Show()
+
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        End If
+    End Sub
 End Class

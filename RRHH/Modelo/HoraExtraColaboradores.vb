@@ -2,7 +2,7 @@ Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
-Imports RRHH_VisualDALC
+'Imports RRHH_VisualDALC
 
 Public Class HoraExtraColaboradores
 	Private _rut As [String]

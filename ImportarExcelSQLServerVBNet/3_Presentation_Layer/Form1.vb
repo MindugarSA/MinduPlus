@@ -285,7 +285,7 @@ Partial Public Class Form1
             Dim dtOrigen As DataTable = BAsistenciaPeriodoFile.ConsultarRegistro(Origen)
 
             Dim sFilePath As String
-            Dim buffer As Byte() = dtOrigen.Rows(0)("FileStream")
+            Dim buffer As Byte() = CType(dtOrigen.Rows(0)("FileStream"), Byte())
 
             sFilePath = System.IO.Path.GetTempFileName()
             System.IO.File.Move(sFilePath, System.IO.Path.ChangeExtension(sFilePath, ".xlsx"))
@@ -316,13 +316,13 @@ Partial Public Class Form1
             button13.PerformClick()
         End If
     End Sub
-    Private Shared Sub OpenFile(ByVal sFilePath)
+    Private Shared Sub OpenFile(ByVal sFilePath As String)
         Using p As New System.Diagnostics.Process
-            p.StartInfo = New System.Diagnostics.ProcessStartInfo(sFilePath)
+            p.StartInfo = New System.Diagnostics.ProcessStartInfo(CType(sFilePath, String))
             p.Start()
             'p.WaitForExit()
             Try
-                System.IO.File.Delete(sFilePath)
+                System.IO.File.Delete(CType(sFilePath, String))
             Catch
             End Try
         End Using
@@ -348,7 +348,7 @@ Partial Public Class Form1
         If checkBox2.Checked AndAlso dataGridView4.RowCount > 0 Then
             Dim dtConceptosSelec As DataTable = Nothing
 
-            Dim rows = dtConceptos.AsEnumerable().[Select](Function(row) New With {
+            Dim rows As IEnumerable(Of Object) = dtConceptos.AsEnumerable().[Select](Function(row) New With {
                 Key .Codigo = row.Field(Of String)(7),
                 Key .Descripcion = row.Field(Of String)(8)
             }).Distinct()
@@ -560,19 +560,19 @@ Partial Public Class Form1
             Dim dtCabecera As DataTable = results.CopyToDataTable()
             For Each row As DataRow In dtCabecera.Rows
                 For Each dc As DataColumn In dtCabecera.Columns
-                    Dim field1 = row(dc).ToString()
+                    Dim field1 As String = row(dc).ToString()
                     field1 = If(dc.ColumnName = "F5" OrElse dc.ColumnName = "F111", field1 & "2", field1)
                     dtDatosExcel.Columns(dc.ColumnName).ColumnName = field1
                 Next
             Next
 
             'Eliminar Columnas vacias o con informacion no relevantehec
-            Dim toDelete = dtDatosExcel.Rows.OfType(Of DataRow)() _
-                          .Where(Function(r) [String].IsNullOrEmpty(r.Field(Of String)(0)) _
-                                 OrElse [String].IsNullOrEmpty(r.Field(Of String)(2)) _
-                                 OrElse (r.Field(Of String)("ID").Length < 3) _
-                                 OrElse (r.Field(Of String)(0)) = "ID") _
-                          .ToList() '.ForEach(Function(r As DataRow) r.Delete())
+            Dim toDelete As List(Of DataRow) = dtDatosExcel.Rows.OfType(Of DataRow)() _
+                                              .Where(Function(r) [String].IsNullOrEmpty(r.Field(Of String)(0)) _
+                                                     OrElse [String].IsNullOrEmpty(r.Field(Of String)(2)) _
+                                                     OrElse (r.Field(Of String)("ID").Length < 3) _
+                                                     OrElse (r.Field(Of String)(0)) = "ID") _
+                                              .ToList() '.ForEach(Function(r As DataRow) r.Delete())
 
 
             For Each row As DataRow In toDelete
@@ -584,9 +584,13 @@ Partial Public Class Form1
             dtDatosExcel.Columns.Add("Periodo", GetType(Integer))
             dtDatosExcel.SetColumnsOrder("N°")
 
-            Dim Deleted As Integer = dtDatosExcel.AsEnumerable().Where(Function(dataRow) dataRow.RowState = DataRowState.Deleted AndAlso dtDatosExcel.Rows.IndexOf(dataRow) < 20).Count()
+            Dim Deleted As Integer = dtDatosExcel.AsEnumerable() _
+                                    .Where(Function(dataRow) dataRow.RowState = DataRowState.Deleted AndAlso
+                                    dtDatosExcel.Rows.IndexOf(dataRow) < 20).Count()
 
-            Dim toAssing = dtDatosExcel.Rows.OfType(Of DataRow)().Where(Function(dataRow) dataRow.RowState <> DataRowState.Deleted).ToList() '.ForEach(Function(r) InlineAssignHelper(r(0), dtDatosExcel.Rows.IndexOf(r) - (Deleted - 1)))
+            Dim toAssing As IEnumerable(Of DataRow) = dtDatosExcel.Rows.OfType(Of DataRow)() _
+                                                      .Where(Function(dataRow) dataRow.RowState <> DataRowState.Deleted) _
+                                                      .ToList() '.ForEach(Function(r) InlineAssignHelper(r(0), dtDatosExcel.Rows.IndexOf(r) - (Deleted - 1)))
 
             For Each row As DataRow In toAssing
                 row(0) = dtDatosExcel.Rows.IndexOf(row) - (Deleted - 1)
@@ -739,9 +743,11 @@ Partial Public Class Form1
     End Sub
     Private Sub InsertarPeriodoenDataTable(Año As String, Mes As String)
         'Colocar Periodo en Columna de DataTable
-        Dim toInsert = dtDatosExcel.Rows.OfType(Of DataRow)().Where(Function(dataRow) dataRow.RowState <> DataRowState.Deleted).ToList()
+        Dim toInsert As IEnumerable(Of DataRow) = dtDatosExcel.Rows.OfType(Of DataRow)() _
+                                                .Where(Function(dataRow) dataRow.RowState <> DataRowState.Deleted) _
+                                                .ToList()
 
-        For Each row As DataRow In toInsert
+        For Each row As DataRow In CType(toInsert, IEnumerable(Of DataRow))
             row("Periodo") = Año.ToString().Trim() & Mes.ToString().Trim().PadLeft(2, "0"c)
         Next
 
@@ -756,7 +762,7 @@ Partial Public Class Form1
     Private Function ListarEmpresas(dtConsulta As DataTable) As DataTable
         Dim dt As DataTable = Nothing
 
-        Dim distinctValues = dtConsulta.AsEnumerable().[Select](Function(row) New With {
+        Dim distinctValues As IEnumerable(Of Object) = dtConsulta.AsEnumerable().[Select](Function(row) New With {
             Key .Empresa = row.Field(Of String)("Empresa").ToUpper()
         }).Distinct().ToList()
 
@@ -908,7 +914,7 @@ Partial Public Class Form1
 
     End Sub
     Private Sub ExportarConceptosGESTPER()
-        progressBar2.Style = ProgressBarStyle.Continuous
+        'progressBar2.Style =  // ProgressBarStyle.Continuous
         progressBar2.Visible = True
         label20.Visible = True
         progressBar2.Minimum = 0

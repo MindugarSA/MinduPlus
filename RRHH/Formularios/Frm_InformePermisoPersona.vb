@@ -6,8 +6,6 @@ Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
 Imports System.Windows.Forms
-Imports RRHH_Lib
-Imports RRHH_Vista.Reportes
 
 Public Partial Class Frm_InformePermisoPersona
 	Inherits Form

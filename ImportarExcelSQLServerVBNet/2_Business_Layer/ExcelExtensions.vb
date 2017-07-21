@@ -47,8 +47,8 @@ Module ExcelExtensions
             Dim svfileName As String = Path.GetDirectoryName(fileName) & "/" & Path.GetFileNameWithoutExtension(fileName)
             'Path.ChangeExtension(fileName, ".xlsx");
             Dim oMissing As Object = Type.Missing
-            Dim app = New Microsoft.Office.Interop.Excel.Application()
-            Dim wb = app.Workbooks.Open(fileName, oMissing, oMissing, oMissing, oMissing, oMissing,
+            Dim app As New Microsoft.Office.Interop.Excel.Application()
+            Dim wb As Workbook = app.Workbooks.Open(fileName, oMissing, oMissing, oMissing, oMissing, oMissing,
                 oMissing, oMissing, oMissing, oMissing, oMissing, oMissing,
                 oMissing, oMissing, oMissing)
             app.DisplayAlerts = False

@@ -16,7 +16,7 @@ Public Class Login
         Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
         Me.SuspendLayout()
 
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         Lbl__ConfPass.Visible = False
         TxtBx_ConfPass.Visible = False
 

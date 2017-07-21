@@ -8,7 +8,7 @@ Public Class Frm_Parametros
     Dim SelLin As Integer
 
     Private Sub Frm_Parametros_Load(sender As Object, e As EventArgs) Handles Me.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
 
 
         'TODO: esta línea de código carga datos en la tabla 'SAC_MindugarDataSet.Colaciones_Parametros' Puede moverla o quitarla según sea necesario.

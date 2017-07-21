@@ -43,6 +43,7 @@ Partial Class MDIParent1
         Me.Tle_Solicitar_Permisos = New MetroFramework.Controls.MetroTile()
         Me.TleSolicitar_HHEE = New MetroFramework.Controls.MetroTile()
         Me.Tle_Asistencias_Periodo = New MetroFramework.Controls.MetroTile()
+        Me.Tle_Herramientas_Pre = New MetroFramework.Controls.MetroTile()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -59,6 +60,7 @@ Partial Class MDIParent1
         Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlMovingRight2 = New System.Windows.Forms.Panel()
         Me.pnlMovingRight = New System.Windows.Forms.Panel()
         Me.pnlMovingTop = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
@@ -73,6 +75,7 @@ Partial Class MDIParent1
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.pnlMovingRight2.SuspendLayout()
         Me.pnlMovingRight.SuspendLayout()
         Me.pnlMovingTop.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,6 +314,22 @@ Partial Class MDIParent1
         Me.Tle_Asistencias_Periodo.UseSelectable = True
         Me.Tle_Asistencias_Periodo.UseTileImage = True
         '
+        'Tle_Herramientas_Pre
+        '
+        Me.Tle_Herramientas_Pre.ActiveControl = Nothing
+        Me.Tle_Herramientas_Pre.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Tle_Herramientas_Pre.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.Tle_Herramientas_Pre.Location = New System.Drawing.Point(4, 9)
+        Me.Tle_Herramientas_Pre.Name = "Tle_Herramientas_Pre"
+        Me.Tle_Herramientas_Pre.Size = New System.Drawing.Size(247, 107)
+        Me.Tle_Herramientas_Pre.TabIndex = 10
+        Me.Tle_Herramientas_Pre.Text = "Herramientas Precision"
+        Me.Tle_Herramientas_Pre.TileImage = Global.RRHH.My.Resources.Resources.Medicion_64
+        Me.ToolTip.SetToolTip(Me.Tle_Herramientas_Pre, "Gestion Herramientas" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Precision")
+        Me.Tle_Herramientas_Pre.UseCustomBackColor = True
+        Me.Tle_Herramientas_Pre.UseSelectable = True
+        Me.Tle_Herramientas_Pre.UseTileImage = True
+        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -511,6 +530,7 @@ Partial Class MDIParent1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel2.Controls.Add(Me.pnlMovingRight2)
         Me.Panel2.Controls.Add(Me.pnlMovingRight)
         Me.Panel2.Controls.Add(Me.pnlMovingTop)
         Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
@@ -519,6 +539,15 @@ Partial Class MDIParent1
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1129, 784)
         Me.Panel2.TabIndex = 11
+        '
+        'pnlMovingRight2
+        '
+        Me.pnlMovingRight2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.pnlMovingRight2.Controls.Add(Me.Tle_Herramientas_Pre)
+        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 660)
+        Me.pnlMovingRight2.Name = "pnlMovingRight2"
+        Me.pnlMovingRight2.Size = New System.Drawing.Size(640, 120)
+        Me.pnlMovingRight2.TabIndex = 21
         '
         'pnlMovingRight
         '
@@ -602,6 +631,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.pnlMovingRight2.ResumeLayout(False)
         Me.pnlMovingRight.ResumeLayout(False)
         Me.pnlMovingTop.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -648,4 +678,6 @@ Partial Class MDIParent1
     Friend WithEvents pnlMovingRight As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Tle_Asistencias_Periodo As MetroFramework.Controls.MetroTile
+    Friend WithEvents pnlMovingRight2 As Panel
+    Friend WithEvents Tle_Herramientas_Pre As MetroFramework.Controls.MetroTile
 End Class

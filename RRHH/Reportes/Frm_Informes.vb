@@ -9,7 +9,7 @@ Public Class Frm_Informes
 
 
     Private Sub Frm_Informes_Load(sender As Object, e As EventArgs) Handles Me.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         CmbBx_Informe.SelectedIndex = 0
         CmbBx_Informe_Orden.SelectedIndex = 0
         CmbBx_Informe_Empresa.SelectedIndex = 0

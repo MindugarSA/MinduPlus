@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>95</ApplicationRevision>
+    <ApplicationRevision>98</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -118,6 +118,10 @@
       <HintPath>..\packages\Kesoft.Windows.Forms.Win7StyleTreeView.1.0.0.1\lib\net20\Kesoft.Windows.Forms.Win7StyleTreeView.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Pruebas MetroUI\WindowsFormsApplication1\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -169,8 +173,27 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALC\Conection.vb" />
+    <Compile Include="DALC\EMPLE_TEMP.vb">
+      <DependentUpon>ModeloMINDUINTERMEDIA.tt</DependentUpon>
+    </Compile>
     <Compile Include="DALC\Empresas.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\ModeloMINDUINTERMEDIA.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMINDUINTERMEDIA.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\ModeloMINDUINTERMEDIA.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMINDUINTERMEDIA.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\ModeloMINDUINTERMEDIA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloMINDUINTERMEDIA.tt</DependentUpon>
     </Compile>
     <Compile Include="DALC\ModeloVisualRRHH.Context.vb">
       <AutoGen>True</AutoGen>
@@ -247,6 +270,12 @@
     <Compile Include="DALC\Solicitud_Salida.vb">
       <DependentUpon>ModeloVisualRRHH.tt</DependentUpon>
     </Compile>
+    <Compile Include="DALC\spASISTENCIA_EMPLE_TEMPInsertar_Result.vb">
+      <DependentUpon>ModeloMINDUINTERMEDIA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALC\spASISTENCIA_EMPLE_TEMPListar_Result.vb">
+      <DependentUpon>ModeloMINDUINTERMEDIA.tt</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmPresenciaEmpleados.Designer.vb">
       <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
     </Compile>
@@ -320,6 +349,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modelo\DataTableExtensions.vb" />
+    <Compile Include="Modelo\Emple_Temp.vb" />
     <Compile Include="Reportes\InformePlanillaAsistenciaGrp.vb">
       <DependentUpon>InformePlanillaAsistenciaGrp.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -610,6 +640,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloVisualRRHH.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="DALC\ModeloMINDUINTERMEDIA.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloMINDUINTERMEDIA.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DALC\ModeloMINDUINTERMEDIA.edmx.diagram">
+      <DependentUpon>ModeloMINDUINTERMEDIA.edmx</DependentUpon>
+    </None>
     <None Include="DALC\ModeloVisualRRHH.edmx.diagram">
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
     </None>
@@ -861,6 +898,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DALC\ModeloMINDUINTERMEDIA.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloMINDUINTERMEDIA.edmx</DependentUpon>
+      <LastGenOutput>ModeloMINDUINTERMEDIA.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="DALC\ModeloMINDUINTERMEDIA.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloMINDUINTERMEDIA.edmx</DependentUpon>
+      <LastGenOutput>ModeloMINDUINTERMEDIA.vb</LastGenOutput>
+    </Content>
     <Content Include="DALC\ModeloVisualRRHH.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModeloVisualRRHH.edmx</DependentUpon>
@@ -914,6 +961,8 @@
     <None Include="Resources\Logo1.png" />
     <None Include="Resources\list-document-interface-symbol.png" />
     <Content Include="Resources\Mant_Sist.jpg" />
+    <None Include="Resources\Medicion-iloveimg-resized.png" />
+    <None Include="Resources\Medicion.png" />
     <Content Include="Resources\Menu.jpg" />
     <None Include="Resources\Menu1.jpg" />
     <None Include="Resources\menu.png" />

@@ -10,9 +10,9 @@ Namespace _2_Business_Layer
 		Private Sub New()
 		End Sub
 		Public Shared Function GetControl(Of T)(oForm As Form, IDControl As String) As Control
-			Dim cList = oForm.GetAllControlList().ToList()
-			'GetSelfAndChildrenRecursive(this).ToList();
-			Dim cControl As Control = Nothing
+            Dim cList As List(Of Control) = oForm.GetAllControlList().ToList()
+            'GetSelfAndChildrenRecursive(this).ToList();
+            Dim cControl As Control = Nothing
 
 			Try
 				For Each control As Control In cList
@@ -29,7 +29,7 @@ Namespace _2_Business_Layer
 
         Public Shared Sub ChangeBoolProperty(oForm As Object, bStatus As Boolean, sPropertyName As String)
             'this.bAcceso = bStatus;
-            Dim cList = oForm.[GetType]().GetProperties().ToList()
+            Dim cList As List(Of PropertyInfo) = oForm.[GetType]().GetProperties().ToList()
             'GetSelfAndChildrenRecursive(this).ToList();
             Dim t As Type = oForm.[GetType]()
             Dim props As PropertyInfo() = t.GetProperties()
@@ -49,7 +49,7 @@ Namespace _2_Business_Layer
 
         Public Shared Sub ChangeStringProperty(oForm As Object, sString As String, sPropertyName As String)
             'this.bAcceso = bStatus;
-            Dim cList = oForm.[GetType]().GetProperties().ToList()
+            Dim cList As List(Of PropertyInfo) = oForm.[GetType]().GetProperties().ToList()
             'GetSelfAndChildrenRecursive(this).ToList();
             Dim t As Type = oForm.[GetType]()
             Dim props As PropertyInfo() = t.GetProperties()

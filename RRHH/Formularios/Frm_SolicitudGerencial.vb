@@ -13,7 +13,7 @@ Public Class Frm_SolicitudGerencial
 
 
     Private Sub Frm_SolicitudGerencial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
 
         Dim ctl As Control
         For Each ctl In Me.Controls

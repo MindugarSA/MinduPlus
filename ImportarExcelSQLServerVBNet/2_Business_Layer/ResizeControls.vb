@@ -49,10 +49,10 @@ Namespace _2_Business_Layer
 		Private m_form As Form
 
 		Public Sub _get_initial_size()
-		'get initial size//
-			Dim _controls = _get_all_controls(form)
-			'call the enumerator
-			For Each control As Control In _controls
+            'get initial size//
+            Dim _controls As IEnumerable(Of Control) = _get_all_controls(form)
+            'call the enumerator
+            For Each control As Control In _controls
 				'Loop through the controls
 				_arr_control_storage.Add(control.Bounds)
 				'saves control bounds/dimension            
@@ -68,10 +68,10 @@ Namespace _2_Business_Layer
 			Dim _form_ratio_width As Double = CDbl(form.ClientSize.Width) / CDbl(_formSize.Width)
 			'ratio could be greater or less than 1
 			Dim _form_ratio_height As Double = CDbl(form.ClientSize.Height) / CDbl(_formSize.Height)
-			' this one too
-			Dim _controls = _get_all_controls(form)
-			'reenumerate the control collection
-			Dim _pos As Integer = -1
+            ' this one too
+            Dim _controls As IEnumerable(Of Control) = _get_all_controls(form)
+            'reenumerate the control collection
+            Dim _pos As Integer = -1
 			'do not change this value unless you know what you are doing
 			For Each control As Control In _controls
 				' do some math calc

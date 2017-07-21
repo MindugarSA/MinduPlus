@@ -21,7 +21,7 @@ Public Class Frm_AsistenciasPeriodo
         'CrystalReportViewer1.ReportSource = reporte
         CrystalReportViewer1.Zoom(140)
 
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
 
         cmd = New SqlCommand("[MINDU_INTERMEDIA].[dbo].[SpASISTENCIA_Periodos_Registrados_Fechas]", conexion)
         cmd.CommandType = CommandType.StoredProcedure

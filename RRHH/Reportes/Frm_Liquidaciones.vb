@@ -14,7 +14,7 @@ Public Class Frm_Liquidaciones
     Public Event EnviarEvento As LaunchEvent
 
     Private Sub Frm_Liquidaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         ContSelect = 0
 
         cmd = New SqlCommand("Colaciones_Liquidaciones_Info_Meses", conexion)

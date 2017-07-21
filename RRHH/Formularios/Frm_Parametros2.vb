@@ -8,7 +8,7 @@ Public Class Frm_Parametros2
     Dim cmd As SqlCommand
     Dim SelLin As Integer
     Private Sub Frm_Parametros2_Load(sender As Object, e As EventArgs) Handles Me.Load
-        conexion.ConnectionString = "Data Source=FSSAPBO;Initial Catalog = SAC_Mindugar; Persist Security Info=True;User ID = sa; Password=Sqladmin281"
+        conexion.ConnectionString = Conection.Cn
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler

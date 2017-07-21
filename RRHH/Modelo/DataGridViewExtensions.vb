@@ -36,13 +36,13 @@ Module DataGridViewExtensions
         xlWorkBook = xlexcel.Workbooks.Add(misValue)
         xlWorkSheet = CType(xlWorkBook.Worksheets.Item(1), Excel.Worksheet)
 
-        '''/ storing header part in Excel
+        '' storing header part in Excel
         'for (int i = 1; i < dgvItems.Columns.Count + 1; i++)
         '{
         '    xlWorkSheet.Cells[1, i] = dgvItems.Columns[i - 1].HeaderText;
         '}
 
-        '''/ storing Each row and column value to excel sheet
+        '' storing Each row and column value to excel sheet
         'for (int i = 0; i < dgvItems.Rows.Count - 1; i++)
         '{
         '    for (int j = 0; j < dgvItems.Columns.Count; j++)
@@ -68,8 +68,8 @@ Module DataGridViewExtensions
         'delRng.Delete(Type.Missing);
         'xlWorkSheet.get_Range("A1").Select();
 
-        '''/ Save the excel file under the captured location from the SaveFileDialog
-        '''/xlWorkBook.SaveAs(sfd.FileName, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+        '' Save the excel file under the captured location from the SaveFileDialog
+        ''xlWorkBook.SaveAs(sfd.FileName, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
         'xlexcel.DisplayAlerts = false;
         'xlWorkBook.Close(true, misValue, misValue);
         'xlexcel.Quit();
@@ -78,11 +78,11 @@ Module DataGridViewExtensions
         'releaseObject(xlWorkBook);
         'releaseObject(xlexcel);
 
-        '''/ Clear Clipboard and DataGridView selection
+        '' Clear Clipboard and DataGridView selection
         'Clipboard.Clear();
         'dgvItems.ClearSelection();
 
-        '''/ Open the newly saved excel file
+        ''Open the newly saved excel file
         'if (File.Exists(sfd.FileName))
         '    System.Diagnostics.Process.Start(sfd.FileName);
 
@@ -106,7 +106,7 @@ Module DataGridViewExtensions
     ''' <param name="TextoABuscar"></param>
     ''' <param name="Columna"></param>
     ''' <param name="grid"></param>
-    ''' <returns></returns>
+    ''' 
     <System.Runtime.CompilerServices.Extension>
     Public Sub SearchAndSelectValue(grid As DataGridView, TextoABuscar As String, Columna As String)
         'BuscandoenDGV = true;

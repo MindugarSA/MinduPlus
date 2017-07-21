@@ -14,6 +14,6 @@ NotInheritable Class Program
 	Friend Shared Sub Main()
 		Application.EnableVisualStyles()
 		Application.SetCompatibleTextRenderingDefault(False)
-        Application.Run(New Form1(New Panel(), 1000, New StatusStrip(), 0))
+        Application.Run(New Form1(New Panel(), 1000, New StatusStrip(), "0"))
     End Sub
 End Class
