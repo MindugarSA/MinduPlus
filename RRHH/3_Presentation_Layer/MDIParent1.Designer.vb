@@ -379,7 +379,7 @@ Partial Class MDIParent1
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 33)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(244, 16)
@@ -391,7 +391,7 @@ Partial Class MDIParent1
         'Lbl_Nombre
         '
         Me.Lbl_Nombre.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Lbl_Nombre.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Nombre.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Nombre.Location = New System.Drawing.Point(3, 5)
         Me.Lbl_Nombre.Name = "Lbl_Nombre"
         Me.Lbl_Nombre.Size = New System.Drawing.Size(244, 16)
@@ -495,12 +495,12 @@ Partial Class MDIParent1
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.White
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(3, 6)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 4)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(498, 25)
+        Me.Label3.Size = New System.Drawing.Size(498, 30)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Sistema de Recursos Humanos"
+        Me.Label3.Text = "Sistema Integrado de Aplicaciones"
         '
         'TxtBx_Empresa
         '

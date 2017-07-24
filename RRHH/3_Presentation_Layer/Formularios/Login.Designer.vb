@@ -76,8 +76,8 @@ Partial Class Login
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.Location = New System.Drawing.Point(226, 113)
+        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
+        Me.PasswordLabel.Location = New System.Drawing.Point(226, 114)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 6
@@ -86,8 +86,8 @@ Partial Class Login
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.Location = New System.Drawing.Point(226, 63)
+        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
+        Me.UsernameLabel.Location = New System.Drawing.Point(226, 62)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 4
@@ -363,7 +363,7 @@ Partial Class Login
         '
         'Lbl__ConfPass
         '
-        Me.Lbl__ConfPass.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl__ConfPass.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
         Me.Lbl__ConfPass.Location = New System.Drawing.Point(226, 166)
         Me.Lbl__ConfPass.Name = "Lbl__ConfPass"
         Me.Lbl__ConfPass.Size = New System.Drawing.Size(220, 23)
@@ -374,10 +374,10 @@ Partial Class Login
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(45, 19)
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(45, 17)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(160, 25)
+        Me.Label13.Size = New System.Drawing.Size(167, 30)
         Me.Label13.TabIndex = 14
         Me.Label13.Text = "Login del Sistema"
         '

@@ -1186,6 +1186,20 @@ Partial Public Class Form1
 
     End Sub
 
+    Private Sub Button_MouseEnter(sender As Object, e As EventArgs) Handles button9.MouseEnter, button8.MouseEnter, button7.MouseEnter, button6.MouseEnter, button5.MouseEnter, button4.MouseEnter, button3.MouseEnter, button2.MouseEnter, Button15.MouseEnter, button14.MouseEnter, button13.MouseEnter, button12.MouseEnter, button10.MouseEnter, button1.MouseEnter, btnVolver.MouseEnter
+        Dim Obj As Button = DirectCast(sender, Button)
+        Obj.Left = Obj.Left - 4
+        Obj.Top = Obj.Top - 4
+        Obj.Height = Obj.Height + 8
+        Obj.Width = Obj.Width + 8
+    End Sub
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles button9.MouseLeave, button8.MouseLeave, button7.MouseLeave, button6.MouseLeave, button5.MouseLeave, button4.MouseLeave, button3.MouseLeave, button2.MouseLeave, Button15.MouseLeave, button14.MouseLeave, button13.MouseLeave, button12.MouseLeave, button10.MouseLeave, button1.MouseLeave, btnVolver.MouseLeave
+        Dim Obj As Button = DirectCast(sender, Button)
+        Obj.Left = Obj.Left + 4
+        Obj.Top = Obj.Top + 4
+        Obj.Height = Obj.Height - 8
+        Obj.Width = Obj.Width - 8
+    End Sub
 
 
 
