@@ -69,41 +69,23 @@ Public Class Frm_Informes
 
                     DataGridView1.DataSource = dt
                     If dt.Rows(0)("IdEstado") = 0 Then
-                        'dt.Load(cmd.ExecuteReader())
-                        'DataGridView1.DataSource = dt
-                        DataGridView1.RowHeadersWidth = 25
+                        'DataGridView1.RowHeadersWidth = 25
                         DataGridView1.Columns("IDEstado").Visible = False
                         DataGridView1.Columns("EstadoUsr").Visible = False
                         DataGridView1.Columns("EstadoTec").Visible = False
                         DataGridView1.Columns("Cat_Col").Visible = False
                         DataGridView1.Columns("Cat_LP").Visible = False
-                        DataGridView1.Columns("RutEmp11").Width = 80
-                        DataGridView1.Columns("Rut").Width = 80
-                        'DataGridView1.Columns("Codigo").Width = 50
-                        'DataGridView1.Columns("Codigo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                        DataGridView1.Columns("Nombre").Width = 200
-                        'DataGridView1.Columns("Fin").Width = 20
-                        DataGridView1.Columns("Fecha").Width = 70
-                        DataGridView1.Columns("Almuerzo").Width = 30
+                        'DataGridView1.Columns("RutEmp11").Width = 80
+                        'DataGridView1.Columns("Rut").Width = 80
+                        'DataGridView1.Columns("Nombre").Width = 200
+                        'DataGridView1.Columns("Fecha").Width = 70
+                        'DataGridView1.Columns("Almuerzo").Width = 30
                         DataGridView1.Columns("Almuerzo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                        'DataGridView1.Columns("Postre").Width = 30
-                        'DataGridView1.Columns("Postre").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                        DataGridView1.Columns("Colación").Width = 270
-                        'DataGridView1.Columns("Colación").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-                        DataGridView1.Columns("Cat_Col").Width = 30
-                        DataGridView1.Columns("Cat_LP").Width = 30
+                        'DataGridView1.Columns("Colación").Width = 270
+                        'DataGridView1.Columns("Cat_Col").Width = 30
+                        'DataGridView1.Columns("Cat_LP").Width = 30
 
-                        DataGridView1.Width = DataGridView1.RowHeadersWidth +
-                                        DataGridView1.FirstDisplayedScrollingColumnHiddenWidth +
-                                        DataGridView1.Columns("RutEmp11").Width +
-                                        DataGridView1.Columns("Rut").Width +
-                                        DataGridView1.Columns("Nombre").Width +
-                                        DataGridView1.Columns("Fecha").Width +
-                                        DataGridView1.Columns("Almuerzo").Width +
-                                        DataGridView1.Columns("Colación").Width + (11 * 2)
-                        'DataGridView1.Columns("Codigo").Width +
-                        'DataGridView1.Columns("Fin").Width +
-                        'DataGridView1.Columns("Postre").Width +
+
                         conexion.Close()
 
                         Dim dt_A As New DataTable
@@ -143,9 +125,13 @@ Public Class Frm_Informes
                             TotCol = TotCol + Double.Parse(Me.DataGridView1("Cat_Col", i).Value)
                             TB_Total.Text = TotCol + Val(TB_Tot_ExtGcial.Text) + Val(TB_Tot_ExtNorm.Text)
                         Next
+
+
                     ElseIf dt.Rows(0)("IdEstado") < 0 Then
                         MsgBox("Error de SQL")
                     End If
+
+
 
                 End If
             Catch ex As Exception
@@ -156,8 +142,6 @@ Public Class Frm_Informes
                 TxtBx_TotCol.Text = TotCol
             End Try
         End If
-
-
 
 
         If CmbBx_Informe.SelectedIndex = 1 Or CmbBx_Informe.SelectedIndex = 2 Then
@@ -195,7 +179,6 @@ Public Class Frm_Informes
                     DataGridView1.Columns(3).Frozen = True
                 End If
 
-
             Catch ex As Exception
                 MsgBox("Error de Conexion")
             Finally
@@ -204,6 +187,11 @@ Public Class Frm_Informes
                 TB_Total.Text = TotCol
             End Try
         End If
+
+        'DataGridView1.AutoResizeColumns()
+        'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+        DataGridView1.AjustColumnsWidthForGridWidth
 
     End Sub
 
@@ -272,39 +260,43 @@ Public Class Frm_Informes
 
 
     Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim app As Microsoft.Office.Interop.Excel._Application = New Microsoft.Office.Interop.Excel.Application()
-        Dim workbook As Microsoft.Office.Interop.Excel._Workbook = app.Workbooks.Add(Type.Missing)
-        Dim worksheet As Microsoft.Office.Interop.Excel._Worksheet = Nothing
-        worksheet = workbook.Sheets("Hoja1")
-        worksheet = workbook.ActiveSheet
-        'Aca se agregan las cabeceras de nuestro datagrid.
 
-        For i As Integer = 1 To Me.DataGridView1.Columns.Count
-            worksheet.Cells(1, i) = Me.DataGridView1.Columns(i - 1).HeaderText
-        Next
+        DataGridView1.ExportToExcel()
 
-        'Aca se ingresa el detalle recorrera la tabla celda por celda
+        'Dim app As Microsoft.Office.Interop.Excel._Application = New Microsoft.Office.Interop.Excel.Application()
+        'Dim workbook As Microsoft.Office.Interop.Excel._Workbook = app.Workbooks.Add(Type.Missing)
+        'Dim worksheet As Microsoft.Office.Interop.Excel._Worksheet = Nothing
+        'worksheet = workbook.Sheets("Hoja1")
+        'worksheet = workbook.ActiveSheet
+        ''Aca se agregan las cabeceras de nuestro datagrid.
 
-        For i As Integer = 0 To Me.DataGridView1.Rows.Count - 1
-            For j As Integer = 0 To Me.DataGridView1.Columns.Count - 1
-                worksheet.Cells(i + 2, j + 1) = Me.DataGridView1.Rows(i).Cells(j).Value.ToString()
-            Next
-        Next
+        'For i As Integer = 1 To Me.DataGridView1.Columns.Count
+        '    worksheet.Cells(1, i) = Me.DataGridView1.Columns(i - 1).HeaderText
+        'Next
 
-        'Aca le damos el formato a nuestro excel
+        ''Aca se ingresa el detalle recorrera la tabla celda por celda
 
-        worksheet.Rows.Item(1).Font.Bold = 1
-        worksheet.Rows.Item(1).HorizontalAlignment = 3
-        worksheet.Columns.AutoFit()
-        worksheet.Columns.HorizontalAlignment = 2
+        'For i As Integer = 0 To Me.DataGridView1.Rows.Count - 1
+        '    For j As Integer = 0 To Me.DataGridView1.Columns.Count - 1
+        '        worksheet.Cells(i + 2, j + 1) = Me.DataGridView1.Rows(i).Cells(j).Value.ToString()
+        '    Next
+        'Next
 
-        app.Visible = True
-        app = Nothing
-        workbook = Nothing
-        worksheet = Nothing
-        FileClose(1)
-        GC.Collect()
+        ''Aca le damos el formato a nuestro excel
+
+        'worksheet.Rows.Item(1).Font.Bold = 1
+        'worksheet.Rows.Item(1).HorizontalAlignment = 3
+        'worksheet.Columns.AutoFit()
+        'worksheet.Columns.HorizontalAlignment = 2
+
+        'app.Visible = True
+        'app = Nothing
+        'workbook = Nothing
+        'worksheet = Nothing
+        'FileClose(1)
+        'GC.Collect()
 
     End Sub
+
 
 End Class

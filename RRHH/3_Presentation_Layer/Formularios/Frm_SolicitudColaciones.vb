@@ -400,6 +400,8 @@ Public Class Frm_SolicitudColacion
 
             txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
             txbTrabajador.Text = MDIParent1.TxtBx_UserName.Text
+            gRut = MDIParent1.Lbl_RutTrab.Text
+
 
         End If
 

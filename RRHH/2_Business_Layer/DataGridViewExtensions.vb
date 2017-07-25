@@ -143,4 +143,51 @@ Module DataGridViewExtensions
         'return encontrado;
 
     End Sub
+
+    <System.Runtime.CompilerServices.Extension>
+    Public Sub AjustColumnsWidthForGridWidth(oDataGridView As DataGridView)
+
+        Dim iVisibleCount As Integer = 0
+        Dim iWidth As Integer
+        Dim iLastColumn As Integer
+
+        With oDataGridView
+
+            If .RowCount > 0 Then
+                For Each columna As DataGridViewColumn In .Columns
+                    iVisibleCount += IIf(columna.Visible, 1, 0)
+                    iLastColumn = columna.Index
+                Next
+
+                For Each columna As DataGridViewColumn In .Columns
+                    If columna.Visible Then
+                        columna.AutoSizeMode = IIf(columna.Index = iLastColumn, DataGridViewAutoSizeColumnMode.Fill _
+                                                    , DataGridViewAutoSizeColumnMode.AllCells)
+                        iWidth = columna.Width
+                        columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+                        columna.Width = iWidth
+
+                        'columna.MinimumWidth = Int((.Width - .RowHeadersWidth) / iVisibleCount)
+                        'columna.Width = Int((.Width - .RowHeadersWidth) / iVisibleCount)
+                    End If
+                Next
+            End If
+
+
+            'For i As Integer = 0 To .Columns.Count - 1
+            '    If iLastColumn = i Then
+            '        .Columns(i).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            '    Else
+            '        .Columns(i).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            '    End If
+            'Next
+
+            'For i As Integer = 0 To .Columns.Count - 1
+            '    Dim colw As Integer = .Columns(i).Width
+            '    .Columns(i).AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+            '    .Columns(i).Width = colw
+            'Next
+        End With
+
+    End Sub
 End Module
