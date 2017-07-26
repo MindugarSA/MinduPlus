@@ -56,6 +56,7 @@ Public Class Frm_SolicitudColacion
 
     Private Sub Bttn_Cancelar_Click(sender As Object, e As EventArgs) Handles Bttn_Cancelar.Click
         MDIParent1.Panel2.Visible = True
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Maximum = MDIParent1.TiempoActivo
         RaiseEvent EnviarEvento()
         Me.Close()
         MDIParent1.TiempoIngreso.Enabled = True

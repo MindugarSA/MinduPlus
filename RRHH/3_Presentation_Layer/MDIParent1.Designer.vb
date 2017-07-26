@@ -133,7 +133,7 @@ Partial Class MDIParent1
         Me.ToolStripProgressBar1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.ToolStripProgressBar1.CausesValidation = False
         Me.ToolStripProgressBar1.MarqueeAnimationSpeed = 1
-        Me.ToolStripProgressBar1.Maximum = 30
+        Me.ToolStripProgressBar1.Maximum = 240
         Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
         Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 20)
         Me.ToolStripProgressBar1.Value = 30
@@ -505,7 +505,7 @@ Partial Class MDIParent1
         'TxtBx_Empresa
         '
         Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 32)
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 50)
         Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
         Me.TxtBx_Empresa.ReadOnly = True
         Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
@@ -516,7 +516,7 @@ Partial Class MDIParent1
         'TxtBx_UserName
         '
         Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 9)
+        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 27)
         Me.TxtBx_UserName.Name = "TxtBx_UserName"
         Me.TxtBx_UserName.ReadOnly = True
         Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
@@ -526,25 +526,23 @@ Partial Class MDIParent1
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel2.Controls.Add(Me.pnlMovingRight2)
         Me.Panel2.Controls.Add(Me.pnlMovingRight)
         Me.Panel2.Controls.Add(Me.pnlMovingTop)
         Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
         Me.Panel2.Controls.Add(Me.TxtBx_UserName)
-        Me.Panel2.Location = New System.Drawing.Point(1, 92)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(0, 60)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1129, 784)
+        Me.Panel2.Size = New System.Drawing.Size(1129, 820)
         Me.Panel2.TabIndex = 11
         '
         'pnlMovingRight2
         '
         Me.pnlMovingRight2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.pnlMovingRight2.Controls.Add(Me.Tle_Herramientas_Pre)
-        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 660)
+        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 696)
         Me.pnlMovingRight2.Name = "pnlMovingRight2"
         Me.pnlMovingRight2.Size = New System.Drawing.Size(640, 120)
         Me.pnlMovingRight2.TabIndex = 21
@@ -570,7 +568,7 @@ Partial Class MDIParent1
         Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
         Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
         Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
-        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 93)
+        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 129)
         Me.pnlMovingTop.Name = "pnlMovingTop"
         Me.pnlMovingTop.Size = New System.Drawing.Size(262, 688)
         Me.pnlMovingTop.TabIndex = 19

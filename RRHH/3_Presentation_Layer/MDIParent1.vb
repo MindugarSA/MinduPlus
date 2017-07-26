@@ -46,6 +46,7 @@ Public Class MDIParent1
 
         TiempoIngreso.Enabled = True
         TiempoActivo = Tiempo_Str
+        ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
 
     End Sub
@@ -360,6 +361,7 @@ Public Class MDIParent1
 
         TiempoIngreso.Enabled = True
         TiempoActivo = Tiempo_Str
+        ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
     End Sub
 
@@ -436,7 +438,8 @@ Public Class MDIParent1
                 TiempoIngreso.Enabled = True
             End If
 
-            TiempoActivo = Tiempo_Str
+            TiempoActivo = Tiempo_Str + 60
+            ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
             NewMDIChild.WindowState = FormWindowState.Maximized
             NewMDIChild.Dock = DockStyle.Fill
@@ -486,7 +489,8 @@ Public Class MDIParent1
 
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = True
-            TiempoActivo = Tiempo_Str
+            TiempoActivo = Tiempo_Str + 60
+            ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
             'NewMDIChild.WindowState = FormWindowState.Maximized
         End If
@@ -686,7 +690,7 @@ Public Class MDIParent1
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
-            TiempoActivo = Tiempo_Str
+            TiempoActivo = Tiempo_Str + 120
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         End If
     End Sub
@@ -705,7 +709,8 @@ Public Class MDIParent1
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
-            TiempoActivo = Tiempo_Str
+            TiempoActivo = Tiempo_Str + 120
+            ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         End If
     End Sub
@@ -732,7 +737,8 @@ Public Class MDIParent1
         formInforme.Show()
 
         TiempoIngreso.Enabled = True
-        TiempoActivo = Tiempo_Str
+        TiempoActivo = Tiempo_Str + 60
+        ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
 
     End Sub
@@ -761,6 +767,8 @@ Public Class MDIParent1
             Ocultar_Tiles_MDI()
             newMDIChild.ControlBox = False
             StatusStrip.Visible = False
+            'StatusStrip.Dock = DockStyle.None
+            'Panel2.Dock = DockStyle.Fill
             newMDIChild.Show()
 
             TiempoIngreso.Enabled = False

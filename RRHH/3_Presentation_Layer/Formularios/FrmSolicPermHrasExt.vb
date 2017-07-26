@@ -69,10 +69,6 @@ Public Class FrmSolicPermHrasExt
             e.SuppressKeyPress = True
             Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
         End If
-
-
-
-
     End Sub
 
     '----------------- Menu Principal -----------------------------------------------------------------------------
@@ -2308,6 +2304,8 @@ Public Class FrmSolicPermHrasExt
     Private Sub BtnVolver2_Click(sender As Object, e As EventArgs) Handles BtnVolver2.Click
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Maximum = MDIParent1.TiempoActivo
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
         MDIParent1.Visualizar_Tiles_MDI()
         MDIParent1.Desplazamiento_Tiles()
         Me.Close()

@@ -834,7 +834,13 @@ Partial Public Class Form1
                     End If
                 End If
             Else
-                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtResumenPeriodo.AsEnumerable() Where ((Not [String].IsNullOrEmpty(myRow.Field(Of String)("Nombre")) AndAlso myRow.Field(Of String)("Nombre").ToUpper().Contains(textBox3.Text.Trim().ToUpper())) OrElse (Not [String].IsNullOrEmpty(myRow.Field(Of String)("Rut")) AndAlso myRow.Field(Of String)("Rut").ToUpper().Contains(textBox3.Text.Trim().ToUpper()))) Order By myRow(19), myRow(4) Select myRow
+                Dim results As EnumerableRowCollection(Of System.Data.DataRow) = From myRow In dtResumenPeriodo.AsEnumerable()
+                                                                                 Where ((Not [String].IsNullOrEmpty(myRow.Field(Of String)("Nombre")) _
+                                                                                     AndAlso myRow.Field(Of String)("Nombre").ToUpper().Contains(textBox3.Text.Trim().ToUpper())) _
+                                                                                     OrElse (Not [String].IsNullOrEmpty(myRow.Field(Of String)("Rut")) _
+                                                                                     AndAlso myRow.Field(Of String)("Rut").ToUpper().Contains(textBox3.Text.Trim().ToUpper())))
+                                                                                 Order By myRow(19), myRow(4)
+                                                                                 Select myRow
 
                 If results.Any() Then
                     dtf = results.CopyToDataTable()

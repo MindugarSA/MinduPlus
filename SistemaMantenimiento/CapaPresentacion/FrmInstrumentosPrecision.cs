@@ -18,6 +18,7 @@ namespace CapaPresentacion
     {
         private FrmInstrumentosPrecision instance;
         private bool BuscandoenDGV = false;
+        private DataTable DTIntrumentos;
         private DataTable DTIndividualizacion;
         private DataTable DTIndividualizaFiltro;
         private Panel pnlParent;
@@ -116,8 +117,9 @@ namespace CapaPresentacion
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmIndividualizacion Individualizacion = new FrmIndividualizacion(dataIndividualizacion.RowCount == 0 ?  dataInstrumentos.Rows[dataInstrumentos.SelectedRows[0].Index]
-                                                                                                     : dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index],"Agregar");
+            FrmIndividualizacion Individualizacion = new FrmIndividualizacion(dataIndividualizacion.RowCount == 0 ?  
+                                                         dataInstrumentos.Rows[dataInstrumentos.SelectedRows[0].Index] :
+                                                         dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index],"Agregar");
             Individualizacion.EnviarEvento += new FrmIndividualizacion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
             Individualizacion.ShowDialog();
         }
@@ -141,7 +143,9 @@ namespace CapaPresentacion
             int nId = Convert.ToInt32(dataInstrumentos.Rows[dataInstrumentos.CurrentRow.Index].Cells[0].Value);
             string nCodigo = Convert.ToString(dataInstrumentos[1, dataInstrumentos.CurrentRow.Index].Value);
 
-            if (MessageBox.Show("Eliminar el Instrumento '" + Convert.ToString(dataInstrumentos[2, dataInstrumentos.CurrentRow.Index].Value) + "'", "Sistema Mantenimiento", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("Eliminar el Instrumento '" + 
+                Convert.ToString(dataInstrumentos[2, dataInstrumentos.CurrentRow.Index].Value) + 
+                "'", "Sistema Mantenimiento", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 rpta = NInstrumento.Eliminar(nId, nCodigo);
                 ListarInstrumentos();
@@ -235,16 +239,24 @@ namespace CapaPresentacion
         {
             if (this.txtInstru.Text == string.Empty)
             {
-                errorIcono.SetError(txtInstru, "Ingrese Parte del Codigo o Descripcion a Buscar");
+                dataInstrumentos.DataSource = DTIntrumentos;
+
+                //errorIcono.SetError(txtInstru, "Ingrese Parte del Codigo o Descripcion a Buscar");
             }
             else
             {
-                if (!BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "2", dataInstrumentos))
-                {
-                    BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "1", dataInstrumentos);
-                }
+                FiltrarInstrumentos();
+                //if (!BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "2", dataInstrumentos))
+                //{
+                //    BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "1", dataInstrumentos);
+                //}
             }
         }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dataInstrumentos.DataSource = DTIntrumentos;
+        }
+
         private void txtInstru_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorIcono.SetError(txtInstru, "");
@@ -330,7 +342,8 @@ namespace CapaPresentacion
             dataInstrumentos.Columns[1].ReadOnly = true;
             dataInstrumentos.Columns[2].ReadOnly = true;
             dataInstrumentos.AutoResizeColumns();
-        }
+            DTIntrumentos = (DataTable)dataInstrumentos.DataSource;
+    }
         /// <summary>
         /// Carga el DataGrid dataItemsCompaa
         /// </summary>
@@ -375,8 +388,10 @@ namespace CapaPresentacion
             if (dataIndividualizacion.SelectedRows.Count > 0)
             {
                 int indice = dataIndividualizacion.SelectedRows[0].Index;
-                txtResponsable.Text = Convert.ToString(dataIndividualizacion[4, indice].Value) + " - " + Convert.ToString(dataIndividualizacion[5, indice].Value);
-                dataCalibracion.DataSource = NCalibracion.Listar(Convert.ToInt32(dataIndividualizacion[0, indice].Value), Convert.ToInt32(dataIndividualizacion[1, indice].Value));
+                txtResponsable.Text = Convert.ToString(dataIndividualizacion[4, indice].Value) + " - " 
+                                      + Convert.ToString(dataIndividualizacion[5, indice].Value);
+                dataCalibracion.DataSource = NCalibracion.Listar(Convert.ToInt32(dataIndividualizacion[0, indice].Value), 
+                                                                 Convert.ToInt32(dataIndividualizacion[1, indice].Value));
             }
             else
             {
@@ -460,6 +475,26 @@ namespace CapaPresentacion
 
 
         }
+
+        private void FiltrarInstrumentos()
+        {
+            DataTable dtf = null;
+
+            var results = from myRow in DTIntrumentos.AsEnumerable()
+                          where ((!String.IsNullOrEmpty(myRow.Field<string>("Codigo"))
+                                  && myRow.Field<string>("Codigo").ToUpper().Contains(txtInstru.Text.Trim().ToUpper()))
+                                  || (!String.IsNullOrEmpty(myRow.Field<string>("Descripcion"))
+                                      && myRow.Field<string>("Descripcion").ToUpper().Contains(txtInstru.Text.Trim().ToUpper())))
+                          orderby myRow[0]
+                          select myRow;
+
+            if (results.Any())
+            {
+                dtf = results.CopyToDataTable();
+                if (dtf.Rows.Count > 0)
+                    dataInstrumentos.DataSource = dtf;
+            }
+        }
         /// <summary>
         /// Mostrar Mensaje de Confirmación
         /// </summary>
@@ -498,6 +533,6 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
-       
+
     }
 }

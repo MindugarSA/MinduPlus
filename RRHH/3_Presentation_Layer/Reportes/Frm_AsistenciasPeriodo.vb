@@ -51,9 +51,10 @@ Public Class Frm_AsistenciasPeriodo
 
         MDIParent1.Panel2.Visible = True
         MDIParent1.TiempoIngreso.Enabled = True
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
         MDIParent1.Visualizar_Tiles_MDI()
         MDIParent1.Desplazamiento_Tiles()
+        MDIParent1.ToolStripProgressBar1.ProgressBar.Maximum = MDIParent1.TiempoActivo
+        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
         Me.Close()
 
     End Sub

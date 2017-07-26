@@ -885,6 +885,10 @@
       <Project>{9eb65e78-56aa-48d9-a40e-b91ac947c967}</Project>
       <Name>ImportarExcelSQLServer.Converted</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SistemaMantenimiento\CapaPresentacion\CapaPresentacion.csproj">
+      <Project>{f74582a3-8a30-4ca7-981d-32a79e2cfe64}</Project>
+      <Name>CapaPresentacion</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="1_Data_Layer\ModeloMINDUINTERMEDIA.Context.tt">

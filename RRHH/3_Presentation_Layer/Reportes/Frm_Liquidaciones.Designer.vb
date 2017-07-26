@@ -62,7 +62,7 @@ Partial Class Frm_Liquidaciones
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button2.Image = Global.RRHH.My.Resources.Resources.printing32
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button2.Location = New System.Drawing.Point(851, 517)
+        Me.Button2.Location = New System.Drawing.Point(856, 517)
         Me.Button2.Margin = New System.Windows.Forms.Padding(0)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(140, 56)
@@ -80,7 +80,7 @@ Partial Class Frm_Liquidaciones
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button1.Image = Global.RRHH.My.Resources.Resources.home_shape_32
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button1.Location = New System.Drawing.Point(12, 517)
+        Me.Button1.Location = New System.Drawing.Point(5, 517)
         Me.Button1.Margin = New System.Windows.Forms.Padding(0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(140, 56)
