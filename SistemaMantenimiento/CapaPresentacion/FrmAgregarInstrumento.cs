@@ -23,7 +23,15 @@ namespace CapaPresentacion
         public FrmAgregarInstrumento(FrmInstrumentosPrecision formInstru)
         {
             InitializeComponent();
+
+            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            //skinManager.AddFormToManage((MaterialForm)this);
+            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE);
+
             FrmInstrumentoHandler = formInstru;
+            this.txtItem.TextAlign = HorizontalAlignment.Right;
+
         }
 
         private void FrmAgregarInstrumento_Paint(object sender, PaintEventArgs e)
@@ -53,10 +61,15 @@ namespace CapaPresentacion
             }
             else
             {
-                this.dataGridView1.DataSource = NItemIndustrial.Buscar(txtItem.Text.Trim() == "*" ? "" : txtItem.Text.Trim());
+                this.dataGridView1.DataSource = NItemIndustrial.Buscar(txtItem.Text.Trim());
                 //dataGridView1.Columns[1].Width = 300;
             }
             
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.dataGridView1.DataSource = NItemIndustrial.Buscar("");
         }
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)
@@ -170,6 +183,7 @@ namespace CapaPresentacion
             Obj.Height = Obj.Height - 8;
             Obj.Width = Obj.Width - 8;
         }
+
 
     }
 

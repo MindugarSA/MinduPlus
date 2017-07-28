@@ -24,22 +24,22 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.backgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.backgroundWorker2 = New System.ComponentModel.BackgroundWorker()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
@@ -59,7 +59,7 @@ Partial Class Form1
         Me.label7 = New System.Windows.Forms.Label()
         Me.button3 = New System.Windows.Forms.Button()
         Me.label5 = New System.Windows.Forms.Label()
-        Me.textBox2 = New System.Windows.Forms.TextBox()
+        Me.textBox2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.dataGridView1 = New MetroFramework.Controls.MetroGrid()
         Me.comboBox2 = New System.Windows.Forms.ComboBox()
         Me.progressBar1 = New MetroFramework.Controls.MetroProgressBar()
@@ -73,10 +73,11 @@ Partial Class Form1
         Me.label2 = New System.Windows.Forms.Label()
         Me.tabPage1 = New System.Windows.Forms.TabPage()
         Me.groupBox2 = New System.Windows.Forms.GroupBox()
+        Me.comboBox3 = New System.Windows.Forms.ComboBox()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.label14 = New System.Windows.Forms.Label()
         Me.button8 = New System.Windows.Forms.Button()
-        Me.textBox4 = New System.Windows.Forms.TextBox()
+        Me.textBox4 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label12 = New System.Windows.Forms.Label()
         Me.label13 = New System.Windows.Forms.Label()
         Me.comboBox6 = New System.Windows.Forms.ComboBox()
@@ -85,13 +86,13 @@ Partial Class Form1
         Me.dataGridView2 = New MetroFramework.Controls.MetroGrid()
         Me.button4 = New System.Windows.Forms.Button()
         Me.label8 = New System.Windows.Forms.Label()
-        Me.comboBox3 = New System.Windows.Forms.ComboBox()
         Me.tabPage2 = New System.Windows.Forms.TabPage()
         Me.groupBox3 = New System.Windows.Forms.GroupBox()
+        Me.comboBox4 = New System.Windows.Forms.ComboBox()
         Me.label15 = New System.Windows.Forms.Label()
         Me.button9 = New System.Windows.Forms.Button()
         Me.button7 = New System.Windows.Forms.Button()
-        Me.textBox3 = New System.Windows.Forms.TextBox()
+        Me.textBox3 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label11 = New System.Windows.Forms.Label()
         Me.label10 = New System.Windows.Forms.Label()
         Me.comboBox5 = New System.Windows.Forms.ComboBox()
@@ -99,7 +100,6 @@ Partial Class Form1
         Me.dataGridView3 = New MetroFramework.Controls.MetroGrid()
         Me.button6 = New System.Windows.Forms.Button()
         Me.label9 = New System.Windows.Forms.Label()
-        Me.comboBox4 = New System.Windows.Forms.ComboBox()
         Me.tabPage3 = New System.Windows.Forms.TabPage()
         Me.groupBox6 = New System.Windows.Forms.GroupBox()
         Me.groupBox9 = New System.Windows.Forms.GroupBox()
@@ -109,10 +109,10 @@ Partial Class Form1
         Me.label20 = New System.Windows.Forms.Label()
         Me.progressBar2 = New MetroFramework.Controls.MetroProgressBar()
         Me.groupBox8 = New System.Windows.Forms.GroupBox()
+        Me.comboBox8 = New System.Windows.Forms.ComboBox()
         Me.radioButton2 = New System.Windows.Forms.RadioButton()
         Me.radioButton1 = New System.Windows.Forms.RadioButton()
         Me.label19 = New System.Windows.Forms.Label()
-        Me.comboBox8 = New System.Windows.Forms.ComboBox()
         Me.button14 = New System.Windows.Forms.Button()
         Me.comboBox7 = New System.Windows.Forms.ComboBox()
         Me.label18 = New System.Windows.Forms.Label()
@@ -120,7 +120,7 @@ Partial Class Form1
         Me.label16 = New System.Windows.Forms.Label()
         Me.button12 = New System.Windows.Forms.Button()
         Me.button13 = New System.Windows.Forms.Button()
-        Me.textBox5 = New System.Windows.Forms.TextBox()
+        Me.textBox5 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.label17 = New System.Windows.Forms.Label()
         Me.groupBox7 = New System.Windows.Forms.GroupBox()
         Me.dataGridView4 = New MetroFramework.Controls.MetroGrid()
@@ -265,7 +265,7 @@ Partial Class Form1
         '
         'MetroProgressSpinner1
         '
-        Me.MetroProgressSpinner1.Location = New System.Drawing.Point(80, 8)
+        Me.MetroProgressSpinner1.Location = New System.Drawing.Point(72, 8)
         Me.MetroProgressSpinner1.Maximum = 100
         Me.MetroProgressSpinner1.Name = "MetroProgressSpinner1"
         Me.MetroProgressSpinner1.Size = New System.Drawing.Size(30, 30)
@@ -295,11 +295,11 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.label6.AutoSize = True
         Me.label6.BackColor = System.Drawing.Color.Transparent
-        Me.label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label6.Location = New System.Drawing.Point(110, 15)
         Me.label6.Name = "label6"
         Me.label6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label6.Size = New System.Drawing.Size(19, 13)
+        Me.label6.Size = New System.Drawing.Size(16, 15)
         Me.label6.TabIndex = 15
         Me.label6.Text = "..."
         '
@@ -308,11 +308,11 @@ Partial Class Form1
         Me.label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.label7.AutoSize = True
         Me.label7.BackColor = System.Drawing.Color.Transparent
-        Me.label7.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label7.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label7.Location = New System.Drawing.Point(15, 422)
         Me.label7.Name = "label7"
         Me.label7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label7.Size = New System.Drawing.Size(102, 19)
+        Me.label7.Size = New System.Drawing.Size(88, 17)
         Me.label7.TabIndex = 16
         Me.label7.Text = "Total Registros"
         '
@@ -335,22 +335,34 @@ Partial Class Form1
         '
         Me.label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label5.AutoSize = True
-        Me.label5.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label5.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label5.Location = New System.Drawing.Point(870, 15)
         Me.label5.Name = "label5"
         Me.label5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label5.Size = New System.Drawing.Size(101, 19)
+        Me.label5.Size = New System.Drawing.Size(89, 17)
         Me.label5.TabIndex = 13
         Me.label5.Text = "- Buscar RUT -"
         '
         'textBox2
         '
         Me.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.textBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.textBox2.Location = New System.Drawing.Point(858, 34)
+        Me.textBox2.Depth = 0
+        Me.textBox2.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textBox2.Hint = ""
+        Me.textBox2.Location = New System.Drawing.Point(847, 34)
+        Me.textBox2.MaxLength = 32767
+        Me.textBox2.MouseState = MaterialSkin.MouseState.HOVER
         Me.textBox2.Name = "textBox2"
-        Me.textBox2.Size = New System.Drawing.Size(100, 23)
+        Me.textBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.textBox2.ReadOnly = False
+        Me.textBox2.SelectedText = ""
+        Me.textBox2.SelectionLength = 0
+        Me.textBox2.SelectionStart = 0
+        Me.textBox2.Size = New System.Drawing.Size(111, 23)
         Me.textBox2.TabIndex = 12
+        Me.textBox2.TabStop = False
+        Me.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.textBox2.UseSystemPasswordChar = False
         '
         'dataGridView1
         '
@@ -359,8 +371,8 @@ Partial Class Form1
         Me.dataGridView1.AllowUserToOrderColumns = True
         Me.dataGridView1.AllowUserToResizeColumns = False
         Me.dataGridView1.AllowUserToResizeRows = False
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.AliceBlue
-        Me.dataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.dataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -368,23 +380,23 @@ Partial Class Form1
         Me.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.dataGridView1.EnableHeadersVisualStyles = False
         Me.dataGridView1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dataGridView1.GridColor = System.Drawing.SystemColors.HotTrack
@@ -394,14 +406,14 @@ Partial Class Form1
         Me.dataGridView1.ReadOnly = True
         Me.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dataGridView1.RowHeadersVisible = False
         Me.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -414,9 +426,10 @@ Partial Class Form1
         'comboBox2
         '
         Me.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.comboBox2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.comboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox2.ForeColor = System.Drawing.Color.White
         Me.comboBox2.FormattingEnabled = True
         Me.comboBox2.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
         Me.comboBox2.Location = New System.Drawing.Point(754, 32)
@@ -437,9 +450,10 @@ Partial Class Form1
         'comboBox1
         '
         Me.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.comboBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.comboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox1.ForeColor = System.Drawing.Color.White
         Me.comboBox1.FormattingEnabled = True
         Me.comboBox1.Items.AddRange(New Object() {"2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"})
         Me.comboBox1.Location = New System.Drawing.Point(643, 32)
@@ -452,11 +466,11 @@ Partial Class Form1
         '
         Me.label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label4.AutoSize = True
-        Me.label4.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label4.Location = New System.Drawing.Point(670, 15)
         Me.label4.Name = "label4"
         Me.label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label4.Size = New System.Drawing.Size(77, 19)
+        Me.label4.Size = New System.Drawing.Size(68, 17)
         Me.label4.TabIndex = 3
         Me.label4.Text = "- Periodo -"
         '
@@ -465,7 +479,7 @@ Partial Class Form1
         Me.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.textBox1.Enabled = False
         Me.textBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.textBox1.Location = New System.Drawing.Point(113, 33)
+        Me.textBox1.Location = New System.Drawing.Point(102, 33)
         Me.textBox1.Name = "textBox1"
         Me.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.textBox1.Size = New System.Drawing.Size(436, 23)
@@ -475,11 +489,11 @@ Partial Class Form1
         '
         Me.label1.AutoSize = True
         Me.label1.BackColor = System.Drawing.Color.Transparent
-        Me.label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.Location = New System.Drawing.Point(15, 35)
         Me.label1.Name = "label1"
         Me.label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label1.Size = New System.Drawing.Size(96, 19)
+        Me.label1.Size = New System.Drawing.Size(85, 17)
         Me.label1.TabIndex = 8
         Me.label1.Text = "Archivo Excel:"
         '
@@ -511,7 +525,7 @@ Partial Class Form1
         Me.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.button1.Location = New System.Drawing.Point(555, 31)
+        Me.button1.Location = New System.Drawing.Point(544, 31)
         Me.button1.Name = "button1"
         Me.button1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button1.Size = New System.Drawing.Size(27, 27)
@@ -523,11 +537,11 @@ Partial Class Form1
         '
         Me.label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label3.AutoSize = True
-        Me.label3.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label3.Location = New System.Drawing.Point(717, 34)
         Me.label3.Name = "label3"
         Me.label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label3.Size = New System.Drawing.Size(38, 19)
+        Me.label3.Size = New System.Drawing.Size(34, 17)
         Me.label3.TabIndex = 1
         Me.label3.Text = "Mes:"
         '
@@ -535,11 +549,11 @@ Partial Class Form1
         '
         Me.label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label2.AutoSize = True
-        Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.Location = New System.Drawing.Point(608, 34)
         Me.label2.Name = "label2"
         Me.label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label2.Size = New System.Drawing.Size(37, 19)
+        Me.label2.Size = New System.Drawing.Size(33, 17)
         Me.label2.TabIndex = 0
         Me.label2.Text = "Año:"
         '
@@ -559,6 +573,7 @@ Partial Class Form1
         'groupBox2
         '
         Me.groupBox2.BackColor = System.Drawing.Color.White
+        Me.groupBox2.Controls.Add(Me.comboBox3)
         Me.groupBox2.Controls.Add(Me.Button15)
         Me.groupBox2.Controls.Add(Me.label14)
         Me.groupBox2.Controls.Add(Me.button8)
@@ -571,13 +586,24 @@ Partial Class Form1
         Me.groupBox2.Controls.Add(Me.dataGridView2)
         Me.groupBox2.Controls.Add(Me.button4)
         Me.groupBox2.Controls.Add(Me.label8)
-        Me.groupBox2.Controls.Add(Me.comboBox3)
         Me.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox2.Location = New System.Drawing.Point(3, 3)
         Me.groupBox2.Name = "groupBox2"
         Me.groupBox2.Size = New System.Drawing.Size(1319, 460)
         Me.groupBox2.TabIndex = 0
         Me.groupBox2.TabStop = False
+        '
+        'comboBox3
+        '
+        Me.comboBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox3.ForeColor = System.Drawing.Color.White
+        Me.comboBox3.FormattingEnabled = True
+        Me.comboBox3.Location = New System.Drawing.Point(129, 21)
+        Me.comboBox3.Name = "comboBox3"
+        Me.comboBox3.Size = New System.Drawing.Size(102, 23)
+        Me.comboBox3.TabIndex = 0
         '
         'Button15
         '
@@ -605,11 +631,11 @@ Partial Class Form1
         Me.label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.label14.AutoSize = True
         Me.label14.BackColor = System.Drawing.Color.Transparent
-        Me.label14.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label14.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label14.Location = New System.Drawing.Point(15, 422)
         Me.label14.Name = "label14"
         Me.label14.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label14.Size = New System.Drawing.Size(102, 19)
+        Me.label14.Size = New System.Drawing.Size(88, 17)
         Me.label14.TabIndex = 27
         Me.label14.Text = "Total Registros"
         '
@@ -621,7 +647,7 @@ Partial Class Form1
         Me.button8.FlatAppearance.BorderSize = 0
         Me.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button8.Image = CType(resources.GetObject("button8.Image"), System.Drawing.Image)
-        Me.button8.Location = New System.Drawing.Point(854, 20)
+        Me.button8.Location = New System.Drawing.Point(920, 20)
         Me.button8.Name = "button8"
         Me.button8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button8.Size = New System.Drawing.Size(27, 27)
@@ -631,20 +657,32 @@ Partial Class Form1
         'textBox4
         '
         Me.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.textBox4.Depth = 0
         Me.textBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.textBox4.Location = New System.Drawing.Point(746, 22)
+        Me.textBox4.Hint = ""
+        Me.textBox4.Location = New System.Drawing.Point(769, 22)
+        Me.textBox4.MaxLength = 32767
+        Me.textBox4.MouseState = MaterialSkin.MouseState.HOVER
         Me.textBox4.Name = "textBox4"
-        Me.textBox4.Size = New System.Drawing.Size(100, 23)
+        Me.textBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.textBox4.ReadOnly = False
+        Me.textBox4.SelectedText = ""
+        Me.textBox4.SelectionLength = 0
+        Me.textBox4.SelectionStart = 0
+        Me.textBox4.Size = New System.Drawing.Size(145, 23)
         Me.textBox4.TabIndex = 21
+        Me.textBox4.TabStop = False
+        Me.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.textBox4.UseSystemPasswordChar = False
         '
         'label12
         '
         Me.label12.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label12.AutoSize = True
-        Me.label12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label12.Location = New System.Drawing.Point(603, 26)
+        Me.label12.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label12.Location = New System.Drawing.Point(619, 26)
         Me.label12.Name = "label12"
-        Me.label12.Size = New System.Drawing.Size(141, 15)
+        Me.label12.Size = New System.Drawing.Size(149, 17)
         Me.label12.TabIndex = 24
         Me.label12.Text = "Rut o Nombre Empleado:"
         '
@@ -652,33 +690,34 @@ Partial Class Form1
         '
         Me.label13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label13.AutoSize = True
-        Me.label13.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label13.Location = New System.Drawing.Point(383, 26)
+        Me.label13.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label13.Location = New System.Drawing.Point(372, 26)
         Me.label13.Name = "label13"
-        Me.label13.Size = New System.Drawing.Size(55, 15)
+        Me.label13.Size = New System.Drawing.Size(59, 17)
         Me.label13.TabIndex = 23
         Me.label13.Text = "Empresa:"
         '
         'comboBox6
         '
         Me.comboBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.comboBox6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.comboBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox6.ForeColor = System.Drawing.Color.White
         Me.comboBox6.FormattingEnabled = True
-        Me.comboBox6.Location = New System.Drawing.Point(442, 22)
+        Me.comboBox6.Location = New System.Drawing.Point(430, 22)
         Me.comboBox6.Name = "comboBox6"
-        Me.comboBox6.Size = New System.Drawing.Size(155, 23)
+        Me.comboBox6.Size = New System.Drawing.Size(181, 23)
         Me.comboBox6.TabIndex = 22
         '
         'groupBox5
         '
         Me.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.groupBox5.BackColor = System.Drawing.Color.Transparent
-        Me.groupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.groupBox5.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupBox5.Location = New System.Drawing.Point(340, 9)
         Me.groupBox5.Name = "groupBox5"
-        Me.groupBox5.Size = New System.Drawing.Size(557, 42)
+        Me.groupBox5.Size = New System.Drawing.Size(633, 42)
         Me.groupBox5.TabIndex = 26
         Me.groupBox5.TabStop = False
         Me.groupBox5.Text = "FIltros"
@@ -691,7 +730,7 @@ Partial Class Form1
         Me.button5.FlatAppearance.BorderSize = 0
         Me.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button5.Image = CType(resources.GetObject("button5.Image"), System.Drawing.Image)
-        Me.button5.Location = New System.Drawing.Point(229, 19)
+        Me.button5.Location = New System.Drawing.Point(236, 18)
         Me.button5.Name = "button5"
         Me.button5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button5.Size = New System.Drawing.Size(27, 27)
@@ -704,8 +743,8 @@ Partial Class Form1
         Me.dataGridView2.AllowUserToDeleteRows = False
         Me.dataGridView2.AllowUserToOrderColumns = True
         Me.dataGridView2.AllowUserToResizeRows = False
-        DataGridViewCellStyle21.BackColor = System.Drawing.Color.AliceBlue
-        Me.dataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue
+        Me.dataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dataGridView2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -713,23 +752,23 @@ Partial Class Form1
         Me.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView2.DefaultCellStyle = DataGridViewCellStyle7
         Me.dataGridView2.EnableHeadersVisualStyles = False
         Me.dataGridView2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dataGridView2.GridColor = System.Drawing.SystemColors.ControlDarkDark
@@ -738,14 +777,14 @@ Partial Class Form1
         Me.dataGridView2.Name = "dataGridView2"
         Me.dataGridView2.ReadOnly = True
         Me.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dataGridView2.RowHeadersVisible = False
         Me.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -773,23 +812,12 @@ Partial Class Form1
         'label8
         '
         Me.label8.AutoSize = True
-        Me.label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label8.Location = New System.Drawing.Point(16, 25)
+        Me.label8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label8.Location = New System.Drawing.Point(16, 24)
         Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(110, 15)
+        Me.label8.Size = New System.Drawing.Size(115, 17)
         Me.label8.TabIndex = 1
         Me.label8.Text = "Periodo Registrado:"
-        '
-        'comboBox3
-        '
-        Me.comboBox3.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.comboBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.comboBox3.FormattingEnabled = True
-        Me.comboBox3.Location = New System.Drawing.Point(122, 21)
-        Me.comboBox3.Name = "comboBox3"
-        Me.comboBox3.Size = New System.Drawing.Size(102, 23)
-        Me.comboBox3.TabIndex = 0
         '
         'tabPage2
         '
@@ -807,6 +835,7 @@ Partial Class Form1
         'groupBox3
         '
         Me.groupBox3.BackColor = System.Drawing.Color.White
+        Me.groupBox3.Controls.Add(Me.comboBox4)
         Me.groupBox3.Controls.Add(Me.label15)
         Me.groupBox3.Controls.Add(Me.button9)
         Me.groupBox3.Controls.Add(Me.button7)
@@ -818,7 +847,6 @@ Partial Class Form1
         Me.groupBox3.Controls.Add(Me.dataGridView3)
         Me.groupBox3.Controls.Add(Me.button6)
         Me.groupBox3.Controls.Add(Me.label9)
-        Me.groupBox3.Controls.Add(Me.comboBox4)
         Me.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.groupBox3.Location = New System.Drawing.Point(3, 3)
         Me.groupBox3.Name = "groupBox3"
@@ -826,16 +854,28 @@ Partial Class Form1
         Me.groupBox3.TabIndex = 0
         Me.groupBox3.TabStop = False
         '
+        'comboBox4
+        '
+        Me.comboBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox4.ForeColor = System.Drawing.Color.White
+        Me.comboBox4.FormattingEnabled = True
+        Me.comboBox4.Location = New System.Drawing.Point(129, 21)
+        Me.comboBox4.Name = "comboBox4"
+        Me.comboBox4.Size = New System.Drawing.Size(102, 23)
+        Me.comboBox4.TabIndex = 16
+        '
         'label15
         '
         Me.label15.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.label15.AutoSize = True
         Me.label15.BackColor = System.Drawing.Color.Transparent
-        Me.label15.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label15.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.label15.Location = New System.Drawing.Point(15, 422)
         Me.label15.Name = "label15"
         Me.label15.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label15.Size = New System.Drawing.Size(102, 19)
+        Me.label15.Size = New System.Drawing.Size(88, 17)
         Me.label15.TabIndex = 28
         Me.label15.Text = "Total Registros"
         '
@@ -865,7 +905,7 @@ Partial Class Form1
         Me.button7.FlatAppearance.BorderSize = 0
         Me.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button7.Image = CType(resources.GetObject("button7.Image"), System.Drawing.Image)
-        Me.button7.Location = New System.Drawing.Point(854, 20)
+        Me.button7.Location = New System.Drawing.Point(920, 20)
         Me.button7.Name = "button7"
         Me.button7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button7.Size = New System.Drawing.Size(27, 27)
@@ -875,20 +915,32 @@ Partial Class Form1
         'textBox3
         '
         Me.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.textBox3.Depth = 0
         Me.textBox3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.textBox3.Location = New System.Drawing.Point(746, 22)
+        Me.textBox3.Hint = ""
+        Me.textBox3.Location = New System.Drawing.Point(769, 22)
+        Me.textBox3.MaxLength = 32767
+        Me.textBox3.MouseState = MaterialSkin.MouseState.HOVER
         Me.textBox3.Name = "textBox3"
-        Me.textBox3.Size = New System.Drawing.Size(100, 23)
+        Me.textBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.textBox3.ReadOnly = False
+        Me.textBox3.SelectedText = ""
+        Me.textBox3.SelectionLength = 0
+        Me.textBox3.SelectionStart = 0
+        Me.textBox3.Size = New System.Drawing.Size(145, 23)
         Me.textBox3.TabIndex = 21
+        Me.textBox3.TabStop = False
+        Me.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.textBox3.UseSystemPasswordChar = False
         '
         'label11
         '
         Me.label11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label11.AutoSize = True
-        Me.label11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label11.Location = New System.Drawing.Point(602, 26)
+        Me.label11.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.label11.Location = New System.Drawing.Point(619, 26)
         Me.label11.Name = "label11"
-        Me.label11.Size = New System.Drawing.Size(141, 15)
+        Me.label11.Size = New System.Drawing.Size(149, 17)
         Me.label11.TabIndex = 24
         Me.label11.Text = "Rut o Nombre Empleado:"
         '
@@ -896,32 +948,33 @@ Partial Class Form1
         '
         Me.label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label10.AutoSize = True
-        Me.label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.label10.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.label10.Location = New System.Drawing.Point(372, 26)
         Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(55, 15)
+        Me.label10.Size = New System.Drawing.Size(59, 17)
         Me.label10.TabIndex = 23
         Me.label10.Text = "Empresa:"
         '
         'comboBox5
         '
         Me.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.comboBox5.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.comboBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox5.ForeColor = System.Drawing.Color.White
         Me.comboBox5.FormattingEnabled = True
-        Me.comboBox5.Location = New System.Drawing.Point(433, 22)
+        Me.comboBox5.Location = New System.Drawing.Point(430, 22)
         Me.comboBox5.Name = "comboBox5"
-        Me.comboBox5.Size = New System.Drawing.Size(155, 23)
+        Me.comboBox5.Size = New System.Drawing.Size(181, 23)
         Me.comboBox5.TabIndex = 22
         '
         'groupBox4
         '
         Me.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.groupBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.groupBox4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.groupBox4.Location = New System.Drawing.Point(340, 9)
         Me.groupBox4.Name = "groupBox4"
-        Me.groupBox4.Size = New System.Drawing.Size(557, 42)
+        Me.groupBox4.Size = New System.Drawing.Size(633, 42)
         Me.groupBox4.TabIndex = 26
         Me.groupBox4.TabStop = False
         Me.groupBox4.Text = "FIltros"
@@ -932,8 +985,8 @@ Partial Class Form1
         Me.dataGridView3.AllowUserToDeleteRows = False
         Me.dataGridView3.AllowUserToOrderColumns = True
         Me.dataGridView3.AllowUserToResizeRows = False
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.AliceBlue
-        Me.dataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue
+        Me.dataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dataGridView3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -941,23 +994,23 @@ Partial Class Form1
         Me.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView3.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView3.DefaultCellStyle = DataGridViewCellStyle11
         Me.dataGridView3.EnableHeadersVisualStyles = False
         Me.dataGridView3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -966,14 +1019,14 @@ Partial Class Form1
         Me.dataGridView3.Name = "dataGridView3"
         Me.dataGridView3.ReadOnly = True
         Me.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle28.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.dataGridView3.RowHeadersVisible = False
         Me.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -987,7 +1040,7 @@ Partial Class Form1
         Me.button6.FlatAppearance.BorderSize = 0
         Me.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button6.Image = CType(resources.GetObject("button6.Image"), System.Drawing.Image)
-        Me.button6.Location = New System.Drawing.Point(229, 18)
+        Me.button6.Location = New System.Drawing.Point(236, 18)
         Me.button6.Name = "button6"
         Me.button6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button6.Size = New System.Drawing.Size(27, 27)
@@ -997,23 +1050,12 @@ Partial Class Form1
         'label9
         '
         Me.label9.AutoSize = True
-        Me.label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label9.Location = New System.Drawing.Point(16, 25)
+        Me.label9.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.label9.Location = New System.Drawing.Point(16, 24)
         Me.label9.Name = "label9"
-        Me.label9.Size = New System.Drawing.Size(110, 15)
+        Me.label9.Size = New System.Drawing.Size(115, 17)
         Me.label9.TabIndex = 17
         Me.label9.Text = "Periodo Registrado:"
-        '
-        'comboBox4
-        '
-        Me.comboBox4.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.comboBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.comboBox4.FormattingEnabled = True
-        Me.comboBox4.Location = New System.Drawing.Point(122, 21)
-        Me.comboBox4.Name = "comboBox4"
-        Me.comboBox4.Size = New System.Drawing.Size(102, 23)
-        Me.comboBox4.TabIndex = 16
         '
         'tabPage3
         '
@@ -1057,7 +1099,7 @@ Partial Class Form1
         Me.groupBox9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.groupBox9.Controls.Add(Me.checkBox2)
         Me.groupBox9.Controls.Add(Me.checkBox1)
-        Me.groupBox9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.groupBox9.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.groupBox9.Location = New System.Drawing.Point(767, 421)
         Me.groupBox9.Name = "groupBox9"
         Me.groupBox9.Size = New System.Drawing.Size(527, 35)
@@ -1069,10 +1111,10 @@ Partial Class Form1
         '
         Me.checkBox2.AutoSize = True
         Me.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.checkBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.checkBox2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.checkBox2.Location = New System.Drawing.Point(73, 14)
         Me.checkBox2.Name = "checkBox2"
-        Me.checkBox2.Size = New System.Drawing.Size(202, 19)
+        Me.checkBox2.Size = New System.Drawing.Size(197, 19)
         Me.checkBox2.TabIndex = 34
         Me.checkBox2.Text = "Seleccionar Conceptos a Exportar"
         Me.checkBox2.UseVisualStyleBackColor = True
@@ -1081,10 +1123,10 @@ Partial Class Form1
         '
         Me.checkBox1.AutoSize = True
         Me.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.checkBox1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.checkBox1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.checkBox1.Location = New System.Drawing.Point(304, 14)
         Me.checkBox1.Name = "checkBox1"
-        Me.checkBox1.Size = New System.Drawing.Size(204, 19)
+        Me.checkBox1.Size = New System.Drawing.Size(199, 19)
         Me.checkBox1.TabIndex = 33
         Me.checkBox1.Text = "Seleccionar Empleados a Exportar"
         Me.checkBox1.UseVisualStyleBackColor = True
@@ -1099,7 +1141,7 @@ Partial Class Form1
         Me.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.button10.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.button10.Location = New System.Drawing.Point(1036, 19)
+        Me.button10.Location = New System.Drawing.Point(1047, 19)
         Me.button10.Name = "button10"
         Me.button10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button10.Size = New System.Drawing.Size(101, 27)
@@ -1125,14 +1167,14 @@ Partial Class Form1
         '
         'groupBox8
         '
+        Me.groupBox8.Controls.Add(Me.comboBox8)
         Me.groupBox8.Controls.Add(Me.radioButton2)
         Me.groupBox8.Controls.Add(Me.radioButton1)
         Me.groupBox8.Controls.Add(Me.label19)
-        Me.groupBox8.Controls.Add(Me.comboBox8)
         Me.groupBox8.Controls.Add(Me.button14)
         Me.groupBox8.Controls.Add(Me.comboBox7)
         Me.groupBox8.Controls.Add(Me.label18)
-        Me.groupBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.groupBox8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.groupBox8.Location = New System.Drawing.Point(16, 9)
         Me.groupBox8.Name = "groupBox8"
         Me.groupBox8.Size = New System.Drawing.Size(694, 42)
@@ -1140,13 +1182,25 @@ Partial Class Form1
         Me.groupBox8.TabStop = False
         Me.groupBox8.Text = "Parametros"
         '
+        'comboBox8
+        '
+        Me.comboBox8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox8.ForeColor = System.Drawing.Color.White
+        Me.comboBox8.FormattingEnabled = True
+        Me.comboBox8.Location = New System.Drawing.Point(133, 13)
+        Me.comboBox8.Name = "comboBox8"
+        Me.comboBox8.Size = New System.Drawing.Size(102, 23)
+        Me.comboBox8.TabIndex = 16
+        '
         'radioButton2
         '
         Me.radioButton2.AutoSize = True
-        Me.radioButton2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.radioButton2.Location = New System.Drawing.Point(552, 15)
+        Me.radioButton2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.radioButton2.Location = New System.Drawing.Point(558, 15)
         Me.radioButton2.Name = "radioButton2"
-        Me.radioButton2.Size = New System.Drawing.Size(75, 19)
+        Me.radioButton2.Size = New System.Drawing.Size(78, 21)
         Me.radioButton2.TabIndex = 25
         Me.radioButton2.TabStop = True
         Me.radioButton2.Text = "Consultar"
@@ -1155,10 +1209,10 @@ Partial Class Form1
         'radioButton1
         '
         Me.radioButton1.AutoSize = True
-        Me.radioButton1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.radioButton1.Location = New System.Drawing.Point(482, 15)
+        Me.radioButton1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.radioButton1.Location = New System.Drawing.Point(488, 15)
         Me.radioButton1.Name = "radioButton1"
-        Me.radioButton1.Size = New System.Drawing.Size(69, 19)
+        Me.radioButton1.Size = New System.Drawing.Size(75, 21)
         Me.radioButton1.TabIndex = 24
         Me.radioButton1.TabStop = True
         Me.radioButton1.Text = "Generar "
@@ -1167,23 +1221,12 @@ Partial Class Form1
         'label19
         '
         Me.label19.AutoSize = True
-        Me.label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label19.Location = New System.Drawing.Point(24, 17)
+        Me.label19.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.label19.Location = New System.Drawing.Point(22, 16)
         Me.label19.Name = "label19"
-        Me.label19.Size = New System.Drawing.Size(110, 15)
+        Me.label19.Size = New System.Drawing.Size(115, 17)
         Me.label19.TabIndex = 17
         Me.label19.Text = "Periodo Registrado:"
-        '
-        'comboBox8
-        '
-        Me.comboBox8.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.comboBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.comboBox8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.comboBox8.FormattingEnabled = True
-        Me.comboBox8.Location = New System.Drawing.Point(130, 13)
-        Me.comboBox8.Name = "comboBox8"
-        Me.comboBox8.Size = New System.Drawing.Size(102, 23)
-        Me.comboBox8.TabIndex = 16
         '
         'button14
         '
@@ -1191,8 +1234,9 @@ Partial Class Form1
         Me.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button14.FlatAppearance.BorderSize = 0
         Me.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.button14.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.button14.Image = Global.ImportarExcelSQLServer.Resources.search_white16
-        Me.button14.Location = New System.Drawing.Point(639, 11)
+        Me.button14.Location = New System.Drawing.Point(645, 11)
         Me.button14.Name = "button14"
         Me.button14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button14.Size = New System.Drawing.Size(27, 27)
@@ -1201,23 +1245,24 @@ Partial Class Form1
         '
         'comboBox7
         '
-        Me.comboBox7.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.comboBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.comboBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.comboBox7.ForeColor = System.Drawing.Color.White
         Me.comboBox7.FormattingEnabled = True
         Me.comboBox7.Items.AddRange(New Object() {"MINDUGAR S.A. - 96588890-K", "MINDUGAR INDUSTRIAL - 83073600-K", "MINDUGAR MONTAJES - 76033420-0"})
         Me.comboBox7.Location = New System.Drawing.Point(301, 13)
         Me.comboBox7.Name = "comboBox7"
-        Me.comboBox7.Size = New System.Drawing.Size(155, 23)
+        Me.comboBox7.Size = New System.Drawing.Size(166, 23)
         Me.comboBox7.TabIndex = 22
         '
         'label18
         '
         Me.label18.AutoSize = True
-        Me.label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label18.Location = New System.Drawing.Point(247, 17)
+        Me.label18.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.label18.Location = New System.Drawing.Point(245, 16)
         Me.label18.Name = "label18"
-        Me.label18.Size = New System.Drawing.Size(55, 15)
+        Me.label18.Size = New System.Drawing.Size(59, 17)
         Me.label18.TabIndex = 23
         Me.label18.Text = "Empresa:"
         '
@@ -1240,11 +1285,11 @@ Partial Class Form1
         Me.label16.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.label16.AutoSize = True
         Me.label16.BackColor = System.Drawing.Color.Transparent
-        Me.label16.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.label16.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.label16.Location = New System.Drawing.Point(15, 422)
         Me.label16.Name = "label16"
         Me.label16.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.label16.Size = New System.Drawing.Size(102, 19)
+        Me.label16.Size = New System.Drawing.Size(88, 17)
         Me.label16.TabIndex = 28
         Me.label16.Text = "Total Registros"
         '
@@ -1259,7 +1304,7 @@ Partial Class Form1
         Me.button12.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.button12.Image = Global.ImportarExcelSQLServer.Resources.profile_user_white16
         Me.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.button12.Location = New System.Drawing.Point(1143, 19)
+        Me.button12.Location = New System.Drawing.Point(1155, 19)
         Me.button12.Name = "button12"
         Me.button12.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button12.Size = New System.Drawing.Size(138, 27)
@@ -1276,7 +1321,7 @@ Partial Class Form1
         Me.button13.FlatAppearance.BorderSize = 0
         Me.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.button13.Image = Global.ImportarExcelSQLServer.Resources.search_white16
-        Me.button13.Location = New System.Drawing.Point(977, 20)
+        Me.button13.Location = New System.Drawing.Point(1003, 20)
         Me.button13.Name = "button13"
         Me.button13.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.button13.Size = New System.Drawing.Size(27, 27)
@@ -1286,30 +1331,42 @@ Partial Class Form1
         'textBox5
         '
         Me.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.textBox5.Depth = 0
         Me.textBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.textBox5.Location = New System.Drawing.Point(869, 23)
+        Me.textBox5.Hint = ""
+        Me.textBox5.Location = New System.Drawing.Point(877, 23)
+        Me.textBox5.MaxLength = 32767
+        Me.textBox5.MouseState = MaterialSkin.MouseState.HOVER
         Me.textBox5.Name = "textBox5"
-        Me.textBox5.Size = New System.Drawing.Size(100, 23)
+        Me.textBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.textBox5.ReadOnly = False
+        Me.textBox5.SelectedText = ""
+        Me.textBox5.SelectionLength = 0
+        Me.textBox5.SelectionStart = 0
+        Me.textBox5.Size = New System.Drawing.Size(119, 23)
         Me.textBox5.TabIndex = 21
+        Me.textBox5.TabStop = False
+        Me.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.textBox5.UseSystemPasswordChar = False
         '
         'label17
         '
         Me.label17.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label17.AutoSize = True
-        Me.label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.label17.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.label17.Location = New System.Drawing.Point(728, 27)
         Me.label17.Name = "label17"
-        Me.label17.Size = New System.Drawing.Size(141, 15)
+        Me.label17.Size = New System.Drawing.Size(149, 17)
         Me.label17.TabIndex = 24
         Me.label17.Text = "Rut o Nombre Empleado:"
         '
         'groupBox7
         '
         Me.groupBox7.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.groupBox7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.groupBox7.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.groupBox7.Location = New System.Drawing.Point(716, 9)
         Me.groupBox7.Name = "groupBox7"
-        Me.groupBox7.Size = New System.Drawing.Size(304, 42)
+        Me.groupBox7.Size = New System.Drawing.Size(322, 42)
         Me.groupBox7.TabIndex = 26
         Me.groupBox7.TabStop = False
         Me.groupBox7.Text = "FIltros"
@@ -1320,8 +1377,8 @@ Partial Class Form1
         Me.dataGridView4.AllowUserToDeleteRows = False
         Me.dataGridView4.AllowUserToOrderColumns = True
         Me.dataGridView4.AllowUserToResizeRows = False
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.AliceBlue
-        Me.dataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue
+        Me.dataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.dataGridView4.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1329,23 +1386,23 @@ Partial Class Form1
         Me.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical
         Me.dataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dataGridView4.DefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dataGridView4.DefaultCellStyle = DataGridViewCellStyle15
         Me.dataGridView4.EnableHeadersVisualStyles = False
         Me.dataGridView4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.dataGridView4.GridColor = System.Drawing.Color.Gray
@@ -1353,14 +1410,14 @@ Partial Class Form1
         Me.dataGridView4.MultiSelect = False
         Me.dataGridView4.Name = "dataGridView4"
         Me.dataGridView4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dataGridView4.RowHeadersDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dataGridView4.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.dataGridView4.RowHeadersVisible = False
         Me.dataGridView4.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1428,7 +1485,7 @@ Partial Class Form1
     Friend WithEvents button5 As System.Windows.Forms.Button
     Friend WithEvents label8 As System.Windows.Forms.Label
     Friend WithEvents button8 As System.Windows.Forms.Button
-    Friend WithEvents textBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents textBox4 As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents label12 As System.Windows.Forms.Label
     Friend WithEvents label13 As System.Windows.Forms.Label
     Friend WithEvents comboBox6 As System.Windows.Forms.ComboBox
@@ -1439,7 +1496,7 @@ Partial Class Form1
     Friend WithEvents label6 As System.Windows.Forms.Label
     Friend WithEvents button3 As System.Windows.Forms.Button
     Friend WithEvents label5 As System.Windows.Forms.Label
-    Friend WithEvents textBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents textBox2 As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents dataGridView1 As MetroFramework.Controls.MetroGrid ' System.Windows.Forms.DataGridView
     Friend WithEvents comboBox2 As System.Windows.Forms.ComboBox
     Friend WithEvents progressBar1 As MetroFramework.Controls.MetroProgressBar 'System.Windows.Forms.ProgressBar
@@ -1455,7 +1512,7 @@ Partial Class Form1
     Friend WithEvents label15 As System.Windows.Forms.Label
     Friend WithEvents button9 As System.Windows.Forms.Button
     Friend WithEvents button7 As System.Windows.Forms.Button
-    Friend WithEvents textBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents textBox3 As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents label11 As System.Windows.Forms.Label
     Friend WithEvents label10 As System.Windows.Forms.Label
     Friend WithEvents comboBox5 As System.Windows.Forms.ComboBox
@@ -1481,7 +1538,7 @@ Partial Class Form1
     Friend WithEvents label16 As System.Windows.Forms.Label
     Friend WithEvents button12 As System.Windows.Forms.Button
     Friend WithEvents button13 As System.Windows.Forms.Button
-    Friend WithEvents textBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents textBox5 As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents label17 As System.Windows.Forms.Label
     Friend WithEvents groupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents dataGridView4 As MetroFramework.Controls.MetroGrid 'System.Windows.Forms.DataGridView

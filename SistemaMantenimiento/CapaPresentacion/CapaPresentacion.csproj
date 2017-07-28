@@ -79,6 +79,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations\AnimationDirection.cs" />
+    <Compile Include="Animations\AnimationManager.cs" />
+    <Compile Include="Animations\Animations.cs" />
     <Compile Include="Extensiones\DataGridViewExtensions.cs" />
     <Compile Include="Extensiones\DataTableExtensions.cs" />
     <Compile Include="Extensiones\ExcelExtensions.cs" />
@@ -339,6 +342,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload-folder %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

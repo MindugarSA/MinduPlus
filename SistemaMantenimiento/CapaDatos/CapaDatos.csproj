@@ -64,7 +64,7 @@
     <Compile Include="DEmpleadoIndustrial.cs" />
     <Compile Include="DFrecuencia.cs" />
     <Compile Include="DInstruItems.cs" />
-    <Compile Include="DIntrumento.cs" />
+    <Compile Include="DInstrumento.cs" />
     <Compile Include="DItemComprobacion.cs" />
     <Compile Include="DItemIndustrial.cs" />
     <Compile Include="DIdentInstrumento.cs" />

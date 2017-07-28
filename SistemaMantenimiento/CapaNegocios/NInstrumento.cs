@@ -15,7 +15,7 @@ namespace CapaNegocios
         //de la CapaDatos
         public static string Insertar(string codigo, string descripcion, string frecuenciaNvo, string frecuenciaUsa, string estado)
         {
-            DIntrumento Obj = new DIntrumento();
+            DInstrumento Obj = new DInstrumento();
             Obj.Codigo = codigo;
             Obj.Descripcion = descripcion;
             Obj.Frecuencia_Nvo = frecuenciaNvo;
@@ -32,7 +32,7 @@ namespace CapaNegocios
         //de la CapaDatos
         public static string Actualizar(int idinstrumento, string codigo, string descripcion, string frecuenciaNvo, string frecuenciaUsa, string estado)
         {
-            DIntrumento Obj = new DIntrumento();
+            DInstrumento Obj = new DInstrumento();
             Obj.Id = idinstrumento;
             Obj.Codigo = codigo;
             Obj.Descripcion = descripcion;
@@ -51,7 +51,7 @@ namespace CapaNegocios
         //de la CapaDatos
         public static string Eliminar(int idinstrumento, string codigo)
         {
-            DIntrumento Obj = new DIntrumento();
+            DInstrumento Obj = new DInstrumento();
             Obj.Id = idinstrumento;
             Obj.Codigo = codigo;
             return Obj.Eliminar(Obj);
@@ -61,14 +61,14 @@ namespace CapaNegocios
         //de la CapaDatos
         public static DataTable Listar()
         {
-            return new DIntrumento().Listar();
+            return new DInstrumento().Listar();
         }
 
         public static DataTable Buscar(int idinstrumento)
         {
-            DIntrumento Obj = new DIntrumento();
+            DInstrumento Obj = new DInstrumento();
             Obj.Id = idinstrumento;
-            return new DIntrumento().Buscar(Obj);
+            return new DInstrumento().Buscar(Obj);
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    public class DIntrumento
+    public class DInstrumento
     {
 
         private int _Id;
@@ -155,12 +155,12 @@ namespace CapaDatos
 
 
         //Constructor Vacio
-        public DIntrumento()
+        public DInstrumento()
         {
         }
 
         //Constructor con Paramentros.
-        public DIntrumento(int id, string Codigo, string Descripcion, string Frecuencia_Nvo, string Frecuencia_Usa, string Estado, DateTime Fecha_Creacion, string Usu_Creacion, DateTime Fecha_Modifi, string Usu_Modif)
+        public DInstrumento(int id, string Codigo, string Descripcion, string Frecuencia_Nvo, string Frecuencia_Usa, string Estado, DateTime Fecha_Creacion, string Usu_Creacion, DateTime Fecha_Modifi, string Usu_Modif)
         {
             _Id = Id;
             _Codigo = Codigo;
@@ -174,7 +174,7 @@ namespace CapaDatos
             _Usu_Modif = Usu_Modif;
         }
 
-        public string Insertar(DIntrumento Instrumento)
+        public string Insertar(DInstrumento Instrumento)
         {
             string rpta = "";
             SqlConnection SlqCon = new SqlConnection();
@@ -214,7 +214,7 @@ namespace CapaDatos
             return rpta;
         }
 
-        public string Actualizar(DIntrumento Instrumento)
+        public string Actualizar(DInstrumento Instrumento)
         {
             string rpta = "";
             SqlConnection SlqCon = new SqlConnection();
@@ -255,7 +255,7 @@ namespace CapaDatos
             return rpta;
         }
 
-        public string Eliminar(DIntrumento Instrumento)
+        public string Eliminar(DInstrumento Instrumento)
         {
             string rpta = "";
             SqlConnection SlqCon = new SqlConnection();
@@ -320,7 +320,7 @@ namespace CapaDatos
 
         }
 
-        public DataTable Buscar(DIntrumento Instrumento)
+        public DataTable Buscar(DInstrumento Instrumento)
         {
             DataTable DtResultado = new DataTable();
             SqlConnection SlqCon = new SqlConnection();

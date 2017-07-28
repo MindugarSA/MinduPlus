@@ -40,8 +40,8 @@ namespace CapaPresentacion
                 if (Convert.ToBoolean(Row.Cells["Aplica"].Value))
                 {
                     Row.Cells["Aplica"].Value = true;
-                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.DarkSeaGreen;
-                    Row.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(153, 180, 51);
+                    Row.DefaultCellStyle.BackColor = Color.FromArgb(153, 180, 51);
                 }
                 else
                 {
@@ -81,8 +81,8 @@ namespace CapaPresentacion
 
                 if (Convert.ToBoolean(cellSelecion.Value == DBNull.Value ? false : cellSelecion.Value))
                 {
-                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.DarkSeaGreen;
-                    row.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(153, 180, 51);
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(153, 180, 51);
                 }
                 else
                 {
@@ -103,7 +103,7 @@ namespace CapaPresentacion
 
                 DataGridViewCheckBoxCell cellSelecion = (DataGridViewCheckBoxCell)dataItemCalibracion[0, dataItemCalibracion.CurrentRow.Index];
                 if (Convert.ToBoolean(cellSelecion.Value == DBNull.Value ? false : cellSelecion.Value))
-                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.DarkSeaGreen;
+                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(153, 180, 51);
                 else
                     dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.White;
 
@@ -159,7 +159,7 @@ namespace CapaPresentacion
             {
                 DataGridViewCheckBoxCell cellSelecion = (DataGridViewCheckBoxCell)dataItemCalibracion[0, dataItemCalibracion.CurrentRow.Index];
                 if (Convert.ToBoolean(cellSelecion.Value == DBNull.Value ? false : cellSelecion.Value))
-                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.DarkSeaGreen;
+                    dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(153, 180, 51);
                 else
                     dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.White;
             }
@@ -200,6 +200,7 @@ namespace CapaPresentacion
             DTInstru = NInstrumento.Buscar(Convert.ToInt32(DataIdentidad.Cells[0].Value));
             txtCodInstru.Text = Convert.ToString(DTInstru.Rows[0][1]);
             txtDescInstru.Text = Convert.ToString(DTInstru.Rows[0][2]);
+            txtItemSelec.Text = txtCodInstru.Text.Trim() + "  -  " + txtDescInstru.Text.Trim();
 
             txtId.Text = Convert.ToString(DataIdentidad.Cells[1].Value);
             txtEstado.Text = Convert.ToString(DataIdentidad.Cells[3].Value);
@@ -264,6 +265,22 @@ namespace CapaPresentacion
 
         }
 
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            var Obj = (dynamic)sender;
+            Obj.Left = Obj.Left - 4;
+            Obj.Top = Obj.Top - 4;
+            Obj.Height = Obj.Height + 8;
+            Obj.Width = Obj.Width + 8;
+        }
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            var Obj = (dynamic)sender;
+            Obj.Left = Obj.Left + 4;
+            Obj.Top = Obj.Top + 4;
+            Obj.Height = Obj.Height - 8;
+            Obj.Width = Obj.Width - 8;
+        }
     }
 
 }

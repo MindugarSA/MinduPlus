@@ -24,6 +24,9 @@ namespace CapaPresentacion
         private string FrecNuevo;
         private string FrecUsado;
         private int Cont;
+
+        private AnimationManager _animationManager;
+
         public FrmIndividualizacion(DataGridViewRow IDInstrument, string Accion)
         {
             IDInstrumento = IDInstrument;
@@ -36,6 +39,7 @@ namespace CapaPresentacion
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE);
+
         }
 
         private void FrmIndividualizacion_Load(object sender, EventArgs e)
@@ -50,6 +54,7 @@ namespace CapaPresentacion
                 btnAgregar.Text = "&Actualizar";
                 CargaDatosActuales();
             }
+
 
         }
 
@@ -160,7 +165,13 @@ namespace CapaPresentacion
             FrecNuevo = Convert.ToString(DTInstru.Rows[0][3]);
             FrecUsado = Convert.ToString(DTInstru.Rows[0][4]);
 
-            txtCodInstru.Enabled = false;
+            if (txtItemSelec.Text.Trim().Length > 50)
+            {
+                txtItemSelec.Font = new Font("Segoe UI", 13, FontStyle.Bold, GraphicsUnit.Pixel);
+                txtItemSelec.Top += 4;
+            }
+
+                txtCodInstru.Enabled = false;
             txtDescInstru.Enabled = false;
 
             txtCodInstru.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -248,5 +259,53 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddTextBoxAnimation(TextBox sender)
+        {
+            sender.Refresh();
+            TextBox _baseTextBox = sender;
+            var g = Graphics.FromHwnd(sender.Handle);
+            //g.Clear(Parent.BackColor);
+
+            var lineY = _baseTextBox.Bottom - 3;
+            Brush DIVIDERS_BLACK_BRUSH = new SolidBrush(Color.FromArgb(224, 224, 224));
+            Brush PrimaryBrush = new SolidBrush(Color.FromArgb(255, 152, 0));
+
+
+            if (!_animationManager.IsAnimating())
+            {
+                //No animation
+                g.FillRectangle(_baseTextBox.Focused ? PrimaryBrush : DIVIDERS_BLACK_BRUSH, _baseTextBox.Location.X, lineY, _baseTextBox.Width, _baseTextBox.Focused ? 2 : 1);
+            }
+            else
+            {
+                //Animate
+                int animationWidth = (int)(_baseTextBox.Width * _animationManager.GetProgress());
+                int halfAnimationWidth = animationWidth / 2;
+                int animationStart = _baseTextBox.Location.X + _baseTextBox.Width / 2;
+
+                //Unfocused background
+                g.FillRectangle(DIVIDERS_BLACK_BRUSH, _baseTextBox.Location.X, lineY, _baseTextBox.Width, 1);
+
+                //Animated focus transition
+                g.FillRectangle(PrimaryBrush, animationStart - halfAnimationWidth, lineY, animationWidth, 2);
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(224, 224, 224);
+            panel2.Height -= 1;
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(255, 152, 0);
+            panel2.Height += 1;
+        }
     }
 }

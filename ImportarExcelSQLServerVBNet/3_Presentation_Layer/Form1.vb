@@ -63,6 +63,15 @@ Partial Public Class Form1
     End Property
 
     Public Sub New(prmPnlParent As Panel, parentHeight As Integer, prmStatusBarBottom As StatusStrip, Id As String)
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 11)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
         Me.Id = Id
         Me.SetStyle(ControlStyles.DoubleBuffer Or ControlStyles.AllPaintingInWmPaint, True)
         InitializeComponent()
@@ -1185,7 +1194,7 @@ Partial Public Class Form1
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
         If pnlParent IsNot Nothing Then
-            Me.StatusBarBottom.Visible = True
+            'Me.StatusBarBottom.Visible = True
             RaiseEvent EnviarEvento()
             pnlParent.Visible = True
         End If

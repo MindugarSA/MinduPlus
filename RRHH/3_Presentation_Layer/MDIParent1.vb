@@ -10,6 +10,7 @@ Public Class MDIParent1
     Private m_ChildFormNumber As Integer
     Public Tiempo_Str As Integer = 30
     Public Tiempo_Animacion As Integer = 0
+    Private ToolStripVisible As Boolean = True
 
     Private Const DESPLAZAMIENTO As Integer = 25
     Private Const CANTIDAD_DESPLAZO As Integer = 25
@@ -413,7 +414,10 @@ Public Class MDIParent1
             Me.Panel2.Tag = newMDIChild
             Ocultar_Tiles_MDI()
             newMDIChild.ControlBox = False
+            StatusStrip.Dock = DockStyle.None
             StatusStrip.Visible = False
+            ToolStripVisible = False
+            Panel2.Height += StatusStrip.Height
             newMDIChild.Show()
 
             TiempoIngreso.Enabled = False
@@ -616,6 +620,14 @@ Public Class MDIParent1
     End Sub
 
     Public Sub Visualizar_Tiles_MDI()
+
+        If (ToolStripVisible = False) Then
+            ToolStripVisible = True
+            Panel2.Height -= StatusStrip.Height
+            StatusStrip.Visible = True
+            StatusStrip.Dock = DockStyle.Bottom
+        End If
+
         pnlMovingRight.Visible = True
         pnlMovingRight2.Visible = True
         pnlMovingTop.Visible = True
@@ -766,9 +778,10 @@ Public Class MDIParent1
             Me.Panel2.Tag = newMDIChild
             Ocultar_Tiles_MDI()
             newMDIChild.ControlBox = False
+            StatusStrip.Dock = DockStyle.None
             StatusStrip.Visible = False
-            'StatusStrip.Dock = DockStyle.None
-            'Panel2.Dock = DockStyle.Fill
+            Panel2.Height += StatusStrip.Height
+            ToolStripVisible = False
             newMDIChild.Show()
 
             TiempoIngreso.Enabled = False

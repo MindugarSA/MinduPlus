@@ -111,6 +111,9 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\Pruebas MetroUI\WindowsFormsApplication1\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>

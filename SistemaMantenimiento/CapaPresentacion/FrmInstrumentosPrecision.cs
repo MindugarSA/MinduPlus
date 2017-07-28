@@ -28,14 +28,18 @@ namespace CapaPresentacion
         public delegate void LaunchEvent();
         public event LaunchEvent EnviarEvento;
 
-        public FrmInstrumentosPrecision( Panel prmPnlParent, StatusStrip prmStatusBarBottom , String prmId )
+        public FrmInstrumentosPrecision( ref Panel prmPnlParent , ref StatusStrip prmStatusBarBottom , String prmId )
         {
-            InitializeComponent();
-
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             //skinManager.AddFormToManage((MaterialForm)this);
+            skinManager.ROBOTO_MEDIUM_10 = new Font("Segoe UI Light", 10);
+            skinManager.ROBOTO_MEDIUM_11 = new Font("Segoe UI Light", 11);
+            skinManager.ROBOTO_MEDIUM_12 = new Font("Segoe UI Light", 12);
+            skinManager.ROBOTO_REGULAR_11 = new Font("Segoe UI Light", 11);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE);
+
+            InitializeComponent();
 
             this.pnlParent = prmPnlParent;
             this.Id = prmId;
@@ -54,6 +58,7 @@ namespace CapaPresentacion
             ListarIndividualizacion();
             ListarCalibracion();
             cmbBaja.SelectedItem = "Activos";
+            comboBox1.SelectedItem = "Activos";
 
             this.ResumeLayout();
         }
@@ -69,7 +74,7 @@ namespace CapaPresentacion
         private void FrmInstrumentosPrecision_Resize(object sender, EventArgs e)
         {
             double dWGrp1 = 48.6217;
-            double dHGrp1 = 42.5126;
+            double dHGrp1 = 32.5126;
             groupBox1.Width = Convert.ToInt32(Math.Round((dWGrp1 * this.Size.Width) / 100, 0));
             groupBox1.Height = Convert.ToInt32(Math.Round((dHGrp1 * this.Size.Height) / 100, 0));
 
@@ -81,7 +86,7 @@ namespace CapaPresentacion
             txtItemSelec.Top = groupBox1.Top + groupBox1.Height + 5;
 
             double dWGrp3 = 62.0980;
-            double dHGrp3 = 45.1777;
+            double dHGrp3 = 57.1777;
             groupBox3.Width = Convert.ToInt32(Math.Round((dWGrp3 * this.Size.Width) / 100, 0));
             groupBox3.Height = Convert.ToInt32(Math.Round((dHGrp3 * this.Size.Height) / 100, 0));
             groupBox3.Top = txtItemSelec.Top + txtItemSelec.Height + 1;
@@ -96,7 +101,7 @@ namespace CapaPresentacion
         {
             if (pnlParent != null)
             {
-                this.StatusBarBottom.Visible = true;
+                this.StatusBarBottom.Visible = false;
                 if (EnviarEvento != null)
                 {
                     EnviarEvento();
@@ -240,7 +245,6 @@ namespace CapaPresentacion
             if (this.txtInstru.Text == string.Empty)
             {
                 dataInstrumentos.DataSource = DTIntrumentos;
-
                 //errorIcono.SetError(txtInstru, "Ingrese Parte del Codigo o Descripcion a Buscar");
             }
             else
@@ -267,7 +271,11 @@ namespace CapaPresentacion
         }
         private void cmbBaja_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListarIndividualizacion();
+            FiltrarIndividualizacion(cmbBaja.SelectedIndex);
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarInstrumentos("Estado");
         }
         private void dataIndividualizacion_SelectionChanged(object sender, EventArgs e)
         {
@@ -476,17 +484,45 @@ namespace CapaPresentacion
 
         }
 
-        private void FiltrarInstrumentos()
+        private void FiltrarInstrumentos(String TipoFiltro = null)
         {
             DataTable dtf = null;
-
             var results = from myRow in DTIntrumentos.AsEnumerable()
+                          where (1==2)
+                          select myRow; // Inicializar en vacio
+
+            if (TipoFiltro == null || TipoFiltro == "Busqueda")
+            {
+                results = from myRow in DTIntrumentos.AsEnumerable()
                           where ((!String.IsNullOrEmpty(myRow.Field<string>("Codigo"))
                                   && myRow.Field<string>("Codigo").ToUpper().Contains(txtInstru.Text.Trim().ToUpper()))
                                   || (!String.IsNullOrEmpty(myRow.Field<string>("Descripcion"))
                                       && myRow.Field<string>("Descripcion").ToUpper().Contains(txtInstru.Text.Trim().ToUpper())))
                           orderby myRow[0]
                           select myRow;
+            }
+            else if(TipoFiltro == "Estado")
+            {
+                string sEstado = "T";
+                switch (comboBox1.Text)
+                {
+                    case "Activos":
+                        sEstado = "A";
+                        break;
+                    case "Inactivos":
+                        sEstado = "I";
+                        break;
+                }
+
+                if (sEstado == "T")
+                    dataInstrumentos.DataSource = DTIntrumentos;
+                else
+                    results = from myRow in DTIntrumentos.AsEnumerable()
+                              where ((!String.IsNullOrEmpty(myRow.Field<string>("Estado"))
+                                      && myRow.Field<string>("Estado").ToUpper().Contains(sEstado)))
+                              orderby myRow[0]
+                              select myRow;
+            }
 
             if (results.Any())
             {
@@ -494,6 +530,7 @@ namespace CapaPresentacion
                 if (dtf.Rows.Count > 0)
                     dataInstrumentos.DataSource = dtf;
             }
+            
         }
         /// <summary>
         /// Mostrar Mensaje de Confirmación
@@ -533,6 +570,26 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
+        private void cmbBaja_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var combo = sender as ComboBox;
 
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 174, 219)), e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(SystemColors.Window), e.Bounds);
+            }
+
+            e.Graphics.DrawString(combo.Items[e.Index].ToString(),
+                                          e.Font,
+                                          new SolidBrush(Color.Black),
+                                          new Point(e.Bounds.X, e.Bounds.Y));
+            e.DrawFocusRectangle();
+        }
+
+    
     }
 }
