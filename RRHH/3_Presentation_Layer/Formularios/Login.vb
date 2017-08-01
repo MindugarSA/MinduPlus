@@ -17,7 +17,6 @@ Public Class Login
         Me.SuspendLayout()
 
         conexion.ConnectionString = Conection.Cn
-        Lbl__ConfPass.Visible = False
         TxtBx_ConfPass.Visible = False
 
         MDIParent1.Panel2.Visible = False
@@ -50,7 +49,12 @@ Public Class Login
 
     Private Sub UsernameTextBox_Validated(sender As Object, e As EventArgs) Handles TxtBx_UserID.Validated
         Dim Errores As String = ""
-        If Len(TxtBx_UserID.Text) >= 2 Then
+
+        If (Me.ActiveControl.Equals(sender)) Then ' Si se esta cerrando eñ Form, se salta la validacion.
+            Exit Sub
+        End If
+
+        If (Len(TxtBx_UserID.Text) >= 2 And UsernameLabel.Visible = False) Then
 
             dt.Reset()
             Dim Num As String
@@ -149,7 +153,6 @@ Public Class Login
                     'p_User_Pass = Trim(dt.Rows(0)("Pass").ToString)
                     TxtBx_Password.Focus()
                     If MDIParent1.Lbl_Cod_ID.Text = "0" Then
-                        Lbl__ConfPass.Visible = True
                         TxtBx_ConfPass.Visible = True
                         TxtBx_ConfPass.Tag = 1
                         'p_User_Pass = ""
@@ -173,7 +176,7 @@ Public Class Login
                 End If
             End If
         Else
-                TxtBx_UserID.Focus()
+            TxtBx_UserID.Focus()
         End If
     End Sub
 
@@ -284,7 +287,6 @@ Public Class Login
                         MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
                         MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
                         MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr")
-                        Lbl__ConfPass.Visible = False
                         TxtBx_ConfPass.Visible = False
                         TxtBx_ConfPass.Tag = 0
                         p_User_Pass = TxtBx_ConfPass.Text
@@ -374,5 +376,41 @@ Public Class Login
 
         CType(sender, Label).Font = New Font("Segoe UI", 14.25, FontStyle.Bold)
 
+    End Sub
+
+    Private Sub TxtBx_UserID_Enter(sender As Object, e As EventArgs) Handles TxtBx_UserID.Enter
+
+        If (TxtBx_UserID.Text.Trim = "") Then
+            UsernameLabel.Visible = True
+        End If
+
+
+    End Sub
+
+    Private Sub TxtBx_UserID_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_UserID.KeyDown
+
+        If (UsernameLabel.Visible = True) Then
+            UsernameLabel.Visible = False
+        ElseIf (e.KeyCode = Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+        End If
+
+    End Sub
+
+    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged
+        If (UsernameLabel.Visible = True) Then
+            UsernameLabel.Visible = False
+        End If
+    End Sub
+
+
+    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        UsernameLabel.Top = TxtBx_UserID.Top + 5
+    End Sub
+
+    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown
+        If (e.KeyCode = Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+        End If
     End Sub
 End Class

@@ -24,6 +24,15 @@ Public Class MDIParent1
     End Property
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 16)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
         conexion.ConnectionString = Conection.Cn
         Me.ShowInTaskbar = True
 

@@ -23,9 +23,8 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TxtBx_Password = New System.Windows.Forms.TextBox()
-        Me.TxtBx_UserID = New System.Windows.Forms.TextBox()
-        Me.PasswordLabel = New System.Windows.Forms.Label()
+        Me.TxtBx_Password = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.TxtBx_UserID = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.Bttn_Login = New MetroFramework.Controls.MetroButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -42,8 +41,7 @@ Partial Class Login
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtBx_ConfPass = New System.Windows.Forms.TextBox()
-        Me.Lbl__ConfPass = New System.Windows.Forms.Label()
+        Me.TxtBx_ConfPass = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -55,43 +53,56 @@ Partial Class Login
         '
         'TxtBx_Password
         '
+        Me.TxtBx_Password.Depth = 0
         Me.TxtBx_Password.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.TxtBx_Password.Hint = " Contraseña"
         Me.TxtBx_Password.Location = New System.Drawing.Point(226, 136)
         Me.TxtBx_Password.MaxLength = 4
+        Me.TxtBx_Password.MouseState = MaterialSkin.MouseState.HOVER
         Me.TxtBx_Password.Name = "TxtBx_Password"
-        Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtBx_Password.Size = New System.Drawing.Size(233, 29)
+        Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9899)
+        Me.TxtBx_Password.ReadOnly = False
+        Me.TxtBx_Password.SelectedText = ""
+        Me.TxtBx_Password.SelectionLength = 0
+        Me.TxtBx_Password.SelectionStart = 0
+        Me.TxtBx_Password.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_Password.TabIndex = 2
+        Me.TxtBx_Password.TabStop = False
+        Me.TxtBx_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TxtBx_Password.UseSystemPasswordChar = False
         '
         'TxtBx_UserID
         '
-        Me.TxtBx_UserID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtBx_UserID.Depth = 0
         Me.TxtBx_UserID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBx_UserID.Hint = ""
         Me.TxtBx_UserID.Location = New System.Drawing.Point(226, 84)
+        Me.TxtBx_UserID.MaxLength = 32767
+        Me.TxtBx_UserID.MouseState = MaterialSkin.MouseState.HOVER
         Me.TxtBx_UserID.Name = "TxtBx_UserID"
+        Me.TxtBx_UserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtBx_UserID.ReadOnly = False
         Me.TxtBx_UserID.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 29)
+        Me.TxtBx_UserID.SelectedText = ""
+        Me.TxtBx_UserID.SelectionLength = 0
+        Me.TxtBx_UserID.SelectionStart = 0
+        Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_UserID.TabIndex = 1
+        Me.TxtBx_UserID.TabStop = False
         Me.TxtBx_UserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'PasswordLabel
-        '
-        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
-        Me.PasswordLabel.Location = New System.Drawing.Point(226, 114)
-        Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
-        Me.PasswordLabel.TabIndex = 6
-        Me.PasswordLabel.Text = "&Contraseña"
-        Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.TxtBx_UserID.UseSystemPasswordChar = False
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
-        Me.UsernameLabel.Location = New System.Drawing.Point(226, 62)
+        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Light", 14.0!)
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer))
+        Me.UsernameLabel.Location = New System.Drawing.Point(228, 80)
+        Me.UsernameLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
+        Me.UsernameLabel.Size = New System.Drawing.Size(66, 23)
         Me.UsernameLabel.TabIndex = 4
-        Me.UsernameLabel.Text = "&R.U.T"
+        Me.UsernameLabel.Text = "R.U.T"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Bttn_Login
@@ -352,24 +363,23 @@ Partial Class Login
         '
         'TxtBx_ConfPass
         '
+        Me.TxtBx_ConfPass.Depth = 0
         Me.TxtBx_ConfPass.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.TxtBx_ConfPass.Hint = "Repita contraseña"
         Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 189)
         Me.TxtBx_ConfPass.MaxLength = 4
+        Me.TxtBx_ConfPass.MouseState = MaterialSkin.MouseState.HOVER
         Me.TxtBx_ConfPass.Name = "TxtBx_ConfPass"
         Me.TxtBx_ConfPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtBx_ConfPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(233, 29)
+        Me.TxtBx_ConfPass.ReadOnly = False
+        Me.TxtBx_ConfPass.SelectedText = ""
+        Me.TxtBx_ConfPass.SelectionLength = 0
+        Me.TxtBx_ConfPass.SelectionStart = 0
+        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_ConfPass.TabIndex = 3
-        '
-        'Lbl__ConfPass
-        '
-        Me.Lbl__ConfPass.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
-        Me.Lbl__ConfPass.Location = New System.Drawing.Point(226, 166)
-        Me.Lbl__ConfPass.Name = "Lbl__ConfPass"
-        Me.Lbl__ConfPass.Size = New System.Drawing.Size(220, 23)
-        Me.Lbl__ConfPass.TabIndex = 12
-        Me.Lbl__ConfPass.Text = "&Repita contraseña"
-        Me.Lbl__ConfPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.TxtBx_ConfPass.TabStop = False
+        Me.TxtBx_ConfPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TxtBx_ConfPass.UseSystemPasswordChar = False
         '
         'Label13
         '
@@ -400,17 +410,15 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 300)
+        Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TxtBx_ConfPass)
-        Me.Controls.Add(Me.Lbl__ConfPass)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Bttn_Login)
         Me.Controls.Add(Me.TxtBx_Password)
         Me.Controls.Add(Me.TxtBx_UserID)
-        Me.Controls.Add(Me.PasswordLabel)
-        Me.Controls.Add(Me.UsernameLabel)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(700, 300)
         Me.MinimizeBox = False
@@ -425,14 +433,12 @@ Partial Class Login
 
     End Sub
 
-    Friend WithEvents TxtBx_Password As TextBox
-    Friend WithEvents TxtBx_UserID As TextBox
-    Friend WithEvents PasswordLabel As Label
+    Friend WithEvents TxtBx_Password As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents TxtBx_UserID As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents UsernameLabel As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents TxtBx_ConfPass As TextBox
-    Friend WithEvents Lbl__ConfPass As Label
+    Friend WithEvents TxtBx_ConfPass As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Label1 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label

@@ -40,11 +40,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCriterio = new System.Windows.Forms.TextBox();
-            this.txtResolucion = new System.Windows.Forms.TextBox();
-            this.txtRango = new System.Windows.Forms.TextBox();
-            this.txtUnidad = new System.Windows.Forms.TextBox();
-            this.txtMetodo = new System.Windows.Forms.TextBox();
+            this.txtCriterio = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtResolucion = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtRango = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtUnidad = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtMetodo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtItem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataItems = new MetroFramework.Controls.MetroGrid();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -53,10 +53,13 @@
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.MenuContextual = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
             this.MenuContextual.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,9 +78,10 @@
             this.groupBox1.Controls.Add(this.txtMetodo);
             this.groupBox1.Controls.Add(this.txtItem);
             this.groupBox1.Controls.Add(this.dataItems);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(16, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(826, 385);
+            this.groupBox1.Size = new System.Drawing.Size(826, 408);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mantenedor Item de Comprobacion";
@@ -85,105 +89,167 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(541, 354);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.label4.Location = new System.Drawing.Point(541, 375);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "Criterio";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(520, 331);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.label5.Location = new System.Drawing.Point(519, 347);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.Size = new System.Drawing.Size(76, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Resolucion";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(478, 308);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.label6.Location = new System.Drawing.Point(464, 319);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.Size = new System.Drawing.Size(131, 20);
             this.label6.TabIndex = 11;
             this.label6.Text = "Rango a Medir Final";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 354);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.label3.Location = new System.Drawing.Point(50, 375);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.Size = new System.Drawing.Size(134, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Unidad de Medicion";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 331);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.label2.Location = new System.Drawing.Point(32, 347);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Metodo Comprobacion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(130, 308);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 11F);
+            this.label1.Location = new System.Drawing.Point(148, 319);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(36, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Item";
             // 
             // txtCriterio
             // 
-            this.txtCriterio.Location = new System.Drawing.Point(583, 350);
+            this.txtCriterio.Depth = 0;
+            this.txtCriterio.Hint = "";
+            this.txtCriterio.Location = new System.Drawing.Point(605, 374);
+            this.txtCriterio.MaxLength = 32767;
+            this.txtCriterio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(100, 20);
+            this.txtCriterio.PasswordChar = '\0';
+            this.txtCriterio.ReadOnly = false;
+            this.txtCriterio.SelectedText = "";
+            this.txtCriterio.SelectionLength = 0;
+            this.txtCriterio.SelectionStart = 0;
+            this.txtCriterio.Size = new System.Drawing.Size(100, 23);
             this.txtCriterio.TabIndex = 7;
+            this.txtCriterio.TabStop = false;
             this.txtCriterio.Text = "0,00";
             this.txtCriterio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCriterio.UseSystemPasswordChar = false;
             this.txtCriterio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRango_KeyPress);
             this.txtCriterio.Validated += new System.EventHandler(this.txtRango_Validated);
             // 
             // txtResolucion
             // 
-            this.txtResolucion.Location = new System.Drawing.Point(583, 327);
+            this.txtResolucion.Depth = 0;
+            this.txtResolucion.Hint = "";
+            this.txtResolucion.Location = new System.Drawing.Point(605, 346);
+            this.txtResolucion.MaxLength = 32767;
+            this.txtResolucion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtResolucion.Name = "txtResolucion";
-            this.txtResolucion.Size = new System.Drawing.Size(100, 20);
+            this.txtResolucion.PasswordChar = '\0';
+            this.txtResolucion.ReadOnly = false;
+            this.txtResolucion.SelectedText = "";
+            this.txtResolucion.SelectionLength = 0;
+            this.txtResolucion.SelectionStart = 0;
+            this.txtResolucion.Size = new System.Drawing.Size(100, 23);
             this.txtResolucion.TabIndex = 6;
+            this.txtResolucion.TabStop = false;
             this.txtResolucion.Text = "0,00";
             this.txtResolucion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtResolucion.UseSystemPasswordChar = false;
             this.txtResolucion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRango_KeyPress);
             this.txtResolucion.Validated += new System.EventHandler(this.txtRango_Validated);
             // 
             // txtRango
             // 
-            this.txtRango.Location = new System.Drawing.Point(583, 304);
+            this.txtRango.Depth = 0;
+            this.txtRango.Hint = "";
+            this.txtRango.Location = new System.Drawing.Point(605, 318);
+            this.txtRango.MaxLength = 32767;
+            this.txtRango.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtRango.Name = "txtRango";
-            this.txtRango.Size = new System.Drawing.Size(100, 20);
+            this.txtRango.PasswordChar = '\0';
+            this.txtRango.ReadOnly = false;
+            this.txtRango.SelectedText = "";
+            this.txtRango.SelectionLength = 0;
+            this.txtRango.SelectionStart = 0;
+            this.txtRango.Size = new System.Drawing.Size(100, 23);
             this.txtRango.TabIndex = 5;
+            this.txtRango.TabStop = false;
             this.txtRango.Text = "0.00";
             this.txtRango.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRango.UseSystemPasswordChar = false;
             this.txtRango.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRango_KeyPress);
             this.txtRango.Validated += new System.EventHandler(this.txtRango_Validated);
             // 
             // txtUnidad
             // 
-            this.txtUnidad.Location = new System.Drawing.Point(160, 350);
+            this.txtUnidad.Depth = 0;
+            this.txtUnidad.Hint = "";
+            this.txtUnidad.Location = new System.Drawing.Point(188, 374);
+            this.txtUnidad.MaxLength = 32767;
+            this.txtUnidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUnidad.Name = "txtUnidad";
-            this.txtUnidad.Size = new System.Drawing.Size(100, 20);
+            this.txtUnidad.PasswordChar = '\0';
+            this.txtUnidad.ReadOnly = false;
+            this.txtUnidad.SelectedText = "";
+            this.txtUnidad.SelectionLength = 0;
+            this.txtUnidad.SelectionStart = 0;
+            this.txtUnidad.Size = new System.Drawing.Size(100, 23);
             this.txtUnidad.TabIndex = 4;
+            this.txtUnidad.TabStop = false;
             this.txtUnidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtUnidad.UseSystemPasswordChar = false;
             this.txtUnidad.TextChanged += new System.EventHandler(this.txtUnidad_TextChanged);
             // 
             // txtMetodo
             // 
-            this.txtMetodo.Location = new System.Drawing.Point(160, 327);
+            this.txtMetodo.Depth = 0;
+            this.txtMetodo.Hint = "";
+            this.txtMetodo.Location = new System.Drawing.Point(188, 346);
+            this.txtMetodo.MaxLength = 32767;
+            this.txtMetodo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMetodo.Name = "txtMetodo";
-            this.txtMetodo.Size = new System.Drawing.Size(277, 20);
+            this.txtMetodo.PasswordChar = '\0';
+            this.txtMetodo.ReadOnly = false;
+            this.txtMetodo.SelectedText = "";
+            this.txtMetodo.SelectionLength = 0;
+            this.txtMetodo.SelectionStart = 0;
+            this.txtMetodo.Size = new System.Drawing.Size(277, 23);
             this.txtMetodo.TabIndex = 3;
+            this.txtMetodo.TabStop = false;
+            this.txtMetodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMetodo.UseSystemPasswordChar = false;
             this.txtMetodo.TextChanged += new System.EventHandler(this.txtMetodo_TextChanged);
             // 
             // txtItem
@@ -191,15 +257,19 @@
             this.txtItem.Depth = 0;
             this.txtItem.Enabled = false;
             this.txtItem.Hint = "";
-            this.txtItem.Location = new System.Drawing.Point(160, 304);
+            this.txtItem.Location = new System.Drawing.Point(188, 318);
+            this.txtItem.MaxLength = 32767;
             this.txtItem.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtItem.Name = "txtItem";
             this.txtItem.PasswordChar = '\0';
+            this.txtItem.ReadOnly = false;
             this.txtItem.SelectedText = "";
             this.txtItem.SelectionLength = 0;
             this.txtItem.SelectionStart = 0;
             this.txtItem.Size = new System.Drawing.Size(100, 23);
             this.txtItem.TabIndex = 2;
+            this.txtItem.TabStop = false;
+            this.txtItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtItem.UseSystemPasswordChar = false;
             // 
             // dataItems
@@ -235,7 +305,7 @@
             this.dataItems.EnableHeadersVisualStyles = false;
             this.dataItems.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dataItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataItems.Location = new System.Drawing.Point(25, 25);
+            this.dataItems.Location = new System.Drawing.Point(25, 36);
             this.dataItems.MultiSelect = false;
             this.dataItems.Name = "dataItems";
             this.dataItems.ReadOnly = true;
@@ -251,7 +321,7 @@
             this.dataItems.RowHeadersVisible = false;
             this.dataItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataItems.Size = new System.Drawing.Size(775, 271);
+            this.dataItems.Size = new System.Drawing.Size(775, 275);
             this.dataItems.TabIndex = 1;
             this.dataItems.SelectionChanged += new System.EventHandler(this.dataItems_SelectionChanged);
             this.dataItems.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataItems_MouseClick);
@@ -264,7 +334,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(228, 458);
+            this.btnCancelar.Location = new System.Drawing.Point(228, 490);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 42);
@@ -284,7 +354,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(16, 458);
+            this.btnAgregar.Location = new System.Drawing.Point(16, 490);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(96, 42);
@@ -304,7 +374,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(122, 458);
+            this.btnNuevo.Location = new System.Drawing.Point(122, 490);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(0);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(96, 42);
@@ -333,11 +403,32 @@
             this.eliminarItemToolStripMenuItem.Text = "Eliminar Item";
             this.eliminarItemToolStripMenuItem.Click += new System.EventHandler(this.eliminarItemToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panel1.Controls.Add(this.bunifuCustomLabel1);
+            this.panel1.Location = new System.Drawing.Point(23, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 28);
+            this.panel1.TabIndex = 9;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(11, 5);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(219, 17);
+            this.bunifuCustomLabel1.TabIndex = 0;
+            this.bunifuCustomLabel1.Text = "Mantenedor Item de Comprobacion";
+            // 
             // FrmItemsComprobacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 510);
+            this.ClientSize = new System.Drawing.Size(859, 545);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
@@ -353,6 +444,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
             this.MenuContextual.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -363,11 +456,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCriterio;
-        private System.Windows.Forms.TextBox txtResolucion;
-        private System.Windows.Forms.TextBox txtRango;
-        private System.Windows.Forms.TextBox txtUnidad;
-        private System.Windows.Forms.TextBox txtMetodo;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCriterio;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtResolucion;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtRango;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUnidad;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtMetodo;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtItem;
         private MetroFramework.Controls.MetroGrid dataItems;
         private System.Windows.Forms.Label label4;
@@ -379,5 +472,7 @@
         private System.Windows.Forms.ErrorProvider errorIcono;
         private System.Windows.Forms.ContextMenuStrip MenuContextual;
         private System.Windows.Forms.ToolStripMenuItem eliminarItemToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
     }
 }
