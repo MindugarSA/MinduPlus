@@ -28,6 +28,7 @@ namespace CapaPresentacion
         public delegate void LaunchEvent();
         public event LaunchEvent EnviarEvento;
 
+
         public FrmInstrumentosPrecision( ref Panel prmPnlParent , ref StatusStrip prmStatusBarBottom , String prmId )
         {
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;

@@ -82,5 +82,29 @@ namespace CapaPresentacion
             Obj.Height = Obj.Height - 8;
             Obj.Width = Obj.Width - 8;
         }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            panel3.BackColor = Color.FromArgb(224, 224, 224);
+            panel3.Height -= 1;
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            panel3.BackColor = Color.FromArgb(255, 152, 0);
+            panel3.Height += 1;
+        }
+
+        private void txtCalibra_Leave(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(224, 224, 224);
+            panel2.Height -= 1;
+        }
+
+        private void txtCalibra_Enter(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(255, 152, 0);
+            panel2.Height += 1;
+        }
     }
 }

@@ -298,7 +298,7 @@ Partial Class FrmSolicPermHrasExt
         Me.SplitContainer1.Panel2.Controls.Add(Me.pnlCentral)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Lbl_Titulo)
         Me.SplitContainer1.Size = New System.Drawing.Size(1908, 798)
-        Me.SplitContainer1.SplitterDistance = 246
+        Me.SplitContainer1.SplitterDistance = 241
         Me.SplitContainer1.TabIndex = 0
         '
         'TreeView1
@@ -375,7 +375,7 @@ Partial Class FrmSolicPermHrasExt
         Me.pnlCentral.Controls.Add(Me.TabControl1)
         Me.pnlCentral.Location = New System.Drawing.Point(4, 53)
         Me.pnlCentral.Name = "pnlCentral"
-        Me.pnlCentral.Size = New System.Drawing.Size(1621, 740)
+        Me.pnlCentral.Size = New System.Drawing.Size(1626, 740)
         Me.pnlCentral.TabIndex = 47
         '
         'BtnVolver2
@@ -426,9 +426,9 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.Pnl_SolPermisos.BackColor = System.Drawing.Color.White
         Me.Pnl_SolPermisos.Controls.Add(Me.Pnl_SolicitudPermisos)
-        Me.Pnl_SolPermisos.Location = New System.Drawing.Point(15, 16)
+        Me.Pnl_SolPermisos.Location = New System.Drawing.Point(6, 16)
         Me.Pnl_SolPermisos.Name = "Pnl_SolPermisos"
-        Me.Pnl_SolPermisos.Size = New System.Drawing.Size(947, 514)
+        Me.Pnl_SolPermisos.Size = New System.Drawing.Size(977, 580)
         Me.Pnl_SolPermisos.TabIndex = 41
         '
         'Pnl_SolicitudPermisos
@@ -1060,7 +1060,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfech.Location = New System.Drawing.Point(673, 8)
-        Me.dtpfech.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpfech.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpfech.Name = "dtpfech"
         Me.dtpfech.Size = New System.Drawing.Size(125, 29)
         Me.dtpfech.TabIndex = 62
@@ -1447,7 +1447,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaTermino.Location = New System.Drawing.Point(117, 46)
-        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpFechaTermino.Name = "dtpFechaTermino"
         Me.dtpFechaTermino.Size = New System.Drawing.Size(109, 29)
         Me.dtpFechaTermino.TabIndex = 4
@@ -1456,7 +1456,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInicio.Location = New System.Drawing.Point(117, 9)
-        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpFechaInicio.Name = "dtpFechaInicio"
         Me.dtpFechaInicio.Size = New System.Drawing.Size(108, 29)
         Me.dtpFechaInicio.TabIndex = 3
@@ -1713,7 +1713,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTermino.Location = New System.Drawing.Point(73, 132)
-        Me.dtpTermino.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpTermino.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpTermino.Name = "dtpTermino"
         Me.dtpTermino.Size = New System.Drawing.Size(125, 29)
         Me.dtpTermino.TabIndex = 40
@@ -1723,7 +1723,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicio.Location = New System.Drawing.Point(73, 98)
-        Me.dtpInicio.MinimumSize = New System.Drawing.Size(4, 29)
+        Me.dtpInicio.MinimumSize = New System.Drawing.Size(0, 29)
         Me.dtpInicio.Name = "dtpInicio"
         Me.dtpInicio.Size = New System.Drawing.Size(125, 29)
         Me.dtpInicio.TabIndex = 39
@@ -2865,7 +2865,7 @@ Partial Class FrmSolicPermHrasExt
         '
         'Lbl_Titulo
         '
-        Me.Lbl_Titulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Lbl_Titulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Lbl_Titulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.Lbl_Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_Titulo.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2873,7 +2873,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Lbl_Titulo.Location = New System.Drawing.Point(0, 0)
         Me.Lbl_Titulo.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_Titulo.Name = "Lbl_Titulo"
-        Me.Lbl_Titulo.Size = New System.Drawing.Size(1658, 48)
+        Me.Lbl_Titulo.Size = New System.Drawing.Size(1663, 48)
         Me.Lbl_Titulo.TabIndex = 5
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

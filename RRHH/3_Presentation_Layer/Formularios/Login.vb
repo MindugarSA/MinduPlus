@@ -10,6 +10,9 @@ Public Class Login
     Dim cmd As SqlCommand
     Private p_User_Pass As String
     Public NewSystem As Boolean
+    Private FocusedTxt As Integer = 0
+
+    Private AnimationType As BunifuAnimatorNS.AnimationType = 8
 
     Private Sub Login_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
 
@@ -38,6 +41,7 @@ Public Class Login
         TxtBx_UserID.Tag = 1
 
         Me.ResumeLayout()
+        Animate_BackLogoIni()
 
     End Sub
 
@@ -50,7 +54,7 @@ Public Class Login
     Private Sub UsernameTextBox_Validated(sender As Object, e As EventArgs) Handles TxtBx_UserID.Validated
         Dim Errores As String = ""
 
-        If (Me.ActiveControl.Equals(sender)) Then ' Si se esta cerrando eñ Form, se salta la validacion.
+        If (Me.ActiveControl.Equals(sender)) Then ' Si se esta cerrando el Form, se salta la validacion.
             Exit Sub
         End If
 
@@ -104,25 +108,6 @@ Public Class Login
             End Try
 
 
-            'If NewSystem = False Then
-            '    cmd = New SqlCommand("Colaciones_Empresa", conexion)
-            '    cmd.CommandType = CommandType.StoredProcedure
-            '    conexion.Open()
-            '    cmd.Parameters.Add(New SqlParameter("@RutBuscado", TxtBx_UserID.Text))
-            '    Try
-            '        dt.Load(cmd.ExecuteReader())
-
-            '    Catch ex As Exception
-            '        Errores = ex.ToString
-            '        'MsgBox("Error al operar con la base de datos!", MsgBoxStyle.Critical, "Error!")
-
-            '    Finally
-            '        conexion.Close()
-            '    End Try
-            'End If
-            'Dim value As String = String.Format("{0}", dt.Rows(0)("f_finiquito"))
-            'value = String.Format("{0}", dt.Rows(0)("fecingreso"))
-
             If (dt.Rows.Count > 0) Then
 
                 If (dt.Rows(0)("IdEstado") < 0) Then
@@ -152,6 +137,7 @@ Public Class Login
 
                     'p_User_Pass = Trim(dt.Rows(0)("Pass").ToString)
                     TxtBx_Password.Focus()
+                    TxtBx_Password.Tag = 1
                     If MDIParent1.Lbl_Cod_ID.Text = "0" Then
                         TxtBx_ConfPass.Visible = True
                         TxtBx_ConfPass.Tag = 1
@@ -180,7 +166,7 @@ Public Class Login
         End If
     End Sub
 
-    '----------Funcion Declare tecla Entrer--------
+    '----------Funcion Declare tecla Enter--------
     Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
@@ -315,37 +301,40 @@ Public Class Login
 
     End Sub
 
-    Private Sub TxtBx_Select_Click(sender As Object, e As EventArgs) Handles TxtBx_Password.Click
-        If TxtBx_UserID.Tag = 1 Then
-            TxtBx_UserID.Tag = 0
-            TxtBx_Password.Tag = 1
-        ElseIf TxtBx_Password.Tag = 1 Then
-            TxtBx_UserID.Tag = 1
-            TxtBx_Password.Tag = 0
-        End If
-    End Sub
-
     Private Sub Bttn_1_Enter(sender As Object, e As EventArgs) Handles Label1.Click, Label9.Click, Label8.Click, Label7.Click, Label6.Click, Label5.Click, Label4.Click, Label3.Click, Label2.Click, Label12.Click, Label11.Click, Label10.Click
-        If TxtBx_UserID.Tag = 1 Then
-            If sender.text = "C" And TxtBx_UserID.Text <> "" Then
-                TxtBx_UserID.Text = Mid(TxtBx_UserID.Text, 1, Len(TxtBx_UserID.Text) - 1)
-            ElseIf sender.text <> "C" Then
-                TxtBx_UserID.Text = TxtBx_UserID.Text + sender.text
-            End If
 
-            TxtBx_UserID.Focus()
+        Select Case FocusedTxt
+            Case 1 'TxtBx_UserID
 
-        ElseIf TxtBx_Password.Tag = 1 Then
-            If sender.text = "C" And TxtBx_Password.Text <> "" Then
-                TxtBx_Password.Text = Mid(TxtBx_Password.Text, 1, Len(TxtBx_Password.Text) - 1)
-            ElseIf sender.text <> "C" Then
-                TxtBx_Password.Text = TxtBx_Password.Text + sender.text
-            End If
-            TxtBx_Password.Focus()
-        End If
+                If sender.text = "C" And TxtBx_UserID.Text <> "" Then
+                    SendKeys.Send("{BACKSPACE}")
+                ElseIf sender.text <> "C" Then
+                    SendKeys.Send(sender.text)
+                End If
+
+                TxtBx_UserID.Focus()
+
+            Case 2 'TxtBx_Password
+
+                If sender.text = "C" And TxtBx_Password.Text <> "" Then
+                    SendKeys.Send("{BACKSPACE}")
+                ElseIf sender.text <> "C" Then
+                    SendKeys.Send(sender.text)
+                End If
+                TxtBx_Password.Focus()
+
+            Case 3 'TxtBx_ConfPass
+
+                If sender.text = "C" And TxtBx_ConfPass.Text <> "" Then
+                    SendKeys.Send("{BACKSPACE}")
+                ElseIf sender.text <> "C" Then
+                    SendKeys.Send(sender.text)
+                End If
+                TxtBx_ConfPass.Focus()
+
+        End Select
+
     End Sub
-
-
 
     Private Sub Bttn_Login_MouseEnter(sender As Object, e As EventArgs) Handles Bttn_Login.MouseEnter
 
@@ -380,6 +369,7 @@ Public Class Login
 
     Private Sub TxtBx_UserID_Enter(sender As Object, e As EventArgs) Handles TxtBx_UserID.Enter
 
+        FocusedTxt = 1
         If (TxtBx_UserID.Text.Trim = "") Then
             UsernameLabel.Visible = True
         End If
@@ -391,26 +381,142 @@ Public Class Login
 
         If (UsernameLabel.Visible = True) Then
             UsernameLabel.Visible = False
-        ElseIf (e.KeyCode = Keys.Enter) Then
-            SendKeys.Send("{TAB}")
+        ElseIf (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab) Then
+            Parent.SelectNextControl(TxtBx_UserID, True, True, True, True)
+            e.Handled = True
+            e.SuppressKeyPress = True
         End If
 
     End Sub
 
-    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged
+    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged ' Oculta la Etiqueta que hace de Hint
         If (UsernameLabel.Visible = True) Then
             UsernameLabel.Visible = False
         End If
     End Sub
 
-
-    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
         UsernameLabel.Top = TxtBx_UserID.Top + 5
     End Sub
 
-    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown
+    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown ' Al presionar enter, envia TAB
         If (e.KeyCode = Keys.Enter) Then
             SendKeys.Send("{TAB}")
+            e.Handled = e.SuppressKeyPress = True
+            e.Handled = True
+            e.SuppressKeyPress = True
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick 'Ejecuta la Animacion en cada TICK
+
+        If TmrBackAnimation.Interval = 5000 Then
+            TmrBackAnimation.Stop()
+            TmrBackAnimation.Enabled = False
+            'If Entrada > 1 Then
+            Animate_BackLogo()
+            ' End If
+        End If
+
+    End Sub
+
+    Private Sub Animate_BackLogoIni() ' Animacion Inicial SHOW
+
+        Try
+            PictureBox1.Visible = False
+            PictureBox1.BringToFront()
+
+            BunifuTransition1.AnimationType = AnimationType
+            BunifuTransition1.ShowSync(PictureBox1)
+
+            Select Case AnimationType
+                Case 4
+                    AnimationType = 8
+            'Case 7
+            '    AnimationType = 8
+                Case 8
+                    AnimationType = 4
+            End Select
+
+            TmrBackAnimation.Enabled = True
+            TmrBackAnimation.Start()
+        Catch ex As Exception
+
+        End Try
+
+
+    End Sub
+
+    Private Sub Animate_BackLogo() ' Animacion Activada por el TIMER
+
+        Try
+            If (PictureBox1.Visible = True) Then
+                BunifuTransition1.HideSync(PictureBox1)
+            End If
+
+            PictureBox1.Visible = False
+            PictureBox1.BringToFront()
+
+            BunifuTransition1.AnimationType = AnimationType
+            BunifuTransition1.ShowSync(PictureBox1)
+
+            Select Case AnimationType
+                Case 4
+                    AnimationType = 8
+            'Case 7
+            '    AnimationType = 8
+                Case 8
+                    AnimationType = 4
+            End Select
+
+            TmrBackAnimation.Enabled = True
+            TmrBackAnimation.Start()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter ' Al hacer Focus se cambia el Tag
+
+        If TxtBx_UserID.Text = "" Then
+            TxtBx_UserID.Focus()
+            FocusedTxt = 1
+        Else
+            FocusedTxt = 2
+        End If
+
+    End Sub
+
+    Private Sub TxtBx_UserID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtBx_UserID.KeyPress
+
+        If e.KeyChar = Convert.ToChar(Keys.Back) OrElse
+            e.KeyChar = Convert.ToChar(Keys.Delete) OrElse
+            e.KeyChar = Convert.ToChar(Keys.Left) OrElse
+            e.KeyChar = Convert.ToChar(Keys.Right) OrElse
+            e.KeyChar.ToString.ToUpper() = Convert.ToChar("K") OrElse
+            IsNumber(e.KeyChar.ToString()) Then
+
+            Dim tbtmp As TextBox = TryCast(sender, TextBox)
+            If e.KeyChar = "."c Then
+                e.Handled = True
+            Else
+                e.Handled = False
+            End If
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Public Function IsNumber(inputvalue As String) As Boolean
+
+        Dim isnumber__1 As New System.Text.RegularExpressions.Regex("^[0-9]*$")
+        'Dim isnumber__1 As New System.Text.RegularExpressions.Regex("^-?[0-9]+(\.?[0-9]+)?$")
+        Return isnumber__1.IsMatch(inputvalue)
+
+    End Function
+
+    Private Sub TxtBx_ConfPass_Enter(sender As Object, e As EventArgs) Handles TxtBx_ConfPass.Enter
+        FocusedTxt = 3
     End Sub
 End Class

@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbFrecuenciaU = new MetroFramework.Controls.MetroComboBox();
             this.cmbFrecuenciaN = new MetroFramework.Controls.MetroComboBox();
@@ -41,13 +42,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtItem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dataGridView1 = new MetroFramework.Controls.MetroGrid();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.txtItem = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,6 +70,26 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda Intrumentos";
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::CapaPresentacion.Properties.Resources.refresh_24;
+            this.button5.Location = new System.Drawing.Point(370, 24);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 30);
+            this.button5.TabIndex = 6;
+            this.metroToolTip1.SetToolTip(this.button5, "Carga Todos Los Instrumentos");
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button5.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // groupBox2
             // 
@@ -151,7 +171,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -178,6 +198,26 @@
             this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Buscar:";
+            // 
+            // txtItem
+            // 
+            this.txtItem.Depth = 0;
+            this.txtItem.Hint = "";
+            this.txtItem.Location = new System.Drawing.Point(69, 26);
+            this.txtItem.MaxLength = 32767;
+            this.txtItem.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtItem.Name = "txtItem";
+            this.txtItem.PasswordChar = '\0';
+            this.txtItem.ReadOnly = false;
+            this.txtItem.SelectedText = "";
+            this.txtItem.SelectionLength = 0;
+            this.txtItem.SelectionStart = 0;
+            this.txtItem.Size = new System.Drawing.Size(247, 23);
+            this.txtItem.TabIndex = 1;
+            this.txtItem.TabStop = false;
+            this.txtItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtItem.UseSystemPasswordChar = false;
+            this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             // 
             // dataGridView1
             // 
@@ -237,7 +277,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -257,7 +297,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -275,51 +315,11 @@
             this.btnCancelar.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.btnCancelar.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::CapaPresentacion.Properties.Resources.refresh_24;
-            this.button5.Location = new System.Drawing.Point(370, 24);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 30);
-            this.button5.TabIndex = 6;
-            this.metroToolTip1.SetToolTip(this.button5, "Carga Todos Los Instrumentos");
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.button5.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
-            this.button5.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
-            // 
             // metroToolTip1
             // 
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // txtItem
-            // 
-            this.txtItem.Depth = 0;
-            this.txtItem.Hint = "";
-            this.txtItem.Location = new System.Drawing.Point(69, 26);
-            this.txtItem.MaxLength = 32767;
-            this.txtItem.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtItem.Name = "txtItem";
-            this.txtItem.PasswordChar = '\0';
-            this.txtItem.ReadOnly = false;
-            this.txtItem.SelectedText = "";
-            this.txtItem.SelectionLength = 0;
-            this.txtItem.SelectionStart = 0;
-            this.txtItem.Size = new System.Drawing.Size(247, 23);
-            this.txtItem.TabIndex = 1;
-            this.txtItem.TabStop = false;
-            this.txtItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtItem.UseSystemPasswordChar = false;
-            this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             // 
             // FrmAgregarInstrumento
             // 

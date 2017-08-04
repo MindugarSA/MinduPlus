@@ -6,6 +6,7 @@ Public Class MDIParent1
     Dim dt As New DataTable
     Dim cmd As SqlCommand
 
+    Private Entrada As Integer = 0
     Public TiempoActivo As Integer
     Private m_ChildFormNumber As Integer
     Public Tiempo_Str As Integer = 30
@@ -14,6 +15,8 @@ Public Class MDIParent1
 
     Private Const DESPLAZAMIENTO As Integer = 25
     Private Const CANTIDAD_DESPLAZO As Integer = 25
+
+    Private AnimationType As BunifuAnimatorNS.AnimationType = 1
 
     Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
         Get
@@ -25,13 +28,7 @@ Public Class MDIParent1
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
-        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
-        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
-        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
-        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 16)
-        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
-        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+        Configurar_MeterialSkin_Styles_Inicio()
 
         conexion.ConnectionString = Conection.Cn
         Me.ShowInTaskbar = True
@@ -42,6 +39,10 @@ Public Class MDIParent1
 
         Me.WindowState = FormWindowState.Minimized
         Me.WindowState = FormWindowState.Maximized
+
+        PictureBox3.Top = (Panel2.Height / 2) - (PictureBox3.Height / 2)
+        PictureBox3.Left = (Panel2.Width / 2) - (PictureBox3.Width / 2)
+
 
         PictureBox2_Click(sender, e)
 
@@ -363,6 +364,7 @@ Public Class MDIParent1
 
         Cerrar_Forms_Children()
         Visualizar_Tiles_MDI()
+        Configurar_MeterialSkin_Styles_Inicio()
 
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
@@ -471,6 +473,7 @@ Public Class MDIParent1
         If RevisaAcceso(90000) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
+            Configurar_MeterialSkin_Styles_Pantallas()
             Dim NewMDIChild As New FrmSolicPermHrasExt(0)
             NewMDIChild.MdiParent = Me
             NewMDIChild.Dock = DockStyle.Fill
@@ -619,6 +622,7 @@ Public Class MDIParent1
         pnlMovingRight.Visible = False
         pnlMovingRight2.Visible = False
         pnlMovingTop.Visible = False
+        Hide_BackLogo()
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
         '  (From tb As MetroFramework.Controls.MetroTile In Me.Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
         '   Select tb).ToList()
@@ -640,6 +644,7 @@ Public Class MDIParent1
         pnlMovingRight.Visible = True
         pnlMovingRight2.Visible = True
         pnlMovingTop.Visible = True
+
 
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
         '  (From tb As MetroFramework.Controls.MetroTile In Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
@@ -675,17 +680,68 @@ Public Class MDIParent1
             TmrDesplaza.Stop()
             TmrDesplaza.Enabled = False
             Tiempo_Animacion = 0
+            If Entrada > 1 Then
+                Animate_BackLogo()
+            End If
         End If
-
     End Sub
 
     Public Sub Desplazamiento_Tiles()
+
+        Entrada += 1
         pnlMovingRight.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
         pnlMovingRight2.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
         pnlMovingTop.Top += DESPLAZAMIENTO * CANTIDAD_DESPLAZO
 
         TmrDesplaza.Enabled = True
         TmrDesplaza.Start()
+
+
+    End Sub
+
+    Private Sub Animate_BackLogo()
+
+        If (PictureBox3.Visible = True) Then
+            BunifuTransition1.HideSync(PictureBox3)
+        End If
+
+        PictureBox3.Visible = False
+        PictureBox3.BringToFront()
+
+        BunifuTransition1.AnimationType = AnimationType
+        BunifuTransition1.ShowSync(PictureBox3)
+
+        If AnimationType = 13 Then
+            AnimationType = 1
+        Else
+            AnimationType += 1
+        End If
+
+        'TmrBackAnimation.Enabled = True
+        'TmrBackAnimation.Start()
+
+    End Sub
+
+    Private Sub Hide_BackLogo()
+        TmrBackAnimation.Stop()
+        TmrBackAnimation.Enabled = False
+        Try
+            BunifuTransition1.HideSync(PictureBox3)
+            PictureBox3.Visible = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TmrBackAnimation_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick
+
+        If TmrBackAnimation.Interval = 5000 Then
+            TmrBackAnimation.Stop()
+            TmrBackAnimation.Enabled = False
+            If Entrada > 1 Then
+                Animate_BackLogo()
+            End If
+        End If
 
     End Sub
 
@@ -798,4 +854,30 @@ Public Class MDIParent1
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         End If
     End Sub
+
+    Private Sub Configurar_MeterialSkin_Styles_Inicio()
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 16)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
+    End Sub
+
+    Private Sub Configurar_MeterialSkin_Styles_Pantallas()
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 11)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
+    End Sub
+
+
 End Class

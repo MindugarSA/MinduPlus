@@ -90,7 +90,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label4.Location = new System.Drawing.Point(541, 375);
+            this.label4.Location = new System.Drawing.Point(609, 375);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 20);
             this.label4.TabIndex = 13;
@@ -100,7 +100,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label5.Location = new System.Drawing.Point(519, 347);
+            this.label5.Location = new System.Drawing.Point(587, 347);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 20);
             this.label5.TabIndex = 12;
@@ -110,7 +110,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label6.Location = new System.Drawing.Point(464, 319);
+            this.label6.Location = new System.Drawing.Point(532, 319);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 20);
             this.label6.TabIndex = 11;
@@ -120,7 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label3.Location = new System.Drawing.Point(50, 375);
+            this.label3.Location = new System.Drawing.Point(37, 375);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 20);
             this.label3.TabIndex = 10;
@@ -130,7 +130,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label2.Location = new System.Drawing.Point(32, 347);
+            this.label2.Location = new System.Drawing.Point(19, 347);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 9;
@@ -140,7 +140,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.label1.Location = new System.Drawing.Point(148, 319);
+            this.label1.Location = new System.Drawing.Point(135, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 20);
             this.label1.TabIndex = 8;
@@ -150,7 +150,7 @@
             // 
             this.txtCriterio.Depth = 0;
             this.txtCriterio.Hint = "";
-            this.txtCriterio.Location = new System.Drawing.Point(605, 374);
+            this.txtCriterio.Location = new System.Drawing.Point(673, 374);
             this.txtCriterio.MaxLength = 32767;
             this.txtCriterio.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCriterio.Name = "txtCriterio";
@@ -172,7 +172,7 @@
             // 
             this.txtResolucion.Depth = 0;
             this.txtResolucion.Hint = "";
-            this.txtResolucion.Location = new System.Drawing.Point(605, 346);
+            this.txtResolucion.Location = new System.Drawing.Point(673, 346);
             this.txtResolucion.MaxLength = 32767;
             this.txtResolucion.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtResolucion.Name = "txtResolucion";
@@ -194,7 +194,7 @@
             // 
             this.txtRango.Depth = 0;
             this.txtRango.Hint = "";
-            this.txtRango.Location = new System.Drawing.Point(605, 318);
+            this.txtRango.Location = new System.Drawing.Point(673, 318);
             this.txtRango.MaxLength = 32767;
             this.txtRango.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtRango.Name = "txtRango";
@@ -216,7 +216,7 @@
             // 
             this.txtUnidad.Depth = 0;
             this.txtUnidad.Hint = "";
-            this.txtUnidad.Location = new System.Drawing.Point(188, 374);
+            this.txtUnidad.Location = new System.Drawing.Point(175, 374);
             this.txtUnidad.MaxLength = 32767;
             this.txtUnidad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUnidad.Name = "txtUnidad";
@@ -236,7 +236,7 @@
             // 
             this.txtMetodo.Depth = 0;
             this.txtMetodo.Hint = "";
-            this.txtMetodo.Location = new System.Drawing.Point(188, 346);
+            this.txtMetodo.Location = new System.Drawing.Point(175, 346);
             this.txtMetodo.MaxLength = 32767;
             this.txtMetodo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtMetodo.Name = "txtMetodo";
@@ -245,7 +245,7 @@
             this.txtMetodo.SelectedText = "";
             this.txtMetodo.SelectionLength = 0;
             this.txtMetodo.SelectionStart = 0;
-            this.txtMetodo.Size = new System.Drawing.Size(277, 23);
+            this.txtMetodo.Size = new System.Drawing.Size(345, 23);
             this.txtMetodo.TabIndex = 3;
             this.txtMetodo.TabStop = false;
             this.txtMetodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -257,7 +257,7 @@
             this.txtItem.Depth = 0;
             this.txtItem.Enabled = false;
             this.txtItem.Hint = "";
-            this.txtItem.Location = new System.Drawing.Point(188, 318);
+            this.txtItem.Location = new System.Drawing.Point(175, 318);
             this.txtItem.MaxLength = 32767;
             this.txtItem.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtItem.Name = "txtItem";
@@ -328,7 +328,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -348,7 +348,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -367,7 +367,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(162)))), ((int)(((byte)(26)))));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNuevo.Enabled = false;
             this.btnNuevo.FlatAppearance.BorderSize = 0;

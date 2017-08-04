@@ -25,7 +25,6 @@ namespace CapaPresentacion
         private string FrecUsado;
         private int Cont;
 
-        private AnimationManager _animationManager;
 
         public FrmIndividualizacion(DataGridViewRow IDInstrument, string Accion)
         {
@@ -262,38 +261,6 @@ namespace CapaPresentacion
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void AddTextBoxAnimation(TextBox sender)
-        {
-            sender.Refresh();
-            TextBox _baseTextBox = sender;
-            var g = Graphics.FromHwnd(sender.Handle);
-            //g.Clear(Parent.BackColor);
-
-            var lineY = _baseTextBox.Bottom - 3;
-            Brush DIVIDERS_BLACK_BRUSH = new SolidBrush(Color.FromArgb(224, 224, 224));
-            Brush PrimaryBrush = new SolidBrush(Color.FromArgb(255, 152, 0));
-
-
-            if (!_animationManager.IsAnimating())
-            {
-                //No animation
-                g.FillRectangle(_baseTextBox.Focused ? PrimaryBrush : DIVIDERS_BLACK_BRUSH, _baseTextBox.Location.X, lineY, _baseTextBox.Width, _baseTextBox.Focused ? 2 : 1);
-            }
-            else
-            {
-                //Animate
-                int animationWidth = (int)(_baseTextBox.Width * _animationManager.GetProgress());
-                int halfAnimationWidth = animationWidth / 2;
-                int animationStart = _baseTextBox.Location.X + _baseTextBox.Width / 2;
-
-                //Unfocused background
-                g.FillRectangle(DIVIDERS_BLACK_BRUSH, _baseTextBox.Location.X, lineY, _baseTextBox.Width, 1);
-
-                //Animated focus transition
-                g.FillRectangle(PrimaryBrush, animationStart - halfAnimationWidth, lineY, animationWidth, 2);
-            }
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
