@@ -69,7 +69,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodEmp = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textOtros = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -118,7 +118,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCodEmp);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textOtros);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 66);
             this.groupBox1.Name = "groupBox1";
@@ -634,18 +634,18 @@
             this.button1.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
-            // textBox1
+            // textOtros
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.textBox1.Location = new System.Drawing.Point(151, 288);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(439, 66);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textOtros.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textOtros.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.textOtros.Location = new System.Drawing.Point(151, 288);
+            this.textOtros.Multiline = true;
+            this.textOtros.Name = "textOtros";
+            this.textOtros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textOtros.Size = new System.Drawing.Size(439, 66);
+            this.textOtros.TabIndex = 30;
+            this.textOtros.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textOtros.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // errorIcono
             // 
@@ -774,7 +774,7 @@
         private System.Windows.Forms.TextBox txtItemSelec;
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textOtros;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

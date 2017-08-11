@@ -63,9 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTableExtensions.cs" />
     <Compile Include="NCalibracion.cs" />
+    <Compile Include="NCalibraItem.cs" />
     <Compile Include="NEmpleadoIndustrial.cs" />
     <Compile Include="NFrecuencia.cs" />
+    <Compile Include="NIdentBaja.cs" />
     <Compile Include="NIdentInstrumento.cs" />
     <Compile Include="NInstruItems.cs" />
     <Compile Include="NInstrumento.cs" />

@@ -114,7 +114,8 @@ namespace CapaPresentacion
                                                         Convert.ToString(txtCodEmp.Text),
                                                         Convert.ToString(txtNomEmp.Text),
                                                         Convert.ToString(txtCertificado.Text),
-                                                        Convert.ToString(txtMarca.Text));
+                                                        Convert.ToString(txtMarca.Text),
+                                                        Convert.ToString(textOtros.Text.Trim()));
                 }
                 else
                 {
@@ -129,7 +130,9 @@ namespace CapaPresentacion
                                                         Convert.ToString(txtCodEmp.Text),
                                                         Convert.ToString(txtNomEmp.Text),
                                                         Convert.ToString(txtCertificado.Text),
-                                                        Convert.ToString(txtMarca.Text));
+                                                        Convert.ToString(txtMarca.Text),
+                                                        Convert.ToString(textOtros.Text.Trim()));
+
                 }
             }
 
@@ -205,6 +208,7 @@ namespace CapaPresentacion
             dtpProxCalib.Text = Convert.ToString(IDInstrumento.Cells[8].Value);
             txtCertificado.Text = Convert.ToString(IDInstrumento.Cells[9].Value);
             txtMarca.Text = Convert.ToString(IDInstrumento.Cells[10].Value);
+            textOtros.Text = Convert.ToString(IDInstrumento.Cells[12].Value);
             cmbEstado.SelectedItem = Convert.ToString(IDInstrumento.Cells[3].Value);
         }
 

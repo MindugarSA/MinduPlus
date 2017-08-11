@@ -16,7 +16,7 @@ Public Class MDIParent1
     Private Const DESPLAZAMIENTO As Integer = 25
     Private Const CANTIDAD_DESPLAZO As Integer = 25
 
-    Private AnimationType As BunifuAnimatorNS.AnimationType = 1
+    Private AnimationType As BunifuAnimatorNS.AnimationType = 10
 
     Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
         Get
@@ -98,8 +98,6 @@ Public Class MDIParent1
         End If
     End Sub
 
-
-
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30003) Then
             Dim NewMDIChild As New Frm_Informes()
@@ -174,8 +172,6 @@ Public Class MDIParent1
         'End If
     End Sub
 
-
-
     Private Sub Button5_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30001) Then
 
@@ -192,13 +188,6 @@ Public Class MDIParent1
             NewMDIChild.WindowState = FormWindowState.Maximized
         End If
     End Sub
-
-
-
-
-
-
-
 
     Function RevisaAcceso(Campo As Integer) As Boolean
         dt.Reset()
@@ -242,8 +231,6 @@ Public Class MDIParent1
         'End If
     End Function
 
-
-
     Private Sub TiempoIngreso_Tick(sender As Object, e As EventArgs) Handles TiempoIngreso.Tick
         TiempoActivo = TiempoActivo - 1
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
@@ -258,7 +245,6 @@ Public Class MDIParent1
         End If
 
     End Sub
-
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         '' Cree una nueva instancia del formulario secundario.
@@ -294,7 +280,6 @@ Public Class MDIParent1
         '    ' TODO: agregue código aquí para guardar el contenido actual del formulario en un archivo.
         'End If
     End Sub
-
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
@@ -344,8 +329,6 @@ Public Class MDIParent1
 
 
     End Sub
-
-
 
     Private Sub ResulucionToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Dim desktopSize As Size
@@ -655,14 +638,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter, PictureBox3.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave, PictureBox3.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -877,6 +860,10 @@ Public Class MDIParent1
         skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
         skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
 
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Animate_BackLogo()
     End Sub
 
 

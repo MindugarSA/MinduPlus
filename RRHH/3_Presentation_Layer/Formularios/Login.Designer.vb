@@ -48,11 +48,15 @@ Partial Class Login
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TxtBx_Password
@@ -73,6 +77,7 @@ Partial Class Login
         Me.TxtBx_Password.Name = "TxtBx_Password"
         Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.TxtBx_Password.ReadOnly = False
+        Me.TxtBx_Password.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.TxtBx_Password.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.TxtBx_Password.SelectedText = ""
         Me.TxtBx_Password.SelectionLength = 0
@@ -102,7 +107,6 @@ Partial Class Login
         Me.TxtBx_UserID.Name = "TxtBx_UserID"
         Me.TxtBx_UserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtBx_UserID.ReadOnly = False
-        Me.TxtBx_UserID.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.TxtBx_UserID.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.TxtBx_UserID.SelectedText = ""
         Me.TxtBx_UserID.SelectionLength = 0
@@ -110,7 +114,7 @@ Partial Class Login
         Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_UserID.TabIndex = 1
         Me.TxtBx_UserID.TabStop = False
-        Me.TxtBx_UserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtBx_UserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.TxtBx_UserID.UseSystemPasswordChar = False
         Me.TxtBx_UserID.WordWrap = True
         '
@@ -410,7 +414,7 @@ Partial Class Login
         Me.BunifuTransition1.SetDecoration(Me.TxtBx_ConfPass, BunifuAnimatorNS.DecorationType.None)
         Me.TxtBx_ConfPass.Depth = 0
         Me.TxtBx_ConfPass.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.TxtBx_ConfPass.Hint = "Repita contraseña"
+        Me.TxtBx_ConfPass.Hint = " Repita contraseña"
         Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 189)
         Me.TxtBx_ConfPass.MaxLength = 4
         Me.TxtBx_ConfPass.MouseState = MaterialSkin.MouseState.HOVER
@@ -478,6 +482,28 @@ Partial Class Login
         Me.BunifuTransition1.Interval = 40
         Me.BunifuTransition1.MaxAnimationTime = 4000
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = Global.RRHH.My.Resources.Resources.user__2_
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox3, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox3.Location = New System.Drawing.Point(435, 79)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox3.TabIndex = 16
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = Global.RRHH.My.Resources.Resources.lock__2_
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox4.Location = New System.Drawing.Point(435, 131)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox4.TabIndex = 17
+        Me.PictureBox4.TabStop = False
+        '
         'TmrBackAnimation
         '
         Me.TmrBackAnimation.Enabled = True
@@ -489,6 +515,8 @@ Partial Class Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 300)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PictureBox2)
@@ -508,6 +536,8 @@ Partial Class Login
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -537,4 +567,6 @@ Partial Class Login
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
     Friend WithEvents TmrBackAnimation As Timer
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class

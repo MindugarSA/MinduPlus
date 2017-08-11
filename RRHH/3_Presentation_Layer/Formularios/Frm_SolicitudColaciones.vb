@@ -915,5 +915,4 @@ Public Class Frm_SolicitudColacion
         listaControl.Add(TblLyutPnl_5)
     End Sub
 
-
 End Class

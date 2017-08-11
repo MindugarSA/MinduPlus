@@ -286,6 +286,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -298,7 +299,7 @@ Partial Class FrmSolicPermHrasExt
         Me.SplitContainer1.Panel2.Controls.Add(Me.pnlCentral)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Lbl_Titulo)
         Me.SplitContainer1.Size = New System.Drawing.Size(1908, 798)
-        Me.SplitContainer1.SplitterDistance = 241
+        Me.SplitContainer1.SplitterDistance = 240
         Me.SplitContainer1.TabIndex = 0
         '
         'TreeView1
@@ -375,7 +376,7 @@ Partial Class FrmSolicPermHrasExt
         Me.pnlCentral.Controls.Add(Me.TabControl1)
         Me.pnlCentral.Location = New System.Drawing.Point(4, 53)
         Me.pnlCentral.Name = "pnlCentral"
-        Me.pnlCentral.Size = New System.Drawing.Size(1626, 740)
+        Me.pnlCentral.Size = New System.Drawing.Size(1627, 740)
         Me.pnlCentral.TabIndex = 47
         '
         'BtnVolver2
@@ -2873,7 +2874,7 @@ Partial Class FrmSolicPermHrasExt
         Me.Lbl_Titulo.Location = New System.Drawing.Point(0, 0)
         Me.Lbl_Titulo.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_Titulo.Name = "Lbl_Titulo"
-        Me.Lbl_Titulo.Size = New System.Drawing.Size(1663, 48)
+        Me.Lbl_Titulo.Size = New System.Drawing.Size(1664, 48)
         Me.Lbl_Titulo.TabIndex = 5
         Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

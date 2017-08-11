@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInstrumentosPrecision));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,9 +65,11 @@
             this.btnItems = new System.Windows.Forms.Button();
             this.btnAsociarItem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.splitButton1 = new wyDay.Controls.SplitButton();
-            this.contextMenuIdent = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.darDeBajaAIndividualizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button6 = new System.Windows.Forms.Button();
+            this.contextMenuRepo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.informe1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informe2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informe3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBaja = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -83,7 +86,11 @@
             this.Certificado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuIdent = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.txtResponsable = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -95,22 +102,29 @@
             this.Fec_Calibracion2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuInstru = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarInstrumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.activarInstrumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtItemSelec = new System.Windows.Forms.TextBox();
             this.errorIcono = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.opcion1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcion2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcion3ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataInstrumentos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataItemsComp)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.contextMenuIdent.SuspendLayout();
+            this.contextMenuRepo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataIndividualizacion)).BeginInit();
+            this.contextMenuIdent.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCalibracion)).BeginInit();
             this.contextMenuInstru.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
+            this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataInstrumentos
@@ -243,7 +257,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.label4.Location = new System.Drawing.Point(173, 312);
+            this.label4.Location = new System.Drawing.Point(173, 315);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 19);
             this.label4.TabIndex = 6;
@@ -259,7 +273,7 @@
             "Activos",
             "Inactivos",
             "Todos"});
-            this.comboBox1.Location = new System.Drawing.Point(236, 308);
+            this.comboBox1.Location = new System.Drawing.Point(236, 313);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(104, 26);
             this.comboBox1.TabIndex = 6;
@@ -292,7 +306,7 @@
             this.txtInstru.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtInstru.Depth = 0;
             this.txtInstru.Hint = "";
-            this.txtInstru.Location = new System.Drawing.Point(461, 312);
+            this.txtInstru.Location = new System.Drawing.Point(461, 313);
             this.txtInstru.MaxLength = 32767;
             this.txtInstru.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtInstru.Name = "txtInstru";
@@ -333,7 +347,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.label1.Location = new System.Drawing.Point(407, 316);
+            this.label1.Location = new System.Drawing.Point(407, 315);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 19);
             this.label1.TabIndex = 3;
@@ -478,12 +492,13 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.splitButton1);
+            this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.cmbBaja);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.dataIndividualizacion);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI Light", 10F);
             this.groupBox3.Location = new System.Drawing.Point(13, 433);
             this.groupBox3.Name = "groupBox3";
@@ -492,37 +507,56 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Individualizacion de Instrumentos";
             // 
-            // splitButton1
+            // button6
             // 
-            this.splitButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.splitButton1.AutoSize = true;
-            this.splitButton1.BackColor = System.Drawing.Color.Khaki;
-            this.splitButton1.BackgroundImage = global::CapaPresentacion.Properties.Resources.Bnt;
-            this.splitButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitButton1.ContextMenuStrip = this.contextMenuIdent;
-            this.splitButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.splitButton1.Location = new System.Drawing.Point(307, 316);
-            this.splitButton1.Name = "splitButton1";
-            this.splitButton1.Size = new System.Drawing.Size(104, 29);
-            this.splitButton1.SplitMenuStrip = this.contextMenuIdent;
-            this.splitButton1.TabIndex = 5;
-            this.splitButton1.Text = "splitButton1";
-            this.splitButton1.UseVisualStyleBackColor = false;
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.ContextMenuStrip = this.contextMenuRepo;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.Location = new System.Drawing.Point(301, 314);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(138, 34);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Reportes   ";
+            this.metroToolTip1.SetToolTip(this.button6, "Abre la Pantalla para Actualizar los Datos\r\nde la Individualizacion Selecionada");
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button6_MouseClick);
             // 
-            // contextMenuIdent
+            // contextMenuRepo
             // 
-            this.contextMenuIdent.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.darDeBajaAIndividualizacionToolStripMenuItem});
-            this.contextMenuIdent.Name = "contextMenuIdent";
-            this.contextMenuIdent.Size = new System.Drawing.Size(235, 26);
+            this.contextMenuRepo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.contextMenuRepo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informe1ToolStripMenuItem,
+            this.informe2ToolStripMenuItem,
+            this.informe3ToolStripMenuItem});
+            this.contextMenuRepo.Name = "contextMenuRepo";
+            this.contextMenuRepo.Size = new System.Drawing.Size(139, 76);
             // 
-            // darDeBajaAIndividualizacionToolStripMenuItem
+            // informe1ToolStripMenuItem
             // 
-            this.darDeBajaAIndividualizacionToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.delete;
-            this.darDeBajaAIndividualizacionToolStripMenuItem.Name = "darDeBajaAIndividualizacionToolStripMenuItem";
-            this.darDeBajaAIndividualizacionToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.darDeBajaAIndividualizacionToolStripMenuItem.Text = "Dar de Baja a Individualizacion";
-            this.darDeBajaAIndividualizacionToolStripMenuItem.Click += new System.EventHandler(this.darDeBajaAIndividualizacionToolStripMenuItem_Click);
+            this.informe1ToolStripMenuItem.Name = "informe1ToolStripMenuItem";
+            this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.informe1ToolStripMenuItem.Text = "Informe 1";
+            // 
+            // informe2ToolStripMenuItem
+            // 
+            this.informe2ToolStripMenuItem.Name = "informe2ToolStripMenuItem";
+            this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.informe2ToolStripMenuItem.Text = "Informe 2";
+            // 
+            // informe3ToolStripMenuItem
+            // 
+            this.informe3ToolStripMenuItem.Name = "informe3ToolStripMenuItem";
+            this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.informe3ToolStripMenuItem.Text = "Informe 3";
             // 
             // label2
             // 
@@ -753,10 +787,37 @@
             this.id2.ReadOnly = true;
             this.id2.Visible = false;
             // 
+            // contextMenuIdent
+            // 
+            this.contextMenuIdent.BackColor = System.Drawing.Color.White;
+            this.contextMenuIdent.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuIdent.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuIdent.Name = "contextMenuIdent";
+            this.contextMenuIdent.Size = new System.Drawing.Size(244, 48);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = global::CapaPresentacion.Properties.Resources.file__2_;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem1.Text = "Dar de Baja a Individualizacion";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.darDeBajaAIndividualizacionToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Image = global::CapaPresentacion.Properties.Resources.file__1_;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(243, 22);
+            this.toolStripMenuItem2.Text = "Ver Acta de Baja";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Controls.Add(this.txtResponsable);
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.button4);
@@ -768,6 +829,28 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Calibracion";
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::CapaPresentacion.Properties.Resources.document_lines24;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(433, 314);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(162, 34);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Imprimir Etiquetas";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // txtResponsable
             // 
@@ -933,18 +1016,27 @@
             // 
             // contextMenuInstru
             // 
+            this.contextMenuInstru.Font = new System.Drawing.Font("Segoe UI Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contextMenuInstru.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eliminarInstrumentoToolStripMenuItem});
+            this.eliminarInstrumentoToolStripMenuItem,
+            this.activarInstrumentoToolStripMenuItem});
             this.contextMenuInstru.Name = "contextMenuInstru";
-            this.contextMenuInstru.Size = new System.Drawing.Size(186, 26);
+            this.contextMenuInstru.Size = new System.Drawing.Size(192, 48);
             // 
             // eliminarInstrumentoToolStripMenuItem
             // 
-            this.eliminarInstrumentoToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.delete;
+            this.eliminarInstrumentoToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.file__2_;
             this.eliminarInstrumentoToolStripMenuItem.Name = "eliminarInstrumentoToolStripMenuItem";
-            this.eliminarInstrumentoToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.eliminarInstrumentoToolStripMenuItem.Text = "Eliminar Instrumento";
+            this.eliminarInstrumentoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.eliminarInstrumentoToolStripMenuItem.Text = "Inactivar Instrumento";
             this.eliminarInstrumentoToolStripMenuItem.Click += new System.EventHandler(this.eliminarInstrumentoToolStripMenuItem_Click);
+            // 
+            // activarInstrumentoToolStripMenuItem
+            // 
+            this.activarInstrumentoToolStripMenuItem.Image = global::CapaPresentacion.Properties.Resources.file__6_;
+            this.activarInstrumentoToolStripMenuItem.Name = "activarInstrumentoToolStripMenuItem";
+            this.activarInstrumentoToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.activarInstrumentoToolStripMenuItem.Text = "Activar Instrumento";
             // 
             // txtItemSelec
             // 
@@ -1003,6 +1095,33 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // metroContextMenu1
+            // 
+            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opcion1ToolStripMenuItem1,
+            this.opcion2ToolStripMenuItem1,
+            this.opcion3ToolStripMenuItem1});
+            this.metroContextMenu1.Name = "metroContextMenu1";
+            this.metroContextMenu1.Size = new System.Drawing.Size(126, 70);
+            // 
+            // opcion1ToolStripMenuItem1
+            // 
+            this.opcion1ToolStripMenuItem1.Name = "opcion1ToolStripMenuItem1";
+            this.opcion1ToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.opcion1ToolStripMenuItem1.Text = "Informe 1";
+            // 
+            // opcion2ToolStripMenuItem1
+            // 
+            this.opcion2ToolStripMenuItem1.Name = "opcion2ToolStripMenuItem1";
+            this.opcion2ToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.opcion2ToolStripMenuItem1.Text = "Informe 2";
+            // 
+            // opcion3ToolStripMenuItem1
+            // 
+            this.opcion3ToolStripMenuItem1.Name = "opcion3ToolStripMenuItem1";
+            this.opcion3ToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.opcion3ToolStripMenuItem1.Text = "Informe 3";
+            // 
             // FrmInstrumentosPrecision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1033,13 +1152,15 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.contextMenuIdent.ResumeLayout(false);
+            this.contextMenuRepo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataIndividualizacion)).EndInit();
+            this.contextMenuIdent.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCalibracion)).EndInit();
             this.contextMenuInstru.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
+            this.metroContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1083,8 +1204,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn Frec_Nvo;
         private System.Windows.Forms.DataGridViewComboBoxColumn Frec_Usa;
         private System.Windows.Forms.ContextMenuStrip contextMenuIdent;
-        private System.Windows.Forms.ToolStripMenuItem darDeBajaAIndividualizacionToolStripMenuItem;
-        private wyDay.Controls.SplitButton splitButton1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label label3;
         internal System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_instrumento;
@@ -1102,5 +1222,17 @@
         private MetroFramework.Components.MetroToolTip metroToolTip1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
+        private System.Windows.Forms.ToolStripMenuItem opcion1ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem opcion2ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem opcion3ToolStripMenuItem1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ContextMenuStrip contextMenuRepo;
+        private System.Windows.Forms.ToolStripMenuItem informe1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informe2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informe3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem activarInstrumentoToolStripMenuItem;
+        private System.Windows.Forms.Button button7;
     }
 }

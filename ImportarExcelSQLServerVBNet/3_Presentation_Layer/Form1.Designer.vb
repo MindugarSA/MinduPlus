@@ -110,8 +110,8 @@ Partial Class Form1
         Me.progressBar2 = New MetroFramework.Controls.MetroProgressBar()
         Me.groupBox8 = New System.Windows.Forms.GroupBox()
         Me.comboBox8 = New System.Windows.Forms.ComboBox()
-        Me.radioButton2 = New System.Windows.Forms.RadioButton()
-        Me.radioButton1 = New System.Windows.Forms.RadioButton()
+        Me.radioButton2 = New MetroFramework.Controls.MetroRadioButton()
+        Me.radioButton1 = New MetroFramework.Controls.MetroRadioButton()
         Me.label19 = New System.Windows.Forms.Label()
         Me.button14 = New System.Windows.Forms.Button()
         Me.comboBox7 = New System.Windows.Forms.ComboBox()
@@ -187,7 +187,7 @@ Partial Class Form1
         'btnVolver
         '
         Me.btnVolver.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnVolver.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnVolver.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnVolver.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVolver.ForeColor = System.Drawing.SystemColors.ControlLightLight
@@ -319,7 +319,7 @@ Partial Class Form1
         'button3
         '
         Me.button3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button3.FlatAppearance.BorderSize = 0
         Me.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -500,7 +500,7 @@ Partial Class Form1
         'button2
         '
         Me.button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button2.Enabled = False
         Me.button2.FlatAppearance.BorderSize = 0
@@ -519,7 +519,7 @@ Partial Class Form1
         '
         'button1
         '
-        Me.button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button1.FlatAppearance.BorderSize = 0
         Me.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -608,7 +608,7 @@ Partial Class Form1
         'Button15
         '
         Me.Button15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button15.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Button15.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button15.Enabled = False
         Me.Button15.FlatAppearance.BorderSize = 0
@@ -642,7 +642,7 @@ Partial Class Form1
         'button8
         '
         Me.button8.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button8.FlatAppearance.BorderSize = 0
         Me.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -724,7 +724,7 @@ Partial Class Form1
         '
         'button5
         '
-        Me.button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button5.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.button5.FlatAppearance.BorderSize = 0
@@ -794,7 +794,7 @@ Partial Class Form1
         'button4
         '
         Me.button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button4.Enabled = False
         Me.button4.FlatAppearance.BorderSize = 0
@@ -882,7 +882,7 @@ Partial Class Form1
         'button9
         '
         Me.button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button9.Enabled = False
         Me.button9.FlatAppearance.BorderSize = 0
@@ -900,7 +900,7 @@ Partial Class Form1
         'button7
         '
         Me.button7.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button7.FlatAppearance.BorderSize = 0
         Me.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -1035,7 +1035,7 @@ Partial Class Form1
         '
         'button6
         '
-        Me.button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button6.FlatAppearance.BorderSize = 0
         Me.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -1134,7 +1134,7 @@ Partial Class Form1
         'button10
         '
         Me.button10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button10.Enabled = False
         Me.button10.FlatAppearance.BorderSize = 0
@@ -1197,26 +1197,24 @@ Partial Class Form1
         'radioButton2
         '
         Me.radioButton2.AutoSize = True
-        Me.radioButton2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.radioButton2.Location = New System.Drawing.Point(558, 15)
+        Me.radioButton2.Location = New System.Drawing.Point(558, 18)
         Me.radioButton2.Name = "radioButton2"
-        Me.radioButton2.Size = New System.Drawing.Size(78, 21)
+        Me.radioButton2.Size = New System.Drawing.Size(74, 15)
         Me.radioButton2.TabIndex = 25
         Me.radioButton2.TabStop = True
         Me.radioButton2.Text = "Consultar"
-        Me.radioButton2.UseVisualStyleBackColor = True
+        Me.radioButton2.UseSelectable = True
         '
         'radioButton1
         '
         Me.radioButton1.AutoSize = True
-        Me.radioButton1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.radioButton1.Location = New System.Drawing.Point(488, 15)
+        Me.radioButton1.Location = New System.Drawing.Point(488, 18)
         Me.radioButton1.Name = "radioButton1"
-        Me.radioButton1.Size = New System.Drawing.Size(75, 21)
+        Me.radioButton1.Size = New System.Drawing.Size(67, 15)
         Me.radioButton1.TabIndex = 24
         Me.radioButton1.TabStop = True
         Me.radioButton1.Text = "Generar "
-        Me.radioButton1.UseVisualStyleBackColor = True
+        Me.radioButton1.UseSelectable = True
         '
         'label19
         '
@@ -1230,7 +1228,7 @@ Partial Class Form1
         '
         'button14
         '
-        Me.button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button14.FlatAppearance.BorderSize = 0
         Me.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -1296,7 +1294,7 @@ Partial Class Form1
         'button12
         '
         Me.button12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button12.FlatAppearance.BorderSize = 0
         Me.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -1316,7 +1314,7 @@ Partial Class Form1
         'button13
         '
         Me.button13.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.button13.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(170, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.button13.FlatAppearance.BorderSize = 0
         Me.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -1544,8 +1542,8 @@ Partial Class Form1
     Friend WithEvents dataGridView4 As MetroFramework.Controls.MetroGrid 'System.Windows.Forms.DataGridView
     Friend WithEvents errorIcono As System.Windows.Forms.ErrorProvider
     Friend WithEvents toolTip1 As System.Windows.Forms.ToolTip
-    Friend WithEvents radioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents radioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents radioButton2 As MetroFramework.Controls.MetroRadioButton
+    Friend WithEvents radioButton1 As MetroFramework.Controls.MetroRadioButton
     Friend WithEvents progressBar2 As MetroFramework.Controls.MetroProgressBar 'System.Windows.Forms.ProgressBar
     Friend WithEvents label20 As System.Windows.Forms.Label
     Friend WithEvents button10 As System.Windows.Forms.Button

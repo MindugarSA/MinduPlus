@@ -51,6 +51,23 @@ Public Class Login
 
     End Sub
 
+    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
+        UsernameLabel.Top = TxtBx_UserID.Top + 5
+        PictureBox3.Top = TxtBx_UserID.Top + 5
+        PictureBox4.Top = TxtBx_Password.Top + 5
+    End Sub
+
+    Private Sub Login_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        Try
+            TmrBackAnimation.Enabled = False
+            TmrBackAnimation.Stop()
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
     Private Sub UsernameTextBox_Validated(sender As Object, e As EventArgs) Handles TxtBx_UserID.Validated
         Dim Errores As String = ""
 
@@ -379,7 +396,7 @@ Public Class Login
 
     Private Sub TxtBx_UserID_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_UserID.KeyDown
 
-        If (UsernameLabel.Visible = True) Then
+        If (UsernameLabel.Visible = True And TxtBx_UserID.Text.Trim().Length > 0) Then
             UsernameLabel.Visible = False
         ElseIf (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab) Then
             Parent.SelectNextControl(TxtBx_UserID, True, True, True, True)
@@ -389,14 +406,34 @@ Public Class Login
 
     End Sub
 
+    Private Sub TxtBx_UserID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtBx_UserID.KeyPress
+
+        If e.KeyChar = Convert.ToChar(Keys.Back) OrElse
+            e.KeyChar = Convert.ToChar(Keys.Delete) OrElse
+            e.KeyChar = Convert.ToChar(Keys.Left) OrElse
+            e.KeyChar = Convert.ToChar(Keys.Right) OrElse
+            e.KeyChar.ToString.ToUpper() = Convert.ToChar("K") OrElse
+            IsNumber(e.KeyChar.ToString()) Then
+
+            Dim tbtmp As TextBox = TryCast(sender, TextBox)
+            If e.KeyChar = "."c Then
+                e.Handled = True
+            Else
+                e.Handled = False
+            End If
+
+        Else
+            e.Handled = True
+        End If
+
+    End Sub
+
     Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged ' Oculta la Etiqueta que hace de Hint
         If (UsernameLabel.Visible = True) Then
             UsernameLabel.Visible = False
+        ElseIf (UsernameLabel.Visible = False And TxtBx_UserID.Text.Trim().Length = 0) Then
+            UsernameLabel.Visible = True
         End If
-    End Sub
-
-    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
-        UsernameLabel.Top = TxtBx_UserID.Top + 5
     End Sub
 
     Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown ' Al presionar enter, envia TAB
@@ -406,6 +443,21 @@ Public Class Login
             e.Handled = True
             e.SuppressKeyPress = True
         End If
+    End Sub
+
+    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter ' Al hacer Focus se cambia el Tag
+
+        If TxtBx_UserID.Text = "" Then
+            TxtBx_UserID.Focus()
+            FocusedTxt = 1
+        Else
+            FocusedTxt = 2
+        End If
+
+    End Sub
+
+    Private Sub TxtBx_ConfPass_Enter(sender As Object, e As EventArgs) Handles TxtBx_ConfPass.Enter
+        FocusedTxt = 3
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick 'Ejecuta la Animacion en cada TICK
@@ -477,37 +529,6 @@ Public Class Login
 
     End Sub
 
-    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter ' Al hacer Focus se cambia el Tag
-
-        If TxtBx_UserID.Text = "" Then
-            TxtBx_UserID.Focus()
-            FocusedTxt = 1
-        Else
-            FocusedTxt = 2
-        End If
-
-    End Sub
-
-    Private Sub TxtBx_UserID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtBx_UserID.KeyPress
-
-        If e.KeyChar = Convert.ToChar(Keys.Back) OrElse
-            e.KeyChar = Convert.ToChar(Keys.Delete) OrElse
-            e.KeyChar = Convert.ToChar(Keys.Left) OrElse
-            e.KeyChar = Convert.ToChar(Keys.Right) OrElse
-            e.KeyChar.ToString.ToUpper() = Convert.ToChar("K") OrElse
-            IsNumber(e.KeyChar.ToString()) Then
-
-            Dim tbtmp As TextBox = TryCast(sender, TextBox)
-            If e.KeyChar = "."c Then
-                e.Handled = True
-            Else
-                e.Handled = False
-            End If
-        Else
-            e.Handled = True
-        End If
-    End Sub
-
     Public Function IsNumber(inputvalue As String) As Boolean
 
         Dim isnumber__1 As New System.Text.RegularExpressions.Regex("^[0-9]*$")
@@ -516,7 +537,6 @@ Public Class Login
 
     End Function
 
-    Private Sub TxtBx_ConfPass_Enter(sender As Object, e As EventArgs) Handles TxtBx_ConfPass.Enter
-        FocusedTxt = 3
-    End Sub
+
+
 End Class

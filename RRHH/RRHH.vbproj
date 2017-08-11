@@ -28,7 +28,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>103</ApplicationRevision>
+    <ApplicationRevision>109</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -960,6 +960,9 @@
     <None Include="Resources\list-document-interface-symbol.png" />
     <None Include="Resources\list-document-interface-symbol %282%29.png" />
     <None Include="Resources\list-document-interface-symbol %281%29.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\lock %281%29.png" />
+    <None Include="Resources\lock %282%29.png" />
     <Content Include="Resources\Mant_Sist.jpg" />
     <None Include="Resources\Medicion-iloveimg-resized.png" />
     <None Include="Resources\Medicion.png" />
@@ -971,6 +974,8 @@
     <None Include="Resources\money-report.png" />
     <None Include="Resources\people-check.png" />
     <None Include="Resources\MinduPlus.png" />
+    <None Include="Resources\padlock %281%29.png" />
+    <None Include="Resources\padlock.png" />
     <Content Include="Resources\PermisosPers.jpg" />
     <None Include="Resources\PermisosPers1.jpg" />
     <Content Include="Resources\PermisosSistema.png" />
@@ -984,6 +989,9 @@
     <None Include="Resources\printing.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\printing %281%29.png" />
+    <None Include="Resources\user %281%29.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\user %282%29.png" />
     <Content Include="Resources\VB-Colaciones.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

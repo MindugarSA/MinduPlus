@@ -149,13 +149,17 @@ namespace CapaPresentacion
             int nId = Convert.ToInt32(dataInstrumentos.Rows[dataInstrumentos.CurrentRow.Index].Cells[0].Value);
             string nCodigo = Convert.ToString(dataInstrumentos[1, dataInstrumentos.CurrentRow.Index].Value);
 
-            if (MessageBox.Show("Eliminar el Instrumento '" + 
-                Convert.ToString(dataInstrumentos[2, dataInstrumentos.CurrentRow.Index].Value) + 
-                "'", "Sistema Mantenimiento", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            if (MetroFramework.MetroMessageBox.Show(this,
+                                                "Inactivar el Instrumento '" +
+                                                Convert.ToString(dataInstrumentos[2, dataInstrumentos.CurrentRow.Index].Value) +
+                                                "'",
+                                                "Sistema Mantenimiento",
+                                                MessageBoxButtons.OKCancel,
+                                                MessageBoxIcon.Question,
+                                                370) == DialogResult.OK)
             {
                 rpta = NInstrumento.Eliminar(nId, nCodigo);
                 ListarInstrumentos();
-
             }
         }
         private void dataInstrumentos_MouseClick(object sender, MouseEventArgs e)
@@ -230,6 +234,7 @@ namespace CapaPresentacion
                                                             (DataTable)dataItemsComp.DataSource,
                                                             dataCalibracion.Rows[dataCalibracion.SelectedRows[0].Index],
                                                             "Actualizar");
+            Calibracion.EnviarEvento += new FrmCalibracion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
             Calibracion.ShowDialog();
         }
         private void dataInstrumentos_SelectionChanged(object sender, EventArgs e)
@@ -259,7 +264,9 @@ namespace CapaPresentacion
         }
         private void button5_Click(object sender, EventArgs e)
         {
-            dataInstrumentos.DataSource = DTIntrumentos;
+            //dataInstrumentos.DataSource = DTIntrumentos;
+            ListarInstrumentos();
+            FiltrarInstrumentos("Estado");
         }
 
         private void txtInstru_KeyPress(object sender, KeyPressEventArgs e)
@@ -299,7 +306,7 @@ namespace CapaPresentacion
             {
                 dataIndividualizacion.CurrentCell = dataIndividualizacion[currentMouseOverCol, currentMouseOverRow < 0 ? 0 : currentMouseOverRow];
 
-                if (e.Button == MouseButtons.Right && Convert.ToString(dataIndividualizacion[3, currentMouseOverRow].Value) != "Baja")
+                if (e.Button == MouseButtons.Right)
                 {
                     try
                     {
@@ -307,6 +314,18 @@ namespace CapaPresentacion
                         this.contextMenuIdent.Show(dataIndividualizacion, new Point(e.X, e.Y));
                         this.contextMenuIdent.Show(Cursor.Position);
                         //menu_contextual.Show(dataItems, new Point(e.X, e.Y));
+
+                        switch (Convert.ToString(dataIndividualizacion[3, currentMouseOverRow].Value))
+                        {
+                            case "Baja":
+                                contextMenuIdent.Items[0].Enabled = false;
+                                contextMenuIdent.Items[1].Enabled = true;
+                                break;
+                            default:
+                                contextMenuIdent.Items[0].Enabled = true;
+                                contextMenuIdent.Items[1].Enabled = false;
+                                break;
+                        }
                     }
                     catch (Exception) { }
                 }
@@ -350,9 +369,16 @@ namespace CapaPresentacion
             dataInstrumentos.DataSource = NInstrumento.Listar();
             dataInstrumentos.Columns[1].ReadOnly = true;
             dataInstrumentos.Columns[2].ReadOnly = true;
+            var colEdo = new DataGridViewTextBoxColumn();
+            colEdo.HeaderText = "Estado";
+            colEdo.Width = 50;
+            colEdo.DataPropertyName = "Estado";
+            dataInstrumentos.Columns.Add(colEdo);
+
             dataInstrumentos.AutoResizeColumns();
             DTIntrumentos = (DataTable)dataInstrumentos.DataSource;
-    }
+            
+        }
         /// <summary>
         /// Carga el DataGrid dataItemsCompaa
         /// </summary>
@@ -551,9 +577,16 @@ namespace CapaPresentacion
         }
         private void darDeBajaAIndividualizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBajaIndividualizacion DarBaja = new FrmBajaIndividualizacion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index]);
+            FrmBajaIndividualizacion DarBaja = new FrmBajaIndividualizacion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index], "Registro");
             DarBaja.ShowDialog();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmBajaIndividualizacion DarBaja = new FrmBajaIndividualizacion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index], "Consulta");
+            DarBaja.ShowDialog();
+        }
+
         private void Button_MouseEnter(object sender, EventArgs e)
         {
             var Obj = (dynamic)sender;
@@ -591,6 +624,31 @@ namespace CapaPresentacion
             e.DrawFocusRectangle();
         }
 
-    
+
+        private void button6_MouseClick(object sender, MouseEventArgs e)
+        {
+            ContextMenuStrip Menu = button6.ContextMenuStrip;
+
+            if (Menu != null && e.Button == MouseButtons.Left)
+            {
+                //Point menuLocation;
+
+                //menuLocation = new Point(0, button6.Height);
+
+                //Menu.Show(button6, menuLocation);
+
+                Point screenPoint = button6.PointToScreen(new Point(button6.Left, button6.Bottom));
+                if (screenPoint.Y + Menu.Size.Height > Screen.PrimaryScreen.WorkingArea.Height)
+                    Menu.Show(button6, new Point(0, -Menu.Size.Height));
+                else
+                    Menu.Show(button6, new Point(0, button6.Height));
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            FrmImpresionEtiquetas oForm = new FrmImpresionEtiquetas();
+            oForm.ShowDialog();
+        }
     }
 }

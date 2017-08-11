@@ -49,6 +49,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BetterSplitButton, Version=3.15.0.0, Culture=neutral, PublicKeyToken=e6c91a3add447be2, processorArchitecture=MSIL" />
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\packages\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -68,8 +69,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="SplitButton">
-      <HintPath>..\..\..\SplitButton\bin\Release\SplitButton.dll</HintPath>
+    <Reference Include="SplitButton, Version=1.0.2658.38651, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SplitButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,6 +89,12 @@
     <Compile Include="Animations\AnimationDirection.cs" />
     <Compile Include="Animations\AnimationManager.cs" />
     <Compile Include="Animations\Animations.cs" />
+    <Compile Include="Controles\MenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MenuButton.Designer.cs">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensiones\DataGridViewExtensions.cs" />
     <Compile Include="Extensiones\DataTableExtensions.cs" />
     <Compile Include="Extensiones\ExcelExtensions.cs" />
@@ -122,6 +130,12 @@
     </Compile>
     <Compile Include="FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImpresionEtiquetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImpresionEtiquetas.Designer.cs">
+      <DependentUpon>FrmImpresionEtiquetas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmIndividualizacion.cs">
       <SubType>Form</SubType>
@@ -177,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImpresionEtiquetas.resx">
+      <DependentUpon>FrmImpresionEtiquetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIndividualizacion.resx">
       <DependentUpon>FrmIndividualizacion.cs</DependentUpon>
@@ -356,6 +373,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\upload-folder %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-tag %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-page-with-text-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-page-with-text-lines %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

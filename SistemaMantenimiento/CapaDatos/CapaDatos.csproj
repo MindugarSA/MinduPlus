@@ -61,8 +61,10 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="DCalibracion.cs" />
+    <Compile Include="DCalibraItem.cs" />
     <Compile Include="DEmpleadoIndustrial.cs" />
     <Compile Include="DFrecuencia.cs" />
+    <Compile Include="DIdentBaja.cs" />
     <Compile Include="DInstruItems.cs" />
     <Compile Include="DInstrumento.cs" />
     <Compile Include="DItemComprobacion.cs" />

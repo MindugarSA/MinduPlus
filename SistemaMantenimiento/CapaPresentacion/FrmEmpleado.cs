@@ -51,8 +51,10 @@ namespace CapaPresentacion
         {
             dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].Visible = false;
+            //dataGridView1.Columns[5].Visible = false;
             //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dataGridView1.AjustColumnsWidthForGridWidth();
+            dataGridView1.Columns[6].Width = 80;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -82,8 +84,9 @@ namespace CapaPresentacion
         {
             string[] DatosEmpleado = new string[]
             {
-                Convert.ToString(dataGridView1[0,dataGridView1.CurrentRow.Index].Value),
-                Convert.ToString(dataGridView1[1,dataGridView1.CurrentRow.Index].Value)
+                Convert.ToString(dataGridView1[0,dataGridView1.CurrentRow.Index].Value.ToString().Trim()),
+                Convert.ToString(dataGridView1[1,dataGridView1.CurrentRow.Index].Value.ToString().Trim()),
+                Convert.ToString(dataGridView1[6,dataGridView1.CurrentRow.Index].Value.ToString().Trim())
             };
 
             EnvEmple(DatosEmpleado);

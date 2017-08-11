@@ -25,6 +25,7 @@ namespace CapaDatos
         private string _Nom_Trab ;
         private string _Certificado ;
         private string _Marca ;
+        private string _Adicional;
 
         public int Id
         {
@@ -170,13 +171,16 @@ namespace CapaDatos
             }
         }
 
+        public string Adicional { get => _Adicional; set => _Adicional = value; }
 
         public DIdentInstrumento()
         {
         }
 
 
-        public DIdentInstrumento(int id, int id_instrumento, int id_indivual, int Calib_Num, DateTime Ultima_Calib, DateTime Ingreso, string Estado, DateTime Prox_Calib, string Cod_Trab, string Nom_Trab, string Certificado, string Marca)
+        public DIdentInstrumento(int id, int id_instrumento, int id_indivual, int Calib_Num, DateTime Ultima_Calib
+                                , DateTime Ingreso, string Estado, DateTime Prox_Calib, string Cod_Trab, string Nom_Trab
+                                , string Certificado, string Marca , string Adicional)
         { 
             _Id = Id;
             _Id_instrumento = Id_instrumento;
@@ -190,6 +194,7 @@ namespace CapaDatos
             _Nom_Trab = Nom_Trab;
             _Certificado = Certificado;
             _Marca = Marca;
+            _Adicional = Adicional;
         }
 
         public string Insertar(DIdentInstrumento Ident_Instrumento)
@@ -218,6 +223,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@NOM_TRAB", Ident_Instrumento.Nom_Trab);
                 SqlCmd.Parameters.AddWithValue("@CERTIFICADO", Ident_Instrumento.Certificado);
                 SqlCmd.Parameters.AddWithValue("@MARCA", Ident_Instrumento.Marca);
+                SqlCmd.Parameters.AddWithValue("@Adicional", Ident_Instrumento.Adicional);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
 
@@ -261,6 +267,8 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@NOM_TRAB", Ident_Instrumento.Nom_Trab);
                 SqlCmd.Parameters.AddWithValue("@CERTIFICADO", Ident_Instrumento.Certificado);
                 SqlCmd.Parameters.AddWithValue("@MARCA", Ident_Instrumento.Marca);
+                SqlCmd.Parameters.AddWithValue("@Adicional", Ident_Instrumento.Adicional);
+
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Modifico el Registro";
 
