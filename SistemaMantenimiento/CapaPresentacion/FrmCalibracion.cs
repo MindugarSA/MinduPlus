@@ -99,7 +99,7 @@ namespace CapaPresentacion
 
         private void dataItemCalibracion_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-            if(dataItemCalibracion.IsCurrentCellDirty)
+            if (dataItemCalibracion.IsCurrentCellDirty)
             {
                 dataItemCalibracion.CommitEdit(DataGridViewDataErrorContexts.Commit);
                 if (dataItemCalibracion.CurrentRow.Index == -1)
@@ -136,24 +136,24 @@ namespace CapaPresentacion
                 return;
 
             if (e.ColumnIndex == 4 || e.ColumnIndex == 6 || e.ColumnIndex == 7)
-                dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Style.BackColor = dataItemCalibracion.DefaultCellStyle.SelectionBackColor ;
+                dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Style.BackColor = dataItemCalibracion.DefaultCellStyle.SelectionBackColor;
 
             if (e.ColumnIndex == 4)
-            try
-            {
-                string Obtenido = Convert.ToString(dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value);
-                if (Obtenido == string.Empty) Obtenido = "0,00";
-                dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value = string.Format("{0:#,0.00###}", Convert.ToDecimal(Obtenido));
-                
-                decimal Esperado = Convert.ToDecimal(dataItemCalibracion[3, e.RowIndex].Value);
-                Decimal Diferencia = Convert.ToDecimal(Obtenido) - Esperado;
-                dataItemCalibracion[6, e.RowIndex].Value = Diferencia;
+                try
+                {
+                    string Obtenido = Convert.ToString(dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value);
+                    if (Obtenido == string.Empty) Obtenido = "0,00";
+                    dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value = string.Format("{0:#,0.00###}", Convert.ToDecimal(Obtenido));
+
+                    decimal Esperado = Convert.ToDecimal(dataItemCalibracion[3, e.RowIndex].Value);
+                    Decimal Diferencia = Convert.ToDecimal(Obtenido) - Esperado;
+                    dataItemCalibracion[6, e.RowIndex].Value = Diferencia;
 
                 }
-            catch (Exception)
-            {
-                //throw;
-            }
+                catch (Exception)
+                {
+                    //throw;
+                }
 
         }
 
@@ -184,7 +184,7 @@ namespace CapaPresentacion
                 TextBox TxtActual = e.Control as TextBox;
                 TxtActual.KeyPress += new KeyPressEventHandler(txt_KeyPress);
             }
-                
+
         }
 
         void txt_KeyPress(object sender, KeyPressEventArgs e)
@@ -221,36 +221,74 @@ namespace CapaPresentacion
         {
             string rpta = "";
 
-                if (btnAgregar.Text == "&Agregar")
+            if (btnAgregar.Text == "&Agregar")
+            {
+                rpta = NCalibracion.Insertar(Convert.ToInt32(DataIdentidad.Cells[0].Value),
+                                                    Convert.ToInt32(txtId.Text),
+                                                    Convert.ToInt32(txtCalibra.Text),
+                                                    Convert.ToDateTime(dtpFecCalib.Text),
+                                                    Convert.ToString(TxtObserva.Text.Trim()),
+                                                    DataDetalleCalibracion);
+            }
+            else if (btnAgregar.Text == "Actualizar")
+            {
+                rpta = NCalibracion.Actualizar(Convert.ToInt32(DataCalibracion.Cells[6].Value),
+                                                    Convert.ToInt32(DataIdentidad.Cells[0].Value),
+                                                    Convert.ToInt32(txtId.Text),
+                                                    Convert.ToInt32(txtCalibra.Text),
+                                                    Convert.ToDateTime(dtpFecCalib.Text),
+                                                    Convert.ToString(TxtObserva.Text.Trim()),
+                                                    DataDetalleCalibracion);
+
+            }
+            else
+            { btnCancelar.PerformClick(); }
+
+            if (btnAgregar.Text != "Ok")
+                if (rpta == "OK")
                 {
-                    rpta = NCalibracion.Insertar(Convert.ToInt32(DataIdentidad.Cells[0].Value),
-                                                        Convert.ToInt32(txtId.Text),
-                                                        Convert.ToInt32(txtCalibra.Text),
-                                                        Convert.ToDateTime(dtpFecCalib.Text),
-                                                        Convert.ToString(TxtObserva.Text.Trim()),
-                                                        DataDetalleCalibracion);
+                    EnviarEvento();
+                    btnAgregar.Text = "Ok";
                 }
                 else
                 {
-                    rpta = NCalibracion.Actualizar(Convert.ToInt32(DataCalibracion.Cells[6].Value),
-                                                        Convert.ToInt32(DataIdentidad.Cells[0].Value),
-                                                        Convert.ToInt32(txtId.Text),
-                                                        Convert.ToInt32(txtCalibra.Text),
-                                                        Convert.ToDateTime(dtpFecCalib.Text),
-                                                        Convert.ToString(TxtObserva.Text.Trim()),
-                                                        DataDetalleCalibracion);
-
+                    MessageBox.Show(rpta, "Sistema de Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+        }
 
-            if (rpta == "OK")
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmImpresionEtiquetas oForm = new FrmImpresionEtiquetas();
+
+            oForm.ShowDialog();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
             {
-                EnviarEvento();
-                btnCancelar.PerformClick();
+                //NEtiquetas.DtEtiquetas.ImportRow(((DataTable)dataCalibracion.DataSource).Rows[dataCalibracion.CurrentRow.Index]);
+
+                DataRow dr = NEtiquetas.DtEtiquetas.NewRow();
+
+                dr[0] = Convert.ToInt32(DataIdentidad.Cells[0].Value);
+                dr[1] = txtCodInstru.Text.Trim();
+                dr[2] = txtDescInstru.Text.Trim();
+                dr[3] = Convert.ToInt32(txtId.Text);
+                dr[4] = Convert.ToInt32(txtCalibra.Text);
+                dr[5] = Convert.ToDateTime(dtpFecCalib.Text);
+                dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value)
+                                                          , txtEstado.Text
+                                                          , Convert.ToDateTime(dtpFecCalib.Text));
+                dr[7] = txtCodEmp.Text.Trim();
+                dr[8] = txtNomEmp.Text.Trim();
+                dr[9] = 0;
+
+
+                NEtiquetas.DtEtiquetas.Rows.Add(dr);
             }
-            else
-            {
-                MessageBox.Show(rpta, "Sistema de Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            catch (Exception x) { }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -279,12 +317,14 @@ namespace CapaPresentacion
                 txtCalibra.Text = Convert.ToString(NCalibracion.ProximoCodigoIndividual(Convert.ToInt32(DataIdentidad.Cells[0].Value), Convert.ToInt32(DataIdentidad.Cells[1].Value)));
                 dtpFecCalib.Text = Convert.ToString(DataIdentidad.Cells[8].Value);
                 dtpProxCalib.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
+                DtpFecVenc.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
             }
             else if (AccionEnviada == "Actualizar")
             {
                 txtCalibra.Text = Convert.ToString(DataCalibracion.Cells[3].Value);
                 dtpFecCalib.Text = Convert.ToString(DataCalibracion.Cells[4].Value);
                 dtpProxCalib.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
+                DtpFecVenc.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
                 TxtObserva.Text = Convert.ToString(DataCalibracion.Cells[5].Value);
 
                 btnAgregar.Text = "Actualizar";
@@ -297,7 +337,7 @@ namespace CapaPresentacion
             dataItemCalibracion.AutoGenerateColumns = false;
             if (AccionEnviada == "Nuevo")
             {
-                DataDetalleCalibracion = NCalibracion.BuscarDetalles(0,0,0);
+                DataDetalleCalibracion = NCalibracion.BuscarDetalles(0, 0, 0);
                 int item = 0;
 
                 foreach (DataRow row in DataItemsCalibracion.Rows)
@@ -322,7 +362,7 @@ namespace CapaPresentacion
                     DataDetalleCalibracion.Rows.Add(dr);
 
                 }
-                               
+
                 dataItemCalibracion.Columns[0].DataPropertyName = "Seleccionado";
                 dataItemCalibracion.Columns[1].DataPropertyName = "id_Item";
                 dataItemCalibracion.Columns[4].DataPropertyName = "MediObtenida";
@@ -371,13 +411,7 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FrmImpresionEtiquetas oForm = new FrmImpresionEtiquetas();
 
-            oForm.ShowDialog();
-
-        }
     }
 
 }

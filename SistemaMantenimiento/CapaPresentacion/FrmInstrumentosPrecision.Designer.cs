@@ -108,10 +108,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.ContextMenuCalibra = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.opcion1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.opcion2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.opcion3ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataInstrumentos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataItemsComp)).BeginInit();
@@ -124,7 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataCalibracion)).BeginInit();
             this.contextMenuInstru.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).BeginInit();
-            this.metroContextMenu1.SuspendLayout();
+            this.ContextMenuCalibra.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataInstrumentos
@@ -851,6 +850,8 @@
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button7.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // txtResponsable
             // 
@@ -969,6 +970,7 @@
             this.dataCalibracion.Size = new System.Drawing.Size(581, 262);
             this.dataCalibracion.TabIndex = 0;
             this.dataCalibracion.SelectionChanged += new System.EventHandler(this.dataCalibracion_SelectionChanged);
+            this.dataCalibracion.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataCalibracion_MouseClick);
             // 
             // Id_Intrumento2
             // 
@@ -1095,32 +1097,28 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroContextMenu1
+            // ContextMenuCalibra
             // 
-            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ContextMenuCalibra.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.opcion1ToolStripMenuItem1,
-            this.opcion2ToolStripMenuItem1,
-            this.opcion3ToolStripMenuItem1});
-            this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(126, 70);
+            this.opcion2ToolStripMenuItem1});
+            this.ContextMenuCalibra.Name = "metroContextMenu1";
+            this.ContextMenuCalibra.Size = new System.Drawing.Size(212, 48);
             // 
             // opcion1ToolStripMenuItem1
             // 
+            this.opcion1ToolStripMenuItem1.Image = global::CapaPresentacion.Properties.Resources.file__3_;
             this.opcion1ToolStripMenuItem1.Name = "opcion1ToolStripMenuItem1";
-            this.opcion1ToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.opcion1ToolStripMenuItem1.Text = "Informe 1";
+            this.opcion1ToolStripMenuItem1.Size = new System.Drawing.Size(211, 22);
+            this.opcion1ToolStripMenuItem1.Text = "Agregar a Lista Etiquetas";
+            this.opcion1ToolStripMenuItem1.Click += new System.EventHandler(this.opcion1ToolStripMenuItem1_Click);
             // 
             // opcion2ToolStripMenuItem1
             // 
+            this.opcion2ToolStripMenuItem1.Image = global::CapaPresentacion.Properties.Resources.file__2_;
             this.opcion2ToolStripMenuItem1.Name = "opcion2ToolStripMenuItem1";
-            this.opcion2ToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.opcion2ToolStripMenuItem1.Text = "Informe 2";
-            // 
-            // opcion3ToolStripMenuItem1
-            // 
-            this.opcion3ToolStripMenuItem1.Name = "opcion3ToolStripMenuItem1";
-            this.opcion3ToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
-            this.opcion3ToolStripMenuItem1.Text = "Informe 3";
+            this.opcion2ToolStripMenuItem1.Size = new System.Drawing.Size(211, 22);
+            this.opcion2ToolStripMenuItem1.Text = "Eliminar de Lista Etiquetas";
             // 
             // FrmInstrumentosPrecision
             // 
@@ -1160,7 +1158,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataCalibracion)).EndInit();
             this.contextMenuInstru.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcono)).EndInit();
-            this.metroContextMenu1.ResumeLayout(false);
+            this.ContextMenuCalibra.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1223,10 +1221,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
+        private MetroFramework.Controls.MetroContextMenu ContextMenuCalibra;
         private System.Windows.Forms.ToolStripMenuItem opcion1ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem opcion2ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem opcion3ToolStripMenuItem1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ContextMenuStrip contextMenuRepo;
         private System.Windows.Forms.ToolStripMenuItem informe1ToolStripMenuItem;
