@@ -18,6 +18,9 @@ namespace CapaPresentacion
         public delegate void EnviarEmpleado(String[] Empleado);
         public event EnviarEmpleado EnvEmple;
 
+        public string TextButtton { get; set; }
+        public string TipoListado { get; set; }
+
         public FrmEmpleado()
         {
             InitializeComponent();
@@ -25,13 +28,24 @@ namespace CapaPresentacion
 
         private void FrmEmplado_Load(object sender, EventArgs e)
         {
-            this.Listar();
+            switch (TipoListado)
+            {
+                case "Empleados":
+                    metroComboBox1.Visible = false;
+                    this.ListarEmpleadosTodos();
+                    break;
+                case "Identidad":
+                    metroComboBox1.SelectedIndex = 0;
+                    this.ListarEmpleadosEntidades();
+                    break;
+            }
+            btnAgregar.Text = TextButtton;
         }
 
         private void FrmEmplado_Paint(object sender, PaintEventArgs e)
         {
-            Visuales.FondoDegradado(this, e);
-            Visuales.LineaCabecera(this, e);
+            //Visuales.FondoDegradado(this, e);
+            //Visuales.LineaCabecera(this, e);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -39,12 +53,37 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void Listar()
+        private void ListarEmpleadosTodos()
         {
             this.dataGridView1.DataSource = NEmpleadoIndustrial.Listar();
             if (dataGridView1.RowCount > 0)
                 FormatearGrid();
 
+        }
+
+        private void ListarEmpleadosEntidades()
+        {
+            string Estado = EstadoSeleccionado();
+            
+            this.dataGridView1.DataSource = NEmpleadoIndustrial.ListarIdentidades(Estado);
+            if (dataGridView1.RowCount > 0)
+                FormatearGrid();
+
+        }
+
+        private string EstadoSeleccionado()
+        {
+            switch (metroComboBox1.SelectedIndex)
+            {
+                case 0:
+                    return "A";
+                case 1:
+                    return "B";
+                case 2:
+                    return "T";
+                default:
+                    return "T";
+            }
         }
 
         private void FormatearGrid()
@@ -65,7 +104,17 @@ namespace CapaPresentacion
             }
             else
             {
-                this.dataGridView1.DataSource = NEmpleadoIndustrial.Buscar(txtItem.Text.Trim() == "*" ? "" : txtItem.Text.Trim());
+                switch (TipoListado)
+                {
+                    case "Empleados":
+                        this.dataGridView1.DataSource = NEmpleadoIndustrial.Buscar(txtItem.Text.Trim() == "*" ? "" : txtItem.Text.Trim());
+                        break;
+                    case "Identidad":
+                        this.dataGridView1.DataSource = NEmpleadoIndustrial.BuscarIdentidades(EstadoSeleccionado(),
+                                                                                              txtItem.Text.Trim() == "*" ? "" : txtItem.Text.Trim());
+                        break;
+
+                }
                 if (dataGridView1.RowCount > 0)
                     FormatearGrid();
             }
@@ -114,5 +163,7 @@ namespace CapaPresentacion
             Obj.Height = Obj.Height - 8;
             Obj.Width = Obj.Width - 8;
         }
+
+
     }
 }

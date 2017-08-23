@@ -12,7 +12,7 @@ namespace CapaNegocios
     public class NIdentBaja
     {
 
-        public static string Insertar(int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza)
+        public static string Insertar(int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza, string Nom_Localiza)
         {
             DIdentBaja Obj = new DIdentBaja();
             Obj.Id_instrumento = id_instrumento;
@@ -23,10 +23,12 @@ namespace CapaNegocios
             Obj.Fec_Registro = DateTime.Now.ToString();
             Obj.Observacion = Observacion;
             Obj.Cod_Localiza = Cod_Localiza;
+            Obj.Nom_Localiza = Nom_Localiza;
+
             return Obj.Insertar(Obj);
         }
 
-        public static string Actualizar(int id, int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza)
+        public static string Actualizar(int id, int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza, string Nom_Localiza)
         {
             DIdentBaja Obj = new DIdentBaja();
             Obj.Id = id;
@@ -38,12 +40,14 @@ namespace CapaNegocios
             Obj.Fec_Registro = DateTime.Now.ToString();
             Obj.Observacion = Observacion;
             Obj.Cod_Localiza = Cod_Localiza;
+            Obj.Nom_Localiza = Nom_Localiza;
+
             return Obj.Actualizar(Obj);
         }
 
         public static DataTable Obtener(int Id_instrumento, int Id_indivual)
         {
-            DIdentBaja  Obj = new DIdentBaja();
+            DIdentBaja Obj = new DIdentBaja();
             Obj.Id_instrumento = Id_instrumento;
             Obj.Id_indivual = Id_indivual;
             return Obj.Obtener(Obj);

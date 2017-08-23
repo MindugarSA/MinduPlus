@@ -138,7 +138,7 @@ namespace CapaDatos
                 //    Id = Convert.ToInt32(retValue.Value);
                 //}
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se Ingreso el Registro";
 
                 if (rpta.Equals("OK"))
                 {

@@ -21,6 +21,7 @@ namespace CapaDatos
         private string _Id_Trab ;
         private string _Trabajador ;
         private int _Id = 0;
+        private double _Resolucion = 0;
 
         public int Id_Instrumento { get => _Id_Instrumento; set => _Id_Instrumento = value; }
         public string Codigo { get => _Codigo; set => _Codigo = value; }
@@ -32,13 +33,14 @@ namespace CapaDatos
         public string Id_Trab { get => _Id_Trab; set => _Id_Trab = value; }
         public string Trabajador { get => _Trabajador; set => _Trabajador = value; }
         public int Id { get => _Id; set => _Id = value; }
+        public double Resolucion { get => _Resolucion; set => _Resolucion = value; }
 
         public DEtiquetas()
         {
 
         }
 
-        public DEtiquetas(int id_Instrumento, string Codigo, string Descripcion, int id_Identidad, int id_Calibracion, DateTime Fec_Calibracion, DateTime Fec_Proxima, string id_Trab, string Trabajador, int id)
+        public DEtiquetas(int id_Instrumento, string Codigo, string Descripcion, int id_Identidad, int id_Calibracion, DateTime Fec_Calibracion, DateTime Fec_Proxima, string id_Trab, string Trabajador, int id, double Resolucion)
         {
             _Id_Instrumento = id_Instrumento;
             _Codigo = Codigo;
@@ -50,6 +52,7 @@ namespace CapaDatos
             _Id_Trab = id_Trab;
             _Trabajador = Trabajador;
             _Id = id;
+            _Resolucion = Resolucion;
 
         }
 
@@ -77,6 +80,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@id_Trab", Etiqueta.Id_Trab);
                 SqlCmd.Parameters.AddWithValue("@Trabajador", Etiqueta.Trabajador);
                 SqlCmd.Parameters.AddWithValue("@id", Etiqueta.Id);
+                SqlCmd.Parameters.AddWithValue("@Resolucion", Etiqueta.Resolucion);
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
 

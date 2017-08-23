@@ -48,6 +48,8 @@ namespace CapaPresentacion
         {
             FrmEmpleado Empleado = new FrmEmpleado();
             Empleado.EnvEmple += new FrmEmpleado.EnviarEmpleado(CargarDatosEmpleado); // Metodo Delegate para enviar datos desde FrmEmplado
+            Empleado.TextButtton = "Agregar";
+            Empleado.TipoListado = "Empleados";
             Empleado.ShowDialog();
         }
 
@@ -148,7 +150,8 @@ namespace CapaPresentacion
                                           , TxtNomIns.Text
                                           , dtpIngreso.Text
                                           , txtObserva.Text.Trim()
-                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]);
+                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]
+                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]);
 
 
                 }
@@ -160,9 +163,15 @@ namespace CapaPresentacion
                                           , TxtNomIns.Text
                                           , dtpIngreso.Text
                                           , txtObserva.Text.Trim()
-                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]);
+                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]
+                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]);
 
                 }
+                MetroFramework.MetroMessageBox.Show(this, "El Acta fue " + TipoAcceso == "Registro" ? "Registrada":"Actualizada" + " Exitosamente",
+                                                    "Acta de Baja",
+                                                    MessageBoxButtons.OK,
+                                                    MessageBoxIcon.Information,
+                                                    370);
             }
             else
                 MetroFramework.MetroMessageBox.Show(this, "Debe Seleccionar un Inspector para registrar una Baja",
@@ -171,6 +180,17 @@ namespace CapaPresentacion
                                                     MessageBoxIcon.Information,
                                                     370);
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmInformes frm = new FrmInformes()
+            {
+                TipoReporte = "ActaBaja" ,
+                Id_instrumento = Convert.ToInt32(DTDatosBaja.Rows[0][1]),
+                Id_identidad = Convert.ToInt32(DTDatosBaja.Rows[0][2])
+            };
+            frm.ShowDialog();
         }
     }
 }

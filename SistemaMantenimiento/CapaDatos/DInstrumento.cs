@@ -13,15 +13,15 @@ namespace CapaDatos
     {
 
         private int _Id;
-        private string _Codigo ;
-        private string _Descripcion ;
-        private string _Frecuencia_Nvo ;
-        private string _Frecuencia_Usa ;
-        private string _Estado ;
-        private DateTime _Fecha_Creacion ;
-        private string _Usu_Creacion ;
-        private DateTime _Fecha_Modifi ;
-        private string _Usu_Modif ;
+        private string _Codigo;
+        private string _Descripcion;
+        private string _Frecuencia_Nvo;
+        private string _Frecuencia_Usa;
+        private string _Estado;
+        private DateTime _Fecha_Creacion;
+        private string _Usu_Creacion;
+        private DateTime _Fecha_Modifi;
+        private string _Usu_Modif;
 
         public int Id
         {
@@ -200,7 +200,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(new SqlParameter("@USU_MODIF", Instrumento.Usu_Modif));
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
-         
+
             }
             catch (Exception ex)
             {
@@ -308,7 +308,38 @@ namespace CapaDatos
                 SqlDat.Fill(DtResultado);
 
             }
-            catch 
+            catch
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SlqCon.State == ConnectionState.Open) SlqCon.Close();
+            }
+            return DtResultado;
+
+        }
+        public DataTable ListarPorEmpleado(string Empleado)
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SlqCon = new SqlConnection();
+
+            try
+            {
+                string sp = "SpInstrumentoListarPorEmpleado";
+
+                SlqCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand(sp, SlqCon);
+
+                SlqCon.Open();
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlCmd.Parameters.Add(new SqlParameter("@Empleado", Empleado));
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch
             {
                 DtResultado = null;
             }

@@ -691,6 +691,7 @@
             this.button2.Text = "&Ver Acta";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.button2.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 

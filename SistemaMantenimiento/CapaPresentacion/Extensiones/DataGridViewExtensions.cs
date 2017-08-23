@@ -117,8 +117,8 @@ namespace CapaPresentacion
         {
             //BuscandoenDGV = true;
             //bool encontrado = false;
-            if (TextoABuscar == string.Empty) return ;
-            if (grid.RowCount == 0) return ;
+            if (TextoABuscar == string.Empty) return;
+            if (grid.RowCount == 0) return;
             //grid.ClearSelection();
             if (Columna == string.Empty)
             {
@@ -153,6 +153,17 @@ namespace CapaPresentacion
             }
             //BuscandoenDGV = false;
             //return encontrado;
+
+        }
+
+        public static void SelectRowAndSroll(this DataGridView grid, int RowIndex)
+        {
+            if (grid.RowCount == 0) return;
+            {
+                grid.Rows[RowIndex].Selected = true;
+                grid.FirstDisplayedScrollingRowIndex = RowIndex;
+                //grid.CurrentCell = grid[, RowIndex];
+            }
 
         }
 

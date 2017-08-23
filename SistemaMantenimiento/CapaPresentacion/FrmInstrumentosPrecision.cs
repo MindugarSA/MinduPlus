@@ -19,10 +19,12 @@ namespace CapaPresentacion
         private FrmInstrumentosPrecision instance;
         private bool BuscandoenDGV = false;
         private DataTable DTIntrumentos;
+        private DataTable DTIntrumentosEmpleado;
         private DataTable DTIndividualizacion;
         private DataTable DTIndividualizaFiltro;
         private Panel pnlParent;
         private StatusStrip StatusBarBottom;
+        private string[] DatosEmpleadoSelecc;
         private String Id;
 
 
@@ -37,7 +39,7 @@ namespace CapaPresentacion
             skinManager.ROBOTO_MEDIUM_10 = new Font("Segoe UI Light", 10);
             skinManager.ROBOTO_MEDIUM_11 = new Font("Segoe UI Light", 11);
             skinManager.ROBOTO_MEDIUM_12 = new Font("Segoe UI Light", 12);
-            skinManager.ROBOTO_REGULAR_11 = new Font("Segoe UI Light", 11);
+            skinManager.ROBOTO_REGULAR_11 = new Font("Segoe UI Light", 10);
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE);
 
@@ -61,8 +63,9 @@ namespace CapaPresentacion
             ListarCalibracion();
             cmbBaja.SelectedItem = "Activos";
             comboBox1.SelectedItem = "Activos";
+            comboBox2.SelectedIndex = 0;
 
-            NEtiquetas.Eliminar();
+            //NEtiquetas.Eliminar();
             NEtiquetas.DtEtiquetas.Clear();
             NEtiquetas.DtEtiquetas = NEtiquetas.Listar();
             NEtiquetas.BsEtiquetas.DataSource = NEtiquetas.DtEtiquetas;
@@ -190,6 +193,18 @@ namespace CapaPresentacion
                         this.contextMenuInstru.Show(Cursor.Position);
                         //menu_contextual.Show(dataItems, new Point(e.X, e.Y));
 
+                        switch (Convert.ToString(dataInstrumentos[5, currentMouseOverRow].Value))
+                        {
+                            case "I":
+                                contextMenuInstru.Items[0].Enabled = false;
+                                contextMenuInstru.Items[1].Enabled = true;
+                                break;
+                            default:
+                                contextMenuInstru.Items[0].Enabled = true;
+                                contextMenuInstru.Items[1].Enabled = false;
+                                break;
+                        }
+
 
                     }
                     catch (Exception) { }
@@ -232,16 +247,22 @@ namespace CapaPresentacion
                                                             (DataTable)dataItemsComp.DataSource,
                                                             dataCalibracion.Rows.Count == 0 ? null : dataCalibracion.Rows[dataCalibracion.SelectedRows[0].Index],
                                                             "Nuevo");
+            Calibracion.IdentidadGridRow = dataIndividualizacion.SelectedRows[0].Index;
+            Calibracion.EnviarEvento += new FrmCalibracion.EnvEvent(ListarIndividualizacion);
+            //Calibracion.EnviarEvento += new FrmCalibracion.EnvEvent(ListarCalibracion);
             Calibracion.ShowDialog();
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            FrmCalibracion Calibracion = new FrmCalibracion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index],
+            if(dataCalibracion.Rows.Count > 0)
+            {
+                FrmCalibracion Calibracion = new FrmCalibracion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index],
                                                             (DataTable)dataItemsComp.DataSource,
                                                             dataCalibracion.Rows[dataCalibracion.SelectedRows[0].Index],
                                                             "Actualizar");
-            Calibracion.EnviarEvento += new FrmCalibracion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
-            Calibracion.ShowDialog();
+                Calibracion.EnviarEvento += new FrmCalibracion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
+                Calibracion.ShowDialog();
+            }
         }
         private void dataInstrumentos_SelectionChanged(object sender, EventArgs e)
         {
@@ -254,23 +275,38 @@ namespace CapaPresentacion
         }
         private void btnBuscarInstru_Click(object sender, EventArgs e)
         {
-            if (this.txtInstru.Text == string.Empty)
+            if (comboBox2.SelectedIndex == 0)
             {
-                dataInstrumentos.DataSource = DTIntrumentos;
-                //errorIcono.SetError(txtInstru, "Ingrese Parte del Codigo o Descripcion a Buscar");
+                if (this.txtInstru.Text == string.Empty)
+                {
+                    dataInstrumentos.DataSource = DTIntrumentos;
+                    //errorIcono.SetError(txtInstru, "Ingrese Parte del Codigo o Descripcion a Buscar");
+                }
+                else
+                {
+                    FiltrarInstrumentos();
+                    //if (!BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "2", dataInstrumentos))
+                    //{
+                    //    BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "1", dataInstrumentos);
+                    //}
+                }
             }
-            else
+            else if (comboBox2.SelectedIndex == 1)
             {
-                FiltrarInstrumentos();
-                //if (!BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "2", dataInstrumentos))
-                //{
-                //    BuscarDGV_LINQ(txtInstru.Text.ToUpper(), "1", dataInstrumentos);
-                //}
+                txtInstru.Text = "";
+                FrmEmpleado Empleado = new FrmEmpleado();
+                Empleado.EnvEmple += new FrmEmpleado.EnviarEmpleado(CargarDatosEmpleado); // Metodo Delegate para enviar datos desde FrmEmplado
+                Empleado.TextButtton = "Filtrar";
+                Empleado.TipoListado = "Identidad";
+                Empleado.ShowDialog();
             }
+
         }
+
         private void button5_Click(object sender, EventArgs e)
         {
             //dataInstrumentos.DataSource = DTIntrumentos;
+            comboBox2.SelectedIndex = 0;
             ListarInstrumentos();
             FiltrarInstrumentos("Estado");
         }
@@ -285,11 +321,31 @@ namespace CapaPresentacion
         }
         private void cmbBaja_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FiltrarIndividualizacion(cmbBaja.SelectedIndex);
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    FiltrarIndividualizacion(cmbBaja.SelectedIndex);
+                    break;
+                case 1:
+                    FiltrarIndividualizacionEmpleado(cmbBaja.SelectedIndex, DatosEmpleadoSelecc[0]);
+                    break;
+            }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrarInstrumentos("Estado");
+        }
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtInstru.Text = "";
+            if (comboBox2.SelectedIndex == 1)
+            {
+                FrmEmpleado Empleado = new FrmEmpleado();
+                Empleado.EnvEmple += new FrmEmpleado.EnviarEmpleado(CargarDatosEmpleado); // Metodo Delegate para enviar datos desde FrmEmplado
+                Empleado.TextButtton = "Filtrar";
+                Empleado.TipoListado = "Identidad";
+                Empleado.ShowDialog();
+            }
         }
         private void dataIndividualizacion_SelectionChanged(object sender, EventArgs e)
         {
@@ -398,6 +454,8 @@ namespace CapaPresentacion
             dataInstrumentos.DataSource = NInstrumento.Listar();
             dataInstrumentos.Columns[1].ReadOnly = true;
             dataInstrumentos.Columns[2].ReadOnly = true;
+            dataInstrumentos.Columns[3].HeaderText = "Verif. Nvo.";
+            dataInstrumentos.Columns[4].HeaderText = "Verif. Usa.";
             var colEdo = new DataGridViewTextBoxColumn();
             colEdo.HeaderText = "Estado";
             colEdo.Width = 50;
@@ -431,7 +489,7 @@ namespace CapaPresentacion
         /// <summary>
         /// Carga el DataGrid dataIndividualizacion
         /// </summary>
-        private void ListarIndividualizacion()
+        private void ListarIndividualizacion(int SelecRow = 0)
         {
             if (dataInstrumentos.SelectedRows.Count > 0)
             {
@@ -439,8 +497,18 @@ namespace CapaPresentacion
                 txtItemSelec.Text = Convert.ToString(dataInstrumentos[2, indice].Value);
                 DTIndividualizacion = NIdentInstrumento.Listar(Convert.ToInt32(dataInstrumentos[0, indice].Value));
                 DTIndividualizaFiltro = DTIndividualizacion.Clone();
-                FiltrarIndividualizacion(cmbBaja.SelectedIndex);
+                switch (comboBox2.SelectedIndex)
+                {
+                    case 1:
+                        FiltrarIndividualizacionEmpleado(cmbBaja.SelectedIndex, DatosEmpleadoSelecc[0]);
+                        break;
+                    default:
+                        FiltrarIndividualizacion(cmbBaja.SelectedIndex);
+                        break;
+                }
                 dataIndividualizacion.AutoResizeColumns();
+                if (SelecRow > 0)
+                    dataIndividualizacion.SelectRowAndSroll(SelecRow);
             }
 
         }
@@ -482,10 +550,23 @@ namespace CapaPresentacion
                                                                                     : true)
                                          select dr).CopyToDataTable();
             }
-            catch
-            {
+            catch { }
 
+            dataIndividualizacion.DataSource = DTIndividualizaFiltro;
+        }
+
+        private void FiltrarIndividualizacionEmpleado(int IndiceCombo, String RUT)
+        {
+            try
+            {
+                DTIndividualizaFiltro = (from DataRow dr in DTIndividualizacion.Rows
+                                         where dr[4].ToString() == RUT
+                                                && (IndiceCombo == 0 ? dr[3].ToString() != "Baja"
+                                                                 : IndiceCombo == 1 ? dr[3].ToString() == "Baja"
+                                                                                    : true)
+                                         select dr).CopyToDataTable();
             }
+            catch { }
 
             dataIndividualizacion.DataSource = DTIndividualizaFiltro;
         }
@@ -580,6 +661,12 @@ namespace CapaPresentacion
                               orderby myRow[0]
                               select myRow;
             }
+            else if (TipoFiltro == "Empleado")
+            {
+                DTIntrumentosEmpleado = NInstrumento.ListarPorEmpleado(DatosEmpleadoSelecc[0]);
+                results = from myRow in DTIntrumentosEmpleado.AsEnumerable()
+                          select myRow;
+            }
 
             if (results.Any())
             {
@@ -633,25 +720,37 @@ namespace CapaPresentacion
             Obj.Height = Obj.Height - 8;
             Obj.Width = Obj.Width - 8;
         }
+        private void CargarDatosEmpleado(string[] DatosEmpleado)
+        {
+            DatosEmpleadoSelecc = DatosEmpleado;
+
+            txtInstru.Text = DatosEmpleado[0] + " ; " + DatosEmpleado[1];
+            FiltrarInstrumentos("Empleado");
+        }
 
         private void cmbBaja_DrawItem(object sender, DrawItemEventArgs e)
         {
             var combo = sender as ComboBox;
 
-            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            try
             {
-                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 174, 219)), e.Bounds);
-            }
-            else
-            {
-                e.Graphics.FillRectangle(new SolidBrush(SystemColors.Window), e.Bounds);
-            }
+                if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 174, 219)), e.Bounds);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(SystemColors.Window), e.Bounds);
+                }
 
-            e.Graphics.DrawString(combo.Items[e.Index].ToString(),
-                                          e.Font,
-                                          new SolidBrush(Color.Black),
-                                          new Point(e.Bounds.X, e.Bounds.Y));
-            e.DrawFocusRectangle();
+                e.Graphics.DrawString(combo.Items[e.Index].ToString(),
+                                              e.Font,
+                                              new SolidBrush(Color.Black),
+                                              new Point(e.Bounds.X, e.Bounds.Y));
+                e.DrawFocusRectangle();
+            }
+            catch (Exception) { }
+
         }
 
 
@@ -703,12 +802,17 @@ namespace CapaPresentacion
                 dr[7] = Convert.ToString(dataIndividualizacion[4, dataIndividualizacion.CurrentRow.Index].Value).Trim();
                 dr[8] = Convert.ToString(dataIndividualizacion[5, dataIndividualizacion.CurrentRow.Index].Value).Trim();
                 dr[9] = Convert.ToInt32(dataCalibracion[6, indice].Value);
-
+                dr[10] = 0.0;
 
                 NEtiquetas.DtEtiquetas.Rows.Add(dr);
+                NEtiquetas.InsertarDTtoDB();
             }
-            catch (Exception){ }
-            
+            catch (Exception) { }
+
         }
+
+       
+
+
     }
 }

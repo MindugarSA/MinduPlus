@@ -26,6 +26,17 @@ namespace CapaNegocios
             Obj.TextoBuscar = TextoBuscar;
             return Obj.Buscar(Obj);
         }
+        public static DataTable ListarIdentidades(string Estado)
+        {
+            return new DEmpleadoIndustrial().ListarIdentidades(Estado);
+        }
+        public static DataTable BuscarIdentidades(string Estado, string Empleado)
+        {
+            return new DEmpleadoIndustrial().BuscarIdentidades(Estado, Empleado);
+        }
+        
+
+
 
     }
 }

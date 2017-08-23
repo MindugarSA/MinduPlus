@@ -17,7 +17,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>2.77913cm</Height>
+              <Height>2.6733cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -194,7 +194,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Resolución ± " &amp; Trim(Fields!id_Calibracion.Value)</Value>
+                                      <Value>="Resolución ± " &amp; Trim(Fields!Resolucion.Value)</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>7pt</FontSize>
@@ -443,7 +443,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Resolución ± " &amp; Trim(Fields!id_Calibracion.Value)</Value>
+                                      <Value>="Resolución ± " &amp; Trim(Fields!Resolucion.Value)</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>7pt</FontSize>
@@ -506,18 +506,6 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <Line Name="Line24">
-                              <Left>3.11883cm</Left>
-                              <Height>1.65188cm</Height>
-                              <Width>0cm</Width>
-                              <ZIndex>7</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                  <Width>0.5pt</Width>
-                                </Border>
-                              </Style>
-                            </Line>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Top>0.12643cm</Top>
@@ -531,6 +519,19 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <Line Name="Line10">
+                          <Top>0.14136cm</Top>
+                          <Left>3.35513cm</Left>
+                          <Height>1.88031cm</Height>
+                          <Width>0cm</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                          </Style>
+                        </Line>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Style>
@@ -567,7 +568,6 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Etiqueta</rd:DefaultName>
-                              <Top>0cm</Top>
                               <Left>0.94236cm</Left>
                               <Height>0.12022cm</Height>
                               <Width>2.87335cm</Width>
@@ -700,7 +700,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Resolución ± " &amp; Trim(Fields!id_Calibracion.Value)</Value>
+                                      <Value>="Resolución ± " &amp; Trim(Fields!Resolucion.Value)</Value>
                                       <Style>
                                         <FontFamily>Calibri</FontFamily>
                                         <FontSize>6pt</FontSize>
@@ -763,19 +763,6 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <Line Name="Line25">
-                              <Top>0.03107cm</Top>
-                              <Left>0.92001cm</Left>
-                              <Height>1.14388cm</Height>
-                              <Width>0cm</Width>
-                              <ZIndex>7</ZIndex>
-                              <Style>
-                                <Border>
-                                  <Style>Solid</Style>
-                                  <Width>0.5pt</Width>
-                                </Border>
-                              </Style>
-                            </Line>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <Top>0.15875cm</Top>
@@ -789,6 +776,19 @@
                             </Border>
                           </Style>
                         </Rectangle>
+                        <Line Name="Line12">
+                          <Top>0.17311cm</Top>
+                          <Left>1.47266cm</Left>
+                          <Height>1.40406cm</Height>
+                          <Width>0cm</Width>
+                          <ZIndex>1</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                          </Style>
+                        </Line>
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Style>
@@ -817,9 +817,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
         <Top>1.17591cm</Top>
-        <Left>0.92759cm</Left>
-        <Height>2.77913cm</Height>
+        <Left>0.48309cm</Left>
+        <Height>2.6733cm</Height>
         <Width>15.32247cm</Width>
         <Style>
           <Border>
@@ -847,7 +848,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Left>4.41678cm</Left>
+        <Left>3.84528cm</Left>
         <Height>0.78521cm</Height>
         <Width>8.29438cm</Width>
         <ZIndex>1</ZIndex>
@@ -862,10 +863,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.77356in</Height>
+    <Height>1.59648in</Height>
     <Style />
   </Body>
-  <Width>6.76042in</Width>
+  <Width>6.33692in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -911,7 +912,7 @@
         </Field>
         <Field Name="id_Calibracion">
           <DataField>id_Calibracion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Fec_Calibracion">
           <DataField>Fec_Calibracion</DataField>
@@ -935,6 +936,10 @@
         </Field>
         <Field Name="Etiqueta">
           <DataField>Etiqueta</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Resolucion">
+          <DataField>Resolucion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

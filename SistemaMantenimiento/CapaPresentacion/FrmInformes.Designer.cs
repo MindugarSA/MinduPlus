@@ -34,8 +34,11 @@
             this.SpInformeEtiquetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSet1 = new CapaPresentacion.DataSet1();
             this.SpInformeEtiquetasTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeEtiquetasTableAdapter();
+            this.SpInformeActaBajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SpInformeActaBajaTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeActaBajaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpInformeActaBajaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -66,6 +69,15 @@
             // 
             this.SpInformeEtiquetasTableAdapter.ClearBeforeFill = true;
             // 
+            // SpInformeActaBajaBindingSource
+            // 
+            this.SpInformeActaBajaBindingSource.DataMember = "SpInformeActaBaja";
+            this.SpInformeActaBajaBindingSource.DataSource = this.DataSet1;
+            // 
+            // SpInformeActaBajaTableAdapter
+            // 
+            this.SpInformeActaBajaTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmInformes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -77,6 +89,7 @@
             this.Load += new System.EventHandler(this.FrmInformes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpInformeActaBajaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,5 +100,7 @@
         private System.Windows.Forms.BindingSource SpInformeEtiquetasBindingSource;
         private DataSet1 DataSet1;
         private DataSet1TableAdapters.SpInformeEtiquetasTableAdapter SpInformeEtiquetasTableAdapter;
+        private System.Windows.Forms.BindingSource SpInformeActaBajaBindingSource;
+        private DataSet1TableAdapters.SpInformeActaBajaTableAdapter SpInformeActaBajaTableAdapter;
     }
 }

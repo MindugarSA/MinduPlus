@@ -1556,9 +1556,9 @@ Partial Class Form1
     Friend WithEvents toolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents contextOcultarSelec As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents toolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Button15 As Windows.Forms.Button
-    Friend WithEvents btnVolver As Windows.Forms.Button 'MetroFramework.Controls.MetroButton 
-    Friend WithEvents Label21 As Windows.Forms.Label
+    Friend WithEvents Button15 As System.Windows.Forms.Button
+    Friend WithEvents btnVolver As System.Windows.Forms.Button 'MetroFramework.Controls.MetroButton 
+    Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents MetroProgressSpinner1 As MetroFramework.Controls.MetroProgressSpinner
 End Class
 

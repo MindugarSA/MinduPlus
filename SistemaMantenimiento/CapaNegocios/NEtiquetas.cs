@@ -15,7 +15,7 @@ namespace CapaNegocios
         public static DataTable DtEtiquetas = new DataTable();
         public static BindingSource BsEtiquetas = new BindingSource();
 
-        public static string Insertar(int id_Instrumento, string Codigo, string Descripcion, int id_Identidad, int id_Calibracion, DateTime Fec_Calibracion, DateTime Fec_Proxima, string id_Trab, string Trabajador, int id)
+        public static string Insertar(int id_Instrumento, string Codigo, string Descripcion, int id_Identidad, int id_Calibracion, DateTime Fec_Calibracion, DateTime Fec_Proxima, string id_Trab, string Trabajador, int id, double Resolucion)
         {
             DEtiquetas Obj = new DEtiquetas();
             Obj.Id_Instrumento = id_Instrumento;
@@ -28,8 +28,28 @@ namespace CapaNegocios
             Obj.Id_Trab = id_Trab;
             Obj.Trabajador = Trabajador;
             Obj.Id = id;
+            Obj.Resolucion = Resolucion;
 
             return Obj.Insertar(Obj);
+        }
+
+        public static void InsertarDTtoDB()
+        {
+            NEtiquetas.Eliminar();
+            foreach (DataRow row in NEtiquetas.DtEtiquetas.Rows)
+            {
+                NEtiquetas.Insertar(Convert.ToInt32(row[0])
+                                    , Convert.ToString(row[1])
+                                    , Convert.ToString(row[2])
+                                    , Convert.ToInt32(row[3])
+                                    , Convert.ToInt32(row[4])
+                                    , Convert.ToDateTime(row[5])
+                                    , Convert.ToDateTime(row[6])
+                                    , Convert.ToString(row[7])
+                                    , Convert.ToString(row[8])
+                                    , Convert.ToInt32(row[9])
+                                    , Convert.ToDouble(row[10]));
+            }
         }
 
         public static string Eliminar()

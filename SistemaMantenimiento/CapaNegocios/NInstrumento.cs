@@ -69,6 +69,11 @@ namespace CapaNegocios
             return new DInstrumento().Listar();
         }
 
+        public static DataTable ListarPorEmpleado(string Empleado)
+        {
+            return new DInstrumento().ListarPorEmpleado(Empleado);
+        }
+
         public static DataTable Buscar(int idinstrumento)
         {
             DInstrumento Obj = new DInstrumento()

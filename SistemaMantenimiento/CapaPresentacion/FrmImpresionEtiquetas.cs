@@ -59,8 +59,9 @@ namespace CapaPresentacion
             foreach (DataGridViewRow row in metroGrid1.SelectedRows)
             {
                 metroGrid1.Rows.RemoveAt(row.Index);
+                NEtiquetas.InsertarDTtoDB();
             }
-            
+
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -69,24 +70,22 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NEtiquetas.Eliminar(); 
-            foreach (DataRow row in NEtiquetas.DtEtiquetas.Rows)
+            if (metroGrid1.Rows.Count > 0)
             {
-                NEtiquetas.Insertar(Convert.ToInt32(row[0])
-                                    , Convert.ToString(row[1])
-                                    , Convert.ToString(row[2])
-                                    , Convert.ToInt32(row[3])
-                                    , Convert.ToInt32(row[4])
-                                    , Convert.ToDateTime(row[5])
-                                    , Convert.ToDateTime(row[6])
-                                    , Convert.ToString(row[7])
-                                    , Convert.ToString(row[8])
-                                    , Convert.ToInt32(row[9]));
+                FrmInformes frm = new FrmInformes()
+                {
+                    TipoReporte = "Etiquetas"
+                };
+                frm.ShowDialog();
             }
-
-            FrmInformes frm = new FrmInformes();
-            frm.ShowDialog();
-
+        }
+        private void metroGrid1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (metroGrid1.Rows.Count > 0)
+            //{
+            //    if (e.ColumnIndex == 10)
+            //        NEtiquetas.InsertarDTtoDB();
+            //}
         }
 
         /// <summary>
@@ -112,8 +111,24 @@ namespace CapaPresentacion
             metroGrid1.Columns[6].HeaderText = "Vencto.";
             metroGrid1.Columns[7].HeaderText = "RUT";
             metroGrid1.Columns[8].HeaderText = "Empleado";
+            metroGrid1.Columns[10].HeaderText = "Resolucion";
+
+            metroGrid1.Columns[3].ReadOnly = true;
+            metroGrid1.Columns[4].ReadOnly = true;
+            metroGrid1.Columns[5].ReadOnly = true;
+            metroGrid1.Columns[6].ReadOnly = true;
+            metroGrid1.Columns[7].ReadOnly = true;
+            metroGrid1.Columns[8].ReadOnly = true;
+            metroGrid1.Columns[10].ReadOnly = false;
+
+            metroGrid1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            metroGrid1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            metroGrid1.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            metroGrid1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            metroGrid1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             metroGrid1.AjustColumnsWidthForGridWidth();
+            metroGrid1.Columns[10].Width = 70;
             //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             // dataGridView1.Columns[6].Width = 80;
         }
@@ -135,6 +150,23 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
+        private void metroGrid1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (metroGrid1.CurrentCell.ColumnIndex == 10)
+            {
+                e.Control.KeyPress += new KeyPressEventHandler(CheckKey);
+            }
+        }
 
+        private void CheckKey(object sender, KeyPressEventArgs e)
+        {
+            TextBox TxtActual = (TextBox)sender;
+            Funciones.Formato_Decimal(TxtActual, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NEtiquetas.InsertarDTtoDB();
+        }
     }
 }

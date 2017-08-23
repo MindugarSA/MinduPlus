@@ -76,6 +76,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -711,11 +714,64 @@
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Asignar Identificacion a Instrumento";
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::CapaPresentacion.Properties.Resources.printing;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(569, 565);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 40);
+            this.button3.TabIndex = 29;
+            this.button3.Text = "Imprimir ";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Nuevo",
+            "Usado",
+            "Baja"});
+            this.metroComboBox1.Location = new System.Drawing.Point(289, 570);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(264, 29);
+            this.metroComboBox1.TabIndex = 34;
+            this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.Click += new System.EventHandler(this.metroComboBox1_Click);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(226, 578);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 13);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Supervisor";
+            // 
             // FrmIndividualizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 612);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
@@ -735,6 +791,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -784,5 +841,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Archivo;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label14;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
     }
 }

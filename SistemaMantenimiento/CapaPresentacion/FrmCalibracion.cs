@@ -14,8 +14,9 @@ namespace CapaPresentacion
 {
     public partial class FrmCalibracion : MetroFramework.Forms.MetroForm
     {
-        public delegate void EnvEvent();
+        public delegate void EnvEvent(int i = 0);
         public event EnvEvent EnviarEvento;
+        public int IdentidadGridRow { get; set; }
 
         private DataGridViewRow DataIdentidad;
         private DataTable DataItemsCalibracion;
@@ -247,8 +248,14 @@ namespace CapaPresentacion
             if (btnAgregar.Text != "Ok")
                 if (rpta == "OK")
                 {
-                    EnviarEvento();
+                    EnviarEvento(IdentidadGridRow);
+                    MetroFramework.MetroMessageBox.Show(this, "La Verificacion fue " + btnAgregar.Text == "&Agregar" ? "Registrada" : "Actualizada" + " Exitosamente",
+                                                    "Verificacion de Instrumento",
+                                                    MessageBoxButtons.OK,
+                                                    MessageBoxIcon.Information,
+                                                    370);
                     btnAgregar.Text = "Ok";
+
                 }
                 else
                 {
@@ -288,7 +295,7 @@ namespace CapaPresentacion
 
                 NEtiquetas.DtEtiquetas.Rows.Add(dr);
             }
-            catch (Exception x) { }
+            catch (Exception) { }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

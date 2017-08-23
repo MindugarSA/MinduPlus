@@ -16,7 +16,7 @@ namespace CapaPresentacion
 {
     public partial class FrmIndividualizacion : MetroFramework.Forms.MetroForm// Form
     {
-        public delegate void EnvEvent();
+        public delegate void EnvEvent(int i = 0);
         public event EnvEvent EnviarEvento;
 
         private DataGridViewRow IDInstrumento;
@@ -67,6 +67,8 @@ namespace CapaPresentacion
         {
             FrmEmpleado Empleado = new FrmEmpleado();
             Empleado.EnvEmple += new FrmEmpleado.EnviarEmpleado(CargarDatosEmpleado); // Metodo Delegate para enviar datos desde FrmEmplado
+            Empleado.TextButtton = "Agregar";
+            Empleado.TipoListado = "Empleados";
             Empleado.ShowDialog();
         }
 
@@ -173,7 +175,7 @@ namespace CapaPresentacion
                 txtItemSelec.Top += 4;
             }
 
-                txtCodInstru.Enabled = false;
+            txtCodInstru.Enabled = false;
             txtDescInstru.Enabled = false;
 
             txtCodInstru.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -185,6 +187,7 @@ namespace CapaPresentacion
         {
             txtCodEmp.Text = DatosEmpleado[0];
             txtNomEmp.Text = DatosEmpleado[1];
+            CargarComboSupervisor(txtCodEmp.Text);
         }
 
         private void CargaDatosNuevo()
@@ -198,7 +201,7 @@ namespace CapaPresentacion
         private void CargaDatosActuales()
         {
             txtId.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            txtId.Text = Convert.ToString(IDInstrumento.Cells[1].Value) ;
+            txtId.Text = Convert.ToString(IDInstrumento.Cells[1].Value);
             txtCalibra.Text = Convert.ToString(IDInstrumento.Cells[2].Value);
             txtCalibra.BackColor = System.Drawing.SystemColors.ControlLightLight;
             txtCodEmp.Text = Convert.ToString(IDInstrumento.Cells[4].Value);
@@ -210,13 +213,26 @@ namespace CapaPresentacion
             txtMarca.Text = Convert.ToString(IDInstrumento.Cells[10].Value);
             textOtros.Text = Convert.ToString(IDInstrumento.Cells[12].Value);
             cmbEstado.SelectedItem = Convert.ToString(IDInstrumento.Cells[3].Value);
+
+            CargarComboSupervisor(txtCodEmp.Text);
+        }
+
+        private void CargarComboSupervisor(string RutEmple)
+        {
+            NSupervisor.DtSupervisor = NSupervisor.Buscar(RutEmple);
+            metroComboBox1.DataSource = NSupervisor.DtSupervisor;
+            metroComboBox1.DisplayMember = "nombreJefe";
+            metroComboBox1.ValueMember = "rut";
+
+            metroComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            metroComboBox1.SelectedIndex = 0;
         }
 
         private int CargaProximaIdentidad()
         {
             return NIdentInstrumento.ProximoCodigoIndividual(Convert.ToInt32(IDInstrumento.Cells[0].Value));
         }
-        
+
         private bool ValidarCampos()
         {
             bool valido = true;
@@ -277,6 +293,14 @@ namespace CapaPresentacion
         {
             panel2.BackColor = Color.FromArgb(255, 152, 0);
             panel2.Height += 1;
+        }
+
+        private void metroComboBox1_Click(object sender, EventArgs e)
+        {
+            if (metroComboBox1.DataSource == null)
+            {
+
+            }
         }
     }
 }

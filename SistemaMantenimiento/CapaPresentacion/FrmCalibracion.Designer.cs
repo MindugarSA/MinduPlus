@@ -99,7 +99,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1007, 336);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Calibracion por Items";
+            this.groupBox1.Text = "Verificacion por Items";
             // 
             // panel1
             // 
@@ -353,7 +353,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1004, 185);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Calibracion Instrumento";
+            this.groupBox2.Text = "Datos Verificacion Instrumento";
             // 
             // label11
             // 
@@ -497,11 +497,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(768, 88);
+            this.label6.Location = new System.Drawing.Point(765, 88);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 17);
+            this.label6.Size = new System.Drawing.Size(107, 17);
             this.label6.TabIndex = 37;
-            this.label6.Text = "Fecha Calibracion";
+            this.label6.Text = "Fecha Verificacion";
             // 
             // label5
             // 
@@ -515,11 +515,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 58);
+            this.label3.Location = new System.Drawing.Point(211, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 17);
+            this.label3.Size = new System.Drawing.Size(89, 17);
             this.label3.TabIndex = 35;
-            this.label3.Text = "Calibracion N°";
+            this.label3.Text = "Verificacion N°";
             // 
             // label2
             // 
@@ -586,7 +586,7 @@
             this.txtCalibra.Depth = 0;
             this.txtCalibra.Font = new System.Drawing.Font("Segoe UI Light", 9.75F);
             this.txtCalibra.Hint = "";
-            this.txtCalibra.Location = new System.Drawing.Point(292, 55);
+            this.txtCalibra.Location = new System.Drawing.Point(299, 55);
             this.txtCalibra.MaxLength = 32767;
             this.txtCalibra.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCalibra.Name = "txtCalibra";
@@ -780,7 +780,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCalibracion";
-            this.Text = "Registro de Calibracion y Mantencion por Instrumento";
+            this.Text = "Registro de Verificacion y Mantencion por Instrumento";
             this.Load += new System.EventHandler(this.FrmCalibracion_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCalibracion_Paint);
             this.groupBox1.ResumeLayout(false);
