@@ -302,5 +302,25 @@ namespace CapaPresentacion
 
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FrmInformes frm = new FrmInformes()
+            {
+                TipoReporte = "EntregaInstru",
+                Id_instrumento = Convert.ToInt32(IDInstrumento.Cells[0].Value),
+                Id_identidad = Convert.ToInt32(txtId.Text)
+            };
+            frm.ShowDialog();
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(metroComboBox1.SelectedIndex != -1)
+            {
+                NSupervisor.Eliminar();
+                NSupervisor.Insertar(metroComboBox1.SelectedIndex);
+            }
+        }
     }
 }

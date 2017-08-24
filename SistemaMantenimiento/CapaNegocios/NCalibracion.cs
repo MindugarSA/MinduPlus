@@ -11,7 +11,7 @@ namespace CapaNegocios
 {
     public class NCalibracion
     {
-        public static string Insertar(int Id_Instrumento, int Id_Identidad, int Id_Calibracion, DateTime Fec_Calibracion, string Observacion , DataTable dtDetalles)
+        public static string Insertar(int Id_Instrumento, int Id_Identidad, int Id_Calibracion, DateTime Fec_Calibracion, string Observacion , DataTable dtDetalles, DateTime Fec_Proxima)
         {
             DCalibracion Obj = new DCalibracion()
             {
@@ -19,7 +19,9 @@ namespace CapaNegocios
                 Id_Identidad = Id_Identidad,
                 Id_Calibracion = Id_Calibracion,
                 Fec_Calibracion = Fec_Calibracion,
-                Observacion = Observacion
+                Observacion = Observacion,
+                Fec_Proxima = Fec_Proxima,
+
             };
             List<DCalibraItem> detalles = (List<DCalibraItem>)dtDetalles.ToList<DCalibraItem>();
             //List<DCalibraItem> detalles = new List<DCalibraItem>();
@@ -38,7 +40,7 @@ namespace CapaNegocios
 
         //Método Actualizar que llama al método Actualizar de la clase DIdentInstrumento
         //de la CapaDatos
-        public static string Actualizar(int id, int Id_Instrumento, int Id_Identidad, int Id_Calibracion, DateTime Fec_Calibracion, string Observacion, DataTable dtDetalles)
+        public static string Actualizar(int id, int Id_Instrumento, int Id_Identidad, int Id_Calibracion, DateTime Fec_Calibracion, string Observacion, DataTable dtDetalles, DateTime Fec_Proxima)
         {
             DCalibracion Obj = new DCalibracion()
             {
@@ -47,7 +49,9 @@ namespace CapaNegocios
                 Id_Identidad = Id_Identidad,
                 Id_Calibracion = Id_Calibracion,
                 Fec_Calibracion = Fec_Calibracion,
-                Observacion = Observacion
+                Observacion = Observacion,
+                Fec_Proxima = Fec_Proxima,
+
             };
             List<DCalibraItem> detalles = (List<DCalibraItem>)dtDetalles.ToList<DCalibraItem>();
 

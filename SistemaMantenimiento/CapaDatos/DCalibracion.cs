@@ -18,6 +18,7 @@ namespace CapaDatos
         int _Id_Calibracion;
         DateTime _Fec_Calibracion;
         string _Observacion;
+        DateTime _Fec_Proxima;
         public int Id
         {
             get
@@ -84,13 +85,14 @@ namespace CapaDatos
         }
 
         public string Observacion { get => _Observacion; set => _Observacion = value; }
+        public DateTime Fec_Proxima { get => _Fec_Proxima; set => _Fec_Proxima = value; }
 
         public DCalibracion()
         {
 
         }
 
-        public DCalibracion(int Id, int Id_Instrumento,int Id_Identidad, int Id_Calibracion , DateTime Fec_Calibracion, string Observacion)
+        public DCalibracion(int Id, int Id_Instrumento,int Id_Identidad, int Id_Calibracion , DateTime Fec_Calibracion, string Observacion, DateTime Fec_Proxima)
         {
             _Id = Id;
             _Id_Instrumento = Id_Instrumento;
@@ -98,6 +100,7 @@ namespace CapaDatos
             _Id_Calibracion = Id_Calibracion;
             _Fec_Calibracion = Fec_Calibracion;
             _Observacion = Observacion;
+            _Fec_Proxima = Fec_Proxima;
 
         }
 
@@ -123,6 +126,8 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@ID_CALIBRACION", Calibracion.Id_Calibracion);
                 SqlCmd.Parameters.AddWithValue("@FEC_CALIBRACION", Calibracion.Fec_Calibracion);
                 SqlCmd.Parameters.AddWithValue("@Observacion", Calibracion.Observacion);
+                SqlCmd.Parameters.AddWithValue("@Fec_Proxima", Calibracion.Fec_Proxima);
+
 
                 SqlParameter retValue = new SqlParameter("@RETURN_VALUE", SqlDbType.Int)
                 {
@@ -198,8 +203,9 @@ namespace CapaDatos
                 SqlCmd.Parameters.AddWithValue("@ID_CALIBRACION", Calibracion.Id_Calibracion);
                 SqlCmd.Parameters.AddWithValue("@FEC_CALIBRACION", Calibracion.Fec_Calibracion);
                 SqlCmd.Parameters.AddWithValue("@Observacion", Calibracion.Observacion);
+                SqlCmd.Parameters.AddWithValue("@Fec_Proxima", Calibracion.Fec_Proxima);
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Modifico el Registro";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se Modifico el Registro";
 
                 if (rpta.Equals("OK"))
                 {

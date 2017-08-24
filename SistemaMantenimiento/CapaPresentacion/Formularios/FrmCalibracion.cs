@@ -229,7 +229,8 @@ namespace CapaPresentacion
                                                     Convert.ToInt32(txtCalibra.Text),
                                                     Convert.ToDateTime(dtpFecCalib.Text),
                                                     Convert.ToString(TxtObserva.Text.Trim()),
-                                                    DataDetalleCalibracion);
+                                                    DataDetalleCalibracion,
+                                                    Convert.ToDateTime(dtpProxCalib.Text));
             }
             else if (btnAgregar.Text == "Actualizar")
             {
@@ -239,7 +240,8 @@ namespace CapaPresentacion
                                                     Convert.ToInt32(txtCalibra.Text),
                                                     Convert.ToDateTime(dtpFecCalib.Text),
                                                     Convert.ToString(TxtObserva.Text.Trim()),
-                                                    DataDetalleCalibracion);
+                                                    DataDetalleCalibracion,
+                                                    Convert.ToDateTime(dtpProxCalib.Text));
 
             }
             else
@@ -273,35 +275,60 @@ namespace CapaPresentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (btnAgregar.Text != "&Agregar")
             {
-                //NEtiquetas.DtEtiquetas.ImportRow(((DataTable)dataCalibracion.DataSource).Rows[dataCalibracion.CurrentRow.Index]);
+                try
+                {
+                    //NEtiquetas.DtEtiquetas.ImportRow(((DataTable)dataCalibracion.DataSource).Rows[dataCalibracion.CurrentRow.Index]);
 
-                DataRow dr = NEtiquetas.DtEtiquetas.NewRow();
+                    DataRow dr = NEtiquetas.DtEtiquetas.NewRow();
 
-                dr[0] = Convert.ToInt32(DataIdentidad.Cells[0].Value);
-                dr[1] = txtCodInstru.Text.Trim();
-                dr[2] = txtDescInstru.Text.Trim();
-                dr[3] = Convert.ToInt32(txtId.Text);
-                dr[4] = Convert.ToInt32(txtCalibra.Text);
-                dr[5] = Convert.ToDateTime(dtpFecCalib.Text);
-                dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value)
-                                                          , txtEstado.Text
-                                                          , Convert.ToDateTime(dtpFecCalib.Text));
-                dr[7] = txtCodEmp.Text.Trim();
-                dr[8] = txtNomEmp.Text.Trim();
-                dr[9] = 0;
+                    dr[0] = Convert.ToInt32(DataIdentidad.Cells[0].Value);
+                    dr[1] = txtCodInstru.Text.Trim();
+                    dr[2] = txtDescInstru.Text.Trim();
+                    dr[3] = Convert.ToInt32(txtId.Text);
+                    dr[4] = Convert.ToInt32(txtCalibra.Text);
+                    dr[5] = Convert.ToDateTime(dtpFecCalib.Text);
+                    dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value)
+                                                              , txtEstado.Text
+                                                              , Convert.ToDateTime(dtpFecCalib.Text));
+                    dr[7] = txtCodEmp.Text.Trim();
+                    dr[8] = txtNomEmp.Text.Trim();
+                    dr[9] = 0;
+                    dr[10] = 0.0;
 
 
-                NEtiquetas.DtEtiquetas.Rows.Add(dr);
+                    NEtiquetas.DtEtiquetas.Rows.Add(dr);
+                    NEtiquetas.InsertarDTtoDB();
+
+                }
+                catch (Exception) { }
             }
-            catch (Exception) { }
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Debe Registrar la Verificación antes de Agregarla a la Lista de Etiquetas",
+                                                   "Verificacion de Instrumento",
+                                                   MessageBoxButtons.OK,
+                                                   MessageBoxIcon.Information,
+                                                   370);
+            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dtpProxCalib.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
+            DtpFecVenc.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
+        }
+
+        /// <summary>
+        /// PROCEDIMIENTOS Y FUNCIONES
+        /// </summary>
 
         private void CargarEncabezado()
         {
@@ -418,7 +445,7 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
-
+       
     }
 
 }

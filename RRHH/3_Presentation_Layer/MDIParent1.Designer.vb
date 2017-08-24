@@ -90,7 +90,7 @@ Partial Class MDIParent1
         '
         Me.BunifuTransition1.SetDecoration(PictureBox1, BunifuAnimatorNS.DecorationType.None)
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        PictureBox1.Location = New System.Drawing.Point(3, 5)
+        PictureBox1.Location = New System.Drawing.Point(3, 2)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New System.Drawing.Size(215, 55)
         PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -367,7 +367,7 @@ Partial Class MDIParent1
         Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
         Me.Panel1.Location = New System.Drawing.Point(0, 26)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1129, 63)
+        Me.Panel1.Size = New System.Drawing.Size(1129, 57)
         Me.Panel1.TabIndex = 10
         '
         'TableLayoutPanel2
@@ -388,7 +388,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel2.Controls.Add(Me.Button4, 4, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.PcturBx_Image, 3, 0)
         Me.BunifuTransition1.SetDecoration(Me.TableLayoutPanel2, BunifuAnimatorNS.DecorationType.None)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(731, 5)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(731, 2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -500,7 +500,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.Controls.Add(Me.Lbl_Cod_ID, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 0)
         Me.BunifuTransition1.SetDecoration(Me.TableLayoutPanel1, BunifuAnimatorNS.DecorationType.None)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 5)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.09091!))
@@ -537,7 +537,7 @@ Partial Class MDIParent1
         '
         Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.BunifuTransition1.SetDecoration(Me.TxtBx_Empresa, BunifuAnimatorNS.DecorationType.None)
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 35)
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 37)
         Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
         Me.TxtBx_Empresa.ReadOnly = True
         Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
@@ -549,7 +549,7 @@ Partial Class MDIParent1
         '
         Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.BunifuTransition1.SetDecoration(Me.TxtBx_UserName, BunifuAnimatorNS.DecorationType.None)
-        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 12)
+        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 14)
         Me.TxtBx_UserName.Name = "TxtBx_UserName"
         Me.TxtBx_UserName.ReadOnly = True
         Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
@@ -571,9 +571,9 @@ Partial Class MDIParent1
         Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
         Me.Panel2.Controls.Add(Me.TxtBx_UserName)
         Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel2.Location = New System.Drawing.Point(0, 93)
+        Me.Panel2.Location = New System.Drawing.Point(0, 87)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1129, 790)
+        Me.Panel2.Size = New System.Drawing.Size(1129, 795)
         Me.Panel2.TabIndex = 11
         '
         'PictureBox3
@@ -594,7 +594,7 @@ Partial Class MDIParent1
         Me.pnlMovingRight2.BackColor = System.Drawing.Color.Transparent
         Me.pnlMovingRight2.Controls.Add(Me.Tle_Herramientas_Pre)
         Me.BunifuTransition1.SetDecoration(Me.pnlMovingRight2, BunifuAnimatorNS.DecorationType.None)
-        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 668)
+        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 673)
         Me.pnlMovingRight2.Name = "pnlMovingRight2"
         Me.pnlMovingRight2.Size = New System.Drawing.Size(298, 120)
         Me.pnlMovingRight2.TabIndex = 21
@@ -624,7 +624,7 @@ Partial Class MDIParent1
         Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
         Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
         Me.BunifuTransition1.SetDecoration(Me.pnlMovingTop, BunifuAnimatorNS.DecorationType.None)
-        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 324)
+        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 329)
         Me.pnlMovingTop.Name = "pnlMovingTop"
         Me.pnlMovingTop.Size = New System.Drawing.Size(262, 463)
         Me.pnlMovingTop.TabIndex = 19
@@ -635,7 +635,7 @@ Partial Class MDIParent1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.FlowLayoutPanel1, BunifuAnimatorNS.DecorationType.None)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(-3, 89)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(-3, 83)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1139, 4)
         Me.FlowLayoutPanel1.TabIndex = 13

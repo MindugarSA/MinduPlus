@@ -163,6 +163,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar__2_ {
+            get {
+                object obj = ResourceManager.GetObject("calendar__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar__3_ {
+            get {
+                object obj = ResourceManager.GetObject("calendar__3_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap check_mark_white_on_black_circular_background {
             get {
                 object obj = ResourceManager.GetObject("check_mark_white_on_black_circular_background", resourceCulture);

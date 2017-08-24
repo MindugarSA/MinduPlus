@@ -38,7 +38,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>136</ApplicationRevision>
+    <ApplicationRevision>138</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -339,12 +339,6 @@
     <Compile Include="3_Presentation_Layer\Formularios\FrmSolicPermHrasExt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_Configuracion.Designer.vb">
-      <DependentUpon>Frm_Configuracion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_Configuracion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_EliminarHoraExtra.Designer.vb">
       <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
     </Compile>
@@ -571,9 +565,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\FrmSolicPermHrasExt.resx">
       <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_Configuracion.resx">
-      <DependentUpon>Frm_Configuracion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_EliminarHoraExtra.resx">
       <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>

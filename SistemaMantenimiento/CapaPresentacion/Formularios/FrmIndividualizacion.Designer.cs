@@ -667,7 +667,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(97, 37);
             this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.Text = "&Volver";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             this.btnCancelar.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
@@ -734,6 +734,7 @@
             this.button3.Text = "Imprimir ";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.button3.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
@@ -752,6 +753,7 @@
             this.metroComboBox1.Size = new System.Drawing.Size(264, 29);
             this.metroComboBox1.TabIndex = 34;
             this.metroComboBox1.UseSelectable = true;
+            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             this.metroComboBox1.Click += new System.EventHandler(this.metroComboBox1_Click);
             // 
             // label14

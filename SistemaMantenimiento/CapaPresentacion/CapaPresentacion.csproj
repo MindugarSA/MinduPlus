@@ -145,70 +145,70 @@
     <Compile Include="Extensiones\FilestoBinary.cs" />
     <Compile Include="Extensiones\FormExtensions.cs" />
     <Compile Include="Extensiones\ManipulateObject.cs" />
-    <Compile Include="FrmAcceso.cs">
+    <Compile Include="Formularios\FrmAcceso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAcceso.Designer.cs">
+    <Compile Include="Formularios\FrmAcceso.Designer.cs">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAgregarInstrumento.cs">
+    <Compile Include="Formularios\FrmAgregarInstrumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAgregarInstrumento.Designer.cs">
+    <Compile Include="Formularios\FrmAgregarInstrumento.Designer.cs">
       <DependentUpon>FrmAgregarInstrumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBajaIndividualizacion.cs">
+    <Compile Include="Formularios\FrmBajaIndividualizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBajaIndividualizacion.Designer.cs">
+    <Compile Include="Formularios\FrmBajaIndividualizacion.Designer.cs">
       <DependentUpon>FrmBajaIndividualizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCalibracion.cs">
+    <Compile Include="Formularios\FrmCalibracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCalibracion.Designer.cs">
+    <Compile Include="Formularios\FrmCalibracion.Designer.cs">
       <DependentUpon>FrmCalibracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleado.cs">
+    <Compile Include="Formularios\FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleado.Designer.cs">
+    <Compile Include="Formularios\FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmImpresionEtiquetas.cs">
+    <Compile Include="Formularios\FrmImpresionEtiquetas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmImpresionEtiquetas.Designer.cs">
+    <Compile Include="Formularios\FrmImpresionEtiquetas.Designer.cs">
       <DependentUpon>FrmImpresionEtiquetas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIndividualizacion.cs">
+    <Compile Include="Formularios\FrmIndividualizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIndividualizacion.Designer.cs">
+    <Compile Include="Formularios\FrmIndividualizacion.Designer.cs">
       <DependentUpon>FrmIndividualizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInformes.cs">
+    <Compile Include="Formularios\FrmInformes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInformes.Designer.cs">
+    <Compile Include="Formularios\FrmInformes.Designer.cs">
       <DependentUpon>FrmInformes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInstrumentosPrecision.cs">
+    <Compile Include="Formularios\FrmInstrumentosPrecision.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInstrumentosPrecision.Designer.cs">
+    <Compile Include="Formularios\FrmInstrumentosPrecision.Designer.cs">
       <DependentUpon>FrmInstrumentosPrecision.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmItemsComprobacion.cs">
+    <Compile Include="Formularios\FrmItemsComprobacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItemsComprobacion.Designer.cs">
+    <Compile Include="Formularios\FrmItemsComprobacion.Designer.cs">
       <DependentUpon>FrmItemsComprobacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmItemsInstrumento.cs">
+    <Compile Include="Formularios\FrmItemsInstrumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItemsInstrumento.Designer.cs">
+    <Compile Include="Formularios\FrmItemsInstrumento.Designer.cs">
       <DependentUpon>FrmItemsInstrumento.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensiones\Funciones.cs" />
@@ -233,37 +233,37 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmAcceso.resx">
+    <EmbeddedResource Include="Formularios\FrmAcceso.resx">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAgregarInstrumento.resx">
+    <EmbeddedResource Include="Formularios\FrmAgregarInstrumento.resx">
       <DependentUpon>FrmAgregarInstrumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBajaIndividualizacion.resx">
+    <EmbeddedResource Include="Formularios\FrmBajaIndividualizacion.resx">
       <DependentUpon>FrmBajaIndividualizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCalibracion.resx">
+    <EmbeddedResource Include="Formularios\FrmCalibracion.resx">
       <DependentUpon>FrmCalibracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleado.resx">
+    <EmbeddedResource Include="Formularios\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmImpresionEtiquetas.resx">
+    <EmbeddedResource Include="Formularios\FrmImpresionEtiquetas.resx">
       <DependentUpon>FrmImpresionEtiquetas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIndividualizacion.resx">
+    <EmbeddedResource Include="Formularios\FrmIndividualizacion.resx">
       <DependentUpon>FrmIndividualizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInformes.resx">
+    <EmbeddedResource Include="Formularios\FrmInformes.resx">
       <DependentUpon>FrmInformes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInstrumentosPrecision.resx">
+    <EmbeddedResource Include="Formularios\FrmInstrumentosPrecision.resx">
       <DependentUpon>FrmInstrumentosPrecision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItemsComprobacion.resx">
+    <EmbeddedResource Include="Formularios\FrmItemsComprobacion.resx">
       <DependentUpon>FrmItemsComprobacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItemsInstrumento.resx">
+    <EmbeddedResource Include="Formularios\FrmItemsInstrumento.resx">
       <DependentUpon>FrmItemsInstrumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -493,6 +493,10 @@
     <None Include="Resources\document-page-with-text-lines %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\calendar %281%29.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calendar %283%29.png" />
+    <None Include="Resources\calendar %282%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

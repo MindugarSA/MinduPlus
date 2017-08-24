@@ -43,6 +43,7 @@ namespace CapaPresentacion
             skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE);
 
+            this.SetStyle(ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
             InitializeComponent();
 
             this.pnlParent = prmPnlParent;
@@ -53,7 +54,6 @@ namespace CapaPresentacion
 
         private void FrmInstrumentosPrecision_Shown(object sender, EventArgs e)
         {
-            this.SetStyle(ControlStyles.DoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
             this.SuspendLayout();
             this.DoubleBuffered = true;
 
@@ -260,6 +260,7 @@ namespace CapaPresentacion
                                                             (DataTable)dataItemsComp.DataSource,
                                                             dataCalibracion.Rows[dataCalibracion.SelectedRows[0].Index],
                                                             "Actualizar");
+                Calibracion.IdentidadGridRow = dataIndividualizacion.SelectedRows[0].Index;
                 Calibracion.EnviarEvento += new FrmCalibracion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
                 Calibracion.ShowDialog();
             }

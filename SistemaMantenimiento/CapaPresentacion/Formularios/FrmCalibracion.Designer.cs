@@ -53,6 +53,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.DtpFecVenc = new MetroFramework.Controls.MetroDateTime();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -81,6 +82,7 @@
             this.txtCodEmp = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataItemCalibracion)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -293,7 +295,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(107, 42);
             this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.Text = "&Volver";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             this.btnCancelar.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
@@ -321,6 +323,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.DtpFecVenc);
             this.groupBox2.Controls.Add(this.panel2);
@@ -354,6 +357,30 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Verificacion Instrumento";
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.button3.BackgroundImage = global::CapaPresentacion.Properties.Resources.calendar__2_;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(752, 112);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(32, 26);
+            this.button3.TabIndex = 17;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroToolTip1.SetToolTip(this.button3, "Asignar Fechas \r\nSegun Frecuencia");
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // label11
             // 
@@ -730,7 +757,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::CapaPresentacion.Properties.Resources.document_lines;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(915, 603);
+            this.button2.Location = new System.Drawing.Point(918, 603);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(107, 42);
@@ -754,7 +781,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::CapaPresentacion.Properties.Resources.barcode_tag__1_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(800, 604);
+            this.button1.Location = new System.Drawing.Point(803, 604);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 42);
@@ -766,11 +793,17 @@
             this.button1.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
+            // metroToolTip1
+            // 
+            this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroToolTip1.StyleManager = null;
+            this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
             // FrmCalibracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 655);
+            this.ClientSize = new System.Drawing.Size(1046, 655);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
@@ -838,5 +871,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label11;
         private MetroFramework.Controls.MetroDateTime DtpFecVenc;
+        private System.Windows.Forms.Button button3;
+        private MetroFramework.Components.MetroToolTip metroToolTip1;
     }
 }

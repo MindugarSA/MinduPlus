@@ -26,6 +26,8 @@ namespace CapaPresentacion
             // TODO: esta línea de código carga datos en la tabla 'DataSet1.SpInformeEtiquetas' Puede moverla o quitarla según sea necesario.
             this.SpInformeEtiquetasTableAdapter.Fill(this.DataSet1.SpInformeEtiquetas);
             this.SpInformeActaBajaTableAdapter.Fill(this.DataSet1.SpInformeActaBaja,Id_instrumento,Id_identidad);
+            this.SpInformeEntregaInstrumentoTableAdapter.Fill(this.DataSet1.SpInformeEntregaInstrumento, Id_instrumento, Id_identidad);
+
 
             ReportDataSource CurrentReportDataSource = new ReportDataSource();
             reportViewer1.LocalReport.DataSources.Clear();
@@ -33,12 +35,14 @@ namespace CapaPresentacion
             switch (TipoReporte)
             {
                 case "Etiquetas":
+                    this.Text = "Formato de Etiquetas";
                     reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RptEtiquetas.rdlc";
                     CurrentReportDataSource.Name = "DataSet1";
                     CurrentReportDataSource.Value = SpInformeEtiquetasBindingSource;
                     reportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource);
                     break;
                 case "ActaBaja":
+                    this.Text = "Acta de Baja de Instrumento";
                     reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RptActaBaja.rdlc";
                     CurrentReportDataSource.Name = "DataSet1";
                     CurrentReportDataSource.Value = SpInformeActaBajaBindingSource;
@@ -46,6 +50,13 @@ namespace CapaPresentacion
                     //parms[0] = new ReportParameter("title", "Clients");
                     //parms[2] = new ReportParameter("title", "Clients");
                     //reportViewer1.LocalReport.SetParameters(parms);
+                    reportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource);
+                    break;
+                case "EntregaInstru":
+                    this.Text = "Formato de Entrgea Instrumento";
+                    reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RptEntregaInstru.rdlc";
+                    CurrentReportDataSource.Name = "DataSet1";
+                    CurrentReportDataSource.Value = SpInformeEntregaInstrumentoBindingSource;
                     reportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource);
                     break;
             }

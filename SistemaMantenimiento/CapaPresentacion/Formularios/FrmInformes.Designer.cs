@@ -36,9 +36,12 @@
             this.SpInformeEtiquetasTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeEtiquetasTableAdapter();
             this.SpInformeActaBajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SpInformeActaBajaTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeActaBajaTableAdapter();
+            this.SpInformeEntregaInstrumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SpInformeEntregaInstrumentoTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeEntregaInstrumentoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeActaBajaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpInformeEntregaInstrumentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -46,9 +49,9 @@
             this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.SpInformeEtiquetasBindingSource;
+            reportDataSource1.Value = this.SpInformeActaBajaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RptEtiquetas.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RptActaBaja.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -78,6 +81,15 @@
             // 
             this.SpInformeActaBajaTableAdapter.ClearBeforeFill = true;
             // 
+            // SpInformeEntregaInstrumentoBindingSource
+            // 
+            this.SpInformeEntregaInstrumentoBindingSource.DataMember = "SpInformeEntregaInstrumento";
+            this.SpInformeEntregaInstrumentoBindingSource.DataSource = this.DataSet1;
+            // 
+            // SpInformeEntregaInstrumentoTableAdapter
+            // 
+            this.SpInformeEntregaInstrumentoTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmInformes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeActaBajaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpInformeEntregaInstrumentoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,5 +115,7 @@
         private DataSet1TableAdapters.SpInformeEtiquetasTableAdapter SpInformeEtiquetasTableAdapter;
         private System.Windows.Forms.BindingSource SpInformeActaBajaBindingSource;
         private DataSet1TableAdapters.SpInformeActaBajaTableAdapter SpInformeActaBajaTableAdapter;
+        private System.Windows.Forms.BindingSource SpInformeEntregaInstrumentoBindingSource;
+        private DataSet1TableAdapters.SpInformeEntregaInstrumentoTableAdapter SpInformeEntregaInstrumentoTableAdapter;
     }
 }

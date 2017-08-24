@@ -36,20 +36,24 @@ namespace CapaNegocios
         public static void InsertarDTtoDB()
         {
             NEtiquetas.Eliminar();
-            foreach (DataRow row in NEtiquetas.DtEtiquetas.Rows)
-            {
-                NEtiquetas.Insertar(Convert.ToInt32(row[0])
-                                    , Convert.ToString(row[1])
-                                    , Convert.ToString(row[2])
-                                    , Convert.ToInt32(row[3])
-                                    , Convert.ToInt32(row[4])
-                                    , Convert.ToDateTime(row[5])
-                                    , Convert.ToDateTime(row[6])
-                                    , Convert.ToString(row[7])
-                                    , Convert.ToString(row[8])
-                                    , Convert.ToInt32(row[9])
-                                    , Convert.ToDouble(row[10]));
-            }
+            if(DtEtiquetas.Rows.Count>0)
+                foreach (DataRow row in NEtiquetas.DtEtiquetas.Rows)
+                {
+                    if(row.RowState != DataRowState.Deleted)
+                    {
+                        NEtiquetas.Insertar(Convert.ToInt32(row[0])
+                                       , Convert.ToString(row[1])
+                                       , Convert.ToString(row[2])
+                                       , Convert.ToInt32(row[3])
+                                       , Convert.ToInt32(row[4])
+                                       , Convert.ToDateTime(row[5])
+                                       , Convert.ToDateTime(row[6])
+                                       , Convert.ToString(row[7])
+                                       , Convert.ToString(row[8])
+                                       , Convert.ToInt32(row[9])
+                                       , Convert.ToDouble(row[10]));
+                    }
+                }
         }
 
         public static string Eliminar()
