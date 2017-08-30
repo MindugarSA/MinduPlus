@@ -311,8 +311,8 @@ Public Class Frm_SolicitudColacion
             MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
             MDIParent1.TlStrpSttsLbl_SQL.Text = Errores
         Else
-            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.CornflowerBlue
-            MDIParent1.TlStrpSttsLbl_SQL.Text = "Grabado con exito"
+            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.FromArgb(85, 170, 74)
+            MDIParent1.TlStrpSttsLbl_SQL.Text = "Almuerzos Registrados"
         End If
         'If Month(vDateInfo) = Month(Date.Now) Then
         '    MsgBox("Recuerde  : " & vbCrLf & vbCrLf &

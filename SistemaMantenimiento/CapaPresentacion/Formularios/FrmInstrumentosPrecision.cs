@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CapaNegocios;
+using CapaPresentacion.Formularios;
 using System.Drawing.Drawing2D;
 using MaterialSkin.Controls;
 
@@ -142,9 +143,14 @@ namespace CapaPresentacion
         {
             if (dataIndividualizacion.RowCount > 0)
             {
-                FrmIndividualizacion Individualizacion = new FrmIndividualizacion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index], "Actualizar");
-                Individualizacion.EnviarEvento += new FrmIndividualizacion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
-                Individualizacion.ShowDialog();
+                try
+                {
+                    FrmIndividualizacion Individualizacion = new FrmIndividualizacion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index], "Actualizar");
+                    Individualizacion.EnviarEvento += new FrmIndividualizacion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
+                    Individualizacion.ShowDialog();
+                }
+                catch (Exception){}
+               
             }
 
         }
@@ -271,6 +277,7 @@ namespace CapaPresentacion
             {
                 ListarItemComprobacion();
                 ListarIndividualizacion();
+                metroToolTip1.SetToolTip(txtItemSelec, dataInstrumentos[0, dataInstrumentos.CurrentRow.Index].Value.ToString());
 
             }
         }
@@ -331,10 +338,34 @@ namespace CapaPresentacion
                     FiltrarIndividualizacionEmpleado(cmbBaja.SelectedIndex, DatosEmpleadoSelecc[0]);
                     break;
             }
+            switch (cmbBaja.SelectedIndex)
+            {
+                case 0:
+                    cmbBaja.BackColor = Color.FromArgb(85, 170, 74);
+                    break;
+                case 1:
+                    cmbBaja.BackColor = Color.FromArgb(221, 80, 68);
+                    break;
+                case 2:
+                    cmbBaja.BackColor = Color.White;
+                    break;
+            }
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrarInstrumentos("Estado");
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    comboBox1.BackColor = Color.FromArgb(85, 170, 74);
+                    break;
+                case 1:
+                    comboBox1.BackColor = Color.FromArgb(221, 80, 68);
+                    break;
+                case 2:
+                    comboBox1.BackColor = Color.White;
+                    break;
+            }
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -495,7 +526,7 @@ namespace CapaPresentacion
             if (dataInstrumentos.SelectedRows.Count > 0)
             {
                 int indice = dataInstrumentos.SelectedRows[0].Index;
-                txtItemSelec.Text = Convert.ToString(dataInstrumentos[2, indice].Value);
+                txtItemSelec.Text = Convert.ToString(dataInstrumentos[1, indice].Value) + "  -  " +  Convert.ToString(dataInstrumentos[2, indice].Value);
                 DTIndividualizacion = NIdentInstrumento.Listar(Convert.ToInt32(dataInstrumentos[0, indice].Value));
                 DTIndividualizaFiltro = DTIndividualizacion.Clone();
                 switch (comboBox2.SelectedIndex)
@@ -521,7 +552,7 @@ namespace CapaPresentacion
             if (dataIndividualizacion.SelectedRows.Count > 0)
             {
                 int indice = dataIndividualizacion.SelectedRows[0].Index;
-                txtResponsable.Text = Convert.ToString(dataIndividualizacion[4, indice].Value) + " - "
+                txtResponsable.Text = Convert.ToString(dataIndividualizacion[4, indice].Value) + "   "
                                       + Convert.ToString(dataIndividualizacion[5, indice].Value);
                 dataCalibracion.DataSource = NCalibracion.Listar(Convert.ToInt32(dataIndividualizacion[0, indice].Value),
                                                                  Convert.ToInt32(dataIndividualizacion[1, indice].Value));
@@ -797,9 +828,7 @@ namespace CapaPresentacion
                 dr[3] = Convert.ToInt32(dataCalibracion[2, indice].Value);
                 dr[4] = Convert.ToInt32(dataCalibracion[3, indice].Value);
                 dr[5] = Convert.ToDateTime(dataCalibracion[4, indice].Value);
-                dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(dataIndividualizacion[0, dataIndividualizacion.CurrentRow.Index].Value)
-                                                          , Convert.ToString(dataIndividualizacion[3, dataIndividualizacion.CurrentRow.Index].Value)
-                                                          , Convert.ToDateTime(dataCalibracion[4, indice].Value));
+                dr[6] = Convert.ToDateTime(dataCalibracion[7, indice].Value);
                 dr[7] = Convert.ToString(dataIndividualizacion[4, dataIndividualizacion.CurrentRow.Index].Value).Trim();
                 dr[8] = Convert.ToString(dataIndividualizacion[5, dataIndividualizacion.CurrentRow.Index].Value).Trim();
                 dr[9] = Convert.ToInt32(dataCalibracion[6, indice].Value);
@@ -807,13 +836,41 @@ namespace CapaPresentacion
 
                 NEtiquetas.DtEtiquetas.Rows.Add(dr);
                 NEtiquetas.InsertarDTtoDB();
+
+                //dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(dataIndividualizacion[0, dataIndividualizacion.CurrentRow.Index].Value)
+                //                                          , Convert.ToString(dataIndividualizacion[3, dataIndividualizacion.CurrentRow.Index].Value)
+                //                                          , Convert.ToDateTime(dataCalibracion[4, indice].Value));
             }
             catch (Exception) { }
 
         }
 
-       
+        private void informe1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultas oForm = new FrmConsultas();
+            oForm.TipoConsulta = "Vencimiento";
+            oForm.ShowDialog();
+        }
 
+        private void informe2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultas oForm = new FrmConsultas();
+            oForm.TipoConsulta = "Activos";
+            oForm.ShowDialog();
+        }
 
+        private void informe3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultas oForm = new FrmConsultas();
+            oForm.TipoConsulta = "Baja";
+            oForm.ShowDialog();
+        }
+
+        private void todosLosInstrumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultas oForm = new FrmConsultas();
+            oForm.TipoConsulta = "Todos";
+            oForm.ShowDialog();
+        }
     }
 }

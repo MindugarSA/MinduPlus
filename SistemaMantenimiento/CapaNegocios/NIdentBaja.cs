@@ -12,7 +12,7 @@ namespace CapaNegocios
     public class NIdentBaja
     {
 
-        public static string Insertar(int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza, string Nom_Localiza)
+        public static string Insertar(int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza, string Nom_Localiza, string Ult_Estado)
         {
             DIdentBaja Obj = new DIdentBaja();
             Obj.Id_instrumento = id_instrumento;
@@ -24,11 +24,12 @@ namespace CapaNegocios
             Obj.Observacion = Observacion;
             Obj.Cod_Localiza = Cod_Localiza;
             Obj.Nom_Localiza = Nom_Localiza;
+            Obj.Ult_Estado = Ult_Estado;
 
             return Obj.Insertar(Obj);
         }
 
-        public static string Actualizar(int id, int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza, string Nom_Localiza)
+        public static string Actualizar(int id, int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Observacion, string Cod_Localiza, string Nom_Localiza, string Ult_Estado)
         {
             DIdentBaja Obj = new DIdentBaja();
             Obj.Id = id;
@@ -41,6 +42,7 @@ namespace CapaNegocios
             Obj.Observacion = Observacion;
             Obj.Cod_Localiza = Cod_Localiza;
             Obj.Nom_Localiza = Nom_Localiza;
+            Obj.Ult_Estado = Ult_Estado;
 
             return Obj.Actualizar(Obj);
         }

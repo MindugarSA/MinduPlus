@@ -25,7 +25,7 @@ Partial Class MDIParent1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim PictureBox1 As System.Windows.Forms.PictureBox
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation15 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIParent1))
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TlStrpSttsLbl_Proceso = New System.Windows.Forms.ToolStripStatusLabel()
@@ -99,7 +99,7 @@ Partial Class MDIParent1
         '
         'StatusStrip
         '
-        Me.StatusStrip.BackColor = System.Drawing.Color.White
+        Me.StatusStrip.BackColor = System.Drawing.Color.Transparent
         Me.BunifuTransition1.SetDecoration(Me.StatusStrip, BunifuAnimatorNS.DecorationType.None)
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpSttsLbl_Proceso, Me.TlStrpSttsLbl_SQL, Me.ToolStripStatusLabel, Me.ToolStripProgressBar1})
         Me.StatusStrip.Location = New System.Drawing.Point(0, 880)
@@ -112,27 +112,28 @@ Partial Class MDIParent1
         '
         Me.TlStrpSttsLbl_Proceso.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.TlStrpSttsLbl_Proceso.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_Proceso.Name = "TlStrpSttsLbl_Proceso"
-        Me.TlStrpSttsLbl_Proceso.Size = New System.Drawing.Size(62, 21)
+        Me.TlStrpSttsLbl_Proceso.Size = New System.Drawing.Size(61, 21)
         Me.TlStrpSttsLbl_Proceso.Text = "Proceso : "
         '
         'TlStrpSttsLbl_SQL
         '
-        Me.TlStrpSttsLbl_SQL.BackColor = System.Drawing.Color.AliceBlue
+        Me.TlStrpSttsLbl_SQL.BackColor = System.Drawing.Color.White
         Me.TlStrpSttsLbl_SQL.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_SQL.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.TlStrpSttsLbl_SQL.Name = "TlStrpSttsLbl_SQL"
-        Me.TlStrpSttsLbl_SQL.Size = New System.Drawing.Size(832, 21)
+        Me.TlStrpSttsLbl_SQL.Size = New System.Drawing.Size(809, 21)
         Me.TlStrpSttsLbl_SQL.Spring = True
-        Me.TlStrpSttsLbl_SQL.Text = "ToolStripStatusLabel1"
         Me.TlStrpSttsLbl_SQL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ToolStripStatusLabel
         '
+        Me.ToolStripStatusLabel.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(118, 21)
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(111, 21)
         Me.ToolStripStatusLabel.Text = "Tiempo Desconexión"
         '
         'ToolStripProgressBar1
@@ -664,22 +665,22 @@ Partial Class MDIParent1
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Particles
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 1
-        Animation1.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 2.0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation15.AnimateOnlyDifferences = True
+        Animation15.BlindCoeff = CType(resources.GetObject("Animation15.BlindCoeff"), System.Drawing.PointF)
+        Animation15.LeafCoeff = 0!
+        Animation15.MaxTime = 1.0!
+        Animation15.MinTime = 0!
+        Animation15.MosaicCoeff = CType(resources.GetObject("Animation15.MosaicCoeff"), System.Drawing.PointF)
+        Animation15.MosaicShift = CType(resources.GetObject("Animation15.MosaicShift"), System.Drawing.PointF)
+        Animation15.MosaicSize = 1
+        Animation15.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation15.RotateCoeff = 0!
+        Animation15.RotateLimit = 0!
+        Animation15.ScaleCoeff = CType(resources.GetObject("Animation15.ScaleCoeff"), System.Drawing.PointF)
+        Animation15.SlideCoeff = CType(resources.GetObject("Animation15.SlideCoeff"), System.Drawing.PointF)
+        Animation15.TimeCoeff = 2.0!
+        Animation15.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation15
         Me.BunifuTransition1.Interval = 40
         Me.BunifuTransition1.MaxAnimationTime = 3000
         '
@@ -691,6 +692,8 @@ Partial Class MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1129, 906)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.FlowLayoutPanel1)

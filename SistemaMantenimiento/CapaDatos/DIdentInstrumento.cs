@@ -26,151 +26,20 @@ namespace CapaDatos
         private string _Certificado ;
         private string _Marca ;
         private string _Adicional;
+        
 
-        public int Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                _Id = value;
-            }
-        }
-
-        public int Id_instrumento
-        {
-            get
-            {
-                return _Id_instrumento;
-            }
-            set
-            {
-                _Id_instrumento = value;
-            }
-        }
-
-        public int Id_indivual
-        {
-            get
-            {
-                return _Id_indivual;
-            }
-            set
-            {
-                _Id_indivual = value;
-            }
-        }
-
-        public int Calib_Num
-        {
-            get
-            {
-                return _Calib_Num;
-            }
-            set
-            {
-                _Calib_Num = value;
-            }
-        }
-
-        public DateTime Ultima_Calib
-        {
-            get
-            {
-                return _Ultima_Calib;
-            }
-            set
-            {
-                _Ultima_Calib = value;
-            }
-        }
-
-        public DateTime Ingreso
-        {
-            get
-            {
-                return _Ingreso;
-            }
-            set
-            {
-                _Ingreso = value;
-            }
-        }
-
-        public String Estado
-        {
-            get
-            {
-                return _Estado;
-            }
-            set
-            {
-                _Estado = value;
-            }
-        }
-
-        public DateTime Prox_Calib
-        {
-            get
-            {
-                return _Prox_Calib;
-            }
-            set
-            {
-                _Prox_Calib = value;
-            }
-        }
-
-        public String Cod_Trab
-        {
-            get
-            {
-                return _Cod_Trab;
-            }
-            set
-            {
-                _Cod_Trab = value;
-            }
-        }
-
-        public String Nom_Trab
-        {
-            get
-            {
-                return _Nom_Trab;
-            }
-            set
-            {
-                _Nom_Trab = value;
-            }
-        }
-
-        public String Certificado
-        {
-            get
-            {
-                return _Certificado;
-            }
-            set
-            {
-                _Certificado = value;
-            }
-        }
-
-        public String Marca
-        {
-            get
-            {
-                return _Marca;
-            }
-            set
-            {
-                _Marca = value;
-            }
-        }
-
+        public int Id { get => _Id; set => _Id = value; }
+        public int Id_instrumento { get => _Id_instrumento; set => _Id_instrumento = value; }
+        public int Id_indivual { get => _Id_indivual; set => _Id_indivual = value; }
+        public int Calib_Num { get => _Calib_Num; set => _Calib_Num = value; }
+        public DateTime Ultima_Calib { get => _Ultima_Calib; set => _Ultima_Calib = value; }
+        public DateTime Ingreso { get => _Ingreso; set => _Ingreso = value; }
+        public string Estado { get => _Estado; set => _Estado = value; }
+        public DateTime Prox_Calib { get => _Prox_Calib; set => _Prox_Calib = value; }
+        public string Cod_Trab { get => _Cod_Trab; set => _Cod_Trab = value; }
+        public string Nom_Trab { get => _Nom_Trab; set => _Nom_Trab = value; }
+        public string Certificado { get => _Certificado; set => _Certificado = value; }
+        public string Marca { get => _Marca; set => _Marca = value; }
         public string Adicional { get => _Adicional; set => _Adicional = value; }
 
         public DIdentInstrumento()
@@ -182,18 +51,18 @@ namespace CapaDatos
                                 , DateTime Ingreso, string Estado, DateTime Prox_Calib, string Cod_Trab, string Nom_Trab
                                 , string Certificado, string Marca , string Adicional)
         { 
-            _Id = Id;
-            _Id_instrumento = Id_instrumento;
-            _Id_indivual = Id_indivual;
-            _Calib_Num = Calib_Num;
-            _Ultima_Calib = Ultima_Calib;
-            _Ingreso = Ingreso;
-            _Estado = Estado;
-            _Prox_Calib = Prox_Calib;
-            _Cod_Trab = Cod_Trab;
-            _Nom_Trab = Nom_Trab;
-            _Certificado = Certificado;
-            _Marca = Marca;
+            Id = Id;
+            Id_instrumento = Id_instrumento;
+            Id_indivual = Id_indivual;
+            this.Calib_Num = Calib_Num;
+            this.Ultima_Calib = Ultima_Calib;
+            this.Ingreso = Ingreso;
+            this.Estado = Estado;
+            this.Prox_Calib = Prox_Calib;
+            this.Cod_Trab = Cod_Trab;
+            this.Nom_Trab = Nom_Trab;
+            this.Certificado = Certificado;
+            this.Marca = Marca;
             _Adicional = Adicional;
         }
 
@@ -367,6 +236,39 @@ namespace CapaDatos
                 SqlCmd.CommandType = CommandType.StoredProcedure;
                 SqlCmd.Parameters.AddWithValue("@ID_INSTRUMENTO", Ident_Instrumento.Id_instrumento);
                 SqlCmd.Parameters.AddWithValue("@ID_INDIVUAL", Ident_Instrumento.Id_indivual);
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SlqCon.State == ConnectionState.Open) SlqCon.Close();
+            }
+            return DtResultado;
+
+        }
+
+        public DataTable Consultar(DateTime Fecha, String Condicion)
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SlqCon = new SqlConnection();
+
+            try
+            {
+                string sp = "SpIdent_InstrumentoConsultar";
+
+                SlqCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand(sp, SlqCon);
+
+                SlqCon.Open();
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlCmd.Parameters.AddWithValue("@FechaCorte", Fecha);
+                SqlCmd.Parameters.AddWithValue("@Condicion", Condicion);
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);

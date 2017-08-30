@@ -23,12 +23,15 @@ namespace CapaPresentacion
         private DataTable DataDetalleCalibracion;
         private DataGridViewRow DataCalibracion;
         private string AccionEnviada;
+        private int IdInstrumento;
+
         public FrmCalibracion(DataGridViewRow DataIdent, DataTable DataItemCalib, DataGridViewRow DataCalibra, string Accion)
         {
             DataIdentidad = DataIdent;
             DataItemsCalibracion = DataItemCalib;
             DataCalibracion = DataCalibra;
             AccionEnviada = Accion;
+            IdInstrumento = Convert.ToInt32(DataIdentidad.Cells[0].Value);
             InitializeComponent();
             CargarEncabezado();
             CargarDetalles();
@@ -123,15 +126,38 @@ namespace CapaPresentacion
             if (e.RowIndex == -1)
                 return;
 
-            if (e.ColumnIndex == 4 || e.ColumnIndex == 6 || e.ColumnIndex == 7)
+            //if (e.ColumnIndex == 4 || e.ColumnIndex == 6 || e.ColumnIndex == 7)
+            //{
+            //    dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Style.BackColor = Color.White;
+            //    dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Selected = true;
+            //    dataItemCalibracion.BeginEdit(true);
+            //}
+
+            if (dataItemCalibracion.SelectedRows.Count == 1 && e.ColumnIndex != 7)
             {
-                dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Style.BackColor = Color.White;
-                dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Selected = true;
+                if (e.ColumnIndex == 0)
+                {
+                    bool CheckValue = Convert.ToBoolean(dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value);
+                    dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value = CheckValue ? false : true;
+                    if(Convert.ToBoolean(dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value))
+                        dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.FromArgb(153, 180, 51);
+                    else
+                        dataItemCalibracion.DefaultCellStyle.SelectionBackColor = Color.White;
+                }
+                   
+                dataItemCalibracion.CurrentCell = dataItemCalibracion.Rows[dataItemCalibracion.CurrentCell.RowIndex].Cells[4];
+                dataItemCalibracion[4, dataItemCalibracion.CurrentRow.Index].Style.BackColor = Color.White;
+                dataItemCalibracion[4, dataItemCalibracion.CurrentRow.Index].Selected = true;
                 dataItemCalibracion.BeginEdit(true);
             }
         }
 
         private void dataItemCalibracion_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void dataItemCalibracion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1)
                 return;
@@ -155,7 +181,6 @@ namespace CapaPresentacion
                 {
                     //throw;
                 }
-
         }
 
         private void dataItemCalibracion_SelectionChanged(object sender, EventArgs e)
@@ -182,15 +207,15 @@ namespace CapaPresentacion
 
             if (dataItemCalibracion.CurrentCell.ColumnIndex == 4 || dataItemCalibracion.CurrentCell.ColumnIndex == 6)
             {
-                TextBox TxtActual = e.Control as TextBox;
-                TxtActual.KeyPress += new KeyPressEventHandler(txt_KeyPress);
+                e.Control.KeyPress += new KeyPressEventHandler(txt_KeyPress);
             }
-
         }
 
         void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
             TextBox TxtActual = (TextBox)sender;
+            if (TxtActual.SelectedText == TxtActual.Text)
+                TxtActual.Text = "";
             Funciones.Formato_Decimal(TxtActual, e);
         }
 
@@ -283,15 +308,13 @@ namespace CapaPresentacion
 
                     DataRow dr = NEtiquetas.DtEtiquetas.NewRow();
 
-                    dr[0] = Convert.ToInt32(DataIdentidad.Cells[0].Value);
+                    dr[0] = IdInstrumento;
                     dr[1] = txtCodInstru.Text.Trim();
                     dr[2] = txtDescInstru.Text.Trim();
                     dr[3] = Convert.ToInt32(txtId.Text);
                     dr[4] = Convert.ToInt32(txtCalibra.Text);
                     dr[5] = Convert.ToDateTime(dtpFecCalib.Text);
-                    dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value)
-                                                              , txtEstado.Text
-                                                              , Convert.ToDateTime(dtpFecCalib.Text));
+                    dr[6] = Convert.ToDateTime(dtpProxCalib.Text);
                     dr[7] = txtCodEmp.Text.Trim();
                     dr[8] = txtNomEmp.Text.Trim();
                     dr[9] = 0;
@@ -301,6 +324,9 @@ namespace CapaPresentacion
                     NEtiquetas.DtEtiquetas.Rows.Add(dr);
                     NEtiquetas.InsertarDTtoDB();
 
+                    //dr[6] = Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value)
+                    //                                          , txtEstado.Text
+                    //                                          , Convert.ToDateTime(dtpFecCalib.Text));
                 }
                 catch (Exception) { }
             }
@@ -332,37 +358,43 @@ namespace CapaPresentacion
 
         private void CargarEncabezado()
         {
-            DataTable DTInstru = new DataTable();
-            DTInstru = NInstrumento.Buscar(Convert.ToInt32(DataIdentidad.Cells[0].Value));
-            txtCodInstru.Text = Convert.ToString(DTInstru.Rows[0][1]);
-            txtDescInstru.Text = Convert.ToString(DTInstru.Rows[0][2]);
-            txtItemSelec.Text = txtCodInstru.Text.Trim() + "  -  " + txtDescInstru.Text.Trim();
-
-            txtId.Text = Convert.ToString(DataIdentidad.Cells[1].Value);
-            txtEstado.Text = Convert.ToString(DataIdentidad.Cells[3].Value);
-            txtCodEmp.Text = Convert.ToString(DataIdentidad.Cells[4].Value);
-            txtNomEmp.Text = Convert.ToString(DataIdentidad.Cells[5].Value);
-            txtCertificado.Text = Convert.ToString(DataIdentidad.Cells[9].Value);
-            txtMarca.Text = Convert.ToString(DataIdentidad.Cells[10].Value);
-            textOtros.Text = Convert.ToString(DataIdentidad.Cells[12].Value);
-
-            if (AccionEnviada == "Nuevo")
+            try
             {
-                txtCalibra.Text = Convert.ToString(NCalibracion.ProximoCodigoIndividual(Convert.ToInt32(DataIdentidad.Cells[0].Value), Convert.ToInt32(DataIdentidad.Cells[1].Value)));
-                dtpFecCalib.Text = Convert.ToString(DataIdentidad.Cells[8].Value);
-                dtpProxCalib.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
-                DtpFecVenc.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
-            }
-            else if (AccionEnviada == "Actualizar")
-            {
-                txtCalibra.Text = Convert.ToString(DataCalibracion.Cells[3].Value);
-                dtpFecCalib.Text = Convert.ToString(DataCalibracion.Cells[4].Value);
-                dtpProxCalib.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
-                DtpFecVenc.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
-                TxtObserva.Text = Convert.ToString(DataCalibracion.Cells[5].Value);
+                DataTable DTInstru = new DataTable();
+                DTInstru = NInstrumento.Buscar(Convert.ToInt32(DataIdentidad.Cells[0].Value));
+                txtCodInstru.Text = Convert.ToString(DTInstru.Rows[0][1]);
+                txtDescInstru.Text = Convert.ToString(DTInstru.Rows[0][2]);
+                txtItemSelec.Text = txtCodInstru.Text.Trim() + "  -  " + txtDescInstru.Text.Trim();
 
-                btnAgregar.Text = "Actualizar";
+                txtId.Text = Convert.ToString(DataIdentidad.Cells[1].Value);
+                txtEstado.Text = Convert.ToString(DataIdentidad.Cells[3].Value);
+                txtCodEmp.Text = Convert.ToString(DataIdentidad.Cells[4].Value);
+                txtNomEmp.Text = Convert.ToString(DataIdentidad.Cells[5].Value);
+                txtCertificado.Text = Convert.ToString(DataIdentidad.Cells[9].Value);
+                txtMarca.Text = Convert.ToString(DataIdentidad.Cells[10].Value);
+                textOtros.Text = Convert.ToString(DataIdentidad.Cells[12].Value);
+
+                if (AccionEnviada == "Nuevo")
+                {
+                    txtCalibra.Text = Convert.ToString(NCalibracion.ProximoCodigoIndividual(Convert.ToInt32(DataIdentidad.Cells[0].Value), Convert.ToInt32(DataIdentidad.Cells[1].Value)));
+                    dtpFecCalib.Text = Convert.ToString(DataIdentidad.Cells[8].Value);
+                    dtpProxCalib.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
+                    DtpFecVenc.Text = Convert.ToString(Funciones.ProximaFechaCalibracion(Convert.ToInt32(DataIdentidad.Cells[0].Value), txtEstado.Text.Trim(), dtpFecCalib.Value));
+                }
+                else if (AccionEnviada == "Actualizar")
+                {
+                    txtCalibra.Text = Convert.ToString(DataCalibracion.Cells[3].Value);
+                    dtpFecCalib.Text = Convert.ToString(DataCalibracion.Cells[4].Value);
+                    String Fecha_Prox = Convert.ToString(DataCalibracion.Cells[7].Value);
+                    dtpProxCalib.Text = Fecha_Prox;
+                    DtpFecVenc.Text = Fecha_Prox;
+                    TxtObserva.Text = Convert.ToString(DataCalibracion.Cells[5].Value);
+
+                    btnAgregar.Text = "Actualizar";
+                }
             }
+            catch (Exception){}
+            
 
         }
 
@@ -445,7 +477,18 @@ namespace CapaPresentacion
             Obj.Width = Obj.Width - 8;
         }
 
-       
+        private void dataItemCalibracion_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                //DataGridView view = (DataGridView)sender;
+                //view.Rows[e.RowIndex].ErrorText = "an error";
+                //view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "an error";
+                //MessageBox.Show("Commit error");
+            }
+        }
+
+
     }
 
 }

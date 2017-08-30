@@ -43,7 +43,6 @@ Public Class MDIParent1
         PictureBox3.Top = (Panel2.Height / 2) - (PictureBox3.Height / 2)
         PictureBox3.Left = (Panel2.Width / 2) - (PictureBox3.Width / 2)
 
-
         PictureBox2_Click(sender, e)
 
     End Sub
@@ -51,6 +50,9 @@ Public Class MDIParent1
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PcturBx_Image.Click
         TiempoIngreso.Enabled = False
         Cerrar_Forms_Children()
+        TlStrpSttsLbl_SQL.BackColor = Color.White
+        TlStrpSttsLbl_SQL.Text = ""
+
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
         NewMDIChild.Show()
@@ -59,6 +61,7 @@ Public Class MDIParent1
         TiempoActivo = Tiempo_Str
         ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
 
     End Sub
 
@@ -358,6 +361,9 @@ Public Class MDIParent1
         TiempoActivo = Tiempo_Str
         ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        TlStrpSttsLbl_SQL.BackColor = Color.White
+        TlStrpSttsLbl_SQL.Text = ""
+
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs)

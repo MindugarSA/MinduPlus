@@ -71,6 +71,7 @@
             this.informe1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todosLosInstrumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBaja = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -111,7 +112,6 @@
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.ContextMenuCalibra = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.opcion1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.todosLosInstrumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataInstrumentos)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataItemsComp)).BeginInit();
@@ -561,25 +561,35 @@
             this.informe3ToolStripMenuItem,
             this.todosLosInstrumentosToolStripMenuItem});
             this.contextMenuRepo.Name = "contextMenuRepo";
-            this.contextMenuRepo.Size = new System.Drawing.Size(307, 100);
+            this.contextMenuRepo.Size = new System.Drawing.Size(307, 122);
             // 
             // informe1ToolStripMenuItem
             // 
             this.informe1ToolStripMenuItem.Name = "informe1ToolStripMenuItem";
             this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(306, 24);
             this.informe1ToolStripMenuItem.Text = "Instrumetos por Verificar a una Fecha";
+            this.informe1ToolStripMenuItem.Click += new System.EventHandler(this.informe1ToolStripMenuItem_Click);
             // 
             // informe2ToolStripMenuItem
             // 
             this.informe2ToolStripMenuItem.Name = "informe2ToolStripMenuItem";
             this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(306, 24);
             this.informe2ToolStripMenuItem.Text = "Instrumentos Vigentes";
+            this.informe2ToolStripMenuItem.Click += new System.EventHandler(this.informe2ToolStripMenuItem_Click);
             // 
             // informe3ToolStripMenuItem
             // 
             this.informe3ToolStripMenuItem.Name = "informe3ToolStripMenuItem";
             this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(306, 24);
             this.informe3ToolStripMenuItem.Text = "Instrumentos dados de Baja";
+            this.informe3ToolStripMenuItem.Click += new System.EventHandler(this.informe3ToolStripMenuItem_Click);
+            // 
+            // todosLosInstrumentosToolStripMenuItem
+            // 
+            this.todosLosInstrumentosToolStripMenuItem.Name = "todosLosInstrumentosToolStripMenuItem";
+            this.todosLosInstrumentosToolStripMenuItem.Size = new System.Drawing.Size(306, 24);
+            this.todosLosInstrumentosToolStripMenuItem.Text = "Todos los Instrumentos";
+            this.todosLosInstrumentosToolStripMenuItem.Click += new System.EventHandler(this.todosLosInstrumentosToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -1136,12 +1146,6 @@
             this.opcion1ToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
             this.opcion1ToolStripMenuItem1.Text = "Agregar a Lista Etiquetas";
             this.opcion1ToolStripMenuItem1.Click += new System.EventHandler(this.opcion1ToolStripMenuItem1_Click);
-            // 
-            // todosLosInstrumentosToolStripMenuItem
-            // 
-            this.todosLosInstrumentosToolStripMenuItem.Name = "todosLosInstrumentosToolStripMenuItem";
-            this.todosLosInstrumentosToolStripMenuItem.Size = new System.Drawing.Size(306, 24);
-            this.todosLosInstrumentosToolStripMenuItem.Text = "Todos los Instrumentos";
             // 
             // FrmInstrumentosPrecision
             // 

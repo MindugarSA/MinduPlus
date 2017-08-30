@@ -169,6 +169,12 @@
     <Compile Include="Formularios\FrmCalibracion.Designer.cs">
       <DependentUpon>FrmCalibracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmConsultas.Designer.cs">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCalibracion.resx">
       <DependentUpon>FrmCalibracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmConsultas.resx">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>

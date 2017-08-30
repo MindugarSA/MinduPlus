@@ -1357,7 +1357,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Frecuencia.Value</Value>
+                              <Value>1 Año</Value>
                               <Style>
                                 <FontFamily>Segoe UI Light</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1599,7 +1599,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>1 - Debe mantener el instrumento de buenas condiciones, </Value>
+                              <Value>1 - Debe mantener el instrumento en buenas condiciones, </Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1622,7 +1622,7 @@
                               </Style>
                             </TextRun>
                             <TextRun>
-                              <Value> velar por el cumplimiento de las fechas de recalibración y duracion establecidas previamente.</Value>
+                              <Value> velar por el cumplimiento de las fechas de recalibración y duración establecidas previamente.</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>9pt</FontSize>

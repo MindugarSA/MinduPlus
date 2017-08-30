@@ -93,6 +93,11 @@ namespace CapaNegocios
             return new DIdentInstrumento().Buscar(Obj);
         }
 
+        public static DataTable Consultar(DateTime Fecha, String Condicion)
+        {
+            return new DIdentInstrumento().Consultar(Fecha,Condicion);
+        }
+
         public static int ProximoCodigoIndividual(int Id_Instrumento)
         {
             DIdentInstrumento Obj = new DIdentInstrumento()

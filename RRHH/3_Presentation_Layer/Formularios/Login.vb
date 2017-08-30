@@ -2,7 +2,6 @@
 Imports System.Data.SqlClient
 
 
-
 Public Class Login
 
     Dim conexion As New SqlConnection
@@ -48,6 +47,7 @@ Public Class Login
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         Me.DoubleBuffered = True
+        'Me.FadeInAsync()
 
     End Sub
 
@@ -146,9 +146,9 @@ Public Class Login
                     TxtBx_UserID.Focus()
                 Else
 
-                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
                     MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
-                    MDIParent1.TlStrpSttsLbl_SQL.Text = "Consulta Realizada con exito"
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = "Consulta Realizada con Exito"
                     TxtBx_UserID.Text = dt.Rows(0)("Rut").ToString
                     'TxtBx_Password.Text = Trim(dt.Rows(0)("Pass").ToString)
 
@@ -213,8 +213,13 @@ Public Class Login
 
 
                 If dt.Rows(0)("IdEstado") = 0 Then
+
                     MDIParent1.Panel2.Visible = True
                     MDIParent1.TiempoIngreso.Enabled = True
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = ""
+
+                    'MDIParent1.ToolStripVisible = False
                     Me.Close()
                 Else
                     TxtBx_Password.Text = ""
@@ -238,8 +243,11 @@ Public Class Login
                         dt.Load(cmd.ExecuteReader())
                         If dt.Rows(0)("IdEstado") = 0 Then
                             MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString()
+
                             MDIParent1.Panel2.Visible = True
                             MDIParent1.TiempoIngreso.Enabled = True
+                            MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
+                            MDIParent1.TlStrpSttsLbl_SQL.Text = ""
                             Me.Close()
                         End If
                     Catch ex As Exception
@@ -287,7 +295,7 @@ Public Class Login
                     End Try
 
                     If dt.Rows(0)("IdEstado") = 0 Then
-                        MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
+                        MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
                         MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
                         MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr")
                         TxtBx_ConfPass.Visible = False
@@ -300,13 +308,19 @@ Public Class Login
                         'Pendiente Guarda fecha y hora de ingreso
 
                         MDIParent1.Panel2.Visible = True
+                        MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
+                        MDIParent1.TlStrpSttsLbl_SQL.Text = ""
+
                         Me.Close()
                     End If
                 End If
             Else
                 If p_User_Pass <> "" And p_User_Pass = TxtBx_Password.Text Then
+
                     MDIParent1.Panel2.Visible = True
                     MDIParent1.TiempoIngreso.Enabled = True
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
+                    MDIParent1.TlStrpSttsLbl_SQL.Text = ""
                     Me.Close()
                 Else
                     TxtBx_Password.Text = ""
@@ -536,7 +550,5 @@ Public Class Login
         Return isnumber__1.IsMatch(inputvalue)
 
     End Function
-
-
 
 End Class

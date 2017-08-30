@@ -38,6 +38,10 @@ namespace CapaPresentacion
                     metroComboBox1.SelectedIndex = 0;
                     this.ListarEmpleadosEntidades();
                     break;
+                case "Consulta":
+                    metroComboBox1.SelectedIndex = 0;
+                    this.ListarEmpleadosEntidades();
+                    break;
             }
             btnAgregar.Text = TextButtton;
         }
@@ -113,7 +117,10 @@ namespace CapaPresentacion
                         this.dataGridView1.DataSource = NEmpleadoIndustrial.BuscarIdentidades(EstadoSeleccionado(),
                                                                                               txtItem.Text.Trim() == "*" ? "" : txtItem.Text.Trim());
                         break;
-
+                    case "Consulta":
+                        this.dataGridView1.DataSource = NEmpleadoIndustrial.BuscarIdentidades(EstadoSeleccionado(),
+                                                                                              txtItem.Text.Trim() == "*" ? "" : txtItem.Text.Trim());
+                        break;
                 }
                 if (dataGridView1.RowCount > 0)
                     FormatearGrid();

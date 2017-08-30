@@ -34,6 +34,10 @@ namespace CapaPresentacion
                 {
                     e.Handled = true;
                 }
+                else if (Convert.ToString(e.KeyChar) == "," && CajaTexto.Text.IndexOf(",") != -1)
+                {
+                    e.Handled = true;
+                }
                 else if (Convert.ToString(e.KeyChar) == ",")
                 {
                     e.Handled = false;

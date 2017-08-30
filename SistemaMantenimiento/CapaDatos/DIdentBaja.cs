@@ -20,6 +20,7 @@ namespace CapaDatos
         private string _Observacion  ;
         private string _Cod_Localiza  ;
         private string _Nom_Localiza;
+        private string _Ult_Estado;
 
         public string Nom_Localiza
         {
@@ -135,12 +136,13 @@ namespace CapaDatos
             }
         }
 
+        public string Ult_Estado { get => _Ult_Estado; set => _Ult_Estado = value; }
 
         public DIdentBaja()
         {
         }
 
-        public DIdentBaja (  int id, int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Fec_Registro, string Observacion, string Cod_Localiza, string Nom_Localiza)
+        public DIdentBaja (  int id, int id_instrumento, int id_indivual, string Cod_Trab, string Nom_Trab, string Fec_Baja, string Fec_Registro, string Observacion, string Cod_Localiza, string Nom_Localiza, string Ult_Estado)
         {
 		    _Id = Id;
             _Id_instrumento = Id_instrumento;
@@ -152,6 +154,7 @@ namespace CapaDatos
             _Observacion = Observacion;
             _Cod_Localiza = Cod_Localiza;
             _Nom_Localiza = Nom_Localiza;
+            _Ult_Estado = Ult_Estado;
         }
 
         public string Insertar(DIdentBaja Ident_Baja)
@@ -177,6 +180,8 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(new SqlParameter("@Observacion", Ident_Baja.Observacion));
                 SqlCmd.Parameters.Add(new SqlParameter("@Cod_Localiza", Ident_Baja.Cod_Localiza));
                 SqlCmd.Parameters.Add(new SqlParameter("@Nom_Localiza", Ident_Baja.Nom_Localiza));
+                SqlCmd.Parameters.Add(new SqlParameter("@Ult_Estado", Ident_Baja.Ult_Estado));
+                
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
 
@@ -218,7 +223,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(new SqlParameter("@Observacion", Ident_Baja.Observacion));
                 SqlCmd.Parameters.Add(new SqlParameter("@Cod_Localiza", Ident_Baja.Cod_Localiza));
                 SqlCmd.Parameters.Add(new SqlParameter("@Nom_Localiza", Ident_Baja.Nom_Localiza));
-
+                SqlCmd.Parameters.Add(new SqlParameter("@Ult_Estado", Ident_Baja.Ult_Estado));
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Modifico el Registro";
 

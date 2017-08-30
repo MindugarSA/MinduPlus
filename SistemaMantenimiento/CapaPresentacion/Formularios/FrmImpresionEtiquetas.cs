@@ -37,21 +37,33 @@ namespace CapaPresentacion
             int currentMouseOverRow = metroGrid1.HitTest(e.X, e.Y).RowIndex;
             int currentMouseOverCol = metroGrid1.HitTest(e.X, e.Y).ColumnIndex;
 
-            if (currentMouseOverCol > -1)
+            try
             {
-                metroGrid1.CurrentCell = metroGrid1[currentMouseOverCol, currentMouseOverRow < 0 ? 0 : currentMouseOverRow];
-
-                if (e.Button == MouseButtons.Right)
+                if (currentMouseOverCol > -1)
                 {
-                    try
+                    metroGrid1.CurrentCell = metroGrid1[currentMouseOverCol, currentMouseOverRow < 0 ? 0 : currentMouseOverRow];
+
+                    if (e.Button == MouseButtons.Right)
                     {
-                        metroGrid1.Rows[(currentMouseOverRow)].Selected = true;
-                        this.metroContextMenu1.Show(metroGrid1, new Point(e.X, e.Y));
-                        this.metroContextMenu1.Show(Cursor.Position);
+                        try
+                        {
+                            metroGrid1.Rows[(currentMouseOverRow)].Selected = true;
+                            this.metroContextMenu1.Show(metroGrid1, new Point(e.X, e.Y));
+                            this.metroContextMenu1.Show(Cursor.Position);
+                        }
+                        catch (Exception) { }
                     }
-                    catch (Exception) { }
+                    else
+                    {
+                        if (metroGrid1.SelectedRows.Count == 1)
+                        {
+                            metroGrid1.CurrentCell = metroGrid1.Rows[metroGrid1.CurrentCell.RowIndex].Cells["Resolucion"];
+                            metroGrid1.BeginEdit(true);
+                        }
+                    }
                 }
             }
+            catch (Exception){}
         }
         private void eliminarItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -60,6 +72,7 @@ namespace CapaPresentacion
             {
                 metroGrid1.Rows.RemoveAt(row.Index);
                 NEtiquetas.InsertarDTtoDB();
+                label3.Text = "Total Verificaciones para Imprimir : " + metroGrid1.RowCount.ToString();
             }
 
         }
@@ -72,20 +85,66 @@ namespace CapaPresentacion
         {
             if (metroGrid1.Rows.Count > 0)
             {
-                FrmInformes frm = new FrmInformes()
+                Double SumaRes = metroGrid1.Rows.Cast<DataGridViewRow>()
+                             .Sum(t => Convert.ToDouble(t.Cells["Resolucion"].Value == DBNull.Value ? 0.0 : t.Cells["Resolucion"].Value));
+
+                if (SumaRes == 0)
                 {
-                    TipoReporte = "Etiquetas"
-                };
-                frm.ShowDialog();
+                    if (MetroFramework.MetroMessageBox.Show(this, "No se ha Registrado ningún Valor en las Resoluciones de las Etiquetas,¿Continuar con la Impresión?",
+                                                   "Resolución de Etiquetas",
+                                                   MessageBoxButtons.YesNoCancel,
+                                                   MessageBoxIcon.Question,
+                                                   370) == DialogResult.Yes)
+                    {
+                        NEtiquetas.InsertarDTtoDB();
+                        FrmInformes frm = new FrmInformes()
+                        {
+                            TipoReporte = "Etiquetas"
+                        };
+                        frm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    NEtiquetas.InsertarDTtoDB();
+                    FrmInformes frm = new FrmInformes()
+                    {
+                        TipoReporte = "Etiquetas"
+                    };
+                    frm.ShowDialog();
+                }
+
             }
         }
         private void metroGrid1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            //if (metroGrid1.Rows.Count > 0)
-            //{
-            //    if (e.ColumnIndex == 10)
-            //        NEtiquetas.InsertarDTtoDB();
-            //}
+        }
+
+        private void metroGrid1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            if (e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                //DataGridView view = (DataGridView)sender;
+                //view.Rows[e.RowIndex].ErrorText = "an error";
+                //view.Rows[e.RowIndex].Cells[e.ColumnIndex].ErrorText = "an error";
+                //MessageBox.Show("Commit error");
+            }
+        }
+
+        private void metroGrid1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 10)
+                try
+                {
+                    string Obtenido = Convert.ToString(metroGrid1[e.ColumnIndex, e.RowIndex].Value).Trim();
+                    if (Obtenido == string.Empty) Obtenido = "0,00";
+                    metroGrid1[e.ColumnIndex, e.RowIndex].Value = string.Format("{0:#,0.00###}", Convert.ToDecimal(Obtenido));
+
+                }
+                catch (Exception)
+                {
+                    //throw;
+                }
         }
 
         /// <summary>
@@ -97,6 +156,8 @@ namespace CapaPresentacion
             metroGrid1.DataSource = NEtiquetas.BsEtiquetas;
             if (metroGrid1.RowCount > 0)
                 FormatearGrid();
+
+            label3.Text = "Total Verificaciones para Imprimir : " + metroGrid1.RowCount.ToString();
 
         }
 
@@ -127,10 +188,12 @@ namespace CapaPresentacion
             metroGrid1.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             metroGrid1.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            //metroGrid1.Columns[10].DefaultCellStyle.BackColor = Color.FromArgb(103, 184, 69);
+            //metroGrid1.Columns[10].DefaultCellStyle.SelectionBackColor = Color.FromArgb(103, 184, 69);
+            //metroGrid1.Columns[10].ce. = Color.FromArgb(103, 184, 69);
+
             metroGrid1.AjustColumnsWidthForGridWidth();
             metroGrid1.Columns[10].Width = 70;
-            //dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            // dataGridView1.Columns[6].Width = 80;
         }
 
         private void Button_MouseEnter(object sender, EventArgs e)
@@ -161,6 +224,8 @@ namespace CapaPresentacion
         private void CheckKey(object sender, KeyPressEventArgs e)
         {
             TextBox TxtActual = (TextBox)sender;
+            if (TxtActual.SelectedText == TxtActual.Text)
+                TxtActual.Text = "";
             Funciones.Formato_Decimal(TxtActual, e);
         }
 
@@ -168,5 +233,7 @@ namespace CapaPresentacion
         {
             NEtiquetas.InsertarDTtoDB();
         }
+
+      
     }
 }

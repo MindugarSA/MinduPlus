@@ -38,7 +38,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>138</ApplicationRevision>
+    <ApplicationRevision>142</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -327,6 +327,7 @@
     <Compile Include="1_Data_Layer\spASISTENCIA_EMPLE_TEMPListar_Result.vb">
       <DependentUpon>ModeloMINDUINTERMEDIA.tt</DependentUpon>
     </Compile>
+    <Compile Include="2_Business_Layer\FormExtensions.vb" />
     <Compile Include="3_Presentation_Layer\Formularios\FrmPresenciaEmpleados.Designer.vb">
       <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
     </Compile>

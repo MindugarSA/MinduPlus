@@ -61,7 +61,7 @@ namespace CapaPresentacion
             txtDescInstru.Text = Convert.ToString(DTInstru.Rows[0][2]);
 
             txtId.Text = Convert.ToString(DataIdentidad.Cells[1].Value);
-            //txtEstado.Text = Convert.ToString(DataIdentidad.Cells[3].Value);
+            txtEstado.Text = Convert.ToString(DataIdentidad.Cells[3].Value);
             txtCodEmp.Text = Convert.ToString(DataIdentidad.Cells[4].Value);
             txtNomEmp.Text = Convert.ToString(DataIdentidad.Cells[5].Value);
             txtCertificado.Text = Convert.ToString(DataIdentidad.Cells[9].Value);
@@ -78,7 +78,7 @@ namespace CapaPresentacion
 
                 txtObserva.Text = DTDatosBaja.Rows[0][7].ToString();
                 dtpIngreso.Text = DTDatosBaja.Rows[0][5].ToString();
-
+                txtEstado.Text = DTDatosBaja.Rows[0][10].ToString();
             }
             catch (Exception){}
         }
@@ -151,7 +151,8 @@ namespace CapaPresentacion
                                           , dtpIngreso.Text
                                           , txtObserva.Text.Trim()
                                           , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]
-                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]);
+                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]
+                                          , txtEstado.Text);
 
 
                 }
@@ -164,7 +165,8 @@ namespace CapaPresentacion
                                           , dtpIngreso.Text
                                           , txtObserva.Text.Trim()
                                           , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]
-                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]);
+                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]
+                                          , txtEstado.Text);
 
                 }
                 MetroFramework.MetroMessageBox.Show(this, "El Acta fue " + TipoAcceso == "Registro" ? "Registrada":"Actualizada" + " Exitosamente",
