@@ -49,23 +49,31 @@ Public Class Frm_InformeAsistencias
 
     Private Sub MetroTextBox1_TextChanged(sender As Object, e As EventArgs) Handles MetroTextBox1.TextChanged
         If enableBuscarRutInforme Then
-            enableBuscarNombreInforme = False
-            trabajadorInforme.Nombre = MetroTextBox1.Text
-            trabajadorInforme.BuscarRutPorNombre()
-            MetroTextBox2.Text = trabajadorInforme.Rut
-            enableBuscarInforme = False
-            enableBuscarNombreInforme = True
+            Try
+                enableBuscarNombreInforme = False
+                trabajadorInforme.Nombre = MetroTextBox1.Text
+                trabajadorInforme.BuscarRutPorNombre()
+                MetroTextBox2.Text = trabajadorInforme.Rut
+                enableBuscarInforme = False
+                enableBuscarNombreInforme = True
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 
     Private Sub MetroTextBox2_TextChanged(sender As Object, e As EventArgs) Handles MetroTextBox2.TextChanged
         If enableBuscarNombreInforme Then
-            enableBuscarRutInforme = False
-            trabajadorInforme.Rut = MetroTextBox2.Text
-            trabajadorInforme.BuscarNombrePorRut()
-            MetroTextBox1.Text = trabajadorInforme.Nombre
-            enableBuscarInforme = False
-            enableBuscarRutInforme = True
+            Try
+                enableBuscarRutInforme = False
+                trabajadorInforme.Rut = MetroTextBox2.Text
+                trabajadorInforme.BuscarNombrePorRut()
+                MetroTextBox1.Text = trabajadorInforme.Nombre
+                enableBuscarInforme = False
+                enableBuscarRutInforme = True
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 

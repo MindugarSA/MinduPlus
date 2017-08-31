@@ -2,11 +2,32 @@
 Imports System.Data.SqlClient
 
 Public Class Frm_Parametros2
+
+    Private enableBuscarRutInforme As Boolean = True
+    Private enableBuscarNombreInforme As Boolean = True
+    Private enableBuscarInforme As Boolean = False
+    Private trabajadorInforme As Persona
+
     Dim vDateInfo As DateTime
     Dim dt As New DataTable
     Dim conexion As New SqlConnection
     Dim cmd As SqlCommand
     Dim SelLin As Integer
+
+    Public Sub New()
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 10)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
+        InitializeComponent()
+
+    End Sub
+
     Private Sub Frm_Parametros2_Load(sender As Object, e As EventArgs) Handles Me.Load
         conexion.ConnectionString = Conection.Cn
         Dim ctl As Control
@@ -14,6 +35,7 @@ Public Class Frm_Parametros2
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
         'Me.WindowState = FormWindowState.Maximized
+        AutocompletarNombreRut("")
         CargaUsuarios(1)
         LLenaDatosUsuario()
 
@@ -28,7 +50,7 @@ Public Class Frm_Parametros2
     Private Sub TreeView1_Click(sender As Object, e As EventArgs) Handles TreeView1.Click
         If UCase(TreeView1.SelectedNode.Name) = UCase("Nd_Permisos") Then
             Lbl_Titulo.Text = "Mantención de permisos"
-            LLenaDatosUsuario
+            LLenaDatosUsuario()
         End If
     End Sub
 
@@ -200,6 +222,54 @@ Public Class Frm_Parametros2
 
     Private Sub CmbBx_Usuarios_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles CmbBx_Usuarios.SelectionChangeCommitted
         LLenaDatosUsuario()
+    End Sub
+
+    Private Sub AutocompletarNombreRut(empresa As String)
+        Dim listaNombre As New AutoCompleteStringCollection()
+        Dim listaRut As New AutoCompleteStringCollection()
+        Try
+            Dim personas As List(Of Persona) = Persona.ListarTodos()
+
+            For Each persona__1 As Persona In personas
+                listaNombre.Add(persona__1.Nombre)
+                listaRut.Add(persona__1.Rut)
+            Next
+            MetroTextBox1.AutoCompleteCustomSource = listaNombre
+
+            MetroTextBox2.AutoCompleteCustomSource = listaRut
+        Catch ex As Exception
+            MessageBox.Show("error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+        End Try
+    End Sub
+
+    Private Sub MetroTextBox1_TextChanged(sender As Object, e As EventArgs) Handles MetroTextBox1.TextChanged
+        If enableBuscarRutInforme Then
+            Try
+                enableBuscarNombreInforme = False
+                trabajadorInforme.Nombre = MetroTextBox1.Text
+                trabajadorInforme.BuscarRutPorNombre()
+                MetroTextBox2.Text = trabajadorInforme.Rut
+                enableBuscarInforme = False
+                enableBuscarNombreInforme = True
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+
+    Private Sub MetroTextBox2_TextChanged(sender As Object, e As EventArgs) Handles MetroTextBox2.TextChanged
+        If enableBuscarNombreInforme Then
+            Try
+                enableBuscarRutInforme = False
+                trabajadorInforme.Rut = MetroTextBox2.Text
+                trabajadorInforme.BuscarNombrePorRut()
+                MetroTextBox1.Text = trabajadorInforme.Nombre
+                enableBuscarInforme = False
+                enableBuscarRutInforme = True
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
 

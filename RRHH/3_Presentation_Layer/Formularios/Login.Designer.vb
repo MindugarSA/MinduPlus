@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login
-    Inherits MetroFramework.Forms.MetroForm 'System.Windows.Forms.Form
+    Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -23,9 +23,10 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TxtBx_Password = New System.Windows.Forms.TextBox()
-        Me.TxtBx_UserID = New System.Windows.Forms.TextBox()
-        Me.PasswordLabel = New System.Windows.Forms.Label()
+        Dim Animation4 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
+        Me.TxtBx_Password = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.TxtBx_UserID = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.Bttn_Login = New MetroFramework.Controls.MetroButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -42,62 +43,106 @@ Partial Class Login
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtBx_ConfPass = New System.Windows.Forms.TextBox()
-        Me.Lbl__ConfPass = New System.Windows.Forms.Label()
+        Me.TxtBx_ConfPass = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TxtBx_Password
         '
+        Me.TxtBx_Password.AcceptsReturn = False
+        Me.TxtBx_Password.AcceptsTab = False
+        Me.TxtBx_Password.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.TxtBx_Password.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.TxtBx_Password.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.BunifuTransition1.SetDecoration(Me.TxtBx_Password, BunifuAnimatorNS.DecorationType.None)
+        Me.TxtBx_Password.Depth = 0
         Me.TxtBx_Password.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.TxtBx_Password.Location = New System.Drawing.Point(226, 136)
+        Me.TxtBx_Password.Hint = " Contraseña"
+        Me.TxtBx_Password.Location = New System.Drawing.Point(33, 232)
         Me.TxtBx_Password.MaxLength = 4
+        Me.TxtBx_Password.MouseState = MaterialSkin.MouseState.HOVER
+        Me.TxtBx_Password.Multiline = False
         Me.TxtBx_Password.Name = "TxtBx_Password"
-        Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtBx_Password.Size = New System.Drawing.Size(233, 29)
+        Me.TxtBx_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.TxtBx_Password.ReadOnly = False
+        Me.TxtBx_Password.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.TxtBx_Password.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.TxtBx_Password.SelectedText = ""
+        Me.TxtBx_Password.SelectionLength = 0
+        Me.TxtBx_Password.SelectionStart = 0
+        Me.TxtBx_Password.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_Password.TabIndex = 2
+        Me.TxtBx_Password.TabStop = False
+        Me.TxtBx_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TxtBx_Password.UseSystemPasswordChar = False
+        Me.TxtBx_Password.WordWrap = True
         '
         'TxtBx_UserID
         '
+        Me.TxtBx_UserID.AcceptsReturn = False
+        Me.TxtBx_UserID.AcceptsTab = False
+        Me.TxtBx_UserID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.TxtBx_UserID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.TxtBx_UserID.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.BunifuTransition1.SetDecoration(Me.TxtBx_UserID, BunifuAnimatorNS.DecorationType.None)
+        Me.TxtBx_UserID.Depth = 0
         Me.TxtBx_UserID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_UserID.Location = New System.Drawing.Point(226, 84)
+        Me.TxtBx_UserID.Hint = ""
+        Me.TxtBx_UserID.Location = New System.Drawing.Point(33, 180)
+        Me.TxtBx_UserID.MaxLength = 11
+        Me.TxtBx_UserID.MouseState = MaterialSkin.MouseState.HOVER
+        Me.TxtBx_UserID.Multiline = False
         Me.TxtBx_UserID.Name = "TxtBx_UserID"
-        Me.TxtBx_UserID.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 29)
+        Me.TxtBx_UserID.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtBx_UserID.ReadOnly = False
+        Me.TxtBx_UserID.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.TxtBx_UserID.SelectedText = ""
+        Me.TxtBx_UserID.SelectionLength = 0
+        Me.TxtBx_UserID.SelectionStart = 0
+        Me.TxtBx_UserID.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_UserID.TabIndex = 1
-        Me.TxtBx_UserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'PasswordLabel
-        '
-        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
-        Me.PasswordLabel.Location = New System.Drawing.Point(226, 114)
-        Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
-        Me.PasswordLabel.TabIndex = 6
-        Me.PasswordLabel.Text = "&Contraseña"
-        Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.TxtBx_UserID.TabStop = False
+        Me.TxtBx_UserID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TxtBx_UserID.UseSystemPasswordChar = False
+        Me.TxtBx_UserID.WordWrap = True
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
-        Me.UsernameLabel.Location = New System.Drawing.Point(226, 62)
+        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.UsernameLabel, BunifuAnimatorNS.DecorationType.None)
+        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Light", 14.0!)
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(78, Byte), Integer))
+        Me.UsernameLabel.Location = New System.Drawing.Point(35, 176)
+        Me.UsernameLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
+        Me.UsernameLabel.Size = New System.Drawing.Size(66, 23)
         Me.UsernameLabel.TabIndex = 4
-        Me.UsernameLabel.Text = "&R.U.T"
+        Me.UsernameLabel.Text = "R.U.T"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Bttn_Login
         '
+        Me.BunifuTransition1.SetDecoration(Me.Bttn_Login, BunifuAnimatorNS.DecorationType.None)
         Me.Bttn_Login.FontSize = MetroFramework.MetroButtonSize.Medium
-        Me.Bttn_Login.Location = New System.Drawing.Point(347, 227)
+        Me.Bttn_Login.Location = New System.Drawing.Point(154, 323)
         Me.Bttn_Login.Name = "Bttn_Login"
         Me.Bttn_Login.Size = New System.Drawing.Size(112, 35)
         Me.Bttn_Login.TabIndex = 8
@@ -107,14 +152,16 @@ Partial Class Login
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
         Me.PictureBox1.Image = Global.RRHH.My.Resources.Resources.Logo1
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 63)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'TableLayoutPanel2
         '
@@ -136,7 +183,8 @@ Partial Class Login
         Me.TableLayoutPanel2.Controls.Add(Me.Label3, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label2, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(486, 55)
+        Me.BunifuTransition1.SetDecoration(Me.TableLayoutPanel2, BunifuAnimatorNS.DecorationType.None)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(300, 154)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 4
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
@@ -151,6 +199,7 @@ Partial Class Login
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label12, BunifuAnimatorNS.DecorationType.None)
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -168,6 +217,7 @@ Partial Class Login
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label11, BunifuAnimatorNS.DecorationType.None)
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -185,6 +235,7 @@ Partial Class Login
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label10, BunifuAnimatorNS.DecorationType.None)
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -202,6 +253,7 @@ Partial Class Login
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -219,6 +271,7 @@ Partial Class Login
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -236,6 +289,7 @@ Partial Class Login
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label7, BunifuAnimatorNS.DecorationType.None)
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -253,6 +307,7 @@ Partial Class Login
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label6, BunifuAnimatorNS.DecorationType.None)
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -270,6 +325,7 @@ Partial Class Login
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -287,6 +343,7 @@ Partial Class Login
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -304,6 +361,7 @@ Partial Class Login
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -321,6 +379,7 @@ Partial Class Login
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label2, BunifuAnimatorNS.DecorationType.None)
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -338,6 +397,7 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.BunifuTransition1.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -352,30 +412,39 @@ Partial Class Login
         '
         'TxtBx_ConfPass
         '
+        Me.TxtBx_ConfPass.AcceptsReturn = False
+        Me.TxtBx_ConfPass.AcceptsTab = False
+        Me.TxtBx_ConfPass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.TxtBx_ConfPass.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.TxtBx_ConfPass.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.BunifuTransition1.SetDecoration(Me.TxtBx_ConfPass, BunifuAnimatorNS.DecorationType.None)
+        Me.TxtBx_ConfPass.Depth = 0
         Me.TxtBx_ConfPass.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.TxtBx_ConfPass.Location = New System.Drawing.Point(226, 189)
+        Me.TxtBx_ConfPass.Hint = " Repita contraseña"
+        Me.TxtBx_ConfPass.Location = New System.Drawing.Point(33, 285)
         Me.TxtBx_ConfPass.MaxLength = 4
+        Me.TxtBx_ConfPass.MouseState = MaterialSkin.MouseState.HOVER
+        Me.TxtBx_ConfPass.Multiline = False
         Me.TxtBx_ConfPass.Name = "TxtBx_ConfPass"
-        Me.TxtBx_ConfPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtBx_ConfPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(233, 29)
+        Me.TxtBx_ConfPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.TxtBx_ConfPass.ReadOnly = False
+        Me.TxtBx_ConfPass.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.TxtBx_ConfPass.SelectedText = ""
+        Me.TxtBx_ConfPass.SelectionLength = 0
+        Me.TxtBx_ConfPass.SelectionStart = 0
+        Me.TxtBx_ConfPass.Size = New System.Drawing.Size(233, 23)
         Me.TxtBx_ConfPass.TabIndex = 3
-        '
-        'Lbl__ConfPass
-        '
-        Me.Lbl__ConfPass.Font = New System.Drawing.Font("Segoe UI Light", 12.0!)
-        Me.Lbl__ConfPass.Location = New System.Drawing.Point(226, 166)
-        Me.Lbl__ConfPass.Name = "Lbl__ConfPass"
-        Me.Lbl__ConfPass.Size = New System.Drawing.Size(220, 23)
-        Me.Lbl__ConfPass.TabIndex = 12
-        Me.Lbl__ConfPass.Text = "&Repita contraseña"
-        Me.Lbl__ConfPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.TxtBx_ConfPass.TabStop = False
+        Me.TxtBx_ConfPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.TxtBx_ConfPass.UseSystemPasswordChar = False
+        Me.TxtBx_ConfPass.WordWrap = True
         '
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label13, BunifuAnimatorNS.DecorationType.None)
         Me.Label13.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(45, 17)
+        Me.Label13.Location = New System.Drawing.Point(190, 110)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(167, 30)
         Me.Label13.TabIndex = 14
@@ -387,52 +456,138 @@ Partial Class Login
         '
         'PictureBox2
         '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
         Me.PictureBox2.Image = Global.RRHH.My.Resources.Resources.plus
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 16)
+        Me.PictureBox2.Location = New System.Drawing.Point(157, 109)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 15
         Me.PictureBox2.TabStop = False
         '
+        'BunifuTransition1
+        '
+        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
+        Me.BunifuTransition1.Cursor = Nothing
+        Animation4.AnimateOnlyDifferences = True
+        Animation4.BlindCoeff = CType(resources.GetObject("Animation4.BlindCoeff"), System.Drawing.PointF)
+        Animation4.LeafCoeff = 0!
+        Animation4.MaxTime = 1.0!
+        Animation4.MinTime = 0!
+        Animation4.MosaicCoeff = CType(resources.GetObject("Animation4.MosaicCoeff"), System.Drawing.PointF)
+        Animation4.MosaicShift = CType(resources.GetObject("Animation4.MosaicShift"), System.Drawing.PointF)
+        Animation4.MosaicSize = 0
+        Animation4.Padding = New System.Windows.Forms.Padding(0)
+        Animation4.RotateCoeff = 0!
+        Animation4.RotateLimit = 0!
+        Animation4.ScaleCoeff = CType(resources.GetObject("Animation4.ScaleCoeff"), System.Drawing.PointF)
+        Animation4.SlideCoeff = CType(resources.GetObject("Animation4.SlideCoeff"), System.Drawing.PointF)
+        Animation4.TimeCoeff = 0!
+        Animation4.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation4
+        Me.BunifuTransition1.Interval = 40
+        Me.BunifuTransition1.MaxAnimationTime = 4000
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = Global.RRHH.My.Resources.Resources.user__2_
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox3, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox3.Location = New System.Drawing.Point(242, 175)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox3.TabIndex = 16
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = Global.RRHH.My.Resources.Resources.lock__2_
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox4.Location = New System.Drawing.Point(242, 227)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox4.TabIndex = 17
+        Me.PictureBox4.TabStop = False
+        '
+        'TmrBackAnimation
+        '
+        Me.TmrBackAnimation.Enabled = True
+        Me.TmrBackAnimation.Interval = 5000
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.PictureBox4)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.TxtBx_Password)
+        Me.Panel1.Controls.Add(Me.PictureBox3)
+        Me.Panel1.Controls.Add(Me.Bttn_Login)
+        Me.Panel1.Controls.Add(Me.UsernameLabel)
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
+        Me.Panel1.Controls.Add(Me.TxtBx_ConfPass)
+        Me.Panel1.Controls.Add(Me.TxtBx_UserID)
+        Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel1.Location = New System.Drawing.Point(15, 110)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(510, 384)
+        Me.Panel1.TabIndex = 18
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel2.Location = New System.Drawing.Point(170, 9)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(201, 201)
+        Me.Panel2.TabIndex = 19
+        '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 35
+        Me.BunifuElipse1.TargetControl = Me.Panel2
+        '
+        'BunifuElipse2
+        '
+        Me.BunifuElipse2.ElipseRadius = 30
+        Me.BunifuElipse2.TargetControl = Me.Panel1
+        '
         'Login
         '
+        Me.AcceptButton = Me.Bttn_Login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 300)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.TxtBx_ConfPass)
-        Me.Controls.Add(Me.Lbl__ConfPass)
-        Me.Controls.Add(Me.TableLayoutPanel2)
-        Me.Controls.Add(Me.Bttn_Login)
-        Me.Controls.Add(Me.TxtBx_Password)
-        Me.Controls.Add(Me.TxtBx_UserID)
-        Me.Controls.Add(Me.PasswordLabel)
-        Me.Controls.Add(Me.UsernameLabel)
+        Me.ClientSize = New System.Drawing.Size(549, 502)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
+        Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(700, 300)
         Me.MinimizeBox = False
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TxtBx_Password As TextBox
-    Friend WithEvents TxtBx_UserID As TextBox
-    Friend WithEvents PasswordLabel As Label
+    Friend WithEvents TxtBx_Password As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents TxtBx_UserID As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents UsernameLabel As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents TxtBx_ConfPass As TextBox
-    Friend WithEvents Lbl__ConfPass As Label
+    Friend WithEvents TxtBx_ConfPass As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents Label1 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
@@ -449,4 +604,12 @@ Partial Class Login
     Friend WithEvents Bttn_Login As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
+    Friend WithEvents TmrBackAnimation As Timer
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
+    Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
 End Class

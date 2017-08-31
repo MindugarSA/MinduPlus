@@ -25,6 +25,7 @@ Partial Class MDIParent1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim PictureBox1 As System.Windows.Forms.PictureBox
+        Dim Animation15 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIParent1))
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TlStrpSttsLbl_Proceso = New System.Windows.Forms.ToolStripStatusLabel()
@@ -60,6 +61,7 @@ Partial Class MDIParent1
         Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.pnlMovingRight2 = New System.Windows.Forms.Panel()
         Me.pnlMovingRight = New System.Windows.Forms.Panel()
         Me.pnlMovingTop = New System.Windows.Forms.Panel()
@@ -67,6 +69,8 @@ Partial Class MDIParent1
         Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
         Me.TmrDesplaza = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
+        Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
         PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
@@ -75,6 +79,7 @@ Partial Class MDIParent1
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlMovingRight2.SuspendLayout()
         Me.pnlMovingRight.SuspendLayout()
         Me.pnlMovingTop.SuspendLayout()
@@ -83,8 +88,9 @@ Partial Class MDIParent1
         '
         'PictureBox1
         '
+        Me.BunifuTransition1.SetDecoration(PictureBox1, BunifuAnimatorNS.DecorationType.None)
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        PictureBox1.Location = New System.Drawing.Point(3, 5)
+        PictureBox1.Location = New System.Drawing.Point(3, 2)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New System.Drawing.Size(215, 55)
         PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -93,7 +99,8 @@ Partial Class MDIParent1
         '
         'StatusStrip
         '
-        Me.StatusStrip.BackColor = System.Drawing.Color.White
+        Me.StatusStrip.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.StatusStrip, BunifuAnimatorNS.DecorationType.None)
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TlStrpSttsLbl_Proceso, Me.TlStrpSttsLbl_SQL, Me.ToolStripStatusLabel, Me.ToolStripProgressBar1})
         Me.StatusStrip.Location = New System.Drawing.Point(0, 880)
         Me.StatusStrip.Name = "StatusStrip"
@@ -105,27 +112,28 @@ Partial Class MDIParent1
         '
         Me.TlStrpSttsLbl_Proceso.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.TlStrpSttsLbl_Proceso.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_Proceso.Name = "TlStrpSttsLbl_Proceso"
-        Me.TlStrpSttsLbl_Proceso.Size = New System.Drawing.Size(62, 21)
+        Me.TlStrpSttsLbl_Proceso.Size = New System.Drawing.Size(61, 21)
         Me.TlStrpSttsLbl_Proceso.Text = "Proceso : "
         '
         'TlStrpSttsLbl_SQL
         '
-        Me.TlStrpSttsLbl_SQL.BackColor = System.Drawing.Color.AliceBlue
+        Me.TlStrpSttsLbl_SQL.BackColor = System.Drawing.Color.White
         Me.TlStrpSttsLbl_SQL.BorderSides = CType(((System.Windows.Forms.ToolStripStatusLabelBorderSides.Top Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) _
             Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom), System.Windows.Forms.ToolStripStatusLabelBorderSides)
-        Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_SQL.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.TlStrpSttsLbl_SQL.Name = "TlStrpSttsLbl_SQL"
-        Me.TlStrpSttsLbl_SQL.Size = New System.Drawing.Size(832, 21)
+        Me.TlStrpSttsLbl_SQL.Size = New System.Drawing.Size(809, 21)
         Me.TlStrpSttsLbl_SQL.Spring = True
-        Me.TlStrpSttsLbl_SQL.Text = "ToolStripStatusLabel1"
         Me.TlStrpSttsLbl_SQL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ToolStripStatusLabel
         '
+        Me.ToolStripStatusLabel.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(118, 21)
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(111, 21)
         Me.ToolStripStatusLabel.Text = "Tiempo Desconexión"
         '
         'ToolStripProgressBar1
@@ -143,9 +151,10 @@ Partial Class MDIParent1
         Me.Tle_Configuracion.ActiveControl = Nothing
         Me.Tle_Configuracion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Configuracion.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.Tle_Configuracion.Location = New System.Drawing.Point(9, 578)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Configuracion, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Configuracion.Location = New System.Drawing.Point(15, 353)
         Me.Tle_Configuracion.Name = "Tle_Configuracion"
-        Me.Tle_Configuracion.Size = New System.Drawing.Size(247, 107)
+        Me.Tle_Configuracion.Size = New System.Drawing.Size(241, 107)
         Me.Tle_Configuracion.TabIndex = 16
         Me.Tle_Configuracion.Text = "Configuraciones"
         Me.Tle_Configuracion.TileImage = Global.RRHH.My.Resources.Resources.settings
@@ -159,7 +168,8 @@ Partial Class MDIParent1
         Me.Tle_InformesAlmu.ActiveControl = Nothing
         Me.Tle_InformesAlmu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_InformesAlmu.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(137, 465)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_InformesAlmu, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(137, 243)
         Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
         Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 107)
         Me.Tle_InformesAlmu.TabIndex = 15
@@ -175,7 +185,8 @@ Partial Class MDIParent1
         Me.Tle_MantencionColacione.ActiveControl = Nothing
         Me.Tle_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(137, 239)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_MantencionColacione, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(137, 23)
         Me.Tle_MantencionColacione.Name = "Tle_MantencionColacione"
         Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 107)
         Me.Tle_MantencionColacione.TabIndex = 14
@@ -191,7 +202,8 @@ Partial Class MDIParent1
         Me.Tle_AlmuAdicional.ActiveControl = Nothing
         Me.Tle_AlmuAdicional.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(137, 352)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_AlmuAdicional, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(137, 133)
         Me.Tle_AlmuAdicional.Name = "Tle_AlmuAdicional"
         Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 107)
         Me.Tle_AlmuAdicional.TabIndex = 13
@@ -207,9 +219,10 @@ Partial Class MDIParent1
         Me.Tle_Permisos.ActiveControl = Nothing
         Me.Tle_Permisos.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Tle_Permisos.Location = New System.Drawing.Point(9, 352)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Permisos, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Permisos.Location = New System.Drawing.Point(15, 133)
         Me.Tle_Permisos.Name = "Tle_Permisos"
-        Me.Tle_Permisos.Size = New System.Drawing.Size(118, 220)
+        Me.Tle_Permisos.Size = New System.Drawing.Size(118, 217)
         Me.Tle_Permisos.TabIndex = 12
         Me.Tle_Permisos.Text = "Informes y " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Autorizaciones"
         Me.Tle_Permisos.TileImage = Global.RRHH.My.Resources.Resources.people_check
@@ -223,7 +236,8 @@ Partial Class MDIParent1
         Me.Tle_Liquidacion.ActiveControl = Nothing
         Me.Tle_Liquidacion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Liquidacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
-        Me.Tle_Liquidacion.Location = New System.Drawing.Point(130, 6)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Liquidacion, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(127, 6)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
         Me.Tle_Liquidacion.TabIndex = 11
@@ -239,7 +253,8 @@ Partial Class MDIParent1
         Me.Tle_SolAlmuerzo.ActiveControl = Nothing
         Me.Tle_SolAlmuerzo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(5, 6)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_SolAlmuerzo, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(4, 6)
         Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
         Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_SolAlmuerzo.TabIndex = 10
@@ -255,9 +270,10 @@ Partial Class MDIParent1
         Me.Tle_Exportador.ActiveControl = Nothing
         Me.Tle_Exportador.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Tle_Exportador.BackColor = System.Drawing.Color.Orange
-        Me.Tle_Exportador.Location = New System.Drawing.Point(9, 238)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Exportador, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Exportador.Location = New System.Drawing.Point(15, 23)
         Me.Tle_Exportador.Name = "Tle_Exportador"
-        Me.Tle_Exportador.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_Exportador.Size = New System.Drawing.Size(118, 107)
         Me.Tle_Exportador.TabIndex = 9
         Me.Tle_Exportador.Text = "Exportador"
         Me.Tle_Exportador.TileImage = Global.RRHH.My.Resources.Resources.clockwise_rotation__1_
@@ -271,7 +287,8 @@ Partial Class MDIParent1
         Me.Tle_Solicitar_Permisos.ActiveControl = Nothing
         Me.Tle_Solicitar_Permisos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Solicitar_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(499, 6)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Solicitar_Permisos, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(491, 6)
         Me.Tle_Solicitar_Permisos.Name = "Tle_Solicitar_Permisos"
         Me.Tle_Solicitar_Permisos.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Solicitar_Permisos.TabIndex = 17
@@ -287,7 +304,8 @@ Partial Class MDIParent1
         Me.TleSolicitar_HHEE.ActiveControl = Nothing
         Me.TleSolicitar_HHEE.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TleSolicitar_HHEE.BackColor = System.Drawing.Color.Orange
-        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(374, 6)
+        Me.BunifuTransition1.SetDecoration(Me.TleSolicitar_HHEE, BunifuAnimatorNS.DecorationType.None)
+        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(368, 6)
         Me.TleSolicitar_HHEE.Name = "TleSolicitar_HHEE"
         Me.TleSolicitar_HHEE.Size = New System.Drawing.Size(119, 107)
         Me.TleSolicitar_HHEE.TabIndex = 18
@@ -303,7 +321,8 @@ Partial Class MDIParent1
         Me.Tle_Asistencias_Periodo.ActiveControl = Nothing
         Me.Tle_Asistencias_Periodo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Asistencias_Periodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Tle_Asistencias_Periodo.Location = New System.Drawing.Point(249, 6)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Asistencias_Periodo, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Asistencias_Periodo.Location = New System.Drawing.Point(245, 6)
         Me.Tle_Asistencias_Periodo.Name = "Tle_Asistencias_Periodo"
         Me.Tle_Asistencias_Periodo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Asistencias_Periodo.TabIndex = 19
@@ -319,9 +338,10 @@ Partial Class MDIParent1
         Me.Tle_Herramientas_Pre.ActiveControl = Nothing
         Me.Tle_Herramientas_Pre.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Herramientas_Pre.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Tle_Herramientas_Pre.Location = New System.Drawing.Point(4, 10)
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Herramientas_Pre, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Herramientas_Pre.Location = New System.Drawing.Point(5, 10)
         Me.Tle_Herramientas_Pre.Name = "Tle_Herramientas_Pre"
-        Me.Tle_Herramientas_Pre.Size = New System.Drawing.Size(247, 107)
+        Me.Tle_Herramientas_Pre.Size = New System.Drawing.Size(241, 107)
         Me.Tle_Herramientas_Pre.TabIndex = 10
         Me.Tle_Herramientas_Pre.Text = "Herramientas Precision"
         Me.Tle_Herramientas_Pre.TileImage = Global.RRHH.My.Resources.Resources.Medicion_64
@@ -345,9 +365,10 @@ Partial Class MDIParent1
         Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel1)
         Me.Panel1.Controls.Add(PictureBox1)
+        Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
         Me.Panel1.Location = New System.Drawing.Point(0, 26)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1129, 63)
+        Me.Panel1.Size = New System.Drawing.Size(1129, 57)
         Me.Panel1.TabIndex = 10
         '
         'TableLayoutPanel2
@@ -367,7 +388,8 @@ Partial Class MDIParent1
         Me.TableLayoutPanel2.Controls.Add(Me.Lbl_RutTrab, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Button4, 4, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.PcturBx_Image, 3, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(731, 5)
+        Me.BunifuTransition1.SetDecoration(Me.TableLayoutPanel2, BunifuAnimatorNS.DecorationType.None)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(731, 2)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 2
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -379,6 +401,7 @@ Partial Class MDIParent1
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.BunifuTransition1.SetDecoration(Me.Label2, BunifuAnimatorNS.DecorationType.None)
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 33)
         Me.Label2.Name = "Label2"
@@ -391,6 +414,7 @@ Partial Class MDIParent1
         'Lbl_Nombre
         '
         Me.Lbl_Nombre.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.BunifuTransition1.SetDecoration(Me.Lbl_Nombre, BunifuAnimatorNS.DecorationType.None)
         Me.Lbl_Nombre.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Nombre.Location = New System.Drawing.Point(3, 5)
         Me.Lbl_Nombre.Name = "Lbl_Nombre"
@@ -403,6 +427,7 @@ Partial Class MDIParent1
         'Lbl_Cod_Interno
         '
         Me.Lbl_Cod_Interno.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Lbl_Cod_Interno, BunifuAnimatorNS.DecorationType.None)
         Me.Lbl_Cod_Interno.Location = New System.Drawing.Point(253, 0)
         Me.Lbl_Cod_Interno.Name = "Lbl_Cod_Interno"
         Me.Lbl_Cod_Interno.Size = New System.Drawing.Size(2, 27)
@@ -414,6 +439,7 @@ Partial Class MDIParent1
         '
         Me.Lbl_RutEmpresa.AutoSize = True
         Me.TableLayoutPanel2.SetColumnSpan(Me.Lbl_RutEmpresa, 2)
+        Me.BunifuTransition1.SetDecoration(Me.Lbl_RutEmpresa, BunifuAnimatorNS.DecorationType.None)
         Me.Lbl_RutEmpresa.Location = New System.Drawing.Point(253, 27)
         Me.Lbl_RutEmpresa.Name = "Lbl_RutEmpresa"
         Me.Lbl_RutEmpresa.Size = New System.Drawing.Size(11, 28)
@@ -425,6 +451,7 @@ Partial Class MDIParent1
         'Lbl_RutTrab
         '
         Me.Lbl_RutTrab.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Lbl_RutTrab, BunifuAnimatorNS.DecorationType.None)
         Me.Lbl_RutTrab.Location = New System.Drawing.Point(261, 0)
         Me.Lbl_RutTrab.Name = "Lbl_RutTrab"
         Me.Lbl_RutTrab.Size = New System.Drawing.Size(3, 27)
@@ -436,6 +463,7 @@ Partial Class MDIParent1
         '
         Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.BunifuTransition1.SetDecoration(Me.Button4, BunifuAnimatorNS.DecorationType.None)
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
@@ -453,6 +481,7 @@ Partial Class MDIParent1
         'PcturBx_Image
         '
         Me.PcturBx_Image.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BunifuTransition1.SetDecoration(Me.PcturBx_Image, BunifuAnimatorNS.DecorationType.None)
         Me.PcturBx_Image.Location = New System.Drawing.Point(270, 3)
         Me.PcturBx_Image.Name = "PcturBx_Image"
         Me.TableLayoutPanel2.SetRowSpan(Me.PcturBx_Image, 2)
@@ -471,7 +500,8 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Lbl_Cod_ID, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label3, 0, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 5)
+        Me.BunifuTransition1.SetDecoration(Me.TableLayoutPanel1, BunifuAnimatorNS.DecorationType.None)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(224, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.09091!))
@@ -483,6 +513,7 @@ Partial Class MDIParent1
         '
         Me.Lbl_Cod_ID.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Lbl_Cod_ID.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Lbl_Cod_ID, BunifuAnimatorNS.DecorationType.None)
         Me.Lbl_Cod_ID.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Cod_ID.Location = New System.Drawing.Point(3, 40)
         Me.Lbl_Cod_ID.Name = "Lbl_Cod_ID"
@@ -495,6 +526,7 @@ Partial Class MDIParent1
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.White
+        Me.BunifuTransition1.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(3, 4)
         Me.Label3.Name = "Label3"
@@ -505,7 +537,8 @@ Partial Class MDIParent1
         'TxtBx_Empresa
         '
         Me.TxtBx_Empresa.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 35)
+        Me.BunifuTransition1.SetDecoration(Me.TxtBx_Empresa, BunifuAnimatorNS.DecorationType.None)
+        Me.TxtBx_Empresa.Location = New System.Drawing.Point(972, 37)
         Me.TxtBx_Empresa.Name = "TxtBx_Empresa"
         Me.TxtBx_Empresa.ReadOnly = True
         Me.TxtBx_Empresa.Size = New System.Drawing.Size(149, 20)
@@ -516,7 +549,8 @@ Partial Class MDIParent1
         'TxtBx_UserName
         '
         Me.TxtBx_UserName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 12)
+        Me.BunifuTransition1.SetDecoration(Me.TxtBx_UserName, BunifuAnimatorNS.DecorationType.None)
+        Me.TxtBx_UserName.Location = New System.Drawing.Point(972, 14)
         Me.TxtBx_UserName.Name = "TxtBx_UserName"
         Me.TxtBx_UserName.ReadOnly = True
         Me.TxtBx_UserName.Size = New System.Drawing.Size(149, 20)
@@ -529,50 +563,71 @@ Partial Class MDIParent1
         Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Controls.Add(Me.PictureBox3)
         Me.Panel2.Controls.Add(Me.pnlMovingRight2)
         Me.Panel2.Controls.Add(Me.pnlMovingRight)
         Me.Panel2.Controls.Add(Me.pnlMovingTop)
         Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
         Me.Panel2.Controls.Add(Me.TxtBx_UserName)
-        Me.Panel2.Location = New System.Drawing.Point(0, 93)
+        Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel2.Location = New System.Drawing.Point(0, 87)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1129, 790)
+        Me.Panel2.Size = New System.Drawing.Size(1129, 795)
         Me.Panel2.TabIndex = 11
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox3, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox3.Location = New System.Drawing.Point(454, 306)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(203, 200)
+        Me.PictureBox3.TabIndex = 22
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.Visible = False
         '
         'pnlMovingRight2
         '
         Me.pnlMovingRight2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.pnlMovingRight2.BackColor = System.Drawing.Color.Transparent
         Me.pnlMovingRight2.Controls.Add(Me.Tle_Herramientas_Pre)
-        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 668)
+        Me.BunifuTransition1.SetDecoration(Me.pnlMovingRight2, BunifuAnimatorNS.DecorationType.None)
+        Me.pnlMovingRight2.Location = New System.Drawing.Point(3, 673)
         Me.pnlMovingRight2.Name = "pnlMovingRight2"
-        Me.pnlMovingRight2.Size = New System.Drawing.Size(640, 120)
+        Me.pnlMovingRight2.Size = New System.Drawing.Size(298, 120)
         Me.pnlMovingRight2.TabIndex = 21
         '
         'pnlMovingRight
         '
+        Me.pnlMovingRight.BackColor = System.Drawing.Color.Transparent
         Me.pnlMovingRight.Controls.Add(Me.Tle_Asistencias_Periodo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_SolAlmuerzo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Liquidacion)
         Me.pnlMovingRight.Controls.Add(Me.TleSolicitar_HHEE)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Solicitar_Permisos)
+        Me.BunifuTransition1.SetDecoration(Me.pnlMovingRight, BunifuAnimatorNS.DecorationType.None)
         Me.pnlMovingRight.Location = New System.Drawing.Point(5, 0)
         Me.pnlMovingRight.Name = "pnlMovingRight"
-        Me.pnlMovingRight.Size = New System.Drawing.Size(640, 120)
+        Me.pnlMovingRight.Size = New System.Drawing.Size(638, 120)
         Me.pnlMovingRight.TabIndex = 20
         '
         'pnlMovingTop
         '
         Me.pnlMovingTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMovingTop.BackColor = System.Drawing.Color.Transparent
         Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
         Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
         Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
-        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 99)
+        Me.BunifuTransition1.SetDecoration(Me.pnlMovingTop, BunifuAnimatorNS.DecorationType.None)
+        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 329)
         Me.pnlMovingTop.Name = "pnlMovingTop"
-        Me.pnlMovingTop.Size = New System.Drawing.Size(262, 688)
+        Me.pnlMovingTop.Size = New System.Drawing.Size(262, 463)
         Me.pnlMovingTop.TabIndex = 19
         '
         'FlowLayoutPanel1
@@ -580,7 +635,8 @@ Partial Class MDIParent1
         Me.FlowLayoutPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(-3, 89)
+        Me.BunifuTransition1.SetDecoration(Me.FlowLayoutPanel1, BunifuAnimatorNS.DecorationType.None)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(-3, 83)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1139, 4)
         Me.FlowLayoutPanel1.TabIndex = 13
@@ -595,6 +651,7 @@ Partial Class MDIParent1
         '
         'PictureBox2
         '
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
         Me.PictureBox2.Image = Global.RRHH.My.Resources.Resources.plus
         Me.PictureBox2.Location = New System.Drawing.Point(4, 7)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(0)
@@ -604,16 +661,46 @@ Partial Class MDIParent1
         Me.PictureBox2.TabIndex = 21
         Me.PictureBox2.TabStop = False
         '
+        'BunifuTransition1
+        '
+        Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Particles
+        Me.BunifuTransition1.Cursor = Nothing
+        Animation15.AnimateOnlyDifferences = True
+        Animation15.BlindCoeff = CType(resources.GetObject("Animation15.BlindCoeff"), System.Drawing.PointF)
+        Animation15.LeafCoeff = 0!
+        Animation15.MaxTime = 1.0!
+        Animation15.MinTime = 0!
+        Animation15.MosaicCoeff = CType(resources.GetObject("Animation15.MosaicCoeff"), System.Drawing.PointF)
+        Animation15.MosaicShift = CType(resources.GetObject("Animation15.MosaicShift"), System.Drawing.PointF)
+        Animation15.MosaicSize = 1
+        Animation15.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation15.RotateCoeff = 0!
+        Animation15.RotateLimit = 0!
+        Animation15.ScaleCoeff = CType(resources.GetObject("Animation15.ScaleCoeff"), System.Drawing.PointF)
+        Animation15.SlideCoeff = CType(resources.GetObject("Animation15.SlideCoeff"), System.Drawing.PointF)
+        Animation15.TimeCoeff = 2.0!
+        Animation15.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation15
+        Me.BunifuTransition1.Interval = 40
+        Me.BunifuTransition1.MaxAnimationTime = 3000
+        '
+        'TmrBackAnimation
+        '
+        Me.TmrBackAnimation.Interval = 5000
+        '
         'MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1129, 906)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.StatusStrip)
+        Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "MDIParent1"
@@ -631,6 +718,7 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlMovingRight2.ResumeLayout(False)
         Me.pnlMovingRight.ResumeLayout(False)
         Me.pnlMovingTop.ResumeLayout(False)
@@ -680,4 +768,7 @@ Partial Class MDIParent1
     Friend WithEvents Tle_Asistencias_Periodo As MetroFramework.Controls.MetroTile
     Friend WithEvents pnlMovingRight2 As Panel
     Friend WithEvents Tle_Herramientas_Pre As MetroFramework.Controls.MetroTile
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
+    Friend WithEvents TmrBackAnimation As Timer
 End Class

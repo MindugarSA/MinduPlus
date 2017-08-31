@@ -98,7 +98,7 @@ Public Class Frm_Parametros
 
 
                 If dt.Rows(0)("IdEstado").ToString = 0 Then
-                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.AliceBlue
+                    MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
                     MDIParent1.TlStrpSttsLbl_SQL.ForeColor = Color.Black
                     MDIParent1.TlStrpSttsLbl_SQL.Text = dt.Rows(0)("EstadoUsr").ToString
                 Else

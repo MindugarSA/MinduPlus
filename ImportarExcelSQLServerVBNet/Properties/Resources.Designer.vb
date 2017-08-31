@@ -786,6 +786,26 @@ Friend Class Resources
     '''<summary>
     '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
     '''</summary>
+    Friend Shared ReadOnly Property users__128() As System.Drawing.Bitmap
+        Get
+            Dim obj As Object = ResourceManager.GetObject("users__128", resourceCulture)
+            Return CType(obj,System.Drawing.Bitmap)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+    '''</summary>
+    Friend Shared ReadOnly Property users64() As System.Drawing.Bitmap
+        Get
+            Dim obj As Object = ResourceManager.GetObject("users64", resourceCulture)
+            Return CType(obj,System.Drawing.Bitmap)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+    '''</summary>
     Friend Shared ReadOnly Property xls_icon_3402() As System.Drawing.Bitmap
         Get
             Dim obj As Object = ResourceManager.GetObject("xls_icon_3402", resourceCulture)

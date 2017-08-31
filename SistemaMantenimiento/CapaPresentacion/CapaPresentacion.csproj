@@ -2,6 +2,16 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <configuration>
+      <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+          <dependentAssembly>
+            <assemblyIdentity name="Microsoft.SQLServer.Types" publicKeyToken="89845dcd8080cc91" culture="neutral" />
+            <bindingRedirect oldVersion="12.0.0.0" newVersion="14.0.0.0" />
+          </dependentAssembly>
+        </assemblyBinding>
+      </runtime>
+    </configuration>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F74582A3-8A30-4CA7-981D-32A79E2CFE64}</ProjectGuid>
@@ -49,6 +59,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BetterSplitButton, Version=3.15.0.0, Culture=neutral, PublicKeyToken=e6c91a3add447be2, processorArchitecture=MSIL" />
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\packages\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>..\..\..\Pruebas MetroUI\WindowsFormsApplication1\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
@@ -64,12 +78,41 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="SplitButton">
-      <HintPath>..\..\..\SplitButton\bin\Release\SplitButton.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.CoreUtility.14.0.23205\lib\net45\Microsoft.VisualStudio.CoreUtility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Text.Data, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.VisualStudio.Text.Data.14.0.23205\lib\net45\Microsoft.VisualStudio.Text.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SplitButton, Version=1.0.2658.38651, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SplitButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,64 +125,96 @@
     <Compile Include="Animations\AnimationDirection.cs" />
     <Compile Include="Animations\AnimationManager.cs" />
     <Compile Include="Animations\Animations.cs" />
+    <Compile Include="Controles\MenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\MenuButton.Designer.cs">
+      <DependentUpon>MenuButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Extensiones\DataGridViewExtensions.cs" />
     <Compile Include="Extensiones\DataTableExtensions.cs" />
     <Compile Include="Extensiones\ExcelExtensions.cs" />
     <Compile Include="Extensiones\FilestoBinary.cs" />
     <Compile Include="Extensiones\FormExtensions.cs" />
     <Compile Include="Extensiones\ManipulateObject.cs" />
-    <Compile Include="FrmAcceso.cs">
+    <Compile Include="Formularios\FrmAcceso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAcceso.Designer.cs">
+    <Compile Include="Formularios\FrmAcceso.Designer.cs">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAgregarInstrumento.cs">
+    <Compile Include="Formularios\FrmAgregarInstrumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAgregarInstrumento.Designer.cs">
+    <Compile Include="Formularios\FrmAgregarInstrumento.Designer.cs">
       <DependentUpon>FrmAgregarInstrumento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBajaIndividualizacion.cs">
+    <Compile Include="Formularios\FrmBajaIndividualizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBajaIndividualizacion.Designer.cs">
+    <Compile Include="Formularios\FrmBajaIndividualizacion.Designer.cs">
       <DependentUpon>FrmBajaIndividualizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCalibracion.cs">
+    <Compile Include="Formularios\FrmCalibracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCalibracion.Designer.cs">
+    <Compile Include="Formularios\FrmCalibracion.Designer.cs">
       <DependentUpon>FrmCalibracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEmpleado.cs">
+    <Compile Include="Formularios\FrmConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEmpleado.Designer.cs">
+    <Compile Include="Formularios\FrmConsultas.Designer.cs">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpleado.Designer.cs">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIndividualizacion.cs">
+    <Compile Include="Formularios\FrmImpresionEtiquetas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIndividualizacion.Designer.cs">
+    <Compile Include="Formularios\FrmImpresionEtiquetas.Designer.cs">
+      <DependentUpon>FrmImpresionEtiquetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmIndividualizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmIndividualizacion.Designer.cs">
       <DependentUpon>FrmIndividualizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInstrumentosPrecision.cs">
+    <Compile Include="Formularios\FrmInformes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInstrumentosPrecision.Designer.cs">
+    <Compile Include="Formularios\FrmInformes.Designer.cs">
+      <DependentUpon>FrmInformes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmInstrumentosPrecision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInstrumentosPrecision.Designer.cs">
       <DependentUpon>FrmInstrumentosPrecision.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmItemsComprobacion.cs">
+    <Compile Include="Formularios\FrmItemsComprobacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItemsComprobacion.Designer.cs">
+    <Compile Include="Formularios\FrmItemsComprobacion.Designer.cs">
       <DependentUpon>FrmItemsComprobacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmItemsInstrumento.cs">
+    <Compile Include="Formularios\FrmItemsInstrumento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmItemsInstrumento.Designer.cs">
+    <Compile Include="Formularios\FrmItemsInstrumento.Designer.cs">
       <DependentUpon>FrmItemsInstrumento.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensiones\Funciones.cs" />
@@ -150,6 +225,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Extensiones\Visuales.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
@@ -158,39 +239,68 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmAcceso.resx">
+    <EmbeddedResource Include="Formularios\FrmAcceso.resx">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAgregarInstrumento.resx">
+    <EmbeddedResource Include="Formularios\FrmAgregarInstrumento.resx">
       <DependentUpon>FrmAgregarInstrumento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBajaIndividualizacion.resx">
+    <EmbeddedResource Include="Formularios\FrmBajaIndividualizacion.resx">
       <DependentUpon>FrmBajaIndividualizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCalibracion.resx">
+    <EmbeddedResource Include="Formularios\FrmCalibracion.resx">
       <DependentUpon>FrmCalibracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEmpleado.resx">
+    <EmbeddedResource Include="Formularios\FrmConsultas.resx">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEmpleado.resx">
       <DependentUpon>FrmEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIndividualizacion.resx">
+    <EmbeddedResource Include="Formularios\FrmImpresionEtiquetas.resx">
+      <DependentUpon>FrmImpresionEtiquetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmIndividualizacion.resx">
       <DependentUpon>FrmIndividualizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInstrumentosPrecision.resx">
+    <EmbeddedResource Include="Formularios\FrmInformes.resx">
+      <DependentUpon>FrmInformes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmInstrumentosPrecision.resx">
       <DependentUpon>FrmInstrumentosPrecision.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItemsComprobacion.resx">
+    <EmbeddedResource Include="Formularios\FrmItemsComprobacion.resx">
       <DependentUpon>FrmItemsComprobacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmItemsInstrumento.resx">
+    <EmbeddedResource Include="Formularios\FrmItemsInstrumento.resx">
       <DependentUpon>FrmItemsInstrumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptActaBaja.rdlc" />
+    <EmbeddedResource Include="Reportes\RptEntregaInstru.rdlc" />
+    <EmbeddedResource Include="Reportes\RptEtiquetas.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Bnt.png" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +461,64 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\upload-folder %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-tag %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-page-with-text-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-page-with-text-lines %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar %281%29.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\calendar %283%29.png" />
+    <None Include="Resources\calendar %282%29.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

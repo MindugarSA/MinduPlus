@@ -274,4 +274,49 @@
   <data name="upload_folder__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\upload-folder (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="file__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="down_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\down-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__3_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__4_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__5_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__6_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__7_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="file__8_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\file (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_tag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode-tag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_tag__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode-tag (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="document_lines" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-page-with-text-lines.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="document_lines24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-page-with-text-lines (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar__2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar__3_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

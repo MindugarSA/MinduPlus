@@ -942,6 +942,7 @@ Partial Public Class Form1
         Dim sRutTrab As String
 
         Dim dtGestPer As DataTable = DirectCast(dataGridView4.DataSource, DataTable)
+        Dim RegistrosExportados As Integer = 0
 
         If bFiltroConcepto OrElse iEmpSelec > 0 Then
             If iEmpSelec > 0 Then
@@ -956,6 +957,8 @@ Partial Public Class Form1
             End If
 
             progressBar2.Maximum = dtGestPer.Rows.Count
+            RegistrosExportados = dtGestPer.Rows.Count
+
             For Each row As DataRow In dtGestPer.Rows
                 sConcepto = row("Concepto").ToString()
                 sRutTrab = row("RUT").ToString()
@@ -972,13 +975,14 @@ Partial Public Class Form1
             'Eliminar Conceptos del Periodo Existentes en GESTPER 
             BGestPer.InsertarResumenConceptos(sPeriodo, sRutEmp)
             'Insertar Conceptos del Periodo Existentes en GESTPER 
+            RegistrosExportados = dtGestPer.Rows.Count
             For Each row As DataRow In dtGestPer.Rows
                 progressBar2.PerformStep()
                 label20.Text = progressBar1.Value.ToString() & " / " & progressBar1.Maximum.ToString()
             Next
         End If
 
-        MessageBox.Show(progressBar2.Value.ToString() & " Registros Exportados", "Exportacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show(RegistrosExportados.ToString() & " Registros Exportados", "Exportacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         progressBar2.Visible = False
         label20.Visible = False
     End Sub

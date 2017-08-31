@@ -2311,63 +2311,16 @@ Public Class FrmSolicPermHrasExt
         Me.Close()
     End Sub
 
-    Private Sub btnBuscarInformePermisos_MouseEnter(sender As Object, e As EventArgs) Handles btnBuscarInformePermisos.MouseEnter
-        btnBuscarInformePermisos.Location = New Point(btnBuscarInformePermisos.Location.X - 5, btnBuscarInformePermisos.Location.Y - 5)
-        btnBuscarInformePermisos.Size = New Size(btnBuscarInformePermisos.Width + 10, btnBuscarInformePermisos.Height + 10)
+
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles BtnVolver2.MouseLeave, btnVolver.MouseLeave, btnSolicitar.MouseLeave, btnRechazarTodas.MouseLeave, btnImprimirInformePermisos.MouseLeave, btnImprimirInformeHHEE.MouseLeave, btnImprimir.MouseLeave, btnExportarExcelPermiso.MouseLeave, btnExportarExcel.MouseLeave, btnBuscarInformePermisos.MouseLeave, btnBuscarInformeHHEE.MouseLeave, btnAutorizarTodas.MouseLeave, btnAgregarSolicitud.MouseLeave
+        Dim btn As Button = CType(sender, Button)
+        btn.Location = New Point(btn.Location.X + 5, btn.Location.Y + 5)
+        btn.Size = New Size(btn.Width - 10, btn.Height - 10)
     End Sub
 
-    Private Sub btnBuscarInformePermisos_MouseLeave(sender As Object, e As EventArgs) Handles btnBuscarInformePermisos.MouseLeave
-        btnBuscarInformePermisos.Location = New Point(btnBuscarInformePermisos.Location.X + 5, btnBuscarInformePermisos.Location.Y + 5)
-        btnBuscarInformePermisos.Size = New Size(btnBuscarInformePermisos.Width - 10, btnBuscarInformePermisos.Height - 10)
-    End Sub
-
-    Private Sub btnExportarExcelPermiso_MouseEnter(sender As Object, e As EventArgs) Handles btnExportarExcelPermiso.MouseEnter
-        btnExportarExcelPermiso.Location = New Point(btnExportarExcelPermiso.Location.X - 5, btnExportarExcelPermiso.Location.Y - 5)
-        btnExportarExcelPermiso.Size = New Size(btnExportarExcelPermiso.Width + 10, btnExportarExcelPermiso.Height + 10)
-    End Sub
-
-    Private Sub btnExportarExcelPermiso_MouseLeave(sender As Object, e As EventArgs) Handles btnExportarExcelPermiso.MouseLeave
-        btnExportarExcelPermiso.Location = New Point(btnExportarExcelPermiso.Location.X + 5, btnExportarExcelPermiso.Location.Y + 5)
-        btnExportarExcelPermiso.Size = New Size(btnExportarExcelPermiso.Width - 10, btnExportarExcelPermiso.Height - 10)
-    End Sub
-
-    Private Sub btnImprimirInformePermisos_MouseEnter(sender As Object, e As EventArgs) Handles btnImprimirInformePermisos.MouseEnter
-        btnImprimirInformePermisos.Location = New Point(btnImprimirInformePermisos.Location.X - 5, btnImprimirInformePermisos.Location.Y - 5)
-        btnImprimirInformePermisos.Size = New Size(btnImprimirInformePermisos.Width + 10, btnImprimirInformePermisos.Height + 10)
-    End Sub
-
-    Private Sub btnImprimirInformePermisos_MouseLeave(sender As Object, e As EventArgs) Handles btnImprimirInformePermisos.MouseLeave
-        btnImprimirInformePermisos.Location = New Point(btnImprimirInformePermisos.Location.X + 5, btnImprimirInformePermisos.Location.Y + 5)
-        btnImprimirInformePermisos.Size = New Size(btnImprimirInformePermisos.Width - 10, btnImprimirInformePermisos.Height - 10)
-    End Sub
-
-    Private Sub btnBuscarInformeHHEE_MouseEnter(sender As Object, e As EventArgs) Handles btnBuscarInformeHHEE.MouseEnter
-        btnBuscarInformeHHEE.Location = New Point(btnBuscarInformeHHEE.Location.X - 5, btnBuscarInformeHHEE.Location.Y - 5)
-        btnBuscarInformeHHEE.Size = New Size(btnBuscarInformeHHEE.Width + 10, btnBuscarInformeHHEE.Height + 10)
-    End Sub
-
-    Private Sub btnBuscarInformeHHEE_MouseLeave(sender As Object, e As EventArgs) Handles btnBuscarInformeHHEE.MouseLeave
-        btnBuscarInformeHHEE.Location = New Point(btnBuscarInformeHHEE.Location.X + 5, btnBuscarInformeHHEE.Location.Y + 5)
-        btnBuscarInformeHHEE.Size = New Size(btnBuscarInformeHHEE.Width - 10, btnBuscarInformeHHEE.Height - 10)
-    End Sub
-
-    Private Sub btnImprimirInformeHHEE_MouseEnter(sender As Object, e As EventArgs) Handles btnImprimirInformeHHEE.MouseEnter
-        btnImprimirInformeHHEE.Location = New Point(btnImprimirInformeHHEE.Location.X - 5, btnImprimirInformeHHEE.Location.Y - 5)
-        btnImprimirInformeHHEE.Size = New Size(btnImprimirInformeHHEE.Width + 10, btnImprimirInformeHHEE.Height + 10)
-    End Sub
-
-    Private Sub btnImprimirInformeHHEE_MouseLeave(sender As Object, e As EventArgs) Handles btnImprimirInformeHHEE.MouseLeave
-        btnImprimirInformeHHEE.Location = New Point(btnImprimirInformeHHEE.Location.X + 5, btnImprimirInformeHHEE.Location.Y + 5)
-        btnImprimirInformeHHEE.Size = New Size(btnImprimirInformeHHEE.Width - 10, btnImprimirInformeHHEE.Height - 10)
-    End Sub
-
-    Private Sub btnExportarExcel_MouseEnter(sender As Object, e As EventArgs) Handles btnExportarExcel.MouseEnter
-        btnExportarExcel.Location = New Point(btnExportarExcel.Location.X - 5, btnExportarExcel.Location.Y - 5)
-        btnExportarExcel.Size = New Size(btnExportarExcel.Width + 10, btnExportarExcel.Height + 10)
-    End Sub
-
-    Private Sub btnExportarExcel_MouseLeave(sender As Object, e As EventArgs) Handles btnExportarExcel.MouseLeave
-        btnExportarExcel.Location = New Point(btnExportarExcel.Location.X + 5, btnExportarExcel.Location.Y + 5)
-        btnExportarExcel.Size = New Size(btnExportarExcel.Width - 10, btnExportarExcel.Height - 10)
+    Private Sub Button_MouseEnter(sender As Object, e As EventArgs) Handles BtnVolver2.MouseEnter, btnVolver.MouseEnter, btnSolicitar.MouseEnter, btnRechazarTodas.MouseEnter, btnImprimirInformePermisos.MouseEnter, btnImprimirInformeHHEE.MouseEnter, btnImprimir.MouseEnter, btnExportarExcelPermiso.MouseEnter, btnExportarExcel.MouseEnter, btnBuscarInformePermisos.MouseEnter, btnBuscarInformeHHEE.MouseEnter, btnAutorizarTodas.MouseEnter, btnAgregarSolicitud.MouseEnter
+        Dim btn As Button = CType(sender, Button)
+        btn.Location = New Point(btn.Location.X - 5, btn.Location.Y - 5)
+        btn.Size = New Size(btn.Width + 10, btn.Height + 10)
     End Sub
 End Class

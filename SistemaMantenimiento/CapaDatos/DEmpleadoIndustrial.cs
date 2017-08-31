@@ -100,5 +100,70 @@ namespace CapaDatos
 
         }
 
+        public DataTable ListarIdentidades (string Estado)
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SlqCon = new SqlConnection();
+
+            try
+            {
+                string sp = "SpEmpleadosIdentidad";
+
+                SlqCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand(sp, SlqCon);
+
+                SlqCon.Open();
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlCmd.Parameters.Add(new SqlParameter("@Estado", Estado));
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SlqCon.State == ConnectionState.Open) SlqCon.Close();
+            }
+            return DtResultado;
+
+        }
+        
+        public DataTable BuscarIdentidades(string Estado,string Empleado)
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SlqCon = new SqlConnection();
+
+            try
+            {
+                string sp = "SpEmpleadosIdentidadBuscar";
+
+                SlqCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand(sp, SlqCon);
+
+                SlqCon.Open();
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+                SqlCmd.Parameters.Add(new SqlParameter("@Estado", Estado));
+                SqlCmd.Parameters.Add(new SqlParameter("@Empleado", Empleado));
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
+
+            }
+            catch
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SlqCon.State == ConnectionState.Open) SlqCon.Close();
+            }
+            return DtResultado;
+
+        }
+
     }
 }

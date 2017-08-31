@@ -6,6 +6,7 @@ Public Class MDIParent1
     Dim dt As New DataTable
     Dim cmd As SqlCommand
 
+    Private Entrada As Integer = 0
     Public TiempoActivo As Integer
     Private m_ChildFormNumber As Integer
     Public Tiempo_Str As Integer = 30
@@ -14,6 +15,8 @@ Public Class MDIParent1
 
     Private Const DESPLAZAMIENTO As Integer = 25
     Private Const CANTIDAD_DESPLAZO As Integer = 25
+
+    Private AnimationType As BunifuAnimatorNS.AnimationType = 10
 
     Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
         Get
@@ -24,6 +27,9 @@ Public Class MDIParent1
     End Property
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Configurar_MeterialSkin_Styles_Inicio()
+
         conexion.ConnectionString = Conection.Cn
         Me.ShowInTaskbar = True
 
@@ -34,6 +40,9 @@ Public Class MDIParent1
         Me.WindowState = FormWindowState.Minimized
         Me.WindowState = FormWindowState.Maximized
 
+        PictureBox3.Top = (Panel2.Height / 2) - (PictureBox3.Height / 2)
+        PictureBox3.Left = (Panel2.Width / 2) - (PictureBox3.Width / 2)
+
         PictureBox2_Click(sender, e)
 
     End Sub
@@ -41,6 +50,9 @@ Public Class MDIParent1
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PcturBx_Image.Click
         TiempoIngreso.Enabled = False
         Cerrar_Forms_Children()
+        TlStrpSttsLbl_SQL.BackColor = Color.White
+        TlStrpSttsLbl_SQL.Text = ""
+
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
         NewMDIChild.Show()
@@ -49,6 +61,7 @@ Public Class MDIParent1
         TiempoActivo = Tiempo_Str
         ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
 
     End Sub
 
@@ -87,8 +100,6 @@ Public Class MDIParent1
             NewMDIChild.WindowState = FormWindowState.Maximized
         End If
     End Sub
-
-
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30003) Then
@@ -164,8 +175,6 @@ Public Class MDIParent1
         'End If
     End Sub
 
-
-
     Private Sub Button5_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30001) Then
 
@@ -182,13 +191,6 @@ Public Class MDIParent1
             NewMDIChild.WindowState = FormWindowState.Maximized
         End If
     End Sub
-
-
-
-
-
-
-
 
     Function RevisaAcceso(Campo As Integer) As Boolean
         dt.Reset()
@@ -232,8 +234,6 @@ Public Class MDIParent1
         'End If
     End Function
 
-
-
     Private Sub TiempoIngreso_Tick(sender As Object, e As EventArgs) Handles TiempoIngreso.Tick
         TiempoActivo = TiempoActivo - 1
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
@@ -248,7 +248,6 @@ Public Class MDIParent1
         End If
 
     End Sub
-
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         '' Cree una nueva instancia del formulario secundario.
@@ -284,7 +283,6 @@ Public Class MDIParent1
         '    ' TODO: agregue código aquí para guardar el contenido actual del formulario en un archivo.
         'End If
     End Sub
-
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
@@ -335,8 +333,6 @@ Public Class MDIParent1
 
     End Sub
 
-
-
     Private Sub ResulucionToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'Dim desktopSize As Size
         'desktopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize
@@ -354,6 +350,7 @@ Public Class MDIParent1
 
         Cerrar_Forms_Children()
         Visualizar_Tiles_MDI()
+        Configurar_MeterialSkin_Styles_Inicio()
 
         Dim NewMDIChild As New Login()
         NewMDIChild.MdiParent = Me
@@ -364,6 +361,9 @@ Public Class MDIParent1
         TiempoActivo = Tiempo_Str
         ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        TlStrpSttsLbl_SQL.BackColor = Color.White
+        TlStrpSttsLbl_SQL.Text = ""
+
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs)
@@ -462,6 +462,7 @@ Public Class MDIParent1
         If RevisaAcceso(90000) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
+            Configurar_MeterialSkin_Styles_Pantallas()
             Dim NewMDIChild As New FrmSolicPermHrasExt(0)
             NewMDIChild.MdiParent = Me
             NewMDIChild.Dock = DockStyle.Fill
@@ -610,6 +611,7 @@ Public Class MDIParent1
         pnlMovingRight.Visible = False
         pnlMovingRight2.Visible = False
         pnlMovingTop.Visible = False
+        Hide_BackLogo()
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
         '  (From tb As MetroFramework.Controls.MetroTile In Me.Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
         '   Select tb).ToList()
@@ -632,6 +634,7 @@ Public Class MDIParent1
         pnlMovingRight2.Visible = True
         pnlMovingTop.Visible = True
 
+
         'Dim listaTiles As List(Of MetroFramework.Controls.MetroTile) =
         '  (From tb As MetroFramework.Controls.MetroTile In Panel2.Controls.OfType(Of MetroFramework.Controls.MetroTile)()
         '   Select tb).ToList()
@@ -641,14 +644,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter, PictureBox3.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave, PictureBox3.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -666,17 +669,68 @@ Public Class MDIParent1
             TmrDesplaza.Stop()
             TmrDesplaza.Enabled = False
             Tiempo_Animacion = 0
+            If Entrada > 1 Then
+                Animate_BackLogo()
+            End If
         End If
-
     End Sub
 
     Public Sub Desplazamiento_Tiles()
+
+        Entrada += 1
         pnlMovingRight.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
         pnlMovingRight2.Left -= DESPLAZAMIENTO * CANTIDAD_DESPLAZO
         pnlMovingTop.Top += DESPLAZAMIENTO * CANTIDAD_DESPLAZO
 
         TmrDesplaza.Enabled = True
         TmrDesplaza.Start()
+
+
+    End Sub
+
+    Private Sub Animate_BackLogo()
+
+        If (PictureBox3.Visible = True) Then
+            BunifuTransition1.HideSync(PictureBox3)
+        End If
+
+        PictureBox3.Visible = False
+        PictureBox3.BringToFront()
+
+        BunifuTransition1.AnimationType = AnimationType
+        BunifuTransition1.ShowSync(PictureBox3)
+
+        If AnimationType = 13 Then
+            AnimationType = 1
+        Else
+            AnimationType += 1
+        End If
+
+        'TmrBackAnimation.Enabled = True
+        'TmrBackAnimation.Start()
+
+    End Sub
+
+    Private Sub Hide_BackLogo()
+        TmrBackAnimation.Stop()
+        TmrBackAnimation.Enabled = False
+        Try
+            BunifuTransition1.HideSync(PictureBox3)
+            PictureBox3.Visible = False
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub TmrBackAnimation_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick
+
+        If TmrBackAnimation.Interval = 5000 Then
+            TmrBackAnimation.Stop()
+            TmrBackAnimation.Enabled = False
+            If Entrada > 1 Then
+                Animate_BackLogo()
+            End If
+        End If
 
     End Sub
 
@@ -789,4 +843,34 @@ Public Class MDIParent1
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         End If
     End Sub
+
+    Private Sub Configurar_MeterialSkin_Styles_Inicio()
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 16)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
+    End Sub
+
+    Private Sub Configurar_MeterialSkin_Styles_Pantallas()
+
+        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
+        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
+        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
+        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
+        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 11)
+        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
+        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Animate_BackLogo()
+    End Sub
+
+
 End Class

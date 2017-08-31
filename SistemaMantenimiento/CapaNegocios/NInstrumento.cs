@@ -15,16 +15,18 @@ namespace CapaNegocios
         //de la CapaDatos
         public static string Insertar(string codigo, string descripcion, string frecuenciaNvo, string frecuenciaUsa, string estado)
         {
-            DInstrumento Obj = new DInstrumento();
-            Obj.Codigo = codigo;
-            Obj.Descripcion = descripcion;
-            Obj.Frecuencia_Nvo = frecuenciaNvo;
-            Obj.Frecuencia_Usa = frecuenciaUsa;
-            Obj.Estado = estado;
-            Obj.Fecha_Creacion = new DateTime(1900, 01, 01); // > new DateTime(1900,01,01) ? Instrumento.Fecha_Creacion  : new DateTime(1900, 01, 01)
-            Obj.Usu_Creacion = "";
-            Obj.Fecha_Modifi = new DateTime(1900, 01, 01);
-            Obj.Usu_Modif = "";
+            DInstrumento Obj = new DInstrumento()
+            {
+                Codigo = codigo,
+                Descripcion = descripcion,
+                Frecuencia_Nvo = frecuenciaNvo,
+                Frecuencia_Usa = frecuenciaUsa,
+                Estado = estado,
+                Fecha_Creacion = new DateTime(1900, 01, 01), // > new DateTime(1900,01,01) ? Instrumento.Fecha_Creacion  : new DateTime(1900, 01, 01)
+                Usu_Creacion = "",
+                Fecha_Modifi = new DateTime(1900, 01, 01),
+                Usu_Modif = ""
+            };
             return Obj.Insertar(Obj);
         }
 
@@ -32,18 +34,19 @@ namespace CapaNegocios
         //de la CapaDatos
         public static string Actualizar(int idinstrumento, string codigo, string descripcion, string frecuenciaNvo, string frecuenciaUsa, string estado)
         {
-            DInstrumento Obj = new DInstrumento();
-            Obj.Id = idinstrumento;
-            Obj.Codigo = codigo;
-            Obj.Descripcion = descripcion;
-            Obj.Frecuencia_Nvo = frecuenciaNvo;
-            Obj.Frecuencia_Usa = frecuenciaUsa;
-            Obj.Estado = estado;
-            Obj.Fecha_Creacion = new DateTime(1900, 01, 01); // > new DateTime(1900,01,01) ? Instrumento.Fecha_Creacion  : new DateTime(1900, 01, 01)
-            Obj.Usu_Creacion = "";
-            Obj.Fecha_Modifi = new DateTime(1900, 01, 01); 
-            Obj.Usu_Modif = "";
-
+            DInstrumento Obj = new DInstrumento()
+            {
+                Id = idinstrumento,
+                Codigo = codigo,
+                Descripcion = descripcion,
+                Frecuencia_Nvo = frecuenciaNvo,
+                Frecuencia_Usa = frecuenciaUsa,
+                Estado = estado,
+                Fecha_Creacion = new DateTime(1900, 01, 01), // > new DateTime(1900,01,01) ? Instrumento.Fecha_Creacion  : new DateTime(1900, 01, 01)
+                Usu_Creacion = "",
+                Fecha_Modifi = new DateTime(1900, 01, 01),
+                Usu_Modif = ""
+            };
             return Obj.Actualizar(Obj);
         }
 
@@ -51,9 +54,11 @@ namespace CapaNegocios
         //de la CapaDatos
         public static string Eliminar(int idinstrumento, string codigo)
         {
-            DInstrumento Obj = new DInstrumento();
-            Obj.Id = idinstrumento;
-            Obj.Codigo = codigo;
+            DInstrumento Obj = new DInstrumento()
+            {
+                Id = idinstrumento,
+                Codigo = codigo
+            };
             return Obj.Eliminar(Obj);
         }
 
@@ -64,10 +69,17 @@ namespace CapaNegocios
             return new DInstrumento().Listar();
         }
 
+        public static DataTable ListarPorEmpleado(string Empleado)
+        {
+            return new DInstrumento().ListarPorEmpleado(Empleado);
+        }
+
         public static DataTable Buscar(int idinstrumento)
         {
-            DInstrumento Obj = new DInstrumento();
-            Obj.Id = idinstrumento;
+            DInstrumento Obj = new DInstrumento()
+            {
+                Id = idinstrumento
+            };
             return new DInstrumento().Buscar(Obj);
         }
     }

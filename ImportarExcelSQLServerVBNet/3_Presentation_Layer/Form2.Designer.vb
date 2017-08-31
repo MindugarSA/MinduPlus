@@ -183,9 +183,9 @@ Namespace _3_Presentation_Layer
         Private WithEvents groupBox1 As System.Windows.Forms.GroupBox
         Private WithEvents button2 As System.Windows.Forms.Button
         Private WithEvents button1 As System.Windows.Forms.Button
-        Friend WithEvents Button3 As Windows.Forms.Button
+        Friend WithEvents Button3 As System.Windows.Forms.Button
         Friend WithEvents GradientTab2 As _2_Business_Layer.GradientTab
-        Friend WithEvents TabPage3 As Windows.Forms.TabPage
-        Friend WithEvents TabPage4 As Windows.Forms.TabPage
+        Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+        Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     End Class
 End Namespace

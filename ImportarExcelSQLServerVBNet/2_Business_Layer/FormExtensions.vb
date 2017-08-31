@@ -19,5 +19,29 @@ Namespace _2_Business_Layer
 
             Return controls
         End Function
+
+        <System.Runtime.CompilerServices.Extension>
+        Private Async Sub FadeInAsync(o As Form, Optional interval As Integer = 80)
+            'Object is not fully invisible. Fade it in
+            While o.Opacity < 1.0
+                Await Task.Delay(interval)
+                o.Opacity += 0.05
+            End While
+            o.Opacity = 1
+            'make fully visible       
+        End Sub
+
+        <System.Runtime.CompilerServices.Extension>
+        Private Async Sub FadeOutAsync(o As Form, Optional interval As Integer = 80)
+            'Object is fully visible. Fade it out
+            While o.Opacity > 0.0
+                Await Task.Delay(interval)
+                o.Opacity -= 0.05
+            End While
+            o.Opacity = 0
+            'make fully invisible       
+        End Sub
+
+
     End Module
 End Namespace

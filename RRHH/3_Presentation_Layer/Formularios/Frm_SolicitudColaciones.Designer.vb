@@ -185,6 +185,7 @@ Partial Class Frm_SolicitudColacion
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel2.AutoSize = True
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.White
         Me.TableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel2.ColumnCount = 6
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130.0!))
@@ -192,7 +193,7 @@ Partial Class Frm_SolicitudColacion
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 451.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 363.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.TblLyutPnl_5, 5, 4)
         Me.TableLayoutPanel2.Controls.Add(Me.TblLyutPnl_4, 5, 3)
         Me.TableLayoutPanel2.Controls.Add(Me.TblLyutPnl_3, 5, 2)
@@ -232,7 +233,6 @@ Partial Class Frm_SolicitudColacion
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1023, 386)
         Me.TableLayoutPanel2.TabIndex = 40
         '
@@ -248,13 +248,13 @@ Partial Class Frm_SolicitudColacion
         Me.TblLyutPnl_5.Controls.Add(Me.Lbl_P_B5, 1, 0)
         Me.TblLyutPnl_5.Controls.Add(Me.Lbl_P_A5, 0, 0)
         Me.TblLyutPnl_5.Controls.Add(Me.Lbl_P_C5, 0, 1)
-        Me.TblLyutPnl_5.Location = New System.Drawing.Point(571, 312)
+        Me.TblLyutPnl_5.Location = New System.Drawing.Point(659, 312)
         Me.TblLyutPnl_5.Name = "TblLyutPnl_5"
         Me.TblLyutPnl_5.RowCount = 2
         Me.TblLyutPnl_5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TblLyutPnl_5.Size = New System.Drawing.Size(448, 70)
+        Me.TblLyutPnl_5.Size = New System.Drawing.Size(360, 70)
         Me.TblLyutPnl_5.TabIndex = 40
         '
         'Lbl_P_D5
@@ -265,9 +265,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_D5.AutoSize = True
         Me.Lbl_P_D5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_D5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_D5.Location = New System.Drawing.Point(227, 35)
+        Me.Lbl_P_D5.Location = New System.Drawing.Point(183, 35)
         Me.Lbl_P_D5.Name = "Lbl_P_D5"
-        Me.Lbl_P_D5.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_D5.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_D5.TabIndex = 5
         Me.Lbl_P_D5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -279,9 +279,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_B5.AutoSize = True
         Me.Lbl_P_B5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_B5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_B5.Location = New System.Drawing.Point(227, 0)
+        Me.Lbl_P_B5.Location = New System.Drawing.Point(183, 0)
         Me.Lbl_P_B5.Name = "Lbl_P_B5"
-        Me.Lbl_P_B5.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_B5.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_B5.TabIndex = 4
         Me.Lbl_P_B5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -295,7 +295,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_A5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_A5.Location = New System.Drawing.Point(3, 0)
         Me.Lbl_P_A5.Name = "Lbl_P_A5"
-        Me.Lbl_P_A5.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_A5.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_A5.TabIndex = 3
         Me.Lbl_P_A5.Text = "LIBRE ELECCIÓN"
         Me.Lbl_P_A5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -310,7 +310,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_C5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_C5.Location = New System.Drawing.Point(3, 35)
         Me.Lbl_P_C5.Name = "Lbl_P_C5"
-        Me.Lbl_P_C5.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_C5.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_C5.TabIndex = 2
         Me.Lbl_P_C5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -326,13 +326,13 @@ Partial Class Frm_SolicitudColacion
         Me.TblLyutPnl_4.Controls.Add(Me.Lbl_P_B4, 1, 0)
         Me.TblLyutPnl_4.Controls.Add(Me.Lbl_P_A4, 0, 0)
         Me.TblLyutPnl_4.Controls.Add(Me.Lbl_P_C4, 0, 1)
-        Me.TblLyutPnl_4.Location = New System.Drawing.Point(571, 235)
+        Me.TblLyutPnl_4.Location = New System.Drawing.Point(659, 235)
         Me.TblLyutPnl_4.Name = "TblLyutPnl_4"
         Me.TblLyutPnl_4.RowCount = 2
         Me.TblLyutPnl_4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TblLyutPnl_4.Size = New System.Drawing.Size(448, 70)
+        Me.TblLyutPnl_4.Size = New System.Drawing.Size(360, 70)
         Me.TblLyutPnl_4.TabIndex = 39
         '
         'Lbl_P_D4
@@ -343,9 +343,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_D4.AutoSize = True
         Me.Lbl_P_D4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_D4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_D4.Location = New System.Drawing.Point(227, 35)
+        Me.Lbl_P_D4.Location = New System.Drawing.Point(183, 35)
         Me.Lbl_P_D4.Name = "Lbl_P_D4"
-        Me.Lbl_P_D4.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_D4.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_D4.TabIndex = 5
         Me.Lbl_P_D4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -357,9 +357,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_B4.AutoSize = True
         Me.Lbl_P_B4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_B4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_B4.Location = New System.Drawing.Point(227, 0)
+        Me.Lbl_P_B4.Location = New System.Drawing.Point(183, 0)
         Me.Lbl_P_B4.Name = "Lbl_P_B4"
-        Me.Lbl_P_B4.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_B4.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_B4.TabIndex = 4
         Me.Lbl_P_B4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -373,7 +373,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_A4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_A4.Location = New System.Drawing.Point(3, 0)
         Me.Lbl_P_A4.Name = "Lbl_P_A4"
-        Me.Lbl_P_A4.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_A4.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_A4.TabIndex = 3
         Me.Lbl_P_A4.Text = "LIBRE ELECCIÓN"
         Me.Lbl_P_A4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -388,7 +388,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_C4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_C4.Location = New System.Drawing.Point(3, 35)
         Me.Lbl_P_C4.Name = "Lbl_P_C4"
-        Me.Lbl_P_C4.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_C4.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_C4.TabIndex = 2
         Me.Lbl_P_C4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -404,12 +404,12 @@ Partial Class Frm_SolicitudColacion
         Me.TblLyutPnl_3.Controls.Add(Me.Lbl_P_B3, 1, 0)
         Me.TblLyutPnl_3.Controls.Add(Me.Lbl_P_A3, 0, 0)
         Me.TblLyutPnl_3.Controls.Add(Me.Lbl_P_C3, 0, 1)
-        Me.TblLyutPnl_3.Location = New System.Drawing.Point(571, 158)
+        Me.TblLyutPnl_3.Location = New System.Drawing.Point(659, 158)
         Me.TblLyutPnl_3.Name = "TblLyutPnl_3"
         Me.TblLyutPnl_3.RowCount = 2
         Me.TblLyutPnl_3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TblLyutPnl_3.Size = New System.Drawing.Size(448, 70)
+        Me.TblLyutPnl_3.Size = New System.Drawing.Size(360, 70)
         Me.TblLyutPnl_3.TabIndex = 38
         '
         'Lbl_P_D3
@@ -420,9 +420,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_D3.AutoSize = True
         Me.Lbl_P_D3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_D3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_D3.Location = New System.Drawing.Point(227, 35)
+        Me.Lbl_P_D3.Location = New System.Drawing.Point(183, 35)
         Me.Lbl_P_D3.Name = "Lbl_P_D3"
-        Me.Lbl_P_D3.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_D3.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_D3.TabIndex = 5
         Me.Lbl_P_D3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -434,9 +434,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_B3.AutoSize = True
         Me.Lbl_P_B3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_B3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_B3.Location = New System.Drawing.Point(227, 0)
+        Me.Lbl_P_B3.Location = New System.Drawing.Point(183, 0)
         Me.Lbl_P_B3.Name = "Lbl_P_B3"
-        Me.Lbl_P_B3.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_B3.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_B3.TabIndex = 4
         Me.Lbl_P_B3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -450,7 +450,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_A3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_A3.Location = New System.Drawing.Point(3, 0)
         Me.Lbl_P_A3.Name = "Lbl_P_A3"
-        Me.Lbl_P_A3.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_A3.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_A3.TabIndex = 3
         Me.Lbl_P_A3.Text = "LIBRE ELECCIÓN"
         Me.Lbl_P_A3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -465,7 +465,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_C3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_C3.Location = New System.Drawing.Point(3, 35)
         Me.Lbl_P_C3.Name = "Lbl_P_C3"
-        Me.Lbl_P_C3.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_C3.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_C3.TabIndex = 2
         Me.Lbl_P_C3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -477,10 +477,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_C5.AutoSize = True
         Me.Lbl_C5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_C5.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_C5.Location = New System.Drawing.Point(350, 309)
+        Me.Lbl_C5.Location = New System.Drawing.Point(394, 309)
         Me.Lbl_C5.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_C5.Name = "Lbl_C5"
-        Me.Lbl_C5.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_C5.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_C5.TabIndex = 37
         Me.Lbl_C5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -492,10 +492,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_B5.AutoSize = True
         Me.Lbl_B5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_B5.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_B5.Location = New System.Drawing.Point(241, 309)
+        Me.Lbl_B5.Location = New System.Drawing.Point(263, 309)
         Me.Lbl_B5.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_B5.Name = "Lbl_B5"
-        Me.Lbl_B5.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_B5.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_B5.TabIndex = 36
         Me.Lbl_B5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -510,7 +510,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_A5.Location = New System.Drawing.Point(132, 309)
         Me.Lbl_A5.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_A5.Name = "Lbl_A5"
-        Me.Lbl_A5.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_A5.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_A5.TabIndex = 35
         Me.Lbl_A5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -522,10 +522,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_D5.AutoSize = True
         Me.Lbl_D5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_D5.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_D5.Location = New System.Drawing.Point(459, 309)
+        Me.Lbl_D5.Location = New System.Drawing.Point(525, 309)
         Me.Lbl_D5.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_D5.Name = "Lbl_D5"
-        Me.Lbl_D5.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_D5.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_D5.TabIndex = 34
         Me.Lbl_D5.Text = "VALE CASINO"
         Me.Lbl_D5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -538,10 +538,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_C4.AutoSize = True
         Me.Lbl_C4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_C4.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_C4.Location = New System.Drawing.Point(350, 232)
+        Me.Lbl_C4.Location = New System.Drawing.Point(394, 232)
         Me.Lbl_C4.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_C4.Name = "Lbl_C4"
-        Me.Lbl_C4.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_C4.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_C4.TabIndex = 33
         Me.Lbl_C4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -553,10 +553,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_B4.AutoSize = True
         Me.Lbl_B4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_B4.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_B4.Location = New System.Drawing.Point(241, 232)
+        Me.Lbl_B4.Location = New System.Drawing.Point(263, 232)
         Me.Lbl_B4.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_B4.Name = "Lbl_B4"
-        Me.Lbl_B4.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_B4.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_B4.TabIndex = 32
         Me.Lbl_B4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -571,7 +571,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_A4.Location = New System.Drawing.Point(132, 232)
         Me.Lbl_A4.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_A4.Name = "Lbl_A4"
-        Me.Lbl_A4.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_A4.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_A4.TabIndex = 31
         Me.Lbl_A4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -583,10 +583,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_D4.AutoSize = True
         Me.Lbl_D4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_D4.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_D4.Location = New System.Drawing.Point(459, 232)
+        Me.Lbl_D4.Location = New System.Drawing.Point(525, 232)
         Me.Lbl_D4.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_D4.Name = "Lbl_D4"
-        Me.Lbl_D4.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_D4.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_D4.TabIndex = 30
         Me.Lbl_D4.Text = "VALE CASINO"
         Me.Lbl_D4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -603,12 +603,12 @@ Partial Class Frm_SolicitudColacion
         Me.TblLyutPnl_2.Controls.Add(Me.Lbl_P_B2, 1, 0)
         Me.TblLyutPnl_2.Controls.Add(Me.Lbl_P_A2, 0, 0)
         Me.TblLyutPnl_2.Controls.Add(Me.Lbl_P_C2, 0, 1)
-        Me.TblLyutPnl_2.Location = New System.Drawing.Point(571, 81)
+        Me.TblLyutPnl_2.Location = New System.Drawing.Point(659, 81)
         Me.TblLyutPnl_2.Name = "TblLyutPnl_2"
         Me.TblLyutPnl_2.RowCount = 2
         Me.TblLyutPnl_2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TblLyutPnl_2.Size = New System.Drawing.Size(448, 70)
+        Me.TblLyutPnl_2.Size = New System.Drawing.Size(360, 70)
         Me.TblLyutPnl_2.TabIndex = 25
         '
         'Lbl_P_D2
@@ -619,9 +619,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_D2.AutoSize = True
         Me.Lbl_P_D2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_D2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_D2.Location = New System.Drawing.Point(227, 35)
+        Me.Lbl_P_D2.Location = New System.Drawing.Point(183, 35)
         Me.Lbl_P_D2.Name = "Lbl_P_D2"
-        Me.Lbl_P_D2.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_D2.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_D2.TabIndex = 5
         Me.Lbl_P_D2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -633,9 +633,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_B2.AutoSize = True
         Me.Lbl_P_B2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_B2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_B2.Location = New System.Drawing.Point(227, 0)
+        Me.Lbl_P_B2.Location = New System.Drawing.Point(183, 0)
         Me.Lbl_P_B2.Name = "Lbl_P_B2"
-        Me.Lbl_P_B2.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_B2.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_B2.TabIndex = 4
         Me.Lbl_P_B2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -649,7 +649,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_A2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_A2.Location = New System.Drawing.Point(3, 0)
         Me.Lbl_P_A2.Name = "Lbl_P_A2"
-        Me.Lbl_P_A2.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_A2.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_A2.TabIndex = 3
         Me.Lbl_P_A2.Text = "LIBRE ELECCIÓN"
         Me.Lbl_P_A2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -664,7 +664,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_C2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_C2.Location = New System.Drawing.Point(3, 35)
         Me.Lbl_P_C2.Name = "Lbl_P_C2"
-        Me.Lbl_P_C2.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_C2.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_C2.TabIndex = 2
         Me.Lbl_P_C2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -676,10 +676,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_D2.AutoSize = True
         Me.Lbl_D2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_D2.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_D2.Location = New System.Drawing.Point(459, 78)
+        Me.Lbl_D2.Location = New System.Drawing.Point(525, 78)
         Me.Lbl_D2.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_D2.Name = "Lbl_D2"
-        Me.Lbl_D2.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_D2.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_D2.TabIndex = 24
         Me.Lbl_D2.Text = "VALE CASINO"
         Me.Lbl_D2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -695,7 +695,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_A2.Location = New System.Drawing.Point(132, 78)
         Me.Lbl_A2.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_A2.Name = "Lbl_A2"
-        Me.Lbl_A2.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_A2.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_A2.TabIndex = 23
         Me.Lbl_A2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -707,10 +707,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_B2.AutoSize = True
         Me.Lbl_B2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_B2.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_B2.Location = New System.Drawing.Point(241, 78)
+        Me.Lbl_B2.Location = New System.Drawing.Point(263, 78)
         Me.Lbl_B2.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_B2.Name = "Lbl_B2"
-        Me.Lbl_B2.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_B2.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_B2.TabIndex = 22
         Me.Lbl_B2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -722,10 +722,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_C2.AutoSize = True
         Me.Lbl_C2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_C2.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_C2.Location = New System.Drawing.Point(350, 78)
+        Me.Lbl_C2.Location = New System.Drawing.Point(394, 78)
         Me.Lbl_C2.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_C2.Name = "Lbl_C2"
-        Me.Lbl_C2.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_C2.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_C2.TabIndex = 21
         Me.Lbl_C2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -737,10 +737,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_D1.AutoSize = True
         Me.Lbl_D1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_D1.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_D1.Location = New System.Drawing.Point(459, 1)
+        Me.Lbl_D1.Location = New System.Drawing.Point(525, 1)
         Me.Lbl_D1.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_D1.Name = "Lbl_D1"
-        Me.Lbl_D1.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_D1.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_D1.TabIndex = 19
         Me.Lbl_D1.Text = "VALE CASINO"
         Me.Lbl_D1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -753,10 +753,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_C1.AutoSize = True
         Me.Lbl_C1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_C1.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_C1.Location = New System.Drawing.Point(350, 1)
+        Me.Lbl_C1.Location = New System.Drawing.Point(394, 1)
         Me.Lbl_C1.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_C1.Name = "Lbl_C1"
-        Me.Lbl_C1.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_C1.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_C1.TabIndex = 18
         Me.Lbl_C1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -768,10 +768,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_B1.AutoSize = True
         Me.Lbl_B1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_B1.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_B1.Location = New System.Drawing.Point(241, 1)
+        Me.Lbl_B1.Location = New System.Drawing.Point(263, 1)
         Me.Lbl_B1.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_B1.Name = "Lbl_B1"
-        Me.Lbl_B1.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_B1.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_B1.TabIndex = 17
         Me.Lbl_B1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -806,7 +806,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_A1.Location = New System.Drawing.Point(132, 1)
         Me.Lbl_A1.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_A1.Name = "Lbl_A1"
-        Me.Lbl_A1.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_A1.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_A1.TabIndex = 0
         Me.Lbl_A1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -898,12 +898,12 @@ Partial Class Frm_SolicitudColacion
         Me.TblLyutPnl_1.Controls.Add(Me.Lbl_P_C1, 0, 1)
         Me.TblLyutPnl_1.Controls.Add(Me.Lbl_P_B1, 1, 1)
         Me.TblLyutPnl_1.Controls.Add(Me.Lbl_P_D1, 1, 0)
-        Me.TblLyutPnl_1.Location = New System.Drawing.Point(571, 4)
+        Me.TblLyutPnl_1.Location = New System.Drawing.Point(659, 4)
         Me.TblLyutPnl_1.Name = "TblLyutPnl_1"
         Me.TblLyutPnl_1.RowCount = 2
         Me.TblLyutPnl_1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TblLyutPnl_1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TblLyutPnl_1.Size = New System.Drawing.Size(448, 70)
+        Me.TblLyutPnl_1.Size = New System.Drawing.Size(360, 70)
         Me.TblLyutPnl_1.TabIndex = 20
         '
         'Lbl_P_A1
@@ -916,7 +916,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_A1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_A1.Location = New System.Drawing.Point(3, 0)
         Me.Lbl_P_A1.Name = "Lbl_P_A1"
-        Me.Lbl_P_A1.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_A1.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_A1.TabIndex = 3
         Me.Lbl_P_A1.Text = "LIBRE ELECCIÓN"
         Me.Lbl_P_A1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -931,7 +931,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_C1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Lbl_P_C1.Location = New System.Drawing.Point(3, 35)
         Me.Lbl_P_C1.Name = "Lbl_P_C1"
-        Me.Lbl_P_C1.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_C1.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_C1.TabIndex = 2
         Me.Lbl_P_C1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -943,9 +943,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_B1.AutoSize = True
         Me.Lbl_P_B1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_B1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_B1.Location = New System.Drawing.Point(227, 35)
+        Me.Lbl_P_B1.Location = New System.Drawing.Point(183, 35)
         Me.Lbl_P_B1.Name = "Lbl_P_B1"
-        Me.Lbl_P_B1.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_B1.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_B1.TabIndex = 4
         Me.Lbl_P_B1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -957,9 +957,9 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_P_D1.AutoSize = True
         Me.Lbl_P_D1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_P_D1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Lbl_P_D1.Location = New System.Drawing.Point(227, 0)
+        Me.Lbl_P_D1.Location = New System.Drawing.Point(183, 0)
         Me.Lbl_P_D1.Name = "Lbl_P_D1"
-        Me.Lbl_P_D1.Size = New System.Drawing.Size(218, 35)
+        Me.Lbl_P_D1.Size = New System.Drawing.Size(174, 35)
         Me.Lbl_P_D1.TabIndex = 5
         Me.Lbl_P_D1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -971,10 +971,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_D3.AutoSize = True
         Me.Lbl_D3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_D3.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_D3.Location = New System.Drawing.Point(459, 155)
+        Me.Lbl_D3.Location = New System.Drawing.Point(525, 155)
         Me.Lbl_D3.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_D3.Name = "Lbl_D3"
-        Me.Lbl_D3.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_D3.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_D3.TabIndex = 26
         Me.Lbl_D3.Text = "VALE CASINO"
         Me.Lbl_D3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -990,7 +990,7 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_A3.Location = New System.Drawing.Point(132, 155)
         Me.Lbl_A3.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_A3.Name = "Lbl_A3"
-        Me.Lbl_A3.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_A3.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_A3.TabIndex = 29
         Me.Lbl_A3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -1002,10 +1002,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_C3.AutoSize = True
         Me.Lbl_C3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_C3.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_C3.Location = New System.Drawing.Point(350, 155)
+        Me.Lbl_C3.Location = New System.Drawing.Point(394, 155)
         Me.Lbl_C3.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_C3.Name = "Lbl_C3"
-        Me.Lbl_C3.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_C3.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_C3.TabIndex = 27
         Me.Lbl_C3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -1017,10 +1017,10 @@ Partial Class Frm_SolicitudColacion
         Me.Lbl_B3.AutoSize = True
         Me.Lbl_B3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Lbl_B3.ImageAlign = System.Drawing.ContentAlignment.TopRight
-        Me.Lbl_B3.Location = New System.Drawing.Point(241, 155)
+        Me.Lbl_B3.Location = New System.Drawing.Point(263, 155)
         Me.Lbl_B3.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_B3.Name = "Lbl_B3"
-        Me.Lbl_B3.Size = New System.Drawing.Size(108, 76)
+        Me.Lbl_B3.Size = New System.Drawing.Size(130, 76)
         Me.Lbl_B3.TabIndex = 28
         Me.Lbl_B3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -1057,7 +1057,7 @@ Partial Class Frm_SolicitudColacion
         Me.Label2.Margin = New System.Windows.Forms.Padding(0)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(108, 26)
+        Me.Label2.Size = New System.Drawing.Size(130, 26)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Almuerzo "" A """
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1073,10 +1073,10 @@ Partial Class Frm_SolicitudColacion
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label4.Location = New System.Drawing.Point(241, 1)
+        Me.Label4.Location = New System.Drawing.Point(263, 1)
         Me.Label4.Margin = New System.Windows.Forms.Padding(0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(108, 26)
+        Me.Label4.Size = New System.Drawing.Size(130, 26)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Almuerzo "" B """
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1092,10 +1092,10 @@ Partial Class Frm_SolicitudColacion
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label5.Location = New System.Drawing.Point(350, 1)
+        Me.Label5.Location = New System.Drawing.Point(394, 1)
         Me.Label5.Margin = New System.Windows.Forms.Padding(0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(108, 26)
+        Me.Label5.Size = New System.Drawing.Size(130, 26)
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "Almuerzo "" C """
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1111,10 +1111,10 @@ Partial Class Frm_SolicitudColacion
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label6.Location = New System.Drawing.Point(459, 1)
+        Me.Label6.Location = New System.Drawing.Point(525, 1)
         Me.Label6.Margin = New System.Windows.Forms.Padding(0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 26)
+        Me.Label6.Size = New System.Drawing.Size(130, 26)
         Me.Label6.TabIndex = 15
         Me.Label6.Text = "Almuerzo "" D """
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1130,10 +1130,10 @@ Partial Class Frm_SolicitudColacion
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label8.Location = New System.Drawing.Point(568, 1)
+        Me.Label8.Location = New System.Drawing.Point(656, 1)
         Me.Label8.Margin = New System.Windows.Forms.Padding(0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(454, 26)
+        Me.Label8.Size = New System.Drawing.Size(366, 26)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Postres"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1148,67 +1148,80 @@ Partial Class Frm_SolicitudColacion
         Me.Pnl_Modf.Controls.Add(Me.txbCargo)
         Me.Pnl_Modf.Controls.Add(Me.txbRut)
         Me.Pnl_Modf.Controls.Add(Me.txbTrabajador)
-        Me.Pnl_Modf.Location = New System.Drawing.Point(163, 17)
+        Me.Pnl_Modf.Location = New System.Drawing.Point(163, 6)
         Me.Pnl_Modf.Name = "Pnl_Modf"
-        Me.Pnl_Modf.Size = New System.Drawing.Size(697, 46)
+        Me.Pnl_Modf.Size = New System.Drawing.Size(697, 68)
         Me.Pnl_Modf.TabIndex = 43
         '
         'tb_FechaIni
         '
-        Me.tb_FechaIni.BackColor = System.Drawing.SystemColors.Control
-        Me.tb_FechaIni.Location = New System.Drawing.Point(488, 23)
+        Me.tb_FechaIni.BackColor = System.Drawing.Color.White
+        Me.tb_FechaIni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.tb_FechaIni.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_FechaIni.Location = New System.Drawing.Point(543, 36)
         Me.tb_FechaIni.Name = "tb_FechaIni"
         Me.tb_FechaIni.ReadOnly = True
-        Me.tb_FechaIni.Size = New System.Drawing.Size(65, 20)
+        Me.tb_FechaIni.Size = New System.Drawing.Size(93, 25)
         Me.tb_FechaIni.TabIndex = 5
         '
         'txbFechaIngreso
         '
-        Me.txbFechaIngreso.BackColor = System.Drawing.SystemColors.Control
-        Me.txbFechaIngreso.Location = New System.Drawing.Point(488, 2)
+        Me.txbFechaIngreso.BackColor = System.Drawing.Color.White
+        Me.txbFechaIngreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbFechaIngreso.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbFechaIngreso.Location = New System.Drawing.Point(543, 8)
         Me.txbFechaIngreso.Name = "txbFechaIngreso"
         Me.txbFechaIngreso.ReadOnly = True
-        Me.txbFechaIngreso.Size = New System.Drawing.Size(65, 20)
+        Me.txbFechaIngreso.Size = New System.Drawing.Size(93, 25)
         Me.txbFechaIngreso.TabIndex = 4
         '
         'txbEmpresa
         '
-        Me.txbEmpresa.BackColor = System.Drawing.SystemColors.Control
-        Me.txbEmpresa.Location = New System.Drawing.Point(275, 3)
+        Me.txbEmpresa.BackColor = System.Drawing.Color.White
+        Me.txbEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbEmpresa.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbEmpresa.Location = New System.Drawing.Point(300, 8)
         Me.txbEmpresa.Name = "txbEmpresa"
         Me.txbEmpresa.ReadOnly = True
-        Me.txbEmpresa.Size = New System.Drawing.Size(210, 20)
+        Me.txbEmpresa.Size = New System.Drawing.Size(237, 25)
         Me.txbEmpresa.TabIndex = 3
         '
         'txbCargo
         '
-        Me.txbCargo.BackColor = System.Drawing.SystemColors.Control
-        Me.txbCargo.Location = New System.Drawing.Point(276, 24)
+        Me.txbCargo.BackColor = System.Drawing.Color.White
+        Me.txbCargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbCargo.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbCargo.Location = New System.Drawing.Point(300, 36)
         Me.txbCargo.Name = "txbCargo"
         Me.txbCargo.ReadOnly = True
-        Me.txbCargo.Size = New System.Drawing.Size(209, 20)
+        Me.txbCargo.Size = New System.Drawing.Size(237, 25)
         Me.txbCargo.TabIndex = 2
         '
         'txbRut
         '
-        Me.txbRut.BackColor = System.Drawing.SystemColors.Control
-        Me.txbRut.Location = New System.Drawing.Point(13, 24)
+        Me.txbRut.BackColor = System.Drawing.Color.White
+        Me.txbRut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbRut.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbRut.Location = New System.Drawing.Point(13, 36)
         Me.txbRut.Name = "txbRut"
         Me.txbRut.ReadOnly = True
-        Me.txbRut.Size = New System.Drawing.Size(134, 20)
+        Me.txbRut.Size = New System.Drawing.Size(134, 25)
         Me.txbRut.TabIndex = 1
         '
         'txbTrabajador
         '
         Me.txbTrabajador.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.txbTrabajador.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txbTrabajador.Location = New System.Drawing.Point(13, 3)
+        Me.txbTrabajador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbTrabajador.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txbTrabajador.Location = New System.Drawing.Point(13, 8)
         Me.txbTrabajador.Name = "txbTrabajador"
-        Me.txbTrabajador.Size = New System.Drawing.Size(258, 20)
+        Me.txbTrabajador.Size = New System.Drawing.Size(282, 25)
         Me.txbTrabajador.TabIndex = 0
         '
         'TableLayoutPanel3
         '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.White
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -1278,7 +1291,7 @@ Partial Class Frm_SolicitudColacion
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 451.0!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 363.0!))
         Me.TableLayoutPanel4.Controls.Add(Me.Label8, 5, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Label6, 4, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Label5, 3, 0)
