@@ -25,7 +25,7 @@ Partial Class MDIParent1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim PictureBox1 As System.Windows.Forms.PictureBox
-        Dim Animation15 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIParent1))
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TlStrpSttsLbl_Proceso = New System.Windows.Forms.ToolStripStatusLabel()
@@ -71,6 +71,8 @@ Partial Class MDIParent1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
@@ -84,6 +86,8 @@ Partial Class MDIParent1
         Me.pnlMovingRight.SuspendLayout()
         Me.pnlMovingTop.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -125,7 +129,7 @@ Partial Class MDIParent1
         Me.TlStrpSttsLbl_SQL.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TlStrpSttsLbl_SQL.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.TlStrpSttsLbl_SQL.Name = "TlStrpSttsLbl_SQL"
-        Me.TlStrpSttsLbl_SQL.Size = New System.Drawing.Size(809, 21)
+        Me.TlStrpSttsLbl_SQL.Size = New System.Drawing.Size(840, 21)
         Me.TlStrpSttsLbl_SQL.Spring = True
         Me.TlStrpSttsLbl_SQL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -565,12 +569,14 @@ Partial Class MDIParent1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Controls.Add(Me.pnlMovingTop)
+        Me.Panel2.Controls.Add(Me.PictureBox4)
         Me.Panel2.Controls.Add(Me.PictureBox3)
         Me.Panel2.Controls.Add(Me.pnlMovingRight2)
         Me.Panel2.Controls.Add(Me.pnlMovingRight)
-        Me.Panel2.Controls.Add(Me.pnlMovingTop)
         Me.Panel2.Controls.Add(Me.TxtBx_Empresa)
         Me.Panel2.Controls.Add(Me.TxtBx_UserName)
+        Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
         Me.Panel2.Location = New System.Drawing.Point(0, 87)
         Me.Panel2.Name = "Panel2"
@@ -665,28 +671,52 @@ Partial Class MDIParent1
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Particles
         Me.BunifuTransition1.Cursor = Nothing
-        Animation15.AnimateOnlyDifferences = True
-        Animation15.BlindCoeff = CType(resources.GetObject("Animation15.BlindCoeff"), System.Drawing.PointF)
-        Animation15.LeafCoeff = 0!
-        Animation15.MaxTime = 1.0!
-        Animation15.MinTime = 0!
-        Animation15.MosaicCoeff = CType(resources.GetObject("Animation15.MosaicCoeff"), System.Drawing.PointF)
-        Animation15.MosaicShift = CType(resources.GetObject("Animation15.MosaicShift"), System.Drawing.PointF)
-        Animation15.MosaicSize = 1
-        Animation15.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
-        Animation15.RotateCoeff = 0!
-        Animation15.RotateLimit = 0!
-        Animation15.ScaleCoeff = CType(resources.GetObject("Animation15.ScaleCoeff"), System.Drawing.PointF)
-        Animation15.SlideCoeff = CType(resources.GetObject("Animation15.SlideCoeff"), System.Drawing.PointF)
-        Animation15.TimeCoeff = 2.0!
-        Animation15.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation15
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 1
+        Animation1.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation1.RotateCoeff = 0!
+        Animation1.RotateLimit = 0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 2.0!
+        Animation1.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation1
         Me.BunifuTransition1.Interval = 40
         Me.BunifuTransition1.MaxAnimationTime = 3000
         '
         'TmrBackAnimation
         '
         Me.TmrBackAnimation.Interval = 5000
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox4.Location = New System.Drawing.Point(204, 306)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(235, 200)
+        Me.PictureBox4.TabIndex = 23
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox5, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox5.Location = New System.Drawing.Point(673, 306)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(203, 200)
+        Me.PictureBox5.TabIndex = 24
+        Me.PictureBox5.TabStop = False
+        Me.PictureBox5.Visible = False
         '
         'MDIParent1
         '
@@ -723,6 +753,8 @@ Partial Class MDIParent1
         Me.pnlMovingRight.ResumeLayout(False)
         Me.pnlMovingTop.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -771,4 +803,6 @@ Partial Class MDIParent1
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents BunifuTransition1 As BunifuAnimatorNS.BunifuTransition
     Friend WithEvents TmrBackAnimation As Timer
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
 End Class

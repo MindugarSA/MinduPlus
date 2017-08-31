@@ -44,7 +44,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.SetStyle(ControlStyles.SupportsTransparentBackColor, True)
         Me.BackColor = Color.Transparent
@@ -53,7 +53,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
+    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize  ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
         UsernameLabel.Top = TxtBx_UserID.Top + 5
         PictureBox3.Top = TxtBx_UserID.Top + 5
         PictureBox4.Top = TxtBx_Password.Top + 5
@@ -186,7 +186,7 @@ Public Class Login
     End Sub
 
     '----------Funcion Declare tecla Enter--------
-    Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+    Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
@@ -334,7 +334,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub Bttn_1_Enter(sender As Object, e As EventArgs) Handles Label1.Click, Label9.Click, Label8.Click, Label7.Click, Label6.Click, Label5.Click, Label4.Click, Label3.Click, Label2.Click, Label12.Click, Label11.Click, Label10.Click
+    Private Sub Bttn_1_Enter(sender As Object, e As EventArgs) Handles Label9.Click, Label8.Click, Label7.Click, Label6.Click, Label5.Click, Label4.Click, Label3.Click, Label2.Click, Label12.Click, Label11.Click, Label10.Click, Label1.Click
 
         Select Case FocusedTxt
             Case 1 'TxtBx_UserID
@@ -387,14 +387,14 @@ Public Class Login
 
     End Sub
 
-    Private Sub Label1_MouseEnter(sender As Object, e As EventArgs) Handles Label1.MouseEnter, Label9.MouseEnter, Label8.MouseEnter, Label7.MouseEnter, Label6.MouseEnter, Label5.MouseEnter, Label4.MouseEnter, Label3.MouseEnter, Label2.MouseEnter, Label12.MouseEnter, Label11.MouseEnter, Label10.MouseEnter
+    Private Sub Label1_MouseEnter(sender As Object, e As EventArgs) Handles Label9.MouseEnter, Label8.MouseEnter, Label7.MouseEnter, Label6.MouseEnter, Label5.MouseEnter, Label4.MouseEnter, Label3.MouseEnter, Label2.MouseEnter, Label12.MouseEnter, Label11.MouseEnter, Label10.MouseEnter, Label1.MouseEnter
 
         'Segoe UI, 14,25pt, style=Bold
         CType(sender, Label).Font = New Font("Segoe UI", 19, FontStyle.Bold)
 
     End Sub
 
-    Private Sub Label1_MouseLeave(sender As Object, e As EventArgs) Handles Label1.MouseLeave, Label9.MouseLeave, Label8.MouseLeave, Label7.MouseLeave, Label6.MouseLeave, Label5.MouseLeave, Label4.MouseLeave, Label3.MouseLeave, Label2.MouseLeave, Label12.MouseLeave, Label11.MouseLeave, Label10.MouseLeave
+    Private Sub Label1_MouseLeave(sender As Object, e As EventArgs) Handles Label9.MouseLeave, Label8.MouseLeave, Label7.MouseLeave, Label6.MouseLeave, Label5.MouseLeave, Label4.MouseLeave, Label3.MouseLeave, Label2.MouseLeave, Label12.MouseLeave, Label11.MouseLeave, Label10.MouseLeave, Label1.MouseLeave
 
         CType(sender, Label).Font = New Font("Segoe UI", 14.25, FontStyle.Bold)
 
@@ -444,7 +444,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged ' Oculta la Etiqueta que hace de Hint
+    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged  ' Oculta la Etiqueta que hace de Hint
         If (UsernameLabel.Visible = True) Then
             UsernameLabel.Visible = False
         ElseIf (UsernameLabel.Visible = False And TxtBx_UserID.Text.Trim().Length = 0) Then
@@ -452,7 +452,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown ' Al presionar enter, envia TAB
+    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown  ' Al presionar enter, envia TAB
         If (e.KeyCode = Keys.Enter) Then
             SendKeys.Send("{TAB}")
             e.Handled = e.SuppressKeyPress = True
@@ -461,14 +461,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter ' Al hacer Focus se cambia el Tag
-
-        If TxtBx_UserID.Text = "" Then
-            TxtBx_UserID.Focus()
-            FocusedTxt = 1
-        Else
-            FocusedTxt = 2
-        End If
+    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter  ' Al hacer Focus se cambia el Tag
 
     End Sub
 
@@ -476,7 +469,7 @@ Public Class Login
         FocusedTxt = 3
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick 'Ejecuta la Animacion en cada TICK
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick  'Ejecuta la Animacion en cada TICK
 
         If TmrBackAnimation.Interval = 5000 Then
             TmrBackAnimation.Stop()
