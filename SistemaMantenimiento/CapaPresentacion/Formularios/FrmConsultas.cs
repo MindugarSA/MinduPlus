@@ -102,6 +102,10 @@ namespace CapaPresentacion.Formularios
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CargarDTInicial();
+        }
 
         /// <summary>
         /// FUNCIONES Y PROCEDIMIENTOS
@@ -215,5 +219,7 @@ namespace CapaPresentacion.Formularios
         {
             metroGrid1.ExportToExcel();
         }
+
+
     }
 }

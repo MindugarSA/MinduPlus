@@ -22,9 +22,7 @@ Partial Class Frm_Parametros2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Permisos")
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informes de Almuerzos")
-        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Asistencia")
+        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Gestion de Usuarios")
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -38,7 +36,8 @@ Partial Class Frm_Parametros2
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Bttn_Actualiza = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TxtBx_FechaMod = New System.Windows.Forms.TextBox()
+        Me.MetroTextBox2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MetroTextBox1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CmbBx_Perfil = New MetroFramework.Controls.MetroComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -58,9 +57,10 @@ Partial Class Frm_Parametros2
         Me.IdAtributoNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AtributoNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SbO_COMERCIALDataSet1 = New RRHH.SBO_COMERCIALDataSet()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MetroTextBox2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
-        Me.MetroTextBox1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.TxtBx_FechaMod = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
+        Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -71,7 +71,8 @@ Partial Class Frm_Parametros2
         CType(Me.DtGrdVw_PermisosSi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DtGrdVw_PermisosNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SbO_COMERCIALDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroTabControl1.SuspendLayout()
+        Me.MetroTabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -89,7 +90,6 @@ Partial Class Frm_Parametros2
         Me.SplitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel2)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.PictureBox1)
         Me.SplitContainer1.Size = New System.Drawing.Size(1290, 674)
         Me.SplitContainer1.SplitterDistance = 266
         Me.SplitContainer1.TabIndex = 0
@@ -99,22 +99,14 @@ Partial Class Frm_Parametros2
         Me.TreeView1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.TreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TreeView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TreeView1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TreeView1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TreeView1.Location = New System.Drawing.Point(0, 0)
         Me.TreeView1.Name = "TreeView1"
-        TreeNode4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode4.ForeColor = System.Drawing.Color.White
-        TreeNode4.Name = "Nd_Permisos"
-        TreeNode4.Text = "Permisos"
-        TreeNode5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode5.ForeColor = System.Drawing.Color.White
-        TreeNode5.Name = "Nodo4"
-        TreeNode5.Text = "Informes de Almuerzos"
-        TreeNode6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        TreeNode6.ForeColor = System.Drawing.Color.White
-        TreeNode6.Name = "Nodo5"
-        TreeNode6.Text = "Asistencia"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode4, TreeNode5, TreeNode6})
+        TreeNode2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        TreeNode2.ForeColor = System.Drawing.Color.White
+        TreeNode2.Name = "Nd_Permisos"
+        TreeNode2.Text = "Gestion de Usuarios"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode2})
         Me.TreeView1.Size = New System.Drawing.Size(266, 674)
         Me.TreeView1.TabIndex = 0
         '
@@ -124,7 +116,7 @@ Partial Class Frm_Parametros2
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1020, 42)
+        Me.Panel2.Size = New System.Drawing.Size(1020, 83)
         Me.Panel2.TabIndex = 2
         '
         'Lbl_Titulo
@@ -132,29 +124,26 @@ Partial Class Frm_Parametros2
         Me.Lbl_Titulo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(158, Byte), Integer))
         Me.Lbl_Titulo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Lbl_Titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Lbl_Titulo.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Titulo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Titulo.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Lbl_Titulo.Location = New System.Drawing.Point(0, 0)
         Me.Lbl_Titulo.Margin = New System.Windows.Forms.Padding(0)
         Me.Lbl_Titulo.Name = "Lbl_Titulo"
-        Me.Lbl_Titulo.Size = New System.Drawing.Size(1020, 42)
+        Me.Lbl_Titulo.Size = New System.Drawing.Size(1020, 83)
         Me.Lbl_Titulo.TabIndex = 5
-        Me.Lbl_Titulo.Text = "Lbl_Titulo Seleccion"
+        Me.Lbl_Titulo.Text = "   Gestion de Usuarios"
         Me.Lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Bttn_Actualiza)
+        Me.Panel1.Controls.Add(Me.MetroTabControl1)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.DtGrdVw_PermisosSi)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.DtGrdVw_PermisosNo)
-        Me.Panel1.Location = New System.Drawing.Point(6, 74)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(891, 549)
+        Me.Panel1.Size = New System.Drawing.Size(1020, 674)
         Me.Panel1.TabIndex = 1
         '
         'Bttn_Actualiza
@@ -163,7 +152,7 @@ Partial Class Frm_Parametros2
         Me.Bttn_Actualiza.FlatAppearance.BorderSize = 0
         Me.Bttn_Actualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Bttn_Actualiza.Image = Global.RRHH.My.Resources.Resources.indicators__1_
-        Me.Bttn_Actualiza.Location = New System.Drawing.Point(322, 233)
+        Me.Bttn_Actualiza.Location = New System.Drawing.Point(318, 160)
         Me.Bttn_Actualiza.Name = "Bttn_Actualiza"
         Me.Bttn_Actualiza.Size = New System.Drawing.Size(68, 57)
         Me.Bttn_Actualiza.TabIndex = 9
@@ -171,9 +160,9 @@ Partial Class Frm_Parametros2
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.TxtBx_FechaMod)
         Me.Panel3.Controls.Add(Me.MetroTextBox2)
         Me.Panel3.Controls.Add(Me.MetroTextBox1)
-        Me.Panel3.Controls.Add(Me.TxtBx_FechaMod)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.CmbBx_Perfil)
         Me.Panel3.Controls.Add(Me.Label5)
@@ -181,25 +170,70 @@ Partial Class Frm_Parametros2
         Me.Panel3.Controls.Add(Me.TxtBx_Empleado)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.CmbBx_Usuarios)
-        Me.Panel3.Location = New System.Drawing.Point(19, 4)
+        Me.Panel3.Location = New System.Drawing.Point(7, 89)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(869, 140)
+        Me.Panel3.Size = New System.Drawing.Size(869, 111)
         Me.Panel3.TabIndex = 8
         '
-        'TxtBx_FechaMod
+        'MetroTextBox2
         '
-        Me.TxtBx_FechaMod.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_FechaMod.Location = New System.Drawing.Point(534, 105)
-        Me.TxtBx_FechaMod.Name = "TxtBx_FechaMod"
-        Me.TxtBx_FechaMod.ReadOnly = True
-        Me.TxtBx_FechaMod.Size = New System.Drawing.Size(130, 25)
-        Me.TxtBx_FechaMod.TabIndex = 8
+        Me.MetroTextBox2.AcceptsReturn = False
+        Me.MetroTextBox2.AcceptsTab = False
+        Me.MetroTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.MetroTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.MetroTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.MetroTextBox2.Depth = 0
+        Me.MetroTextBox2.Hint = ""
+        Me.MetroTextBox2.Location = New System.Drawing.Point(100, 14)
+        Me.MetroTextBox2.MaxLength = 32767
+        Me.MetroTextBox2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MetroTextBox2.Multiline = False
+        Me.MetroTextBox2.Name = "MetroTextBox2"
+        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox2.ReadOnly = False
+        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox2.SelectedText = ""
+        Me.MetroTextBox2.SelectionLength = 0
+        Me.MetroTextBox2.SelectionStart = 0
+        Me.MetroTextBox2.Size = New System.Drawing.Size(313, 23)
+        Me.MetroTextBox2.TabIndex = 33
+        Me.MetroTextBox2.TabStop = False
+        Me.MetroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.MetroTextBox2.UseSystemPasswordChar = False
+        Me.MetroTextBox2.WordWrap = True
+        '
+        'MetroTextBox1
+        '
+        Me.MetroTextBox1.AcceptsReturn = False
+        Me.MetroTextBox1.AcceptsTab = False
+        Me.MetroTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.MetroTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.MetroTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.MetroTextBox1.Depth = 0
+        Me.MetroTextBox1.Hint = ""
+        Me.MetroTextBox1.Location = New System.Drawing.Point(100, 43)
+        Me.MetroTextBox1.MaxLength = 32767
+        Me.MetroTextBox1.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MetroTextBox1.Multiline = False
+        Me.MetroTextBox1.Name = "MetroTextBox1"
+        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBox1.ReadOnly = False
+        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBox1.SelectedText = ""
+        Me.MetroTextBox1.SelectionLength = 0
+        Me.MetroTextBox1.SelectionStart = 0
+        Me.MetroTextBox1.Size = New System.Drawing.Size(313, 23)
+        Me.MetroTextBox1.TabIndex = 32
+        Me.MetroTextBox1.TabStop = False
+        Me.MetroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.MetroTextBox1.UseSystemPasswordChar = False
+        Me.MetroTextBox1.WordWrap = True
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(548, 80)
+        Me.Label6.Location = New System.Drawing.Point(525, 15)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(116, 17)
         Me.Label6.TabIndex = 7
@@ -212,7 +246,7 @@ Partial Class Frm_Parametros2
         Me.CmbBx_Perfil.FormattingEnabled = True
         Me.CmbBx_Perfil.ItemHeight = 23
         Me.CmbBx_Perfil.Items.AddRange(New Object() {"RRHH"})
-        Me.CmbBx_Perfil.Location = New System.Drawing.Point(93, 66)
+        Me.CmbBx_Perfil.Location = New System.Drawing.Point(100, 71)
         Me.CmbBx_Perfil.Name = "CmbBx_Perfil"
         Me.CmbBx_Perfil.Size = New System.Drawing.Size(315, 29)
         Me.CmbBx_Perfil.TabIndex = 6
@@ -222,7 +256,7 @@ Partial Class Frm_Parametros2
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(10, 72)
+        Me.Label5.Location = New System.Drawing.Point(56, 77)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(37, 17)
         Me.Label5.TabIndex = 5
@@ -232,37 +266,37 @@ Partial Class Frm_Parametros2
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(10, 41)
+        Me.Label4.Location = New System.Drawing.Point(36, 45)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(67, 17)
+        Me.Label4.Size = New System.Drawing.Size(57, 17)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Empleado"
+        Me.Label4.Text = "Nombre"
         '
         'TxtBx_Empleado
         '
         Me.TxtBx_Empleado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBx_Empleado.Location = New System.Drawing.Point(93, 37)
+        Me.TxtBx_Empleado.Location = New System.Drawing.Point(740, 40)
         Me.TxtBx_Empleado.Name = "TxtBx_Empleado"
         Me.TxtBx_Empleado.ReadOnly = True
-        Me.TxtBx_Empleado.Size = New System.Drawing.Size(315, 25)
+        Me.TxtBx_Empleado.Size = New System.Drawing.Size(126, 25)
         Me.TxtBx_Empleado.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(10, 11)
+        Me.Label3.Location = New System.Drawing.Point(12, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 17)
+        Me.Label3.Size = New System.Drawing.Size(81, 17)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Usuario/RUT"
+        Me.Label3.Text = "RUT Usuario"
         '
         'CmbBx_Usuarios
         '
         Me.CmbBx_Usuarios.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Usuarios.FormattingEnabled = True
         Me.CmbBx_Usuarios.ItemHeight = 23
-        Me.CmbBx_Usuarios.Location = New System.Drawing.Point(93, 5)
+        Me.CmbBx_Usuarios.Location = New System.Drawing.Point(740, 8)
         Me.CmbBx_Usuarios.Name = "CmbBx_Usuarios"
         Me.CmbBx_Usuarios.Size = New System.Drawing.Size(126, 29)
         Me.CmbBx_Usuarios.TabIndex = 0
@@ -270,6 +304,7 @@ Partial Class Frm_Parametros2
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -277,7 +312,7 @@ Partial Class Frm_Parametros2
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Button1.Image = Global.RRHH.My.Resources.Resources.home_shape_32
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.Button1.Location = New System.Drawing.Point(7, 484)
+        Me.Button1.Location = New System.Drawing.Point(6, 609)
         Me.Button1.Margin = New System.Windows.Forms.Padding(0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(153, 59)
@@ -292,7 +327,7 @@ Partial Class Frm_Parametros2
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(410, 148)
+        Me.Label2.Location = New System.Drawing.Point(406, 15)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(284, 22)
         Me.Label2.TabIndex = 6
@@ -328,7 +363,7 @@ Partial Class Frm_Parametros2
         Me.DtGrdVw_PermisosSi.EnableHeadersVisualStyles = False
         Me.DtGrdVw_PermisosSi.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.DtGrdVw_PermisosSi.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DtGrdVw_PermisosSi.Location = New System.Drawing.Point(410, 170)
+        Me.DtGrdVw_PermisosSi.Location = New System.Drawing.Point(406, 37)
         Me.DtGrdVw_PermisosSi.MultiSelect = False
         Me.DtGrdVw_PermisosSi.Name = "DtGrdVw_PermisosSi"
         Me.DtGrdVw_PermisosSi.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -344,7 +379,7 @@ Partial Class Frm_Parametros2
         Me.DtGrdVw_PermisosSi.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DtGrdVw_PermisosSi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DtGrdVw_PermisosSi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DtGrdVw_PermisosSi.Size = New System.Drawing.Size(284, 201)
+        Me.DtGrdVw_PermisosSi.Size = New System.Drawing.Size(284, 303)
         Me.DtGrdVw_PermisosSi.TabIndex = 5
         '
         'SelSi
@@ -376,7 +411,7 @@ Partial Class Frm_Parametros2
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(19, 148)
+        Me.Label1.Location = New System.Drawing.Point(15, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(284, 22)
         Me.Label1.TabIndex = 4
@@ -412,7 +447,7 @@ Partial Class Frm_Parametros2
         Me.DtGrdVw_PermisosNo.EnableHeadersVisualStyles = False
         Me.DtGrdVw_PermisosNo.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.DtGrdVw_PermisosNo.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DtGrdVw_PermisosNo.Location = New System.Drawing.Point(19, 170)
+        Me.DtGrdVw_PermisosNo.Location = New System.Drawing.Point(15, 37)
         Me.DtGrdVw_PermisosNo.MultiSelect = False
         Me.DtGrdVw_PermisosNo.Name = "DtGrdVw_PermisosNo"
         Me.DtGrdVw_PermisosNo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -428,7 +463,7 @@ Partial Class Frm_Parametros2
         Me.DtGrdVw_PermisosNo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DtGrdVw_PermisosNo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DtGrdVw_PermisosNo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DtGrdVw_PermisosNo.Size = New System.Drawing.Size(284, 201)
+        Me.DtGrdVw_PermisosNo.Size = New System.Drawing.Size(284, 303)
         Me.DtGrdVw_PermisosNo.TabIndex = 3
         '
         'SelNo
@@ -458,70 +493,76 @@ Partial Class Frm_Parametros2
         Me.SbO_COMERCIALDataSet1.DataSetName = "SBO_COMERCIALDataSet"
         Me.SbO_COMERCIALDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'PictureBox1
+        'TxtBx_FechaMod
         '
-        Me.PictureBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 22)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1026, 50)
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.TxtBx_FechaMod.AcceptsReturn = False
+        Me.TxtBx_FechaMod.AcceptsTab = False
+        Me.TxtBx_FechaMod.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.TxtBx_FechaMod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.TxtBx_FechaMod.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.TxtBx_FechaMod.Depth = 0
+        Me.TxtBx_FechaMod.Hint = ""
+        Me.TxtBx_FechaMod.Location = New System.Drawing.Point(515, 43)
+        Me.TxtBx_FechaMod.MaxLength = 32767
+        Me.TxtBx_FechaMod.MouseState = MaterialSkin.MouseState.HOVER
+        Me.TxtBx_FechaMod.Multiline = False
+        Me.TxtBx_FechaMod.Name = "TxtBx_FechaMod"
+        Me.TxtBx_FechaMod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtBx_FechaMod.ReadOnly = False
+        Me.TxtBx_FechaMod.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.TxtBx_FechaMod.SelectedText = ""
+        Me.TxtBx_FechaMod.SelectionLength = 0
+        Me.TxtBx_FechaMod.SelectionStart = 0
+        Me.TxtBx_FechaMod.Size = New System.Drawing.Size(141, 23)
+        Me.TxtBx_FechaMod.TabIndex = 34
+        Me.TxtBx_FechaMod.TabStop = False
+        Me.TxtBx_FechaMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtBx_FechaMod.UseSystemPasswordChar = False
+        Me.TxtBx_FechaMod.WordWrap = True
         '
-        'MetroTextBox2
+        'MetroTabControl1
         '
-        Me.MetroTextBox2.AcceptsReturn = False
-        Me.MetroTextBox2.AcceptsTab = False
-        Me.MetroTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.MetroTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.MetroTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.MetroTextBox2.Depth = 0
-        Me.MetroTextBox2.Hint = ""
-        Me.MetroTextBox2.Location = New System.Drawing.Point(428, 41)
-        Me.MetroTextBox2.MaxLength = 32767
-        Me.MetroTextBox2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MetroTextBox2.Multiline = False
-        Me.MetroTextBox2.Name = "MetroTextBox2"
-        Me.MetroTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox2.ReadOnly = False
-        Me.MetroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox2.SelectedText = ""
-        Me.MetroTextBox2.SelectionLength = 0
-        Me.MetroTextBox2.SelectionStart = 0
-        Me.MetroTextBox2.Size = New System.Drawing.Size(276, 23)
-        Me.MetroTextBox2.TabIndex = 33
-        Me.MetroTextBox2.TabStop = False
-        Me.MetroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.MetroTextBox2.UseSystemPasswordChar = False
-        Me.MetroTextBox2.WordWrap = True
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
+        Me.MetroTabControl1.Location = New System.Drawing.Point(15, 206)
+        Me.MetroTabControl1.Name = "MetroTabControl1"
+        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.Size = New System.Drawing.Size(868, 400)
+        Me.MetroTabControl1.TabIndex = 10
+        Me.MetroTabControl1.UseSelectable = True
         '
-        'MetroTextBox1
+        'MetroTabPage1
         '
-        Me.MetroTextBox1.AcceptsReturn = False
-        Me.MetroTextBox1.AcceptsTab = False
-        Me.MetroTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.MetroTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.MetroTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.MetroTextBox1.Depth = 0
-        Me.MetroTextBox1.Hint = ""
-        Me.MetroTextBox1.Location = New System.Drawing.Point(428, 8)
-        Me.MetroTextBox1.MaxLength = 32767
-        Me.MetroTextBox1.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MetroTextBox1.Multiline = False
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1.ReadOnly = False
-        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1.SelectedText = ""
-        Me.MetroTextBox1.SelectionLength = 0
-        Me.MetroTextBox1.SelectionStart = 0
-        Me.MetroTextBox1.Size = New System.Drawing.Size(276, 23)
-        Me.MetroTextBox1.TabIndex = 32
-        Me.MetroTextBox1.TabStop = False
-        Me.MetroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.MetroTextBox1.UseSystemPasswordChar = False
-        Me.MetroTextBox1.WordWrap = True
+        Me.MetroTabPage1.Controls.Add(Me.Bttn_Actualiza)
+        Me.MetroTabPage1.Controls.Add(Me.Label1)
+        Me.MetroTabPage1.Controls.Add(Me.DtGrdVw_PermisosNo)
+        Me.MetroTabPage1.Controls.Add(Me.Label2)
+        Me.MetroTabPage1.Controls.Add(Me.DtGrdVw_PermisosSi)
+        Me.MetroTabPage1.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage1.HorizontalScrollbarSize = 10
+        Me.MetroTabPage1.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage1.Name = "MetroTabPage1"
+        Me.MetroTabPage1.Size = New System.Drawing.Size(860, 358)
+        Me.MetroTabPage1.TabIndex = 0
+        Me.MetroTabPage1.Text = "Accesos de Usuarios"
+        Me.MetroTabPage1.VerticalScrollbarBarColor = True
+        Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage1.VerticalScrollbarSize = 10
+        '
+        'MetroTabPage2
+        '
+        Me.MetroTabPage2.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.HorizontalScrollbarSize = 10
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage2.Name = "MetroTabPage2"
+        Me.MetroTabPage2.Size = New System.Drawing.Size(860, 358)
+        Me.MetroTabPage2.TabIndex = 1
+        Me.MetroTabPage2.Text = "Cambio de Clave"
+        Me.MetroTabPage2.VerticalScrollbarBarColor = True
+        Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.VerticalScrollbarSize = 10
         '
         'Frm_Parametros2
         '
@@ -546,7 +587,8 @@ Partial Class Frm_Parametros2
         CType(Me.DtGrdVw_PermisosSi, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DtGrdVw_PermisosNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SbO_COMERCIALDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MetroTabControl1.ResumeLayout(False)
+        Me.MetroTabPage1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -560,7 +602,6 @@ Partial Class Frm_Parametros2
     Friend WithEvents DtGrdVw_PermisosNo As MetroFramework.Controls.MetroGrid 'DataGridView
     Friend WithEvents Lbl_Titulo As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents TxtBx_FechaMod As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents CmbBx_Perfil As MetroFramework.Controls.MetroComboBox 'ComboBox
     Friend WithEvents Label5 As Label
@@ -578,7 +619,10 @@ Partial Class Frm_Parametros2
     Friend WithEvents AtributoSi As DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Private WithEvents MetroTextBox2 As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents MetroTextBox1 As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
+    Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents TxtBx_FechaMod As MaterialSkin.Controls.MaterialSingleLineTextField
 End Class

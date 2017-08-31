@@ -34,10 +34,11 @@ Public Class Frm_Parametros2
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
-        'Me.WindowState = FormWindowState.Maximized
-        AutocompletarNombreRut("")
+
         CargaUsuarios(1)
         LLenaDatosUsuario()
+        AutocompletarNombreRut("")
+
 
     End Sub
 
@@ -49,8 +50,9 @@ Public Class Frm_Parametros2
     End Sub
     Private Sub TreeView1_Click(sender As Object, e As EventArgs) Handles TreeView1.Click
         If UCase(TreeView1.SelectedNode.Name) = UCase("Nd_Permisos") Then
-            Lbl_Titulo.Text = "Mantención de permisos"
+            Lbl_Titulo.Text = "   Gestion de Usuarios"
             LLenaDatosUsuario()
+
         End If
     End Sub
 
@@ -78,74 +80,81 @@ Public Class Frm_Parametros2
             End If
         End Try
     End Sub
-    Private Sub LLenaDatosUsuario()
+    Private Sub LLenaDatosUsuario(Optional IDUsuario As Integer = 0)
         DtGrdVw_PermisosNo.Rows.Clear()
         DtGrdVw_PermisosSi.Rows.Clear()
-        cmd = New SqlCommand("PassUsuariosInfo", conexion)
-        cmd.CommandType = CommandType.StoredProcedure
-        conexion.Open()
-        cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
-        Dim dtUser As New DataTable
-        Try
-            dtUser.Load(cmd.ExecuteReader())
-            TxtBx_Empleado.Text = dtUser.Rows(0)("Nombre").ToString()
-            TxtBx_FechaMod.Text = dtUser.Rows(0)("FecModif").ToString()
+
+        If (IDUsuario = 0) Then
+            IDUsuario = CmbBx_Usuarios.SelectedValue
+        End If
+
+        If (IDUsuario = 0) Then
+            cmd = New SqlCommand("PassUsuariosInfo", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
+            Dim dtUser As New DataTable
+            Try
+                dtUser.Load(cmd.ExecuteReader())
+                TxtBx_Empleado.Text = dtUser.Rows(0)("Nombre").ToString()
+                TxtBx_FechaMod.Text = dtUser.Rows(0)("FecModif").ToString()
 
 
-        Catch ex As Exception
-            MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
-        Finally
+            Catch ex As Exception
+                MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
+            Finally
+                conexion.Close()
+            End Try
+
+
+
+
+            Dim cmd1 As SqlCommand
+            cmd1 = New SqlCommand("PassAtributosUsuarioAutorizadoNoInfo", conexion)
+            cmd1.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd1.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
+            cmd1.Parameters.Add(New SqlParameter("@IdEntidad", 1))
+            Dim adapter As New SqlDataAdapter(cmd1)
+            Dim table1 As DataTable = New DataTable()
+
+            adapter.Fill(table1)
+
+            If table1.Rows(0)("IdEstado") = 0 Then
+
+                For i = 0 To table1.Rows.Count - 1
+                    DtGrdVw_PermisosNo.Rows.Add(1)
+                    DtGrdVw_PermisosNo.Rows(i).Cells("SelNo").Value = "False"
+                    DtGrdVw_PermisosNo.Rows(i).Cells("IdAtributoNo").Value = table1.Rows(i)("IdAtributo")
+                    DtGrdVw_PermisosNo.Rows(i).Cells("AtributoNo").Value = table1.Rows(i)("Atributo")
+
+                Next
+            Else
+                DtGrdVw_PermisosNo.Rows.Clear()
+            End If
             conexion.Close()
-        End Try
+            adapter.Dispose()
+            cmd = New SqlCommand("PassAtributosUsuarioAutorizadoSiInfo", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
+            adapter = New SqlDataAdapter(cmd)
+            Dim table As DataTable = New DataTable()
+            adapter.Fill(table)
+            If table.Rows(0)("IdEstado") = 0 Then
+                For i = 0 To table.Rows.Count - 1
+                    DtGrdVw_PermisosSi.Rows.Add(1)
+                    DtGrdVw_PermisosSi.Rows(i).Cells("SelSi").Value = "False"
+                    DtGrdVw_PermisosSi.Rows(i).Cells("IdAtributoSi").Value = table.Rows(i)("IdAtributo")
+                    DtGrdVw_PermisosSi.Rows(i).Cells("AtributoSi").Value = table.Rows(i)("Atributo")
+                Next
+            Else
+                DtGrdVw_PermisosSi.Rows.Clear()
+            End If
 
-
-
-
-        Dim cmd1 As SqlCommand
-        cmd1 = New SqlCommand("PassAtributosUsuarioAutorizadoNoInfo", conexion)
-        cmd1.CommandType = CommandType.StoredProcedure
-        conexion.Open()
-        cmd1.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
-        cmd1.Parameters.Add(New SqlParameter("@IdEntidad", 1))
-        Dim adapter As New SqlDataAdapter(cmd1)
-        Dim table1 As DataTable = New DataTable()
-
-        adapter.Fill(table1)
-
-        If table1.Rows(0)("IdEstado") = 0 Then
-
-            For i = 0 To table1.Rows.Count - 1
-                DtGrdVw_PermisosNo.Rows.Add(1)
-                DtGrdVw_PermisosNo.Rows(i).Cells("SelNo").Value = "False"
-                DtGrdVw_PermisosNo.Rows(i).Cells("IdAtributoNo").Value = table1.Rows(i)("IdAtributo")
-                DtGrdVw_PermisosNo.Rows(i).Cells("AtributoNo").Value = table1.Rows(i)("Atributo")
-
-            Next
-        Else
-            DtGrdVw_PermisosNo.Rows.Clear()
+            conexion.Close()
+            adapter.Dispose()
         End If
-        conexion.Close()
-        adapter.Dispose()
-        cmd = New SqlCommand("PassAtributosUsuarioAutorizadoSiInfo", conexion)
-        cmd.CommandType = CommandType.StoredProcedure
-        conexion.Open()
-        cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
-        adapter = New SqlDataAdapter(cmd)
-        Dim table As DataTable = New DataTable()
-        adapter.Fill(table)
-        If table.Rows(0)("IdEstado") = 0 Then
-            For i = 0 To table.Rows.Count - 1
-                DtGrdVw_PermisosSi.Rows.Add(1)
-                DtGrdVw_PermisosSi.Rows(i).Cells("SelSi").Value = "False"
-                DtGrdVw_PermisosSi.Rows(i).Cells("IdAtributoSi").Value = table.Rows(i)("IdAtributo")
-                DtGrdVw_PermisosSi.Rows(i).Cells("AtributoSi").Value = table.Rows(i)("Atributo")
-            Next
-        Else
-            DtGrdVw_PermisosSi.Rows.Clear()
-        End If
-
-        conexion.Close()
-        adapter.Dispose()
 
     End Sub
 
