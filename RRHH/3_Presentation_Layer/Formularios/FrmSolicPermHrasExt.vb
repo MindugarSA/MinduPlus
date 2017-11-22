@@ -89,6 +89,9 @@ Public Class FrmSolicPermHrasExt
         If Application.OpenForms().OfType(Of Frm_InformeAsistencias).Any Then
             Application.OpenForms().OfType(Of Frm_InformeAsistencias).First.Visible = False
         End If
+        If Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).Any Then
+            Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).First.Visible = False
+        End If
 
 
         Lbl_Titulo.Text = "<<< SELECIONE UNA OPCIÓN >>>"
@@ -334,6 +337,28 @@ Public Class FrmSolicPermHrasExt
                         Application.OpenForms().OfType(Of Frm_InformeAsistencias).First.Visible = True
                     Else
                         Dim NewMDIChild As New Frm_InformeAsistencias()
+                        NewMDIChild.TopLevel = False
+                        NewMDIChild.Visible = False
+                        NewMDIChild.MdiParent = Me.MdiParent
+                        NewMDIChild.WindowState = FormWindowState.Maximized
+                        NewMDIChild.Dock = DockStyle.Fill
+                        Me.pnlCentral.Controls.Add(NewMDIChild)
+                        Me.pnlCentral.Tag = NewMDIChild
+                        NewMDIChild.Show()
+                        NewMDIChild.ControlBox = False
+                        NewMDIChild.Visible = True
+                    End If
+                End If
+
+            Case UCase("Nd_PreLiquidaciones")
+                If MDIParent1.RevisaAcceso(90025) Then
+                    Lbl_Titulo.Text = "Informe de PreLiquidaciones"
+
+                    If Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).Any Then
+                        Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).First.Visible = True
+                    Else
+                        Dim NewMDIChild As New Frm_InformePreLiquidaciones()
+                        'NewMDIChild.Show()
                         NewMDIChild.TopLevel = False
                         NewMDIChild.Visible = False
                         NewMDIChild.MdiParent = Me.MdiParent
@@ -1872,14 +1897,18 @@ Public Class FrmSolicPermHrasExt
 
     Private Sub txbNombreInformeHHEE_TextChanged(sender As Object, e As EventArgs) Handles txbNombreInformeHHEE.TextChanged
         If enableBuscarRutHHEE Then
-            enableBuscarNombreHHEE = False
-            trabajadorHHEE.Nombre = txbNombreInformeHHEE.Text
-            trabajadorHHEE.BuscarRutPorNombre()
-            txbRutInformeHHEE.Text = trabajadorHHEE.Rut
-            dgvColaboradoresInformeHHEE.Rows.Clear()
-            txbHHEEAcumuladasInformeHHEE.Text = ""
-            enableBuscarHHEE = False
-            enableBuscarNombreHHEE = True
+            Try
+                enableBuscarNombreHHEE = False
+                trabajadorHHEE.Nombre = txbNombreInformeHHEE.Text
+                trabajadorHHEE.BuscarRutPorNombre()
+                txbRutInformeHHEE.Text = trabajadorHHEE.Rut
+                dgvColaboradoresInformeHHEE.Rows.Clear()
+                txbHHEEAcumuladasInformeHHEE.Text = ""
+                enableBuscarHHEE = False
+                enableBuscarNombreHHEE = True
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 
@@ -2101,6 +2130,7 @@ Public Class FrmSolicPermHrasExt
         Catch ex As Exception
             MessageBox.Show("error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
         End Try
+
     End Sub
 
     Private Sub cmbEmpresaInformePermisos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbEmpresaInformePermisos.SelectedIndexChanged

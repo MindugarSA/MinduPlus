@@ -36,6 +36,9 @@ Partial Class FrmSolicPermHrasExt
         Dim TreeNode11 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Informe                                 ", New System.Windows.Forms.TreeNode() {TreeNode7, TreeNode8, TreeNode9, TreeNode10})
         Dim TreeNode12 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Eliminar Hora Extra")
         Dim TreeNode13 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Control de Solicitud", New System.Windows.Forms.TreeNode() {TreeNode12})
+        Dim TreeNode14 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Pre Liquidaciones")
+        Dim TreeNode15 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Liquidaciones")
+        Dim TreeNode16 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Liquidaciones", New System.Windows.Forms.TreeNode() {TreeNode14, TreeNode15})
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -344,7 +347,13 @@ Partial Class FrmSolicPermHrasExt
         TreeNode12.Text = "Eliminar Hora Extra"
         TreeNode13.Name = "Nodo3"
         TreeNode13.Text = "Control de Solicitud"
-        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode11, TreeNode13})
+        TreeNode14.Name = "Nd_PreLiquidaciones"
+        TreeNode14.Text = "Pre Liquidaciones"
+        TreeNode15.Name = "Nd_Liquidaciones"
+        TreeNode15.Text = "Liquidaciones"
+        TreeNode16.Name = "Nodo4"
+        TreeNode16.Text = "Liquidaciones"
+        Me.TreeView1.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode3, TreeNode6, TreeNode11, TreeNode13, TreeNode16})
         Me.TreeView1.ShowLines = False
         Me.TreeView1.Size = New System.Drawing.Size(243, 715)
         Me.TreeView1.TabIndex = 1
@@ -1061,7 +1070,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpfech.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpfech.Location = New System.Drawing.Point(673, 8)
-        Me.dtpfech.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpfech.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpfech.Name = "dtpfech"
         Me.dtpfech.Size = New System.Drawing.Size(125, 29)
         Me.dtpfech.TabIndex = 62
@@ -1448,7 +1457,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaTermino.Location = New System.Drawing.Point(117, 46)
-        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFechaTermino.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFechaTermino.Name = "dtpFechaTermino"
         Me.dtpFechaTermino.Size = New System.Drawing.Size(109, 29)
         Me.dtpFechaTermino.TabIndex = 4
@@ -1457,7 +1466,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaInicio.Location = New System.Drawing.Point(117, 9)
-        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpFechaInicio.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpFechaInicio.Name = "dtpFechaInicio"
         Me.dtpFechaInicio.Size = New System.Drawing.Size(108, 29)
         Me.dtpFechaInicio.TabIndex = 3
@@ -1714,7 +1723,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTermino.Location = New System.Drawing.Point(73, 132)
-        Me.dtpTermino.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTermino.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTermino.Name = "dtpTermino"
         Me.dtpTermino.Size = New System.Drawing.Size(125, 29)
         Me.dtpTermino.TabIndex = 40
@@ -1724,7 +1733,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicio.Location = New System.Drawing.Point(73, 98)
-        Me.dtpInicio.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicio.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicio.Name = "dtpInicio"
         Me.dtpInicio.Size = New System.Drawing.Size(125, 29)
         Me.dtpInicio.TabIndex = 39
@@ -2201,7 +2210,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformePermisos.Location = New System.Drawing.Point(120, 48)
-        Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicioInformePermisos.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicioInformePermisos.Name = "dtpInicioInformePermisos"
         Me.dtpInicioInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpInicioInformePermisos.TabIndex = 15
@@ -2283,7 +2292,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformePermisos.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformePermisos.Location = New System.Drawing.Point(120, 83)
-        Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTerminoInformePermisos.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTerminoInformePermisos.Name = "dtpTerminoInformePermisos"
         Me.dtpTerminoInformePermisos.Size = New System.Drawing.Size(126, 29)
         Me.dtpTerminoInformePermisos.TabIndex = 16
@@ -2698,7 +2707,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpInicioInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpInicioInformeHHEE.Location = New System.Drawing.Point(135, 49)
-        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpInicioInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpInicioInformeHHEE.Name = "dtpInicioInformeHHEE"
         Me.dtpInicioInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpInicioInformeHHEE.TabIndex = 29
@@ -2765,7 +2774,7 @@ Partial Class FrmSolicPermHrasExt
         '
         Me.dtpTerminoInformeHHEE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpTerminoInformeHHEE.Location = New System.Drawing.Point(135, 84)
-        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(0, 29)
+        Me.dtpTerminoInformeHHEE.MinimumSize = New System.Drawing.Size(4, 29)
         Me.dtpTerminoInformeHHEE.Name = "dtpTerminoInformeHHEE"
         Me.dtpTerminoInformeHHEE.Size = New System.Drawing.Size(122, 29)
         Me.dtpTerminoInformeHHEE.TabIndex = 30

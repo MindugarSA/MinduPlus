@@ -64,6 +64,17 @@ Namespace My
                 Return CType(Me("SBO_COMERCIALConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=FSSAPBO;Initial Catalog=MINDU_INTERMEDIA;Persist Security Info=True;U"& _ 
+            "ser ID=sa;Password=Sqladmin281")>  _
+        Public ReadOnly Property MINDU_INTERMEDIAConnectionString() As String
+            Get
+                Return CType(Me("MINDU_INTERMEDIAConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

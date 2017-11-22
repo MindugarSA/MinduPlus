@@ -14,6 +14,12 @@ namespace CapaPresentacion
 {
     public partial class FrmBajaIndividualizacion : MetroFramework.Forms.MetroForm
     {
+        public delegate void EnvEvent(int i = 0);
+        public event EnvEvent EnviarEvento;
+        public int IdentidadGridRow { get; set; }
+        public int IdInstrumento { get; set; }
+        public int IdIdentidad { get; set; }
+
         private DataGridViewRow DataIdentidad;
         private string TipoAcceso;
         private DataTable DTDatosBaja;
@@ -36,6 +42,8 @@ namespace CapaPresentacion
                 btnAgregar.Text = "Modificar";
                 CargarActaBaja();
             }
+            else
+                dtpIngreso.Value = DateTime.Now;
         }
 
         private void FrmBajaIndividualizacion_Paint(object sender, PaintEventArgs e)
@@ -57,6 +65,8 @@ namespace CapaPresentacion
         {
             DataTable DTInstru = new DataTable();
             DTInstru = NInstrumento.Buscar(Convert.ToInt32(DataIdentidad.Cells[0].Value));
+            IdInstrumento = Convert.ToInt32(DataIdentidad.Cells[0].Value);
+            IdIdentidad = Convert.ToInt32(DataIdentidad.Cells[1].Value);
             txtCodInstru.Text = Convert.ToString(DTInstru.Rows[0][1]);
             txtDescInstru.Text = Convert.ToString(DTInstru.Rows[0][2]);
 
@@ -141,9 +151,11 @@ namespace CapaPresentacion
         {
             if (txtCodIns.Text.Trim().Length > 0)
             {
-                if (TipoAcceso == "Consulta")
+                string rpta = "";
+
+                if (TipoAcceso == "Consulta" && btnAgregar.Text != "Ok")
                 {
-                    NIdentBaja.Actualizar(Convert.ToInt32(DTDatosBaja.Rows[0][0])
+                    rpta = NIdentBaja.Actualizar(Convert.ToInt32(DTDatosBaja.Rows[0][0])
                                           , Convert.ToInt32(DTDatosBaja.Rows[0][1])
                                           , Convert.ToInt32(DTDatosBaja.Rows[0][2])
                                           , txtCodIns.Text
@@ -154,26 +166,41 @@ namespace CapaPresentacion
                                           , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]
                                           , txtEstado.Text);
 
-
                 }
-                else if (TipoAcceso == "Registro")
+                else if (TipoAcceso == "Registro" && btnAgregar.Text != "Ok")
                 {
-                    NIdentBaja.Insertar(Convert.ToInt32(DTDatosBaja.Rows[0][1])
-                                          , Convert.ToInt32(DTDatosBaja.Rows[0][2])
+                    rpta = NIdentBaja.Insertar(Convert.ToInt32(DataIdentidad.Cells[0].Value)
+                                          , Convert.ToInt32(DataIdentidad.Cells[1].Value)
                                           , txtCodIns.Text
                                           , TxtNomIns.Text
                                           , dtpIngreso.Text
                                           , txtObserva.Text.Trim()
-                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][8].ToString() : DatosEmpleadoSel[2]
-                                          , DatosEmpleadoSel == null ? DTDatosBaja.Rows[0][4].ToString() : DatosEmpleadoSel[1]
+                                          , DatosEmpleadoSel == null ? txtCodIns.Text : DatosEmpleadoSel[2]
+                                          , DatosEmpleadoSel == null ? TxtNomIns.Text : DatosEmpleadoSel[1]
                                           , txtEstado.Text);
 
+
                 }
-                MetroFramework.MetroMessageBox.Show(this, "El Acta fue " + TipoAcceso == "Registro" ? "Registrada":"Actualizada" + " Exitosamente",
-                                                    "Acta de Baja",
-                                                    MessageBoxButtons.OK,
-                                                    MessageBoxIcon.Information,
-                                                    370);
+
+                if (btnAgregar.Text != "Ok")
+                    if (rpta == "OK")
+                    {
+                        EnviarEvento(IdentidadGridRow);
+                        MetroFramework.MetroMessageBox.Show(this, "El Acta fue " + TipoAcceso == "Registro" ? "Registrada" : "Actualizada" + " Exitosamente",
+                                                   "Acta de Baja",
+                                                   MessageBoxButtons.OK,
+                                                   MessageBoxIcon.Information,
+                                                   370);
+                        btnAgregar.Text = "Ok";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(rpta, "Sistema de Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                else
+                    this.Close();
+               
             }
             else
                 MetroFramework.MetroMessageBox.Show(this, "Debe Seleccionar un Inspector para registrar una Baja",
@@ -189,8 +216,8 @@ namespace CapaPresentacion
             FrmInformes frm = new FrmInformes()
             {
                 TipoReporte = "ActaBaja" ,
-                Id_instrumento = Convert.ToInt32(DTDatosBaja.Rows[0][1]),
-                Id_identidad = Convert.ToInt32(DTDatosBaja.Rows[0][2])
+                Id_instrumento = IdInstrumento,
+                Id_identidad = IdIdentidad
             };
             frm.ShowDialog();
         }

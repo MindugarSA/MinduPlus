@@ -44,6 +44,7 @@ namespace CapaPresentacion
                     break;
             }
             btnAgregar.Text = TextButtton;
+            txtItem.Focus();
         }
 
         private void FrmEmplado_Paint(object sender, PaintEventArgs e)

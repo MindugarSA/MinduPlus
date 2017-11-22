@@ -5,6 +5,12 @@ Public Class MDIParent1
     Dim conexion As New SqlConnection
     Dim dt As New DataTable
     Dim cmd As SqlCommand
+    Dim dtPL As New DataTable
+
+    Public Property RutUsuario As String
+    Public Property NombreUsuario As String
+    Public Property RutEmpresa As String
+    Public Property NombreEmpresa As String
 
     Private Entrada As Integer = 0
     Public TiempoActivo As Integer
@@ -218,29 +224,6 @@ Public Class MDIParent1
         End Try
         Return dt.Rows(0)("Acceso")
 
-
-
-
-
-        'dt.Reset()
-        'cmd = New SqlCommand("Colaciones_Pass_Info", conexion)
-        'cmd.CommandType = CommandType.StoredProcedure
-        'conexion.Open()
-        'cmd.Parameters.Add(New SqlParameter("@Rut", Lbl_RutTrab.Text))
-        'cmd.Parameters.Add(New SqlParameter("@Campo", Campo))
-        'Try
-        '    dt.Load(cmd.ExecuteReader())
-        'Catch ex As Exception
-
-        '    MsgBox("Error al operar con la base de datos!", MsgBoxStyle.Critical, "Error!")
-        'Finally
-        '    conexion.Close()
-        'End Try
-        'If dt.Rows(0)("IdEstado") = 0 Then
-        '    Return dt.Rows(0)("Acceso")
-        'Else
-        '    Return 0
-        'End If
     End Function
 
     Private Sub TiempoIngreso_Tick(sender As Object, e As EventArgs) Handles TiempoIngreso.Tick
@@ -396,26 +379,111 @@ Public Class MDIParent1
     End Sub
 
     Private Sub Tle_Liquidacion_Click(sender As Object, e As EventArgs) Handles Tle_Liquidacion.Click
+
         If RevisaAcceso(31003) Then
-            Dim NewMDIChild As New Frm_Liquidaciones()
-            AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
-            AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Desplazamiento_Tiles)
 
-            Cerrar_Forms_Children()
-            NewMDIChild.MdiParent = Me
-            NewMDIChild.Dock = DockStyle.Fill
-            Me.Panel2.Controls.Add(NewMDIChild)
-            Me.Panel2.Tag = NewMDIChild
-            Ocultar_Tiles_MDI()
-            NewMDIChild.Show()
+            ConsultarEstadoPreLiquidacion(dtPL)
+            If (dtPL.Rows(0)(0).ToString.Trim() = "Y") Then
 
-            NewMDIChild.ControlBox = False
-            TiempoIngreso.Enabled = True
-            TiempoActivo = Tiempo_Str + 60
-            ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
-            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-            'NewMDIChild.WindowState = FormWindowState.Maximized
+                Dim FrmSelecLiqui As New Frm_SeleccionaTiporLiquidacion()
+
+                If (FrmSelecLiqui.ShowDialog() = DialogResult.OK) Then
+
+                    Dim sPantalla As String = FrmSelecLiqui.TipoReporte
+
+
+                    Select Case sPantalla
+                        Case "PreLiquidacion"
+
+                            Abrir_Pantalla_Preliquidaciones()
+
+                        Case "Liquidacion"
+
+                            Abrir_Pantalla_Liquidaciones()
+
+                    End Select
+
+                End If
+
+            Else
+
+                Abrir_Pantalla_Liquidaciones()
+
+            End If
+
+
         End If
+    End Sub
+
+    Private Sub Abrir_Pantalla_Liquidaciones()
+
+        Dim NewMDIChild As New Frm_Liquidaciones()
+        AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+        AddHandler NewMDIChild.EnviarEvento, New Frm_Liquidaciones.LaunchEvent(AddressOf Desplazamiento_Tiles)
+
+        Cerrar_Forms_Children()
+        NewMDIChild.MdiParent = Me
+        NewMDIChild.Dock = DockStyle.Fill
+        Me.Panel2.Controls.Add(NewMDIChild)
+        Me.Panel2.Tag = NewMDIChild
+        Ocultar_Tiles_MDI()
+        NewMDIChild.Show()
+
+        NewMDIChild.ControlBox = False
+
+        TiempoIngreso.Enabled = True
+        TiempoActivo = Tiempo_Str + 60
+        ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
+        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        'NewMDIChild.WindowState = FormWindowState.Maximized
+
+    End Sub
+
+    Private Sub Abrir_Pantalla_Preliquidaciones()
+
+        Dim sPeriodo As String = dtPL.Rows(0)(1).ToString.Trim()
+        Dim formInforme As New Frm_InformesRDLC()
+        formInforme.TipoReporte = "PreLiquidacion"
+        formInforme.Rut = Lbl_RutTrab.Text
+        formInforme.Año = sPeriodo.Substring(0, 4)
+        formInforme.Mes = sPeriodo.Substring(4, 2)
+        formInforme.RutEmp = RutEmpresa
+        formInforme.CallFrom = "MDIParent1"
+
+
+        Cerrar_Forms_Children()
+        formInforme.MdiParent = Me
+        formInforme.Dock = DockStyle.Fill
+        Me.Panel2.Controls.Add(formInforme)
+        Me.Panel2.Tag = formInforme
+        Ocultar_Tiles_MDI()
+        formInforme.Show()
+
+        TiempoIngreso.Enabled = True
+        TiempoActivo = Tiempo_Str + 60
+        ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
+        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
+    End Sub
+
+    Private Sub ConsultarEstadoPreLiquidacion(DTdata As DataTable)
+
+        conexion.ConnectionString = Conection.Cn
+
+        cmd = New SqlCommand("[MINDU_INTERMEDIA].[dbo].[SpPRE_LIQUIDACIONConsultar]", conexion)
+        cmd.CommandType = CommandType.StoredProcedure
+        Try
+            conexion.Open()
+
+            Dim adaptador As New SqlDataAdapter(cmd)
+            DTdata.Clear()
+            adaptador.Fill(DTdata)
+
+        Catch ex As Exception
+        Finally
+            conexion.Close()
+        End Try
+
     End Sub
 
     Private Sub Tle_MantencionColacione_Click(sender As Object, e As EventArgs) Handles Tle_MantencionColacione.Click
@@ -561,14 +629,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter, PictureBox3.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter, PictureBox3.MouseEnter, Tle_Ticket_Solicitud.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave, PictureBox3.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave, PictureBox3.MouseLeave, Tle_Ticket_Solicitud.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -728,6 +796,26 @@ Public Class MDIParent1
 
     End Sub
 
+    Private Sub Tle_Ticket_Solicitud_Click(sender As Object, e As EventArgs) Handles Tle_Ticket_Solicitud.Click
+
+        Dim NewMDIChild As New Frm_TicketSolicitudes()
+        Cerrar_Forms_Children()
+        NewMDIChild.MdiParent = Me
+        NewMDIChild.WindowState = FormWindowState.Maximized
+        NewMDIChild.Dock = DockStyle.Fill
+        Me.Panel2.Controls.Add(NewMDIChild)
+        Me.Panel2.Tag = NewMDIChild
+        Ocultar_Tiles_MDI()
+        NewMDIChild.Show()
+
+        NewMDIChild.ControlBox = False
+        TiempoIngreso.Enabled = False
+        'TiempoIngreso.Enabled = True
+        TiempoActivo = Tiempo_Str
+        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim FormPrueba As New CapaPresentacion.FrmInstrumentosPrecision(Me.Panel2, Me.StatusStrip, "")
         'FormPrueba.MdiParent = Me
@@ -790,6 +878,5 @@ Public Class MDIParent1
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         Animate_BackLogo()
     End Sub
-
 
 End Class

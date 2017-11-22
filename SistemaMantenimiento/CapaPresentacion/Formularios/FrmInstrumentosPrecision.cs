@@ -26,7 +26,11 @@ namespace CapaPresentacion
         private Panel pnlParent;
         private StatusStrip StatusBarBottom;
         private string[] DatosEmpleadoSelecc;
-        private String Id;
+        private
+
+            String
+
+            Id;
 
 
         public delegate void LaunchEvent();
@@ -149,8 +153,8 @@ namespace CapaPresentacion
                     Individualizacion.EnviarEvento += new FrmIndividualizacion.EnvEvent(ListarIndividualizacion); // Metodo Delegate para enviar ejecucion de evento desde FrmIndividualizacion
                     Individualizacion.ShowDialog();
                 }
-                catch (Exception){}
-               
+                catch (Exception) { }
+
             }
 
         }
@@ -260,7 +264,7 @@ namespace CapaPresentacion
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if(dataCalibracion.Rows.Count > 0)
+            if (dataCalibracion.Rows.Count > 0)
             {
                 FrmCalibracion Calibracion = new FrmCalibracion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index],
                                                             (DataTable)dataItemsComp.DataSource,
@@ -526,7 +530,7 @@ namespace CapaPresentacion
             if (dataInstrumentos.SelectedRows.Count > 0)
             {
                 int indice = dataInstrumentos.SelectedRows[0].Index;
-                txtItemSelec.Text = Convert.ToString(dataInstrumentos[1, indice].Value) + "  -  " +  Convert.ToString(dataInstrumentos[2, indice].Value);
+                txtItemSelec.Text = Convert.ToString(dataInstrumentos[1, indice].Value) + "  -  " + Convert.ToString(dataInstrumentos[2, indice].Value);
                 DTIndividualizacion = NIdentInstrumento.Listar(Convert.ToInt32(dataInstrumentos[0, indice].Value));
                 DTIndividualizaFiltro = DTIndividualizacion.Clone();
                 switch (comboBox2.SelectedIndex)
@@ -727,6 +731,8 @@ namespace CapaPresentacion
         private void darDeBajaAIndividualizacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBajaIndividualizacion DarBaja = new FrmBajaIndividualizacion(dataIndividualizacion.Rows[dataIndividualizacion.SelectedRows[0].Index], "Registro");
+            DarBaja.IdentidadGridRow = dataIndividualizacion.SelectedRows[0].Index;
+            DarBaja.EnviarEvento += new FrmBajaIndividualizacion.EnvEvent(ListarIndividualizacion);
             DarBaja.ShowDialog();
         }
 

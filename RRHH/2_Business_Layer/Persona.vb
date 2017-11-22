@@ -61,8 +61,6 @@ Public Class Persona
         End Set
     End Property
 
-
-
     Private _departamento As [String]
 
     Public Property Departamento() As [String]
@@ -74,9 +72,39 @@ Public Class Persona
         End Set
     End Property
 
+    Private _Estado As String
+    Public Property Estado() As String
+        Get
+            Return _Estado
+        End Get
+        Set(ByVal value As String)
+            _Estado = value
+        End Set
+    End Property
+
+    Private _IDUsuario As Integer
+    Public Property IDUsuario() As Integer
+        Get
+            Return _IDUsuario
+        End Get
+        Set(ByVal value As Integer)
+            _IDUsuario = value
+        End Set
+    End Property
+
+    Private _Password As Integer
+    Public Property Password() As Integer
+        Get
+            Return _Password
+        End Get
+        Set(ByVal value As Integer)
+            _Password = value
+        End Set
+    End Property
+
     Public Function BuscarDatos() As Boolean
         Try
-            Dim results As ObjectResult(Of Solicitud_Buscar_Datos_Trabajador_Result) = CommonBC.EntidadesSAC.Solicitud_Buscar_Datos_Trabajador(Nombre)
+            Dim results As ObjectResult(Of Solicitud_Buscar_Datos_Trabajador_Result) = CommonBC.EntidadesSAC.Solicitud_Buscar_Datos_Trabajador(Nombre, Estado)
             For Each result As Solicitud_Buscar_Datos_Trabajador_Result In results
                 Cargo = result.cargo
                 Empresa = result.nombre_emp
@@ -152,11 +180,36 @@ Public Class Persona
                 Dim persona As New Persona()
                 persona.Nombre = result.nombre
                 persona.Rut = result.rut
+                persona.Estado = result.Estado
+                persona.Empresa = result.RutEmp
                 lista.Add(persona)
             Next
         Catch
         End Try
         Return lista
     End Function
+
+    Public Function ActualizarContraseña() As Boolean
+        Try
+            CommonBC.EntidadesSAC.PassUsuariosCambiarContraseña(IDUsuario, Password)
+            Return True
+        Catch
+            Return False
+        End Try
+    End Function
+
+    Public Function PassUsuariosGes() As DataTable
+        'Dim lista As New List(Of Persona)()
+        Dim dt As DataTable = Nothing
+        Try
+            Dim results As ObjectResult(Of PassUsuariosGes_Result) = CommonBC.EntidadesSAC.PassUsuariosGes(0, Rut, False, Nombre, 1, Date.Now(), Date.Now(), "", vbNull, "-", Password)
+
+            dt = dt.LINQResultToDataTable(Of Object)(results)
+
+        Catch
+        End Try
+        Return dt
+    End Function
+
 #End Region
 End Class

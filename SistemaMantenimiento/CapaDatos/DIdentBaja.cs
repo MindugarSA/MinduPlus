@@ -183,7 +183,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(new SqlParameter("@Ult_Estado", Ident_Baja.Ult_Estado));
                 
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se Ingreso el Registro";
 
             }
             catch (Exception ex)
@@ -225,7 +225,7 @@ namespace CapaDatos
                 SqlCmd.Parameters.Add(new SqlParameter("@Nom_Localiza", Ident_Baja.Nom_Localiza));
                 SqlCmd.Parameters.Add(new SqlParameter("@Ult_Estado", Ident_Baja.Ult_Estado));
 
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Modifico el Registro";
+                rpta = SqlCmd.ExecuteNonQuery() >= 1 ? "OK" : "NO se Modifico el Registro";
 
             }
             catch (Exception ex)

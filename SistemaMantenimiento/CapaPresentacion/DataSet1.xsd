@@ -99,6 +99,7 @@
               <Mapping SourceColumn="Frecuencia" DataSetColumn="Frecuencia" />
               <Mapping SourceColumn="Ingreso" DataSetColumn="Ingreso" />
               <Mapping SourceColumn="Supervisor" DataSetColumn="Supervisor" />
+              <Mapping SourceColumn="Identidad" DataSetColumn="Identidad" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -110,7 +111,7 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SpInformeActaBaja" msprop:Generator_TableClassName="SpInformeActaBajaDataTable" msprop:Generator_TableVarName="tableSpInformeActaBaja" msprop:Generator_TablePropName="SpInformeActaBaja" msprop:Generator_RowDeletingName="SpInformeActaBajaRowDeleting" msprop:Generator_RowChangingName="SpInformeActaBajaRowChanging" msprop:Generator_RowEvHandlerName="SpInformeActaBajaRowChangeEventHandler" msprop:Generator_RowDeletedName="SpInformeActaBajaRowDeleted" msprop:Generator_UserTableName="SpInformeActaBaja" msprop:Generator_RowChangedName="SpInformeActaBajaRowChanged" msprop:Generator_RowEvArgName="SpInformeActaBajaRowChangeEvent" msprop:Generator_RowClassName="SpInformeActaBajaRow">
+        <xs:element name="SpInformeActaBaja" msprop:Generator_TableClassName="SpInformeActaBajaDataTable" msprop:Generator_TableVarName="tableSpInformeActaBaja" msprop:Generator_RowChangedName="SpInformeActaBajaRowChanged" msprop:Generator_TablePropName="SpInformeActaBaja" msprop:Generator_RowDeletingName="SpInformeActaBajaRowDeleting" msprop:Generator_RowChangingName="SpInformeActaBajaRowChanging" msprop:Generator_RowEvHandlerName="SpInformeActaBajaRowChangeEventHandler" msprop:Generator_RowDeletedName="SpInformeActaBajaRowDeleted" msprop:Generator_RowClassName="SpInformeActaBajaRow" msprop:Generator_UserTableName="SpInformeActaBaja" msprop:Generator_RowEvArgName="SpInformeActaBajaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_instrumento" msprop:Generator_ColumnVarNameInTable="columnid_instrumento" msprop:Generator_ColumnPropNameInRow="id_instrumento" msprop:Generator_ColumnPropNameInTable="id_instrumentoColumn" msprop:Generator_UserColumnName="id_instrumento" type="xs:int" />
@@ -191,7 +192,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SpInformeEtiquetas" msprop:Generator_TableClassName="SpInformeEtiquetasDataTable" msprop:Generator_TableVarName="tableSpInformeEtiquetas" msprop:Generator_TablePropName="SpInformeEtiquetas" msprop:Generator_RowDeletingName="SpInformeEtiquetasRowDeleting" msprop:Generator_RowChangingName="SpInformeEtiquetasRowChanging" msprop:Generator_RowEvHandlerName="SpInformeEtiquetasRowChangeEventHandler" msprop:Generator_RowDeletedName="SpInformeEtiquetasRowDeleted" msprop:Generator_UserTableName="SpInformeEtiquetas" msprop:Generator_RowChangedName="SpInformeEtiquetasRowChanged" msprop:Generator_RowEvArgName="SpInformeEtiquetasRowChangeEvent" msprop:Generator_RowClassName="SpInformeEtiquetasRow">
+        <xs:element name="SpInformeEtiquetas" msprop:Generator_TableClassName="SpInformeEtiquetasDataTable" msprop:Generator_TableVarName="tableSpInformeEtiquetas" msprop:Generator_RowChangedName="SpInformeEtiquetasRowChanged" msprop:Generator_TablePropName="SpInformeEtiquetas" msprop:Generator_RowDeletingName="SpInformeEtiquetasRowDeleting" msprop:Generator_RowChangingName="SpInformeEtiquetasRowChanging" msprop:Generator_RowEvHandlerName="SpInformeEtiquetasRowChangeEventHandler" msprop:Generator_RowDeletedName="SpInformeEtiquetasRowDeleted" msprop:Generator_RowClassName="SpInformeEtiquetasRow" msprop:Generator_UserTableName="SpInformeEtiquetas" msprop:Generator_RowEvArgName="SpInformeEtiquetasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_Instrumento" msprop:Generator_ColumnVarNameInTable="columnid_Instrumento" msprop:Generator_ColumnPropNameInRow="id_Instrumento" msprop:Generator_ColumnPropNameInTable="id_InstrumentoColumn" msprop:Generator_UserColumnName="id_Instrumento" type="xs:int" minOccurs="0" />
@@ -339,6 +340,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Identidad" msprop:Generator_ColumnVarNameInTable="columnIdentidad" msprop:Generator_ColumnPropNameInRow="Identidad" msprop:Generator_ColumnPropNameInTable="IdentidadColumn" msprop:Generator_UserColumnName="Identidad" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

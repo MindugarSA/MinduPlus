@@ -96,7 +96,7 @@ Partial Class Frm_InformeAsistencias
         Me.GroupBox2.Size = New System.Drawing.Size(1026, 379)
         Me.GroupBox2.TabIndex = 29
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Asitencia Grupo"
+        Me.GroupBox2.Text = "Asistencia Grupo"
         '
         'MetroLabel9
         '
@@ -296,7 +296,7 @@ Partial Class Frm_InformeAsistencias
         Me.GroupBox1.Size = New System.Drawing.Size(1026, 170)
         Me.GroupBox1.TabIndex = 28
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Asitencia Individual"
+        Me.GroupBox1.Text = "Asistencia Individual"
         '
         'MetroTextBox2
         '
@@ -304,6 +304,7 @@ Partial Class Frm_InformeAsistencias
         Me.MetroTextBox2.AcceptsTab = False
         Me.MetroTextBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.MetroTextBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.MetroTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.MetroTextBox2.Depth = 0
         Me.MetroTextBox2.Hint = ""
         Me.MetroTextBox2.Location = New System.Drawing.Point(164, 111)
@@ -330,6 +331,7 @@ Partial Class Frm_InformeAsistencias
         Me.MetroTextBox1.AcceptsTab = False
         Me.MetroTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.MetroTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.MetroTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.MetroTextBox1.Depth = 0
         Me.MetroTextBox1.Hint = ""
         Me.MetroTextBox1.Location = New System.Drawing.Point(164, 75)

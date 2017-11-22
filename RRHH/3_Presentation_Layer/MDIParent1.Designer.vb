@@ -45,6 +45,7 @@ Partial Class MDIParent1
         Me.TleSolicitar_HHEE = New MetroFramework.Controls.MetroTile()
         Me.Tle_Asistencias_Periodo = New MetroFramework.Controls.MetroTile()
         Me.Tle_Herramientas_Pre = New MetroFramework.Controls.MetroTile()
+        Me.Tle_Ticket_Solicitud = New MetroFramework.Controls.MetroTile()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -61,18 +62,18 @@ Partial Class MDIParent1
         Me.TxtBx_Empresa = New System.Windows.Forms.TextBox()
         Me.TxtBx_UserName = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pnlMovingTop = New System.Windows.Forms.Panel()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.pnlMovingRight2 = New System.Windows.Forms.Panel()
         Me.pnlMovingRight = New System.Windows.Forms.Panel()
-        Me.pnlMovingTop = New System.Windows.Forms.Panel()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.TiempoIngreso = New System.Windows.Forms.Timer(Me.components)
         Me.TmrDesplaza = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
@@ -81,13 +82,13 @@ Partial Class MDIParent1
         CType(Me.PcturBx_Image, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.pnlMovingTop.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlMovingRight2.SuspendLayout()
         Me.pnlMovingRight.SuspendLayout()
-        Me.pnlMovingTop.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -241,7 +242,7 @@ Partial Class MDIParent1
         Me.Tle_Liquidacion.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Liquidacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.Tle_Liquidacion, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_Liquidacion.Location = New System.Drawing.Point(127, 6)
+        Me.Tle_Liquidacion.Location = New System.Drawing.Point(128, 6)
         Me.Tle_Liquidacion.Name = "Tle_Liquidacion"
         Me.Tle_Liquidacion.Size = New System.Drawing.Size(114, 107)
         Me.Tle_Liquidacion.TabIndex = 11
@@ -258,7 +259,7 @@ Partial Class MDIParent1
         Me.Tle_SolAlmuerzo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_SolAlmuerzo.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.Tle_SolAlmuerzo, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(4, 6)
+        Me.Tle_SolAlmuerzo.Location = New System.Drawing.Point(5, 6)
         Me.Tle_SolAlmuerzo.Name = "Tle_SolAlmuerzo"
         Me.Tle_SolAlmuerzo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_SolAlmuerzo.TabIndex = 10
@@ -292,7 +293,7 @@ Partial Class MDIParent1
         Me.Tle_Solicitar_Permisos.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Solicitar_Permisos.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.Tle_Solicitar_Permisos, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(491, 6)
+        Me.Tle_Solicitar_Permisos.Location = New System.Drawing.Point(492, 6)
         Me.Tle_Solicitar_Permisos.Name = "Tle_Solicitar_Permisos"
         Me.Tle_Solicitar_Permisos.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Solicitar_Permisos.TabIndex = 17
@@ -309,7 +310,7 @@ Partial Class MDIParent1
         Me.TleSolicitar_HHEE.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TleSolicitar_HHEE.BackColor = System.Drawing.Color.Orange
         Me.BunifuTransition1.SetDecoration(Me.TleSolicitar_HHEE, BunifuAnimatorNS.DecorationType.None)
-        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(368, 6)
+        Me.TleSolicitar_HHEE.Location = New System.Drawing.Point(369, 6)
         Me.TleSolicitar_HHEE.Name = "TleSolicitar_HHEE"
         Me.TleSolicitar_HHEE.Size = New System.Drawing.Size(119, 107)
         Me.TleSolicitar_HHEE.TabIndex = 18
@@ -326,7 +327,7 @@ Partial Class MDIParent1
         Me.Tle_Asistencias_Periodo.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Tle_Asistencias_Periodo.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.Tle_Asistencias_Periodo, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_Asistencias_Periodo.Location = New System.Drawing.Point(245, 6)
+        Me.Tle_Asistencias_Periodo.Location = New System.Drawing.Point(246, 6)
         Me.Tle_Asistencias_Periodo.Name = "Tle_Asistencias_Periodo"
         Me.Tle_Asistencias_Periodo.Size = New System.Drawing.Size(119, 107)
         Me.Tle_Asistencias_Periodo.TabIndex = 19
@@ -353,6 +354,23 @@ Partial Class MDIParent1
         Me.Tle_Herramientas_Pre.UseCustomBackColor = True
         Me.Tle_Herramientas_Pre.UseSelectable = True
         Me.Tle_Herramientas_Pre.UseTileImage = True
+        '
+        'Tle_Ticket_Solicitud
+        '
+        Me.Tle_Ticket_Solicitud.ActiveControl = Nothing
+        Me.Tle_Ticket_Solicitud.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Tle_Ticket_Solicitud.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.BunifuTransition1.SetDecoration(Me.Tle_Ticket_Solicitud, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_Ticket_Solicitud.Location = New System.Drawing.Point(615, 6)
+        Me.Tle_Ticket_Solicitud.Name = "Tle_Ticket_Solicitud"
+        Me.Tle_Ticket_Solicitud.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_Ticket_Solicitud.TabIndex = 25
+        Me.Tle_Ticket_Solicitud.Text = "Solicitudes"
+        Me.Tle_Ticket_Solicitud.TileImage = Global.RRHH.My.Resources.Resources.notepad__2_
+        Me.ToolTip.SetToolTip(Me.Tle_Ticket_Solicitud, "Solicitar Ticket")
+        Me.Tle_Ticket_Solicitud.UseCustomBackColor = True
+        Me.Tle_Ticket_Solicitud.UseSelectable = True
+        Me.Tle_Ticket_Solicitud.UseTileImage = True
         '
         'ImageList1
         '
@@ -583,6 +601,34 @@ Partial Class MDIParent1
         Me.Panel2.Size = New System.Drawing.Size(1129, 795)
         Me.Panel2.TabIndex = 11
         '
+        'pnlMovingTop
+        '
+        Me.pnlMovingTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pnlMovingTop.BackColor = System.Drawing.Color.Transparent
+        Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
+        Me.BunifuTransition1.SetDecoration(Me.pnlMovingTop, BunifuAnimatorNS.DecorationType.None)
+        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 329)
+        Me.pnlMovingTop.Name = "pnlMovingTop"
+        Me.pnlMovingTop.Size = New System.Drawing.Size(262, 463)
+        Me.pnlMovingTop.TabIndex = 19
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox4.Location = New System.Drawing.Point(204, 306)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(235, 200)
+        Me.PictureBox4.TabIndex = 23
+        Me.PictureBox4.TabStop = False
+        Me.PictureBox4.Visible = False
+        '
         'PictureBox3
         '
         Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
@@ -609,6 +655,7 @@ Partial Class MDIParent1
         'pnlMovingRight
         '
         Me.pnlMovingRight.BackColor = System.Drawing.Color.Transparent
+        Me.pnlMovingRight.Controls.Add(Me.Tle_Ticket_Solicitud)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Asistencias_Periodo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_SolAlmuerzo)
         Me.pnlMovingRight.Controls.Add(Me.Tle_Liquidacion)
@@ -617,24 +664,20 @@ Partial Class MDIParent1
         Me.BunifuTransition1.SetDecoration(Me.pnlMovingRight, BunifuAnimatorNS.DecorationType.None)
         Me.pnlMovingRight.Location = New System.Drawing.Point(5, 0)
         Me.pnlMovingRight.Name = "pnlMovingRight"
-        Me.pnlMovingRight.Size = New System.Drawing.Size(638, 120)
+        Me.pnlMovingRight.Size = New System.Drawing.Size(926, 120)
         Me.pnlMovingRight.TabIndex = 20
         '
-        'pnlMovingTop
+        'PictureBox5
         '
-        Me.pnlMovingTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pnlMovingTop.BackColor = System.Drawing.Color.Transparent
-        Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
-        Me.BunifuTransition1.SetDecoration(Me.pnlMovingTop, BunifuAnimatorNS.DecorationType.None)
-        Me.pnlMovingTop.Location = New System.Drawing.Point(864, 329)
-        Me.pnlMovingTop.Name = "pnlMovingTop"
-        Me.pnlMovingTop.Size = New System.Drawing.Size(262, 463)
-        Me.pnlMovingTop.TabIndex = 19
+        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox5, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox5.Location = New System.Drawing.Point(673, 306)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(203, 200)
+        Me.PictureBox5.TabIndex = 24
+        Me.PictureBox5.TabStop = False
+        Me.PictureBox5.Visible = False
         '
         'FlowLayoutPanel1
         '
@@ -694,30 +737,6 @@ Partial Class MDIParent1
         '
         Me.TmrBackAnimation.Interval = 5000
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox4, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox4.Location = New System.Drawing.Point(204, 306)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(235, 200)
-        Me.PictureBox4.TabIndex = 23
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackgroundImage = CType(resources.GetObject("PictureBox5.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox5, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox5.Location = New System.Drawing.Point(673, 306)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(203, 200)
-        Me.PictureBox5.TabIndex = 24
-        Me.PictureBox5.TabStop = False
-        Me.PictureBox5.Visible = False
-        '
         'MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -748,13 +767,13 @@ Partial Class MDIParent1
         Me.TableLayoutPanel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.pnlMovingTop.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlMovingRight2.ResumeLayout(False)
         Me.pnlMovingRight.ResumeLayout(False)
-        Me.pnlMovingTop.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -805,4 +824,5 @@ Partial Class MDIParent1
     Friend WithEvents TmrBackAnimation As Timer
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Tle_Ticket_Solicitud As MetroFramework.Controls.MetroTile
 End Class

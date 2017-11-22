@@ -89,11 +89,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="PassAtributosUsuarioAgregaGes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
+          <Parameter Name="IdAtributo" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="PassUsuariosCambiarContraseña" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="PassUsuariosGes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
+          <Parameter Name="Usuario" Type="varchar" Mode="In" />
+          <Parameter Name="Activo" Type="bit" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="IdPerfilPred" Type="int" Mode="In" />
+          <Parameter Name="FecCreacion" Type="smalldatetime" Mode="In" />
+          <Parameter Name="FecModif" Type="smalldatetime" Mode="In" />
+          <Parameter Name="CamposAct" Type="varchar" Mode="In" />
+          <Parameter Name="IdVendedor" Type="int" Mode="In" />
+          <Parameter Name="NumSerie" Type="varchar" Mode="In" />
+          <Parameter Name="Contraseña" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="Solicitud_Buscar_Correo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
         </Function>
         <Function Name="Solicitud_Buscar_Datos_Trabajador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreCompleto" Type="varchar" Mode="In" />
+          <Parameter Name="Activo" Type="int" Mode="In" />
         </Function>
         <Function Name="Solicitud_Buscar_Empleado_PorNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -312,7 +334,8 @@
           <Parameter Name="nombreCompleto" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Datos_Trabajador" ReturnType="Collection(SAC_MindugarModelVisual.Solicitud_Buscar_Datos_Trabajador_Result)">
-          <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="nombreCompleto" Mode="In" Type="String" />
+            <Parameter Name="Activo" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Solicitud_Buscar_Empleado_PorNombre" ReturnType="Collection(String)">
           <Parameter Name="nombre" Mode="In" Type="String" />
@@ -428,6 +451,27 @@
             <Parameter Name="Empresa" Mode="In" Type="String" />
             <Parameter Name="fechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="fechaTermino" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="PassUsuariosCambiarContraseña">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PassAtributosUsuarioAgregaGes" ReturnType="Collection(SAC_MindugarModelVisual.PassAtributosUsuarioAgregaGes_Result)">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="IdAtributo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PassUsuariosGes" ReturnType="Collection(SAC_MindugarModelVisual.PassUsuariosGes_Result)">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="Usuario" Mode="In" Type="String" />
+            <Parameter Name="Activo" Mode="In" Type="Boolean" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="IdPerfilPred" Mode="In" Type="Int32" />
+            <Parameter Name="FecCreacion" Mode="In" Type="DateTime" />
+            <Parameter Name="FecModif" Mode="In" Type="DateTime" />
+            <Parameter Name="CamposAct" Mode="In" Type="String" />
+            <Parameter Name="IdVendedor" Mode="In" Type="Int32" />
+            <Parameter Name="NumSerie" Mode="In" Type="String" />
+            <Parameter Name="Contraseña" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Solicitud_Buscar_Datos_Trabajador_Result">
@@ -632,7 +676,9 @@
         </ComplexType>
         <ComplexType Name="Solicitud_Empleados_Sugeridos_Todos_Result">
           <Property Type="String" Name="rut" Nullable="true" MaxLength="11" />
-          <Property Type="String" Name="nombre" Nullable="true" MaxLength="61" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="62" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="RutEmp" Nullable="false" MaxLength="10" />
         </ComplexType>
         <EntityType Name="Empresas">
           <Key>
@@ -656,6 +702,20 @@
           <Property Type="String" Name="AREA" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="Empresa" Nullable="false" MaxLength="19" />
           <Property Type="String" Name="RutEmp" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="PassAtributosUsuarioAgregaGes_Result">
+          <Property Type="Int32" Name="id" Nullable="true" />
+          <Property Type="String" Name="IdAtributo" Nullable="true" />
+          <Property Type="Int16" Name="IdEstado" Nullable="true" />
+          <Property Type="String" Name="EstadoTec" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="EstadoUsr" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="IdUsuario" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PassUsuariosGes_Result">
+          <Property Type="Int16" Name="IdEstado" Nullable="true" />
+          <Property Type="String" Name="EstadoTec" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="EstadoUsr" Nullable="true" MaxLength="1000" />
+          <Property Type="Int32" Name="IdUsuario" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1003,6 +1063,8 @@
               <ComplexTypeMapping TypeName="SAC_MindugarModelVisual.Solicitud_Empleados_Sugeridos_Todos_Result">
                 <ScalarProperty Name="rut" ColumnName="rut" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="RutEmp" ColumnName="RutEmp" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1035,6 +1097,29 @@
                 <ScalarProperty Name="AREA" ColumnName="AREA" />
                 <ScalarProperty Name="Empresa" ColumnName="Empresa" />
                 <ScalarProperty Name="RutEmp" ColumnName="RutEmp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PassUsuariosCambiarContraseña" FunctionName="SAC_MindugarModelVisual.Store.PassUsuariosCambiarContraseña" />
+          <FunctionImportMapping FunctionImportName="PassAtributosUsuarioAgregaGes" FunctionName="SAC_MindugarModelVisual.Store.PassAtributosUsuarioAgregaGes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SAC_MindugarModelVisual.PassAtributosUsuarioAgregaGes_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="IdAtributo" ColumnName="IdAtributo" />
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="EstadoTec" ColumnName="EstadoTec" />
+                <ScalarProperty Name="EstadoUsr" ColumnName="EstadoUsr" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PassUsuariosGes" FunctionName="SAC_MindugarModelVisual.Store.PassUsuariosGes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SAC_MindugarModelVisual.PassUsuariosGes_Result">
+                <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+                <ScalarProperty Name="EstadoTec" ColumnName="EstadoTec" />
+                <ScalarProperty Name="EstadoUsr" ColumnName="EstadoUsr" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

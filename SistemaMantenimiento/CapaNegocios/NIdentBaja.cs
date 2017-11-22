@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using CapaDatos;
 using System.Data;
+using System.Globalization;
 
 namespace CapaNegocios
 {
@@ -19,7 +20,7 @@ namespace CapaNegocios
             Obj.Id_indivual = id_indivual;
             Obj.Cod_Trab = Cod_Trab;
             Obj.Nom_Trab = Nom_Trab;
-            Obj.Fec_Baja = Fec_Baja;
+            Obj.Fec_Baja = DateTime.ParseExact(Fec_Baja.Replace("-","/"), "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
             Obj.Fec_Registro = DateTime.Now.ToString();
             Obj.Observacion = Observacion;
             Obj.Cod_Localiza = Cod_Localiza;
@@ -37,7 +38,7 @@ namespace CapaNegocios
             Obj.Id_indivual = id_indivual;
             Obj.Cod_Trab = Cod_Trab;
             Obj.Nom_Trab = Nom_Trab;
-            Obj.Fec_Baja = Fec_Baja;
+            Obj.Fec_Baja = DateTime.ParseExact(Fec_Baja.Replace("-","/"), "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm:ss");
             Obj.Fec_Registro = DateTime.Now.ToString();
             Obj.Observacion = Observacion;
             Obj.Cod_Localiza = Cod_Localiza;

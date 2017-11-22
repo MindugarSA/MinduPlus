@@ -8,6 +8,8 @@ Public Class Frm_Parametros2
     Private enableBuscarInforme As Boolean = False
     Private trabajadorInforme As New Persona()
     Private DtUsuariosPass As DataTable
+    Private ListaPersonas As List(Of Persona)
+    Private EmpleadoActual As Persona
 
     Dim vDateInfo As DateTime
     Dim dt As New DataTable
@@ -256,9 +258,10 @@ Public Class Frm_Parametros2
         Dim listaNombre As New AutoCompleteStringCollection()
         Dim listaRut As New AutoCompleteStringCollection()
         Try
-            Dim personas As List(Of Persona) = Persona.ListarTodos()
+            ListaPersonas = Persona.ListarTodos()
+            ListaPersonas = ListaPersonas.Where(Function(s) s.Estado = "A").ToList()
 
-            For Each persona__1 As Persona In personas
+            For Each persona__1 As Persona In ListaPersonas
                 listaNombre.Add(persona__1.Nombre)
                 listaRut.Add(persona__1.Rut)
             Next
@@ -300,16 +303,11 @@ Public Class Frm_Parametros2
         End If
     End Sub
 
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles Button2.MouseLeave, Button1.MouseLeave, Bttn_Actualiza.MouseLeave, Button3.MouseLeave
-        Dim btn As Button = CType(sender, Button)
-        btn.Location = New Point(btn.Location.X + 5, btn.Location.Y + 5)
-        btn.Size = New Size(btn.Width - 10, btn.Height - 10)
-    End Sub
+    Private Sub MetroTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles MetroTextBox2.KeyUp, MetroTextBox1.KeyUp
+        If (e.KeyData = Keys.Return) Then
+            SendKeys.Send("{TAB}")
+        End If
 
-    Private Sub Button_MouseEnter(sender As Object, e As EventArgs) Handles Button2.MouseEnter, Button1.MouseEnter, Bttn_Actualiza.MouseEnter, Button3.MouseEnter
-        Dim btn As Button = CType(sender, Button)
-        btn.Location = New Point(btn.Location.X - 5, btn.Location.Y - 5)
-        btn.Size = New Size(btn.Width + 10, btn.Height + 10)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -321,14 +319,18 @@ Public Class Frm_Parametros2
                         .[Select](Function(row) row.Field(Of Integer)("IdUsuario")) _
                         .FirstOrDefault().ToString()
 
-            FormatearTabControl(IdUsuario)
+            EmpleadoActual = ListaPersonas.FirstOrDefault(Function(x) x.Rut = MetroTextBox2.Text.Trim())
+            EmpleadoActual.IDUsuario = IdUsuario
+            Dim Estado As String = EmpleadoActual.Estado
+
+            FormatearTabControl(IdUsuario, EmpleadoActual)
             LLenaDatosUsuario(IdUsuario)
 
 
         End If
     End Sub
 
-    Private Sub FormatearTabControl(IdUsuario As Integer)
+    Private Sub FormatearTabControl(IdUsuario As Integer, Empleado As Persona)
 
         If (IdUsuario <> 0) Then
             CmbBx_Usuarios.SelectedValue = IdUsuario
@@ -374,7 +376,7 @@ Public Class Frm_Parametros2
         End If
     End Sub
 
-    Private Sub MaterialSingleLineTextField3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MaterialSingleLineTextField3.KeyPress, MaterialSingleLineTextField4.KeyPress
+    Private Sub MaterialSingleLineTextField3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MaterialSingleLineTextField3.KeyPress, MaterialSingleLineTextField4.KeyPress, MaterialSingleLineTextField2.KeyPress, MaterialSingleLineTextField1.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Back) OrElse
             e.KeyChar = Convert.ToChar(Keys.Delete) OrElse
             e.KeyChar = Convert.ToChar(Keys.Left) OrElse
@@ -395,14 +397,6 @@ Public Class Frm_Parametros2
 
     End Sub
 
-    Public Function IsNumber(inputvalue As String) As Boolean
-
-        Dim isnumber_1 As New System.Text.RegularExpressions.Regex("^[0-9]*$")
-        'Dim isnumber__1 As New System.Text.RegularExpressions.Regex("^-?[0-9]+(\.?[0-9]+)?$")
-        Return isnumber_1.IsMatch(inputvalue)
-
-    End Function
-
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If (MaterialSingleLineTextField3.Text.Trim.Length = 0) Then
             MetroFramework.MetroMessageBox.Show(Me, "La Contraseña Numerica no puede estar Vacia",
@@ -422,7 +416,7 @@ Public Class Frm_Parametros2
                                        MessageBoxIcon.Question,
                                        370) = DialogResult.Yes) Then
 
-            CambiarContraseña(CmbBx_Usuarios.SelectedValue)
+            CambiarContraseña(MaterialSingleLineTextField3.Text.Trim())
             PictureBox1.Visible = False
             MaterialSingleLineTextField3.Text = ""
             MaterialSingleLineTextField4.Text = ""
@@ -432,19 +426,19 @@ Public Class Frm_Parametros2
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        If (MaterialSingleLineTextField3.Text.Trim.Length = 0) Then
+        If (MaterialSingleLineTextField2.Text.Trim.Length = 0) Then
             MetroFramework.MetroMessageBox.Show(Me, "La Contraseña Numerica no puede estar Vacia",
                                        "Registro de Usuario",
                                        MessageBoxButtons.YesNoCancel,
                                        MessageBoxIcon.Exclamation,
                                        370)
-        ElseIf (MaterialSingleLineTextField3.Text <> MaterialSingleLineTextField4.Text) Then
+        ElseIf (MaterialSingleLineTextField2.Text <> MaterialSingleLineTextField1.Text) Then
             MetroFramework.MetroMessageBox.Show(Me, "No Coinciden la Contraseña y su Verificación",
                                        "Registro de Usuario",
                                        MessageBoxButtons.YesNoCancel,
                                        MessageBoxIcon.Exclamation,
                                        370)
-        ElseIf (MetroFramework.MetroMessageBox.Show(Me, "¿Registrar EL Usuario " + MetroTextBox2.Text.Trim() + "  " + MetroTextBox1.Text.Trim() + "?",
+        ElseIf (MetroFramework.MetroMessageBox.Show(Me, "¿Registrar El Usuario " + MetroTextBox2.Text.Trim() + "  " + MetroTextBox1.Text.Trim() + "?",
                                        "Registro de Usuario",
                                        MessageBoxButtons.YesNoCancel,
                                        MessageBoxIcon.Question,
@@ -458,14 +452,7 @@ Public Class Frm_Parametros2
         End If
     End Sub
 
-    Private Sub CambiarContraseña(IDUsuario As String)
-
-    End Sub
-    Private Sub RegistrarUsuario(IDUsuario As String)
-
-    End Sub
-
-    Private Sub MaterialSingleLineTextField3_TextChanged(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField3.TextChanged, MaterialSingleLineTextField4.TextChanged
+    Private Sub MaterialSingleLineTextField3_TextChanged(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField3.TextChanged, MaterialSingleLineTextField4.TextChanged, MaterialSingleLineTextField2.TextChanged, MaterialSingleLineTextField1.TextChanged
         If (MaterialSingleLineTextField3.Text = MaterialSingleLineTextField4.Text And MaterialSingleLineTextField4.Text.Trim.Length > 0) Then
             PictureBox1.Visible = True
         Else
@@ -478,6 +465,36 @@ Public Class Frm_Parametros2
             PictureBox2.Visible = False
         End If
     End Sub
+
+    Private Sub CambiarContraseña(Password As String)
+
+        EmpleadoActual.Password = Password
+        EmpleadoActual.ActualizarContraseña()
+
+    End Sub
+    Private Sub RegistrarUsuario(IDUsuario As String)
+
+    End Sub
+
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles Button2.MouseLeave, Button1.MouseLeave, Bttn_Actualiza.MouseLeave, Button3.MouseLeave
+        Dim btn As Button = CType(sender, Button)
+        btn.Location = New Point(btn.Location.X + 5, btn.Location.Y + 5)
+        btn.Size = New Size(btn.Width - 10, btn.Height - 10)
+    End Sub
+
+    Private Sub Button_MouseEnter(sender As Object, e As EventArgs) Handles Button2.MouseEnter, Button1.MouseEnter, Bttn_Actualiza.MouseEnter, Button3.MouseEnter
+        Dim btn As Button = CType(sender, Button)
+        btn.Location = New Point(btn.Location.X - 5, btn.Location.Y - 5)
+        btn.Size = New Size(btn.Width + 10, btn.Height + 10)
+    End Sub
+    Public Function IsNumber(inputvalue As String) As Boolean
+
+        Dim isnumber_1 As New System.Text.RegularExpressions.Regex("^[0-9]*$")
+        'Dim isnumber__1 As New System.Text.RegularExpressions.Regex("^-?[0-9]+(\.?[0-9]+)?$")
+        Return isnumber_1.IsMatch(inputvalue)
+
+    End Function
+
 
 
 End Class

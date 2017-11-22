@@ -110,6 +110,11 @@ Public Class Login
                         MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
                         MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
 
+                        MDIParent1.NombreUsuario = dt.Rows(0)("Nombre").ToString.ToUpper
+                        MDIParent1.NombreEmpresa = dt.Rows(0)("Empresa").ToString.ToUpper
+                        MDIParent1.RutUsuario = dt.Rows(0)("Rut").ToString
+                        MDIParent1.RutEmpresa = dt.Rows(0)("RutEmp").ToString
+
                     End If
                 Else
                     MetroFramework.MetroMessageBox.Show(MdiParent, "Numero de RUT No Registrado en la Base de Datos",
@@ -174,6 +179,11 @@ Public Class Login
                     MDIParent1.Lbl_Cod_ID.Refresh()
                     MDIParent1.Lbl_RutTrab.Text = TxtBx_UserID.Text
                     MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
+
+                    MDIParent1.NombreUsuario = dt.Rows(0)("Nombre").ToString.ToUpper
+                    MDIParent1.NombreEmpresa = dt.Rows(0)("Empresa").ToString.ToUpper
+                    MDIParent1.RutUsuario = dt.Rows(0)("Rut").ToString
+                    MDIParent1.RutEmpresa = dt.Rows(0)("RutEmp").ToString
                     Try
                         MDIParent1.PcturBx_Image.Image = Image.FromFile("\\FSSAPBO\gestper\Mindugar_sa\Images\" + dt.Rows(0)("Rut_Empleado").ToString + ".jpg")
                     Catch ex As Exception
@@ -201,6 +211,7 @@ Public Class Login
                 cmd = New SqlCommand("PassIniciarSesion", conexion)
                 cmd.CommandType = CommandType.StoredProcedure
                 conexion.Open()
+                Dim Usuario = MDIParent1.Lbl_RutTrab.Text
                 cmd.Parameters.Add(New SqlParameter("@Usuario", MDIParent1.Lbl_RutTrab.Text))
                 cmd.Parameters.Add(New SqlParameter("@Contraseña", TxtBx_Password.Text))
                 cmd.Parameters.Add(New SqlParameter("@Sistema", "RRHH"))
@@ -327,6 +338,7 @@ Public Class Login
                 Else
                     TxtBx_Password.Text = ""
                     TxtBx_Password.Focus()
+                    FocusedTxt = 2
                 End If
             End If
 
@@ -462,7 +474,7 @@ Public Class Login
     End Sub
 
     Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter  ' Al hacer Focus se cambia el Tag
-
+        FocusedTxt = 2
     End Sub
 
     Private Sub TxtBx_ConfPass_Enter(sender As Object, e As EventArgs) Handles TxtBx_ConfPass.Enter

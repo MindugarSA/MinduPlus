@@ -30,19 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SpInformeActaBajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new CapaPresentacion.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SpInformeEtiquetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSet1 = new CapaPresentacion.DataSet1();
             this.SpInformeEtiquetasTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeEtiquetasTableAdapter();
-            this.SpInformeActaBajaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SpInformeActaBajaTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeActaBajaTableAdapter();
             this.SpInformeEntregaInstrumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SpInformeEntregaInstrumentoTableAdapter = new CapaPresentacion.DataSet1TableAdapters.SpInformeEntregaInstrumentoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeActaBajaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeEntregaInstrumentoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SpInformeActaBajaBindingSource
+            // 
+            this.SpInformeActaBajaBindingSource.DataMember = "SpInformeActaBaja";
+            this.SpInformeActaBajaBindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -63,19 +73,9 @@
             this.SpInformeEtiquetasBindingSource.DataMember = "SpInformeEtiquetas";
             this.SpInformeEtiquetasBindingSource.DataSource = this.DataSet1;
             // 
-            // DataSet1
-            // 
-            this.DataSet1.DataSetName = "DataSet1";
-            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // SpInformeEtiquetasTableAdapter
             // 
             this.SpInformeEtiquetasTableAdapter.ClearBeforeFill = true;
-            // 
-            // SpInformeActaBajaBindingSource
-            // 
-            this.SpInformeActaBajaBindingSource.DataMember = "SpInformeActaBaja";
-            this.SpInformeActaBajaBindingSource.DataSource = this.DataSet1;
             // 
             // SpInformeActaBajaTableAdapter
             // 
@@ -99,9 +99,9 @@
             this.Name = "FrmInformes";
             this.Text = "FrmInformes";
             this.Load += new System.EventHandler(this.FrmInformes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeActaBajaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpInformeEtiquetasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpInformeEntregaInstrumentoBindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -1249,6 +1249,8 @@ namespace CapaPresentacion {
             
             private global::System.Data.DataColumn columnSupervisor;
             
+            private global::System.Data.DataColumn columnIdentidad;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SpInformeEntregaInstrumentoDataTable() {
@@ -1388,6 +1390,14 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdentidadColumn {
+                get {
+                    return this.columnIdentidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1423,7 +1433,7 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SpInformeEntregaInstrumentoRow AddSpInformeEntregaInstrumentoRow(string Rut, string Nom_Trab, System.DateTime fecingreso, string RutEmp, string Empresa, string Area, string Cargo, string Codigo, string Descripcion, string Estado, string Frecuencia, System.DateTime Ingreso, string Supervisor) {
+            public SpInformeEntregaInstrumentoRow AddSpInformeEntregaInstrumentoRow(string Rut, string Nom_Trab, System.DateTime fecingreso, string RutEmp, string Empresa, string Area, string Cargo, string Codigo, string Descripcion, string Estado, string Frecuencia, System.DateTime Ingreso, string Supervisor, int Identidad) {
                 SpInformeEntregaInstrumentoRow rowSpInformeEntregaInstrumentoRow = ((SpInformeEntregaInstrumentoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Rut,
@@ -1438,7 +1448,8 @@ namespace CapaPresentacion {
                         Estado,
                         Frecuencia,
                         Ingreso,
-                        Supervisor};
+                        Supervisor,
+                        Identidad};
                 rowSpInformeEntregaInstrumentoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSpInformeEntregaInstrumentoRow);
                 return rowSpInformeEntregaInstrumentoRow;
@@ -1474,6 +1485,7 @@ namespace CapaPresentacion {
                 this.columnFrecuencia = base.Columns["Frecuencia"];
                 this.columnIngreso = base.Columns["Ingreso"];
                 this.columnSupervisor = base.Columns["Supervisor"];
+                this.columnIdentidad = base.Columns["Identidad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1505,6 +1517,8 @@ namespace CapaPresentacion {
                 base.Columns.Add(this.columnIngreso);
                 this.columnSupervisor = new global::System.Data.DataColumn("Supervisor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSupervisor);
+                this.columnIdentidad = new global::System.Data.DataColumn("Identidad", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdentidad);
                 this.columnRut.MaxLength = 50;
                 this.columnNom_Trab.ReadOnly = true;
                 this.columnNom_Trab.MaxLength = 250;
@@ -1523,6 +1537,7 @@ namespace CapaPresentacion {
                 this.columnFrecuencia.MaxLength = 100;
                 this.columnSupervisor.ReadOnly = true;
                 this.columnSupervisor.MaxLength = 250;
+                this.columnIdentidad.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2602,6 +2617,17 @@ namespace CapaPresentacion {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Identidad {
+                get {
+                    return ((int)(this[this.tableSpInformeEntregaInstrumento.IdentidadColumn]));
+                }
+                set {
+                    this[this.tableSpInformeEntregaInstrumento.IdentidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRutNull() {
                 return this.IsNull(this.tableSpInformeEntregaInstrumento.RutColumn);
             }
@@ -3372,6 +3398,7 @@ namespace CapaPresentacion.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Frecuencia", "Frecuencia");
             tableMapping.ColumnMappings.Add("Ingreso", "Ingreso");
             tableMapping.ColumnMappings.Add("Supervisor", "Supervisor");
+            tableMapping.ColumnMappings.Add("Identidad", "Identidad");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
