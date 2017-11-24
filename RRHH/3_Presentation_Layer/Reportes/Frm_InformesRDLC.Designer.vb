@@ -23,27 +23,18 @@ Partial Class Frm_InformesRDLC
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.SpPRE_LIQUIDACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MINDU_INTERMEDIA = New RRHH.MINDU_INTERMEDIA()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.reportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SpPRE_LIQUIDACIONTableAdapter = New RRHH.MINDU_INTERMEDIATableAdapters.SpPRE_LIQUIDACIONTableAdapter()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        CType(Me.SpPRE_LIQUIDACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SpPRELIQUIDACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MINDU_INTERMEDIA = New RRHH.MINDU_INTERMEDIA()
+        Me.SpPRE_LIQUIDACIONBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SpPRE_LIQUIDACIONTableAdapter = New RRHH.MINDU_INTERMEDIATableAdapters.SpPRE_LIQUIDACIONTableAdapter()
+        CType(Me.SpPRELIQUIDACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MINDU_INTERMEDIA, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SpPRE_LIQUIDACIONBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'SpPRE_LIQUIDACIONBindingSource
-        '
-        Me.SpPRE_LIQUIDACIONBindingSource.DataMember = "SpPRE_LIQUIDACION"
-        Me.SpPRE_LIQUIDACIONBindingSource.DataSource = Me.MINDU_INTERMEDIA
-        '
-        'MINDU_INTERMEDIA
-        '
-        Me.MINDU_INTERMEDIA.DataSetName = "MINDU_INTERMEDIA"
-        Me.MINDU_INTERMEDIA.EnforceConstraints = False
-        Me.MINDU_INTERMEDIA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'reportViewer1
         '
@@ -51,19 +42,15 @@ Partial Class Frm_InformesRDLC
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.SpPRE_LIQUIDACIONBindingSource
-        Me.reportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.SpPRELIQUIDACIONBindingSource
+        Me.reportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.reportViewer1.LocalReport.ReportEmbeddedResource = "RRHH.RptPreLiquidacion.rdlc"
         Me.reportViewer1.Location = New System.Drawing.Point(20, 60)
         Me.reportViewer1.Name = "reportViewer1"
         Me.reportViewer1.ServerReport.BearerToken = Nothing
         Me.reportViewer1.Size = New System.Drawing.Size(1075, 454)
         Me.reportViewer1.TabIndex = 1
-        '
-        'SpPRE_LIQUIDACIONTableAdapter
-        '
-        Me.SpPRE_LIQUIDACIONTableAdapter.ClearBeforeFill = True
         '
         'Button1
         '
@@ -105,6 +92,26 @@ Partial Class Frm_InformesRDLC
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomRight
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'SpPRELIQUIDACIONBindingSource
+        '
+        Me.SpPRELIQUIDACIONBindingSource.DataMember = "SpPRE_LIQUIDACION"
+        Me.SpPRELIQUIDACIONBindingSource.DataSource = Me.MINDU_INTERMEDIA
+        '
+        'MINDU_INTERMEDIA
+        '
+        Me.MINDU_INTERMEDIA.DataSetName = "MINDU_INTERMEDIA"
+        Me.MINDU_INTERMEDIA.EnforceConstraints = False
+        Me.MINDU_INTERMEDIA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SpPRE_LIQUIDACIONBindingSource
+        '
+        Me.SpPRE_LIQUIDACIONBindingSource.DataMember = "SpPRE_LIQUIDACION"
+        Me.SpPRE_LIQUIDACIONBindingSource.DataSource = Me.MINDU_INTERMEDIA
+        '
+        'SpPRE_LIQUIDACIONTableAdapter
+        '
+        Me.SpPRE_LIQUIDACIONTableAdapter.ClearBeforeFill = True
+        '
         'Frm_InformesRDLC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -118,8 +125,9 @@ Partial Class Frm_InformesRDLC
         Me.MinimizeBox = False
         Me.Name = "Frm_InformesRDLC"
         Me.Text = "Frm_InformesRDLC"
-        CType(Me.SpPRE_LIQUIDACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpPRELIQUIDACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MINDU_INTERMEDIA, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SpPRE_LIQUIDACIONBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -127,7 +135,8 @@ Partial Class Frm_InformesRDLC
     Private WithEvents reportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents SpPRE_LIQUIDACIONBindingSource As BindingSource
     Friend WithEvents MINDU_INTERMEDIA As MINDU_INTERMEDIA
-    Friend WithEvents SpPRE_LIQUIDACIONTableAdapter As MINDU_INTERMEDIATableAdapters.SpPRE_LIQUIDACIONTableAdapter
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents SpPRELIQUIDACIONBindingSource As BindingSource
+    Friend WithEvents SpPRE_LIQUIDACIONTableAdapter As MINDU_INTERMEDIATableAdapters.SpPRE_LIQUIDACIONTableAdapter
 End Class

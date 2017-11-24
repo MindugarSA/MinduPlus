@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_InformePreLiquidaciones
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class Frm_InformeLiquidaciones
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_InformePreLiquidaciones
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.MetroTextBox2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -32,15 +32,10 @@ Partial Class Frm_InformePreLiquidaciones
         Me.btnImprimirInforme = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroToggle1 = New MetroFramework.Controls.MetroToggle()
-        Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -57,7 +52,7 @@ Partial Class Frm_InformePreLiquidaciones
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(8, 14)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(965, 170)
+        Me.GroupBox1.Size = New System.Drawing.Size(965, 149)
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Impresion de Recibos Liquidacion"
@@ -173,8 +168,8 @@ Partial Class Frm_InformePreLiquidaciones
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
+        Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -183,80 +178,27 @@ Partial Class Frm_InformePreLiquidaciones
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.MetroLabel4)
-        Me.GroupBox2.Controls.Add(Me.MetroToggle1)
-        Me.GroupBox2.Controls.Add(Me.MetroComboBox2)
-        Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 11.25!)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 191)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(965, 126)
-        Me.GroupBox2.TabIndex = 30
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Activacion de Recibo PreLiquidacion"
-        '
-        'MetroLabel4
-        '
-        Me.MetroLabel4.AutoSize = True
-        Me.MetroLabel4.Location = New System.Drawing.Point(97, 60)
-        Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(58, 19)
-        Me.MetroLabel4.TabIndex = 33
-        Me.MetroLabel4.Text = "Periodo:"
-        '
-        'MetroToggle1
-        '
-        Me.MetroToggle1.AutoSize = True
-        Me.MetroToggle1.Location = New System.Drawing.Point(455, 57)
-        Me.MetroToggle1.Name = "MetroToggle1"
-        Me.MetroToggle1.Size = New System.Drawing.Size(80, 24)
-        Me.MetroToggle1.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroToggle1.TabIndex = 4
-        Me.MetroToggle1.Text = "Off"
-        Me.MetroToggle1.UseCustomBackColor = True
-        Me.MetroToggle1.UseCustomForeColor = True
-        Me.MetroToggle1.UseSelectable = True
-        Me.MetroToggle1.UseStyleColors = True
-        '
-        'MetroComboBox2
-        '
-        Me.MetroComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.MetroComboBox2.FormattingEnabled = True
-        Me.MetroComboBox2.ItemHeight = 23
-        Me.MetroComboBox2.Location = New System.Drawing.Point(163, 55)
-        Me.MetroComboBox2.Name = "MetroComboBox2"
-        Me.MetroComboBox2.Size = New System.Drawing.Size(276, 29)
-        Me.MetroComboBox2.TabIndex = 32
-        Me.MetroComboBox2.UseSelectable = True
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.GroupBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 22)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(932, 83)
-        Me.GroupBox3.TabIndex = 34
-        Me.GroupBox3.TabStop = False
+        Me.GroupBox2.Controls.Add(Me.WebBrowser1)
+        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 11.25!)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 154)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(965, 398)
+        Me.GroupBox2.TabIndex = 30
+        Me.GroupBox2.TabStop = False
         '
-        'Label1
+        'WebBrowser1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(557, 31)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(212, 32)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "DESACTIVADO"
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(3, 23)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(959, 372)
+        Me.WebBrowser1.TabIndex = 1
         '
-        'Frm_InformePreLiquidaciones
+        'Frm_InformeLiquidaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -264,14 +206,11 @@ Partial Class Frm_InformePreLiquidaciones
         Me.ClientSize = New System.Drawing.Size(985, 562)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Frm_InformePreLiquidaciones"
+        Me.Name = "Frm_InformeLiquidaciones"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -286,9 +225,5 @@ Partial Class Frm_InformePreLiquidaciones
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents MetroToggle1 As MetroFramework.Controls.MetroToggle
-    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

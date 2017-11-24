@@ -54,6 +54,7 @@
               <Mapping SourceColumn="Anio" DataSetColumn="Anio" />
               <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
               <Mapping SourceColumn="FechaPeriodo" DataSetColumn="FechaPeriodo" />
+              <Mapping SourceColumn="idper_liq" DataSetColumn="idper_liq" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -68,45 +69,45 @@
         <xs:element name="SpPRE_LIQUIDACION" msprop:Generator_TableClassName="SpPRE_LIQUIDACIONDataTable" msprop:Generator_TableVarName="tableSpPRE_LIQUIDACION" msprop:Generator_TablePropName="SpPRE_LIQUIDACION" msprop:Generator_RowDeletingName="SpPRE_LIQUIDACIONRowDeleting" msprop:Generator_RowChangingName="SpPRE_LIQUIDACIONRowChanging" msprop:Generator_RowEvHandlerName="SpPRE_LIQUIDACIONRowChangeEventHandler" msprop:Generator_RowDeletedName="SpPRE_LIQUIDACIONRowDeleted" msprop:Generator_UserTableName="SpPRE_LIQUIDACION" msprop:Generator_RowChangedName="SpPRE_LIQUIDACIONRowChanged" msprop:Generator_RowEvArgName="SpPRE_LIQUIDACIONRowChangeEvent" msprop:Generator_RowClassName="SpPRE_LIQUIDACIONRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa">
+              <xs:element name="Empresa" msprop:Generator_ColumnVarNameInTable="columnEmpresa" msprop:Generator_ColumnPropNameInRow="Empresa" msprop:Generator_ColumnPropNameInTable="EmpresaColumn" msprop:Generator_UserColumnName="Empresa" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="17" />
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RutEmp" msprop:Generator_ColumnVarNameInTable="columnRutEmp" msprop:Generator_ColumnPropNameInRow="RutEmp" msprop:Generator_ColumnPropNameInTable="RutEmpColumn" msprop:Generator_UserColumnName="RutEmp">
+              <xs:element name="RutEmp" msprop:Generator_ColumnVarNameInTable="columnRutEmp" msprop:Generator_ColumnPropNameInRow="RutEmp" msprop:Generator_ColumnPropNameInTable="RutEmpColumn" msprop:Generator_UserColumnName="RutEmp" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
+                    <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_UserColumnName="Direccion">
+              <xs:element name="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_UserColumnName="Direccion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="12" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Comuna" msprop:Generator_ColumnVarNameInTable="columnComuna" msprop:Generator_ColumnPropNameInRow="Comuna" msprop:Generator_ColumnPropNameInTable="ComunaColumn" msprop:Generator_UserColumnName="Comuna">
+              <xs:element name="Comuna" msprop:Generator_ColumnVarNameInTable="columnComuna" msprop:Generator_ColumnPropNameInRow="Comuna" msprop:Generator_ColumnPropNameInTable="ComunaColumn" msprop:Generator_UserColumnName="Comuna" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="rut" msprop:Generator_ColumnVarNameInTable="columnrut" msprop:Generator_ColumnPropNameInRow="rut" msprop:Generator_ColumnPropNameInTable="rutColumn" msprop:Generator_UserColumnName="rut" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
+                    <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Column1" msprop:Generator_ColumnVarNameInTable="columnColumn1" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_UserColumnName="Column1" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="62" />
+                    <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -114,54 +115,54 @@
               <xs:element name="depto" msprop:Generator_ColumnVarNameInTable="columndepto" msprop:Generator_ColumnPropNameInRow="depto" msprop:Generator_ColumnPropNameInTable="deptoColumn" msprop:Generator_UserColumnName="depto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DescDepto" msprop:Generator_ColumnVarNameInTable="columnDescDepto" msprop:Generator_ColumnPropNameInRow="DescDepto" msprop:Generator_ColumnPropNameInTable="DescDeptoColumn" msprop:Generator_UserColumnName="DescDepto">
+              <xs:element name="DescDepto" msprop:Generator_ColumnVarNameInTable="columnDescDepto" msprop:Generator_ColumnPropNameInRow="DescDepto" msprop:Generator_ColumnPropNameInTable="DescDeptoColumn" msprop:Generator_UserColumnName="DescDepto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
+                    <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="cargo" msprop:Generator_ColumnVarNameInTable="columncargo" msprop:Generator_ColumnPropNameInRow="cargo" msprop:Generator_ColumnPropNameInTable="cargoColumn" msprop:Generator_UserColumnName="cargo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DescCargo" msprop:Generator_ColumnVarNameInTable="columnDescCargo" msprop:Generator_ColumnPropNameInRow="DescCargo" msprop:Generator_ColumnPropNameInTable="DescCargoColumn" msprop:Generator_UserColumnName="DescCargo">
+              <xs:element name="DescCargo" msprop:Generator_ColumnVarNameInTable="columnDescCargo" msprop:Generator_ColumnPropNameInRow="DescCargo" msprop:Generator_ColumnPropNameInTable="DescCargoColumn" msprop:Generator_UserColumnName="DescCargo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="codcon_liq" msprop:Generator_ColumnVarNameInTable="columncodcon_liq" msprop:Generator_ColumnPropNameInRow="codcon_liq" msprop:Generator_ColumnPropNameInTable="codcon_liqColumn" msprop:Generator_UserColumnName="codcon_liq">
+              <xs:element name="codcon_liq" msprop:Generator_ColumnVarNameInTable="columncodcon_liq" msprop:Generator_ColumnPropNameInRow="codcon_liq" msprop:Generator_ColumnPropNameInTable="codcon_liqColumn" msprop:Generator_UserColumnName="codcon_liq" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="6" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Column2" msprop:Generator_ColumnVarNameInTable="columnColumn2" msprop:Generator_ColumnPropNameInRow="Column2" msprop:Generator_ColumnPropNameInTable="Column2Column" msprop:Generator_UserColumnName="Column2" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
+                    <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="cantid_liq" msprop:Generator_ColumnVarNameInTable="columncantid_liq" msprop:Generator_ColumnPropNameInRow="cantid_liq" msprop:Generator_ColumnPropNameInTable="cantid_liqColumn" msprop:Generator_UserColumnName="cantid_liq" type="xs:decimal" />
+              <xs:element name="cantid_liq" msprop:Generator_ColumnVarNameInTable="columncantid_liq" msprop:Generator_ColumnPropNameInRow="cantid_liq" msprop:Generator_ColumnPropNameInTable="cantid_liqColumn" msprop:Generator_UserColumnName="cantid_liq" type="xs:decimal" minOccurs="0" />
               <xs:element name="tipcan_liq" msprop:Generator_ColumnVarNameInTable="columntipcan_liq" msprop:Generator_ColumnPropNameInRow="tipcan_liq" msprop:Generator_ColumnPropNameInTable="tipcan_liqColumn" msprop:Generator_UserColumnName="tipcan_liq" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="monto_liq" msprop:Generator_ColumnVarNameInTable="columnmonto_liq" msprop:Generator_ColumnPropNameInRow="monto_liq" msprop:Generator_ColumnPropNameInTable="monto_liqColumn" msprop:Generator_UserColumnName="monto_liq" type="xs:decimal" />
+              <xs:element name="monto_liq" msprop:Generator_ColumnVarNameInTable="columnmonto_liq" msprop:Generator_ColumnPropNameInRow="monto_liq" msprop:Generator_ColumnPropNameInTable="monto_liqColumn" msprop:Generator_UserColumnName="monto_liq" type="xs:decimal" minOccurs="0" />
               <xs:element name="condicion" msprop:Generator_ColumnVarNameInTable="columncondicion" msprop:Generator_ColumnPropNameInRow="condicion" msprop:Generator_ColumnPropNameInTable="condicionColumn" msprop:Generator_UserColumnName="condicion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -169,7 +170,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ord_liq" msprop:Generator_ColumnVarNameInTable="columnord_liq" msprop:Generator_ColumnPropNameInRow="ord_liq" msprop:Generator_ColumnPropNameInTable="ord_liqColumn" msprop:Generator_UserColumnName="ord_liq" type="xs:int" />
+              <xs:element name="ord_liq" msprop:Generator_ColumnVarNameInTable="columnord_liq" msprop:Generator_ColumnPropNameInRow="ord_liq" msprop:Generator_ColumnPropNameInTable="ord_liqColumn" msprop:Generator_UserColumnName="ord_liq" type="xs:int" minOccurs="0" />
               <xs:element name="condic_liq" msprop:Generator_ColumnVarNameInTable="columncondic_liq" msprop:Generator_ColumnPropNameInRow="condic_liq" msprop:Generator_ColumnPropNameInTable="condic_liqColumn" msprop:Generator_UserColumnName="condic_liq" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -177,16 +178,17 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="BaseSueldo" msprop:Generator_ColumnVarNameInTable="columnBaseSueldo" msprop:Generator_ColumnPropNameInRow="BaseSueldo" msprop:Generator_ColumnPropNameInTable="BaseSueldoColumn" msprop:Generator_UserColumnName="BaseSueldo" type="xs:decimal" />
-              <xs:element name="BaseImp" msprop:Generator_ColumnVarNameInTable="columnBaseImp" msprop:Generator_ColumnPropNameInRow="BaseImp" msprop:Generator_ColumnPropNameInTable="BaseImpColumn" msprop:Generator_UserColumnName="BaseImp" type="xs:int" />
-              <xs:element name="BaseImpUni" msprop:Generator_ColumnVarNameInTable="columnBaseImpUni" msprop:Generator_ColumnPropNameInRow="BaseImpUni" msprop:Generator_ColumnPropNameInTable="BaseImpUniColumn" msprop:Generator_UserColumnName="BaseImpUni" type="xs:int" />
-              <xs:element name="alcanceliq_lr" msprop:Generator_ColumnVarNameInTable="columnalcanceliq_lr" msprop:Generator_ColumnPropNameInRow="alcanceliq_lr" msprop:Generator_ColumnPropNameInTable="alcanceliq_lrColumn" msprop:Generator_UserColumnName="alcanceliq_lr" type="xs:int" />
+              <xs:element name="BaseSueldo" msprop:Generator_ColumnVarNameInTable="columnBaseSueldo" msprop:Generator_ColumnPropNameInRow="BaseSueldo" msprop:Generator_ColumnPropNameInTable="BaseSueldoColumn" msprop:Generator_UserColumnName="BaseSueldo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BaseImp" msprop:Generator_ColumnVarNameInTable="columnBaseImp" msprop:Generator_ColumnPropNameInRow="BaseImp" msprop:Generator_ColumnPropNameInTable="BaseImpColumn" msprop:Generator_UserColumnName="BaseImp" type="xs:int" minOccurs="0" />
+              <xs:element name="BaseImpUni" msprop:Generator_ColumnVarNameInTable="columnBaseImpUni" msprop:Generator_ColumnPropNameInRow="BaseImpUni" msprop:Generator_ColumnPropNameInTable="BaseImpUniColumn" msprop:Generator_UserColumnName="BaseImpUni" type="xs:int" minOccurs="0" />
+              <xs:element name="alcanceliq_lr" msprop:Generator_ColumnVarNameInTable="columnalcanceliq_lr" msprop:Generator_ColumnPropNameInRow="alcanceliq_lr" msprop:Generator_ColumnPropNameInTable="alcanceliq_lrColumn" msprop:Generator_UserColumnName="alcanceliq_lr" type="xs:int" minOccurs="0" />
               <xs:element name="TotHaberes" msprop:Generator_ColumnVarNameInTable="columnTotHaberes" msprop:Generator_ColumnPropNameInRow="TotHaberes" msprop:Generator_ColumnPropNameInTable="TotHaberesColumn" msprop:Generator_UserColumnName="TotHaberes" type="xs:decimal" minOccurs="0" />
-              <xs:element name="GrupoC" msprop:Generator_ColumnVarNameInTable="columnGrupoC" msprop:Generator_ColumnPropNameInRow="GrupoC" msprop:Generator_ColumnPropNameInTable="GrupoCColumn" msprop:Generator_UserColumnName="GrupoC" type="xs:int" />
-              <xs:element name="GrupoT" msprop:Generator_ColumnVarNameInTable="columnGrupoT" msprop:Generator_ColumnPropNameInRow="GrupoT" msprop:Generator_ColumnPropNameInTable="GrupoTColumn" msprop:Generator_UserColumnName="GrupoT" type="xs:int" />
-              <xs:element name="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:int" />
-              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" />
-              <xs:element name="FechaPeriodo" msprop:Generator_ColumnVarNameInTable="columnFechaPeriodo" msprop:Generator_ColumnPropNameInRow="FechaPeriodo" msprop:Generator_ColumnPropNameInTable="FechaPeriodoColumn" msprop:Generator_UserColumnName="FechaPeriodo" type="xs:int" />
+              <xs:element name="GrupoC" msprop:Generator_ColumnVarNameInTable="columnGrupoC" msprop:Generator_ColumnPropNameInRow="GrupoC" msprop:Generator_ColumnPropNameInTable="GrupoCColumn" msprop:Generator_UserColumnName="GrupoC" type="xs:int" minOccurs="0" />
+              <xs:element name="GrupoT" msprop:Generator_ColumnVarNameInTable="columnGrupoT" msprop:Generator_ColumnPropNameInRow="GrupoT" msprop:Generator_ColumnPropNameInTable="GrupoTColumn" msprop:Generator_UserColumnName="GrupoT" type="xs:int" minOccurs="0" />
+              <xs:element name="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:int" minOccurs="0" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
+              <xs:element name="FechaPeriodo" msprop:Generator_ColumnVarNameInTable="columnFechaPeriodo" msprop:Generator_ColumnPropNameInRow="FechaPeriodo" msprop:Generator_ColumnPropNameInTable="FechaPeriodoColumn" msprop:Generator_UserColumnName="FechaPeriodo" type="xs:int" minOccurs="0" />
+              <xs:element name="idper_liq" msprop:Generator_ColumnVarNameInTable="columnidper_liq" msprop:Generator_ColumnPropNameInRow="idper_liq" msprop:Generator_ColumnPropNameInTable="idper_liqColumn" msprop:Generator_UserColumnName="idper_liq" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

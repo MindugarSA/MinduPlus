@@ -99,6 +99,8 @@ Public Class Frm_Liquidaciones
         cmd.CommandType = CommandType.StoredProcedure
         Try
             conexion.Open()
+            Dim empresa = MDIParent1.Lbl_RutEmpresa.Text
+            Dim rut = MDIParent1.Lbl_RutTrab.Text
             cmd.Parameters.Add(New SqlParameter("@RutEmp", MDIParent1.Lbl_RutEmpresa.Text))
             cmd.Parameters.Add(New SqlParameter("@Rut", MDIParent1.Lbl_RutTrab.Text))
             cmd.Parameters.Add(New SqlParameter("@Mes", CmbBx_Meses.SelectedValue))

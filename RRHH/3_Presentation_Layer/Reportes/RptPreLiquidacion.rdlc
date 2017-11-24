@@ -761,9 +761,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIF(Fields!condic_liq.Value=5 Or Fields!codcon_liq.Value = "H00033",
+                              <Value>=IIF((Fields!condic_liq.Value=5 AND Fields!GrupoC.Value &gt; 1) Or Fields!codcon_liq.Value = "H00033",
 "",
-Sum(Fields!monto_liq.Value))</Value>
+Sum(IIF(Fields!condic_liq.Value=5,(Fields!monto_liq.Value * -1),Fields!monto_liq.Value)))</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -778,6 +778,9 @@ Sum(Fields!monto_liq.Value))</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox41</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>=Fields!GrupoC.Value &gt; 1</Hidden>
+                      </Visibility>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -792,6 +795,7 @@ Sum(Fields!monto_liq.Value))</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1038,7 +1042,6 @@ Sum(Fields!monto_liq.Value))</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

@@ -212,7 +212,7 @@ Public Class Frm_Parametros2
                 conexion.Close()
             End Try
         End If
-        LLenaDatosUsuario()
+        LLenaDatosUsuario(CmbBx_Usuarios.SelectedValue)
 
     End Sub
 

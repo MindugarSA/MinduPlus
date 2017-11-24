@@ -341,6 +341,8 @@ Partial Public Class MINDU_INTERMEDIA
         
         Private columnFechaPeriodo As Global.System.Data.DataColumn
         
+        Private columnidper_liq As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -609,6 +611,14 @@ Partial Public Class MINDU_INTERMEDIA
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property idper_liqColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnidper_liq
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -674,9 +684,10 @@ Partial Public Class MINDU_INTERMEDIA
                     ByVal GrupoT As Integer,  _
                     ByVal Anio As Integer,  _
                     ByVal Mes As Integer,  _
-                    ByVal FechaPeriodo As Integer) As SpPRE_LIQUIDACIONRow
+                    ByVal FechaPeriodo As Integer,  _
+                    ByVal idper_liq As Integer) As SpPRE_LIQUIDACIONRow
             Dim rowSpPRE_LIQUIDACIONRow As SpPRE_LIQUIDACIONRow = CType(Me.NewRow,SpPRE_LIQUIDACIONRow)
-            Dim columnValuesArray() As Object = New Object() {Empresa, RutEmp, Direccion, Comuna, rut, Column1, fecingreso, depto, DescDepto, cargo, DescCargo, codcon_liq, Column2, cantid_liq, tipcan_liq, monto_liq, condicion, ord_liq, condic_liq, BaseSueldo, BaseImp, BaseImpUni, alcanceliq_lr, TotHaberes, GrupoC, GrupoT, Anio, Mes, FechaPeriodo}
+            Dim columnValuesArray() As Object = New Object() {Empresa, RutEmp, Direccion, Comuna, rut, Column1, fecingreso, depto, DescDepto, cargo, DescCargo, codcon_liq, Column2, cantid_liq, tipcan_liq, monto_liq, condicion, ord_liq, condic_liq, BaseSueldo, BaseImp, BaseImpUni, alcanceliq_lr, TotHaberes, GrupoC, GrupoT, Anio, Mes, FechaPeriodo, idper_liq}
             rowSpPRE_LIQUIDACIONRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSpPRE_LIQUIDACIONRow)
             Return rowSpPRE_LIQUIDACIONRow
@@ -728,6 +739,7 @@ Partial Public Class MINDU_INTERMEDIA
             Me.columnAnio = MyBase.Columns("Anio")
             Me.columnMes = MyBase.Columns("Mes")
             Me.columnFechaPeriodo = MyBase.Columns("FechaPeriodo")
+            Me.columnidper_liq = MyBase.Columns("idper_liq")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -791,40 +803,23 @@ Partial Public Class MINDU_INTERMEDIA
             MyBase.Columns.Add(Me.columnMes)
             Me.columnFechaPeriodo = New Global.System.Data.DataColumn("FechaPeriodo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechaPeriodo)
-            Me.columnEmpresa.AllowDBNull = false
-            Me.columnEmpresa.MaxLength = 17
-            Me.columnRutEmp.AllowDBNull = false
-            Me.columnRutEmp.MaxLength = 10
-            Me.columnDireccion.AllowDBNull = false
-            Me.columnDireccion.MaxLength = 12
-            Me.columnComuna.AllowDBNull = false
-            Me.columnComuna.MaxLength = 5
-            Me.columnrut.MaxLength = 11
-            Me.columnColumn1.MaxLength = 62
-            Me.columndepto.MaxLength = 6
-            Me.columnDescDepto.AllowDBNull = false
-            Me.columnDescDepto.MaxLength = 100
-            Me.columncargo.MaxLength = 6
-            Me.columnDescCargo.AllowDBNull = false
-            Me.columnDescCargo.MaxLength = 100
-            Me.columncodcon_liq.AllowDBNull = false
-            Me.columncodcon_liq.MaxLength = 6
-            Me.columnColumn2.MaxLength = 100
-            Me.columncantid_liq.AllowDBNull = false
-            Me.columntipcan_liq.MaxLength = 3
-            Me.columnmonto_liq.AllowDBNull = false
+            Me.columnidper_liq = New Global.System.Data.DataColumn("idper_liq", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnidper_liq)
+            Me.columnEmpresa.MaxLength = 100
+            Me.columnRutEmp.MaxLength = 20
+            Me.columnDireccion.MaxLength = 250
+            Me.columnComuna.MaxLength = 100
+            Me.columnrut.MaxLength = 15
+            Me.columnColumn1.MaxLength = 200
+            Me.columndepto.MaxLength = 50
+            Me.columnDescDepto.MaxLength = 150
+            Me.columncargo.MaxLength = 50
+            Me.columnDescCargo.MaxLength = 250
+            Me.columncodcon_liq.MaxLength = 50
+            Me.columnColumn2.MaxLength = 250
+            Me.columntipcan_liq.MaxLength = 10
             Me.columncondicion.MaxLength = 1
-            Me.columnord_liq.AllowDBNull = false
             Me.columncondic_liq.MaxLength = 1
-            Me.columnBaseSueldo.AllowDBNull = false
-            Me.columnBaseImp.AllowDBNull = false
-            Me.columnBaseImpUni.AllowDBNull = false
-            Me.columnalcanceliq_lr.AllowDBNull = false
-            Me.columnGrupoC.AllowDBNull = false
-            Me.columnGrupoT.AllowDBNull = false
-            Me.columnAnio.AllowDBNull = false
-            Me.columnMes.AllowDBNull = false
-            Me.columnFechaPeriodo.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -973,7 +968,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Empresa() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.EmpresaColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.EmpresaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Empresa' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.EmpresaColumn) = value
@@ -984,7 +983,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property RutEmp() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.RutEmpColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.RutEmpColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'RutEmp' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.RutEmpColumn) = value
@@ -995,7 +998,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Direccion() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.DireccionColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.DireccionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Direccion' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.DireccionColumn) = value
@@ -1006,7 +1013,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Comuna() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.ComunaColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.ComunaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Comuna' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.ComunaColumn) = value
@@ -1077,7 +1088,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property DescDepto() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.DescDeptoColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.DescDeptoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DescDepto' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.DescDeptoColumn) = value
@@ -1103,7 +1118,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property DescCargo() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.DescCargoColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.DescCargoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DescCargo' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.DescCargoColumn) = value
@@ -1114,7 +1133,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property codcon_liq() As String
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.codcon_liqColumn),String)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.codcon_liqColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'codcon_liq' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.codcon_liqColumn) = value
@@ -1140,7 +1163,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property cantid_liq() As Decimal
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.cantid_liqColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.cantid_liqColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'cantid_liq' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.cantid_liqColumn) = value
@@ -1166,7 +1193,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property monto_liq() As Decimal
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.monto_liqColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.monto_liqColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'monto_liq' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.monto_liqColumn) = value
@@ -1192,7 +1223,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property ord_liq() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.ord_liqColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.ord_liqColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ord_liq' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.ord_liqColumn) = value
@@ -1218,7 +1253,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property BaseSueldo() As Decimal
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.BaseSueldoColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.BaseSueldoColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'BaseSueldo' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.BaseSueldoColumn) = value
@@ -1229,7 +1268,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property BaseImp() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.BaseImpColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.BaseImpColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'BaseImp' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.BaseImpColumn) = value
@@ -1240,7 +1283,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property BaseImpUni() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.BaseImpUniColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.BaseImpUniColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'BaseImpUni' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.BaseImpUniColumn) = value
@@ -1251,7 +1298,12 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property alcanceliq_lr() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.alcanceliq_lrColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.alcanceliq_lrColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'alcanceliq_lr' de la tabla 'SpPRE_LIQUIDACION' es DBNull."& _ 
+                            "", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.alcanceliq_lrColumn) = value
@@ -1277,7 +1329,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property GrupoC() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.GrupoCColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.GrupoCColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'GrupoC' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.GrupoCColumn) = value
@@ -1288,7 +1344,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property GrupoT() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.GrupoTColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.GrupoTColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'GrupoT' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.GrupoTColumn) = value
@@ -1299,7 +1359,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Anio() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.AnioColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.AnioColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Anio' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.AnioColumn) = value
@@ -1310,7 +1374,11 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Mes() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.MesColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.MesColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Mes' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.MesColumn) = value
@@ -1321,12 +1389,79 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property FechaPeriodo() As Integer
             Get
-                Return CType(Me(Me.tableSpPRE_LIQUIDACION.FechaPeriodoColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.FechaPeriodoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'FechaPeriodo' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableSpPRE_LIQUIDACION.FechaPeriodoColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property idper_liq() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableSpPRE_LIQUIDACION.idper_liqColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'idper_liq' de la tabla 'SpPRE_LIQUIDACION' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSpPRE_LIQUIDACION.idper_liqColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsEmpresaNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.EmpresaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetEmpresaNull()
+            Me(Me.tableSpPRE_LIQUIDACION.EmpresaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsRutEmpNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.RutEmpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetRutEmpNull()
+            Me(Me.tableSpPRE_LIQUIDACION.RutEmpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDireccionNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.DireccionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDireccionNull()
+            Me(Me.tableSpPRE_LIQUIDACION.DireccionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsComunaNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.ComunaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetComunaNull()
+            Me(Me.tableSpPRE_LIQUIDACION.ComunaColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1378,6 +1513,18 @@ Partial Public Class MINDU_INTERMEDIA
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDescDeptoNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.DescDeptoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDescDeptoNull()
+            Me(Me.tableSpPRE_LIQUIDACION.DescDeptoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IscargoNull() As Boolean
             Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.cargoColumn)
         End Function
@@ -1386,6 +1533,30 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetcargoNull()
             Me(Me.tableSpPRE_LIQUIDACION.cargoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDescCargoNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.DescCargoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDescCargoNull()
+            Me(Me.tableSpPRE_LIQUIDACION.DescCargoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscodcon_liqNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.codcon_liqColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcodcon_liqNull()
+            Me(Me.tableSpPRE_LIQUIDACION.codcon_liqColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1402,6 +1573,18 @@ Partial Public Class MINDU_INTERMEDIA
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscantid_liqNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.cantid_liqColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcantid_liqNull()
+            Me(Me.tableSpPRE_LIQUIDACION.cantid_liqColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Istipcan_liqNull() As Boolean
             Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.tipcan_liqColumn)
         End Function
@@ -1410,6 +1593,18 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Settipcan_liqNull()
             Me(Me.tableSpPRE_LIQUIDACION.tipcan_liqColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Ismonto_liqNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.monto_liqColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setmonto_liqNull()
+            Me(Me.tableSpPRE_LIQUIDACION.monto_liqColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1426,6 +1621,18 @@ Partial Public Class MINDU_INTERMEDIA
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isord_liqNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.ord_liqColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setord_liqNull()
+            Me(Me.tableSpPRE_LIQUIDACION.ord_liqColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Iscondic_liqNull() As Boolean
             Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.condic_liqColumn)
         End Function
@@ -1438,6 +1645,54 @@ Partial Public Class MINDU_INTERMEDIA
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsBaseSueldoNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.BaseSueldoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetBaseSueldoNull()
+            Me(Me.tableSpPRE_LIQUIDACION.BaseSueldoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsBaseImpNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.BaseImpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetBaseImpNull()
+            Me(Me.tableSpPRE_LIQUIDACION.BaseImpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsBaseImpUniNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.BaseImpUniColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetBaseImpUniNull()
+            Me(Me.tableSpPRE_LIQUIDACION.BaseImpUniColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isalcanceliq_lrNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.alcanceliq_lrColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setalcanceliq_lrNull()
+            Me(Me.tableSpPRE_LIQUIDACION.alcanceliq_lrColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsTotHaberesNull() As Boolean
             Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.TotHaberesColumn)
         End Function
@@ -1446,6 +1701,78 @@ Partial Public Class MINDU_INTERMEDIA
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetTotHaberesNull()
             Me(Me.tableSpPRE_LIQUIDACION.TotHaberesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGrupoCNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.GrupoCColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGrupoCNull()
+            Me(Me.tableSpPRE_LIQUIDACION.GrupoCColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsGrupoTNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.GrupoTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetGrupoTNull()
+            Me(Me.tableSpPRE_LIQUIDACION.GrupoTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAnioNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.AnioColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAnioNull()
+            Me(Me.tableSpPRE_LIQUIDACION.AnioColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsMesNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.MesColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetMesNull()
+            Me(Me.tableSpPRE_LIQUIDACION.MesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFechaPeriodoNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.FechaPeriodoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFechaPeriodoNull()
+            Me(Me.tableSpPRE_LIQUIDACION.FechaPeriodoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isidper_liqNull() As Boolean
+            Return Me.IsNull(Me.tableSpPRE_LIQUIDACION.idper_liqColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setidper_liqNull()
+            Me(Me.tableSpPRE_LIQUIDACION.idper_liqColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1644,6 +1971,7 @@ Namespace MINDU_INTERMEDIATableAdapters
             tableMapping.ColumnMappings.Add("Anio", "Anio")
             tableMapping.ColumnMappings.Add("Mes", "Mes")
             tableMapping.ColumnMappings.Add("FechaPeriodo", "FechaPeriodo")
+            tableMapping.ColumnMappings.Add("idper_liq", "idper_liq")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         

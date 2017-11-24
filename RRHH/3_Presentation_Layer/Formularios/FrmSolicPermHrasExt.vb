@@ -92,7 +92,9 @@ Public Class FrmSolicPermHrasExt
         If Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).Any Then
             Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).First.Visible = False
         End If
-
+        If Application.OpenForms().OfType(Of Frm_InformeLiquidaciones).Any Then
+            Application.OpenForms().OfType(Of Frm_InformeLiquidaciones).First.Visible = False
+        End If
 
         Lbl_Titulo.Text = "<<< SELECIONE UNA OPCIÓN >>>"
         Select Case UCase(TreeView1.SelectedNode.Name)
@@ -358,7 +360,6 @@ Public Class FrmSolicPermHrasExt
                         Application.OpenForms().OfType(Of Frm_InformePreLiquidaciones).First.Visible = True
                     Else
                         Dim NewMDIChild As New Frm_InformePreLiquidaciones()
-                        'NewMDIChild.Show()
                         NewMDIChild.TopLevel = False
                         NewMDIChild.Visible = False
                         NewMDIChild.MdiParent = Me.MdiParent
@@ -372,6 +373,26 @@ Public Class FrmSolicPermHrasExt
                     End If
                 End If
 
+            Case UCase("Nd_Liquidaciones")
+                If MDIParent1.RevisaAcceso(90025) Then
+                    Lbl_Titulo.Text = "Informe de Liquidaciones"
+
+                    If Application.OpenForms().OfType(Of Frm_InformeLiquidaciones).Any Then
+                        Application.OpenForms().OfType(Of Frm_InformeLiquidaciones).First.Visible = True
+                    Else
+                        Dim NewMDIChild As New Frm_InformeLiquidaciones()
+                        NewMDIChild.TopLevel = False
+                        NewMDIChild.Visible = False
+                        NewMDIChild.MdiParent = Me.MdiParent
+                        NewMDIChild.WindowState = FormWindowState.Maximized
+                        NewMDIChild.Dock = DockStyle.Fill
+                        Me.pnlCentral.Controls.Add(NewMDIChild)
+                        Me.pnlCentral.Tag = NewMDIChild
+                        NewMDIChild.Show()
+                        NewMDIChild.ControlBox = False
+                        NewMDIChild.Visible = True
+                    End If
+                End If
         End Select
     End Sub
 

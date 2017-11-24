@@ -38,7 +38,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>148</ApplicationRevision>
+    <ApplicationRevision>151</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -375,6 +375,12 @@
     <Compile Include="3_Presentation_Layer\Formularios\Frm_InformePermisoPersona.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.Designer.vb">
+      <DependentUpon>Frm_InformeLiquidaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.Designer.vb">
       <DependentUpon>Frm_MantencionColaciones.vb</DependentUpon>
     </Compile>
@@ -619,6 +625,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_InformePermisoPersona.resx">
       <DependentUpon>Frm_InformePermisoPersona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.resx">
+      <DependentUpon>Frm_InformeLiquidaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.resx">
       <DependentUpon>Frm_MantencionColaciones.vb</DependentUpon>

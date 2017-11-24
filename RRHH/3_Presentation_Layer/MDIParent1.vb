@@ -227,18 +227,20 @@ Public Class MDIParent1
     End Function
 
     Private Sub TiempoIngreso_Tick(sender As Object, e As EventArgs) Handles TiempoIngreso.Tick
-        TiempoActivo = TiempoActivo - 1
-        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
-        If TiempoActivo = 0 Then
-            TiempoIngreso.Enabled = False
-            Cerrar_Forms_Children()
-            Visualizar_Tiles_MDI()
-            Dim NewMDIChild As New Login()
-            NewMDIChild.MdiParent = Me
-            NewMDIChild.Show()
-            NewMDIChild.ControlBox = False
-        End If
-
+        Try
+            TiempoActivo = TiempoActivo - 1
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            If TiempoActivo = 0 Then
+                TiempoIngreso.Enabled = False
+                Cerrar_Forms_Children()
+                Visualizar_Tiles_MDI()
+                Dim NewMDIChild As New Login()
+                NewMDIChild.MdiParent = Me
+                NewMDIChild.Show()
+                NewMDIChild.ControlBox = False
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -778,21 +780,27 @@ Public Class MDIParent1
 
     Private Sub Tle_Asistencias_Periodo_Click(sender As Object, e As EventArgs) Handles Tle_Asistencias_Periodo.Click
 
-        Dim informe As New InformePlanillaAsistencia()
+        MetroFramework.MetroMessageBox.Show(Me, "Informe Deshabilitado, Diríjase a las Oficinas de RR.HH para solicitar Información sobre sus Asistencias.",
+                                                        "Informe No Disponible",
+                                                        MessageBoxButtons.OK,
+                                                        MessageBoxIcon.Information,
+                                                        370)
 
-        Dim formInforme As New Frm_AsistenciasPeriodo(informe)
-        Cerrar_Forms_Children()
-        formInforme.MdiParent = Me
-        formInforme.Dock = DockStyle.Fill
-        Me.Panel2.Controls.Add(formInforme)
-        Me.Panel2.Tag = formInforme
-        Ocultar_Tiles_MDI()
-        formInforme.Show()
+        'Dim informe As New InformePlanillaAsistencia()
 
-        TiempoIngreso.Enabled = True
-        TiempoActivo = Tiempo_Str + 60
-        ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
-        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        'Dim formInforme As New Frm_AsistenciasPeriodo(informe)
+        'Cerrar_Forms_Children()
+        'formInforme.MdiParent = Me
+        'formInforme.Dock = DockStyle.Fill
+        'Me.Panel2.Controls.Add(formInforme)
+        'Me.Panel2.Tag = formInforme
+        'Ocultar_Tiles_MDI()
+        'formInforme.Show()
+
+        'TiempoIngreso.Enabled = True
+        'TiempoActivo = Tiempo_Str + 60
+        'ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
+        'ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
 
     End Sub
 
