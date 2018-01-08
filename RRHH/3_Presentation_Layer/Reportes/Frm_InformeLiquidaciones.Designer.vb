@@ -23,6 +23,7 @@ Partial Class Frm_InformeLiquidaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MetroTextBox2 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MetroTextBox1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
@@ -42,6 +43,7 @@ Partial Class Frm_InformeLiquidaciones
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.MetroTextBox2)
         Me.GroupBox1.Controls.Add(Me.MetroTextBox1)
         Me.GroupBox1.Controls.Add(Me.MetroLabel3)
@@ -56,6 +58,23 @@ Partial Class Frm_InformeLiquidaciones
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Impresion de Recibos Liquidacion"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Image = Global.RRHH.My.Resources.Resources.printing32
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Button1.Location = New System.Drawing.Point(602, 44)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(115, 80)
+        Me.Button1.TabIndex = 32
+        Me.Button1.Text = "Imprimir"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'MetroTextBox2
         '
@@ -156,13 +175,13 @@ Partial Class Frm_InformeLiquidaciones
         Me.btnImprimirInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimirInforme.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
         Me.btnImprimirInforme.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnImprimirInforme.Image = Global.RRHH.My.Resources.Resources.printing32
+        Me.btnImprimirInforme.Image = Global.RRHH.My.Resources.Resources.Lupa
         Me.btnImprimirInforme.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnImprimirInforme.Location = New System.Drawing.Point(468, 44)
+        Me.btnImprimirInforme.Location = New System.Drawing.Point(466, 44)
         Me.btnImprimirInforme.Name = "btnImprimirInforme"
         Me.btnImprimirInforme.Size = New System.Drawing.Size(115, 80)
         Me.btnImprimirInforme.TabIndex = 27
-        Me.btnImprimirInforme.Text = "Imprimir"
+        Me.btnImprimirInforme.Text = "Consultar"
         Me.btnImprimirInforme.TextAlign = System.Drawing.ContentAlignment.BottomRight
         Me.btnImprimirInforme.UseVisualStyleBackColor = False
         '
@@ -226,4 +245,5 @@ Partial Class Frm_InformeLiquidaciones
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents WebBrowser1 As WebBrowser
+    Private WithEvents Button1 As Button
 End Class

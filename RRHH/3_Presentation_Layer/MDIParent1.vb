@@ -733,40 +733,48 @@ Public Class MDIParent1
 
     Private Sub Tle_Solicitar_Permisos_Click(sender As Object, e As EventArgs) Handles Tle_Solicitar_Permisos.Click
         If RevisaAcceso(90001) Then
-            TiempoIngreso.Enabled = False
-            Cerrar_Forms_Children()
-            Dim NewMDIChild As New FrmSolicPermHrasExt(90001)
-            NewMDIChild.MdiParent = Me
-            NewMDIChild.WindowState = FormWindowState.Maximized
-            NewMDIChild.Dock = DockStyle.Fill
-            Me.Panel2.Controls.Add(NewMDIChild)
-            Me.Panel2.Tag = NewMDIChild
-            Ocultar_Tiles_MDI()
-            NewMDIChild.Show()
-            NewMDIChild.ControlBox = False
-            TiempoIngreso.Enabled = False
-            TiempoActivo = Tiempo_Str + 120
-            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            Try
+                TiempoIngreso.Enabled = False
+                Cerrar_Forms_Children()
+                Dim NewMDIChild As New FrmSolicPermHrasExt(90001)
+                NewMDIChild.MdiParent = Me
+                NewMDIChild.WindowState = FormWindowState.Maximized
+                NewMDIChild.Dock = DockStyle.Fill
+                Me.Panel2.Controls.Add(NewMDIChild)
+                Me.Panel2.Tag = NewMDIChild
+                Ocultar_Tiles_MDI()
+                NewMDIChild.Show()
+                NewMDIChild.ControlBox = False
+                TiempoIngreso.Enabled = False
+                TiempoActivo = Tiempo_Str + 120
+                ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 
     Private Sub TleSolicitar_HHEE_Click(sender As Object, e As EventArgs) Handles TleSolicitar_HHEE.Click
         If RevisaAcceso(90001) Then
-            TiempoIngreso.Enabled = False
-            Cerrar_Forms_Children()
-            Dim NewMDIChild As New FrmSolicPermHrasExt(90002)
-            NewMDIChild.MdiParent = Me
-            NewMDIChild.WindowState = FormWindowState.Maximized
-            NewMDIChild.Dock = DockStyle.Fill
-            Me.Panel2.Controls.Add(NewMDIChild)
-            Me.Panel2.Tag = NewMDIChild
-            Ocultar_Tiles_MDI()
-            NewMDIChild.Show()
-            NewMDIChild.ControlBox = False
-            TiempoIngreso.Enabled = False
-            TiempoActivo = Tiempo_Str + 120
-            ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
-            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            Try
+                TiempoIngreso.Enabled = False
+                Cerrar_Forms_Children()
+                Dim NewMDIChild As New FrmSolicPermHrasExt(90002)
+                NewMDIChild.MdiParent = Me
+                NewMDIChild.WindowState = FormWindowState.Maximized
+                NewMDIChild.Dock = DockStyle.Fill
+                Me.Panel2.Controls.Add(NewMDIChild)
+                Me.Panel2.Tag = NewMDIChild
+                Ocultar_Tiles_MDI()
+                NewMDIChild.Show()
+                NewMDIChild.ControlBox = False
+                TiempoIngreso.Enabled = False
+                TiempoActivo = Tiempo_Str + 120
+                ToolStripProgressBar1.ProgressBar.Maximum = TiempoActivo
+                ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+            Catch ex As Exception
+
+            End Try
         End If
     End Sub
 

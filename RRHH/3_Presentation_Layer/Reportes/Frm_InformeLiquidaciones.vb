@@ -153,6 +153,10 @@ Public Class Frm_InformeLiquidaciones
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        WebBrowser1.ShowPrintDialog()
+    End Sub
+
     Private Sub CargaLiqudacion(Rut As String, Año As String, Mes As String, RutEmp As String)
 
         'Dim vMes As Integer = Month(DateAdd("m", -1, Date.Now))
@@ -187,7 +191,13 @@ Public Class Frm_InformeLiquidaciones
                 sw.WriteLine("</tr> </table>")
                 sw.Close()
                 WebBrowser1.Navigate(ArchivoTMP)
-
+            Else
+                MetroFramework.MetroMessageBox.Show(Me, "No Existen Datos Asociados a Estos Parametros.",
+                                                       "Imprimir Reporte",
+                                                       MessageBoxButtons.OK,
+                                                       MessageBoxIcon.Information,
+                                                       370)
+                WebBrowser1.Navigate("")
             End If
 
         Catch ex As Exception

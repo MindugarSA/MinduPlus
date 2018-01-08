@@ -464,10 +464,10 @@ Public Class FrmSolicPermHrasExt
 
     'Ok
     Private Sub cmbAreas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbAreas.SelectedIndexChanged
-        txbTrabajador.Text = ""
-        txbEmpresa.Text = ""
-        txbFechaIngreso.Text = ""
-        txbRut.Text = ""
+        'txbTrabajador.Text = ""
+        'txbEmpresa.Text = ""
+        'txbFechaIngreso.Text = ""
+        'txbRut.Text = ""
     End Sub
     'Ok
     Private Sub cmbAreas_TextChanged(sender As Object, e As EventArgs) Handles cmbAreas.TextChanged
@@ -475,9 +475,9 @@ Public Class FrmSolicPermHrasExt
             txbTrabajador.ReadOnly = False
             txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores(cmbAreas.Text)
         Else
-            txbTrabajador.ReadOnly = True
-            txbTrabajador.Text = ""
-            txbRut.Text = ""
+            'txbTrabajador.ReadOnly = True
+            'txbTrabajador.Text = ""
+            'txbRut.Text = ""
         End If
     End Sub
     'Ok
@@ -786,10 +786,10 @@ Public Class FrmSolicPermHrasExt
         End Try
         conexion.Open()
         Try
-            Dim comand As SqlCommand = New SqlCommand("Solicitud_Buscar_Responsables_Permisos", conexion)
+            Dim comand As SqlCommand = New SqlCommand("Solicitud_Buscar_Responsables_Permisos_Todos", conexion)
             comand.CommandType = CommandType.StoredProcedure
-            comand.Parameters.Add(New SqlParameter("@nombreCompleto", nombre))
-            comand.Parameters.Add(New SqlParameter("@area", area))
+            'comand.Parameters.Add(New SqlParameter("@nombreCompleto", nombre))
+            'comand.Parameters.Add(New SqlParameter("@area", area))
             comand.Parameters.Add(New SqlParameter("@empresa", empresa))
             Dim adapter As New SqlDataAdapter(comand)
             Dim tabla As DataTable = New DataTable()
@@ -813,9 +813,9 @@ Public Class FrmSolicPermHrasExt
         End Try
         conexion.Open()
         Try
-            Dim cmd As SqlCommand = New SqlCommand("Solicitud_Empleados_Sugeridos_Area", conexion)
+            Dim cmd As SqlCommand = New SqlCommand("Solicitud_Empleados_Sugeridos_Todos", conexion)
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.Parameters.Add(New SqlParameter("@area", area))
+            'cmd.Parameters.Add(New SqlParameter("@area", area))
             Dim adapter As New SqlDataAdapter(cmd)
             Dim dt As DataTable = New DataTable()
             adapter.Fill(dt)
