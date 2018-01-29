@@ -813,7 +813,7 @@ Public Class FrmSolicPermHrasExt
         End Try
         conexion.Open()
         Try
-            Dim cmd As SqlCommand = New SqlCommand("Solicitud_Empleados_Sugeridos_Todos", conexion)
+            Dim cmd As SqlCommand = New SqlCommand("Solicitud_Empleados_Sugeridos_Todos_Activos", conexion)
             cmd.CommandType = CommandType.StoredProcedure
             'cmd.Parameters.Add(New SqlParameter("@area", area))
             Dim adapter As New SqlDataAdapter(cmd)

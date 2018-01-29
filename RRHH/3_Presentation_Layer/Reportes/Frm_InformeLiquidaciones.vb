@@ -179,18 +179,22 @@ Public Class Frm_InformeLiquidaciones
                 Dim texto As String = dt.Rows(0)("liquidacion_txt")
                 Dim sw As New System.IO.StreamWriter(ArchivoTMP)
 
+
+                Dim Encabezado0 As String = "<head> <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'> </head>"
                 Dim Encabezado1 As String = "<table width = " & Chr(34) & "100%" & Chr(34) & " border= " & Chr(34) & "0" & Chr(34) & " align = " & Chr(34) & "center" & Chr(34) & " cellpadding= " & Chr(34) & "0" & Chr(34) & ">"
-                Dim Encabezado2 As String = "<tr><td width =" & Chr(34) & "33%" & Chr(34) & " > Empresa <br> Rut <br> direccion  </td>"
-                Dim Encabezado3 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "center" & Chr(34) & "> autoconsulta </div></td>"
+                Dim Encabezado2 As String = "<tr><td width =" & Chr(34) & "33%" & Chr(34) & " > Empresa: " + MDIParent1.NombreEmpresa + "<br> Rut:  " + MDIParent1.RutEmpresa + "<br> Direccion: " + MDIParent1.DireccEmpresa + " </td>"
+                Dim Encabezado3 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "center" & Chr(34) & "> AUTOCONSULTA </div></td>"
                 Dim Encabezado4 As String = "<td width =" & Chr(34) & "33%" & Chr(34) & " > <div align = " & Chr(34) & "right" & Chr(34) & ">" &
                                             "<img src=" & Chr(34) & "file:///\\FSSAPBO\gestper\LOGOMIND.BMP" & Chr(34) & "width = " & Chr(34) & "247" & Chr(34) & "height=" & Chr(34) & "60" & Chr(34) & "></div></td> "
-                Dim Encabezado As String = Encabezado1 & Encabezado2 & Encabezado3 & Encabezado4
+                Dim Encabezado As String = Encabezado0 & Encabezado1 & Encabezado2 & Encabezado3 & Encabezado4
                 sw.WriteLine(Encabezado)
                 sw.WriteLine(texto)
                 sw.WriteLine("<style> *{font-size: 100%;}</style>")
                 sw.WriteLine("</tr> </table>")
                 sw.Close()
                 WebBrowser1.Navigate(ArchivoTMP)
+                WebBrowser1.Document.Encoding = "utf-8"
+
             Else
                 MetroFramework.MetroMessageBox.Show(Me, "No Existen Datos Asociados a Estos Parametros.",
                                                        "Imprimir Reporte",

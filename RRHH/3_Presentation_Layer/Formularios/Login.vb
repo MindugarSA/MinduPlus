@@ -114,6 +114,8 @@ Public Class Login
                         MDIParent1.NombreEmpresa = dt.Rows(0)("Empresa").ToString.ToUpper
                         MDIParent1.RutUsuario = dt.Rows(0)("Rut").ToString
                         MDIParent1.RutEmpresa = dt.Rows(0)("RutEmp").ToString
+                        MDIParent1.DireccEmpresa = dt.Rows(0)("DirecEmp").ToString
+
 
                     End If
                 Else
@@ -184,6 +186,8 @@ Public Class Login
                     MDIParent1.NombreEmpresa = dt.Rows(0)("Empresa").ToString.ToUpper
                     MDIParent1.RutUsuario = dt.Rows(0)("Rut").ToString
                     MDIParent1.RutEmpresa = dt.Rows(0)("RutEmp").ToString
+                    MDIParent1.DireccEmpresa = dt.Rows(0)("DirecEmp").ToString
+
                     Try
                         MDIParent1.PcturBx_Image.Image = Image.FromFile("\\FSSAPBO\gestper\Mindugar_sa\Images\" + dt.Rows(0)("Rut_Empleado").ToString + ".jpg")
                     Catch ex As Exception

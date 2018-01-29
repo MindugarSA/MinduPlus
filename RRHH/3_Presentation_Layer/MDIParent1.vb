@@ -11,6 +11,8 @@ Public Class MDIParent1
     Public Property NombreUsuario As String
     Public Property RutEmpresa As String
     Public Property NombreEmpresa As String
+    Public Property DireccEmpresa As String
+
 
     Private Entrada As Integer = 0
     Public TiempoActivo As Integer
