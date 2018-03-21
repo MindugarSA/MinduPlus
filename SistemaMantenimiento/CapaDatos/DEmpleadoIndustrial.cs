@@ -54,6 +54,38 @@ namespace CapaDatos
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
                 SqlDat.Fill(DtResultado);
+                
+
+            }
+            catch
+            {
+                DtResultado = null;
+            }
+            finally
+            {
+                if (SlqCon.State == ConnectionState.Open) SlqCon.Close();
+            }
+            return DtResultado;
+
+        }
+
+        public DataTable ListarAreasTodas()
+        {
+            DataTable DtResultado = new DataTable();
+            SqlConnection SlqCon = new SqlConnection();
+
+            try
+            {
+                string sp = "SpAreasTodasListar";
+
+                SlqCon.ConnectionString = Conexion.Cn;
+                SqlCommand SqlCmd = new SqlCommand(sp, SlqCon);
+
+                SlqCon.Open();
+                SqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                SqlDat.Fill(DtResultado);
 
             }
             catch

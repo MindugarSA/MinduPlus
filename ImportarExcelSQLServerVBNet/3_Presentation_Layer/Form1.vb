@@ -186,6 +186,7 @@ Partial Public Class Form1
             comboBox6.SelectedIndex = -1
             comboBox6.DropDownStyle = ComboBoxStyle.DropDownList
             button4.Enabled = True
+            Button16.Enabled = True
             label14.Visible = True
             label14.Text = "Total Registros : " & dataGridView2.RowCount.ToString()
         End If
@@ -1205,14 +1206,14 @@ Partial Public Class Form1
 
     End Sub
 
-    Private Sub Button_MouseEnter(sender As Object, e As EventArgs) Handles button9.MouseEnter, button8.MouseEnter, button7.MouseEnter, button6.MouseEnter, button5.MouseEnter, button4.MouseEnter, button3.MouseEnter, button2.MouseEnter, Button15.MouseEnter, button14.MouseEnter, button13.MouseEnter, button12.MouseEnter, button10.MouseEnter, button1.MouseEnter, btnVolver.MouseEnter
+    Private Sub Button_MouseEnter(sender As Object, e As EventArgs) Handles button9.MouseEnter, button8.MouseEnter, button7.MouseEnter, button6.MouseEnter, button5.MouseEnter, button4.MouseEnter, button3.MouseEnter, button2.MouseEnter, Button15.MouseEnter, button14.MouseEnter, button13.MouseEnter, button12.MouseEnter, button10.MouseEnter, button1.MouseEnter, btnVolver.MouseEnter, Button16.MouseEnter
         Dim Obj As Button = DirectCast(sender, Button)
         Obj.Left = Obj.Left - 4
         Obj.Top = Obj.Top - 4
         Obj.Height = Obj.Height + 8
         Obj.Width = Obj.Width + 8
     End Sub
-    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles button9.MouseLeave, button8.MouseLeave, button7.MouseLeave, button6.MouseLeave, button5.MouseLeave, button4.MouseLeave, button3.MouseLeave, button2.MouseLeave, Button15.MouseLeave, button14.MouseLeave, button13.MouseLeave, button12.MouseLeave, button10.MouseLeave, button1.MouseLeave, btnVolver.MouseLeave
+    Private Sub Button_MouseLeave(sender As Object, e As EventArgs) Handles button9.MouseLeave, button8.MouseLeave, button7.MouseLeave, button6.MouseLeave, button5.MouseLeave, button4.MouseLeave, button3.MouseLeave, button2.MouseLeave, Button15.MouseLeave, button14.MouseLeave, button13.MouseLeave, button12.MouseLeave, button10.MouseLeave, button1.MouseLeave, btnVolver.MouseLeave, Button16.MouseLeave
         Dim Obj As Button = DirectCast(sender, Button)
         Obj.Left = Obj.Left + 4
         Obj.Top = Obj.Top + 4
@@ -1220,6 +1221,11 @@ Partial Public Class Form1
         Obj.Width = Obj.Width - 8
     End Sub
 
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        Dim ResumenHorasTrab As New Form5()
+        ResumenHorasTrab.sPeriodo = comboBox3.SelectedValue.ToString()
+        ResumenHorasTrab.ShowDialog(Me)
+    End Sub
 
 
 #End Region

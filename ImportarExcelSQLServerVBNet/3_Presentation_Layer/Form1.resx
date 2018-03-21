@@ -395,32 +395,6 @@
         gBTTEgAAAABIMS0BAAAAgJCN+Q9hRzYTjPU4ewAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QYEDwkVpq0Y7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDhP
-        lZIhTgNRFEWpw9TgMNVdQpdQ06SONKlhDxWV3QALaGqwhOARCBaArCSBBAECgkVAHue+f3+GpjMQTnIy
-        mfvem/n/zxz8JCKO8Qxv8R3v8RJPsee2dmg4wTfs4gYHbt+FgoYrD7jEMc5xg18oHrHvsQKBll3ffIW7
-        DUA2wlc1wNpxgUB7Fnrz3nCF2iy7Cs1WuNGBiaWjTuh5Ka0xdZShTluMHXVCz3VpjZWjDPWpxNxRJ/Tc
-        ldZYOMpQ31lsHLVC/Qg/sjNi4jgL+knEJ44c70HtPLsinvDQcRZ6qJ9E6FPNXEq415vrsGiWXyEcoH6S
-        ik5bB6Y912VXnnHo0QbCPq7V0YKWvUANi/aHCApazRRXqKEJ5p65DvHvh/yGhjwsto7/B4N6yDYiLr4B
-        95bp8wcC/VAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
-        TUUH4QYEDwkVpq0Y7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDhP
-        lZIhTgNRFEWpw9TgMNVdQpdQ06SONKlhDxWV3QALaGqwhOARCBaArCSBBAECgkVAHue+f3+GpjMQTnIy
-        mfvem/n/zxz8JCKO8Qxv8R3v8RJPsee2dmg4wTfs4gYHbt+FgoYrD7jEMc5xg18oHrHvsQKBll3ffIW7
-        DUA2wlc1wNpxgUB7Fnrz3nCF2iy7Cs1WuNGBiaWjTuh5Ka0xdZShTluMHXVCz3VpjZWjDPWpxNxRJ/Tc
-        ldZYOMpQ31lsHLVC/Qg/sjNi4jgL+knEJ44c70HtPLsinvDQcRZ6qJ9E6FPNXEq415vrsGiWXyEcoH6S
-        ik5bB6Y912VXnnHo0QbCPq7V0YKWvUANi/aHCApazRRXqKEJ5p65DvHvh/yGhjwsto7/B4N6yDYiLr4B
-        95bp8wcC/VAAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="tabPage3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABS0AAAIyCAYAAAAuUu+/AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -509,4 +483,30 @@
   <metadata name="contextOcultarSelec.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>726, 14</value>
   </metadata>
+  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4QYEDwkVpq0Y7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDhP
+        lZIhTgNRFEWpw9TgMNVdQpdQ06SONKlhDxWV3QALaGqwhOARCBaArCSBBAECgkVAHue+f3+GpjMQTnIy
+        mfvem/n/zxz8JCKO8Qxv8R3v8RJPsee2dmg4wTfs4gYHbt+FgoYrD7jEMc5xg18oHrHvsQKBll3ffIW7
+        DUA2wlc1wNpxgUB7Fnrz3nCF2iy7Cs1WuNGBiaWjTuh5Ka0xdZShTluMHXVCz3VpjZWjDPWpxNxRJ/Tc
+        ldZYOMpQ31lsHLVC/Qg/sjNi4jgL+knEJ44c70HtPLsinvDQcRZ6qJ9E6FPNXEq415vrsGiWXyEcoH6S
+        ik5bB6Y912VXnnHo0QbCPq7V0YKWvUANi/aHCApazRRXqKEJ5p65DvHvh/yGhjwsto7/B4N6yDYiLr4B
+        95bp8wcC/VAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="button6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4QYEDwkVpq0Y7wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEySURBVDhP
+        lZIhTgNRFEWpw9TgMNVdQpdQ06SONKlhDxWV3QALaGqwhOARCBaArCSBBAECgkVAHue+f3+GpjMQTnIy
+        mfvem/n/zxz8JCKO8Qxv8R3v8RJPsee2dmg4wTfs4gYHbt+FgoYrD7jEMc5xg18oHrHvsQKBll3ffIW7
+        DUA2wlc1wNpxgUB7Fnrz3nCF2iy7Cs1WuNGBiaWjTuh5Ka0xdZShTluMHXVCz3VpjZWjDPWpxNxRJ/Tc
+        ldZYOMpQ31lsHLVC/Qg/sjNi4jgL+knEJ44c70HtPLsinvDQcRZ6qJ9E6FPNXEq415vrsGiWXyEcoH6S
+        ik5bB6Y912VXnnHo0QbCPq7V0YKWvUANi/aHCApazRRXqKEJ5p65DvHvh/yGhjwsto7/B4N6yDYiLr4B
+        95bp8wcC/VAAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

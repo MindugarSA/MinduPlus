@@ -65,6 +65,12 @@ Namespace _2_Business_Layer
             Return Obj.ConsultarAsistenciaResumen(Obj)
         End Function
 
+        Public Shared Function ConsultarAsistenciaResumenHoras(Periodo As String) As DataTable
+            Dim Obj As New DAsistenciaPeriodo()
+            Obj.Periodo = Periodo
+            Return Obj.ConsultarAsistenciaResumenHoras(Obj)
+        End Function
+
         Public Shared Function ConsultarPeriodosRegistrados() As DataTable
             Dim Obj As New DAsistenciaPeriodo()
             Return Obj.ConsultarPeriodosRegistrados()

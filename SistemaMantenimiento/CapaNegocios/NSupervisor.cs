@@ -12,6 +12,7 @@ namespace CapaNegocios
     public static class NSupervisor
     {
         public static DataTable DtSupervisor = new DataTable();
+        public static DSupervisor Supervisor = new DSupervisor();
 
         public static DataTable Buscar(string RutEmpleado)
         {
@@ -24,6 +25,16 @@ namespace CapaNegocios
             Obj.Area = DtSupervisor.Rows[index][0].ToString();
             Obj.Rut = DtSupervisor.Rows[index][1].ToString();
             Obj.Nombre = DtSupervisor.Rows[index][2].ToString();
+
+            return Obj.Insertar(Obj);
+        }
+
+        public static string Insertar2(string Nombre,string Rut,string Area)
+        {
+            DSupervisor Obj = new DSupervisor();
+            Obj.Area = Area;
+            Obj.Rut = Rut;
+            Obj.Nombre = Nombre;
 
             return Obj.Insertar(Obj);
         }

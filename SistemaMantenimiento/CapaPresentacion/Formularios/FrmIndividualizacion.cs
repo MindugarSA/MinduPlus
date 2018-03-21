@@ -54,6 +54,9 @@ namespace CapaPresentacion
                 CargaDatosActuales();
             }
 
+            metroComboBox1.Visible = false;
+            CargarComboAreas();
+            metroComboBox2.SelectedIndex = 0;
 
         }
 
@@ -206,7 +209,7 @@ namespace CapaPresentacion
             txtCalibra.BackColor = System.Drawing.SystemColors.ControlLightLight;
             txtCodEmp.Text = Convert.ToString(IDInstrumento.Cells[4].Value);
             txtNomEmp.Text = Convert.ToString(IDInstrumento.Cells[5].Value);
-            txtUltCalib.Text = Convert.ToDateTime(IDInstrumento.Cells[6].Value).ToString("dd/MM/yyyy");
+            txtUltCalib.Text = Convert.ToDateTime(IDInstrumento.Cells[6].Value == DBNull.Value ? "01/01/1900" : IDInstrumento.Cells[6].Value).ToString("dd/MM/yyyy");
             dtpIngreso.Text = Convert.ToString(IDInstrumento.Cells[7].Value);
             dtpProxCalib.Text = Convert.ToString(IDInstrumento.Cells[8].Value);
             txtCertificado.Text = Convert.ToString(IDInstrumento.Cells[9].Value);
@@ -215,6 +218,7 @@ namespace CapaPresentacion
             cmbEstado.SelectedItem = Convert.ToString(IDInstrumento.Cells[3].Value);
 
             CargarComboSupervisor(txtCodEmp.Text);
+
         }
 
         private void CargarComboSupervisor(string RutEmple)
@@ -226,6 +230,16 @@ namespace CapaPresentacion
 
             metroComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             metroComboBox1.SelectedIndex = 0;
+        }
+
+        private void CargarComboAreas()
+        {
+            metroComboBox2.DataSource = NEmpleadoIndustrial.ListarAreasTodas();
+            metroComboBox2.DisplayMember = "descripcion";
+            metroComboBox2.ValueMember = "descripcion";
+
+            metroComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            metroComboBox2.SelectedIndex = 1;
         }
 
         private int CargaProximaIdentidad()
@@ -316,11 +330,45 @@ namespace CapaPresentacion
 
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(metroComboBox1.SelectedIndex != -1)
+            if (metroComboBox1.SelectedIndex != -1)
             {
                 NSupervisor.Eliminar();
                 NSupervisor.Insertar(metroComboBox1.SelectedIndex);
             }
         }
+
+        private void metroComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NSupervisor.DtSupervisor.Rows[0][0] = metroComboBox2.SelectedValue;
+            NSupervisor.Eliminar();
+            NSupervisor.Insertar(0);
+        }
+
+        private void btnBuscarInstru_Click(object sender, EventArgs e)
+        {
+            txtInstru.Text = "";
+            FrmEmpleado Empleado = new FrmEmpleado();
+            Empleado.EnvEmple += new FrmEmpleado.EnviarEmpleado(CargarDatosSupervisor); // Metodo Delegate para enviar datos desde FrmEmplado
+            Empleado.TextButtton = "Filtrar";
+            Empleado.TipoListado = "Identidad";
+            Empleado.ShowDialog();
+        }
+
+        private void CargarDatosSupervisor(string[] DatosEmpleado)
+        {
+            txtInstru.Text = DatosEmpleado[1];
+            NSupervisor.DtSupervisor.Rows[0][0] = metroComboBox2.SelectedValue;
+            NSupervisor.DtSupervisor.Rows[0][1] = DatosEmpleado[0];
+            NSupervisor.DtSupervisor.Rows[0][2] = DatosEmpleado[1];
+            NSupervisor.Eliminar();
+            NSupervisor.Insertar(0);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

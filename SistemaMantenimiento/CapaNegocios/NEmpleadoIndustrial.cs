@@ -30,6 +30,10 @@ namespace CapaNegocios
         {
             return new DEmpleadoIndustrial().ListarIdentidades(Estado);
         }
+        public static DataTable ListarAreasTodas()
+        {
+            return new DEmpleadoIndustrial().ListarAreasTodas();
+        }
         public static DataTable BuscarIdentidades(string Estado, string Empleado)
         {
             return new DEmpleadoIndustrial().BuscarIdentidades(Estado, Empleado);

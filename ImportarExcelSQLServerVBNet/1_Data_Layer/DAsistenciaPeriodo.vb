@@ -494,5 +494,34 @@ Namespace _1_Data_Layer
 
         End Function
 
+        Public Function ConsultarAsistenciaResumenHoras(Asistencia As DAsistenciaPeriodo) As DataTable
+
+            Dim DtResultado As New DataTable()
+            Dim SlqCon As New SqlConnection()
+
+            Try
+                Dim sp As String = "SpASISTENCIA_RESUMEN_PERIODO_HORAS_TEORICAS"
+
+                SlqCon.ConnectionString = Conection.Cn
+                Dim SqlCmd As New SqlCommand(sp, SlqCon)
+
+                SlqCon.Open()
+                SqlCmd.CommandType = CommandType.StoredProcedure
+                SqlCmd.Parameters.AddWithValue("@Periodo", Asistencia.Periodo)
+
+                Dim SqlDat As New SqlDataAdapter(SqlCmd)
+
+                SqlDat.Fill(DtResultado)
+            Catch
+                DtResultado = Nothing
+            Finally
+                If SlqCon.State = ConnectionState.Open Then
+                    SlqCon.Close()
+                End If
+            End Try
+            Return DtResultado
+
+        End Function
+
     End Class
 End Namespace

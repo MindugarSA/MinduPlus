@@ -53,7 +53,7 @@ namespace CapaPresentacion
                     reportViewer1.LocalReport.DataSources.Add(CurrentReportDataSource);
                     break;
                 case "EntregaInstru":
-                    this.Text = "Formato de Entrgea Instrumento";
+                    this.Text = "Formato de Entrega Instrumento";
                     reportViewer1.LocalReport.ReportEmbeddedResource = "CapaPresentacion.Reportes.RptEntregaInstru.rdlc";
                     CurrentReportDataSource.Name = "DataSet1";
                     CurrentReportDataSource.Value = SpInformeEntregaInstrumentoBindingSource;
