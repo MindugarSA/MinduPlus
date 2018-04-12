@@ -350,7 +350,7 @@ namespace CapaPresentacion
             FrmEmpleado Empleado = new FrmEmpleado();
             Empleado.EnvEmple += new FrmEmpleado.EnviarEmpleado(CargarDatosSupervisor); // Metodo Delegate para enviar datos desde FrmEmplado
             Empleado.TextButtton = "Filtrar";
-            Empleado.TipoListado = "Identidad";
+            Empleado.TipoListado = "Empleados";
             Empleado.ShowDialog();
         }
 
