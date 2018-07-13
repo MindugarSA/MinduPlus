@@ -175,7 +175,7 @@
             this.dataItemCalibracion.UseCustomBackColor = true;
             this.dataItemCalibracion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCalibracion_CellClick);
             this.dataItemCalibracion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCalibracion_CellContentClick);
-            this.dataItemCalibracion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCalibracion_CellEndEdit);
+            this.dataItemCalibracion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCalibracion_CellContentClick);
             this.dataItemCalibracion.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataItemCalibracion_CellLeave);
             this.dataItemCalibracion.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataItemCalibracion_CurrentCellDirtyStateChanged);
             this.dataItemCalibracion.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataItemCalibracion_DataError);

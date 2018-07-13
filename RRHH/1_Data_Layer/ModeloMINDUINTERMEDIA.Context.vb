@@ -24,7 +24,7 @@ Partial Public Class MINDU_INTERMEDIAEntities
         Throw New UnintentionalCodeFirstException()
     End Sub
 
-    Public Overridable Property EMPLE_TEMP() As DbSet(Of EMPLE_TEMP)
+    'Public Overridable Property EMPLE_TEMP() As DbSet(Of EmpleadoConect)
 
     Public Overridable Function spASISTENCIA_EMPLE_TEMPInsertar() As ObjectResult(Of spASISTENCIA_EMPLE_TEMPInsertar_Result)
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of spASISTENCIA_EMPLE_TEMPInsertar_Result)("spASISTENCIA_EMPLE_TEMPInsertar")

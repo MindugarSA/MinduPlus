@@ -6,101 +6,17 @@ Imports System.Threading.Tasks
 Imports System.Data.Entity.Core.Objects
 
 Public Class Persona
-    Private _nombre As [String]
 
-    Public Property Nombre() As [String]
-        Get
-            Return _nombre
-        End Get
-        Set
-            _nombre = Value
-        End Set
-    End Property
+    Public Property Nombre As [String]
+    Public Property Rut As [String]
+    Public Property Empresa As [String]
+    Public Property Cargo As [String]
+    Public Property FechaIngreso As DateTime
+    Public Property Departamento As [String]
+    Public Property Estado As String
+    Public Property IDUsuario As Integer
+    Public Property Password As Integer
 
-    Private _rut As [String]
-
-    Public Property Rut() As [String]
-        Get
-            Return _rut
-        End Get
-        Set
-            _rut = Value
-        End Set
-    End Property
-
-    Private _empresa As [String]
-
-    Public Property Empresa() As [String]
-        Get
-            Return _empresa
-        End Get
-        Set
-            _empresa = Value
-        End Set
-    End Property
-
-    Private _cargo As [String]
-
-    Public Property Cargo() As [String]
-        Get
-            Return _cargo
-        End Get
-        Set
-            _cargo = Value
-        End Set
-    End Property
-
-    Private _fechaIngreso As DateTime
-
-    Public Property FechaIngreso() As DateTime
-        Get
-            Return _fechaIngreso
-        End Get
-        Set
-            _fechaIngreso = Value
-        End Set
-    End Property
-
-    Private _departamento As [String]
-
-    Public Property Departamento() As [String]
-        Get
-            Return _departamento
-        End Get
-        Set
-            _departamento = Value
-        End Set
-    End Property
-
-    Private _Estado As String
-    Public Property Estado() As String
-        Get
-            Return _Estado
-        End Get
-        Set(ByVal value As String)
-            _Estado = value
-        End Set
-    End Property
-
-    Private _IDUsuario As Integer
-    Public Property IDUsuario() As Integer
-        Get
-            Return _IDUsuario
-        End Get
-        Set(ByVal value As Integer)
-            _IDUsuario = value
-        End Set
-    End Property
-
-    Private _Password As Integer
-    Public Property Password() As Integer
-        Get
-            Return _Password
-        End Get
-        Set(ByVal value As Integer)
-            _Password = value
-        End Set
-    End Property
 
     Public Function BuscarDatos() As Boolean
         Try

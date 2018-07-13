@@ -60,6 +60,7 @@ Public Class MDIParent1
         'PictureBox4.Visible = True
         'PictureBox5.Visible = True
 
+        Tle_MantencionColacione.Visible = False
         PictureBox2_Click(sender, e)
 
     End Sub
@@ -358,7 +359,7 @@ Public Class MDIParent1
             NewMDIChild.Show()
 
         Else
-            MsgBox("Lo lamento !" & vbNewLine & "Solicite autorización en Dto. RRHH", MsgBoxStyle.Exclamation, "Error!")
+            MsgBox("Solicite autorización en Depto. RRHH", MsgBoxStyle.Exclamation, "Error!")
         End If
     End Sub
 
@@ -512,7 +513,30 @@ Public Class MDIParent1
 
     End Sub
 
-    Private Sub Tle_AlmuAdicional_Click(sender As Object, e As EventArgs) Handles Tle_AlmuAdicional.Click
+    Private Sub Abrir_Pantalla_Menu_Almuerzos()
+
+        If RevisaAcceso(31002) Then
+            Dim NewMDIChild As New Frm_MantencionColaciones()
+            Cerrar_Forms_Children()
+            NewMDIChild.MdiParent = Me
+            'NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
+            NewMDIChild.ControlBox = False
+            NewMDIChild.Show()
+
+            TiempoIngreso.Enabled = False
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
+        End If
+
+    End Sub
+
+    Private Sub Abrir_Pantalla_Almuerzo_Adicional()
+
         If RevisaAcceso(30001) Then
 
             Dim NewMDIChild As New Frm_SolicitudGerencial()
@@ -530,6 +554,54 @@ Public Class MDIParent1
             'TiempoIngreso.Enabled = True
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
+        End If
+
+    End Sub
+
+    Private Sub Abrir_Pantalla_Gestion_Almuerzos()
+
+        If RevisaAcceso(30001) Then
+
+            Dim NewMDIChild As New Frm_GestionAlmuerzosLeche()
+            Cerrar_Forms_Children()
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
+            NewMDIChild.Show()
+
+            TiempoIngreso.Enabled = False
+            'TiempoIngreso.Enabled = True
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+
+        End If
+
+    End Sub
+
+    Private Sub Tle_AlmuAdicional_Click(sender As Object, e As EventArgs) Handles Tle_AlmuAdicional.Click
+        If RevisaAcceso(30001) Then
+
+            Dim FrmSelecGestion As New Frm_SeleccionGestionAlmuerzos()
+
+            If (FrmSelecGestion.ShowDialog() = DialogResult.OK) Then
+
+                Dim sPantalla As String = FrmSelecGestion.TipoReporte
+
+                Select Case sPantalla
+                    Case "MenuAlmuerzo"
+                        Abrir_Pantalla_Menu_Almuerzos()
+                    Case "Adicionales"
+                        Abrir_Pantalla_Almuerzo_Adicional()
+                    Case "Configuracion"
+                        Abrir_Pantalla_Gestion_Almuerzos()
+                End Select
+
+            End If
+
         End If
     End Sub
 
@@ -895,6 +967,44 @@ Public Class MDIParent1
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         Animate_BackLogo()
+    End Sub
+
+    Private Sub MDIParent1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
+    End Sub
+
+    Public Sub AsignarDatosEmpleadoLogin()
+
+        Lbl_Nombre.Visible = True
+        Label2.Visible = True
+        Lbl_Nombre.Text = EmpleadoConect.Instance.Nombre
+        Lbl_RutTrab.Text = EmpleadoConect.Instance.Rut
+        Label2.Text = EmpleadoConect.Instance.Empresa
+
+        TxtBx_UserName.Text = EmpleadoConect.Instance.Nombre
+        TxtBx_Empresa.Text = EmpleadoConect.Instance.Empresa
+        Lbl_Cod_ID.Text = EmpleadoConect.Instance.IDUsuario
+        Lbl_RutEmpresa.Text = EmpleadoConect.Instance.RutEmp
+
+        NombreUsuario = EmpleadoConect.Instance.Nombre
+        NombreEmpresa = EmpleadoConect.Instance.Empresa
+        RutUsuario = EmpleadoConect.Instance.Rut
+        RutEmpresa = EmpleadoConect.Instance.RutEmp
+        DireccEmpresa = EmpleadoConect.Instance.DirecEmp
+
+    End Sub
+
+    Public Sub InicializarDatosEmpleadoLogin()
+        Lbl_Nombre.Visible = False
+        Label2.Visible = False
+        TxtBx_Empresa.Text = ""
+        TxtBx_UserName.Text = ""
+        Lbl_RutTrab.Text = ""
+        Lbl_Cod_Interno.Text = ""
+        Lbl_Cod_ID.Visible = False
+        TiempoIngreso.Enabled = False
+        TiempoActivo = Tiempo_Str
+        ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
     End Sub
 
 End Class

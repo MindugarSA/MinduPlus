@@ -22,20 +22,14 @@ Public Class Login
         TxtBx_ConfPass.Visible = False
 
         MDIParent1.Panel2.Visible = False
+
         Dim ctl As Control
         For Each ctl In Me.Controls
             AddHandler ctl.KeyDown, AddressOf myEventHandler
         Next
-        MDIParent1.Lbl_Nombre.Visible = False
-        MDIParent1.Label2.Visible = False
-        MDIParent1.TxtBx_Empresa.Text = ""
-        MDIParent1.TxtBx_UserName.Text = ""
-        MDIParent1.Lbl_RutTrab.Text = ""
-        MDIParent1.Lbl_Cod_Interno.Text = ""
-        MDIParent1.Lbl_Cod_ID.Visible = False
-        MDIParent1.TiempoIngreso.Enabled = False
-        MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
-        MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
+
+        MDIParent1.InicializarDatosEmpleadoLogin()
+
         TxtBx_UserID.Focus()
         TxtBx_UserID.Tag = 1
 
@@ -53,7 +47,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize  ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
+    Private Sub Login_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize   ' Ubicar la Etiqueta Que Hace de Hint en la posicion correcta
         UsernameLabel.Top = TxtBx_UserID.Top + 5
         PictureBox3.Top = TxtBx_UserID.Top + 5
         PictureBox4.Top = TxtBx_Password.Top + 5
@@ -100,22 +94,19 @@ Public Class Login
                     If dt.Rows(0)("IdEstado") >= 0 Then
                         NewSystem = True
 
-                        MDIParent1.Lbl_Nombre.Visible = True
-                        MDIParent1.Label2.Visible = True
-                        MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
-                        MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+                        EmpleadoConect.Instance.Nombre = dt.Rows(0)("Nombre").ToString.ToUpper
+                        EmpleadoConect.Instance.Empresa = dt.Rows(0)("Empresa").ToString.ToUpper
+                        EmpleadoConect.Instance.Rut = dt.Rows(0)("Rut").ToString
+                        EmpleadoConect.Instance.RutEmp = dt.Rows(0)("RutEmp").ToString
+                        EmpleadoConect.Instance.DirecEmp = dt.Rows(0)("DirecEmp").ToString
+                        EmpleadoConect.Instance.FechaIngreso = dt.Rows(0)("fecingreso").ToString
+                        EmpleadoConect.Instance.Cargo = dt.Rows(0)("cargodes").ToString
+                        EmpleadoConect.Instance.Departamento = dt.Rows(0)("deptodes").ToString
+                        EmpleadoConect.Instance.Area = dt.Rows(0)("areades").ToString
+                        EmpleadoConect.Instance.Estado = dt.Rows(0)("EstadoEmp").ToString
+                        EmpleadoConect.Instance.IDUsuario = dt.Rows(0)("IdUsuario").ToString
 
-                        MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
-                        MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
-                        MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
-                        MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
-
-                        MDIParent1.NombreUsuario = dt.Rows(0)("Nombre").ToString.ToUpper
-                        MDIParent1.NombreEmpresa = dt.Rows(0)("Empresa").ToString.ToUpper
-                        MDIParent1.RutUsuario = dt.Rows(0)("Rut").ToString
-                        MDIParent1.RutEmpresa = dt.Rows(0)("RutEmp").ToString
-                        MDIParent1.DireccEmpresa = dt.Rows(0)("DirecEmp").ToString
-
+                        MDIParent1.AsignarDatosEmpleadoLogin()
 
                     End If
                 Else
@@ -170,23 +161,19 @@ Public Class Login
                         'p_User_Pass = ""
                     End If
 
-                    MDIParent1.Lbl_Nombre.Visible = True
-                    MDIParent1.Label2.Visible = True
-                    MDIParent1.Lbl_Nombre.Text = dt.Rows(0)("Nombre").ToString.ToUpper
-                    MDIParent1.Label2.Text = dt.Rows(0)("Empresa").ToString.ToUpper
+                    EmpleadoConect.Instance.Nombre = dt.Rows(0)("Nombre").ToString.ToUpper
+                    EmpleadoConect.Instance.Empresa = dt.Rows(0)("Empresa").ToString.ToUpper
+                    EmpleadoConect.Instance.Rut = dt.Rows(0)("Rut").ToString
+                    EmpleadoConect.Instance.RutEmp = dt.Rows(0)("RutEmp").ToString
+                    EmpleadoConect.Instance.DirecEmp = dt.Rows(0)("DirecEmp").ToString
+                    EmpleadoConect.Instance.FechaIngreso = dt.Rows(0)("fecingreso").ToString
+                    EmpleadoConect.Instance.Cargo = dt.Rows(0)("cargodes").ToString
+                    EmpleadoConect.Instance.Departamento = dt.Rows(0)("deptodes").ToString
+                    EmpleadoConect.Instance.Area = dt.Rows(0)("areades").ToString
+                    EmpleadoConect.Instance.Estado = dt.Rows(0)("EstadoEmp").ToString
+                    EmpleadoConect.Instance.IDUsuario = dt.Rows(0)("IdUsuario").ToString
 
-                    MDIParent1.TxtBx_UserName.Text = dt.Rows(0)("Nombre").ToString.ToUpper
-                    MDIParent1.TxtBx_Empresa.Text = dt.Rows(0)("Empresa").ToString.ToUpper
-                    MDIParent1.Lbl_Cod_ID.Text = dt.Rows(0)("IdUsuario").ToString
-                    MDIParent1.Lbl_Cod_ID.Refresh()
-                    MDIParent1.Lbl_RutTrab.Text = TxtBx_UserID.Text
-                    MDIParent1.Lbl_RutEmpresa.Text = dt.Rows(0)("RutEmp").ToString
-
-                    MDIParent1.NombreUsuario = dt.Rows(0)("Nombre").ToString.ToUpper
-                    MDIParent1.NombreEmpresa = dt.Rows(0)("Empresa").ToString.ToUpper
-                    MDIParent1.RutUsuario = dt.Rows(0)("Rut").ToString
-                    MDIParent1.RutEmpresa = dt.Rows(0)("RutEmp").ToString
-                    MDIParent1.DireccEmpresa = dt.Rows(0)("DirecEmp").ToString
+                    MDIParent1.AsignarDatosEmpleadoLogin()
 
                     Try
                         MDIParent1.PcturBx_Image.Image = Image.FromFile("\\FSSAPBO\gestper\Mindugar_sa\Images\" + dt.Rows(0)("Rut_Empleado").ToString + ".jpg")
@@ -200,7 +187,7 @@ Public Class Login
     End Sub
 
     '----------Funcion Declare tecla Enter--------
-    Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    Private Sub myEventHandler(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtBx_UserID.KeyDown, MyBase.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             Me.SelectNextControl(Me.ActiveControl, True, True, True, True)
@@ -426,15 +413,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub TxtBx_UserID_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_UserID.KeyDown
-
-        If (UsernameLabel.Visible = True And TxtBx_UserID.Text.Trim().Length > 0) Then
-            UsernameLabel.Visible = False
-        ElseIf (e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab) Then
-            Parent.SelectNextControl(TxtBx_UserID, True, True, True, True)
-            e.Handled = True
-            e.SuppressKeyPress = True
-        End If
+    Private Sub TxtBx_UserID_KeyDown(sender As Object, e As KeyEventArgs)
 
     End Sub
 
@@ -460,7 +439,7 @@ Public Class Login
 
     End Sub
 
-    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged  ' Oculta la Etiqueta que hace de Hint
+    Private Sub TxtBx_UserID_TextChanged(sender As Object, e As EventArgs) Handles TxtBx_UserID.TextChanged   ' Oculta la Etiqueta que hace de Hint
         If (UsernameLabel.Visible = True) Then
             UsernameLabel.Visible = False
         ElseIf (UsernameLabel.Visible = False And TxtBx_UserID.Text.Trim().Length = 0) Then
@@ -468,7 +447,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown  ' Al presionar enter, envia TAB
+    Private Sub TxtBx_Password_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtBx_Password.KeyDown   ' Al presionar enter, envia TAB
         If (e.KeyCode = Keys.Enter) Then
             SendKeys.Send("{TAB}")
             e.Handled = e.SuppressKeyPress = True
@@ -477,7 +456,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter  ' Al hacer Focus se cambia el Tag
+    Private Sub TxtBx_Password_Enter(sender As Object, e As EventArgs) Handles TxtBx_Password.Enter   ' Al hacer Focus se cambia el Tag
         FocusedTxt = 2
     End Sub
 
@@ -485,7 +464,7 @@ Public Class Login
         FocusedTxt = 3
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick  'Ejecuta la Animacion en cada TICK
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TmrBackAnimation.Tick   'Ejecuta la Animacion en cada TICK
 
         If TmrBackAnimation.Interval = 5000 Then
             TmrBackAnimation.Stop()

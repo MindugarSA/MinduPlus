@@ -189,11 +189,11 @@ Partial Class MDIParent1
         '
         Me.Tle_MantencionColacione.ActiveControl = Nothing
         Me.Tle_MantencionColacione.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
+        Me.Tle_MantencionColacione.BackColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.Tle_MantencionColacione, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(137, 23)
+        Me.Tle_MantencionColacione.Location = New System.Drawing.Point(137, 10)
         Me.Tle_MantencionColacione.Name = "Tle_MantencionColacione"
-        Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_MantencionColacione.Size = New System.Drawing.Size(119, 68)
         Me.Tle_MantencionColacione.TabIndex = 14
         Me.Tle_MantencionColacione.Text = "Ingreso Menu"
         Me.Tle_MantencionColacione.TileImage = Global.RRHH.My.Resources.Resources.menu1
@@ -206,15 +206,15 @@ Partial Class MDIParent1
         '
         Me.Tle_AlmuAdicional.ActiveControl = Nothing
         Me.Tle_AlmuAdicional.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(172, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Tle_AlmuAdicional.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
         Me.BunifuTransition1.SetDecoration(Me.Tle_AlmuAdicional, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(137, 133)
+        Me.Tle_AlmuAdicional.Location = New System.Drawing.Point(137, 23)
         Me.Tle_AlmuAdicional.Name = "Tle_AlmuAdicional"
-        Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_AlmuAdicional.Size = New System.Drawing.Size(119, 217)
         Me.Tle_AlmuAdicional.TabIndex = 13
-        Me.Tle_AlmuAdicional.Text = "Adicionales"
+        Me.Tle_AlmuAdicional.Text = "Gestion de " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Almuerzos"
         Me.Tle_AlmuAdicional.TileImage = Global.RRHH.My.Resources.Resources.restaurant
-        Me.ToolTip.SetToolTip(Me.Tle_AlmuAdicional, "Solicitar Almuerzos Adicionales")
+        Me.ToolTip.SetToolTip(Me.Tle_AlmuAdicional, "Gestion de Almuerzos")
         Me.Tle_AlmuAdicional.UseCustomBackColor = True
         Me.Tle_AlmuAdicional.UseSelectable = True
         Me.Tle_AlmuAdicional.UseTileImage = True
@@ -605,12 +605,12 @@ Partial Class MDIParent1
         '
         Me.pnlMovingTop.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlMovingTop.BackColor = System.Drawing.Color.Transparent
+        Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
         Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
         Me.BunifuTransition1.SetDecoration(Me.pnlMovingTop, BunifuAnimatorNS.DecorationType.None)
         Me.pnlMovingTop.Location = New System.Drawing.Point(864, 329)
         Me.pnlMovingTop.Name = "pnlMovingTop"

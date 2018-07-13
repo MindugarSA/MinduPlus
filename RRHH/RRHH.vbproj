@@ -38,7 +38,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>160</ApplicationRevision>
+    <ApplicationRevision>166</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -108,18 +108,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=14.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=14.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <Private>True</Private>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=14.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=14.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=14.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=14.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -148,6 +146,9 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Build.Framework.14.3.0\lib\net45\Microsoft.Build.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -357,6 +358,12 @@
     <Compile Include="3_Presentation_Layer\Formularios\Frm_EliminarHoraExtra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_GestionAlmuerzosLeche.Designer.vb">
+      <DependentUpon>Frm_GestionAlmuerzosLeche.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_GestionAlmuerzosLeche.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_HistorialPermisoPersona.designer.vb">
       <DependentUpon>Frm_HistorialPermisoPersona.vb</DependentUpon>
     </Compile>
@@ -369,10 +376,10 @@
     <Compile Include="3_Presentation_Layer\Formularios\Frm_InformeHorasExtrasPersona.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_InformePermisoPersona.designer.vb">
-      <DependentUpon>Frm_InformePermisoPersona.vb</DependentUpon>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SeleccionGestionAlmuerzos.Designer.vb">
+      <DependentUpon>Frm_SeleccionGestionAlmuerzos.vb</DependentUpon>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_InformePermisoPersona.vb">
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SeleccionGestionAlmuerzos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.Designer.vb">
@@ -385,12 +392,6 @@
       <DependentUpon>Frm_MantencionColaciones.vb</DependentUpon>
     </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_Parametros %28No Usar%29.Designer.vb">
-      <DependentUpon>Frm_Parametros %28No Usar%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_Parametros %28No Usar%29.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_Parametros2.Designer.vb">
@@ -418,7 +419,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="2_Business_Layer\DataTableExtensions.vb" />
-    <Compile Include="2_Business_Layer\Emple_Temp.vb" />
+    <Compile Include="2_Business_Layer\EmpleadoConect.vb" />
     <Compile Include="3_Presentation_Layer\Formularios\Frm_TicketSolicitudes.Designer.vb">
       <DependentUpon>Frm_TicketSolicitudes.vb</DependentUpon>
     </Compile>
@@ -617,24 +618,23 @@
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_EliminarHoraExtra.resx">
       <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_GestionAlmuerzosLeche.resx">
+      <DependentUpon>Frm_GestionAlmuerzosLeche.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_HistorialPermisoPersona.resx">
       <DependentUpon>Frm_HistorialPermisoPersona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_InformeHorasExtrasPersona.resx">
       <DependentUpon>Frm_InformeHorasExtrasPersona.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_InformePermisoPersona.resx">
-      <DependentUpon>Frm_InformePermisoPersona.vb</DependentUpon>
+    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SeleccionGestionAlmuerzos.resx">
+      <DependentUpon>Frm_SeleccionGestionAlmuerzos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.resx">
       <DependentUpon>Frm_InformeLiquidaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.resx">
       <DependentUpon>Frm_MantencionColaciones.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_Parametros %28No Usar%29.resx">
-      <DependentUpon>Frm_Parametros %28No Usar%29.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_Parametros2.resx">
@@ -940,36 +940,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="CrystalDecisions.ReportSource">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="CrystalDecisions.Shared">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="CrystalDecisions.Windows.Forms">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -1732,6 +1702,7 @@
       <LastGenOutput>ModeloVisualRRHH.vb</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
+    <None Include="Resources\breakfast.png" />
     <Content Include="Resources\Btn_Colaciones.jpg" />
     <None Include="Resources\check-mark-green32.png" />
     <None Include="Resources\check-mark-green24.png" />
@@ -1739,6 +1710,7 @@
     <None Include="Resources\notepad %283%29.png" />
     <None Include="Resources\notepad %282%29.png" />
     <None Include="Resources\musica-searcher.png" />
+    <None Include="Resources\milk.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

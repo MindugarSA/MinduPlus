@@ -151,4 +151,18 @@ Public Class Frm_SolicitudGerencial
     Private Sub MonthCalendar2_DayDeselected(sender As Object, e As Pabo.Calendar.DaySelectedEventArgs) Handles MonthCalendar2.DayDeselected
 
     End Sub
+
+    Private Sub MetroTile1_MouseEnter(sender As Object, e As EventArgs) Handles Button1.MouseEnter, btnVolver.MouseEnter
+        sender.Left = sender.Left - 4
+        sender.Top = sender.Top - 4
+        sender.Height = sender.Height + 8
+        sender.Width = sender.Width + 8
+    End Sub
+
+    Private Sub MetroTile1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave, btnVolver.MouseLeave
+        sender.Left = sender.Left + 4
+        sender.Top = sender.Top + 4
+        sender.Height = sender.Height - 8
+        sender.Width = sender.Width - 8
+    End Sub
 End Class

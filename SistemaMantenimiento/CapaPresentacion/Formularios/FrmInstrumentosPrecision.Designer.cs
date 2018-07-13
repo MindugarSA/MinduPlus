@@ -322,16 +322,23 @@
             // 
             // txtInstru
             // 
+            this.txtInstru.AcceptsReturn = false;
+            this.txtInstru.AcceptsTab = false;
             this.txtInstru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtInstru.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtInstru.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtInstru.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtInstru.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtInstru.Depth = 0;
             this.txtInstru.Hint = "";
             this.txtInstru.Location = new System.Drawing.Point(461, 314);
             this.txtInstru.MaxLength = 32767;
             this.txtInstru.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtInstru.Multiline = false;
             this.txtInstru.Name = "txtInstru";
             this.txtInstru.PasswordChar = '\0';
             this.txtInstru.ReadOnly = false;
+            this.txtInstru.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtInstru.SelectedText = "";
             this.txtInstru.SelectionLength = 0;
             this.txtInstru.SelectionStart = 0;
@@ -340,6 +347,7 @@
             this.txtInstru.TabStop = false;
             this.txtInstru.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtInstru.UseSystemPasswordChar = false;
+            this.txtInstru.WordWrap = true;
             this.txtInstru.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInstru_KeyPress);
             // 
             // btnBuscarInstru
@@ -561,7 +569,7 @@
             this.informe3ToolStripMenuItem,
             this.todosLosInstrumentosToolStripMenuItem});
             this.contextMenuRepo.Name = "contextMenuRepo";
-            this.contextMenuRepo.Size = new System.Drawing.Size(307, 122);
+            this.contextMenuRepo.Size = new System.Drawing.Size(307, 100);
             // 
             // informe1ToolStripMenuItem
             // 

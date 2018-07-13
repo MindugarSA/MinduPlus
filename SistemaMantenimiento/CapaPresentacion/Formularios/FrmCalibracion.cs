@@ -159,28 +159,7 @@ namespace CapaPresentacion
 
         private void dataItemCalibracion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex == -1)
-                return;
 
-            if (e.ColumnIndex == 4 || e.ColumnIndex == 6 || e.ColumnIndex == 7)
-                dataItemCalibracion[e.ColumnIndex, dataItemCalibracion.CurrentRow.Index].Style.BackColor = dataItemCalibracion.DefaultCellStyle.SelectionBackColor;
-
-            if (e.ColumnIndex == 4)
-                try
-                {
-                    string Obtenido = Convert.ToString(dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value);
-                    if (Obtenido == string.Empty) Obtenido = "0,00";
-                    dataItemCalibracion[e.ColumnIndex, e.RowIndex].Value = string.Format("{0:#,0.00###}", Convert.ToDecimal(Obtenido));
-
-                    decimal Esperado = Convert.ToDecimal(dataItemCalibracion[3, e.RowIndex].Value);
-                    Decimal Diferencia = Convert.ToDecimal(Obtenido) - Esperado;
-                    dataItemCalibracion[6, e.RowIndex].Value = Diferencia;
-
-                }
-                catch (Exception)
-                {
-                    //throw;
-                }
         }
 
         private void dataItemCalibracion_SelectionChanged(object sender, EventArgs e)

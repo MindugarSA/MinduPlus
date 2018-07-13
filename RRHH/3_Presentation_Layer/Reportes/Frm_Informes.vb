@@ -55,7 +55,13 @@ Public Class Frm_Informes
                     End If
 
                     If CmbBx_Informe_Empresa.SelectedIndex >= 1 Then
-                        Dim Paso As String = Mid(CmbBx_Informe_Empresa.Text, 1, 11)
+                        Dim Paso As String = ""
+                        Select Case (CmbBx_Informe_Empresa.SelectedIndex)
+                            Case 4
+                                Paso = "GERENTES"
+                            Case Else
+                                Paso = Mid(CmbBx_Informe_Empresa.Text, 1, 11)
+                        End Select
                         cmd.Parameters.Add(New SqlParameter("@Id_RutEmpresa", Paso))
                     End If
                     If CmbBx_Informe_TipColac.SelectedIndex >= 1 Then
@@ -84,6 +90,7 @@ Public Class Frm_Informes
                         'DataGridView1.Columns("Colación").Width = 270
                         'DataGridView1.Columns("Cat_Col").Width = 30
                         'DataGridView1.Columns("Cat_LP").Width = 30
+                        DataGridView1.AjustColumnsWidthForGridWidth
 
 
                         conexion.Close()
@@ -177,6 +184,7 @@ Public Class Frm_Informes
                     DataGridView1.DataSource = dt
                     DataGridView1.Columns(1).Frozen = True
                     DataGridView1.Columns(3).Frozen = True
+                    DataGridView1.AjustColumnsWidthForGridWidth
                 End If
 
             Catch ex As Exception
@@ -188,10 +196,44 @@ Public Class Frm_Informes
             End Try
         End If
 
+        If CmbBx_Informe.SelectedIndex = 3 Then
+            cmd = New SqlCommand("SpTICKET_ALMUERZOS_RelojControl", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            Try
+                conexion.Open()
+                Dim fechaFin As Date
+                Dim fechaIni As Date
+
+                fechaIni = DtTimPickr_Fecha_Ini.Value
+                fechaFin = DtTimPickr_Fecha_Fin.Value
+
+                cmd.Parameters.Add(New SqlParameter("@FechaIni", fechaIni.ToString("yyyyMMdd")))
+                cmd.Parameters.Add(New SqlParameter("@FechaFin", fechaFin.ToString("yyyyMMdd")))
+
+                Dim adaptador As New SqlDataAdapter(cmd)
+                Dim dt As New DataTable
+                adaptador.Fill(dt)
+
+                If dt.Rows.Count > 0 Then
+                    DataGridView1.DataSource = vbNull
+                    DataGridView1.Refresh()
+                    DataGridView1.DataSource = dt
+                    'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+                    DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+                    DataGridView1.Columns("Almu Mindumas").Width = 50
+                End If
+
+            Catch ex As Exception
+                MsgBox("Error de Conexion")
+            Finally
+                conexion.Close()
+                TxtBx_TotLeche.Text = ""
+                TB_Total.Text = ""
+            End Try
+        End If
         'DataGridView1.AutoResizeColumns()
         'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         'DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
-        DataGridView1.AjustColumnsWidthForGridWidth
 
     End Sub
 
@@ -201,60 +243,73 @@ Public Class Frm_Informes
 
     Private Sub CmbBx_Informe_SelectedValueChanged(sender As Object, e As EventArgs) Handles CmbBx_Informe.SelectedValueChanged
 
-        If CmbBx_Informe.SelectedIndex = 0 Then
-            CmbBx_Periodos.Visible = False
-            CmbBx_ResumDetall.Visible = False
-            DtTimPickr_Fecha_Ini.Visible = True
-            DtTimPickr_Fecha_Fin.Visible = False
-            Label1.Text = "Fecha     : "
-            Label5.Visible = True
-            TxtBx_TotLeche.Visible = True
+        Select Case CmbBx_Informe.SelectedIndex
+            Case 0
+                CmbBx_Periodos.Visible = False
+                CmbBx_ResumDetall.Visible = False
+                DtTimPickr_Fecha_Ini.Visible = True
+                DtTimPickr_Fecha_Fin.Visible = False
+                Label1.Text = "Fecha     : "
+                Label5.Visible = True
+                TxtBx_TotLeche.Visible = True
 
 
-            Label7.Visible = True
-            CmbBx_Informe_TipColac.Visible = True
-            Label2.Visible = True
-            CmbBx_Informe_Orden.Visible = True
-            Label6.Visible = True
-            CmbBx_Informe_Empresa.Visible = True
-        ElseIf CmbBx_Informe.SelectedIndex = 1 Then
-            CmbBx_Periodos.Visible = False
-            CmbBx_ResumDetall.Visible = False
-            Label1.Text = "Desde  : "
-            DtTimPickr_Fecha_Ini.Visible = True
-            DtTimPickr_Fecha_Fin.Visible = True
-            Label5.Visible = True
+                Label7.Visible = True
+                CmbBx_Informe_TipColac.Visible = True
+                Label2.Visible = True
+                CmbBx_Informe_Orden.Visible = True
+                Label6.Visible = True
+                CmbBx_Informe_Empresa.Visible = True
+            Case 1
+                CmbBx_Periodos.Visible = False
+                CmbBx_ResumDetall.Visible = False
+                Label1.Text = "Desde  : "
+                DtTimPickr_Fecha_Ini.Visible = True
+                DtTimPickr_Fecha_Fin.Visible = True
+                Label5.Visible = True
 
-            Label7.Visible = True
-            CmbBx_Informe_TipColac.Visible = True
-            Label2.Visible = True
-            CmbBx_Informe_Orden.Visible = True
-            Label6.Visible = True
-            CmbBx_Informe_Empresa.Visible = True
+                Label7.Visible = True
+                CmbBx_Informe_TipColac.Visible = True
+                Label2.Visible = True
+                CmbBx_Informe_Orden.Visible = True
+                Label6.Visible = True
+                CmbBx_Informe_Empresa.Visible = True
+            Case 2
+                CmbBx_Periodos.Visible = True
+                CmbBx_ResumDetall.Visible = True
+                CmbBx_Periodos.Location = DtTimPickr_Fecha_Ini.Location
+                CmbBx_ResumDetall.Location = DtTimPickr_Fecha_Fin.Location
+                CmbBx_ResumDetall.SelectedIndex = 0
+                Label1.Text = "Periodos  : "
+                DtTimPickr_Fecha_Ini.Visible = False
+                DtTimPickr_Fecha_Fin.Visible = False
 
-        ElseIf CmbBx_Informe.SelectedIndex = 2 Then
-            CmbBx_Periodos.Visible = True
-            CmbBx_ResumDetall.Visible = True
-            CmbBx_Periodos.Location = DtTimPickr_Fecha_Ini.Location
-            CmbBx_ResumDetall.Location = DtTimPickr_Fecha_Fin.Location
-            CmbBx_ResumDetall.SelectedIndex = 0
-            Label1.Text = "Periodos  : "
-            DtTimPickr_Fecha_Ini.Visible = False
-            DtTimPickr_Fecha_Fin.Visible = False
+                Label5.Visible = False
+                TxtBx_TotLeche.Visible = False
 
-            Label5.Visible = False
-            TxtBx_TotLeche.Visible = False
+                Label7.Visible = False
+                CmbBx_Informe_TipColac.Visible = False
+                Label2.Visible = False
+                CmbBx_Informe_Orden.Visible = False
+                Label6.Visible = False
+                CmbBx_Informe_Empresa.Visible = False
+            Case 3
+                CmbBx_Periodos.Visible = False
+                CmbBx_ResumDetall.Visible = False
+                Label1.Text = "Desde  : "
+                DtTimPickr_Fecha_Ini.Visible = True
+                DtTimPickr_Fecha_Fin.Visible = True
+                Label5.Visible = True
+
+                Label7.Visible = False
+                CmbBx_Informe_TipColac.Visible = False
+                Label2.Visible = False
+                CmbBx_Informe_Orden.Visible = False
+                Label6.Visible = False
+                CmbBx_Informe_Empresa.Visible = False
+        End Select
 
 
-
-            Label7.Visible = False
-            CmbBx_Informe_TipColac.Visible = False
-            Label2.Visible = False
-            CmbBx_Informe_Orden.Visible = False
-            Label6.Visible = False
-            CmbBx_Informe_Empresa.Visible = False
-
-        End If
     End Sub
 
 
@@ -297,6 +352,5 @@ Public Class Frm_Informes
         'GC.Collect()
 
     End Sub
-
 
 End Class

@@ -97,7 +97,7 @@ Partial Class Frm_Informes
         '
         Me.CmbBx_Informe.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Informe.FormattingEnabled = True
-        Me.CmbBx_Informe.Items.AddRange(New Object() {"Informe de Colaciones Diarias", "Informe de Colaciones Entre Fechas", "Informe de Descuentos GESPER"})
+        Me.CmbBx_Informe.Items.AddRange(New Object() {"Informe de Colaciones Diarias", "Informe de Colaciones Entre Fechas", "Informe de Descuentos GESPER", "Informes de Colaciones Emitidas Reloj Control"})
         Me.CmbBx_Informe.Location = New System.Drawing.Point(83, 10)
         Me.CmbBx_Informe.Name = "CmbBx_Informe"
         Me.CmbBx_Informe.Size = New System.Drawing.Size(289, 25)
@@ -233,7 +233,7 @@ Partial Class Frm_Informes
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 79.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label11, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label8, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 1, 0)
@@ -279,7 +279,7 @@ Partial Class Frm_Informes
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(104, 7)
+        Me.Label4.Location = New System.Drawing.Point(102, 7)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 0
@@ -290,7 +290,7 @@ Partial Class Frm_Informes
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(704, 7)
+        Me.Label5.Location = New System.Drawing.Point(702, 7)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 13)
         Me.Label5.TabIndex = 9
@@ -299,7 +299,7 @@ Partial Class Frm_Informes
         '
         'TxtBx_TotLeche
         '
-        Me.TxtBx_TotLeche.Location = New System.Drawing.Point(801, 3)
+        Me.TxtBx_TotLeche.Location = New System.Drawing.Point(799, 3)
         Me.TxtBx_TotLeche.Name = "TxtBx_TotLeche"
         Me.TxtBx_TotLeche.ReadOnly = True
         Me.TxtBx_TotLeche.Size = New System.Drawing.Size(52, 20)
@@ -309,7 +309,7 @@ Partial Class Frm_Informes
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(536, 7)
+        Me.Label10.Location = New System.Drawing.Point(534, 7)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(31, 13)
         Me.Label10.TabIndex = 7
@@ -320,7 +320,7 @@ Partial Class Frm_Informes
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(233, 7)
+        Me.Label9.Location = New System.Drawing.Point(231, 7)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(64, 13)
         Me.Label9.TabIndex = 5
@@ -331,7 +331,7 @@ Partial Class Frm_Informes
         '
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(364, 7)
+        Me.Label12.Location = New System.Drawing.Point(362, 7)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(67, 13)
         Me.Label12.TabIndex = 12
@@ -340,7 +340,7 @@ Partial Class Frm_Informes
         '
         'TB_Total
         '
-        Me.TB_Total.Location = New System.Drawing.Point(615, 3)
+        Me.TB_Total.Location = New System.Drawing.Point(613, 3)
         Me.TB_Total.Name = "TB_Total"
         Me.TB_Total.ReadOnly = True
         Me.TB_Total.Size = New System.Drawing.Size(54, 20)
@@ -348,7 +348,7 @@ Partial Class Frm_Informes
         '
         'TxtBx_TotCol
         '
-        Me.TxtBx_TotCol.Location = New System.Drawing.Point(172, 3)
+        Me.TxtBx_TotCol.Location = New System.Drawing.Point(170, 3)
         Me.TxtBx_TotCol.Name = "TxtBx_TotCol"
         Me.TxtBx_TotCol.ReadOnly = True
         Me.TxtBx_TotCol.Size = New System.Drawing.Size(45, 20)
@@ -356,7 +356,7 @@ Partial Class Frm_Informes
         '
         'TB_Tot_ExtGcial
         '
-        Me.TB_Tot_ExtGcial.Location = New System.Drawing.Point(309, 3)
+        Me.TB_Tot_ExtGcial.Location = New System.Drawing.Point(307, 3)
         Me.TB_Tot_ExtGcial.Name = "TB_Tot_ExtGcial"
         Me.TB_Tot_ExtGcial.ReadOnly = True
         Me.TB_Tot_ExtGcial.Size = New System.Drawing.Size(45, 20)
@@ -364,7 +364,7 @@ Partial Class Frm_Informes
         '
         'TB_Tot_ExtNorm
         '
-        Me.TB_Tot_ExtNorm.Location = New System.Drawing.Point(481, 3)
+        Me.TB_Tot_ExtNorm.Location = New System.Drawing.Point(479, 3)
         Me.TB_Tot_ExtNorm.Name = "TB_Tot_ExtNorm"
         Me.TB_Tot_ExtNorm.ReadOnly = True
         Me.TB_Tot_ExtNorm.Size = New System.Drawing.Size(45, 20)
@@ -384,7 +384,7 @@ Partial Class Frm_Informes
         '
         Me.CmbBx_Informe_Empresa.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CmbBx_Informe_Empresa.FormattingEnabled = True
-        Me.CmbBx_Informe_Empresa.Items.AddRange(New Object() {"Todas Las Empresas", "096588890-K          Mindugar S.A", "083073600-K          Mindugar Industrial", "076033420-0          Mindugar Montajes"})
+        Me.CmbBx_Informe_Empresa.Items.AddRange(New Object() {"Todas Las Empresas", "096588890-K          Mindugar S.A", "083073600-K          Mindugar Industrial", "076033420-0          Mindugar Montajes", "Solo Gerentes"})
         Me.CmbBx_Informe_Empresa.Location = New System.Drawing.Point(82, 66)
         Me.CmbBx_Informe_Empresa.Name = "CmbBx_Informe_Empresa"
         Me.CmbBx_Informe_Empresa.Size = New System.Drawing.Size(289, 25)

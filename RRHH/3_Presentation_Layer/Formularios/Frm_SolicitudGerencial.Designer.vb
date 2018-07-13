@@ -24,6 +24,7 @@ Partial Class Frm_SolicitudGerencial
     Private Sub InitializeComponent()
         Me.panelCentral = New System.Windows.Forms.Panel()
         Me.MonthCalendar2 = New Pabo.Calendar.MonthCalendar()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbl_Fecha = New System.Windows.Forms.Label()
         Me.Txt_Fecha = New System.Windows.Forms.TextBox()
         Me.btnVolver = New System.Windows.Forms.Button()
@@ -36,7 +37,6 @@ Partial Class Frm_SolicitudGerencial
         Me.Tt_ComentAlmGcial = New System.Windows.Forms.TextBox()
         Me.Tb_Gerencia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.panelCentral.SuspendLayout()
@@ -107,6 +107,18 @@ Partial Class Frm_SolicitudGerencial
         Me.MonthCalendar2.Weekdays.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthCalendar2.Weekdays.TextColor = System.Drawing.Color.White
         Me.MonthCalendar2.Weeknumbers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label1.Location = New System.Drawing.Point(444, 6)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(339, 21)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "      Indique la Cantidad de almuerzos Especiales"
         '
         'Lbl_Fecha
         '
@@ -243,18 +255,6 @@ Partial Class Frm_SolicitudGerencial
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Gerenciales"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label1.Location = New System.Drawing.Point(444, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(339, 21)
-        Me.Label1.TabIndex = 11
-        Me.Label1.Text = "      Indique la Cantidad de almuerzos Especiales"
-        '
         'MonthCalendar1
         '
         Me.MonthCalendar1.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
@@ -282,7 +282,10 @@ Partial Class Frm_SolicitudGerencial
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1156, 583)
+        Me.ControlBox = False
         Me.Controls.Add(Me.panelCentral)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Frm_SolicitudGerencial"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Solicitud Almuerzo Adicional"

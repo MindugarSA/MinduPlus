@@ -1,10 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.VisualBasic
 
 
 Public Class Frm_SolicitudColacion
 
-    Property vDateInfo As DateTime
+    Property vDateAct As DateTime
+    Property vDateIni As DateTime
+    Property vDateFin As DateTime
     Property dt As New DataTable
     Property conexion As New SqlConnection
     Property cmd As SqlCommand
@@ -33,12 +36,11 @@ Public Class Frm_SolicitudColacion
 
         Iniciar_Form_Almuerzos()
 
-
         Me.ResumeLayout()
         timer = New Timer()
         timer.Interval = 30
         listaControl = New List(Of Control)
-        makeList()
+        CrearListaControles()
     End Sub
 
     Private Sub Frm_SolicitudColación_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -70,7 +72,7 @@ Public Class Frm_SolicitudColacion
         '    Exit Sub
         'End If
         Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-        Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+        Dim Linea As String = VBRight(sender.name.ToString, 1)
         Dim str_a As String = String.Format("Lbl_A{0}", Linea)
         Dim str_b As String = String.Format("Lbl_B{0}", Linea)
         Dim str_c As String = String.Format("Lbl_C{0}", Linea)
@@ -91,7 +93,7 @@ Public Class Frm_SolicitudColacion
             'Borrar Postres
             Dim TblLyutPnl As TableLayoutPanel
             Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
-            'Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+            'Dim Linea As String = VBRight(sender.name.ToString, 1)
             Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
             Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
             Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
@@ -137,7 +139,7 @@ Public Class Frm_SolicitudColacion
         'End If
         'Revisar si esta seleccionado un almuerzo
         Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
-        Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+        Dim Linea As String = VBRight(sender.name.ToString, 1)
         Dim str_a As String = String.Format("Lbl_A{0}", Linea)
         Dim str_b As String = String.Format("Lbl_B{0}", Linea)
         Dim str_c As String = String.Format("Lbl_C{0}", Linea)
@@ -154,7 +156,7 @@ Public Class Frm_SolicitudColacion
 
         Dim TblLyutPnl As TableLayoutPanel
         Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
-        'Dim Linea As String = Microsoft.VisualBasic.Right(sender.name.ToString, 1)
+        'Dim Linea As String = VBRight(sender.name.ToString, 1)
         Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
         Dim str_e As String = String.Format("Lbl_P_A{0}", Linea)
         Dim str_f As String = String.Format("Lbl_P_B{0}", Linea)
@@ -180,13 +182,13 @@ Public Class Frm_SolicitudColacion
         If clickPictureBoxActivo Then
             clickPictureBoxActivo = False
             Me.SuspendLayout()
-            vDateInfo = DateAdd("d", -7, vDateInfo)
-            tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
+            vDateIni = DateAdd("d", -7, vDateIni)
+            tb_FechaIni.Text = vDateIni.ToString("yyyyMMdd")
             txbTrabajador.AutoCompleteCustomSource.Clear()
             txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
 
-            LLenaFechasColaciones(vDateInfo)
-            CargarColaciones(vDateInfo)
+            LLenarFechasAlmuerzos(vDateIni)
+            CargarMenuAlmuerzos(vDateIni)
 
             MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
             MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
@@ -202,13 +204,13 @@ Public Class Frm_SolicitudColacion
         If clickPictureBoxActivo Then
             clickPictureBoxActivo = False
             Me.SuspendLayout()
-            vDateInfo = DateAdd("d", 7, vDateInfo)
-            tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
+            vDateIni = DateAdd("d", 7, vDateIni)
+            tb_FechaIni.Text = vDateIni.ToString("yyyyMMdd")
             txbTrabajador.AutoCompleteCustomSource.Clear()
             txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
 
-            LLenaFechasColaciones(vDateInfo)
-            CargarColaciones(vDateInfo)
+            LLenarFechasAlmuerzos(vDateIni)
+            CargarMenuAlmuerzos(vDateIni)
 
             MDIParent1.TiempoActivo = MDIParent1.Tiempo_Str
             MDIParent1.ToolStripProgressBar1.ProgressBar.Value = MDIParent1.TiempoActivo
@@ -241,7 +243,6 @@ Public Class Frm_SolicitudColacion
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim Errores As String = ""
-        Dim FechaIni As Date = vDateInfo
         Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
         Dim SelectAlmuerzo, SelectPostre As String
         Dim TblLyutPnl As TableLayoutPanel
@@ -256,10 +257,10 @@ Public Class Frm_SolicitudColacion
             controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
             controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
             controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
-            If Not controlLabel_A.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_A.Name.ToString, 2), 1)
-            If Not controlLabel_B.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_B.Name.ToString, 2), 1)
-            If Not controlLabel_C.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_C.Name.ToString, 2), 1)
-            If Not controlLabel_D.Image Is Nothing Then SelectAlmuerzo = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_D.Name.ToString, 2), 1)
+            If Not controlLabel_A.Image Is Nothing Then SelectAlmuerzo = VBLeft(VBRight(controlLabel_A.Name.ToString, 2), 1)
+            If Not controlLabel_B.Image Is Nothing Then SelectAlmuerzo = VBLeft(VBRight(controlLabel_B.Name.ToString, 2), 1)
+            If Not controlLabel_C.Image Is Nothing Then SelectAlmuerzo = VBLeft(VBRight(controlLabel_C.Name.ToString, 2), 1)
+            If Not controlLabel_D.Image Is Nothing Then SelectAlmuerzo = VBLeft(VBRight(controlLabel_D.Name.ToString, 2), 1)
 
 
             SelectPostre = "-"
@@ -273,18 +274,21 @@ Public Class Frm_SolicitudColacion
             controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
             controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
             controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
-            If Not controlLabel_E.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_E.Name.ToString, 2), 1)
-            If Not controlLabel_F.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_F.Name.ToString, 2), 1)
-            If Not controlLabel_G.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_G.Name.ToString, 2), 1)
-            If Not controlLabel_H.Image Is Nothing Then SelectPostre = Microsoft.VisualBasic.Left(Microsoft.VisualBasic.Right(controlLabel_H.Name.ToString, 2), 1)
+            If Not controlLabel_E.Image Is Nothing Then SelectPostre = VBLeft(VBRight(controlLabel_E.Name.ToString, 2), 1)
+            If Not controlLabel_F.Image Is Nothing Then SelectPostre = VBLeft(VBRight(controlLabel_F.Name.ToString, 2), 1)
+            If Not controlLabel_G.Image Is Nothing Then SelectPostre = VBLeft(VBRight(controlLabel_G.Name.ToString, 2), 1)
+            If Not controlLabel_H.Image Is Nothing Then SelectPostre = VBLeft(VBRight(controlLabel_H.Name.ToString, 2), 1)
             Dim Rut As String = gRut 'MDIParent1.Lbl_RutTrab.ToString
             Dim e_cod_interno As String = MDIParent1.Lbl_Cod_Interno.ToString
             Dim e_Fecha_Graba As String = Date.Now.ToString("yyyyMMdd")
-            Dim e_Fecha_Solicitu As String = vDateInfo.ToString("yyyyMMdd")
+            Dim e_Fecha_Solicitu As String = vDateAct.ToString("yyyyMMdd")
             Dim e_Almuerzo As String = SelectAlmuerzo
             Dim e_Postre As String = SelectPostre
             Dim e_Id_RutEmpresa As String = MDIParent1.Lbl_RutEmpresa.Text
 
+            If (MDIParent1.RevisaAcceso(30001) And vDateAct <= Date.Now) Then
+                If (SelectAlmuerzo = "-") Then SelectAlmuerzo = "N"
+            End If
 
 
             cmd = New SqlCommand("Colaciones_Solicitudes_Ges", conexion)
@@ -293,7 +297,7 @@ Public Class Frm_SolicitudColacion
             cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) ' MDIParent1.Lbl_RutTrab.Text))
             cmd.Parameters.Add(New SqlParameter("@cod_interno", MDIParent1.Lbl_Cod_Interno.Text))
             cmd.Parameters.Add(New SqlParameter("@Fecha_Graba", Date.Now.ToString("yyyyMMdd")))
-            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", FechaIni.ToString("yyyyMMdd")))
+            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", vDateIni.ToString("yyyyMMdd")))
             cmd.Parameters.Add(New SqlParameter("@Almuerzo", SelectAlmuerzo))
             cmd.Parameters.Add(New SqlParameter("@Postre", SelectPostre))
             cmd.Parameters.Add(New SqlParameter("@Id_RutEmpresa", MDIParent1.Lbl_RutEmpresa.Text))
@@ -301,11 +305,11 @@ Public Class Frm_SolicitudColacion
                 dt.Reset()
                 dt.Load(cmd.ExecuteReader())
             Catch ex As Exception
-                Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
+                Errores = Errores + " | Fecha = " + vDateIni.ToString("yyyyMMdd")
             Finally
                 conexion.Close()
             End Try
-            FechaIni = DateAdd("d", 1, FechaIni)
+            vDateIni = DateAdd("d", 1, vDateIni)
         Next
         If Errores <> "" Then
             MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red
@@ -324,6 +328,14 @@ Public Class Frm_SolicitudColacion
         '    "Comunicado de fecha 27 de mayo del 2016", MsgBoxStyle.Exclamation, "Advertencia")
         'End If
     End Sub
+
+    Private Function VBRight(v1 As String, v2 As Integer) As String
+        Return Microsoft.VisualBasic.Right(v1, v2)
+    End Function
+
+    Private Function VBLeft(v1 As String, v2 As Integer) As String
+        Return Microsoft.VisualBasic.Left(v1, v2)
+    End Function
 
     Private Sub Frm_SolicitudColacion_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
 
@@ -354,13 +366,13 @@ Public Class Frm_SolicitudColacion
     End Sub
 
     Private Sub txbRut_ModifiedChanged(sender As Object, e As EventArgs) Handles txbRut.ModifiedChanged
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
+        LLenarFechasAlmuerzos(vDateIni)
+        CargarMenuAlmuerzos(vDateIni)
     End Sub
 
     Private Sub txbTrabajador_Validated(sender As Object, e As EventArgs) Handles txbTrabajador.Validated
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
+        LLenarFechasAlmuerzos(vDateIni)
+        CargarMenuAlmuerzos(vDateIni)
     End Sub
 
     Private Sub txbTrabajador_ModifiedChanged(sender As Object, e As EventArgs) Handles txbTrabajador.ModifiedChanged
@@ -380,17 +392,11 @@ Public Class Frm_SolicitudColacion
         Next
         Me.WindowState = FormWindowState.Maximized
         '--------------------------------------------------
-        vDateInfo = FormatDateTime(DateSerial(Year(Date.Now), Month(Date.Now), Microsoft.VisualBasic.DateAndTime.Day(Date.Now)), DateFormat.LongDate) + " 09:00"
-        Dim vDateFin As DateTime
+        vDateAct = FormatDateTime(DateSerial(Year(Date.Now), Month(Date.Now), DateAndTime.Day(Date.Now)), DateFormat.LongDate) + " 09:00"
+        vDateIni = vDateAct.AddDays(1 - Convert.ToDouble(vDateAct.DayOfWeek))   'Lunes de la Semana
+        vDateFin = vDateAct.AddDays(7 - Convert.ToDouble(vDateAct.DayOfWeek))   'Domingo de la semana
+        tb_FechaIni.Text = vDateIni.ToString("yyyyMMdd")
 
-        Dim vDiaNum As Integer = Weekday(vDateInfo)
-        'Dim vDay As Integer = Weekday(vDateInf)
-        While vDiaNum <> 2
-            vDateInfo = DateAdd("d", -1, vDateInfo)
-            vDiaNum = Weekday(vDateInfo)
-        End While
-        tb_FechaIni.Text = vDateInfo.ToString("yyyyMMdd")
-        vDateFin = DateAdd("d", 7 - 1, vDateInfo)
 
         If Not MDIParent1.RevisaAcceso(30001) Then
             Pnl_Modf.Visible = False
@@ -402,14 +408,12 @@ Public Class Frm_SolicitudColacion
             txbTrabajador.AutoCompleteCustomSource = listaAutocompletadaTrabajadores()
             txbTrabajador.Text = MDIParent1.TxtBx_UserName.Text
             gRut = MDIParent1.Lbl_RutTrab.Text
-
-
         End If
 
         'lbl_Fecha.ForeColor = Drawing.Color.Blue
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
-        VisiblePostres()
+        LLenarFechasAlmuerzos(vDateIni)
+        CargarMenuAlmuerzos(vDateIni)
+        VisiblePostres(False)
 
     End Sub
 
@@ -455,9 +459,11 @@ Public Class Frm_SolicitudColacion
         Return tabla
     End Function
 
-    Private Sub BuscaSolicitudes(DateInfo As DateTime)
+    Private Sub CargarSolicitudesAlmuerzos(DateInfo As DateTime)
+
         Dim Errores As String = ""
         Dim FechaIni As Date = DateInfo
+
         For Linea = 1 To 5
             cmd = New SqlCommand("Colaciones_Solicitudes_Info", conexion)
             cmd.CommandType = CommandType.StoredProcedure
@@ -498,6 +504,10 @@ Public Class Frm_SolicitudColacion
             controlLabel_F = CType(TblLyutPnl.Controls(str_f), Label)
             controlLabel_G = CType(TblLyutPnl.Controls(str_g), Label)
             controlLabel_H = CType(TblLyutPnl.Controls(str_h), Label)
+
+            Dim LblAlumerzos() As Label = {controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D,
+                                           controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H}
+
             If dt.Rows(0)("IdEstado") = 0 Then
                 If dt.Rows(0)("Almuerzo") = "A" Then Seleccionar_Label_Almuerzo(controlLabel_A) Else Inicializar_Label_Almuerzo(controlLabel_A)
                 If dt.Rows(0)("Almuerzo") = "B" Then Seleccionar_Label_Almuerzo(controlLabel_B) Else Inicializar_Label_Almuerzo(controlLabel_B)
@@ -509,60 +519,51 @@ Public Class Frm_SolicitudColacion
                 If dt.Rows(0)("Postre") = "C" Then Seleccionar_Label_Almuerzo(controlLabel_G) Else Inicializar_Label_Almuerzo(controlLabel_G)
                 If dt.Rows(0)("Postre") = "D" Then Seleccionar_Label_Almuerzo(controlLabel_H) Else Inicializar_Label_Almuerzo(controlLabel_H)
             Else
-                Inicializar_Label_Almuerzo(controlLabel_A)
-                Inicializar_Label_Almuerzo(controlLabel_B)
-                Inicializar_Label_Almuerzo(controlLabel_C)
-                Inicializar_Label_Almuerzo(controlLabel_D)
-                Inicializar_Label_Almuerzo(controlLabel_E)
-                Inicializar_Label_Almuerzo(controlLabel_F)
-                Inicializar_Label_Almuerzo(controlLabel_G)
-                Inicializar_Label_Almuerzo(controlLabel_H)
+                For Each LblAlmu As Label In LblAlumerzos
+                    Inicializar_Label_Almuerzo(LblAlmu)
+                Next
             End If
             FechaIni = DateAdd("d", 1, FechaIni)
         Next
     End Sub
 
-    Sub LLenaFechasColaciones(DateInfo As Date)
-        'Lbl_01.ForeColor = Color.Black
-        'Lbl_02.ForeColor = Color.Black
-        'Lbl_03.ForeColor = Color.Black
-        'Lbl_04.ForeColor = Color.Black
-        'Lbl_05.ForeColor = Color.Black
-        Lbl_01.Text = ""
-        Lbl_02.Text = ""
-        Lbl_03.Text = ""
-        Lbl_04.Text = ""
-        Lbl_05.Text = ""
+    Sub LLenarFechasAlmuerzos(DateInfo As Date)
+
+
+        Dim LabelFecha() As Label = {Lbl_01, Lbl_02, Lbl_03, Lbl_04, Lbl_05}
+        ' Incializar Lbl_01 - Lbl_05
+        For Each LblFecha As Label In LabelFecha
+            LblFecha.Text = ""
+        Next
+
 
         Dim FechaIni As Date = DateInfo
-        'tb_FechaIni.Text = DateInfo.ToString("yyyyMMdd")
         Dim FechaFin As Date = DateAdd("d", 7 - 1, DateInfo)
-        lbl_Fecha.Text = (FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
+        lbl_Fecha.Text = (FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
                          Space(2) +
                          "hasta el" +
                          Space(2) +
-                         FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)).ToUpper()
-        'REVISAR
-        ControlEnable(FechaIni)
-        'Coloca dias
-        Lbl_01.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_02.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_03.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_04.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_05.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+                         FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), DateAndTime.Day(FechaFin)), DateFormat.LongDate)).ToUpper()
+        'Verificar Accesos (Bloquear/Habilitar Dias)
+        HabilitarDiasAcceso(FechaIni)
+        'Coloca dias Lbl_01 - Lbl_05
+        For Each LblFecha As Label In LabelFecha
+            LblFecha.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+            DateInfo = DateAdd("d", 1, DateInfo)
+        Next
 
+        'BLoquea los Dias feriado
+        BloquearDiasFeriados(FechaIni, FechaFin)
 
-        'Pinta Dias feriado
+    End Sub
+
+    Private Sub BloquearDiasFeriados(fechaIni As Date, fechaFin As Date)
         dt.Reset()
         cmd = New SqlCommand("Feriados_Info", conexion)
         cmd.CommandType = CommandType.StoredProcedure
         conexion.Open()
-        cmd.Parameters.Add(New SqlParameter("@FechaIni", FechaIni.ToString("yyyyMMdd")))
-        cmd.Parameters.Add(New SqlParameter("@FechaFin", FechaFin.ToString("yyyyMMdd")))
+        cmd.Parameters.Add(New SqlParameter("@FechaIni", fechaIni.ToString("yyyyMMdd")))
+        cmd.Parameters.Add(New SqlParameter("@FechaFin", fechaFin.ToString("yyyyMMdd")))
         Try
             dt.Load(cmd.ExecuteReader())
         Catch ex As Exception
@@ -575,14 +576,14 @@ Public Class Frm_SolicitudColacion
             For i As Integer = 1 To 5
                 str = String.Format("Lbl_0{0}", i)
                 controlLabel = CType(Me.TableLayoutPanel2.Controls(str), Label)
-                'controlLabel.Text =FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+                'controlLabel.Text =FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), DateAndTime.Day(DateInfo)), DateFormat.LongDate)
                 If (Not (controlLabel Is Nothing)) Then
                     dt.Reset()
                     cmd = New SqlCommand("Feriados_Info", conexion)
                     cmd.CommandType = CommandType.StoredProcedure
                     conexion.Open()
-                    cmd.Parameters.Add(New SqlParameter("@FechaIni", FechaIni.ToString("yyyyMMdd")))
-                    cmd.Parameters.Add(New SqlParameter("@FechaFin", FechaIni.ToString("yyyyMMdd")))
+                    cmd.Parameters.Add(New SqlParameter("@FechaIni", fechaIni.ToString("yyyyMMdd")))
+                    cmd.Parameters.Add(New SqlParameter("@FechaFin", fechaIni.ToString("yyyyMMdd")))
                     Try
                         dt.Load(cmd.ExecuteReader())
                     Catch ex As Exception
@@ -597,21 +598,23 @@ Public Class Frm_SolicitudColacion
 
                 End If
 
-                FechaIni = DateAdd("d", 1, FechaIni)
+                fechaIni = DateAdd("d", 1, fechaIni)
             Next
         End If
     End Sub
 
-    Sub ControlEnable(DateInfo As Date)
+    Sub HabilitarDiasAcceso(DateInfo As Date)
         Dim TblLyutPnl As TableLayoutPanel
-        Dim controlLabel_A, controlLabel_B, controlLabel_C As Label 'controlLabel_D As Label
+        Dim controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D As Label
         'Dim controlLabel_PA, controlLabel_PB, controlLabel_PC, controlLabel_PD As Label
+
+
         For Linea = 1 To 5
             Dim str_T As String = String.Format("TblLyutPnl_{0}", Linea)
             Dim str_a As String = String.Format("Lbl_A{0}", Linea)
             Dim str_b As String = String.Format("Lbl_B{0}", Linea)
             Dim str_c As String = String.Format("Lbl_C{0}", Linea)
-            'Dim str_d As String = String.Format("Lbl_D{0}", Linea)
+            Dim str_d As String = String.Format("Lbl_D{0}", Linea)
             'Dim str_Pa As String = String.Format("Lbl_P_A{0}", Linea)
             'Dim str_Pb As String = String.Format("Lbl_P_B{0}", Linea)
             'Dim str_Pc As String = String.Format("Lbl_P_C{0}", Linea)
@@ -620,7 +623,8 @@ Public Class Frm_SolicitudColacion
             controlLabel_A = CType(Me.TableLayoutPanel2.Controls(str_a), Label)
             controlLabel_B = CType(Me.TableLayoutPanel2.Controls(str_b), Label)
             controlLabel_C = CType(Me.TableLayoutPanel2.Controls(str_c), Label)
-            'controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
+            controlLabel_D = CType(Me.TableLayoutPanel2.Controls(str_d), Label)
+            Dim LabelAlmuerzo() As Label = {controlLabel_A, controlLabel_B, controlLabel_C, controlLabel_D}
             'controlLabel_PA = CType(TblLyutPnl.Controls(str_Pa), Label)
             'controlLabel_PB = CType(TblLyutPnl.Controls(str_Pb), Label)
             'controlLabel_PC = CType(TblLyutPnl.Controls(str_Pc), Label)
@@ -628,40 +632,24 @@ Public Class Frm_SolicitudColacion
 
 
             If DateInfo < DateAdd("d", +1, Date.Now) Then
-                controlLabel_A.Enabled = False
-                controlLabel_B.Enabled = False
-                controlLabel_C.Enabled = False
-                'controlLabel_D.Enabled = False
-                'controlLabel_PA.Enabled = False
-                'controlLabel_PB.Enabled = False
-                'controlLabel_PC.Enabled = False
-                'controlLabel_PD.Enabled = False
-
+                For Each LblAlmu As Label In LabelAlmuerzo
+                    LblAlmu.Enabled = False
+                Next
             Else
-                controlLabel_A.Enabled = True
-                controlLabel_B.Enabled = True
-                controlLabel_C.Enabled = True
-                'controlLabel_D.Enabled = True
-                'controlLabel_PA.Enabled = True
-                'controlLabel_PB.Enabled = True
-                'controlLabel_PC.Enabled = True
-                'controlLabel_PD.Enabled = True
+                For Each LblAlmu As Label In LabelAlmuerzo
+                    LblAlmu.Enabled = True
+                Next
             End If
             If MDIParent1.RevisaAcceso(30001) Then
-                controlLabel_A.Enabled = True
-                controlLabel_B.Enabled = True
-                controlLabel_C.Enabled = True
-                'controlLabel_D.Enabled = True
-                'controlLabel_PA.Enabled = True
-                'controlLabel_PB.Enabled = True
-                'controlLabel_PC.Enabled = True
-                'controlLabel_PD.Enabled = True
+                For Each LblAlmu As Label In LabelAlmuerzo
+                    LblAlmu.Enabled = True
+                Next
             End If
             DateInfo = DateAdd("d", 1, DateInfo)
         Next
     End Sub
 
-    Sub CargarColaciones(DateInfo As DateTime)
+    Sub CargarMenuAlmuerzos(DateInfo As DateTime)
         Dim FechaIni As Date = DateInfo
         LimpiarColaciones()
 
@@ -677,7 +665,6 @@ Public Class Frm_SolicitudColacion
             Finally
                 conexion.Close()
             End Try
-
 
             If dt.Rows(0)("IdEstado") = 0 Then
                 If vDiaNum = 1 Then
@@ -736,87 +723,40 @@ Public Class Frm_SolicitudColacion
             End If
             FechaIni = DateAdd("d", 1, FechaIni)
         Next
-        BuscaSolicitudes(vDateInfo)
+        CargarSolicitudesAlmuerzos(vDateIni)
     End Sub
 
     Sub LimpiarColaciones()
-        Lbl_A1.Text = ""
-        Lbl_B1.Text = ""
-        Lbl_C1.Text = ""
-        Inicializar_Label_Almuerzo(Lbl_A1)
-        Inicializar_Label_Almuerzo(Lbl_B1)
-        Inicializar_Label_Almuerzo(Lbl_C1)
+
+        Me.SuspendLayout()
+
+        Dim LabelAlmuerzo() As Label = {Lbl_A1, Lbl_A2, Lbl_A3, Lbl_A4, Lbl_A5,
+                                        Lbl_B1, Lbl_B2, Lbl_B3, Lbl_B4, Lbl_B5,
+                                        Lbl_C1, Lbl_C2, Lbl_C3, Lbl_C4, Lbl_C5}
+
+        For Each LblAlmu As Label In LabelAlmuerzo
+            LblAlmu.Text = ""
+            Inicializar_Label_Almuerzo(LblAlmu)
+        Next
+
+        Me.ResumeLayout()
         'Lbl_D1.Text = ""
         'Lbl_P_A1.Text = ""
         'Lbl_P_B1.Text = ""
         'Lbl_P_C1.Text = ""
         'Lbl_P_D1.Text = ""
 
-        Lbl_A2.Text = ""
-        Lbl_B2.Text = ""
-        Lbl_C2.Text = ""
-        Inicializar_Label_Almuerzo(Lbl_A2)
-        Inicializar_Label_Almuerzo(Lbl_B2)
-        Inicializar_Label_Almuerzo(Lbl_C2)
-        'Lbl_D2.Text = ""
-        'Lbl_P_A2.Text = ""
-        'Lbl_P_B2.Text = ""
-        'Lbl_P_C2.Text = ""
-        'Lbl_P_D2.Text = ""
-
-        Lbl_A3.Text = ""
-        Lbl_B3.Text = ""
-        Lbl_C3.Text = ""
-        Inicializar_Label_Almuerzo(Lbl_A3)
-        Inicializar_Label_Almuerzo(Lbl_B3)
-        Inicializar_Label_Almuerzo(Lbl_C3)
-        'Lbl_D3.Text = ""
-        'Lbl_P_A3.Text = ""
-        'Lbl_P_B3.Text = ""
-        'Lbl_P_C3.Text = ""
-        'Lbl_P_D3.Text = ""
-
-        Lbl_A4.Text = ""
-        Lbl_B4.Text = ""
-        Lbl_C4.Text = ""
-        Inicializar_Label_Almuerzo(Lbl_A4)
-        Inicializar_Label_Almuerzo(Lbl_B4)
-        Inicializar_Label_Almuerzo(Lbl_C4)
-        'Lbl_D4.Text = ""
-        'Lbl_P_A4.Text = ""
-        'Lbl_P_B4.Text = ""
-        'Lbl_P_C4.Text = ""
-        'Lbl_P_D4.Text = ""
-
-        Lbl_A5.Text = ""
-        Lbl_B5.Text = ""
-        Lbl_C5.Text = ""
-        Inicializar_Label_Almuerzo(Lbl_A5)
-        Inicializar_Label_Almuerzo(Lbl_B5)
-        Inicializar_Label_Almuerzo(Lbl_C5)
-        'Lbl_D5.Text = ""
-        'Lbl_P_A5.Text = ""
-        'Lbl_P_B5.Text = ""
-        'Lbl_P_C5.Text = ""
-        'Lbl_P_D5.Text = ""
     End Sub
 
-    Private Sub VisiblePostres()
-        Lbl_P_B1.Visible = False
-        Lbl_P_C1.Visible = False
-        Lbl_P_D1.Visible = False
-        Lbl_P_B2.Visible = False
-        Lbl_P_C2.Visible = False
-        Lbl_P_D2.Visible = False
-        Lbl_P_B3.Visible = False
-        Lbl_P_C3.Visible = False
-        Lbl_P_D3.Visible = False
-        Lbl_P_B4.Visible = False
-        Lbl_P_C4.Visible = False
-        Lbl_P_D4.Visible = False
-        Lbl_P_B5.Visible = False
-        Lbl_P_C5.Visible = False
-        Lbl_P_D5.Visible = False
+    Private Sub VisiblePostres(Visible As Boolean)
+        Dim LabelPostres() As Label = {Lbl_P_B1, Lbl_P_B2, Lbl_P_B3, Lbl_P_B4, Lbl_P_B5,
+                                       Lbl_P_C1, Lbl_P_C2, Lbl_P_C3, Lbl_P_C4, Lbl_P_C5,
+                                       Lbl_P_D1, Lbl_P_D2, Lbl_P_D3, Lbl_P_D4, Lbl_P_D5}
+
+        For Each LblAlmu As Label In LabelPostres
+            LblAlmu.Visible = Visible
+        Next
+
     End Sub
 
     Private Sub PictureBox2_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox2.MouseEnter, PictureBox1.MouseEnter
@@ -867,6 +807,7 @@ Public Class Frm_SolicitudColacion
 
 
     Private Sub DoTheTimer() Handles timer.Tick
+
         If time <> maxTime Then
             panelAntiguo.Left += sentido * DESPLAZAMIENTO
             TableLayoutPanel2.Left += sentido * DESPLAZAMIENTO
@@ -879,40 +820,21 @@ Public Class Frm_SolicitudColacion
             timer.Stop()
         End If
 
-
     End Sub
 
-    Private Sub makeList()
-        listaControl.Add(Me.Lbl_A1)
-        listaControl.Add(Me.Lbl_A2)
-        listaControl.Add(Me.Lbl_A3)
-        listaControl.Add(Me.Lbl_A4)
-        listaControl.Add(Me.Lbl_A5)
-        listaControl.Add(Me.Lbl_B1)
-        listaControl.Add(Me.Lbl_B2)
-        listaControl.Add(Me.Lbl_B3)
-        listaControl.Add(Me.Lbl_B4)
-        listaControl.Add(Me.Lbl_B5)
-        listaControl.Add(Me.Lbl_C1)
-        listaControl.Add(Me.Lbl_C2)
-        listaControl.Add(Me.Lbl_C3)
-        listaControl.Add(Me.Lbl_C4)
-        listaControl.Add(Me.Lbl_C5)
-        listaControl.Add(Me.Lbl_D1)
-        listaControl.Add(Me.Lbl_D2)
-        listaControl.Add(Me.Lbl_D3)
-        listaControl.Add(Me.Lbl_D4)
-        listaControl.Add(Me.Lbl_D5)
-        listaControl.Add(Me.Lbl_01)
-        listaControl.Add(Me.Lbl_02)
-        listaControl.Add(Me.Lbl_03)
-        listaControl.Add(Me.Lbl_04)
-        listaControl.Add(Me.Lbl_05)
-        listaControl.Add(TblLyutPnl_1)
-        listaControl.Add(TblLyutPnl_2)
-        listaControl.Add(TblLyutPnl_3)
-        listaControl.Add(TblLyutPnl_4)
-        listaControl.Add(TblLyutPnl_5)
+    Private Sub CrearListaControles()
+
+        Dim LstControl() As Control = {Lbl_A1, Lbl_A2, Lbl_A3, Lbl_A4, Lbl_A5,
+                                        Lbl_B1, Lbl_B2, Lbl_B3, Lbl_B4, Lbl_B5,
+                                        Lbl_C1, Lbl_C2, Lbl_C3, Lbl_C4, Lbl_C5,
+                                        Lbl_D1, Lbl_D2, Lbl_D3, Lbl_D4, Lbl_D5,
+                                        Lbl_01, Lbl_02, Lbl_03, Lbl_04, Lbl_05,
+                                        TblLyutPnl_1, TblLyutPnl_2, TblLyutPnl_3, TblLyutPnl_4, TblLyutPnl_5}
+
+        For Each cltControl As Control In LstControl
+            listaControl.Add(cltControl)
+        Next
+
     End Sub
 
 End Class
