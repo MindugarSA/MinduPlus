@@ -247,6 +247,7 @@ Public Class Frm_SolicitudColacion
         Dim SelectAlmuerzo, SelectPostre As String
         Dim TblLyutPnl As TableLayoutPanel
         Dim controlLabel_E, controlLabel_F, controlLabel_G, controlLabel_H As Label
+        Dim FechaIni = vDateIni
         For Linea = 1 To 5
             SelectAlmuerzo = "-"
             Dim str_a As String = String.Format("Lbl_A{0}", Linea)
@@ -297,7 +298,7 @@ Public Class Frm_SolicitudColacion
             cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) ' MDIParent1.Lbl_RutTrab.Text))
             cmd.Parameters.Add(New SqlParameter("@cod_interno", MDIParent1.Lbl_Cod_Interno.Text))
             cmd.Parameters.Add(New SqlParameter("@Fecha_Graba", Date.Now.ToString("yyyyMMdd")))
-            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", vDateIni.ToString("yyyyMMdd")))
+            cmd.Parameters.Add(New SqlParameter("@Fecha_Solicitud", FechaIni.ToString("yyyyMMdd")))
             cmd.Parameters.Add(New SqlParameter("@Almuerzo", SelectAlmuerzo))
             cmd.Parameters.Add(New SqlParameter("@Postre", SelectPostre))
             cmd.Parameters.Add(New SqlParameter("@Id_RutEmpresa", MDIParent1.Lbl_RutEmpresa.Text))
@@ -305,11 +306,11 @@ Public Class Frm_SolicitudColacion
                 dt.Reset()
                 dt.Load(cmd.ExecuteReader())
             Catch ex As Exception
-                Errores = Errores + " | Fecha = " + vDateIni.ToString("yyyyMMdd")
+                Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
             Finally
                 conexion.Close()
             End Try
-            vDateIni = DateAdd("d", 1, vDateIni)
+            FechaIni = DateAdd("d", 1, FechaIni)
         Next
         If Errores <> "" Then
             MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.Red

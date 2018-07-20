@@ -25,19 +25,19 @@ Partial Class Frm_TicketSolicitudes
         Me.MaterialSingleLineTextField1 = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MaterialRadioButton1 = New MaterialSkin.Controls.MaterialRadioButton()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
-        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
-        Me.MaterialRadioButton2 = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.MaterialRadioButton3 = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
-        Me.btnAgregarSolicitud = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         Me.panel2 = New System.Windows.Forms.Panel()
         Me.txtObserva = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnAgregarSolicitud = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.MaterialRadioButton3 = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.MaterialRadioButton2 = New MaterialSkin.Controls.MaterialRadioButton()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -64,7 +64,7 @@ Partial Class Frm_TicketSolicitudes
         Me.MaterialSingleLineTextField1.SelectedText = ""
         Me.MaterialSingleLineTextField1.SelectionLength = 0
         Me.MaterialSingleLineTextField1.SelectionStart = 0
-        Me.MaterialSingleLineTextField1.Size = New System.Drawing.Size(508, 23)
+        Me.MaterialSingleLineTextField1.Size = New System.Drawing.Size(302, 23)
         Me.MaterialSingleLineTextField1.TabIndex = 0
         Me.MaterialSingleLineTextField1.TabStop = False
         Me.MaterialSingleLineTextField1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -75,7 +75,7 @@ Partial Class Frm_TicketSolicitudes
         '
         Me.MaterialRadioButton1.AutoSize = True
         Me.MaterialRadioButton1.Depth = 0
-        Me.MaterialRadioButton1.Font = New System.Drawing.Font("Segoe UI Light", 11.25!)
+        Me.MaterialRadioButton1.Font = New System.Drawing.Font("Roboto", 10.0!)
         Me.MaterialRadioButton1.Location = New System.Drawing.Point(452, 33)
         Me.MaterialRadioButton1.Margin = New System.Windows.Forms.Padding(0)
         Me.MaterialRadioButton1.MouseLocation = New System.Drawing.Point(-1, -1)
@@ -101,108 +101,6 @@ Partial Class Frm_TicketSolicitudes
         Me.MetroTabControl1.Size = New System.Drawing.Size(687, 209)
         Me.MetroTabControl1.TabIndex = 2
         Me.MetroTabControl1.UseSelectable = True
-        '
-        'MetroPanel1
-        '
-        Me.MetroPanel1.BackColor = System.Drawing.Color.White
-        Me.MetroPanel1.Controls.Add(Me.panel2)
-        Me.MetroPanel1.Controls.Add(Me.txtObserva)
-        Me.MetroPanel1.Controls.Add(Me.Label4)
-        Me.MetroPanel1.Controls.Add(Me.btnAgregarSolicitud)
-        Me.MetroPanel1.Controls.Add(Me.Label3)
-        Me.MetroPanel1.Controls.Add(Me.MetroComboBox1)
-        Me.MetroPanel1.Controls.Add(Me.Label2)
-        Me.MetroPanel1.Controls.Add(Me.Label1)
-        Me.MetroPanel1.Controls.Add(Me.MaterialRadioButton3)
-        Me.MetroPanel1.Controls.Add(Me.MaterialRadioButton2)
-        Me.MetroPanel1.Controls.Add(Me.MaterialRadioButton1)
-        Me.MetroPanel1.Controls.Add(Me.MaterialSingleLineTextField1)
-        Me.MetroPanel1.Controls.Add(Me.MetroTabControl1)
-        Me.MetroPanel1.HorizontalScrollbarBarColor = True
-        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(22, 13)
-        Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(793, 503)
-        Me.MetroPanel1.TabIndex = 3
-        Me.MetroPanel1.UseCustomBackColor = True
-        Me.MetroPanel1.VerticalScrollbarBarColor = True
-        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroPanel1.VerticalScrollbarSize = 10
-        '
-        'MaterialRadioButton2
-        '
-        Me.MaterialRadioButton2.AutoSize = True
-        Me.MaterialRadioButton2.Depth = 0
-        Me.MaterialRadioButton2.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaterialRadioButton2.Location = New System.Drawing.Point(199, 32)
-        Me.MaterialRadioButton2.Margin = New System.Windows.Forms.Padding(0)
-        Me.MaterialRadioButton2.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.MaterialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialRadioButton2.Name = "MaterialRadioButton2"
-        Me.MaterialRadioButton2.Ripple = True
-        Me.MaterialRadioButton2.Size = New System.Drawing.Size(92, 30)
-        Me.MaterialRadioButton2.TabIndex = 3
-        Me.MaterialRadioButton2.TabStop = True
-        Me.MaterialRadioButton2.Text = "Incidencia"
-        Me.MaterialRadioButton2.UseVisualStyleBackColor = True
-        '
-        'MaterialRadioButton3
-        '
-        Me.MaterialRadioButton3.AutoSize = True
-        Me.MaterialRadioButton3.Depth = 0
-        Me.MaterialRadioButton3.Font = New System.Drawing.Font("Segoe UI Light", 11.25!)
-        Me.MaterialRadioButton3.Location = New System.Drawing.Point(330, 32)
-        Me.MaterialRadioButton3.Margin = New System.Windows.Forms.Padding(0)
-        Me.MaterialRadioButton3.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.MaterialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialRadioButton3.Name = "MaterialRadioButton3"
-        Me.MaterialRadioButton3.Ripple = True
-        Me.MaterialRadioButton3.Size = New System.Drawing.Size(83, 30)
-        Me.MaterialRadioButton3.TabIndex = 4
-        Me.MaterialRadioButton3.TabStop = True
-        Me.MaterialRadioButton3.Text = "Solicitud"
-        Me.MaterialRadioButton3.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
-        Me.Label1.Location = New System.Drawing.Point(64, 38)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 20)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Tipo de Solicitud"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
-        Me.Label2.Location = New System.Drawing.Point(14, 79)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(161, 20)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Departamento a Solicitar"
-        '
-        'MetroComboBox1
-        '
-        Me.MetroComboBox1.FormattingEnabled = True
-        Me.MetroComboBox1.ItemHeight = 23
-        Me.MetroComboBox1.Location = New System.Drawing.Point(195, 75)
-        Me.MetroComboBox1.Name = "MetroComboBox1"
-        Me.MetroComboBox1.Size = New System.Drawing.Size(258, 29)
-        Me.MetroComboBox1.TabIndex = 7
-        Me.MetroComboBox1.UseSelectable = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
-        Me.Label3.Location = New System.Drawing.Point(123, 121)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 20)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Asunto"
         '
         'MetroTabPage1
         '
@@ -233,33 +131,33 @@ Partial Class Frm_TicketSolicitudes
         Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.VerticalScrollbarSize = 10
         '
-        'btnAgregarSolicitud
+        'MetroPanel1
         '
-        Me.btnAgregarSolicitud.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAgregarSolicitud.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnAgregarSolicitud.FlatAppearance.BorderSize = 0
-        Me.btnAgregarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarSolicitud.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarSolicitud.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnAgregarSolicitud.Image = Global.RRHH.My.Resources.Resources.save_file_option64
-        Me.btnAgregarSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnAgregarSolicitud.Location = New System.Drawing.Point(611, 19)
-        Me.btnAgregarSolicitud.Name = "btnAgregarSolicitud"
-        Me.btnAgregarSolicitud.Size = New System.Drawing.Size(167, 80)
-        Me.btnAgregarSolicitud.TabIndex = 44
-        Me.btnAgregarSolicitud.Text = "Agregar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Solicitud"
-        Me.btnAgregarSolicitud.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnAgregarSolicitud.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
-        Me.Label4.Location = New System.Drawing.Point(93, 163)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 20)
-        Me.Label4.TabIndex = 45
-        Me.Label4.Text = "Descripcion"
+        Me.MetroPanel1.BackColor = System.Drawing.Color.White
+        Me.MetroPanel1.Controls.Add(Me.panel2)
+        Me.MetroPanel1.Controls.Add(Me.txtObserva)
+        Me.MetroPanel1.Controls.Add(Me.Label4)
+        Me.MetroPanel1.Controls.Add(Me.btnAgregarSolicitud)
+        Me.MetroPanel1.Controls.Add(Me.Label3)
+        Me.MetroPanel1.Controls.Add(Me.MetroComboBox1)
+        Me.MetroPanel1.Controls.Add(Me.Label2)
+        Me.MetroPanel1.Controls.Add(Me.Label1)
+        Me.MetroPanel1.Controls.Add(Me.MaterialRadioButton3)
+        Me.MetroPanel1.Controls.Add(Me.MaterialRadioButton2)
+        Me.MetroPanel1.Controls.Add(Me.MaterialRadioButton1)
+        Me.MetroPanel1.Controls.Add(Me.MaterialSingleLineTextField1)
+        Me.MetroPanel1.Controls.Add(Me.MetroTabControl1)
+        Me.MetroPanel1.HorizontalScrollbarBarColor = True
+        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.HorizontalScrollbarSize = 10
+        Me.MetroPanel1.Location = New System.Drawing.Point(22, 13)
+        Me.MetroPanel1.Name = "MetroPanel1"
+        Me.MetroPanel1.Size = New System.Drawing.Size(793, 503)
+        Me.MetroPanel1.TabIndex = 3
+        Me.MetroPanel1.UseCustomBackColor = True
+        Me.MetroPanel1.VerticalScrollbarBarColor = True
+        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.VerticalScrollbarSize = 10
         '
         'panel2
         '
@@ -284,6 +182,108 @@ Partial Class Frm_TicketSolicitudes
         Me.txtObserva.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObserva.Size = New System.Drawing.Size(508, 101)
         Me.txtObserva.TabIndex = 46
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
+        Me.Label4.Location = New System.Drawing.Point(93, 163)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(82, 20)
+        Me.Label4.TabIndex = 45
+        Me.Label4.Text = "Descripcion"
+        '
+        'btnAgregarSolicitud
+        '
+        Me.btnAgregarSolicitud.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAgregarSolicitud.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnAgregarSolicitud.FlatAppearance.BorderSize = 0
+        Me.btnAgregarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarSolicitud.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarSolicitud.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnAgregarSolicitud.Image = Global.RRHH.My.Resources.Resources.save_file_option64
+        Me.btnAgregarSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnAgregarSolicitud.Location = New System.Drawing.Point(611, 19)
+        Me.btnAgregarSolicitud.Name = "btnAgregarSolicitud"
+        Me.btnAgregarSolicitud.Size = New System.Drawing.Size(167, 80)
+        Me.btnAgregarSolicitud.TabIndex = 44
+        Me.btnAgregarSolicitud.Text = "Agregar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Solicitud"
+        Me.btnAgregarSolicitud.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnAgregarSolicitud.UseVisualStyleBackColor = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
+        Me.Label3.Location = New System.Drawing.Point(123, 121)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 20)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Asunto"
+        '
+        'MetroComboBox1
+        '
+        Me.MetroComboBox1.FormattingEnabled = True
+        Me.MetroComboBox1.ItemHeight = 23
+        Me.MetroComboBox1.Location = New System.Drawing.Point(195, 75)
+        Me.MetroComboBox1.Name = "MetroComboBox1"
+        Me.MetroComboBox1.Size = New System.Drawing.Size(258, 29)
+        Me.MetroComboBox1.TabIndex = 7
+        Me.MetroComboBox1.UseSelectable = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
+        Me.Label2.Location = New System.Drawing.Point(14, 79)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(161, 20)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Departamento a Solicitar"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 11.0!)
+        Me.Label1.Location = New System.Drawing.Point(64, 38)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(111, 20)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Tipo de Solicitud"
+        '
+        'MaterialRadioButton3
+        '
+        Me.MaterialRadioButton3.AutoSize = True
+        Me.MaterialRadioButton3.Depth = 0
+        Me.MaterialRadioButton3.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.MaterialRadioButton3.Location = New System.Drawing.Point(330, 32)
+        Me.MaterialRadioButton3.Margin = New System.Windows.Forms.Padding(0)
+        Me.MaterialRadioButton3.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.MaterialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialRadioButton3.Name = "MaterialRadioButton3"
+        Me.MaterialRadioButton3.Ripple = True
+        Me.MaterialRadioButton3.Size = New System.Drawing.Size(83, 30)
+        Me.MaterialRadioButton3.TabIndex = 4
+        Me.MaterialRadioButton3.TabStop = True
+        Me.MaterialRadioButton3.Text = "Solicitud"
+        Me.MaterialRadioButton3.UseVisualStyleBackColor = True
+        '
+        'MaterialRadioButton2
+        '
+        Me.MaterialRadioButton2.AutoSize = True
+        Me.MaterialRadioButton2.Depth = 0
+        Me.MaterialRadioButton2.Font = New System.Drawing.Font("Roboto", 10.0!)
+        Me.MaterialRadioButton2.Location = New System.Drawing.Point(199, 32)
+        Me.MaterialRadioButton2.Margin = New System.Windows.Forms.Padding(0)
+        Me.MaterialRadioButton2.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.MaterialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialRadioButton2.Name = "MaterialRadioButton2"
+        Me.MaterialRadioButton2.Ripple = True
+        Me.MaterialRadioButton2.Size = New System.Drawing.Size(92, 30)
+        Me.MaterialRadioButton2.TabIndex = 3
+        Me.MaterialRadioButton2.TabStop = True
+        Me.MaterialRadioButton2.Text = "Incidencia"
+        Me.MaterialRadioButton2.UseVisualStyleBackColor = True
         '
         'Frm_TicketSolicitudes
         '

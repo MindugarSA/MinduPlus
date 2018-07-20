@@ -28,14 +28,20 @@ Partial Class Frm_GestionAlmuerzosLeche
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblEmpresaInformeHHEE = New System.Windows.Forms.Label()
         Me.BtnVolver2 = New System.Windows.Forms.Button()
-        Me.btnAgregarSolicitud = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.txtBusqueda = New MaterialSkin.Controls.MaterialSingleLineTextField()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.MonthCalendar3 = New Pabo.Calendar.MonthCalendar()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
+        Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblModo = New System.Windows.Forms.Label()
         Me.lblTipo = New System.Windows.Forms.Label()
         Me.TxtEmpleado = New System.Windows.Forms.TextBox()
         Me.lblCantidad = New MetroFramework.Controls.MetroLabel()
-        Me.MonthCalendar2 = New Pabo.Calendar.MonthCalendar()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox5 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
@@ -47,6 +53,7 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox3 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.btnRecarga = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +79,7 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.BtnVolver2.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.BtnVolver2.Image = Global.RRHH.My.Resources.Resources.home_shape64
         Me.BtnVolver2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnVolver2.Location = New System.Drawing.Point(5, 631)
+        Me.BtnVolver2.Location = New System.Drawing.Point(5, 687)
         Me.BtnVolver2.Name = "BtnVolver2"
         Me.BtnVolver2.Size = New System.Drawing.Size(195, 80)
         Me.BtnVolver2.TabIndex = 49
@@ -80,73 +87,188 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.BtnVolver2.TextAlign = System.Drawing.ContentAlignment.BottomRight
         Me.BtnVolver2.UseVisualStyleBackColor = False
         '
-        'btnAgregarSolicitud
-        '
-        Me.btnAgregarSolicitud.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnAgregarSolicitud.FlatAppearance.BorderSize = 0
-        Me.btnAgregarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarSolicitud.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarSolicitud.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnAgregarSolicitud.Image = Global.RRHH.My.Resources.Resources.save_file_option64
-        Me.btnAgregarSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnAgregarSolicitud.Location = New System.Drawing.Point(994, 626)
-        Me.btnAgregarSolicitud.Name = "btnAgregarSolicitud"
-        Me.btnAgregarSolicitud.Size = New System.Drawing.Size(194, 80)
-        Me.btnAgregarSolicitud.TabIndex = 48
-        Me.btnAgregarSolicitud.Text = "Guardar"
-        Me.btnAgregarSolicitud.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnAgregarSolicitud.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.btnRecarga)
+        Me.Panel1.Controls.Add(Me.btnBuscar)
+        Me.Panel1.Controls.Add(Me.txtBusqueda)
+        Me.Panel1.Controls.Add(Me.MetroLabel3)
+        Me.Panel1.Controls.Add(Me.MonthCalendar3)
+        Me.Panel1.Controls.Add(Me.MetroLabel1)
+        Me.Panel1.Controls.Add(Me.MetroLabel2)
+        Me.Panel1.Controls.Add(Me.MetroComboBox2)
+        Me.Panel1.Controls.Add(Me.MetroComboBox1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.lblModo)
         Me.Panel1.Controls.Add(Me.lblTipo)
         Me.Panel1.Controls.Add(Me.TxtEmpleado)
         Me.Panel1.Controls.Add(Me.lblCantidad)
-        Me.Panel1.Controls.Add(Me.MonthCalendar2)
         Me.Panel1.Controls.Add(Me.MetroLabel8)
         Me.Panel1.Controls.Add(Me.MetroComboBox5)
         Me.Panel1.Controls.Add(Me.MetroGrid1)
         Me.Panel1.Controls.Add(Me.MetroLabel7)
         Me.Panel1.Controls.Add(Me.MetroComboBox3)
         Me.Panel1.Controls.Add(Me.MetroLabel5)
-        Me.Panel1.Controls.Add(Me.btnAgregarSolicitud)
         Me.Panel1.Controls.Add(Me.BtnVolver2)
         Me.Panel1.Location = New System.Drawing.Point(20, 52)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1216, 714)
+        Me.Panel1.Size = New System.Drawing.Size(1322, 770)
         Me.Panel1.TabIndex = 50
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnBuscar.BackgroundImage = Global.RRHH.My.Resources.Resources.search24
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnBuscar.Location = New System.Drawing.Point(1168, 11)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(35, 34)
+        Me.btnBuscar.TabIndex = 72
+        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.AcceptsReturn = False
+        Me.txtBusqueda.AcceptsTab = False
+        Me.txtBusqueda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.txtBusqueda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.txtBusqueda.Depth = 0
+        Me.txtBusqueda.Hint = ""
+        Me.txtBusqueda.Location = New System.Drawing.Point(878, 6)
+        Me.txtBusqueda.MaxLength = 32767
+        Me.txtBusqueda.MouseState = MaterialSkin.MouseState.HOVER
+        Me.txtBusqueda.Multiline = False
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtBusqueda.ReadOnly = False
+        Me.txtBusqueda.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.txtBusqueda.SelectedText = ""
+        Me.txtBusqueda.SelectionLength = 0
+        Me.txtBusqueda.SelectionStart = 0
+        Me.txtBusqueda.Size = New System.Drawing.Size(280, 23)
+        Me.txtBusqueda.TabIndex = 71
+        Me.txtBusqueda.TabStop = False
+        Me.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.txtBusqueda.UseSystemPasswordChar = False
+        Me.txtBusqueda.WordWrap = True
+        '
+        'MetroLabel3
+        '
+        Me.MetroLabel3.AutoSize = True
+        Me.MetroLabel3.Location = New System.Drawing.Point(744, 18)
+        Me.MetroLabel3.Name = "MetroLabel3"
+        Me.MetroLabel3.Size = New System.Drawing.Size(128, 19)
+        Me.MetroLabel3.TabIndex = 70
+        Me.MetroLabel3.Text = "Nombre / Apellido :"
+        '
+        'MonthCalendar3
+        '
+        Me.MonthCalendar3.ActiveMonth.Month = 7
+        Me.MonthCalendar3.ActiveMonth.Year = 2018
+        Me.MonthCalendar3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None
+        Me.MonthCalendar3.Culture = New System.Globalization.CultureInfo("es-CL")
+        Me.MonthCalendar3.Footer.Align = Pabo.Calendar.mcTextAlign.Center
+        Me.MonthCalendar3.Footer.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.MonthCalendar3.Footer.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar3.Footer.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar3.Header.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.MonthCalendar3.Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar3.Header.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar3.ImageList = Nothing
+        Me.MonthCalendar3.Location = New System.Drawing.Point(723, 309)
+        Me.MonthCalendar3.MaxDate = New Date(2028, 7, 18, 13, 23, 7, 845)
+        Me.MonthCalendar3.MinDate = New Date(2008, 7, 18, 13, 23, 7, 845)
+        Me.MonthCalendar3.Month.BackgroundImage = Nothing
+        Me.MonthCalendar3.Month.DateFont = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MonthCalendar3.Month.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.MonthCalendar3.Name = "MonthCalendar3"
+        Me.MonthCalendar3.SelectionMode = Pabo.Calendar.mcSelectionMode.One
+        Me.MonthCalendar3.Size = New System.Drawing.Size(586, 399)
+        Me.MonthCalendar3.TabIndex = 69
+        Me.MonthCalendar3.TodayColor = System.Drawing.Color.Transparent
+        Me.MonthCalendar3.Weekdays.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.MonthCalendar3.Weekdays.BorderColor = System.Drawing.Color.Transparent
+        Me.MonthCalendar3.Weekdays.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar3.Weekdays.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar3.Weeknumbers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.Location = New System.Drawing.Point(516, 53)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(48, 19)
+        Me.MetroLabel1.TabIndex = 67
+        Me.MetroLabel1.Text = "Modo:"
+        '
+        'MetroLabel2
+        '
+        Me.MetroLabel2.AutoSize = True
+        Me.MetroLabel2.Location = New System.Drawing.Point(526, 18)
+        Me.MetroLabel2.Name = "MetroLabel2"
+        Me.MetroLabel2.Size = New System.Drawing.Size(38, 19)
+        Me.MetroLabel2.TabIndex = 66
+        Me.MetroLabel2.Text = "Tipo:"
+        '
+        'MetroComboBox2
+        '
+        Me.MetroComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MetroComboBox2.FormattingEnabled = True
+        Me.MetroComboBox2.ItemHeight = 23
+        Me.MetroComboBox2.Location = New System.Drawing.Point(570, 49)
+        Me.MetroComboBox2.Name = "MetroComboBox2"
+        Me.MetroComboBox2.Size = New System.Drawing.Size(133, 29)
+        Me.MetroComboBox2.TabIndex = 65
+        Me.MetroComboBox2.UseSelectable = True
+        '
+        'MetroComboBox1
+        '
+        Me.MetroComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MetroComboBox1.FormattingEnabled = True
+        Me.MetroComboBox1.ItemHeight = 23
+        Me.MetroComboBox1.Location = New System.Drawing.Point(570, 14)
+        Me.MetroComboBox1.Name = "MetroComboBox1"
+        Me.MetroComboBox1.Size = New System.Drawing.Size(133, 29)
+        Me.MetroComboBox1.TabIndex = 64
+        Me.MetroComboBox1.UseSelectable = True
         '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(1025, 126)
+        Me.PictureBox1.Location = New System.Drawing.Point(1130, 127)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(170, 160)
+        Me.PictureBox1.Size = New System.Drawing.Size(175, 175)
         Me.PictureBox1.TabIndex = 63
         Me.PictureBox1.TabStop = False
         '
         'lblModo
         '
         Me.lblModo.AutoSize = True
-        Me.lblModo.Font = New System.Drawing.Font("Segoe UI Light", 16.0!)
-        Me.lblModo.Location = New System.Drawing.Point(764, 213)
+        Me.lblModo.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblModo.Location = New System.Drawing.Point(779, 219)
         Me.lblModo.Name = "lblModo"
-        Me.lblModo.Size = New System.Drawing.Size(73, 30)
+        Me.lblModo.Size = New System.Drawing.Size(84, 32)
         Me.lblModo.TabIndex = 62
         Me.lblModo.Text = "Label2"
         '
         'lblTipo
         '
         Me.lblTipo.AutoSize = True
-        Me.lblTipo.Font = New System.Drawing.Font("Segoe UI Light", 16.0!)
-        Me.lblTipo.Location = New System.Drawing.Point(764, 175)
+        Me.lblTipo.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTipo.Location = New System.Drawing.Point(779, 176)
         Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(70, 30)
+        Me.lblTipo.Size = New System.Drawing.Size(84, 32)
         Me.lblTipo.TabIndex = 61
         Me.lblTipo.Text = "Label1"
         '
@@ -154,12 +276,12 @@ Partial Class Frm_GestionAlmuerzosLeche
         '
         Me.TxtEmpleado.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.TxtEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtEmpleado.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtEmpleado.Font = New System.Drawing.Font("Segoe UI Semibold", 14.0!, System.Drawing.FontStyle.Bold)
         Me.TxtEmpleado.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TxtEmpleado.Location = New System.Drawing.Point(709, 94)
         Me.TxtEmpleado.Name = "TxtEmpleado"
         Me.TxtEmpleado.ReadOnly = True
-        Me.TxtEmpleado.Size = New System.Drawing.Size(496, 22)
+        Me.TxtEmpleado.Size = New System.Drawing.Size(607, 25)
         Me.TxtEmpleado.TabIndex = 58
         Me.TxtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -167,54 +289,11 @@ Partial Class Frm_GestionAlmuerzosLeche
         '
         Me.lblCantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Location = New System.Drawing.Point(117, 605)
+        Me.lblCantidad.Location = New System.Drawing.Point(117, 661)
         Me.lblCantidad.Name = "lblCantidad"
         Me.lblCantidad.Size = New System.Drawing.Size(62, 19)
         Me.lblCantidad.TabIndex = 57
         Me.lblCantidad.Text = "Cantidad"
-        '
-        'MonthCalendar2
-        '
-        Me.MonthCalendar2.ActiveMonth.Month = 6
-        Me.MonthCalendar2.ActiveMonth.Year = 2017
-        Me.MonthCalendar2.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None
-        Me.MonthCalendar2.Culture = New System.Globalization.CultureInfo("es-CL")
-        Me.MonthCalendar2.Footer.Align = Pabo.Calendar.mcTextAlign.Center
-        Me.MonthCalendar2.Footer.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.MonthCalendar2.Footer.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar2.Footer.Text = "Hoy : "
-        Me.MonthCalendar2.Footer.TextColor = System.Drawing.Color.White
-        Me.MonthCalendar2.Header.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.MonthCalendar2.Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar2.Header.TextColor = System.Drawing.Color.White
-        Me.MonthCalendar2.ImageList = Nothing
-        Me.MonthCalendar2.Location = New System.Drawing.Point(724, 303)
-        Me.MonthCalendar2.MaxDate = New Date(2027, 6, 6, 12, 38, 9, 504)
-        Me.MonthCalendar2.MinDate = New Date(2007, 6, 6, 12, 38, 9, 504)
-        Me.MonthCalendar2.Month.BackgroundImage = Nothing
-        Me.MonthCalendar2.Month.BorderStyles.Focus = System.Windows.Forms.ButtonBorderStyle.None
-        Me.MonthCalendar2.Month.BorderStyles.Selected = System.Windows.Forms.ButtonBorderStyle.None
-        Me.MonthCalendar2.Month.Colors.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.MonthCalendar2.Month.Colors.BackColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.MonthCalendar2.Month.Colors.Focus.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.MonthCalendar2.Month.Colors.Focus.Border = System.Drawing.Color.Transparent
-        Me.MonthCalendar2.Month.Colors.Selected.BackColor = System.Drawing.Color.FromArgb(CType(CType(27, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.MonthCalendar2.Month.Colors.Selected.Date = System.Drawing.Color.White
-        Me.MonthCalendar2.Month.Colors.Selected.Text = System.Drawing.Color.White
-        Me.MonthCalendar2.Month.DateFont = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar2.Month.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.MonthCalendar2.Month.Transparency.Background = 0
-        Me.MonthCalendar2.Month.Transparency.Text = 255
-        Me.MonthCalendar2.Name = "MonthCalendar2"
-        Me.MonthCalendar2.SelectionMode = Pabo.Calendar.mcSelectionMode.One
-        Me.MonthCalendar2.Size = New System.Drawing.Size(464, 295)
-        Me.MonthCalendar2.TabIndex = 56
-        Me.MonthCalendar2.TodayColor = System.Drawing.Color.Gold
-        Me.MonthCalendar2.Weekdays.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.MonthCalendar2.Weekdays.BorderColor = System.Drawing.Color.Transparent
-        Me.MonthCalendar2.Weekdays.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar2.Weekdays.TextColor = System.Drawing.Color.White
-        Me.MonthCalendar2.Weeknumbers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         '
         'MetroLabel8
         '
@@ -286,7 +365,7 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroGrid1.RowHeadersVisible = False
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(586, 504)
+        Me.MetroGrid1.Size = New System.Drawing.Size(586, 560)
         Me.MetroGrid1.TabIndex = 53
         '
         'Rut
@@ -352,12 +431,29 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel5.TabIndex = 50
         Me.MetroLabel5.Text = "Empleados:"
         '
+        'btnRecarga
+        '
+        Me.btnRecarga.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnRecarga.BackgroundImage = Global.RRHH.My.Resources.Resources.refresh_24
+        Me.btnRecarga.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnRecarga.FlatAppearance.BorderSize = 0
+        Me.btnRecarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecarga.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecarga.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnRecarga.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnRecarga.Location = New System.Drawing.Point(1209, 11)
+        Me.btnRecarga.Name = "btnRecarga"
+        Me.btnRecarga.Size = New System.Drawing.Size(35, 34)
+        Me.btnRecarga.TabIndex = 73
+        Me.btnRecarga.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnRecarga.UseVisualStyleBackColor = False
+        '
         'Frm_GestionAlmuerzosLeche
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1258, 790)
+        Me.ClientSize = New System.Drawing.Size(1364, 846)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblEmpresaInformeHHEE)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -373,7 +469,6 @@ Partial Class Frm_GestionAlmuerzosLeche
     End Sub
     Friend WithEvents lblEmpresaInformeHHEE As Label
     Friend WithEvents BtnVolver2 As Button
-    Friend WithEvents btnAgregarSolicitud As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents MetroLabel8 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroComboBox5 As MetroFramework.Controls.MetroComboBox
@@ -381,7 +476,6 @@ Partial Class Frm_GestionAlmuerzosLeche
     Friend WithEvents MetroLabel7 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroComboBox3 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroLabel5 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MonthCalendar2 As Pabo.Calendar.MonthCalendar
     Friend WithEvents Rut As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Apellido As DataGridViewTextBoxColumn
@@ -392,4 +486,13 @@ Partial Class Frm_GestionAlmuerzosLeche
     Friend WithEvents lblModo As Label
     Friend WithEvents lblTipo As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents MonthCalendar3 As Pabo.Calendar.MonthCalendar
+    Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents txtBusqueda As MaterialSkin.Controls.MaterialSingleLineTextField
+    Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnRecarga As Button
 End Class
