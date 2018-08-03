@@ -22,14 +22,15 @@ Partial Class Frm_GestionAlmuerzosLeche
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblEmpresaInformeHHEE = New System.Windows.Forms.Label()
-        Me.BtnVolver2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroComboBox4 = New MetroFramework.Controls.MetroComboBox()
         Me.txtBusqueda = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
         Me.MonthCalendar3 = New Pabo.Calendar.MonthCalendar()
@@ -37,7 +38,6 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroComboBox1 = New MetroFramework.Controls.MetroComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblModo = New System.Windows.Forms.Label()
         Me.lblTipo = New System.Windows.Forms.Label()
         Me.TxtEmpleado = New System.Windows.Forms.TextBox()
@@ -53,10 +53,16 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox3 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnRecarga = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnVolver2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblEmpresaInformeHHEE
@@ -69,30 +75,15 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.lblEmpresaInformeHHEE.TabIndex = 26
         Me.lblEmpresaInformeHHEE.Text = "Gestión de Almuerzos"
         '
-        'BtnVolver2
-        '
-        Me.BtnVolver2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.BtnVolver2.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.BtnVolver2.FlatAppearance.BorderSize = 0
-        Me.BtnVolver2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnVolver2.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnVolver2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtnVolver2.Image = Global.RRHH.My.Resources.Resources.home_shape64
-        Me.BtnVolver2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.BtnVolver2.Location = New System.Drawing.Point(5, 687)
-        Me.BtnVolver2.Name = "BtnVolver2"
-        Me.BtnVolver2.Size = New System.Drawing.Size(195, 80)
-        Me.BtnVolver2.TabIndex = 49
-        Me.BtnVolver2.Text = "Volver" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Al Inicio"
-        Me.BtnVolver2.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.BtnVolver2.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.MetroLabel4)
+        Me.Panel1.Controls.Add(Me.MetroComboBox4)
         Me.Panel1.Controls.Add(Me.btnRecarga)
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.txtBusqueda)
@@ -119,22 +110,26 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.Panel1.Size = New System.Drawing.Size(1322, 770)
         Me.Panel1.TabIndex = 50
         '
-        'btnBuscar
+        'MetroLabel4
         '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnBuscar.BackgroundImage = Global.RRHH.My.Resources.Resources.search24
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnBuscar.Location = New System.Drawing.Point(1168, 11)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(35, 34)
-        Me.btnBuscar.TabIndex = 72
-        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnBuscar.UseVisualStyleBackColor = False
+        Me.MetroLabel4.AutoSize = True
+        Me.MetroLabel4.Location = New System.Drawing.Point(742, 55)
+        Me.MetroLabel4.Name = "MetroLabel4"
+        Me.MetroLabel4.Size = New System.Drawing.Size(96, 19)
+        Me.MetroLabel4.TabIndex = 75
+        Me.MetroLabel4.Text = "Informes Excel:"
+        '
+        'MetroComboBox4
+        '
+        Me.MetroComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.MetroComboBox4.FormattingEnabled = True
+        Me.MetroComboBox4.ItemHeight = 23
+        Me.MetroComboBox4.Items.AddRange(New Object() {"Empleados con Almuerzos", "Empleados con Leche", "Almuerzos / Leche Calendario"})
+        Me.MetroComboBox4.Location = New System.Drawing.Point(878, 49)
+        Me.MetroComboBox4.Name = "MetroComboBox4"
+        Me.MetroComboBox4.Size = New System.Drawing.Size(366, 29)
+        Me.MetroComboBox4.TabIndex = 74
+        Me.MetroComboBox4.UseSelectable = True
         '
         'txtBusqueda
         '
@@ -166,7 +161,7 @@ Partial Class Frm_GestionAlmuerzosLeche
         'MetroLabel3
         '
         Me.MetroLabel3.AutoSize = True
-        Me.MetroLabel3.Location = New System.Drawing.Point(744, 18)
+        Me.MetroLabel3.Location = New System.Drawing.Point(741, 18)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(128, 19)
         Me.MetroLabel3.TabIndex = 70
@@ -242,15 +237,6 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroComboBox1.Size = New System.Drawing.Size(133, 29)
         Me.MetroComboBox1.TabIndex = 64
         Me.MetroComboBox1.UseSelectable = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(1130, 127)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(175, 175)
-        Me.PictureBox1.TabIndex = 63
-        Me.PictureBox1.TabStop = False
         '
         'lblModo
         '
@@ -431,6 +417,22 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel5.TabIndex = 50
         Me.MetroLabel5.Text = "Empleados:"
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 26)
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.RRHH.My.Resources.Resources.stopwatch
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(1258, 22)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox2.TabIndex = 77
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
         'btnRecarga
         '
         Me.btnRecarga.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
@@ -448,6 +450,50 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.btnRecarga.TextAlign = System.Drawing.ContentAlignment.BottomRight
         Me.btnRecarga.UseVisualStyleBackColor = False
         '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnBuscar.BackgroundImage = Global.RRHH.My.Resources.Resources.search24
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnBuscar.Location = New System.Drawing.Point(1168, 11)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(35, 34)
+        Me.btnBuscar.TabIndex = 72
+        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(1130, 127)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(175, 175)
+        Me.PictureBox1.TabIndex = 63
+        Me.PictureBox1.TabStop = False
+        '
+        'BtnVolver2
+        '
+        Me.BtnVolver2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BtnVolver2.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.BtnVolver2.FlatAppearance.BorderSize = 0
+        Me.BtnVolver2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnVolver2.Font = New System.Drawing.Font("Segoe UI", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnVolver2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BtnVolver2.Image = Global.RRHH.My.Resources.Resources.home_shape64
+        Me.BtnVolver2.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BtnVolver2.Location = New System.Drawing.Point(5, 687)
+        Me.BtnVolver2.Name = "BtnVolver2"
+        Me.BtnVolver2.Size = New System.Drawing.Size(195, 80)
+        Me.BtnVolver2.TabIndex = 49
+        Me.BtnVolver2.Text = "Volver" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Al Inicio"
+        Me.BtnVolver2.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.BtnVolver2.UseVisualStyleBackColor = False
+        '
         'Frm_GestionAlmuerzosLeche
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -461,8 +507,9 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.Text = "Gestion de Almuerzos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -495,4 +542,8 @@ Partial Class Frm_GestionAlmuerzosLeche
     Friend WithEvents txtBusqueda As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnRecarga As Button
+    Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

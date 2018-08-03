@@ -224,7 +224,8 @@ Public Class Login
                     MDIParent1.TlStrpSttsLbl_SQL.Text = ""
 
                     'MDIParent1.ToolStripVisible = False
-                    Me.Close()
+                    ClosedFadeOutAsync()
+                    'Me.Close()
                 Else
                     TxtBx_Password.Text = ""
                     TxtBx_Password.Focus()
@@ -252,7 +253,8 @@ Public Class Login
                             MDIParent1.TiempoIngreso.Enabled = True
                             MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
                             MDIParent1.TlStrpSttsLbl_SQL.Text = ""
-                            Me.Close()
+                            ClosedFadeOutAsync()
+                            'Me.Close()
                         End If
                     Catch ex As Exception
                         MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
@@ -315,7 +317,8 @@ Public Class Login
                         MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
                         MDIParent1.TlStrpSttsLbl_SQL.Text = ""
 
-                        Me.Close()
+                        ClosedFadeOutAsync()
+                        'Me.Close()
                     End If
                 End If
             Else
@@ -325,7 +328,8 @@ Public Class Login
                     MDIParent1.TiempoIngreso.Enabled = True
                     MDIParent1.TlStrpSttsLbl_SQL.BackColor = Color.White
                     MDIParent1.TlStrpSttsLbl_SQL.Text = ""
-                    Me.Close()
+                    ClosedFadeOutAsync()
+                    'Me.Close()
                 Else
                     TxtBx_Password.Text = ""
                     TxtBx_Password.Focus()
@@ -336,6 +340,11 @@ Public Class Login
         End If
 
     End Sub
+
+    Private Async Function ClosedFadeOutAsync() As Task
+        Fader.FadeOutAndClose(Me, Fader.FadeSpeed.Slower)
+        Await Task.Delay(80)
+    End Function
 
     Private Sub Bttn_1_Enter(sender As Object, e As EventArgs) Handles Label9.Click, Label8.Click, Label7.Click, Label6.Click, Label5.Click, Label4.Click, Label3.Click, Label2.Click, Label12.Click, Label11.Click, Label10.Click, Label1.Click
 

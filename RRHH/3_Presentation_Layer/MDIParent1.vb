@@ -106,7 +106,7 @@ Public Class MDIParent1
 
     Private Sub Bttn_MantencionColacione_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(31002) Then
-            Dim NewMDIChild As New Frm_MantencionColaciones()
+            Dim NewMDIChild As New Frm_MenuAlmuerzo()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
@@ -196,7 +196,7 @@ Public Class MDIParent1
     Private Sub Button5_Click(sender As Object, e As EventArgs)
         If RevisaAcceso(30001) Then
 
-            Dim NewMDIChild As New Frm_SolicitudGerencial()
+            Dim NewMDIChild As New Frm_SolicitudAlmuAdicional()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
@@ -275,7 +275,7 @@ Public Class MDIParent1
         If RevisaAcceso(90000) Then
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
-            Dim NewMDIChild As New FrmSolicPermHrasExt(0)
+            Dim NewMDIChild As New Frm_SolicitudesAutorizaciones(0)
             NewMDIChild.MdiParent = Me
             NewMDIChild.Show()
             NewMDIChild.ControlBox = False
@@ -368,7 +368,7 @@ Public Class MDIParent1
             TiempoIngreso.Enabled = False
             Cerrar_Forms_Children()
             Configurar_MeterialSkin_Styles_Pantallas()
-            Dim NewMDIChild As New FrmSolicPermHrasExt(0)
+            Dim NewMDIChild As New Frm_SolicitudesAutorizaciones(0)
             NewMDIChild.MdiParent = Me
             NewMDIChild.Dock = DockStyle.Fill
             Me.Panel2.Controls.Add(NewMDIChild)
@@ -494,7 +494,7 @@ Public Class MDIParent1
     Private Sub Tle_MantencionColacione_Click(sender As Object, e As EventArgs) Handles Tle_MantencionColacione.Click
 
         If RevisaAcceso(31002) Then
-            Dim NewMDIChild As New Frm_MantencionColaciones()
+            Dim NewMDIChild As New Frm_MenuAlmuerzo()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             'NewMDIChild.WindowState = FormWindowState.Maximized
@@ -516,7 +516,7 @@ Public Class MDIParent1
     Private Sub Abrir_Pantalla_Menu_Almuerzos()
 
         If RevisaAcceso(31002) Then
-            Dim NewMDIChild As New Frm_MantencionColaciones()
+            Dim NewMDIChild As New Frm_MenuAlmuerzo()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             'NewMDIChild.WindowState = FormWindowState.Maximized
@@ -539,7 +539,7 @@ Public Class MDIParent1
 
         If RevisaAcceso(30001) Then
 
-            Dim NewMDIChild As New Frm_SolicitudGerencial()
+            Dim NewMDIChild As New Frm_SolicitudAlmuAdicional()
             Cerrar_Forms_Children()
             NewMDIChild.MdiParent = Me
             NewMDIChild.WindowState = FormWindowState.Maximized
@@ -582,6 +582,27 @@ Public Class MDIParent1
 
     End Sub
 
+    Private Sub Abrir_Pantalla_Informes_Almuerzos()
+        If RevisaAcceso(30003) Then
+            Dim NewMDIChild As New Frm_Informes()
+
+            Cerrar_Forms_Children()
+            NewMDIChild.MdiParent = Me
+            NewMDIChild.WindowState = FormWindowState.Maximized
+            NewMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(NewMDIChild)
+            Me.Panel2.Tag = NewMDIChild
+            Ocultar_Tiles_MDI()
+            NewMDIChild.Show()
+
+            NewMDIChild.ControlBox = False
+            TiempoIngreso.Enabled = False
+            'TiempoIngreso.Enabled = True
+            TiempoActivo = Tiempo_Str
+            ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
+        End If
+    End Sub
+
     Private Sub Tle_AlmuAdicional_Click(sender As Object, e As EventArgs) Handles Tle_AlmuAdicional.Click
         If RevisaAcceso(30001) Then
 
@@ -598,6 +619,8 @@ Public Class MDIParent1
                         Abrir_Pantalla_Almuerzo_Adicional()
                     Case "Configuracion"
                         Abrir_Pantalla_Gestion_Almuerzos()
+                    Case "InformesAlmuerzo"
+                        Abrir_Pantalla_Informes_Almuerzos()
                 End Select
 
             End If
@@ -605,22 +628,29 @@ Public Class MDIParent1
         End If
     End Sub
 
-    Private Sub Tle_InformesAlmu_Click(sender As Object, e As EventArgs) Handles Tle_InformesAlmu.Click
+    Private Sub Tle_InformesAlmu_Click(sender As Object, e As EventArgs) Handles Tle_DiasFeriados.Click
         If RevisaAcceso(30003) Then
-            Dim NewMDIChild As New Frm_Informes()
-
-            Cerrar_Forms_Children()
-            NewMDIChild.MdiParent = Me
-            NewMDIChild.WindowState = FormWindowState.Maximized
-            NewMDIChild.Dock = DockStyle.Fill
-            Me.Panel2.Controls.Add(NewMDIChild)
-            Me.Panel2.Tag = NewMDIChild
-            Ocultar_Tiles_MDI()
-            NewMDIChild.Show()
-
-            NewMDIChild.ControlBox = False
             TiempoIngreso.Enabled = False
-            'TiempoIngreso.Enabled = True
+            Cerrar_Forms_Children()
+
+            Dim newMDIChild As New OtrasAppsMindumas.Frm_DiasFeriados(Me.Panel2, Me.StatusStrip, Lbl_Cod_ID.Text)
+            AddHandler newMDIChild.EnviarEvento, New OtrasAppsMindumas.Frm_DiasFeriados.LaunchEvent(AddressOf Visualizar_Tiles_MDI)
+            AddHandler newMDIChild.EnviarEvento, New OtrasAppsMindumas.Frm_DiasFeriados.LaunchEvent(AddressOf Desplazamiento_Tiles)
+
+            newMDIChild.MdiParent = Me
+            'newMDIChild.WindowState = FormWindowState.Maximized
+            newMDIChild.Dock = DockStyle.Fill
+            Me.Panel2.Controls.Add(newMDIChild)
+            Me.Panel2.Tag = newMDIChild
+            Ocultar_Tiles_MDI()
+            newMDIChild.ControlBox = False
+            StatusStrip.Dock = DockStyle.None
+            StatusStrip.Visible = False
+            Panel2.Height += StatusStrip.Height
+            ToolStripVisible = False
+            newMDIChild.Show()
+
+            TiempoIngreso.Enabled = False
             TiempoActivo = Tiempo_Str
             ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
         End If
@@ -705,14 +735,14 @@ Public Class MDIParent1
         'Next
     End Sub
 
-    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_InformesAlmu.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter, PictureBox3.MouseEnter, Tle_Ticket_Solicitud.MouseEnter
+    Private Sub Tle_Exportador_MouseEnter(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseEnter, Tle_Permisos.MouseEnter, Tle_MantencionColacione.MouseEnter, Tle_Liquidacion.MouseEnter, Tle_DiasFeriados.MouseEnter, Tle_Exportador.MouseEnter, Tle_Configuracion.MouseEnter, Tle_AlmuAdicional.MouseEnter, TleSolicitar_HHEE.MouseEnter, Tle_Solicitar_Permisos.MouseEnter, Tle_Asistencias_Periodo.MouseEnter, Tle_Herramientas_Pre.MouseEnter, PictureBox3.MouseEnter, Tle_Ticket_Solicitud.MouseEnter
         sender.Left = sender.Left - 4
         sender.Top = sender.Top - 4
         sender.Height = sender.Height + 8
         sender.Width = sender.Width + 8
     End Sub
 
-    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_InformesAlmu.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave, PictureBox3.MouseLeave, Tle_Ticket_Solicitud.MouseLeave
+    Private Sub Tle_Exportador_MouseLeave(sender As Object, e As EventArgs) Handles Tle_SolAlmuerzo.MouseLeave, Tle_Permisos.MouseLeave, Tle_MantencionColacione.MouseLeave, Tle_Liquidacion.MouseLeave, Tle_DiasFeriados.MouseLeave, Tle_Exportador.MouseLeave, Tle_Configuracion.MouseLeave, Tle_AlmuAdicional.MouseLeave, TleSolicitar_HHEE.MouseLeave, Tle_Solicitar_Permisos.MouseLeave, Tle_Asistencias_Periodo.MouseLeave, Tle_Herramientas_Pre.MouseLeave, PictureBox3.MouseLeave, Tle_Ticket_Solicitud.MouseLeave
         sender.Left = sender.Left + 4
         sender.Top = sender.Top + 4
         sender.Height = sender.Height - 8
@@ -810,7 +840,7 @@ Public Class MDIParent1
             Try
                 TiempoIngreso.Enabled = False
                 Cerrar_Forms_Children()
-                Dim NewMDIChild As New FrmSolicPermHrasExt(90001)
+                Dim NewMDIChild As New Frm_SolicitudesAutorizaciones(90001)
                 NewMDIChild.MdiParent = Me
                 NewMDIChild.WindowState = FormWindowState.Maximized
                 NewMDIChild.Dock = DockStyle.Fill
@@ -833,7 +863,7 @@ Public Class MDIParent1
             Try
                 TiempoIngreso.Enabled = False
                 Cerrar_Forms_Children()
-                Dim NewMDIChild As New FrmSolicPermHrasExt(90002)
+                Dim NewMDIChild As New Frm_SolicitudesAutorizaciones(90002)
                 NewMDIChild.MdiParent = Me
                 NewMDIChild.WindowState = FormWindowState.Maximized
                 NewMDIChild.Dock = DockStyle.Fill
@@ -970,7 +1000,11 @@ Public Class MDIParent1
     End Sub
 
     Private Sub MDIParent1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Application.Exit()
+        Try
+            Me.Dispose()
+            Application.Exit()
+        Catch
+        End Try
     End Sub
 
     Public Sub AsignarDatosEmpleadoLogin()
@@ -1007,4 +1041,12 @@ Public Class MDIParent1
         ToolStripProgressBar1.ProgressBar.Value = TiempoActivo
     End Sub
 
+    Private Sub MDIParent1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Try
+            Me.Dispose()
+            Application.Exit()
+        Catch
+        End Try
+
+    End Sub
 End Class

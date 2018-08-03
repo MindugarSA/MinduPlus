@@ -23,7 +23,7 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.TxtBx_Password = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.TxtBx_UserID = New MaterialSkin.Controls.MaterialSingleLineTextField()
@@ -52,9 +52,11 @@ Partial Class Login
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.panel3 = New System.Windows.Forms.Panel()
         Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -469,22 +471,22 @@ Partial Class Login
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation3.AnimateOnlyDifferences = True
+        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
+        Animation3.LeafCoeff = 0!
+        Animation3.MaxTime = 1.0!
+        Animation3.MinTime = 0!
+        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
+        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
+        Animation3.MosaicSize = 0
+        Animation3.Padding = New System.Windows.Forms.Padding(0)
+        Animation3.RotateCoeff = 0!
+        Animation3.RotateLimit = 0!
+        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
+        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
+        Animation3.TimeCoeff = 0!
+        Animation3.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation3
         Me.BunifuTransition1.Interval = 40
         Me.BunifuTransition1.MaxAnimationTime = 4000
         '
@@ -539,6 +541,15 @@ Partial Class Login
         Me.Panel2.Size = New System.Drawing.Size(201, 201)
         Me.Panel2.TabIndex = 19
         '
+        'panel3
+        '
+        Me.panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(152, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BunifuTransition1.SetDecoration(Me.panel3, BunifuAnimatorNS.DecorationType.None)
+        Me.panel3.Location = New System.Drawing.Point(12, 107)
+        Me.panel3.Name = "panel3"
+        Me.panel3.Size = New System.Drawing.Size(516, 390)
+        Me.panel3.TabIndex = 23
+        '
         'TmrBackAnimation
         '
         Me.TmrBackAnimation.Enabled = True
@@ -554,6 +565,11 @@ Partial Class Login
         Me.BunifuElipse2.ElipseRadius = 30
         Me.BunifuElipse2.TargetControl = Me.Panel1
         '
+        'BunifuElipse3
+        '
+        Me.BunifuElipse3.ElipseRadius = 30
+        Me.BunifuElipse3.TargetControl = Me.panel3
+        '
         'Login
         '
         Me.AcceptButton = Me.Bttn_Login
@@ -562,6 +578,7 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(549, 502)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panel3)
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -612,4 +629,6 @@ Partial Class Login
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
+    Friend WithEvents panel3 As Panel
+    Friend WithEvents BunifuElipse3 As Bunifu.Framework.UI.BunifuElipse
 End Class

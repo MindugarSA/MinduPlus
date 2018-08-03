@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_SolicitudGerencial
+Partial Class Frm_SolicitudAlmuAdicional
     Inherits MetroFramework.Forms.MetroForm 'System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.

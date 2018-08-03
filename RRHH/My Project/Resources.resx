@@ -301,4 +301,13 @@
   <data name="search24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\magnifying-search-lenses-tool.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="stopwatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stopwatch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar_daily_page_on_day_31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-daily-page-on-day-31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="milk_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\milk_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -25,6 +25,7 @@ Partial Class Frm_SeleccionGestionAlmuerzos
         Me.Tle_AlmuAdicional = New MetroFramework.Controls.MetroTile()
         Me.Tle_MantencionColacione = New MetroFramework.Controls.MetroTile()
         Me.Tle_Configuracion = New MetroFramework.Controls.MetroTile()
+        Me.Tle_InformesAlmu = New MetroFramework.Controls.MetroTile()
         Me.SuspendLayout()
         '
         'Tle_AlmuAdicional
@@ -69,15 +70,30 @@ Partial Class Frm_SeleccionGestionAlmuerzos
         Me.Tle_Configuracion.UseSelectable = True
         Me.Tle_Configuracion.UseTileImage = True
         '
-        'SeleccionGestionAlmuerzos
+        'Tle_InformesAlmu
+        '
+        Me.Tle_InformesAlmu.ActiveControl = Nothing
+        Me.Tle_InformesAlmu.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(62, Byte), Integer))
+        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(290, 64)
+        Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
+        Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 228)
+        Me.Tle_InformesAlmu.TabIndex = 18
+        Me.Tle_InformesAlmu.Text = "Informes " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Almuerzos"
+        Me.Tle_InformesAlmu.TileImage = Global.RRHH.My.Resources.Resources.list_document_interface_symbol
+        Me.Tle_InformesAlmu.UseCustomBackColor = True
+        Me.Tle_InformesAlmu.UseSelectable = True
+        Me.Tle_InformesAlmu.UseTileImage = True
+        '
+        'Frm_SeleccionGestionAlmuerzos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(317, 320)
+        Me.ClientSize = New System.Drawing.Size(445, 320)
+        Me.Controls.Add(Me.Tle_InformesAlmu)
         Me.Controls.Add(Me.Tle_Configuracion)
         Me.Controls.Add(Me.Tle_AlmuAdicional)
         Me.Controls.Add(Me.Tle_MantencionColacione)
-        Me.Name = "SeleccionGestionAlmuerzos"
+        Me.Name = "Frm_SeleccionGestionAlmuerzos"
         Me.Text = "Gestion de Almuerzos"
         Me.ResumeLayout(False)
 
@@ -85,4 +101,5 @@ Partial Class Frm_SeleccionGestionAlmuerzos
     Friend WithEvents Tle_AlmuAdicional As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_MantencionColacione As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_Configuracion As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_InformesAlmu As MetroFramework.Controls.MetroTile
 End Class

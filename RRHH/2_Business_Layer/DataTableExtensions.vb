@@ -6,6 +6,8 @@ Imports System.Reflection
 Imports System.Runtime.CompilerServices
 Imports System.Text
 Imports System.Threading.Tasks
+Imports Microsoft.Office.Interop
+Imports Spire.Xls
 
 Module DataTableExtensions
 
@@ -23,6 +25,62 @@ Module DataTableExtensions
         For Each colName As String In listColNames
             dtbl.Columns(colName).SetOrdinal(listColNames.IndexOf(colName))
         Next
+    End Sub
+
+    <Extension()>
+    Public Sub ExportToExcel(dtbl As DataTable)
+
+        Dim xlexcel As Microsoft.Office.Interop.Excel.Application
+        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+
+        Dim misValue As Object = System.Reflection.Missing.Value
+        xlexcel = New Excel.Application()
+
+        xlexcel.DisplayAlerts = False
+        ' Without this you will get two confirm overwrite prompts
+        xlWorkBook = xlexcel.Workbooks.Add(misValue)
+        xlWorkSheet = CType(xlWorkBook.Worksheets.Item(1), Excel.Worksheet)
+        xlWorkSheet = xlWorkBook.ActiveSheet()
+
+        Dim dc As System.Data.DataColumn
+        Dim colIndex As Integer = 0
+        Dim rowIndex As Integer = 0
+        'Nombre de mesures
+        Dim Nbligne As Integer = dtbl.Rows.Count
+
+        'Ecriture des entêtes de colonne et des mesures
+        '(Write column headers and data)
+
+        For Each dc In dtbl.Columns
+            colIndex = colIndex + 1
+            xlWorkSheet.Cells(1, colIndex) = dc.ColumnName
+            xlWorkSheet.Cells(2, colIndex).Resize(Nbligne, ).Value = xlexcel.transpose(dtbl.Rows.OfType(Of DataRow)().[Select](Function(k) CObj(k(dc.ColumnName))).ToArray())
+        Next
+
+        Dim style As Excel.Style = xlWorkSheet.Application.ActiveWorkbook.Styles.Add("NewStyle")
+        style.Font.Bold = False
+        style.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Yellow)
+
+        Dim tRange As Excel.Range
+        Dim LastColumn As Long
+        Dim LastRow As Long
+        With xlWorkSheet
+            LastRow = .Cells(.Rows.Count, 1).End(Excel.XlDirection.xlUp).Row
+            LastColumn = .Cells(1, .Columns.Count).End(Excel.XlDirection.xlToLeft).Column
+            tRange = .Range("A1", .Cells(1, LastColumn).Address)
+        End With
+
+        'tRange.EntireRow.Style = "NewStyle"
+        tRange.Style = "NewStyle"
+        tRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous
+        tRange.Borders.Weight = Excel.XlBorderWeight.xlThin
+        'tRange.BorderAround(, Excel.XlBorderWeight.xlThin, Excel.XlColorIndex.xlColorIndexAutomatic)
+        xlWorkSheet.Cells.EntireColumn.AutoFit()
+
+        xlexcel.Visible = True
+
+
     End Sub
 
     <System.Runtime.CompilerServices.Extension>

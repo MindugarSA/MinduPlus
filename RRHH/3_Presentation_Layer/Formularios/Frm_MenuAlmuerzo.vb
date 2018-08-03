@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
-Public Class Frm_MantencionColaciones
+Public Class Frm_MenuAlmuerzo
     Dim vDateInfo As DateTime
     Dim dt As New DataTable
     Dim conexion As New SqlConnection

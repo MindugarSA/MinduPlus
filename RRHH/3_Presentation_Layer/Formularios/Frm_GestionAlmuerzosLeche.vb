@@ -16,18 +16,14 @@ Public Class Frm_GestionAlmuerzosLeche
 
     Private Sub Frm_GestionAlmuerzosLeche_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim skinManager As MaterialSkin.MaterialSkinManager = MaterialSkin.MaterialSkinManager.Instance
-        skinManager.ROBOTO_MEDIUM_10 = New Font("Segoe UI Light", 10)
-        skinManager.ROBOTO_MEDIUM_11 = New Font("Segoe UI Light", 11)
-        skinManager.ROBOTO_MEDIUM_12 = New Font("Segoe UI Light", 12)
-        skinManager.ROBOTO_REGULAR_11 = New Font("Segoe UI Light", 11)
-        skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT
-        skinManager.ColorScheme = New MaterialSkin.ColorScheme(MaterialSkin.Primary.Orange500, MaterialSkin.Primary.LightBlue500, MaterialSkin.Primary.Blue500, MaterialSkin.Accent.LightBlue400, MaterialSkin.TextShade.WHITE)
-
         Me.SuspendLayout()
         conexion.ConnectionString = Conection.Cn
         lblModo.Visible = False
         lblTipo.Visible = False
+
+        DiaActual = Date.Now
+        MonthCalendar3.ActiveMonth.Month = DiaActual.Month
+        MonthCalendar3.ActiveMonth.Year = DiaActual.Year
 
     End Sub
 
@@ -38,8 +34,6 @@ Public Class Frm_GestionAlmuerzosLeche
         CargarDTCombosGrid()
         CargarGridEmpleados()
         CargarComboFiltros()
-
-        DiaActual = Date.Now
 
         lblModo.Visible = True
         lblTipo.Visible = True
@@ -74,6 +68,8 @@ Public Class Frm_GestionAlmuerzosLeche
             End If
 
             MetroGrid1.DataSource = dtEmpleadosGrid
+
+            'Array.ForEach(dtEmpleados.Rows.Cast(Of DataRow).ToArray, Function(dr) If(dr("MyField") = "", dr("MyField") = 77, True))
 
             lblCantidad.Text = "Cantidad : " + MetroGrid1.Rows.Count.ToString()
 
@@ -294,11 +290,12 @@ Public Class Frm_GestionAlmuerzosLeche
         Dim Mes As Int16 = MonthCalendar3.ActiveMonth.Month
         Dim Anio As Int16 = MonthCalendar3.ActiveMonth.Year
         Dim fechaIniMes As Date = New Date(Anio, Mes, 1)
-        Dim DiasMes = fechaIniMes.DaysInMonth(Anio, Mes)
+        Dim DiasMes = System.DateTime.DaysInMonth(Anio, Mes)
         Dim fechaFinMes As Date = New Date(Anio, Mes, DiasMes)
         Dim di() As DateItem '= New DateItem(30) {}
         Dim index As Int16 = 0
         Dim WeekEnd As New List(Of DayOfWeek)(New DayOfWeek() {DayOfWeek.Saturday, DayOfWeek.Sunday})
+        Dim esFeriado As Boolean = False
         If (ModoAlmuerzo = "LJ") Then WeekEnd.Add(DayOfWeek.Friday)
 
         MonthCalendar3.ResetDateInfo()
@@ -306,10 +303,9 @@ Public Class Frm_GestionAlmuerzosLeche
         di.Initialize()
 
         Try
-
             Do While (fechaIniMes <= fechaFinMes And tipoAlmuerzo.Trim = "A")
-
-                If (Not WeekEnd.Contains(fechaIniMes.DayOfWeek)) Then
+                esFeriado = ConsultaDiaFeriado(fechaIniMes)
+                If (Not WeekEnd.Contains(fechaIniMes.DayOfWeek) And Not esFeriado) Then
                     ReDim Preserve di(index)
                     di.Initialize()
                     di(index) = New DateItem()
@@ -332,11 +328,79 @@ Public Class Frm_GestionAlmuerzosLeche
             Dim m_dates As DateItem() = MonthCalendar3.GetDateInfo()
 
             CargarCambioFechasCalendario()
+            CargarDiasFeriadosCalendario()
 
         Catch ex As Exception
         End Try
 
     End Sub
+
+    Private Sub CargarDiasFeriadosCalendario()
+        Dim Mes As Int16 = MonthCalendar3.ActiveMonth.Month
+        Dim Anio As Int16 = MonthCalendar3.ActiveMonth.Year
+        Dim fechaIniMes As Date = New Date(Anio, Mes, 1)
+        Dim DiasMes = System.DateTime.DaysInMonth(Anio, Mes)
+        Dim fechaFinMes As Date = New Date(Anio, Mes, DiasMes)
+        Dim di() As DateItem '= New DateItem(30) {}
+        Dim index As Int16 = 0
+        Dim WeekEnd As New List(Of DayOfWeek)(New DayOfWeek() {DayOfWeek.Saturday, DayOfWeek.Sunday})
+        Dim esFeriado As Boolean = False
+        'If (ModoAlmuerzo = "LJ") Then WeekEnd.Add(DayOfWeek.Friday)
+
+        ReDim Preserve di(index)
+        di.Initialize()
+
+        Try
+            Do While (fechaIniMes <= fechaFinMes)
+                esFeriado = ConsultaDiaFeriado(fechaIniMes)
+                If (Not WeekEnd.Contains(fechaIniMes.DayOfWeek) And esFeriado) Then
+                    ReDim Preserve di(index)
+                    di.Initialize()
+                    di(index) = New DateItem()
+                    di(index).Date = fechaIniMes
+                    di(index).DateColor = Color.Black
+                    di(index).BackColor1 = Color.FromArgb(255, 104, 17)
+                    di(index).Text = "FERIADO"
+                    di(index).TextColor = Color.White
+                    di(index).DateColor = Color.White
+                    index += 1
+                End If
+                fechaIniMes = fechaIniMes.AddDays(1)
+            Loop
+
+            If (di.Length > 0) Then MonthCalendar3.AddDateInfo(di)
+
+            If (ConsultaDiaFeriado(Date.Now.Date)) Then MonthCalendar3.TodayColor = Color.FromArgb(255, 104, 17)
+
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Function ConsultaDiaFeriado(dateInfo As Date) As Boolean
+
+        Dim esFeriado As Boolean = False
+        Dim dt As New DataTable()
+
+        dt.Reset()
+        cmd = New SqlCommand("Feriados_Info", conexion)
+        cmd.CommandType = CommandType.StoredProcedure
+        conexion.Open()
+        cmd.Parameters.Add(New SqlParameter("@FechaIni", dateInfo.ToString("yyyyMMdd")))
+        cmd.Parameters.Add(New SqlParameter("@FechaFin", dateInfo.ToString("yyyyMMdd")))
+        Try
+            dt.Load(cmd.ExecuteReader())
+        Catch ex As Exception
+        Finally
+            conexion.Close()
+        End Try
+
+        If (dt.Rows(0)("DiasFer") > 0) Then
+            esFeriado = True
+        End If
+
+        Return esFeriado
+
+    End Function
 
     Private Sub CargarCambioFechasCalendario()
 
@@ -472,10 +536,12 @@ Public Class Frm_GestionAlmuerzosLeche
 
         ModificarTipoModoEmpleado()
         CargarCalendario(MonthCalendar3.ActiveMonth.Month)
-        'Dim item As String = cb.Text
-        'If (Not (item) Is Nothing) Then
-        '    MessageBox.Show(item)
-        'End If
+
+        'Actualiza ROW en DataTable dtEmpleados
+        Dim myRow() As Data.DataRow
+        myRow = dtEmpleados.Select("Rut = '" + rutEmpleado.Trim + "' and RutEmp = '" + rutEmpresa.Trim + "'")
+        myRow(0)("Tipo") = tipoAlmuerzo
+        myRow(0)("Modo") = ModoAlmuerzo
 
     End Sub
 
@@ -554,7 +620,10 @@ Public Class Frm_GestionAlmuerzosLeche
         Dim MesCalendario = MonthCalendar3.ActiveMonth.Month
         Dim WeekEnd As New List(Of DayOfWeek)(New DayOfWeek() {DayOfWeek.Saturday, DayOfWeek.Sunday})
 
-        If (DiaActual.Month = MesCalendario And Not WeekEnd.Contains(DiaActual.DayOfWeek)) Then
+        Dim esFeriado As Boolean
+        esFeriado = ConsultaDiaFeriado(DiaActual)
+
+        If (DiaActual.Month = MesCalendario And Not WeekEnd.Contains(DiaActual.DayOfWeek) And Not esFeriado) Then
 
             Dim di As New DateItem
 
@@ -618,4 +687,75 @@ Public Class Frm_GestionAlmuerzosLeche
         MetroGrid1.DataSource = dtEmpleados
         lblCantidad.Text = "Cantidad : " + MetroGrid1.Rows.Count.ToString()
     End Sub
+
+    Private Sub MetroComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox4.SelectedIndexChanged
+        Try
+            PictureBox2.Visible = True
+
+            Select Case MetroComboBox4.SelectedIndex
+                Case 0
+                    Dim dt As DataTable = CrearDTExcel()
+                    Dim dtRows = (dt.AsEnumerable().
+                                  Where(Function(x) x.Field(Of String)("Tipo").Trim = "Almuerzo").
+                                  ToList())
+                    If (dtRows.Any()) Then
+                        dt = dtRows.CopyToDataTable()
+                        dt.ExportToExcel()
+                    End If
+                Case 1
+                    Dim dt As DataTable = CrearDTExcel()
+                    Dim dtRows = (dt.AsEnumerable().
+                                  Where(Function(x) x.Field(Of String)("Tipo").Trim = "Leche").
+                                  ToList())
+                    If (dtRows.Any()) Then
+                        dt = dtRows.CopyToDataTable()
+                        dt.ExportToExcel()
+                    End If
+                Case 2
+                    Dim Mes As Integer = MonthCalendar3.ActiveMonth.Month
+                    Dim Anio As Integer = MonthCalendar3.ActiveMonth.Year
+                    Dim dt As DataTable = MindugarConexion.SelectDataTable("EXEC [SAC_Mindugar].[dbo].[Colaciones_Empleados_Tipos_Listar_Calendario] @Mes = " + Mes.ToString.Trim + ", @Anio = " + Anio.ToString.Trim + "")
+                    If (dt.Rows.Count > 0) Then
+                        dt.ExportToExcel()
+                    End If
+            End Select
+        Catch ex As Exception
+        Finally
+            PictureBox2.Visible = False
+        End Try
+
+
+    End Sub
+
+    Private Function CrearDTExcel() As DataTable
+
+
+        Dim dtExcel As New DataTable()
+        dtExcel.Columns.Add("Rut_Empresa", GetType(String))
+        dtExcel.Columns.Add("Empresa", GetType(String))
+        dtExcel.Columns.Add("Rut", GetType(String))
+        dtExcel.Columns.Add("Nombre", GetType(String))
+        dtExcel.Columns.Add("Apellido", GetType(String))
+        dtExcel.Columns.Add("Tipo", GetType(String))
+        dtExcel.Columns.Add("Modo", GetType(String))
+        Dim newRow As DataRow = dtExcel.NewRow()
+
+        For Each row As DataRow In CType(MetroGrid1.DataSource, DataTable).Rows
+            newRow("Rut_Empresa") = row("rutEmp")
+            newRow("Empresa") = row("Empresa")
+            newRow("Rut") = row("RUT")
+            newRow("Nombre") = row("nombre")
+            newRow("Apellido") = row("apellido")
+            newRow("Tipo") = IIf(row("Tipo").ToString.Trim = "A", "Almuerzo", "Leche")
+            newRow("Modo") = IIf(row("Modo").ToString.Trim = "LV", "L-V", IIf(row("Modo").ToString.Trim = "LJ", "L-J", ""))
+
+
+            dtExcel.Rows.Add(newRow)
+            newRow = dtExcel.NewRow()
+        Next
+
+        Return dtExcel
+
+    End Function
+
 End Class

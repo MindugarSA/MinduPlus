@@ -38,7 +38,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>171</ApplicationRevision>
+    <ApplicationRevision>182</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -340,6 +340,7 @@
     <Compile Include="1_Data_Layer\spASISTENCIA_EMPLE_TEMPListar_Result.vb">
       <DependentUpon>ModeloMINDUINTERMEDIA.tt</DependentUpon>
     </Compile>
+    <Compile Include="2_Business_Layer\Fader.vb" />
     <Compile Include="2_Business_Layer\FormExtensions.vb" />
     <Compile Include="3_Presentation_Layer\Formularios\FrmPresenciaEmpleados.Designer.vb">
       <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
@@ -347,10 +348,10 @@
     <Compile Include="3_Presentation_Layer\Formularios\FrmPresenciaEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\FrmSolicPermHrasExt.Designer.vb">
-      <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudesAutorizaciones.Designer.vb">
+      <DependentUpon>Frm_SolicitudesAutorizaciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\FrmSolicPermHrasExt.vb">
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudesAutorizaciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_EliminarHoraExtra.Designer.vb">
@@ -389,10 +390,10 @@
     <Compile Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.Designer.vb">
-      <DependentUpon>Frm_MantencionColaciones.vb</DependentUpon>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_MenuAlmuerzo.Designer.vb">
+      <DependentUpon>Frm_MenuAlmuerzo.vb</DependentUpon>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.vb">
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_MenuAlmuerzo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="3_Presentation_Layer\Formularios\Frm_Parametros2.Designer.vb">
@@ -407,16 +408,16 @@
     <Compile Include="3_Presentation_Layer\Formularios\Frm_SeleccionaTiporLiquidacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudColaciones.Designer.vb">
-      <DependentUpon>Frm_SolicitudColaciones.vb</DependentUpon>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudAlmuerzos.Designer.vb">
+      <DependentUpon>Frm_SolicitudAlmuerzos.vb</DependentUpon>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudColaciones.vb">
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudAlmuerzos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudGerencial.Designer.vb">
-      <DependentUpon>Frm_SolicitudGerencial.vb</DependentUpon>
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudAlmuAdicional.Designer.vb">
+      <DependentUpon>Frm_SolicitudAlmuAdicional.vb</DependentUpon>
     </Compile>
-    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudGerencial.vb">
+    <Compile Include="3_Presentation_Layer\Formularios\Frm_SolicitudAlmuAdicional.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="2_Business_Layer\DataTableExtensions.vb" />
@@ -613,8 +614,8 @@
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\FrmPresenciaEmpleados.resx">
       <DependentUpon>FrmPresenciaEmpleados.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\FrmSolicPermHrasExt.resx">
-      <DependentUpon>FrmSolicPermHrasExt.vb</DependentUpon>
+    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SolicitudesAutorizaciones.resx">
+      <DependentUpon>Frm_SolicitudesAutorizaciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_EliminarHoraExtra.resx">
       <DependentUpon>Frm_EliminarHoraExtra.vb</DependentUpon>
@@ -634,8 +635,8 @@
     <EmbeddedResource Include="3_Presentation_Layer\Reportes\Frm_InformeLiquidaciones.resx">
       <DependentUpon>Frm_InformeLiquidaciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_MantencionColaciones.resx">
-      <DependentUpon>Frm_MantencionColaciones.vb</DependentUpon>
+    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_MenuAlmuerzo.resx">
+      <DependentUpon>Frm_MenuAlmuerzo.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_Parametros2.resx">
@@ -644,12 +645,12 @@
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SeleccionaTiporLiquidacion.resx">
       <DependentUpon>Frm_SeleccionaTiporLiquidacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SolicitudColaciones.resx">
-      <DependentUpon>Frm_SolicitudColaciones.vb</DependentUpon>
+    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SolicitudAlmuerzos.resx">
+      <DependentUpon>Frm_SolicitudAlmuerzos.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SolicitudGerencial.resx">
-      <DependentUpon>Frm_SolicitudGerencial.vb</DependentUpon>
+    <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_SolicitudAlmuAdicional.resx">
+      <DependentUpon>Frm_SolicitudAlmuAdicional.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3_Presentation_Layer\Formularios\Frm_TicketSolicitudes.resx">
       <DependentUpon>Frm_TicketSolicitudes.vb</DependentUpon>
@@ -1676,6 +1677,10 @@
       <Project>{9eb65e78-56aa-48d9-a40e-b91ac947c967}</Project>
       <Name>ImportarExcelSQLServer.Converted</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OtrasAppsMindumas\OtrasAppsMindumas.csproj">
+      <Project>{c1fcb382-b9cc-4d2f-bfb3-9e01e6be7cb5}</Project>
+      <Name>OtrasAppsMindumas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SistemaMantenimiento\CapaPresentacion\CapaPresentacion.csproj">
       <Project>{f74582a3-8a30-4ca7-981d-32a79e2cfe64}</Project>
       <Name>CapaPresentacion</Name>
@@ -1714,6 +1719,9 @@
     <None Include="Resources\milk.png" />
     <None Include="Resources\refresh %282%291.png" />
     <None Include="Resources\magnifying-search-lenses-tool.png" />
+    <None Include="Resources\stopwatch.png" />
+    <None Include="Resources\calendar-daily-page-on-day-31.png" />
+    <None Include="Resources\milk_box.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

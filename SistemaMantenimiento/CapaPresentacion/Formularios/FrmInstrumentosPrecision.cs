@@ -26,12 +26,7 @@ namespace CapaPresentacion
         private Panel pnlParent;
         private StatusStrip StatusBarBottom;
         private string[] DatosEmpleadoSelecc;
-        private
-
-            String
-
-            Id;
-
+        private String Id;
 
         public delegate void LaunchEvent();
         public event LaunchEvent EnviarEvento;

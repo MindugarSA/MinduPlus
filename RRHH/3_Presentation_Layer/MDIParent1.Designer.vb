@@ -25,7 +25,7 @@ Partial Class MDIParent1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim PictureBox1 As System.Windows.Forms.PictureBox
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIParent1))
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.TlStrpSttsLbl_Proceso = New System.Windows.Forms.ToolStripStatusLabel()
@@ -34,7 +34,7 @@ Partial Class MDIParent1
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Tle_Configuracion = New MetroFramework.Controls.MetroTile()
-        Me.Tle_InformesAlmu = New MetroFramework.Controls.MetroTile()
+        Me.Tle_DiasFeriados = New MetroFramework.Controls.MetroTile()
         Me.Tle_MantencionColacione = New MetroFramework.Controls.MetroTile()
         Me.Tle_AlmuAdicional = New MetroFramework.Controls.MetroTile()
         Me.Tle_Permisos = New MetroFramework.Controls.MetroTile()
@@ -74,6 +74,7 @@ Partial Class MDIParent1
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.TmrBackAnimation = New System.Windows.Forms.Timer(Me.components)
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip.SuspendLayout()
@@ -168,22 +169,22 @@ Partial Class MDIParent1
         Me.Tle_Configuracion.UseSelectable = True
         Me.Tle_Configuracion.UseTileImage = True
         '
-        'Tle_InformesAlmu
+        'Tle_DiasFeriados
         '
-        Me.Tle_InformesAlmu.ActiveControl = Nothing
-        Me.Tle_InformesAlmu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Tle_InformesAlmu.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.BunifuTransition1.SetDecoration(Me.Tle_InformesAlmu, BunifuAnimatorNS.DecorationType.None)
-        Me.Tle_InformesAlmu.Location = New System.Drawing.Point(137, 243)
-        Me.Tle_InformesAlmu.Name = "Tle_InformesAlmu"
-        Me.Tle_InformesAlmu.Size = New System.Drawing.Size(119, 107)
-        Me.Tle_InformesAlmu.TabIndex = 15
-        Me.Tle_InformesAlmu.Text = "Informes Almuerzos"
-        Me.Tle_InformesAlmu.TileImage = Global.RRHH.My.Resources.Resources.list_document_interface_symbol
-        Me.ToolTip.SetToolTip(Me.Tle_InformesAlmu, "Ingreso de Menu")
-        Me.Tle_InformesAlmu.UseCustomBackColor = True
-        Me.Tle_InformesAlmu.UseSelectable = True
-        Me.Tle_InformesAlmu.UseTileImage = True
+        Me.Tle_DiasFeriados.ActiveControl = Nothing
+        Me.Tle_DiasFeriados.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tle_DiasFeriados.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.BunifuTransition1.SetDecoration(Me.Tle_DiasFeriados, BunifuAnimatorNS.DecorationType.None)
+        Me.Tle_DiasFeriados.Location = New System.Drawing.Point(137, 243)
+        Me.Tle_DiasFeriados.Name = "Tle_DiasFeriados"
+        Me.Tle_DiasFeriados.Size = New System.Drawing.Size(119, 107)
+        Me.Tle_DiasFeriados.TabIndex = 15
+        Me.Tle_DiasFeriados.Text = "Dias Feriados"
+        Me.Tle_DiasFeriados.TileImage = Global.RRHH.My.Resources.Resources.calendar_daily_page_on_day_31
+        Me.ToolTip.SetToolTip(Me.Tle_DiasFeriados, "Dias Feriados")
+        Me.Tle_DiasFeriados.UseCustomBackColor = True
+        Me.Tle_DiasFeriados.UseSelectable = True
+        Me.Tle_DiasFeriados.UseTileImage = True
         '
         'Tle_MantencionColacione
         '
@@ -607,7 +608,7 @@ Partial Class MDIParent1
         Me.pnlMovingTop.BackColor = System.Drawing.Color.Transparent
         Me.pnlMovingTop.Controls.Add(Me.Tle_AlmuAdicional)
         Me.pnlMovingTop.Controls.Add(Me.Tle_MantencionColacione)
-        Me.pnlMovingTop.Controls.Add(Me.Tle_InformesAlmu)
+        Me.pnlMovingTop.Controls.Add(Me.Tle_DiasFeriados)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Exportador)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Permisos)
         Me.pnlMovingTop.Controls.Add(Me.Tle_Configuracion)
@@ -714,28 +715,33 @@ Partial Class MDIParent1
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Particles
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 1
-        Animation1.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 2.0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation2.AnimateOnlyDifferences = True
+        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
+        Animation2.LeafCoeff = 0!
+        Animation2.MaxTime = 1.0!
+        Animation2.MinTime = 0!
+        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
+        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
+        Animation2.MosaicSize = 1
+        Animation2.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation2.RotateCoeff = 0!
+        Animation2.RotateLimit = 0!
+        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
+        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
+        Animation2.TimeCoeff = 2.0!
+        Animation2.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation2
         Me.BunifuTransition1.Interval = 40
         Me.BunifuTransition1.MaxAnimationTime = 3000
         '
         'TmrBackAnimation
         '
         Me.TmrBackAnimation.Interval = 5000
+        '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 35
+        Me.BunifuElipse1.TargetControl = Me.PictureBox3
         '
         'MDIParent1
         '
@@ -809,7 +815,7 @@ Partial Class MDIParent1
     Friend WithEvents Tle_MantencionColacione As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_AlmuAdicional As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_Configuracion As MetroFramework.Controls.MetroTile
-    Friend WithEvents Tle_InformesAlmu As MetroFramework.Controls.MetroTile
+    Friend WithEvents Tle_DiasFeriados As MetroFramework.Controls.MetroTile
     Friend WithEvents TmrDesplaza As Timer
     Friend WithEvents TleSolicitar_HHEE As MetroFramework.Controls.MetroTile
     Friend WithEvents Tle_Solicitar_Permisos As MetroFramework.Controls.MetroTile
@@ -825,4 +831,5 @@ Partial Class MDIParent1
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Tle_Ticket_Solicitud As MetroFramework.Controls.MetroTile
+    Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
 End Class

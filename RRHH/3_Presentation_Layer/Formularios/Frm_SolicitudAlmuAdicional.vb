@@ -3,7 +3,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 
 
-Public Class Frm_SolicitudGerencial
+Public Class Frm_SolicitudAlmuAdicional
 
     Dim vDateInfo As DateTime
     Dim dt As New DataTable

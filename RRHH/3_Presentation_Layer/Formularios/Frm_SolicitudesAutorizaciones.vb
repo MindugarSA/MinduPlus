@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Imports System.Net.Mail
 
-Public Class FrmSolicPermHrasExt
+Public Class Frm_SolicitudesAutorizaciones
     Dim vDateInfo As DateTime
     Dim dt As New DataTable
     Dim conexion As New SqlConnection

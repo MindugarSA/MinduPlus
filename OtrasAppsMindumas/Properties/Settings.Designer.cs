@@ -28,9 +28,9 @@ namespace OtrasAppsMindumas.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=FSSAPBO;Initial Catalog=SAC_Mindugar;Persist Security Info=True;User " +
             "ID=sa;Password=Sqladmin281")]
-        public string cn {
+        public string SAC_MINDUGAR_conection {
             get {
-                return ((string)(this["cn"]));
+                return ((string)(this["SAC_MINDUGAR_conection"]));
             }
         }
     }
