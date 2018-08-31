@@ -237,6 +237,7 @@ Public Class MDIParent1
                 TiempoIngreso.Enabled = False
                 Cerrar_Forms_Children()
                 Visualizar_Tiles_MDI()
+                Configurar_MeterialSkin_Styles_Inicio()
                 Dim NewMDIChild As New Login()
                 NewMDIChild.MdiParent = Me
                 NewMDIChild.Show()
@@ -683,6 +684,12 @@ Public Class MDIParent1
     Private Sub Cerrar_Forms_Children()
         For Each ChildForm As Form In Me.MdiChildren
             ChildForm.Close()
+        Next
+
+        For Each OpenForm As Form In Application.OpenForms
+            If (OpenForm.Modal) Then
+                OpenForm.Close()
+            End If
         Next
 
         Cerrar_Forms_Dentro_de_Panel(Me.Panel2)

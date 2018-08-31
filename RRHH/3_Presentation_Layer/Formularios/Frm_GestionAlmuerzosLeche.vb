@@ -688,9 +688,10 @@ Public Class Frm_GestionAlmuerzosLeche
         lblCantidad.Text = "Cantidad : " + MetroGrid1.Rows.Count.ToString()
     End Sub
 
-    Private Sub MetroComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroComboBox4.SelectedIndexChanged
+    Private Async Sub MetroComboBox4_SelectedIndexChangedAsync(sender As Object, e As EventArgs) Handles MetroComboBox4.SelectedIndexChanged
         Try
             PictureBox2.Visible = True
+            Await Task.Delay(25)
 
             Select Case MetroComboBox4.SelectedIndex
                 Case 0
@@ -715,8 +716,11 @@ Public Class Frm_GestionAlmuerzosLeche
                     Dim Mes As Integer = MonthCalendar3.ActiveMonth.Month
                     Dim Anio As Integer = MonthCalendar3.ActiveMonth.Year
                     Dim dt As DataTable = MindugarConexion.SelectDataTable("EXEC [SAC_Mindugar].[dbo].[Colaciones_Empleados_Tipos_Listar_Calendario] @Mes = " + Mes.ToString.Trim + ", @Anio = " + Anio.ToString.Trim + "")
+                    Await Task.Delay(30)
                     If (dt.Rows.Count > 0) Then
                         dt.ExportToExcel()
+                    Else
+                        MessageBox.Show("No se Cargaron los Datos")
                     End If
             End Select
         Catch ex As Exception

@@ -4,11 +4,17 @@ Public Module MindugarConexion
 
     Public Function SelectDataTable(stringSelect As String) As DataTable
         Dim dt As New DataTable()
-        Using con As New SqlConnection(My.Settings.SBO_COMERCIALConnectionString)
-            Dim cmd As New SqlCommand(stringSelect, con)
-            Dim adapter As New SqlDataAdapter(cmd)
-            adapter.Fill(dt)
-        End Using
+
+        Try
+            Using con As New SqlConnection(My.Settings.SBO_COMERCIALConnectionString)
+                Dim cmd As New SqlCommand(stringSelect, con)
+                cmd.CommandTimeout = 0
+                Dim adapter As New SqlDataAdapter(cmd)
+                adapter.Fill(dt)
+            End Using
+        Catch
+        End Try
+
         Return dt
     End Function
 
