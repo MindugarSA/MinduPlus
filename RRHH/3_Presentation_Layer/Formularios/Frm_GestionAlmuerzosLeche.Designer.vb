@@ -23,17 +23,27 @@ Partial Class Frm_GestionAlmuerzosLeche
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblEmpresaInformeHHEE = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
+        Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.MonthCalendar3 = New Pabo.Calendar.MonthCalendar()
+        Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
+        Me.MonthCalendar1 = New Pabo.Calendar.MonthCalendar()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.HabilitarParaEmitirTicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox4 = New MetroFramework.Controls.MetroComboBox()
+        Me.btnRecarga = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtBusqueda = New MaterialSkin.Controls.MaterialSingleLineTextField()
         Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
-        Me.MonthCalendar3 = New Pabo.Calendar.MonthCalendar()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox2 = New MetroFramework.Controls.MetroComboBox()
@@ -53,16 +63,15 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroComboBox3 = New MetroFramework.Controls.MetroComboBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnRecarga = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BtnVolver2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroTabControl1.SuspendLayout()
+        Me.MetroTabPage1.SuspendLayout()
+        Me.MetroTabPage2.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblEmpresaInformeHHEE
@@ -81,6 +90,8 @@ Partial Class Frm_GestionAlmuerzosLeche
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.MetroTabControl1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.MetroLabel4)
         Me.Panel1.Controls.Add(Me.MetroComboBox4)
@@ -88,12 +99,10 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.Panel1.Controls.Add(Me.btnBuscar)
         Me.Panel1.Controls.Add(Me.txtBusqueda)
         Me.Panel1.Controls.Add(Me.MetroLabel3)
-        Me.Panel1.Controls.Add(Me.MonthCalendar3)
         Me.Panel1.Controls.Add(Me.MetroLabel1)
         Me.Panel1.Controls.Add(Me.MetroLabel2)
         Me.Panel1.Controls.Add(Me.MetroComboBox2)
         Me.Panel1.Controls.Add(Me.MetroComboBox1)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.lblModo)
         Me.Panel1.Controls.Add(Me.lblTipo)
         Me.Panel1.Controls.Add(Me.TxtEmpleado)
@@ -107,8 +116,148 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.Panel1.Controls.Add(Me.BtnVolver2)
         Me.Panel1.Location = New System.Drawing.Point(20, 52)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1322, 770)
+        Me.Panel1.Size = New System.Drawing.Size(1377, 770)
         Me.Panel1.TabIndex = 50
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(1130, 127)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(175, 175)
+        Me.PictureBox1.TabIndex = 63
+        Me.PictureBox1.TabStop = False
+        '
+        'MetroTabControl1
+        '
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
+        Me.MetroTabControl1.Location = New System.Drawing.Point(712, 294)
+        Me.MetroTabControl1.Name = "MetroTabControl1"
+        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.Size = New System.Drawing.Size(655, 469)
+        Me.MetroTabControl1.TabIndex = 78
+        Me.MetroTabControl1.UseSelectable = True
+        '
+        'MetroTabPage1
+        '
+        Me.MetroTabPage1.Controls.Add(Me.MonthCalendar3)
+        Me.MetroTabPage1.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage1.HorizontalScrollbarSize = 10
+        Me.MetroTabPage1.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage1.Name = "MetroTabPage1"
+        Me.MetroTabPage1.Size = New System.Drawing.Size(647, 427)
+        Me.MetroTabPage1.TabIndex = 0
+        Me.MetroTabPage1.Text = "    Planificacion    "
+        Me.MetroTabPage1.VerticalScrollbarBarColor = True
+        Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage1.VerticalScrollbarSize = 10
+        '
+        'MonthCalendar3
+        '
+        Me.MonthCalendar3.ActiveMonth.Month = 7
+        Me.MonthCalendar3.ActiveMonth.Year = 2018
+        Me.MonthCalendar3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None
+        Me.MonthCalendar3.Culture = New System.Globalization.CultureInfo("es-CL")
+        Me.MonthCalendar3.Footer.Align = Pabo.Calendar.mcTextAlign.Center
+        Me.MonthCalendar3.Footer.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.MonthCalendar3.Footer.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar3.Footer.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar3.Header.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.MonthCalendar3.Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar3.Header.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar3.ImageList = Nothing
+        Me.MonthCalendar3.Location = New System.Drawing.Point(30, 14)
+        Me.MonthCalendar3.MaxDate = New Date(2028, 7, 18, 13, 23, 7, 845)
+        Me.MonthCalendar3.MinDate = New Date(2008, 7, 18, 13, 23, 7, 845)
+        Me.MonthCalendar3.Month.BackgroundImage = Nothing
+        Me.MonthCalendar3.Month.DateFont = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MonthCalendar3.Month.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.MonthCalendar3.Name = "MonthCalendar3"
+        Me.MonthCalendar3.SelectionMode = Pabo.Calendar.mcSelectionMode.One
+        Me.MonthCalendar3.Size = New System.Drawing.Size(586, 399)
+        Me.MonthCalendar3.TabIndex = 71
+        Me.MonthCalendar3.TodayColor = System.Drawing.Color.Transparent
+        Me.MonthCalendar3.Weekdays.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.MonthCalendar3.Weekdays.BorderColor = System.Drawing.Color.Transparent
+        Me.MonthCalendar3.Weekdays.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar3.Weekdays.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar3.Weeknumbers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        '
+        'MetroTabPage2
+        '
+        Me.MetroTabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.MetroTabPage2.Controls.Add(Me.MonthCalendar1)
+        Me.MetroTabPage2.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.HorizontalScrollbarSize = 10
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage2.Name = "MetroTabPage2"
+        Me.MetroTabPage2.Size = New System.Drawing.Size(647, 427)
+        Me.MetroTabPage2.TabIndex = 1
+        Me.MetroTabPage2.Text = "    Consumo    "
+        Me.MetroTabPage2.UseCustomBackColor = True
+        Me.MetroTabPage2.UseStyleColors = True
+        Me.MetroTabPage2.VerticalScrollbarBarColor = True
+        Me.MetroTabPage2.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage2.VerticalScrollbarSize = 10
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.ActiveMonth.Month = 7
+        Me.MonthCalendar1.ActiveMonth.Year = 2018
+        Me.MonthCalendar1.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None
+        Me.MonthCalendar1.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.MonthCalendar1.Culture = New System.Globalization.CultureInfo("es-CL")
+        Me.MonthCalendar1.Footer.Align = Pabo.Calendar.mcTextAlign.Center
+        Me.MonthCalendar1.Footer.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.MonthCalendar1.Footer.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar1.Footer.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar1.Header.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.MonthCalendar1.Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar1.Header.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar1.ImageList = Nothing
+        Me.MonthCalendar1.Location = New System.Drawing.Point(30, 14)
+        Me.MonthCalendar1.MaxDate = New Date(2028, 7, 18, 13, 23, 7, 845)
+        Me.MonthCalendar1.MinDate = New Date(2008, 7, 18, 13, 23, 7, 845)
+        Me.MonthCalendar1.Month.BackgroundImage = Nothing
+        Me.MonthCalendar1.Month.DateFont = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MonthCalendar1.Month.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.SelectionMode = Pabo.Calendar.mcSelectionMode.One
+        Me.MonthCalendar1.Size = New System.Drawing.Size(586, 399)
+        Me.MonthCalendar1.TabIndex = 72
+        Me.MonthCalendar1.TodayColor = System.Drawing.Color.Transparent
+        Me.MonthCalendar1.Weekdays.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.MonthCalendar1.Weekdays.BorderColor = System.Drawing.Color.Transparent
+        Me.MonthCalendar1.Weekdays.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.MonthCalendar1.Weekdays.TextColor = System.Drawing.Color.White
+        Me.MonthCalendar1.Weeknumbers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HabilitarParaEmitirTicketToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(215, 26)
+        '
+        'HabilitarParaEmitirTicketToolStripMenuItem
+        '
+        Me.HabilitarParaEmitirTicketToolStripMenuItem.Image = Global.RRHH.My.Resources.Resources.plus_sign_in_a_black_circle
+        Me.HabilitarParaEmitirTicketToolStripMenuItem.Name = "HabilitarParaEmitirTicketToolStripMenuItem"
+        Me.HabilitarParaEmitirTicketToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.HabilitarParaEmitirTicketToolStripMenuItem.Text = "Habilitar Para Emitir Ticket"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.RRHH.My.Resources.Resources.stopwatch
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(1258, 22)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
+        Me.PictureBox2.TabIndex = 77
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
         '
         'MetroLabel4
         '
@@ -130,6 +279,40 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroComboBox4.Size = New System.Drawing.Size(366, 29)
         Me.MetroComboBox4.TabIndex = 74
         Me.MetroComboBox4.UseSelectable = True
+        '
+        'btnRecarga
+        '
+        Me.btnRecarga.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnRecarga.BackgroundImage = Global.RRHH.My.Resources.Resources.refresh_24
+        Me.btnRecarga.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnRecarga.FlatAppearance.BorderSize = 0
+        Me.btnRecarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecarga.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecarga.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnRecarga.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnRecarga.Location = New System.Drawing.Point(1209, 11)
+        Me.btnRecarga.Name = "btnRecarga"
+        Me.btnRecarga.Size = New System.Drawing.Size(35, 34)
+        Me.btnRecarga.TabIndex = 73
+        Me.btnRecarga.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnRecarga.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
+        Me.btnBuscar.BackgroundImage = Global.RRHH.My.Resources.Resources.search24
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnBuscar.FlatAppearance.BorderSize = 0
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnBuscar.Location = New System.Drawing.Point(1168, 11)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(35, 34)
+        Me.btnBuscar.TabIndex = 72
+        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'txtBusqueda
         '
@@ -166,37 +349,6 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel3.Size = New System.Drawing.Size(128, 19)
         Me.MetroLabel3.TabIndex = 70
         Me.MetroLabel3.Text = "Nombre / Apellido :"
-        '
-        'MonthCalendar3
-        '
-        Me.MonthCalendar3.ActiveMonth.Month = 7
-        Me.MonthCalendar3.ActiveMonth.Year = 2018
-        Me.MonthCalendar3.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None
-        Me.MonthCalendar3.Culture = New System.Globalization.CultureInfo("es-CL")
-        Me.MonthCalendar3.Footer.Align = Pabo.Calendar.mcTextAlign.Center
-        Me.MonthCalendar3.Footer.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.MonthCalendar3.Footer.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MonthCalendar3.Footer.TextColor = System.Drawing.Color.White
-        Me.MonthCalendar3.Header.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.MonthCalendar3.Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.MonthCalendar3.Header.TextColor = System.Drawing.Color.White
-        Me.MonthCalendar3.ImageList = Nothing
-        Me.MonthCalendar3.Location = New System.Drawing.Point(723, 309)
-        Me.MonthCalendar3.MaxDate = New Date(2028, 7, 18, 13, 23, 7, 845)
-        Me.MonthCalendar3.MinDate = New Date(2008, 7, 18, 13, 23, 7, 845)
-        Me.MonthCalendar3.Month.BackgroundImage = Nothing
-        Me.MonthCalendar3.Month.DateFont = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar3.Month.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.MonthCalendar3.Name = "MonthCalendar3"
-        Me.MonthCalendar3.SelectionMode = Pabo.Calendar.mcSelectionMode.One
-        Me.MonthCalendar3.Size = New System.Drawing.Size(586, 399)
-        Me.MonthCalendar3.TabIndex = 69
-        Me.MonthCalendar3.TodayColor = System.Drawing.Color.Transparent
-        Me.MonthCalendar3.Weekdays.BackColor1 = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.MonthCalendar3.Weekdays.BorderColor = System.Drawing.Color.Transparent
-        Me.MonthCalendar3.Weekdays.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.MonthCalendar3.Weekdays.TextColor = System.Drawing.Color.White
-        Me.MonthCalendar3.Weeknumbers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         '
         'MetroLabel1
         '
@@ -267,7 +419,7 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.TxtEmpleado.Location = New System.Drawing.Point(709, 94)
         Me.TxtEmpleado.Name = "TxtEmpleado"
         Me.TxtEmpleado.ReadOnly = True
-        Me.TxtEmpleado.Size = New System.Drawing.Size(607, 25)
+        Me.TxtEmpleado.Size = New System.Drawing.Size(661, 25)
         Me.TxtEmpleado.TabIndex = 58
         Me.TxtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -307,32 +459,32 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroGrid1.AllowUserToDeleteRows = False
         Me.MetroGrid1.AllowUserToOrderColumns = True
         Me.MetroGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
-        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.AliceBlue
+        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
         Me.MetroGrid1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.MetroGrid1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Rut, Me.Nombre, Me.Apellido, Me.Tipo, Me.Modo})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Gold
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle23
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -340,14 +492,14 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroGrid1.MultiSelect = False
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.MetroGrid1.RowHeadersVisible = False
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -417,65 +569,6 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.MetroLabel5.TabIndex = 50
         Me.MetroLabel5.Text = "Empleados:"
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 26)
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackgroundImage = Global.RRHH.My.Resources.Resources.stopwatch
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(1258, 22)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(45, 45)
-        Me.PictureBox2.TabIndex = 77
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
-        'btnRecarga
-        '
-        Me.btnRecarga.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnRecarga.BackgroundImage = Global.RRHH.My.Resources.Resources.refresh_24
-        Me.btnRecarga.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnRecarga.FlatAppearance.BorderSize = 0
-        Me.btnRecarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRecarga.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRecarga.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnRecarga.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnRecarga.Location = New System.Drawing.Point(1209, 11)
-        Me.btnRecarga.Name = "btnRecarga"
-        Me.btnRecarga.Size = New System.Drawing.Size(35, 34)
-        Me.btnRecarga.TabIndex = 73
-        Me.btnRecarga.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnRecarga.UseVisualStyleBackColor = False
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(162, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.btnBuscar.BackgroundImage = Global.RRHH.My.Resources.Resources.search24
-        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnBuscar.FlatAppearance.BorderSize = 0
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnBuscar.Location = New System.Drawing.Point(1168, 11)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(35, 34)
-        Me.btnBuscar.TabIndex = 72
-        Me.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(1130, 127)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(175, 175)
-        Me.PictureBox1.TabIndex = 63
-        Me.PictureBox1.TabStop = False
-        '
         'BtnVolver2
         '
         Me.BtnVolver2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -499,7 +592,7 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1364, 846)
+        Me.ClientSize = New System.Drawing.Size(1419, 846)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblEmpresaInformeHHEE)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -507,9 +600,13 @@ Partial Class Frm_GestionAlmuerzosLeche
         Me.Text = "Gestion de Almuerzos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MetroTabControl1.ResumeLayout(False)
+        Me.MetroTabPage1.ResumeLayout(False)
+        Me.MetroTabPage2.ResumeLayout(False)
+        Me.ContextMenuStrip1.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -537,7 +634,6 @@ Partial Class Frm_GestionAlmuerzosLeche
     Friend WithEvents MetroLabel2 As MetroFramework.Controls.MetroLabel
     Friend WithEvents MetroComboBox2 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents MetroComboBox1 As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents MonthCalendar3 As Pabo.Calendar.MonthCalendar
     Friend WithEvents MetroLabel3 As MetroFramework.Controls.MetroLabel
     Friend WithEvents txtBusqueda As MaterialSkin.Controls.MaterialSingleLineTextField
     Friend WithEvents btnBuscar As Button
@@ -546,4 +642,10 @@ Partial Class Frm_GestionAlmuerzosLeche
     Friend WithEvents MetroComboBox4 As MetroFramework.Controls.MetroComboBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
+    Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MonthCalendar3 As Pabo.Calendar.MonthCalendar
+    Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
+    Friend WithEvents MonthCalendar1 As Pabo.Calendar.MonthCalendar
+    Friend WithEvents HabilitarParaEmitirTicketToolStripMenuItem As ToolStripMenuItem
 End Class

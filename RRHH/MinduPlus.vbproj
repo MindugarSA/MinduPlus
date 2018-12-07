@@ -38,7 +38,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>185</ApplicationRevision>
+    <ApplicationRevision>187</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1722,6 +1722,7 @@
     <None Include="Resources\stopwatch.png" />
     <None Include="Resources\calendar-daily-page-on-day-31.png" />
     <None Include="Resources\milk_box.png" />
+    <None Include="Resources\plus-sign-in-a-black-circle.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

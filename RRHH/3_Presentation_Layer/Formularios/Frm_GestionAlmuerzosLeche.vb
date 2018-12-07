@@ -7,27 +7,43 @@ Public Class Frm_GestionAlmuerzosLeche
     Public Property dtTipos As DataTable
     Public Property dtModos As DataTable
     Public Property DiaActual As DateTime
+    Public Property DiaActualConsumo As DateTime
     Property conexion As New SqlConnection
     Property cmd As SqlCommand
     Public Property rutEmpleado As String
+    Public Property NombreEmpleado As String
+    Public Property ApellidoEmpleado As String
     Public Property rutEmpresa As String
     Public Property tipoAlmuerzo As String
     Public Property ModoAlmuerzo As String
+    Public Property LoadForm As Boolean
 
     Private Sub Frm_GestionAlmuerzosLeche_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         Me.SuspendLayout()
         conexion.ConnectionString = Conection.Cn
+        MonthCalendar1.Visible = False
+        MonthCalendar3.Visible = False
         lblModo.Visible = False
         lblTipo.Visible = False
 
         DiaActual = Date.Now
+
+        MonthCalendar1.ActiveMonth.Month = DiaActual.Month
+        MonthCalendar1.ActiveMonth.Year = DiaActual.Year
+
         MonthCalendar3.ActiveMonth.Month = DiaActual.Month
         MonthCalendar3.ActiveMonth.Year = DiaActual.Year
+
+        MetroTabControl1.SelectedIndex = 0
+        LoadForm = True
 
     End Sub
 
     Private Sub Frm_GestionAlmuerzosLeche_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+
+        MetroTabControl1.SelectedIndex = 0
 
         dtEmpleados = MindugarConexion.SelectDataTable("EXEC [SAC_Mindugar].[dbo].[Colaciones_Empleados_Tipos_Listar]")
 
@@ -37,6 +53,13 @@ Public Class Frm_GestionAlmuerzosLeche
 
         lblModo.Visible = True
         lblTipo.Visible = True
+
+        LoadForm = False
+        CargarCalendario(MonthCalendar3.ActiveMonth.Month)
+        CargarCalendarioConsumo(MonthCalendar1.ActiveMonth.Month)
+        MonthCalendar1.Visible = True
+        MonthCalendar3.Visible = True
+
         Me.ResumeLayout()
 
     End Sub
@@ -269,6 +292,8 @@ Public Class Frm_GestionAlmuerzosLeche
 
                 CargarInfoEmpleado()
                 CargarCalendario(MonthCalendar3.ActiveMonth.Month)
+                CargarCalendarioConsumo(MonthCalendar1.ActiveMonth.Month)
+
             End If
         Catch
 
@@ -280,6 +305,8 @@ Public Class Frm_GestionAlmuerzosLeche
     Private Sub CargarPropiedadesEmpleado()
 
         rutEmpleado = MetroGrid1.Rows(MetroGrid1.CurrentCell.RowIndex).Cells(0).Value.ToString().Trim
+        NombreEmpleado = MetroGrid1.Rows(MetroGrid1.CurrentCell.RowIndex).Cells(1).Value.ToString().Trim
+        ApellidoEmpleado = MetroGrid1.Rows(MetroGrid1.CurrentCell.RowIndex).Cells(2).Value.ToString().Trim
         rutEmpresa = CType(MetroGrid1.DataSource, DataTable).Rows(MetroGrid1.CurrentCell.RowIndex)(5).ToString().Trim
         tipoAlmuerzo = MetroGrid1.Rows(MetroGrid1.CurrentCell.RowIndex).Cells(3).Value.ToString().Trim
         ModoAlmuerzo = MetroGrid1.Rows(MetroGrid1.CurrentCell.RowIndex).Cells(4).Value.ToString().Trim
@@ -287,6 +314,10 @@ Public Class Frm_GestionAlmuerzosLeche
     End Sub
 
     Private Sub CargarCalendario(iMes As Integer)
+        If (LoadForm) Then
+            Exit Sub
+        End If
+
         Dim Mes As Int16 = MonthCalendar3.ActiveMonth.Month
         Dim Anio As Int16 = MonthCalendar3.ActiveMonth.Year
         Dim fechaIniMes As Date = New Date(Anio, Mes, 1)
@@ -328,16 +359,16 @@ Public Class Frm_GestionAlmuerzosLeche
             Dim m_dates As DateItem() = MonthCalendar3.GetDateInfo()
 
             CargarCambioFechasCalendario()
-            CargarDiasFeriadosCalendario()
+            CargarDiasFeriadosCalendario(MonthCalendar3)
 
         Catch ex As Exception
         End Try
 
     End Sub
 
-    Private Sub CargarDiasFeriadosCalendario()
-        Dim Mes As Int16 = MonthCalendar3.ActiveMonth.Month
-        Dim Anio As Int16 = MonthCalendar3.ActiveMonth.Year
+    Private Sub CargarDiasFeriadosCalendario(Calendario As MonthCalendar)
+        Dim Mes As Int16 = Calendario.ActiveMonth.Month
+        Dim Anio As Int16 = Calendario.ActiveMonth.Year
         Dim fechaIniMes As Date = New Date(Anio, Mes, 1)
         Dim DiasMes = System.DateTime.DaysInMonth(Anio, Mes)
         Dim fechaFinMes As Date = New Date(Anio, Mes, DiasMes)
@@ -368,9 +399,9 @@ Public Class Frm_GestionAlmuerzosLeche
                 fechaIniMes = fechaIniMes.AddDays(1)
             Loop
 
-            If (di.Length > 0) Then MonthCalendar3.AddDateInfo(di)
+            If (di.Length > 0) Then Calendario.AddDateInfo(di)
 
-            If (ConsultaDiaFeriado(Date.Now.Date)) Then MonthCalendar3.TodayColor = Color.FromArgb(255, 104, 17)
+            If (ConsultaDiaFeriado(Date.Now.Date)) Then Calendario.TodayColor = Color.FromArgb(255, 104, 17)
 
         Catch ex As Exception
         End Try
@@ -458,6 +489,65 @@ Public Class Frm_GestionAlmuerzosLeche
         End Try
     End Sub
 
+    Private Sub CargarCalendarioConsumo(iMes As Integer)
+
+        If (LoadForm) Then
+            Exit Sub
+        End If
+
+        Dim diC() As DateItem '= New DateItem(30) {}
+        Dim index As Int16 = 0
+        Dim dt As New DataTable()
+        Dim TicketStatus As String = ""
+
+        cmd = New SqlCommand("[Colaciones_Empleados_Consumos_Mes]", conexion)
+        cmd.CommandType = CommandType.StoredProcedure
+        conexion.Open()
+        cmd.Parameters.Add(New SqlParameter("@rut", rutEmpleado))
+        cmd.Parameters.Add(New SqlParameter("@mes", MonthCalendar1.ActiveMonth.Month))
+        cmd.Parameters.Add(New SqlParameter("@anio", MonthCalendar1.ActiveMonth.Year))
+
+        MonthCalendar1.ResetDateInfo()
+        ReDim Preserve diC(index)
+        diC.Initialize()
+
+        Try
+            dt.Reset()
+            dt.Load(cmd.ExecuteReader())
+
+            index = 0
+            If (dt.Rows.Count > 0) Then
+                For Each row As DataRow In dt.Rows
+
+                    TicketStatus = If(IsDBNull(row("Estado")), "", row("Estado"))
+                    ReDim Preserve diC(index)
+                    diC.Initialize()
+                    diC(index) = New DateItem()
+                    diC(index).Date = row("fecha")
+                    diC(index).DateColor = Color.Black
+                    diC(index).BackColor1 = If(TicketStatus = "Emitido" Or TicketStatus = "", Color.FromArgb(0, 174, 219),
+                                                If(TicketStatus = "Habilitado", Color.FromArgb(153, 180, 51),
+                                                If(TicketStatus = "Bloqueado", Color.FromArgb(232, 35, 35), Color.FromArgb(250, 250, 250))))
+                    diC(index).Text = If(row("fecha") < Date.Now And TicketStatus = "", "Emitido", TicketStatus)
+                    diC(index).TextColor = Color.White
+                    diC(index).DateColor = Color.White
+
+                    If (row("fecha") = Date.Now.Date) Then MonthCalendar1.TodayColor = Color.FromArgb(80, 199, 230)
+                    index += 1
+
+                Next
+                If (diC.Length > 0) Then MonthCalendar1.AddDateInfo(diC)
+
+            End If
+
+        Catch ex As Exception
+        Finally
+            conexion.Close()
+            CargarDiasFeriadosCalendario(MonthCalendar1)
+        End Try
+
+    End Sub
+
     Private Sub CargarInfoEmpleado()
 
         'Dim tipoAlmuerzo As String = MetroGrid1.Rows(MetroGrid1.CurrentCell.RowIndex).Cells(3).Value.ToString().Trim
@@ -536,6 +626,7 @@ Public Class Frm_GestionAlmuerzosLeche
 
         ModificarTipoModoEmpleado()
         CargarCalendario(MonthCalendar3.ActiveMonth.Month)
+        CargarCalendarioConsumo(MonthCalendar1.ActiveMonth.Month)
 
         'Actualiza ROW en DataTable dtEmpleados
         Dim myRow() As Data.DataRow
@@ -652,8 +743,18 @@ Public Class Frm_GestionAlmuerzosLeche
 
     End Sub
 
+    Private Sub MonthCalendar1_MonthChanged(sender As Object, e As MonthChangedEventArgs) Handles MonthCalendar1.MonthChanged
+        Try
+            CargarCalendarioConsumo(e.Month)
+        Catch ex As Exception
+        End Try
+    End Sub
+
     Private Sub MonthCalendar3_MonthChanged(sender As Object, e As MonthChangedEventArgs) Handles MonthCalendar3.MonthChanged
-        CargarCalendario(e.Month)
+        Try
+            CargarCalendario(e.Month)
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub btnAutorizarTodas_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -762,4 +863,39 @@ Public Class Frm_GestionAlmuerzosLeche
 
     End Function
 
+    Private Sub HabilitarParaEmitirTicketToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HabilitarParaEmitirTicketToolStripMenuItem.Click
+
+        Dim resp As String = MessageBox.Show("Habilitar Emision de Ticket a " + NombreEmpleado + ", " + ApellidoEmpleado + " para el dia " + DiaActualConsumo.ToShortDateString, "Habilitacion Almuerzo/Leche", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question).ToString()
+
+        If resp = "Yes" Then
+            cmd = New SqlCommand("[Colaciones_Empleados_TICKET_STATUS_Modificar]", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd.Parameters.Add(New SqlParameter("@Rut", rutEmpleado))
+            cmd.Parameters.Add(New SqlParameter("@Fecha", DiaActualConsumo.ToString("yyyyMMdd")))
+            cmd.Parameters.Add(New SqlParameter("@Estado", "Habilitado"))
+            Try
+                cmd.ExecuteNonQuery()
+                resp = "Ok"
+            Catch ex As Exception
+                resp = "Error"
+            Finally
+                conexion.Close()
+                If (resp = "Ok") Then CargarCalendarioConsumo(MonthCalendar1.ActiveMonth.Month)
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub MonthCalendar1_DayClick(sender As Object, e As DayClickEventArgs) Handles MonthCalendar1.DayClick
+        DiaActualConsumo = CType(e.Date, DateTime)
+    End Sub
+
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
+        If (DiaActualConsumo <= Date.Now) Then
+            ContextMenuStrip1.Items(0).Enabled = True
+        Else
+            ContextMenuStrip1.Items(0).Enabled = False
+        End If
+    End Sub
 End Class

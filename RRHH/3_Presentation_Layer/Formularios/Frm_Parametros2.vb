@@ -180,41 +180,82 @@ Public Class Frm_Parametros2
     End Sub
 
     Private Sub Bttn_Actualiza_Click(sender As Object, e As EventArgs) Handles Bttn_Actualiza.Click
-        Dim vlstId As String = ObtenerActivosGvPermPend()
-        Dim dt As New DataTable
-        If vlstId.Length > 0 Then
-            cmd = New SqlCommand("PassAtributosUsuarioAgregaGes", conexion)
-            cmd.CommandType = CommandType.StoredProcedure
-            conexion.Open()
-            cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
-            cmd.Parameters.Add(New SqlParameter("@IdAtributo", vlstId))
-            Try
-                dt.Load(cmd.ExecuteReader())
-            Catch ex As Exception
-                MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
-            Finally
-                conexion.Close()
-            End Try
+
+
+        If (ValidarPermisosAccesoAutomatizacion()) Then
+            Dim vlstId As String = ObtenerActivosGvPermPend()
+            Dim dt As New DataTable
+            If vlstId.Length > 0 Then
+                cmd = New SqlCommand("PassAtributosUsuarioAgregaGes", conexion)
+                cmd.CommandType = CommandType.StoredProcedure
+                conexion.Open()
+                cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
+                cmd.Parameters.Add(New SqlParameter("@IdAtributo", vlstId))
+                Try
+                    dt.Load(cmd.ExecuteReader())
+                Catch ex As Exception
+                    MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
+                Finally
+                    conexion.Close()
+                End Try
+            End If
+            'Borra los Marcados
+            vlstId = ObtenerActivosGvPermDados()
+            If vlstId.Length > 0 Then
+                cmd = New SqlCommand("PassAtributosUsuarioDeleteGes", conexion)
+                cmd.CommandType = CommandType.StoredProcedure
+                conexion.Open()
+                cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
+                cmd.Parameters.Add(New SqlParameter("@IdAtributo", vlstId))
+                Try
+                    dt.Load(cmd.ExecuteReader())
+                Catch ex As Exception
+                    MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
+                Finally
+                    conexion.Close()
+                End Try
+            End If
+            LLenaDatosUsuario(CmbBx_Usuarios.SelectedValue)
+        Else
+            MetroFramework.MetroMessageBox.Show(Me, "Solo puede Asignar Un Solo Tipo de Acceso para Automatización (960XX)",
+                                       "Validacion de Accesos",
+                                       MessageBoxButtons.OK,
+                                       MessageBoxIcon.Exclamation,
+                                       370)
         End If
-        'Borra los Marcados
-        vlstId = ObtenerActivosGvPermDados()
-        If vlstId.Length > 0 Then
-            cmd = New SqlCommand("PassAtributosUsuarioDeleteGes", conexion)
-            cmd.CommandType = CommandType.StoredProcedure
-            conexion.Open()
-            cmd.Parameters.Add(New SqlParameter("@IdUsuario", CmbBx_Usuarios.SelectedValue))
-            cmd.Parameters.Add(New SqlParameter("@IdAtributo", vlstId))
-            Try
-                dt.Load(cmd.ExecuteReader())
-            Catch ex As Exception
-                MsgBox(ex.ToString, MsgBoxStyle.Critical, "Error!")
-            Finally
-                conexion.Close()
-            End Try
-        End If
-        LLenaDatosUsuario(CmbBx_Usuarios.SelectedValue)
+
+
 
     End Sub
+
+    Function ValidarPermisosAccesoAutomatizacion() As Boolean
+
+        Dim AccesosValidos = True
+        Dim AccesoAuto As Boolean = False
+        Dim CantAuto As Int32 = 0
+
+        For i = 0 To DtGrdVw_PermisosNo.RowCount - 1
+            If DtGrdVw_PermisosNo.Rows(i).Cells("SelNo").Value = True Then
+                If (DtGrdVw_PermisosNo.Rows(i).Cells("IdAtributoNo").Value.ToString.Contains("960")) Then
+                    AccesoAuto = True
+                    CantAuto += 1
+                    If CantAuto > 1 Then
+                        AccesosValidos = False
+                    End If
+                End If
+            End If
+        Next
+
+        If (AccesoAuto And AccesosValidos) Then
+            For i = 0 To DtGrdVw_PermisosSi.RowCount - 1
+                If (DtGrdVw_PermisosSi.Rows(i).Cells("IdAtributoSi").Value.ToString.Contains("960")) Then
+                    AccesosValidos = False
+                End If
+            Next
+        End If
+
+        ValidarPermisosAccesoAutomatizacion = AccesosValidos
+    End Function
 
     Function ObtenerActivosGvPermPend() As String
         'Obtiene identificadores de elementos marcados con ticket activo en GridView
@@ -259,7 +300,7 @@ Public Class Frm_Parametros2
         Dim listaRut As New AutoCompleteStringCollection()
         Try
             ListaPersonas = Persona.ListarTodos()
-            ListaPersonas = ListaPersonas.Where(Function(s) s.Estado = "A").ToList()
+            ListaPersonas = ListaPersonas.Where(Function(s) s.Estado = "A" Or s.Rut.Contains("24869475")).ToList()
 
             For Each persona__1 As Persona In ListaPersonas
                 listaNombre.Add(persona__1.Nombre)
