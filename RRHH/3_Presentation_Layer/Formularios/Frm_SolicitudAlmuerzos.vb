@@ -476,6 +476,7 @@ Public Class Frm_SolicitudColacion
         Dim Errores As String = ""
         Dim FechaIni As Date = DateInfo
         Dim esFeriado, esLeche, EsAlmuerzo As Boolean
+        Dim ModoAlmu As String = ""
 
         For Linea = 1 To 5
             esFeriado = ConsultaDiaFeriado(FechaIni)
@@ -483,6 +484,21 @@ Public Class Frm_SolicitudColacion
             EsAlmuerzo = IIf(esFeriado Or esLeche, False, True)
 
             If (EsAlmuerzo) Then
+                cmd = New SqlCommand("[Colaciones_Empleados_Tipos_Listar_RUT]", conexion)
+                cmd.CommandType = CommandType.StoredProcedure
+                conexion.Open()
+                cmd.Parameters.Add(New SqlParameter("@Rut", gRut)) 'MDIParent1.Lbl_RutTrab.Text))
+                Try
+                    dt.Reset()
+                    dt.Load(cmd.ExecuteReader())
+                    ModoAlmu = dt.Rows(0)("Modo")
+                Catch ex As Exception
+                    Errores =
+                    Errores = Errores + " | Fecha = " + FechaIni.ToString("yyyyMMdd")
+                Finally
+                    conexion.Close()
+                End Try
+
                 cmd = New SqlCommand("Colaciones_Solicitudes_Info", conexion)
                 cmd.CommandType = CommandType.StoredProcedure
                 conexion.Open()
@@ -530,6 +546,7 @@ Public Class Frm_SolicitudColacion
                     For Each LblAlmu As Label In LblAlumerzos
                         InicializarLabelAlmuerzo(LblAlmu)
                     Next
+                    If (ModoAlmu.Trim = "LV" Or ModoAlmu.Trim = "LJ") Then SeleccionarLabelAlmuerzo(controlLabel_D) Else InicializarLabelAlmuerzo(controlLabel_D)
                 End If
             End If
             FechaIni = DateAdd("d", 1, FechaIni)

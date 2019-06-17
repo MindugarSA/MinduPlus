@@ -92,85 +92,92 @@ Public Class Frm_MenuAlmuerzo
 
 
     Sub LLenaFechasColaciones(DateInfo As Date)
-
-        'Lbl_A1.ForeColor = Color.Black
-        'Lbl_A2.ForeColor = Color.Black
-        'Lbl_A3.ForeColor = Color.Black
-        'Lbl_A4.ForeColor = Color.Black
-        'Lbl_A5.ForeColor = Color.Black
-        Lbl_A1.Text = ""
-        Lbl_A2.Text = ""
-        Lbl_A3.Text = ""
-        Lbl_A4.Text = ""
-        Lbl_A5.Text = ""
-
-        Dim FechaIni As Date = DateInfo
-        Dim FechaFin As Date = DateAdd("d", 7 - 1, DateInfo)
-        lbl_Fecha.Text = (FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
-                         Space(2) +
-                         "hasta el" +
-                         Space(2) +
-                         FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)).ToUpper
-
-        ControlEnable(FechaIni)
-
-
-        'Coloca dias
-        Lbl_A1.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A2.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A3.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A4.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-        DateInfo = DateAdd("d", 1, DateInfo)
-        Lbl_A5.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
-
-
-        'Pinta Dias feriado
-        dt.Reset()
-        cmd = New SqlCommand("Feriados_Info", conexion)
-        cmd.CommandType = CommandType.StoredProcedure
-        conexion.Open()
-        cmd.Parameters.Add(New SqlParameter("@FechaIni", FechaIni.ToString("yyyyMMdd")))
-        cmd.Parameters.Add(New SqlParameter("@FechaFin", FechaFin.ToString("yyyyMMdd")))
         Try
-            dt.Load(cmd.ExecuteReader())
-        Catch ex As Exception
-        Finally
-            conexion.Close()
-        End Try
-        If dt.Rows(0)("DiasFer") > 0 Then
-            Dim str As String
-            Dim controlLabel As Label
-            For i As Integer = 1 To 5
-                str = String.Format("Lbl_A{0}", i)
-                controlLabel = CType(Me.TableLayoutPanel2.Controls(str), Label)
-                'controlLabel.Text =FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
-                If (Not (controlLabel Is Nothing)) Then
-                    dt.Reset()
-                    cmd = New SqlCommand("Comi_Feriados_Info", conexion)
-                    cmd.CommandType = CommandType.StoredProcedure
-                    conexion.Open()
-                    cmd.Parameters.Add(New SqlParameter("@FechaIni", FechaIni.ToString("yyyyMMdd")))
-                    cmd.Parameters.Add(New SqlParameter("@FechaFin", FechaIni.ToString("yyyyMMdd")))
-                    Try
-                        dt.Load(cmd.ExecuteReader())
-                    Catch ex As Exception
-                    Finally
-                        conexion.Close()
-                    End Try
-                    If dt.Rows(0)("DiasFer") <> 0 Then
-                        controlLabel.ForeColor = Color.Red
-                    Else
-                        controlLabel.ForeColor = Color.Black
+            'Lbl_A1.ForeColor = Color.Black
+            'Lbl_A2.ForeColor = Color.Black
+            'Lbl_A3.ForeColor = Color.Black
+            'Lbl_A4.ForeColor = Color.Black
+            'Lbl_A5.ForeColor = Color.Black
+            Lbl_A1.Text = ""
+            Lbl_A2.Text = ""
+            Lbl_A3.Text = ""
+            Lbl_A4.Text = ""
+            Lbl_A5.Text = ""
+
+            Dim FechaIni As Date = DateInfo
+            Dim FechaFin As Date = DateAdd("d", 7 - 1, DateInfo)
+            lbl_Fecha.Text = (FormatDateTime(DateSerial(Year(FechaIni), Month(FechaIni), Microsoft.VisualBasic.DateAndTime.Day(FechaIni)), DateFormat.LongDate) +
+                             Space(2) +
+                             "hasta el" +
+                             Space(2) +
+                             FormatDateTime(DateSerial(Year(FechaFin), Month(FechaFin), Microsoft.VisualBasic.DateAndTime.Day(FechaFin)), DateFormat.LongDate)).ToUpper
+
+            ControlEnable(FechaIni)
+
+
+            'Coloca dias
+            Lbl_A1.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+            DateInfo = DateAdd("d", 1, DateInfo)
+            Lbl_A2.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+            DateInfo = DateAdd("d", 1, DateInfo)
+            Lbl_A3.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+            DateInfo = DateAdd("d", 1, DateInfo)
+            Lbl_A4.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+            DateInfo = DateAdd("d", 1, DateInfo)
+            Lbl_A5.Text = FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate).ToUpper
+
+
+            'Pinta Dias feriado
+            dt.Reset()
+            cmd = New SqlCommand("Feriados_Info", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            conexion.Open()
+            cmd.Parameters.Add(New SqlParameter("@FechaIni", FechaIni.ToString("yyyyMMdd")))
+            cmd.Parameters.Add(New SqlParameter("@FechaFin", FechaFin.ToString("yyyyMMdd")))
+            Try
+                dt.Load(cmd.ExecuteReader())
+            Catch ex As Exception
+            Finally
+                conexion.Close()
+            End Try
+            If dt.Rows(0)("DiasFer") > 0 Then
+                Dim str As String
+                Dim controlLabel As Label
+                For i As Integer = 1 To 5
+                    str = String.Format("Lbl_A{0}", i)
+                    controlLabel = CType(Me.TableLayoutPanel2.Controls(str), Label)
+                    'controlLabel.Text =FormatDateTime(DateSerial(Year(DateInfo), Month(DateInfo), Microsoft.VisualBasic.DateAndTime.Day(DateInfo)), DateFormat.LongDate)
+                    If (Not (controlLabel Is Nothing)) Then
+                        dt.Reset()
+                        cmd = New SqlCommand("Comi_Feriados_Info", conexion)
+                        cmd.CommandType = CommandType.StoredProcedure
+                        conexion.Open()
+                        cmd.Parameters.Add(New SqlParameter("@FechaIni", FechaIni.ToString("yyyyMMdd")))
+                        cmd.Parameters.Add(New SqlParameter("@FechaFin", FechaIni.ToString("yyyyMMdd")))
+                        Try
+                            dt.Load(cmd.ExecuteReader())
+                        Catch ex As Exception
+                        Finally
+                            conexion.Close()
+                        End Try
+                        Try
+                            If dt.Rows(0)("DiasFer") <> 0 Then
+                                controlLabel.ForeColor = Color.Red
+                            Else
+                                controlLabel.ForeColor = Color.Black
+                            End If
+                        Catch ex As Exception
+
+                        End Try
                     End If
+                    FechaIni = DateAdd("d", 1, FechaIni)
+                Next
 
-                End If
-                FechaIni = DateAdd("d", 1, FechaIni)
-            Next
+            End If
+        Catch ex As Exception
 
-        End If
+        End Try
+
     End Sub
 
     Sub ControlEnable(DateInfo As Date)
@@ -526,9 +533,14 @@ Public Class Frm_MenuAlmuerzo
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        vDateInfo = DateAdd("d", 7, vDateInfo)
-        LLenaFechasColaciones(vDateInfo)
-        CargarColaciones(vDateInfo)
+        Try
+            vDateInfo = DateAdd("d", 7, vDateInfo)
+            LLenaFechasColaciones(vDateInfo)
+            CargarColaciones(vDateInfo)
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub PictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox2.MouseLeave, PictureBox1.MouseLeave

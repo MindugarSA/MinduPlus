@@ -145,4 +145,7 @@ Public Class Frm_EliminarHoraExtra
         dgvColaboradores.Size = New Size(width, dgvColaboradores.Height)
     End Sub
 
+    Private Sub Frm_EliminarHoraExtra_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
